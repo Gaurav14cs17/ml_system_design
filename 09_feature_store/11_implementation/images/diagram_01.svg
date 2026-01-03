@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgImpl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="defineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="ingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="matGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="serveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowImpl" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowImpl" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgImpl)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Implementation Workflow</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">From feature definition to production serving with Feast</text>
+  
+  <!-- Step 1: Define -->
+  <g filter="url(#shadowImpl)">
+    <rect x="40" y="90" width="190" height="160" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="90" cy="115" r="18" fill="url(#defineGrad)"/>
+    <text x="90" y="121" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">1</text>
+    <text x="160" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#60a5fa">Define</text>
+    
+    <text x="60" y="150" font-family="monospace" font-size="9" fill="#94a3b8">feature_store.yaml</text>
+    <rect x="55" y="158" width="160" height="20" rx="3" fill="#172554"/>
+    <text x="135" y="172" text-anchor="middle" font-family="monospace" font-size="8" fill="#60a5fa">entities.py</text>
+    <rect x="55" y="183" width="160" height="20" rx="3" fill="#172554"/>
+    <text x="135" y="197" text-anchor="middle" font-family="monospace" font-size="8" fill="#60a5fa">features.py</text>
+    <rect x="55" y="208" width="160" height="20" rx="3" fill="#172554"/>
+    <text x="135" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#60a5fa">feature_services.py</text>
+  </g>
+  
+  <!-- Arrow 1-2 -->
+  <path d="M235 170 L275 170" stroke="#475569" stroke-width="2" marker-end="url(#arrowImpl)"/>
+  
+  <!-- Step 2: Ingest -->
+  <g filter="url(#shadowImpl)">
+    <rect x="280" y="90" width="190" height="160" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="330" cy="115" r="18" fill="url(#ingGrad)"/>
+    <text x="330" y="121" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">2</text>
+    <text x="400" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">Ingest</text>
+    
+    <text x="300" y="150" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Data Sources:</text>
+    <rect x="295" y="158" width="160" height="20" rx="3" fill="#2e1065"/>
+    <text x="375" y="172" text-anchor="middle" font-family="monospace" font-size="8" fill="#a78bfa">📦 Parquet files</text>
+    <rect x="295" y="183" width="160" height="20" rx="3" fill="#2e1065"/>
+    <text x="375" y="197" text-anchor="middle" font-family="monospace" font-size="8" fill="#a78bfa">🗄️ BigQuery/Redshift</text>
+    <rect x="295" y="208" width="160" height="20" rx="3" fill="#2e1065"/>
+    <text x="375" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#a78bfa">⚡ Kafka streams</text>
+  </g>
+  
+  <!-- Arrow 2-3 -->
+  <path d="M475 170 L515 170" stroke="#475569" stroke-width="2" marker-end="url(#arrowImpl)"/>
+  
+  <!-- Step 3: Materialize -->
+  <g filter="url(#shadowImpl)">
+    <rect x="520" y="90" width="190" height="160" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="570" cy="115" r="18" fill="url(#matGrad)"/>
+    <text x="570" y="121" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">3</text>
+    <text x="640" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#fbbf24">Materialize</text>
+    
+    <text x="540" y="150" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">feast materialize</text>
+    <rect x="535" y="160" width="160" height="35" rx="5" fill="#451a03" stroke="#713f12" stroke-width="1"/>
+    <text x="615" y="175" text-anchor="middle" font-family="monospace" font-size="9" fill="#fbbf24">Offline → Online</text>
+    <text x="615" y="188" text-anchor="middle" font-family="monospace" font-size="8" fill="#94a3b8">sync latest values</text>
+    
+    <text x="540" y="215" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Scheduled jobs:</text>
+    <text x="540" y="230" font-family="monospace" font-size="8" fill="#fbbf24">• Airflow DAGs</text>
+    <text x="540" y="243" font-family="monospace" font-size="8" fill="#fbbf24">• Cron schedules</text>
+  </g>
+  
+  <!-- Arrow 3-4 -->
+  <path d="M715 170 L755 170" stroke="#475569" stroke-width="2" marker-end="url(#arrowImpl)"/>
+  
+  <!-- Step 4: Serve -->
+  <g filter="url(#shadowImpl)">
+    <rect x="760" y="90" width="100" height="160" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <circle cx="810" cy="115" r="18" fill="url(#serveGrad)"/>
+    <text x="810" y="121" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">4</text>
+    <text x="810" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">Serve</text>
+    
+    <rect x="775" y="170" width="70" height="25" rx="4" fill="#064e3b"/>
+    <text x="810" y="187" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Online</text>
+    
+    <rect x="775" y="205" width="70" height="25" rx="4" fill="#064e3b"/>
+    <text x="810" y="222" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Offline</text>
+  </g>
+  
+  <!-- Code Examples -->
+  <g filter="url(#shadowImpl)">
+    <rect x="40" y="280" width="400" height="170" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="240" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">📝 Entity &amp; Feature Definition</text>
+    
+    <text x="60" y="330" font-family="monospace" font-size="9" fill="#60a5fa">user = Entity(name="user", join_keys=["user_id"])</text>
+    <text x="60" y="350" font-family="monospace" font-size="9" fill="#94a3b8"/>
+    <text x="60" y="370" font-family="monospace" font-size="9" fill="#a78bfa">user_features = FeatureView(</text>
+    <text x="60" y="387" font-family="monospace" font-size="9" fill="#a78bfa">    name="user_features",</text>
+    <text x="60" y="404" font-family="monospace" font-size="9" fill="#a78bfa">    entities=[user],</text>
+    <text x="60" y="421" font-family="monospace" font-size="9" fill="#a78bfa">    schema=[Field(name="total_purchases", dtype=Int64)],</text>
+    <text x="60" y="438" font-family="monospace" font-size="9" fill="#a78bfa">)</text>
+  </g>
+  
+  <g filter="url(#shadowImpl)">
+    <rect x="460" y="280" width="400" height="170" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="660" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">🚀 Feature Retrieval</text>
+    
+    <text x="480" y="335" font-family="monospace" font-size="9" fill="#64748b"># Online (inference)</text>
+    <text x="480" y="355" font-family="monospace" font-size="9" fill="#34d399">features = store.get_online_features(</text>
+    <text x="480" y="372" font-family="monospace" font-size="9" fill="#34d399">    entity_rows=[{"user_id": "123"}]</text>
+    <text x="480" y="389" font-family="monospace" font-size="9" fill="#34d399">).to_dict()</text>
+    
+    <text x="480" y="415" font-family="monospace" font-size="9" fill="#64748b"># Offline (training)</text>
+    <text x="480" y="432" font-family="monospace" font-size="9" fill="#60a5fa">train_df = store.get_historical_features(</text>
+    <text x="480" y="449" font-family="monospace" font-size="9" fill="#60a5fa">    entity_df=labels_df).to_df()</text>
+  </g>
+</svg>

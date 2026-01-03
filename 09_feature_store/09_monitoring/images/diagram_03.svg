@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bgDrift" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="refGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="curGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="formulaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadowDrift" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgDrift)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Data Drift Detection</text>
+  <text x="450" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Statistical methods to detect distribution changes in features</text>
+  
+  <!-- Distribution Visualization -->
+  <g filter="url(#shadowDrift)">
+    <rect x="40" y="85" width="400" height="200" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="240" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">Distribution Shift Over Time</text>
+    
+    <!-- X-axis -->
+    <line x1="70" y1="250" x2="400" y2="250" stroke="#475569" stroke-width="1"/>
+    <text x="235" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Feature Value</text>
+    
+    <!-- Y-axis -->
+    <line x1="70" y1="250" x2="70" y2="130" stroke="#475569" stroke-width="1"/>
+    <text x="50" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" transform="rotate(-90, 50, 190)">Density</text>
+    
+    <!-- Reference distribution (blue) -->
+    <path d="M100 250 Q150 250 180 200 Q210 140 240 140 Q270 140 300 200 Q330 250 380 250" 
+          fill="none" stroke="#3b82f6" stroke-width="3" opacity="0.9"/>
+    <path d="M100 250 Q150 250 180 200 Q210 140 240 140 Q270 140 300 200 Q330 250 380 250" 
+          fill="#3b82f6" opacity="0.2"/>
+    
+    <!-- Current distribution (orange, shifted) -->
+    <path d="M130 250 Q180 250 210 210 Q240 160 280 160 Q320 160 350 210 Q380 250 410 250" 
+          fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.9"/>
+    <path d="M130 250 Q180 250 210 210 Q240 160 280 160 Q320 160 350 210 Q380 250 410 250" 
+          fill="#f59e0b" opacity="0.2"/>
+    
+    <!-- Legend -->
+    <rect x="280" y="125" width="12" height="12" rx="2" fill="#3b82f6"/>
+    <text x="297" y="135" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Reference (Training)</text>
+    <rect x="280" y="145" width="12" height="12" rx="2" fill="#f59e0b"/>
+    <text x="297" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Current (Production)</text>
+    
+    <!-- Drift arrow -->
+    <path d="M240 180 L275 175" stroke="#ef4444" stroke-width="2" marker-end="url(#driftArrow)"/>
+    <defs>
+      <marker id="driftArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+      </marker>
+    </defs>
+    <text x="258" y="168" font-family="system-ui, sans-serif" font-size="9" fill="#ef4444">Drift!</text>
+  </g>
+  
+  <!-- Statistical Tests -->
+  <g filter="url(#shadowDrift)">
+    <rect x="460" y="85" width="400" height="200" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="660" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">Statistical Tests for Drift</text>
+    
+    <!-- KS Test -->
+    <rect x="480" y="125" width="360" height="65" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="500" y="145" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Kolmogorov-Smirnov Test</text>
+    <text x="500" y="165" font-family="monospace" font-size="11" fill="#f8fafc">D = sup|F₁(x) - F₂(x)|</text>
+    <text x="500" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Compares cumulative distribution functions</text>
+    
+    <!-- PSI -->
+    <rect x="480" y="200" width="360" height="65" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+    <text x="500" y="220" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Population Stability Index (PSI)</text>
+    <text x="500" y="240" font-family="monospace" font-size="11" fill="#f8fafc">PSI = Σ(Aᵢ - Eᵢ) × ln(Aᵢ/Eᵢ)</text>
+    <text x="500" y="257" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Measures population shift across bins</text>
+  </g>
+  
+  <!-- Drift Types -->
+  <g filter="url(#shadowDrift)">
+    <rect x="40" y="305" width="820" height="130" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="450" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">Types of Drift</text>
+    
+    <!-- Covariate Drift -->
+    <rect x="60" y="350" width="240" height="65" rx="8" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="180" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Covariate Drift</text>
+    <text x="180" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">P(X) changes, P(Y|X) same</text>
+    <text x="180" y="408" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">Feature distribution shifts</text>
+    
+    <!-- Concept Drift -->
+    <rect x="330" y="350" width="240" height="65" rx="8" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+    <text x="450" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#c084fc">Concept Drift</text>
+    <text x="450" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">P(Y|X) changes</text>
+    <text x="450" y="408" text-anchor="middle" font-family="monospace" font-size="9" fill="#c084fc">Relationship between X→Y shifts</text>
+    
+    <!-- Label Drift -->
+    <rect x="600" y="350" width="240" height="65" rx="8" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+    <text x="720" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Label Drift</text>
+    <text x="720" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">P(Y) changes</text>
+    <text x="720" y="408" text-anchor="middle" font-family="monospace" font-size="9" fill="#fbbf24">Target variable distribution shifts</text>
+  </g>
+  
+  <!-- PSI Interpretation -->
+  <g filter="url(#shadowDrift)">
+    <rect x="40" y="455" width="820" height="130" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="450" y="480" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">PSI Interpretation Guide</text>
+    
+    <!-- PSI Scale -->
+    <rect x="80" y="500" width="180" height="30" rx="4" fill="#064e3b"/>
+    <text x="170" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#34d399">PSI andlt; 0.1</text>
+    <text x="170" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">No significant drift</text>
+    
+    <rect x="280" y="500" width="200" height="30" rx="4" fill="#713f12"/>
+    <text x="380" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">0.1 ≤ PSI andlt; 0.25</text>
+    <text x="380" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">Moderate drift - investigate</text>
+    
+    <rect x="500" y="500" width="180" height="30" rx="4" fill="#7f1d1d"/>
+    <text x="590" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f87171">PSI ≥ 0.25</text>
+    <text x="590" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">Significant drift - action required</text>
+    
+    <!-- Formula reminder -->
+    <text x="720" y="520" font-family="monospace" font-size="10" fill="#94a3b8">Aᵢ = actual %</text>
+    <text x="720" y="535" font-family="monospace" font-size="10" fill="#94a3b8">Eᵢ = expected %</text>
+    <text x="720" y="550" font-family="monospace" font-size="10" fill="#94a3b8">in bucket i</text>
+  </g>
+</svg>

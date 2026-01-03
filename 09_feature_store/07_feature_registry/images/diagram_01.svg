@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgRegistry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="registryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadowRegistry" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgRegistry)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Feature Registry</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">The brain of the feature store — centralized metadata management</text>
+  
+  <!-- Central Registry -->
+  <g filter="url(#shadowRegistry)">
+    <rect x="300" y="85" width="300" height="280" rx="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="300" y="85" width="300" height="45" rx="16" fill="url(#registryGrad)"/>
+    <rect x="300" y="118" width="300" height="12" fill="url(#registryGrad)"/>
+    <text x="450" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📋 Feature Registry</text>
+    
+    <!-- Metadata Items -->
+    <rect x="320" y="145" width="260" height="40" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="350" y="170" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#c4b5fd">📊 Feature Definitions</text>
+    
+    <rect x="320" y="195" width="260" height="40" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="350" y="220" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#c4b5fd">🔗 Data Lineage</text>
+    
+    <rect x="320" y="245" width="260" height="40" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="350" y="270" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#c4b5fd">📝 Version History</text>
+    
+    <rect x="320" y="295" width="260" height="40" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="350" y="320" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#c4b5fd">👥 Ownership &amp; Access</text>
+  </g>
+  
+  <!-- Left: Input Sources -->
+  <g filter="url(#shadowRegistry)">
+    <rect x="40" y="120" width="200" height="210" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="140" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#60a5fa">📥 Producers</text>
+    
+    <rect x="60" y="170" width="160" height="30" rx="5" fill="#172554"/>
+    <text x="140" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Data Engineers</text>
+    
+    <rect x="60" y="210" width="160" height="30" rx="5" fill="#172554"/>
+    <text x="140" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Feature Pipelines</text>
+    
+    <rect x="60" y="250" width="160" height="30" rx="5" fill="#172554"/>
+    <text x="140" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">CI/CD Systems</text>
+    
+    <rect x="60" y="290" width="160" height="30" rx="5" fill="#172554"/>
+    <text x="140" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Admin Tools</text>
+  </g>
+  
+  <!-- Right: Consumers -->
+  <g filter="url(#shadowRegistry)">
+    <rect x="660" y="120" width="200" height="210" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="760" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">📤 Consumers</text>
+    
+    <rect x="680" y="170" width="160" height="30" rx="5" fill="#064e3b"/>
+    <text x="760" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Data Scientists</text>
+    
+    <rect x="680" y="210" width="160" height="30" rx="5" fill="#064e3b"/>
+    <text x="760" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">ML Models</text>
+    
+    <rect x="680" y="250" width="160" height="30" rx="5" fill="#064e3b"/>
+    <text x="760" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Serving Systems</text>
+    
+    <rect x="680" y="290" width="160" height="30" rx="5" fill="#064e3b"/>
+    <text x="760" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Monitoring</text>
+  </g>
+  
+  <!-- Arrows -->
+  <path d="M245 225 L295 225" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowRegistry)"/>
+  <path d="M605 225 L655 225" stroke="#10b981" stroke-width="2" marker-end="url(#arrowRegistry2)"/>
+  
+  <defs>
+    <marker id="arrowRegistry" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowRegistry2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <!-- Bottom capabilities -->
+  <g filter="url(#shadowRegistry)">
+    <rect x="80" y="380" width="740" height="55" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="450" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Key Capabilities</text>
+    
+    <text x="170" y="423" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">🔍 Discovery</text>
+    <text x="310" y="423" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#a78bfa">📊 Governance</text>
+    <text x="450" y="423" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">🔄 Versioning</text>
+    <text x="590" y="423" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fbbf24">🔗 Lineage</text>
+    <text x="730" y="423" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f472b6">🔒 Access Control</text>
+  </g>
+</svg>

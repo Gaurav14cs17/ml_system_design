@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgOnlineStore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowOnlineStore" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgOnlineStore)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Online Store Technology Comparison</text>
+  
+  <!-- Redis -->
+  <g filter="url(#shadowOnlineStore)">
+    <rect x="50" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect x="50" y="70" width="190" height="40" rx="12" fill="#dc2626"/>
+    <rect x="50" y="98" width="190" height="12" fill="#dc2626"/>
+    <text x="145" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔴 Redis</text>
+    
+    <text x="70" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">In-memory key-value</text>
+    
+    <rect x="70" y="150" width="150" height="100" rx="6" fill="#450a0a"/>
+    <text x="80" y="170" font-family="system-ui, sans-serif" font-size="8" fill="#fca5a5">Latency: andlt;1ms</text>
+    <text x="80" y="188" font-family="system-ui, sans-serif" font-size="8" fill="#fca5a5">Throughput: 100K+ ops/s</text>
+    <text x="80" y="206" font-family="system-ui, sans-serif" font-size="8" fill="#fca5a5">Persistence: RDB/AOF</text>
+    <text x="80" y="224" font-family="system-ui, sans-serif" font-size="8" fill="#fca5a5">Cluster: Yes</text>
+    <text x="80" y="242" font-family="system-ui, sans-serif" font-size="8" fill="#fca5a5">Cost: $$$ (memory)</text>
+    
+    <text x="70" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="70" y="295" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Ultra-low latency needs</text>
+    <text x="70" y="312" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Hot feature cache</text>
+  </g>
+  
+  <!-- DynamoDB -->
+  <g filter="url(#shadowOnlineStore)">
+    <rect x="260" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="260" y="70" width="190" height="40" rx="12" fill="#d97706"/>
+    <rect x="260" y="98" width="190" height="12" fill="#d97706"/>
+    <text x="355" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🟠 DynamoDB</text>
+    
+    <text x="280" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">Managed NoSQL</text>
+    
+    <rect x="280" y="150" width="150" height="100" rx="6" fill="#451a03"/>
+    <text x="290" y="170" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">Latency: 1-10ms</text>
+    <text x="290" y="188" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">Throughput: Auto-scale</text>
+    <text x="290" y="206" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">Persistence: Yes</text>
+    <text x="290" y="224" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">Global Tables: Yes</text>
+    <text x="290" y="242" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">Cost: $$ (RCU/WCU)</text>
+    
+    <text x="280" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="280" y="295" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Serverless, AWS native</text>
+    <text x="280" y="312" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Auto-scaling needs</text>
+  </g>
+  
+  <!-- Cassandra -->
+  <g filter="url(#shadowOnlineStore)">
+    <rect x="470" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="470" y="70" width="190" height="40" rx="12" fill="#2563eb"/>
+    <rect x="470" y="98" width="190" height="12" fill="#2563eb"/>
+    <text x="565" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔵 Cassandra</text>
+    
+    <text x="490" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Wide-column store</text>
+    
+    <rect x="490" y="150" width="150" height="100" rx="6" fill="#172554"/>
+    <text x="500" y="170" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">Latency: 2-10ms</text>
+    <text x="500" y="188" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">Throughput: Very high</text>
+    <text x="500" y="206" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">Persistence: Yes</text>
+    <text x="500" y="224" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">Multi-DC: Yes</text>
+    <text x="500" y="242" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">Cost: $ (self-manage)</text>
+    
+    <text x="490" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="490" y="295" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">High write throughput</text>
+    <text x="490" y="312" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Large-scale deployment</text>
+  </g>
+  
+  <!-- Bigtable -->
+  <g filter="url(#shadowOnlineStore)">
+    <rect x="680" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="680" y="70" width="190" height="40" rx="12" fill="#059669"/>
+    <rect x="680" y="98" width="190" height="12" fill="#059669"/>
+    <text x="775" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🟢 Bigtable</text>
+    
+    <text x="700" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">GCP managed</text>
+    
+    <rect x="700" y="150" width="150" height="100" rx="6" fill="#064e3b"/>
+    <text x="710" y="170" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">Latency: 2-10ms</text>
+    <text x="710" y="188" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">Throughput: Very high</text>
+    <text x="710" y="206" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">Persistence: Yes</text>
+    <text x="710" y="224" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">Replication: Yes</text>
+    <text x="710" y="242" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">Cost: $$ (nodes)</text>
+    
+    <text x="700" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="700" y="295" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">GCP native, ML workloads</text>
+    <text x="700" y="312" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Vertex AI integration</text>
+  </g>
+</svg>

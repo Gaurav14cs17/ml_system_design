@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgTesting" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowTesting" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgTesting)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Testing Strategies</text>
+  
+  <!-- Unit Tests -->
+  <g filter="url(#shadowTesting)">
+    <rect x="50" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="50" y="70" width="250" height="45" rx="12" fill="#059669"/>
+    <rect x="50" y="103" width="250" height="12" fill="#059669"/>
+    <text x="175" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🧪 Unit Tests</text>
+    
+    <text x="70" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Test individual transforms</text>
+    
+    <rect x="70" y="155" width="210" height="100" rx="6" fill="#064e3b"/>
+    <text x="80" y="175" font-family="monospace" font-size="8" fill="#6ee7b7">def test_age_feature():</text>
+    <text x="80" y="193" font-family="monospace" font-size="8" fill="#6ee7b7">  result = compute_age(</text>
+    <text x="80" y="211" font-family="monospace" font-size="8" fill="#6ee7b7">    birth_date="2000-01-01"</text>
+    <text x="80" y="229" font-family="monospace" font-size="8" fill="#6ee7b7">  )</text>
+    <text x="80" y="247" font-family="monospace" font-size="8" fill="#6ee7b7">  assert result == 24</text>
+    
+    <text x="70" y="285" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Coverage:</text>
+    <text x="70" y="305" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">• Transform logic</text>
+    <text x="70" y="323" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">• Edge cases</text>
+    <text x="70" y="341" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">• Null handling</text>
+  </g>
+  
+  <!-- Integration Tests -->
+  <g filter="url(#shadowTesting)">
+    <rect x="325" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="325" y="70" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="325" y="103" width="250" height="12" fill="#2563eb"/>
+    <text x="450" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔗 Integration Tests</text>
+    
+    <text x="345" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Test end-to-end pipeline</text>
+    
+    <rect x="345" y="155" width="210" height="100" rx="6" fill="#172554"/>
+    <text x="355" y="175" font-family="monospace" font-size="8" fill="#93c5fd">def test_feature_pipeline():</text>
+    <text x="355" y="193" font-family="monospace" font-size="8" fill="#93c5fd">  run_pipeline()</text>
+    <text x="355" y="211" font-family="monospace" font-size="8" fill="#93c5fd">  features = get_features()</text>
+    <text x="355" y="229" font-family="monospace" font-size="8" fill="#93c5fd">  assert len(features) andgt; 0</text>
+    <text x="355" y="247" font-family="monospace" font-size="8" fill="#93c5fd">  validate_schema(features)</text>
+    
+    <text x="345" y="285" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Coverage:</text>
+    <text x="345" y="305" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Data flow</text>
+    <text x="345" y="323" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Store write/read</text>
+    <text x="345" y="341" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Schema consistency</text>
+  </g>
+  
+  <!-- Data Quality Tests -->
+  <g filter="url(#shadowTesting)">
+    <rect x="600" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="600" y="70" width="250" height="45" rx="12" fill="#d97706"/>
+    <rect x="600" y="103" width="250" height="12" fill="#d97706"/>
+    <text x="725" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📊 Quality Tests</text>
+    
+    <text x="620" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#fbbf24">Validate data expectations</text>
+    
+    <rect x="620" y="155" width="210" height="100" rx="6" fill="#451a03"/>
+    <text x="630" y="175" font-family="monospace" font-size="8" fill="#fcd34d">expectations:</text>
+    <text x="630" y="193" font-family="monospace" font-size="8" fill="#fcd34d">  - null_rate andlt; 0.05</text>
+    <text x="630" y="211" font-family="monospace" font-size="8" fill="#fcd34d">  - min_value andgt;= 0</text>
+    <text x="630" y="229" font-family="monospace" font-size="8" fill="#fcd34d">  - cardinality andlt; 1000</text>
+    <text x="630" y="247" font-family="monospace" font-size="8" fill="#fcd34d">  - distribution_stable</text>
+    
+    <text x="620" y="285" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Coverage:</text>
+    <text x="620" y="305" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Value ranges</text>
+    <text x="620" y="323" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Distributions</text>
+    <text x="620" y="341" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Freshness</text>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgGovernance" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowGovernance" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGovernance)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature Governance</text>
+  
+  <!-- Access Control -->
+  <g filter="url(#shadowGovernance)">
+    <rect x="50" y="70" width="250" height="270" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect x="50" y="70" width="250" height="45" rx="12" fill="#dc2626"/>
+    <rect x="50" y="103" width="250" height="12" fill="#dc2626"/>
+    <text x="175" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔐 Access Control</text>
+    
+    <text x="70" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">Role-Based Permissions</text>
+    
+    <rect x="70" y="155" width="210" height="35" rx="5" fill="#450a0a"/>
+    <text x="175" y="178" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">ADMIN: Full access</text>
+    
+    <rect x="70" y="200" width="210" height="35" rx="5" fill="#450a0a"/>
+    <text x="175" y="223" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">DATA_SCIENTIST: Read + Write</text>
+    
+    <rect x="70" y="245" width="210" height="35" rx="5" fill="#450a0a"/>
+    <text x="175" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">ANALYST: Read only</text>
+    
+    <rect x="70" y="295" width="210" height="30" rx="5" fill="#0f172a"/>
+    <text x="175" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">PII features: restricted</text>
+  </g>
+  
+  <!-- Versioning -->
+  <g filter="url(#shadowGovernance)">
+    <rect x="325" y="70" width="250" height="270" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="325" y="70" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="325" y="103" width="250" height="12" fill="#2563eb"/>
+    <text x="450" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📦 Version Control</text>
+    
+    <text x="345" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Feature Evolution</text>
+    
+    <rect x="345" y="155" width="210" height="30" rx="5" fill="#172554"/>
+    <text x="450" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">v1.0 → user_age (days)</text>
+    
+    <rect x="345" y="195" width="210" height="30" rx="5" fill="#172554"/>
+    <text x="450" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">v1.1 → nullable support</text>
+    
+    <rect x="345" y="235" width="210" height="30" rx="5" fill="#172554"/>
+    <text x="450" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">v2.0 → user_tenure_days</text>
+    
+    <rect x="345" y="280" width="210" height="45" rx="5" fill="#0f172a"/>
+    <text x="450" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Breaking changes require</text>
+    <text x="450" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">major version bump</text>
+  </g>
+  
+  <!-- Audit -->
+  <g filter="url(#shadowGovernance)">
+    <rect x="600" y="70" width="250" height="270" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="600" y="70" width="250" height="45" rx="12" fill="#059669"/>
+    <rect x="600" y="103" width="250" height="12" fill="#059669"/>
+    <text x="725" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📜 Audit Trail</text>
+    
+    <text x="620" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Activity Logging</text>
+    
+    <rect x="620" y="155" width="210" height="150" rx="5" fill="#064e3b"/>
+    <text x="630" y="175" font-family="monospace" font-size="8" fill="#34d399">2024-01-15 10:23</text>
+    <text x="630" y="193" font-family="monospace" font-size="8" fill="#6ee7b7">user@ml → CREATE feature</text>
+    
+    <text x="630" y="220" font-family="monospace" font-size="8" fill="#34d399">2024-01-16 14:45</text>
+    <text x="630" y="238" font-family="monospace" font-size="8" fill="#6ee7b7">admin@ → UPDATE schema</text>
+    
+    <text x="630" y="265" font-family="monospace" font-size="8" fill="#34d399">2024-01-17 09:12</text>
+    <text x="630" y="283" font-family="monospace" font-size="8" fill="#6ee7b7">model@ → READ 1M rows</text>
+    
+    <rect x="620" y="315" width="210" height="15" rx="3" fill="#0f172a"/>
+    <text x="725" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Compliance ready</text>
+  </g>
+</svg>

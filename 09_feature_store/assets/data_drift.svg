@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#18181b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27272a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="url(#bgGrad8)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#fafafa" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Data Drift Detection</text>
+  
+  <!-- Training Distribution -->
+  <text x="250" y="75" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Training Distribution</text>
+  
+  <rect x="50" y="90" width="400" height="120" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  
+  <!-- Bell curve for training -->
+  <path d="M70 180 Q90 180 110 175 Q140 160 170 130 Q200 100 250 90 Q300 100 330 130 Q360 160 390 175 Q410 180 430 180" 
+        fill="none" stroke="#22d3ee" stroke-width="3"/>
+  <path d="M70 180 Q90 180 110 175 Q140 160 170 130 Q200 100 250 90 Q300 100 330 130 Q360 160 390 175 Q410 180 430 180 L430 180 L70 180 Z" 
+        fill="#22d3ee" fill-opacity="0.2"/>
+  
+  <text x="250" y="200" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">μ = 100, σ = 20</text>
+  
+  <!-- Production Distribution -->
+  <text x="650" y="75" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Production Distribution</text>
+  
+  <rect x="450" y="90" width="400" height="120" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  
+  <!-- Shifted bell curve for production -->
+  <path d="M500 180 Q520 175 540 160 Q570 130 620 105 Q670 90 700 95 Q750 100 780 125 Q810 160 830 180" 
+        fill="none" stroke="#f472b6" stroke-width="3"/>
+  <path d="M500 180 Q520 175 540 160 Q570 130 620 105 Q670 90 700 95 Q750 100 780 125 Q810 160 830 180 L830 180 L500 180 Z" 
+        fill="#f472b6" fill-opacity="0.2"/>
+  
+  <text x="650" y="200" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">μ = 150, σ = 30</text>
+  
+  <!-- Drift indicator -->
+  <rect x="350" y="240" width="200" height="50" rx="8" fill="#dc2626" fill-opacity="0.2" stroke="#dc2626" stroke-width="2"/>
+  <text x="450" y="260" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚠️ DRIFT DETECTED</text>
+  <text x="450" y="280" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="11">PSI = 0.35 andgt; 0.25 threshold</text>
+  
+  <!-- Metrics boxes -->
+  <rect x="50" y="310" width="250" height="70" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="175" y="335" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KS Test</text>
+  <text x="175" y="355" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">Statistic: 0.42</text>
+  <text x="175" y="370" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">p-value: 0.001</text>
+  
+  <rect x="325" y="310" width="250" height="70" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="450" y="335" text-anchor="middle" fill="#a855f7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PSI Score</text>
+  <text x="450" y="355" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">Value: 0.35</text>
+  <text x="450" y="370" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="11">Significant Drift!</text>
+  
+  <rect x="600" y="310" width="250" height="70" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="725" y="335" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Action Required</text>
+  <text x="725" y="355" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">• Investigate root cause</text>
+  <text x="725" y="370" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11">• Consider model retrain</text>
+</svg>
+

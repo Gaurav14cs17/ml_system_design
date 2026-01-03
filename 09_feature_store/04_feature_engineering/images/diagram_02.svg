@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgAgg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowAgg" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgAgg)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Aggregation Functions</text>
+  
+  <!-- Sum/Count -->
+  <g filter="url(#shadowAgg)">
+    <rect x="50" y="70" width="190" height="140" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="145" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#60a5fa">∑ Sum / Count</text>
+    
+    <rect x="70" y="115" width="150" height="30" rx="5" fill="#172554"/>
+    <text x="145" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#93c5fd">SUM(amount)</text>
+    
+    <rect x="70" y="155" width="150" height="30" rx="5" fill="#172554"/>
+    <text x="145" y="175" text-anchor="middle" font-family="monospace" font-size="9" fill="#93c5fd">COUNT(txn_id)</text>
+  </g>
+  
+  <!-- Average -->
+  <g filter="url(#shadowAgg)">
+    <rect x="260" y="70" width="190" height="140" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="355" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">μ Average</text>
+    
+    <rect x="280" y="115" width="150" height="30" rx="5" fill="#064e3b"/>
+    <text x="355" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#6ee7b7">AVG(amount)</text>
+    
+    <rect x="280" y="155" width="150" height="30" rx="5" fill="#064e3b"/>
+    <text x="355" y="175" text-anchor="middle" font-family="monospace" font-size="9" fill="#6ee7b7">MEAN(rating)</text>
+  </g>
+  
+  <!-- Min/Max -->
+  <g filter="url(#shadowAgg)">
+    <rect x="470" y="70" width="190" height="140" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="565" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">↕️ Min / Max</text>
+    
+    <rect x="490" y="115" width="150" height="30" rx="5" fill="#2e1065"/>
+    <text x="565" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#c4b5fd">MIN(price)</text>
+    
+    <rect x="490" y="155" width="150" height="30" rx="5" fill="#2e1065"/>
+    <text x="565" y="175" text-anchor="middle" font-family="monospace" font-size="9" fill="#c4b5fd">MAX(amount)</text>
+  </g>
+  
+  <!-- Distinct -->
+  <g filter="url(#shadowAgg)">
+    <rect x="680" y="70" width="190" height="140" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="775" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#fbbf24"># Distinct</text>
+    
+    <rect x="700" y="115" width="150" height="30" rx="5" fill="#451a03"/>
+    <text x="775" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#fcd34d">COUNT(DISTINCT)</text>
+    
+    <rect x="700" y="155" width="150" height="30" rx="5" fill="#451a03"/>
+    <text x="775" y="175" text-anchor="middle" font-family="monospace" font-size="9" fill="#fcd34d">APPROX_DISTINCT</text>
+  </g>
+  
+  <!-- Percentile/Std -->
+  <g filter="url(#shadowAgg)">
+    <rect x="130" y="235" width="280" height="130" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="270" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#f9a8d4">📊 Statistical</text>
+    
+    <rect x="150" y="285" width="110" height="30" rx="5" fill="#4a044e"/>
+    <text x="205" y="305" text-anchor="middle" font-family="monospace" font-size="9" fill="#f9a8d4">PERCENTILE(p50)</text>
+    
+    <rect x="280" y="285" width="110" height="30" rx="5" fill="#4a044e"/>
+    <text x="335" y="305" text-anchor="middle" font-family="monospace" font-size="9" fill="#f9a8d4">STDDEV(amount)</text>
+    
+    <text x="270" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Advanced: VARIANCE, SKEW, KURTOSIS</text>
+  </g>
+  
+  <!-- Window Functions -->
+  <g filter="url(#shadowAgg)">
+    <rect x="490" y="235" width="280" height="130" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="630" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#22d3ee">⏱️ Window Functions</text>
+    
+    <rect x="510" y="285" width="110" height="30" rx="5" fill="#164e63"/>
+    <text x="565" y="305" text-anchor="middle" font-family="monospace" font-size="9" fill="#67e8f9">LAG(value, 1)</text>
+    
+    <rect x="640" y="285" width="110" height="30" rx="5" fill="#164e63"/>
+    <text x="695" y="305" text-anchor="middle" font-family="monospace" font-size="9" fill="#67e8f9">LEAD(value, 1)</text>
+    
+    <text x="630" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Advanced: RANK, ROW_NUMBER, FIRST_VALUE</text>
+  </g>
+</svg>

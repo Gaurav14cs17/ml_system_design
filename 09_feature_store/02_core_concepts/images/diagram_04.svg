@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgFG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="fgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadowFG" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgFG)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Feature Group Concept</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Collection of related features from the same source</text>
+  
+  <!-- Feature Group Card -->
+  <g filter="url(#shadowFG)">
+    <rect x="100" y="85" width="700" height="280" rx="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="100" y="85" width="700" height="50" rx="16" fill="url(#fgGrad)"/>
+    <rect x="100" y="123" width="700" height="12" fill="url(#fgGrad)"/>
+    <text x="450" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📊 Feature Group: user_transaction_features</text>
+  </g>
+  
+  <!-- Metadata -->
+  <rect x="130" y="150" width="200" height="90" rx="8" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+  <text x="150" y="175" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#c4b5fd">Metadata</text>
+  <text x="150" y="195" font-family="monospace" font-size="10" fill="#94a3b8">Entity: user</text>
+  <text x="150" y="210" font-family="monospace" font-size="10" fill="#94a3b8">Source: transactions</text>
+  <text x="150" y="225" font-family="monospace" font-size="10" fill="#94a3b8">Update: Hourly</text>
+  
+  <!-- Features Grid -->
+  <rect x="350" y="150" width="420" height="180" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="560" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Features in this group:</text>
+  
+  <!-- Feature boxes -->
+  <rect x="370" y="190" width="180" height="45" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="460" y="210" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_total_transactions</text>
+  <text x="460" y="225" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">INT64</text>
+  
+  <rect x="570" y="190" width="180" height="45" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="660" y="210" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_avg_txn_amount</text>
+  <text x="660" y="225" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">FLOAT64</text>
+  
+  <rect x="370" y="245" width="180" height="45" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="460" y="265" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_txn_count_7d</text>
+  <text x="460" y="280" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">INT64</text>
+  
+  <rect x="570" y="245" width="180" height="45" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="660" y="265" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_last_txn_ts</text>
+  <text x="660" y="280" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">TIMESTAMP</text>
+  
+  <rect x="370" y="300" width="180" height="45" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="460" y="320" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_max_txn_amount</text>
+  <text x="460" y="335" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">FLOAT64</text>
+  
+  <rect x="570" y="300" width="180" height="45" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+  <text x="660" y="320" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_pref_merchant</text>
+  <text x="660" y="335" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">STRING</text>
+  
+  <!-- Benefits Section -->
+  <rect x="100" y="385" width="700" height="50" rx="10" fill="#334155" filter="url(#shadowFG)"/>
+  <text x="180" y="415" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">✓ Single job</text>
+  <text x="310" y="415" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">✓ Atomic updates</text>
+  <text x="460" y="415" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">✓ Clear lineage</text>
+  <text x="610" y="415" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">✓ Easy discovery</text>
+</svg>

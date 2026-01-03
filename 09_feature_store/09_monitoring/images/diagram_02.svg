@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgDrift" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowDrift" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgDrift)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Data Drift Detection Methods</text>
+  
+  <!-- KS Test -->
+  <g filter="url(#shadowDrift)">
+    <rect x="50" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="50" y="70" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="50" y="103" width="250" height="12" fill="#2563eb"/>
+    <text x="175" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📊 KS Test</text>
+    
+    <text x="70" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Kolmogorov-Smirnov</text>
+    
+    <rect x="70" y="155" width="210" height="80" rx="6" fill="#172554"/>
+    <text x="175" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">D = max|F₁(x) - F₂(x)|</text>
+    <text x="175" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Max distance between</text>
+    <text x="175" y="218" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">cumulative distributions</text>
+    
+    <text x="70" y="260" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Properties:</text>
+    <text x="70" y="278" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">• Non-parametric</text>
+    <text x="70" y="296" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">• For continuous features</text>
+    <text x="70" y="314" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">• Returns p-value</text>
+    
+    <rect x="70" y="325" width="210" height="20" rx="4" fill="#064e3b"/>
+    <text x="175" y="339" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Threshold: D andgt; 0.1</text>
+  </g>
+  
+  <!-- PSI -->
+  <g filter="url(#shadowDrift)">
+    <rect x="325" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="325" y="70" width="250" height="45" rx="12" fill="#7c3aed"/>
+    <rect x="325" y="103" width="250" height="12" fill="#7c3aed"/>
+    <text x="450" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📈 PSI</text>
+    
+    <text x="345" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#a78bfa">Population Stability Index</text>
+    
+    <rect x="345" y="155" width="210" height="80" rx="6" fill="#2e1065"/>
+    <text x="450" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">PSI = Σ(A% - B%) × ln(A%/B%)</text>
+    <text x="450" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Compare bin distributions</text>
+    <text x="450" y="218" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">reference vs current</text>
+    
+    <text x="345" y="260" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Interpretation:</text>
+    <text x="345" y="278" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">• PSI andlt; 0.1: No shift</text>
+    <text x="345" y="296" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">• 0.1-0.2: Moderate shift</text>
+    <text x="345" y="314" font-family="system-ui, sans-serif" font-size="9" fill="#f87171">• PSI andgt; 0.2: Significant</text>
+    
+    <rect x="345" y="325" width="210" height="20" rx="4" fill="#064e3b"/>
+    <text x="450" y="339" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Alert: PSI andgt; 0.2</text>
+  </g>
+  
+  <!-- Chi-Square -->
+  <g filter="url(#shadowDrift)">
+    <rect x="600" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="600" y="70" width="250" height="45" rx="12" fill="#d97706"/>
+    <rect x="600" y="103" width="250" height="12" fill="#d97706"/>
+    <text x="725" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔢 Chi-Square</text>
+    
+    <text x="620" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#fbbf24">Categorical Features</text>
+    
+    <rect x="620" y="155" width="210" height="80" rx="6" fill="#451a03"/>
+    <text x="725" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">χ² = Σ(O-E)²/E</text>
+    <text x="725" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Observed vs Expected</text>
+    <text x="725" y="218" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">category frequencies</text>
+    
+    <text x="620" y="260" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Use cases:</text>
+    <text x="620" y="278" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">• Categorical features</text>
+    <text x="620" y="296" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">• Binned numeric</text>
+    <text x="620" y="314" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">• Low cardinality</text>
+    
+    <rect x="620" y="325" width="210" height="20" rx="4" fill="#064e3b"/>
+    <text x="725" y="339" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Alert: p-value andlt; 0.05</text>
+  </g>
+</svg>

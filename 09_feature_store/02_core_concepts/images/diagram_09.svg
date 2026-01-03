@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgTTL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowTTL" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgTTL)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature TTL (Time-To-Live)</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Controlling feature freshness in online store</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="150" x2="800" y2="150" stroke="#64748b" stroke-width="3"/>
+  
+  <!-- Time markers -->
+  <line x1="150" y1="145" x2="150" y2="155" stroke="#64748b" stroke-width="2"/>
+  <text x="150" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">T-2h</text>
+  
+  <line x1="350" y1="145" x2="350" y2="155" stroke="#64748b" stroke-width="2"/>
+  <text x="350" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">T-1h</text>
+  
+  <line x1="550" y1="145" x2="550" y2="155" stroke="#10b981" stroke-width="3"/>
+  <text x="550" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Last Update</text>
+  
+  <line x1="750" y1="145" x2="750" y2="155" stroke="#ef4444" stroke-width="3"/>
+  <text x="750" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f87171">Now (Query)</text>
+  
+  <!-- TTL Window -->
+  <rect x="550" y="90" width="200" height="40" rx="8" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="2"/>
+  <text x="650" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#34d399">TTL = 1 hour ✓</text>
+  
+  <!-- Stale indicator -->
+  <rect x="350" y="90" width="200" height="40" rx="8" fill="#f87171" opacity="0.2" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="450" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f87171">Stale if andgt; 1h</text>
+  
+  <!-- Example boxes -->
+  <g filter="url(#shadowTTL)">
+    <rect x="100" y="210" width="220" height="140" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="100" y="210" width="220" height="35" rx="12" fill="#059669"/>
+    <rect x="100" y="233" width="220" height="12" fill="#059669"/>
+    <text x="210" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">✓ Short TTL (5min)</text>
+    <text x="120" y="270" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Use for:</text>
+    <text x="120" y="290" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Session-based features</text>
+    <text x="120" y="308" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Real-time counters</text>
+    <text x="120" y="326" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Fraud signals</text>
+  </g>
+  
+  <g filter="url(#shadowTTL)">
+    <rect x="340" y="210" width="220" height="140" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="340" y="210" width="220" height="35" rx="12" fill="#2563eb"/>
+    <rect x="340" y="233" width="220" height="12" fill="#2563eb"/>
+    <text x="450" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📅 Medium TTL (1h-24h)</text>
+    <text x="360" y="270" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">Use for:</text>
+    <text x="360" y="290" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Daily aggregates</text>
+    <text x="360" y="308" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• User preferences</text>
+    <text x="360" y="326" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Activity stats</text>
+  </g>
+  
+  <g filter="url(#shadowTTL)">
+    <rect x="580" y="210" width="220" height="140" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="580" y="210" width="220" height="35" rx="12" fill="#7c3aed"/>
+    <rect x="580" y="233" width="220" height="12" fill="#7c3aed"/>
+    <text x="690" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🗓️ Long TTL (7d+)</text>
+    <text x="600" y="270" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Use for:</text>
+    <text x="600" y="290" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Static attributes</text>
+    <text x="600" y="308" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Demographic data</text>
+    <text x="600" y="326" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Historical patterns</text>
+  </g>
+</svg>

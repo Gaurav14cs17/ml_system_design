@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+  <defs>
+    <linearGradient id="bgBenefitsIntro" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowBenefitsIntro" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgBenefitsIntro)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Key Benefits of Feature Stores</text>
+  
+  <!-- Benefit 1 -->
+  <g filter="url(#shadowBenefitsIntro)">
+    <rect x="50" y="70" width="185" height="250" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="142" cy="110" r="25" fill="#2563eb"/>
+    <text x="142" y="117" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#f8fafc">🔄</text>
+    <text x="142" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Consistency</text>
+    <text x="70" y="185" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Same features in</text>
+    <text x="70" y="200" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">training and serving</text>
+    <rect x="70" y="220" width="145" height="80" rx="6" fill="#172554"/>
+    <text x="142" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">No more skew!</text>
+    <text x="142" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">Model performance</text>
+    <text x="142" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">matches training</text>
+  </g>
+  
+  <!-- Benefit 2 -->
+  <g filter="url(#shadowBenefitsIntro)">
+    <rect x="255" y="70" width="185" height="250" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <circle cx="347" cy="110" r="25" fill="#059669"/>
+    <text x="347" y="117" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#f8fafc">♻️</text>
+    <text x="347" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#34d399">Reusability</text>
+    <text x="275" y="185" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Build once, use</text>
+    <text x="275" y="200" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">across all models</text>
+    <rect x="275" y="220" width="145" height="80" rx="6" fill="#064e3b"/>
+    <text x="347" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">60-80% faster</text>
+    <text x="347" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">feature development</text>
+    <text x="347" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">time</text>
+  </g>
+  
+  <!-- Benefit 3 -->
+  <g filter="url(#shadowBenefitsIntro)">
+    <rect x="460" y="70" width="185" height="250" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="552" cy="110" r="25" fill="#7c3aed"/>
+    <text x="552" y="117" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#f8fafc">🔍</text>
+    <text x="552" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">Discovery</text>
+    <text x="480" y="185" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Find and understand</text>
+    <text x="480" y="200" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">available features</text>
+    <rect x="480" y="220" width="145" height="80" rx="6" fill="#2e1065"/>
+    <text x="552" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Self-service</text>
+    <text x="552" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">data scientists</text>
+    <text x="552" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">move faster</text>
+  </g>
+  
+  <!-- Benefit 4 -->
+  <g filter="url(#shadowBenefitsIntro)">
+    <rect x="665" y="70" width="185" height="250" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="757" cy="110" r="25" fill="#d97706"/>
+    <text x="757" y="117" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#f8fafc">⚡</text>
+    <text x="757" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Performance</text>
+    <text x="685" y="185" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Low-latency serving</text>
+    <text x="685" y="200" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">and optimized storage</text>
+    <rect x="685" y="220" width="145" height="80" rx="6" fill="#451a03"/>
+    <text x="757" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">andlt; 10ms latency</text>
+    <text x="757" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">for real-time</text>
+    <text x="757" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">inference</text>
+  </g>
+</svg>

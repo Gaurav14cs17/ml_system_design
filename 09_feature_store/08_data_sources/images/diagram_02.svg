@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgConnectors" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowConnectors" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowConn" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgConnectors)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Data Source Connectors</text>
+  
+  <!-- Databases -->
+  <g filter="url(#shadowConnectors)">
+    <rect x="50" y="70" width="200" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">🗄️ Databases</text>
+    <text x="70" y="125" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• PostgreSQL / MySQL</text>
+    <text x="70" y="145" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Snowflake / BigQuery</text>
+    <text x="70" y="165" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Redshift / Databricks</text>
+    <text x="70" y="185" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">CDC / Batch extract</text>
+  </g>
+  
+  <!-- Streams -->
+  <g filter="url(#shadowConnectors)">
+    <rect x="50" y="220" width="200" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="150" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">⚡ Streams</text>
+    <text x="70" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">• Kafka / Kinesis</text>
+    <text x="70" y="295" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">• Pub/Sub / EventHub</text>
+    <text x="70" y="315" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">• Redis Streams</text>
+    <text x="70" y="335" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Real-time ingestion</text>
+  </g>
+  
+  <!-- Arrows to Feature Store -->
+  <path d="M255 130 L340 180" stroke="#10b981" stroke-width="2" marker-end="url(#arrowConn)"/>
+  <path d="M255 280 L340 230" stroke="#10b981" stroke-width="2" marker-end="url(#arrowConn)"/>
+  
+  <!-- Feature Store -->
+  <g filter="url(#shadowConnectors)">
+    <rect x="350" y="130" width="200" height="150" rx="16" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+    <rect x="350" y="130" width="200" height="45" rx="16" fill="#059669"/>
+    <rect x="350" y="163" width="200" height="12" fill="#059669"/>
+    <text x="450" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🗄️ Feature Store</text>
+    
+    <text x="370" y="200" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Ingest → Transform</text>
+    <text x="370" y="220" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">→ Store → Serve</text>
+    <text x="370" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Unified interface</text>
+  </g>
+  
+  <!-- Arrows to outputs -->
+  <path d="M555 180 L640 130" stroke="#10b981" stroke-width="2" marker-end="url(#arrowConn)"/>
+  <path d="M555 230 L640 280" stroke="#10b981" stroke-width="2" marker-end="url(#arrowConn)"/>
+  
+  <!-- Files/Object Storage -->
+  <g filter="url(#shadowConnectors)">
+    <rect x="650" y="70" width="200" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="750" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">📁 Object Storage</text>
+    <text x="670" y="125" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• S3 / GCS / ADLS</text>
+    <text x="670" y="145" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Parquet / CSV / JSON</text>
+    <text x="670" y="165" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Delta Lake / Iceberg</text>
+    <text x="670" y="185" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Batch processing</text>
+  </g>
+  
+  <!-- APIs -->
+  <g filter="url(#shadowConnectors)">
+    <rect x="650" y="220" width="200" height="130" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="750" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f9a8d4">🔌 External APIs</text>
+    <text x="670" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#f9a8d4">• REST / GraphQL</text>
+    <text x="670" y="295" font-family="system-ui, sans-serif" font-size="9" fill="#f9a8d4">• Third-party data</text>
+    <text x="670" y="315" font-family="system-ui, sans-serif" font-size="9" fill="#f9a8d4">• Enrichment services</text>
+    <text x="670" y="335" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">On-demand fetch</text>
+  </g>
+</svg>

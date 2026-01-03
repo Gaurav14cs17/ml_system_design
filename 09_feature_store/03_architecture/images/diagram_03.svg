@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgDataFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowDataFlow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowDataFlow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrowDataFlowBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgDataFlow)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature Store Data Flow</text>
+  
+  <!-- Data Sources -->
+  <g filter="url(#shadowDataFlow)">
+    <rect x="50" y="80" width="120" height="300" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Data Sources</text>
+    
+    <rect x="65" y="120" width="90" height="35" rx="6" fill="#172554"/>
+    <text x="110" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Databases</text>
+    
+    <rect x="65" y="165" width="90" height="35" rx="6" fill="#172554"/>
+    <text x="110" y="187" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Data Lake</text>
+    
+    <rect x="65" y="210" width="90" height="35" rx="6" fill="#172554"/>
+    <text x="110" y="232" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Streams</text>
+    
+    <rect x="65" y="255" width="90" height="35" rx="6" fill="#172554"/>
+    <text x="110" y="277" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">APIs</text>
+    
+    <rect x="65" y="300" width="90" height="35" rx="6" fill="#172554"/>
+    <text x="110" y="322" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Files</text>
+  </g>
+  
+  <!-- Arrows to Transform -->
+  <path d="M175 180 L230 210" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDataFlow)"/>
+  <path d="M175 230 L230 230" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDataFlow)"/>
+  <path d="M175 280 L230 250" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDataFlow)"/>
+  
+  <!-- Transform Layer -->
+  <g filter="url(#shadowDataFlow)">
+    <rect x="240" y="130" width="180" height="200" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="240" y="130" width="180" height="40" rx="12" fill="#7c3aed"/>
+    <rect x="240" y="158" width="180" height="12" fill="#7c3aed"/>
+    <text x="330" y="157" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">⚙️ Transform</text>
+    
+    <rect x="260" y="185" width="140" height="30" rx="6" fill="#2e1065"/>
+    <text x="330" y="205" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">Batch (Spark/dbt)</text>
+    
+    <rect x="260" y="225" width="140" height="30" rx="6" fill="#2e1065"/>
+    <text x="330" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">Stream (Flink)</text>
+    
+    <rect x="260" y="265" width="140" height="30" rx="6" fill="#2e1065"/>
+    <text x="330" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">On-demand (Python)</text>
+  </g>
+  
+  <!-- Arrows to Stores -->
+  <path d="M425 200 L490 170" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDataFlow)"/>
+  <path d="M425 260 L490 290" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDataFlow)"/>
+  
+  <!-- Offline Store -->
+  <g filter="url(#shadowDataFlow)">
+    <rect x="500" y="80" width="160" height="140" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="500" y="80" width="160" height="35" rx="12" fill="#2563eb"/>
+    <rect x="500" y="103" width="160" height="12" fill="#2563eb"/>
+    <text x="580" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">📚 Offline Store</text>
+    
+    <text x="520" y="145" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Historical data</text>
+    <text x="520" y="162" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Training datasets</text>
+    <text x="520" y="179" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">• Point-in-time joins</text>
+    <text x="520" y="196" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">S3, Delta, Iceberg</text>
+  </g>
+  
+  <!-- Online Store -->
+  <g filter="url(#shadowDataFlow)">
+    <rect x="500" y="240" width="160" height="140" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="500" y="240" width="160" height="35" rx="12" fill="#059669"/>
+    <rect x="500" y="263" width="160" height="12" fill="#059669"/>
+    <text x="580" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">⚡ Online Store</text>
+    
+    <text x="520" y="305" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">• Latest values</text>
+    <text x="520" y="322" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">• Low latency</text>
+    <text x="520" y="339" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">• Key-value access</text>
+    <text x="520" y="356" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Redis, DynamoDB</text>
+  </g>
+  
+  <!-- Arrows to Consumers -->
+  <path d="M665 150 L730 170" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowDataFlowBlue)"/>
+  <path d="M665 310 L730 290" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDataFlow)"/>
+  
+  <!-- Consumers -->
+  <g filter="url(#shadowDataFlow)">
+    <rect x="740" y="100" width="130" height="100" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="740" y="100" width="130" height="30" rx="12" fill="#d97706"/>
+    <rect x="740" y="118" width="130" height="12" fill="#d97706"/>
+    <text x="805" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">🎓 Training</text>
+    
+    <text x="755" y="155" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• ML pipelines</text>
+    <text x="755" y="172" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Notebooks</text>
+    <text x="755" y="189" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">• Experiments</text>
+  </g>
+  
+  <g filter="url(#shadowDataFlow)">
+    <rect x="740" y="260" width="130" height="100" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <rect x="740" y="260" width="130" height="30" rx="12" fill="#db2777"/>
+    <rect x="740" y="278" width="130" height="12" fill="#db2777"/>
+    <text x="805" y="282" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">🚀 Serving</text>
+    
+    <text x="755" y="315" font-family="system-ui, sans-serif" font-size="9" fill="#f9a8d4">• Model APIs</text>
+    <text x="755" y="332" font-family="system-ui, sans-serif" font-size="9" fill="#f9a8d4">• Real-time apps</text>
+    <text x="755" y="349" font-family="system-ui, sans-serif" font-size="9" fill="#f9a8d4">• Batch scoring</text>
+  </g>
+</svg>

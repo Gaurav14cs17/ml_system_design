@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgOffOn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowOffOn" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowOffOn" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgOffOn)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Offline vs Online Store</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Two stores optimized for different access patterns</text>
+  
+  <!-- Offline Store -->
+  <g filter="url(#shadowOffOn)">
+    <rect x="70" y="85" width="300" height="280" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="70" y="85" width="300" height="50" rx="16" fill="#2563eb"/>
+    <rect x="70" y="123" width="300" height="12" fill="#2563eb"/>
+    <text x="220" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">📚 Offline Store</text>
+    
+    <text x="90" y="165" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Purpose:</text>
+    <text x="90" y="185" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Training data generation</text>
+    
+    <text x="90" y="215" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Characteristics:</text>
+    <text x="90" y="235" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• All historical values</text>
+    <text x="90" y="252" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Point-in-time retrieval</text>
+    <text x="90" y="269" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• High latency (seconds)</text>
+    <text x="90" y="286" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Batch queries</text>
+    
+    <rect x="90" y="305" width="260" height="45" rx="8" fill="#172554"/>
+    <text x="220" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#93c5fd">S3 / Delta Lake / BigQuery</text>
+    <text x="220" y="345" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">Columnar, partitioned</text>
+  </g>
+  
+  <!-- Online Store -->
+  <g filter="url(#shadowOffOn)">
+    <rect x="530" y="85" width="300" height="280" rx="16" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="530" y="85" width="300" height="50" rx="16" fill="#059669"/>
+    <rect x="530" y="123" width="300" height="12" fill="#059669"/>
+    <text x="680" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">⚡ Online Store</text>
+    
+    <text x="550" y="165" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#34d399">Purpose:</text>
+    <text x="550" y="185" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Real-time inference</text>
+    
+    <text x="550" y="215" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#34d399">Characteristics:</text>
+    <text x="550" y="235" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Latest values only</text>
+    <text x="550" y="252" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Key-value access</text>
+    <text x="550" y="269" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Low latency (andlt;10ms)</text>
+    <text x="550" y="286" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Point queries</text>
+    
+    <rect x="550" y="305" width="260" height="45" rx="8" fill="#064e3b"/>
+    <text x="680" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6ee7b7">Redis / DynamoDB / Bigtable</text>
+    <text x="680" y="345" text-anchor="middle" font-family="monospace" font-size="9" fill="#34d399">Key-value, in-memory</text>
+  </g>
+  
+  <!-- Sync Arrow -->
+  <path d="M375 220 L525 220" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowOffOn)"/>
+  <text x="450" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fbbf24">Materialize</text>
+  <text x="450" y="240" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">(latest values)</text>
+</svg>

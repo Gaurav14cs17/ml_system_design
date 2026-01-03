@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgRegComponents" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowRegComponents" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgRegComponents)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature Registry Metadata</text>
+  
+  <!-- Feature Definition -->
+  <g filter="url(#shadowRegComponents)">
+    <rect x="50" y="70" width="250" height="270" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="50" y="70" width="250" height="45" rx="12" fill="#7c3aed"/>
+    <rect x="50" y="103" width="250" height="12" fill="#7c3aed"/>
+    <text x="175" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📋 Feature Definition</text>
+    
+    <rect x="70" y="130" width="210" height="190" rx="6" fill="#2e1065"/>
+    <text x="80" y="155" font-family="monospace" font-size="9" fill="#c4b5fd">name: user_age_days</text>
+    <text x="80" y="175" font-family="monospace" font-size="9" fill="#c4b5fd">description: User age</text>
+    <text x="80" y="195" font-family="monospace" font-size="9" fill="#c4b5fd">dtype: INT64</text>
+    <text x="80" y="215" font-family="monospace" font-size="9" fill="#c4b5fd">entity: user</text>
+    <text x="80" y="235" font-family="monospace" font-size="9" fill="#c4b5fd">owner: ml-team@</text>
+    <text x="80" y="255" font-family="monospace" font-size="9" fill="#c4b5fd">tags: [profile, core]</text>
+    <text x="80" y="275" font-family="monospace" font-size="9" fill="#c4b5fd">created: 2024-01-01</text>
+    <text x="80" y="295" font-family="monospace" font-size="9" fill="#c4b5fd">version: 3</text>
+  </g>
+  
+  <!-- Lineage -->
+  <g filter="url(#shadowRegComponents)">
+    <rect x="325" y="70" width="250" height="270" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="325" y="70" width="250" height="45" rx="12" fill="#059669"/>
+    <rect x="325" y="103" width="250" height="12" fill="#059669"/>
+    <text x="450" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔗 Data Lineage</text>
+    
+    <rect x="345" y="130" width="210" height="190" rx="6" fill="#064e3b"/>
+    <text x="355" y="155" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Sources:</text>
+    <text x="355" y="175" font-family="monospace" font-size="9" fill="#34d399">→ users_table.created_at</text>
+    <text x="355" y="195" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Transformations:</text>
+    <text x="355" y="215" font-family="monospace" font-size="9" fill="#34d399">→ DATEDIFF(now, created)</text>
+    <text x="355" y="235" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Consumers:</text>
+    <text x="355" y="255" font-family="monospace" font-size="9" fill="#34d399">→ churn_model_v2</text>
+    <text x="355" y="275" font-family="monospace" font-size="9" fill="#34d399">→ ltv_prediction</text>
+    <text x="355" y="295" font-family="monospace" font-size="9" fill="#34d399">→ fraud_detector</text>
+  </g>
+  
+  <!-- Statistics -->
+  <g filter="url(#shadowRegComponents)">
+    <rect x="600" y="70" width="250" height="270" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="600" y="70" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="600" y="103" width="250" height="12" fill="#2563eb"/>
+    <text x="725" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📊 Statistics</text>
+    
+    <rect x="620" y="130" width="210" height="190" rx="6" fill="#172554"/>
+    <text x="630" y="155" font-family="monospace" font-size="9" fill="#93c5fd">count: 1,234,567</text>
+    <text x="630" y="175" font-family="monospace" font-size="9" fill="#93c5fd">null_rate: 0.02%</text>
+    <text x="630" y="195" font-family="monospace" font-size="9" fill="#93c5fd">mean: 2547.3</text>
+    <text x="630" y="215" font-family="monospace" font-size="9" fill="#93c5fd">std: 892.1</text>
+    <text x="630" y="235" font-family="monospace" font-size="9" fill="#93c5fd">min: 0</text>
+    <text x="630" y="255" font-family="monospace" font-size="9" fill="#93c5fd">max: 18250</text>
+    <text x="630" y="275" font-family="monospace" font-size="9" fill="#93c5fd">p50: 2340</text>
+    <text x="630" y="295" font-family="monospace" font-size="9" fill="#93c5fd">last_updated: 1h ago</text>
+  </g>
+</svg>

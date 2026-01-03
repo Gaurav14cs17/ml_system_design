@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgServingArch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowServingArch" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowServingArch" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgServingArch)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Serving Layer Architecture</text>
+  
+  <!-- Client Layer -->
+  <g filter="url(#shadowServingArch)">
+    <rect x="50" y="70" width="180" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="140" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">🖥️ Clients</text>
+    
+    <rect x="70" y="115" width="140" height="25" rx="5" fill="#2e1065"/>
+    <text x="140" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Python SDK</text>
+    
+    <rect x="70" y="145" width="140" height="25" rx="5" fill="#2e1065"/>
+    <text x="140" y="162" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">REST API</text>
+    
+    <rect x="70" y="175" width="140" height="25" rx="5" fill="#2e1065"/>
+    <text x="140" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">gRPC</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M235 135 L295 135" stroke="#10b981" stroke-width="2" marker-end="url(#arrowServingArch)"/>
+  
+  <!-- API Gateway -->
+  <g filter="url(#shadowServingArch)">
+    <rect x="300" y="70" width="180" height="130" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="390" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#34d399">🚀 Serving API</text>
+    
+    <rect x="320" y="115" width="140" height="25" rx="5" fill="#064e3b"/>
+    <text x="390" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Load Balancer</text>
+    
+    <rect x="320" y="145" width="140" height="25" rx="5" fill="#064e3b"/>
+    <text x="390" y="162" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Request Router</text>
+    
+    <rect x="320" y="175" width="140" height="25" rx="5" fill="#064e3b"/>
+    <text x="390" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Auth/Rate Limit</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M485 135 L545 135" stroke="#10b981" stroke-width="2" marker-end="url(#arrowServingArch)"/>
+  
+  <!-- Cache Layer -->
+  <g filter="url(#shadowServingArch)">
+    <rect x="550" y="70" width="150" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="625" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">💾 Cache</text>
+    
+    <rect x="570" y="115" width="110" height="25" rx="5" fill="#451a03"/>
+    <text x="625" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">L1: Local</text>
+    
+    <rect x="570" y="145" width="110" height="25" rx="5" fill="#451a03"/>
+    <text x="625" y="162" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">L2: Redis</text>
+    
+    <rect x="570" y="175" width="110" height="25" rx="5" fill="#451a03"/>
+    <text x="625" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">TTL Manager</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M705 135 L765 135" stroke="#10b981" stroke-width="2" marker-end="url(#arrowServingArch)"/>
+  
+  <!-- Online Store -->
+  <g filter="url(#shadowServingArch)">
+    <rect x="770" y="70" width="100" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="820" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">📊</text>
+    <text x="820" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#60a5fa">Online</text>
+    <text x="820" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#60a5fa">Store</text>
+    
+    <text x="820" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">andlt;10ms</text>
+  </g>
+  
+  <!-- Metrics bar -->
+  <g filter="url(#shadowServingArch)">
+    <rect x="100" y="260" width="700" height="100" rx="12" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="450" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">📊 Key Metrics</text>
+    
+    <rect x="130" y="305" width="150" height="40" rx="6" fill="#334155"/>
+    <text x="205" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">Latency: p99 andlt;50ms</text>
+    <text x="205" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Target SLA</text>
+    
+    <rect x="310" y="305" width="150" height="40" rx="6" fill="#334155"/>
+    <text x="385" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#3b82f6">Throughput: 100K/s</text>
+    <text x="385" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Per instance</text>
+    
+    <rect x="490" y="305" width="150" height="40" rx="6" fill="#334155"/>
+    <text x="565" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f59e0b">Cache Hit: andgt;95%</text>
+    <text x="565" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Efficiency target</text>
+    
+    <rect x="670" y="305" width="100" height="40" rx="6" fill="#334155"/>
+    <text x="720" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#ec4899">Uptime: 99.9%</text>
+    <text x="720" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">SLA</text>
+  </g>
+</svg>

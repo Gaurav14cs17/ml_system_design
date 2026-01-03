@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgDatabricks" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowDatabricks" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgDatabricks)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Databricks Feature Store</text>
+  
+  <!-- Unity Catalog -->
+  <g filter="url(#shadowDatabricks)">
+    <rect x="100" y="70" width="700" height="280" rx="16" fill="#1e293b" stroke="#ef4444" stroke-width="3"/>
+    <rect x="100" y="70" width="700" height="50" rx="16" fill="#dc2626"/>
+    <rect x="100" y="108" width="700" height="12" fill="#dc2626"/>
+    <text x="450" y="103" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">Unity Catalog + Feature Engineering</text>
+    
+    <!-- Row 1 -->
+    <rect x="130" y="140" width="200" height="80" rx="10" fill="#450a0a" stroke="#fca5a5"/>
+    <text x="230" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fca5a5">Delta Tables</text>
+    <text x="230" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Feature storage</text>
+    
+    <rect x="350" y="140" width="200" height="80" rx="10" fill="#450a0a" stroke="#fca5a5"/>
+    <text x="450" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fca5a5">MLflow</text>
+    <text x="450" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Model registry</text>
+    
+    <rect x="570" y="140" width="200" height="80" rx="10" fill="#450a0a" stroke="#fca5a5"/>
+    <text x="670" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fca5a5">Spark/SQL</text>
+    <text x="670" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Transformations</text>
+    
+    <!-- Row 2 -->
+    <rect x="130" y="240" width="310" height="80" rx="10" fill="#450a0a" stroke="#fca5a5"/>
+    <text x="285" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fca5a5">Feature Serving (Online Tables)</text>
+    <text x="285" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Low-latency real-time serving</text>
+    
+    <rect x="460" y="240" width="310" height="80" rx="10" fill="#450a0a" stroke="#fca5a5"/>
+    <text x="615" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fca5a5">Auto-capture &amp; Lineage</text>
+    <text x="615" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Governance &amp; discovery</text>
+  </g>
+  
+  <!-- Benefits -->
+  <rect x="150" y="365" width="600" height="25" rx="8" fill="#334155"/>
+  <text x="450" y="382" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#10b981">✓ Unified with Lakehouse  ✓ Delta integration  ✓ MLflow native  ✓ Spark-first</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgRoadmap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowRoadmap" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgRoadmap)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Implementation Roadmap</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="180" x2="800" y2="180" stroke="#64748b" stroke-width="4"/>
+  
+  <!-- Phase 1 -->
+  <circle cx="175" cy="180" r="15" fill="#10b981" filter="url(#shadowRoadmap)"/>
+  <text x="175" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">1</text>
+  <g filter="url(#shadowRoadmap)">
+    <rect x="100" y="210" width="150" height="140" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="175" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#34d399">Foundation</text>
+    <text x="175" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Week 1-4</text>
+    <text x="115" y="280" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Select tool</text>
+    <text x="115" y="297" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Setup infra</text>
+    <text x="115" y="314" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• First features</text>
+    <text x="115" y="331" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Basic serving</text>
+  </g>
+  
+  <!-- Phase 2 -->
+  <circle cx="375" cy="180" r="15" fill="#3b82f6" filter="url(#shadowRoadmap)"/>
+  <text x="375" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">2</text>
+  <g filter="url(#shadowRoadmap)">
+    <rect x="300" y="210" width="150" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="375" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Expansion</text>
+    <text x="375" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Week 5-8</text>
+    <text x="315" y="280" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• More features</text>
+    <text x="315" y="297" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Pipelines</text>
+    <text x="315" y="314" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• CI/CD</text>
+    <text x="315" y="331" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Monitoring</text>
+  </g>
+  
+  <!-- Phase 3 -->
+  <circle cx="575" cy="180" r="15" fill="#8b5cf6" filter="url(#shadowRoadmap)"/>
+  <text x="575" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">3</text>
+  <g filter="url(#shadowRoadmap)">
+    <rect x="500" y="210" width="150" height="140" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="575" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#a78bfa">Scale</text>
+    <text x="575" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Week 9-12</text>
+    <text x="515" y="280" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Governance</text>
+    <text x="515" y="297" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Self-service</text>
+    <text x="515" y="314" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Real-time</text>
+    <text x="515" y="331" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Optimization</text>
+  </g>
+  
+  <!-- Phase 4 -->
+  <circle cx="775" cy="180" r="15" fill="#f59e0b" filter="url(#shadowRoadmap)"/>
+  <text x="775" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">4</text>
+  <g filter="url(#shadowRoadmap)">
+    <rect x="700" y="210" width="150" height="140" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="775" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Mature</text>
+    <text x="775" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Ongoing</text>
+    <text x="715" y="280" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Multi-team</text>
+    <text x="715" y="297" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• ML Ops</text>
+    <text x="715" y="314" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Advanced</text>
+    <text x="715" y="331" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Automation</text>
+  </g>
+</svg>

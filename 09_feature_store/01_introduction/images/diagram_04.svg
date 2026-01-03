@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgBefore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowBefore" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowBefore" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgBefore)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Before Feature Store: Chaos</text>
+  
+  <!-- Data Sources -->
+  <g filter="url(#shadowBefore)">
+    <rect x="50" y="100" width="120" height="50" rx="8" fill="#3b82f6"/>
+    <text x="110" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">PostgreSQL</text>
+  </g>
+  <g filter="url(#shadowBefore)">
+    <rect x="50" y="170" width="120" height="50" rx="8" fill="#3b82f6"/>
+    <text x="110" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">S3 Logs</text>
+  </g>
+  <g filter="url(#shadowBefore)">
+    <rect x="50" y="240" width="120" height="50" rx="8" fill="#3b82f6"/>
+    <text x="110" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">Kafka</text>
+  </g>
+  
+  <!-- Spaghetti Lines -->
+  <path d="M175 125 C250 125, 280 90, 350 80" stroke="#ef4444" stroke-width="2"/>
+  <path d="M175 195 C250 195, 280 150, 350 100" stroke="#ef4444" stroke-width="2"/>
+  <path d="M175 265 C230 265, 250 200, 350 180" stroke="#ef4444" stroke-width="2"/>
+  
+  <path d="M175 125 C280 140, 300 170, 350 180" stroke="#ef4444" stroke-width="2"/>
+  <path d="M175 195 C280 210, 300 260, 350 270" stroke="#ef4444" stroke-width="2"/>
+  <path d="M175 265 C280 280, 300 290, 350 290" stroke="#ef4444" stroke-width="2"/>
+  
+  <!-- Team A -->
+  <g filter="url(#shadowBefore)">
+    <rect x="350" y="65" width="150" height="140" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="425" y="95" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f87171">Team A</text>
+    <rect x="365" y="105" width="120" height="25" rx="4" fill="#450a0a"/>
+    <text x="425" y="122" text-anchor="middle" font-family="monospace" font-size="8" fill="#fca5a5">compute_features()</text>
+    <rect x="365" y="135" width="120" height="25" rx="4" fill="#450a0a"/>
+    <text x="425" y="152" text-anchor="middle" font-family="monospace" font-size="8" fill="#fca5a5">transform_v1()</text>
+    <rect x="365" y="165" width="120" height="25" rx="4" fill="#450a0a"/>
+    <text x="425" y="182" text-anchor="middle" font-family="monospace" font-size="8" fill="#fca5a5">agg_metrics()</text>
+  </g>
+  
+  <!-- Team B -->
+  <g filter="url(#shadowBefore)">
+    <rect x="350" y="225" width="150" height="100" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="425" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Team B</text>
+    <rect x="365" y="270" width="120" height="25" rx="4" fill="#451a03"/>
+    <text x="425" y="287" text-anchor="middle" font-family="monospace" font-size="8" fill="#fcd34d">different_logic()</text>
+    <rect x="365" y="300" width="120" height="15" rx="4" fill="#451a03"/>
+    <text x="425" y="311" text-anchor="middle" font-family="monospace" font-size="8" fill="#fcd34d">same features...</text>
+  </g>
+  
+  <!-- More spaghetti to models -->
+  <path d="M505 135 C550 135, 580 120, 620 120" stroke="#ef4444" stroke-width="2"/>
+  <path d="M505 275 C550 275, 580 250, 620 250" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M505 135 C570 155, 580 240, 620 250" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Models -->
+  <g filter="url(#shadowBefore)">
+    <rect x="620" y="90" width="130" height="60" rx="10" fill="#8b5cf6"/>
+    <text x="685" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">Model A</text>
+  </g>
+  <g filter="url(#shadowBefore)">
+    <rect x="620" y="220" width="130" height="60" rx="10" fill="#8b5cf6"/>
+    <text x="685" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">Model B</text>
+  </g>
+  
+  <!-- Problems callout -->
+  <rect x="760" y="100" width="130" height="180" rx="8" fill="#450a0a" filter="url(#shadowBefore)"/>
+  <text x="825" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f87171">Problems:</text>
+  <text x="775" y="150" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">• Duplicated code</text>
+  <text x="775" y="170" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">• Inconsistent logic</text>
+  <text x="775" y="190" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">• No visibility</text>
+  <text x="775" y="210" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">• Hard to maintain</text>
+  <text x="775" y="230" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">• Slow iteration</text>
+  <text x="775" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">• Data leakage risk</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bgGrad5)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Point-in-Time Joins</text>
+  <text x="450" y="60" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="14">Preventing Data Leakage in Training Data</text>
+  
+  <!-- Timeline -->
+  <line x1="80" y1="150" x2="820" y2="150" stroke="#30363d" stroke-width="3"/>
+  <text x="850" y="155" fill="#8b949e" font-family="Arial, sans-serif" font-size="12">Time →</text>
+  
+  <!-- Time markers -->
+  <line x1="150" y1="140" x2="150" y2="160" stroke="#30363d" stroke-width="2"/>
+  <text x="150" y="180" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Jan 1</text>
+  
+  <line x1="300" y1="140" x2="300" y2="160" stroke="#30363d" stroke-width="2"/>
+  <text x="300" y="180" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Jan 15</text>
+  
+  <line x1="450" y1="140" x2="450" y2="160" stroke="#30363d" stroke-width="2"/>
+  <text x="450" y="180" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Feb 1</text>
+  
+  <line x1="600" y1="140" x2="600" y2="160" stroke="#30363d" stroke-width="2"/>
+  <text x="600" y="180" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Feb 15</text>
+  
+  <line x1="750" y1="140" x2="750" y2="160" stroke="#30363d" stroke-width="2"/>
+  <text x="750" y="180" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Mar 1</text>
+  
+  <!-- Feature Values -->
+  <text x="80" y="110" fill="#58a6ff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Feature Values:</text>
+  
+  <circle cx="150" cy="105" r="20" fill="#238636"/>
+  <text x="150" y="110" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">10</text>
+  
+  <circle cx="450" cy="105" r="20" fill="#238636"/>
+  <text x="450" y="110" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">20</text>
+  
+  <circle cx="750" cy="105" r="20" fill="#238636"/>
+  <text x="750" y="110" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">30</text>
+  
+  <!-- Events -->
+  <text x="80" y="230" fill="#f78166" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Events to Predict:</text>
+  
+  <rect x="275" y="205" width="50" height="30" rx="5" fill="#f78166"/>
+  <text x="300" y="225" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">A</text>
+  <line x1="300" y1="195" x2="300" y2="150" stroke="#f78166" stroke-width="2" stroke-dasharray="4"/>
+  
+  <rect x="575" y="205" width="50" height="30" rx="5" fill="#f78166"/>
+  <text x="600" y="225" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">B</text>
+  <line x1="600" y1="195" x2="600" y2="150" stroke="#f78166" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Wrong approach -->
+  <rect x="50" y="270" width="390" height="180" rx="10" fill="#21262d" stroke="#f85149" stroke-width="2"/>
+  <text x="245" y="300" text-anchor="middle" fill="#f85149" font-family="Arial, sans-serif" font-size="16" font-weight="bold">❌ WRONG: Using Latest Values</text>
+  
+  <text x="80" y="330" fill="#8b949e" font-family="Arial, sans-serif" font-size="12">Event A (Jan 15) → Feature value: 30</text>
+  <text x="80" y="355" fill="#8b949e" font-family="Arial, sans-serif" font-size="12">Event B (Feb 15) → Feature value: 30</text>
+  
+  <rect x="80" y="380" width="330" height="50" rx="5" fill="#f8514933"/>
+  <text x="245" y="400" text-anchor="middle" fill="#f85149" font-family="Arial, sans-serif" font-size="11">⚠️ DATA LEAKAGE!</text>
+  <text x="245" y="420" text-anchor="middle" fill="#f85149" font-family="Arial, sans-serif" font-size="10">Using future information in training</text>
+  
+  <!-- Correct approach -->
+  <rect x="460" y="270" width="390" height="180" rx="10" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+  <text x="655" y="300" text-anchor="middle" fill="#3fb950" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✅ CORRECT: Point-in-Time Join</text>
+  
+  <text x="490" y="330" fill="#8b949e" font-family="Arial, sans-serif" font-size="12">Event A (Jan 15) → Feature value: 10</text>
+  <text x="540" y="350" fill="#58a6ff" font-family="Arial, sans-serif" font-size="10">(from Jan 1)</text>
+  <text x="490" y="380" fill="#8b949e" font-family="Arial, sans-serif" font-size="12">Event B (Feb 15) → Feature value: 20</text>
+  <text x="540" y="400" fill="#58a6ff" font-family="Arial, sans-serif" font-size="10">(from Feb 1)</text>
+  
+  <rect x="490" y="410" width="330" height="30" rx="5" fill="#3fb95033"/>
+  <text x="655" y="430" text-anchor="middle" fill="#3fb950" font-family="Arial, sans-serif" font-size="11">✓ Only uses past information</text>
+  
+  <!-- Legend -->
+  <rect x="320" y="465" width="260" height="25" rx="5" fill="#30363d"/>
+  <circle cx="350" cy="477" r="8" fill="#238636"/>
+  <text x="365" y="482" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">Feature update</text>
+  <rect x="450" y="470" width="20" height="15" rx="3" fill="#f78166"/>
+  <text x="480" y="482" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">Event to predict</text>
+</svg>
+
