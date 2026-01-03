@@ -36,7 +36,6 @@ This repository is your **comprehensive guide** to designing, building, and depl
 <td width="50%">
 
 ### ✨ Key Features
-- 📐 **900+ architectural diagrams**
 - 🔬 **Real-world case studies**
 - 💡 **Best practices & anti-patterns**
 - 🛠️ **Production-ready patterns**
