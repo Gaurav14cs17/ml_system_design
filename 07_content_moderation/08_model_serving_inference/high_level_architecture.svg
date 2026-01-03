@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #0ea5e9; stroke-width: 2; rx: 10; ry: 10; }
+      .title { font: 600 15px "Inter", Arial, sans-serif; fill: #0f172a; }
+      .label { font: 13px "Inter", Arial, sans-serif; fill: #0f172a; }
+      .arrow { stroke: #0ea5e9; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#0ea5e9" />
+    </marker>
+  </defs>
+
+  <!-- Entry -->
+  <rect class="box" x="460" y="20" width="280" height="70" />
+  <text class="title" x="600" y="55" text-anchor="middle">Load Balancer / Gateway</text>
+  <text class="label" x="600" y="75" text-anchor="middle">Auth · Rate Limit · Routing</text>
+
+  <!-- API tier -->
+  <rect class="box" x="220" y="120" width="180" height="80" />
+  <text class="title" x="310" y="155" text-anchor="middle">API Server</text>
+  <text class="label" x="310" y="175" text-anchor="middle">FastAPI (Pod 1)</text>
+
+  <rect class="box" x="510" y="120" width="180" height="80" />
+  <text class="title" x="600" y="155" text-anchor="middle">API Server</text>
+  <text class="label" x="600" y="175" text-anchor="middle">FastAPI (Pod 2)</text>
+
+  <rect class="box" x="800" y="120" width="180" height="80" />
+  <text class="title" x="890" y="155" text-anchor="middle">API Server</text>
+  <text class="label" x="890" y="175" text-anchor="middle">FastAPI (Pod N)</text>
+
+  <!-- Shared deps -->
+  <rect class="box" x="170" y="240" width="170" height="80" />
+  <text class="title" x="255" y="275" text-anchor="middle">Feature Store</text>
+  <text class="label" x="255" y="295" text-anchor="middle">Redis</text>
+
+  <rect class="box" x="410" y="240" width="170" height="80" />
+  <text class="title" x="495" y="275" text-anchor="middle">Cache</text>
+  <text class="label" x="495" y="295" text-anchor="middle">Hot decisions</text>
+
+  <rect class="box" x="650" y="240" width="170" height="80" />
+  <text class="title" x="735" y="275" text-anchor="middle">Model Registry</text>
+  <text class="label" x="735" y="295" text-anchor="middle">MLflow / S3</text>
+
+  <!-- Inference pods -->
+  <rect class="box" x="890" y="240" width="200" height="120" />
+  <text class="title" x="990" y="280" text-anchor="middle">Inference Pods</text>
+  <text class="label" x="990" y="300" text-anchor="middle">TorchServe / Triton</text>
+  <text class="label" x="990" y="320" text-anchor="middle">GPU autoscaling</text>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="600" y1="90" x2="310" y2="120" />
+  <line class="arrow" x1="600" y1="90" x2="600" y2="120" />
+  <line class="arrow" x1="600" y1="90" x2="890" y2="120" />
+
+  <line class="arrow" x1="310" y1="200" x2="255" y2="240" />
+  <line class="arrow" x1="310" y1="200" x2="495" y2="240" />
+  <line class="arrow" x1="310" y1="200" x2="735" y2="240" />
+  <line class="arrow" x1="310" y1="200" x2="990" y2="240" />
+
+  <line class="arrow" x1="600" y1="200" x2="255" y2="240" />
+  <line class="arrow" x1="600" y1="200" x2="495" y2="240" />
+  <line class="arrow" x1="600" y1="200" x2="735" y2="240" />
+  <line class="arrow" x1="600" y1="200" x2="990" y2="240" />
+
+  <line class="arrow" x1="890" y1="200" x2="255" y2="240" />
+  <line class="arrow" x1="890" y1="200" x2="495" y2="240" />
+  <line class="arrow" x1="890" y1="200" x2="735" y2="240" />
+  <line class="arrow" x1="890" y1="200" x2="990" y2="240" />
+
+  <!-- Legend -->
+  <text class="label" x="990" y="360" text-anchor="middle">Flow: request → features/cache → inference → response</text>
+</svg>
+
+
+
+
+
+

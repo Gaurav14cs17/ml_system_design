@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320">
+  <defs>
+    <linearGradient id="timelineBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="era1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="era2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#c2410c"/>
+    </linearGradient>
+    <linearGradient id="era3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#15803d"/>
+    </linearGradient>
+    <linearGradient id="era4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="320" fill="url(#timelineBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Evolution of Content Moderation</text>
+  
+  <!-- Timeline line -->
+  <line x1="80" y1="140" x2="820" y2="140" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Era markers -->
+  <circle cx="150" cy="140" r="12" fill="url(#era1)" filter="url(#glow)"/>
+  <circle cx="350" cy="140" r="12" fill="url(#era2)" filter="url(#glow)"/>
+  <circle cx="550" cy="140" r="12" fill="url(#era3)" filter="url(#glow)"/>
+  <circle cx="750" cy="140" r="12" fill="url(#era4)" filter="url(#glow)"/>
+  
+  <!-- Year labels -->
+  <text x="150" y="115" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1990s</text>
+  <text x="350" y="115" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2000s</text>
+  <text x="550" y="115" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2010s</text>
+  <text x="750" y="115" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2020s</text>
+  
+  <!-- Era 1: Keyword Filters -->
+  <g transform="translate(70, 170)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📝 Rule-Based</text>
+    <line x1="20" y1="35" x2="140" y2="35" stroke="#374151" stroke-width="1"/>
+    <text x="80" y="55" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="10">Keyword Blacklists</text>
+    <text x="80" y="72" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="10">Regex Patterns</text>
+    <text x="80" y="89" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Simple but brittle</text>
+    <text x="80" y="110" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="9">High false positives</text>
+  </g>
+  
+  <!-- Era 2: Hash Matching -->
+  <g transform="translate(270, 170)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔐 Hash Matching</text>
+    <line x1="20" y1="35" x2="140" y2="35" stroke="#374151" stroke-width="1"/>
+    <text x="80" y="55" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">PhotoDNA</text>
+    <text x="80" y="72" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">Video Fingerprinting</text>
+    <text x="80" y="89" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Known content match</text>
+    <text x="80" y="110" text-anchor="middle" fill="#f97316" font-family="Arial, sans-serif" font-size="9">Can't detect new</text>
+  </g>
+  
+  <!-- Era 3: Deep Learning -->
+  <g transform="translate(470, 170)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧠 Deep Learning</text>
+    <line x1="20" y1="35" x2="140" y2="35" stroke="#374151" stroke-width="1"/>
+    <text x="80" y="55" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">CNN / BERT</text>
+    <text x="80" y="72" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">Transfer Learning</text>
+    <text x="80" y="89" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Context-aware</text>
+    <text x="80" y="110" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">High accuracy</text>
+  </g>
+  
+  <!-- Era 4: Multimodal LLMs -->
+  <g transform="translate(670, 170)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🚀 LLM Era</text>
+    <line x1="20" y1="35" x2="140" y2="35" stroke="#374151" stroke-width="1"/>
+    <text x="80" y="55" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">GPT-4V / Claude</text>
+    <text x="80" y="72" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">Multimodal Reasoning</text>
+    <text x="80" y="89" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Policy understanding</text>
+    <text x="80" y="110" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="9">Zero-shot capable</text>
+  </g>
+  
+  <!-- Progress arrows -->
+  <path d="M 230 240 L 270 240" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 430 240 L 470 240" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 630 240 L 670 240" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

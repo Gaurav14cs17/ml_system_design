@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="featureBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="url(#featureBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Feature Engineering Categories</text>
+  <text x="450" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Multi-dimensional signals for content moderation</text>
+  
+  <!-- Content-Based Features -->
+  <g transform="translate(30, 80)">
+    <rect width="200" height="280" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#glow)"/>
+    <rect width="200" height="40" rx="12 12 0 0" fill="#1e3a8a"/>
+    <text x="100" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📝 Content-Based</text>
+    
+    <g transform="translate(15, 55)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Text Patterns</text>
+      <text x="85" y="32" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">TF-IDF, embeddings, n-grams</text>
+    </g>
+    
+    <g transform="translate(15, 105)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Image Signals</text>
+      <text x="85" y="32" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">CNN features, CLIP embeddings</text>
+    </g>
+    
+    <g transform="translate(15, 155)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Video Frames</text>
+      <text x="85" y="32" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Key frames, motion vectors</text>
+    </g>
+    
+    <g transform="translate(15, 205)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Audio Features</text>
+      <text x="85" y="32" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Spectrograms, transcripts</text>
+    </g>
+  </g>
+  
+  <!-- User-Based Features -->
+  <g transform="translate(250, 80)">
+    <rect width="200" height="280" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#glow)"/>
+    <rect width="200" height="40" rx="12 12 0 0" fill="#4c1d95"/>
+    <text x="100" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">👤 User-Based</text>
+    
+    <g transform="translate(15, 55)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Account Age</text>
+      <text x="85" y="32" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Creation date, tenure</text>
+    </g>
+    
+    <g transform="translate(15, 105)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Post History</text>
+      <text x="85" y="32" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Previous content patterns</text>
+    </g>
+    
+    <g transform="translate(15, 155)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Reports Received</text>
+      <text x="85" y="32" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Violation history</text>
+    </g>
+    
+    <g transform="translate(15, 205)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Followers</text>
+      <text x="85" y="32" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Network size, engagement</text>
+    </g>
+  </g>
+  
+  <!-- Contextual Features -->
+  <g transform="translate(470, 80)">
+    <rect width="200" height="280" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2" filter="url(#glow)"/>
+    <rect width="200" height="40" rx="12 12 0 0" fill="#14532d"/>
+    <text x="100" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🌐 Contextual</text>
+    
+    <g transform="translate(15, 55)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Time of Day</text>
+      <text x="85" y="32" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Temporal patterns</text>
+    </g>
+    
+    <g transform="translate(15, 105)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Platform</text>
+      <text x="85" y="32" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">App, region, device</text>
+    </g>
+    
+    <g transform="translate(15, 155)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Thread Context</text>
+      <text x="85" y="32" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Conversation history</text>
+    </g>
+    
+    <g transform="translate(15, 205)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Reply Chain</text>
+      <text x="85" y="32" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Interaction sequence</text>
+    </g>
+  </g>
+  
+  <!-- Graph-Based Features -->
+  <g transform="translate(690, 80)">
+    <rect width="200" height="280" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2" filter="url(#glow)"/>
+    <rect width="200" height="40" rx="12 12 0 0" fill="#7c2d12"/>
+    <text x="100" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🔗 Graph-Based</text>
+    
+    <g transform="translate(15, 55)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Friend Network</text>
+      <text x="85" y="32" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Social connections</text>
+    </g>
+    
+    <g transform="translate(15, 105)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Interaction Patterns</text>
+      <text x="85" y="32" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Likes, shares, comments</text>
+    </g>
+    
+    <g transform="translate(15, 155)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Community Structure</text>
+      <text x="85" y="32" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Group memberships</text>
+    </g>
+    
+    <g transform="translate(15, 205)">
+      <rect width="170" height="40" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+      <text x="85" y="18" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Spread Patterns</text>
+      <text x="85" y="32" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Viral detection</text>
+    </g>
+  </g>
+</svg>

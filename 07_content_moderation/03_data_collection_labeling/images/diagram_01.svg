@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="labelBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#labelBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="24" font-weight="bold">DATA COLLECTION &amp; LABELING</text>
+  <text x="400" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Building High-Quality Moderation Datasets</text>
+  
+  <!-- Data Pipeline -->
+  <text x="400" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Data Collection Pipeline</text>
+  
+  <g transform="translate(50, 115)">
+    <!-- Sources -->
+    <rect width="150" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="75" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📥 Sources</text>
+    <text x="15" y="45" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">• User reports</text>
+    <text x="15" y="60" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">• Platform logs</text>
+    <text x="15" y="75" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">• Public datasets</text>
+    <text x="15" y="90" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">• Synthetic data</text>
+    
+    <path d="M 210 165 L 250 165" stroke="#60a5fa" stroke-width="2"/>
+    <polygon points="250,160 265,165 250,170" fill="#60a5fa"/>
+    
+    <!-- Sampling -->
+    <rect x="270" y="0" width="130" height="100" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="335" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🎯 Sampling</text>
+    <text x="285" y="45" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Stratified</text>
+    <text x="285" y="60" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Active learning</text>
+    <text x="285" y="75" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Edge case focus</text>
+    <text x="285" y="90" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Class balance</text>
+    
+    <path d="M 410 165 L 450 165" stroke="#a78bfa" stroke-width="2"/>
+    <polygon points="450,160 465,165 450,170" fill="#a78bfa"/>
+    
+    <!-- Labeling -->
+    <rect x="470" y="0" width="130" height="100" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="535" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🏷️ Labeling</text>
+    <text x="485" y="45" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Multi-annotator</text>
+    <text x="485" y="60" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Guidelines</text>
+    <text x="485" y="75" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Quality checks</text>
+    <text x="485" y="90" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Adjudication</text>
+    
+    <path d="M 610 165 L 650 165" stroke="#34d399" stroke-width="2"/>
+    <polygon points="650,160 665,165 650,170" fill="#34d399"/>
+    
+    <!-- Dataset -->
+    <rect x="670" y="0" width="100" height="100" rx="12" fill="#064e3b" stroke="#22c55e" stroke-width="2"/>
+    <text x="720" y="35" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="24">📊</text>
+    <text x="720" y="60" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Training</text>
+    <text x="720" y="75" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Dataset</text>
+  </g>
+  
+  <!-- Label Schema -->
+  <text x="400" y="250" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Multi-Label Schema Example</text>
+  
+  <g transform="translate(100, 265)">
+    <rect width="600" height="100" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Content Example -->
+    <rect x="20" y="15" width="250" height="35" rx="6" fill="#1f2937"/>
+    <text x="145" y="38" text-anchor="middle" fill="#f472b6" font-family="Georgia, serif" font-size="10" font-style="italic">"[Example offensive content...]"</text>
+    
+    <!-- Labels -->
+    <g transform="translate(290, 15)">
+      <rect width="80" height="20" rx="4" fill="#ef4444"/>
+      <text x="40" y="14" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8" font-weight="bold">hate_speech</text>
+    </g>
+    
+    <g transform="translate(380, 15)">
+      <rect width="70" height="20" rx="4" fill="#f97316"/>
+      <text x="35" y="14" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8" font-weight="bold">violence</text>
+    </g>
+    
+    <g transform="translate(460, 15)">
+      <rect width="65" height="20" rx="4" fill="#1f2937" stroke="#6b7280" stroke-width="1"/>
+      <text x="32" y="14" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="8">adult ✗</text>
+    </g>
+    
+    <g transform="translate(535, 15)">
+      <rect width="50" height="20" rx="4" fill="#1f2937" stroke="#6b7280" stroke-width="1"/>
+      <text x="25" y="14" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="8">spam ✗</text>
+    </g>
+    
+    <!-- Severity and Confidence -->
+    <text x="30" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Severity:</text>
+    <rect x="90" y="58" width="100" height="14" rx="3" fill="#1f2937"/>
+    <rect x="90" y="58" width="75" height="14" rx="3" fill="#ef4444"/>
+    <text x="200" y="70" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">High (0.85)</text>
+    
+    <text x="300" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Annotator Agreement:</text>
+    <text x="450" y="70" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10" font-weight="bold">4/5 (80%)</text>
+    
+    <text x="30" y="90" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Target: race | Context: social_media | Region: US</text>
+  </g>
+  
+  <!-- Quality Metrics -->
+  <text x="400" y="400" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Label Quality Metrics</text>
+  
+  <g transform="translate(80, 415)">
+    <rect width="200" height="60" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Inter-Annotator Agreement</text>
+    <text x="100" y="45" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10">Cohen's κ andgt; 0.7</text>
+    <text x="100" y="58" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Measures consistency</text>
+  </g>
+  
+  <g transform="translate(300, 415)">
+    <rect width="200" height="60" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Coverage</text>
+    <text x="100" y="45" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">All categories represented</text>
+    <text x="100" y="58" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Balanced distribution</text>
+  </g>
+  
+  <g transform="translate(520, 415)">
+    <rect width="200" height="60" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Gold Standard</text>
+    <text x="100" y="45" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">Expert-reviewed subset</text>
+    <text x="100" y="58" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">For evaluation</text>
+  </g>
+</svg>

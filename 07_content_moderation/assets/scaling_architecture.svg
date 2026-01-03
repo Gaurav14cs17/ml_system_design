@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="scaleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+    <linearGradient id="k8sGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#326ce5"/>
+      <stop offset="100%" style="stop-color:#4a90f5"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="550" fill="url(#scaleBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">🚀 Scalable Infrastructure Architecture</text>
+  
+  <!-- Load Balancer -->
+  <g transform="translate(350, 60)">
+    <rect width="200" height="50" rx="10" fill="#0d9488" stroke="#14b8a6" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚖️ Load Balancer (L7)</text>
+  </g>
+  
+  <!-- Arrows down -->
+  <path d="M 450 115 L 450 145" stroke="#14b8a6" stroke-width="2" marker-end="url(#scaleArrow)"/>
+  <defs>
+    <marker id="scaleArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#14b8a6"/>
+    </marker>
+  </defs>
+  
+  <!-- API Servers -->
+  <g transform="translate(100, 150)">
+    <rect width="700" height="70" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="350" y="20" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">API Layer (Auto-scaling: 10-100 pods)</text>
+    
+    <g transform="translate(30, 30)">
+      <rect width="100" height="30" rx="6" fill="#1d4ed8"/>
+      <text x="50" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">API Pod 1</text>
+    </g>
+    
+    <g transform="translate(150, 30)">
+      <rect width="100" height="30" rx="6" fill="#1d4ed8"/>
+      <text x="50" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">API Pod 2</text>
+    </g>
+    
+    <g transform="translate(270, 30)">
+      <rect width="100" height="30" rx="6" fill="#1d4ed8"/>
+      <text x="50" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">API Pod 3</text>
+    </g>
+    
+    <text x="420" y="50" fill="#60a5fa" font-family="Arial, sans-serif" font-size="20">...</text>
+    
+    <g transform="translate(480, 30)">
+      <rect width="100" height="30" rx="6" fill="#1d4ed8"/>
+      <text x="50" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">API Pod N</text>
+    </g>
+    
+    <g transform="translate(600, 30)">
+      <rect width="80" height="30" rx="6" fill="url(#k8sGrad)"/>
+      <text x="40" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">HPA</text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 225 L 450 255" stroke="#3b82f6" stroke-width="2" marker-end="url(#scaleArrow2)"/>
+  <defs>
+    <marker id="scaleArrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  
+  <!-- Message Queue -->
+  <g transform="translate(350, 260)">
+    <rect width="200" height="50" rx="10" fill="#7c3aed" stroke="#a78bfa" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📨 Kafka Cluster</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 315 L 450 345" stroke="#a78bfa" stroke-width="2" marker-end="url(#scaleArrow3)"/>
+  <defs>
+    <marker id="scaleArrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+  </defs>
+  
+  <!-- GPU Inference Cluster -->
+  <g transform="translate(100, 350)">
+    <rect width="700" height="80" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="350" y="20" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">GPU Inference Cluster (NVIDIA A100)</text>
+    
+    <g transform="translate(30, 35)">
+      <rect width="90" height="35" rx="6" fill="#78350f"/>
+      <text x="45" y="15" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">GPU Pod 1</text>
+      <text x="45" y="28" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="8">TorchServe</text>
+    </g>
+    
+    <g transform="translate(140, 35)">
+      <rect width="90" height="35" rx="6" fill="#78350f"/>
+      <text x="45" y="15" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">GPU Pod 2</text>
+      <text x="45" y="28" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="8">TorchServe</text>
+    </g>
+    
+    <g transform="translate(250, 35)">
+      <rect width="90" height="35" rx="6" fill="#78350f"/>
+      <text x="45" y="15" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">GPU Pod 3</text>
+      <text x="45" y="28" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="8">Triton</text>
+    </g>
+    
+    <text x="390" y="58" fill="#fbbf24" font-family="Arial, sans-serif" font-size="18">...</text>
+    
+    <g transform="translate(440, 35)">
+      <rect width="90" height="35" rx="6" fill="#78350f"/>
+      <text x="45" y="15" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">GPU Pod N</text>
+      <text x="45" y="28" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="8">ONNX RT</text>
+    </g>
+    
+    <g transform="translate(550, 35)">
+      <rect width="130" height="35" rx="6" fill="#166534"/>
+      <text x="65" y="15" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Dynamic Batching</text>
+      <text x="65" y="28" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="8">Max batch: 64</text>
+    </g>
+  </g>
+  
+  <!-- Cache and Database -->
+  <g transform="translate(100, 450)">
+    <g>
+      <rect width="220" height="60" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔴 Redis Cluster</text>
+      <text x="110" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Cache + Feature Store</text>
+    </g>
+    
+    <g transform="translate(240, 0)">
+      <rect width="220" height="60" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🐘 PostgreSQL</text>
+      <text x="110" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Decisions + Audit Log</text>
+    </g>
+    
+    <g transform="translate(480, 0)">
+      <rect width="220" height="60" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📦 S3 / GCS</text>
+      <text x="110" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Media Storage</text>
+    </g>
+  </g>
+  
+  <!-- Arrows to storage -->
+  <path d="M 210 435 L 210 445" stroke="#ef4444" stroke-width="2" marker-end="url(#redArrow)"/>
+  <path d="M 450 435 L 450 445" stroke="#3b82f6" stroke-width="2" marker-end="url(#blueArrow2)"/>
+  <path d="M 690 435 L 690 445" stroke="#22c55e" stroke-width="2" marker-end="url(#greenArrow)"/>
+  <defs>
+    <marker id="redArrow" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#ef4444"/>
+    </marker>
+    <marker id="blueArrow2" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#3b82f6"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#22c55e"/>
+    </marker>
+  </defs>
+  
+  <!-- Stats bar -->
+  <g transform="translate(30, 520)">
+    <rect width="840" height="25" rx="5" fill="#0f172a"/>
+    <text x="105" y="17" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11">100K+ QPS</text>
+    <text x="300" y="17" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11">P99: 150ms</text>
+    <text x="495" y="17" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">GPU Util: 85%</text>
+    <text x="690" y="17" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">Cost: $100K/day</text>
+  </g>
+</svg>
+

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="reviewBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#reviewBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Human-in-the-Loop Review System</text>
+  
+  <!-- ML Score Distribution -->
+  <g transform="translate(40, 60)">
+    <rect width="720" height="100" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <!-- Scale bar -->
+    <rect x="50" y="50" width="620" height="30" rx="5" fill="#0f172a"/>
+    
+    <!-- Green zone (Allow) -->
+    <rect x="50" y="50" width="186" height="30" rx="5" fill="#166534"/>
+    <text x="143" y="70" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">AUTO ALLOW</text>
+    
+    <!-- Yellow zone (Review) -->
+    <rect x="236" y="50" width="248" height="30" fill="#ca8a04"/>
+    <text x="360" y="70" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">HUMAN REVIEW</text>
+    
+    <!-- Red zone (Remove) -->
+    <rect x="484" y="50" width="186" height="30" rx="5" fill="#dc2626"/>
+    <text x="577" y="70" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">AUTO REMOVE</text>
+    
+    <!-- Scale labels -->
+    <text x="50" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">0.0</text>
+    <text x="236" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">0.3</text>
+    <text x="484" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">0.7</text>
+    <text x="670" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">1.0</text>
+    
+    <text x="360" y="25" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">ML Confidence Score Distribution</text>
+  </g>
+  
+  <!-- Percentages -->
+  <g transform="translate(40, 170)">
+    <text x="143" y="15" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">~95%</text>
+    <text x="360" y="15" text-anchor="middle" fill="#eab308" font-family="Arial, sans-serif" font-size="14" font-weight="bold">~4%</text>
+    <text x="577" y="15" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="14" font-weight="bold">~1%</text>
+  </g>
+  
+  <!-- Review Queue Section -->
+  <g transform="translate(40, 200)">
+    <rect width="350" height="170" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="14" font-weight="bold">📋 Review Queue</text>
+    
+    <!-- Priority levels -->
+    <g transform="translate(20, 40)">
+      <rect width="310" height="28" rx="5" fill="#7f1d1d"/>
+      <text x="15" y="19" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔴 CRITICAL</text>
+      <text x="200" y="19" fill="#fca5a5" font-family="Arial, sans-serif" font-size="10">CSAM, Terrorism | SLA: 1h</text>
+    </g>
+    
+    <g transform="translate(20, 73)">
+      <rect width="310" height="28" rx="5" fill="#7c2d12"/>
+      <text x="15" y="19" fill="#fdba74" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🟠 HIGH</text>
+      <text x="200" y="19" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">Violence, Self-Harm | SLA: 4h</text>
+    </g>
+    
+    <g transform="translate(20, 106)">
+      <rect width="310" height="28" rx="5" fill="#713f12"/>
+      <text x="15" y="19" fill="#fde047" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🟡 NORMAL</text>
+      <text x="200" y="19" fill="#fde047" font-family="Arial, sans-serif" font-size="10">Hate Speech | SLA: 24h</text>
+    </g>
+    
+    <g transform="translate(20, 139)">
+      <rect width="310" height="28" rx="5" fill="#1e3a5f"/>
+      <text x="15" y="19" fill="#93c5fd" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔵 LOW</text>
+      <text x="200" y="19" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">Spam, Minor | SLA: 72h</text>
+    </g>
+  </g>
+  
+  <!-- Quality Assurance -->
+  <g transform="translate(410, 200)">
+    <rect width="350" height="170" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✓ Quality Assurance</text>
+    
+    <g transform="translate(20, 45)">
+      <rect width="150" height="50" rx="8" fill="#14532d"/>
+      <text x="75" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Golden Set</text>
+      <text x="75" y="40" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">5% hidden tests</text>
+    </g>
+    
+    <g transform="translate(180, 45)">
+      <rect width="150" height="50" rx="8" fill="#14532d"/>
+      <text x="75" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Random Audits</text>
+      <text x="75" y="40" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">10% reviewed</text>
+    </g>
+    
+    <g transform="translate(20, 105)">
+      <rect width="150" height="50" rx="8" fill="#14532d"/>
+      <text x="75" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Inter-Rater</text>
+      <text x="75" y="40" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">Agreement check</text>
+    </g>
+    
+    <g transform="translate(180, 105)">
+      <rect width="150" height="50" rx="8" fill="#14532d"/>
+      <text x="75" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Calibration</text>
+      <text x="75" y="40" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">Weekly sessions</text>
+    </g>
+  </g>
+</svg>
+
