@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280">
+  <defs>
+    <linearGradient id="rawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="structGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📄 Document Understanding Pipeline</text>
+  
+  <!-- Raw Documents -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="180" height="170" rx="14" fill="#0f172a"/>
+    <rect x="50" y="60" width="180" height="40" rx="14 14 0 0" fill="url(#rawGrad)"/>
+    <text x="140" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📥 Raw Documents</text>
+    
+    <g transform="translate(65, 115)">
+      <rect x="0" y="0" width="150" height="25" rx="5" fill="#450a0a"/>
+      <text x="75" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">📃 HTML Pages</text>
+      <rect x="0" y="32" width="150" height="25" rx="5" fill="#450a0a"/>
+      <text x="75" y="49" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">📋 PDF Files</text>
+      <rect x="0" y="64" width="150" height="25" rx="5" fill="#450a0a"/>
+      <text x="75" y="81" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">🛒 Product Listings</text>
+    </g>
+  </g>
+  
+  <!-- Processing Arrow -->
+  <g>
+    <path d="M240 145 L310 145" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="250" y="125" width="50" height="18" rx="4" fill="#0f172a"/>
+    <text x="275" y="138" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Process</text>
+  </g>
+  
+  <!-- Processing Box -->
+  <g filter="url(#shadow)">
+    <rect x="320" y="90" width="120" height="110" rx="14" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="380" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="30">⚙️</text>
+    <text x="380" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7c3aed">NLP Pipeline</text>
+    <text x="380" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">Extract • Parse</text>
+    <text x="380" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">Enrich • Index</text>
+  </g>
+  
+  <!-- Output Arrow -->
+  <g>
+    <path d="M450 145 L520 145" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="460" y="125" width="50" height="18" rx="4" fill="#0f172a"/>
+    <text x="485" y="138" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Output</text>
+  </g>
+  
+  <!-- Structured Output -->
+  <g filter="url(#shadow)">
+    <rect x="530" y="60" width="180" height="170" rx="14" fill="#0f172a"/>
+    <rect x="530" y="60" width="180" height="40" rx="14 14 0 0" fill="url(#structGrad)"/>
+    <text x="620" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📊 Searchable Rep</text>
+    
+    <g transform="translate(545, 115)">
+      <rect x="0" y="0" width="150" height="20" rx="4" fill="#d1fae5"/>
+      <text x="75" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">"title": "..."</text>
+      <rect x="0" y="25" width="150" height="20" rx="4" fill="#d1fae5"/>
+      <text x="75" y="39" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">"content": "..."</text>
+      <rect x="0" y="50" width="150" height="20" rx="4" fill="#d1fae5"/>
+      <text x="75" y="64" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">"entities": [...]</text>
+      <rect x="0" y="75" width="150" height="20" rx="4" fill="#d1fae5"/>
+      <text x="75" y="89" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">"embeddings": [...]</text>
+    </g>
+  </g>
+</svg>

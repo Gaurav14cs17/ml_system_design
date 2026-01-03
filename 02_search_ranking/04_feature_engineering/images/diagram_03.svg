@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 680">
+  <defs>
+    <linearGradient id="sourceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="storeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="serveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🏪 Feature Store Architecture</text>
+  
+  <!-- Data Sources -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="55" width="620" height="70" rx="10" fill="#1e293b"/>
+    <rect x="40" y="55" width="620" height="30" rx="10 10 0 0" fill="url(#sourceGrad)"/>
+    <text x="350" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">📊 DATA SOURCES</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="10">
+    <rect x="70" y="95" width="110" height="22" rx="5" fill="#7f1d1d"/>
+    <text x="125" y="110" text-anchor="middle" fill="#fca5a5">Click Logs</text>
+    <rect x="195" y="95" width="110" height="22" rx="5" fill="#7f1d1d"/>
+    <text x="250" y="110" text-anchor="middle" fill="#fca5a5">User Events</text>
+    <rect x="320" y="95" width="110" height="22" rx="5" fill="#7f1d1d"/>
+    <text x="375" y="110" text-anchor="middle" fill="#fca5a5">Doc Store</text>
+    <rect x="445" y="95" width="110" height="22" rx="5" fill="#7f1d1d"/>
+    <text x="500" y="110" text-anchor="middle" fill="#fca5a5">External Data</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M350 130 L350 155" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,155 350,170 355,155" fill="#64748b"/>
+  
+  <!-- Feature Pipelines -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="175" width="620" height="150" rx="10" fill="#1e293b"/>
+    <rect x="40" y="175" width="620" height="30" rx="10 10 0 0" fill="url(#pipeGrad)"/>
+    <text x="350" y="196" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">⚙️ FEATURE PIPELINES</text>
+  </g>
+  
+  <!-- Three pipeline boxes -->
+  <g filter="url(#shadow)">
+    <rect x="65" y="220" width="175" height="90" rx="8" fill="#4c1d95"/>
+    <text x="152" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Batch Pipeline</text>
+    <text x="152" y="262" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#c4b5fd">(Spark/Flink)</text>
+    <text x="80" y="285" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">• Daily stats</text>
+    <text x="80" y="300" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">• Aggregations</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="262" y="220" width="175" height="90" rx="8" fill="#4c1d95"/>
+    <text x="349" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Streaming</text>
+    <text x="349" y="262" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#c4b5fd">(Kafka/Flink)</text>
+    <text x="277" y="285" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">• Click counts</text>
+    <text x="277" y="300" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">• Session data</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="459" y="220" width="175" height="90" rx="8" fill="#4c1d95"/>
+    <text x="546" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Real-time</text>
+    <text x="546" y="262" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#c4b5fd">(Online compute)</text>
+    <text x="474" y="285" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">• Query features</text>
+    <text x="474" y="300" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">• User context</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M350 330 L350 360" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,360 350,375 355,360" fill="#64748b"/>
+  
+  <!-- Feature Storage -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="380" width="620" height="140" rx="10" fill="#1e293b"/>
+    <rect x="40" y="380" width="620" height="30" rx="10 10 0 0" fill="url(#storeGrad)"/>
+    <text x="350" y="401" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">💾 FEATURE STORAGE</text>
+  </g>
+  
+  <!-- Two storage boxes -->
+  <g filter="url(#shadow)">
+    <rect x="65" y="425" width="260" height="80" rx="8" fill="#1e40af"/>
+    <text x="195" y="450" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">OFFLINE STORE</text>
+    <text x="195" y="468" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#93c5fd">(Data Warehouse)</text>
+    <text x="80" y="490" font-family="Segoe UI, sans-serif" font-size="9" fill="#60a5fa">• Historical data • Training</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="375" y="425" width="260" height="80" rx="8" fill="#1e40af"/>
+    <text x="505" y="450" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">ONLINE STORE</text>
+    <text x="505" y="468" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#93c5fd">(Redis/DynamoDB)</text>
+    <text x="390" y="490" font-family="Segoe UI, sans-serif" font-size="9" fill="#60a5fa">• Low latency (andlt;5ms) • Serving</text>
+  </g>
+  
+  <!-- Sync arrow -->
+  <path d="M330 465 L370 465" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="350" y="455" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fbbf24">sync</text>
+  
+  <!-- Arrow -->
+  <path d="M350 525 L350 555" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,555 350,570 355,555" fill="#64748b"/>
+  
+  <!-- Feature Serving -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="575" width="500" height="90" rx="10" fill="#1e293b"/>
+    <rect x="100" y="575" width="500" height="30" rx="10 10 0 0" fill="url(#serveGrad)"/>
+    <text x="350" y="596" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🚀 FEATURE SERVING API</text>
+  </g>
+  <text x="350" y="630" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#34d399">get_features(query_id, doc_ids, user_id) → Dict</text>
+  <text x="350" y="650" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Point-in-time lookup with andlt;10ms latency</text>
+</svg>

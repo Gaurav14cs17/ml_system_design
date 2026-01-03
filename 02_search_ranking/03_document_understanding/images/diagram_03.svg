@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🗂️ Index Types Comparison</text>
+  
+  <!-- Inverted Index -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="50" width="620" height="130" rx="10" fill="#1e293b"/>
+    <rect x="40" y="50" width="620" height="32" rx="10 10 0 0" fill="#3b82f6"/>
+    <text x="70" y="72" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">INVERTED INDEX (Keyword Search)</text>
+  </g>
+  
+  <g font-family="Segoe UI, monospace" font-size="11">
+    <rect x="70" y="95" width="80" height="25" rx="5" fill="#1e40af"/>
+    <text x="110" y="112" text-anchor="middle" fill="#fff">"apple"</text>
+    <text x="165" y="112" fill="#64748b">→</text>
+    <text x="180" y="112" fill="#60a5fa">doc1, doc5, doc89, ...</text>
+    
+    <rect x="70" y="125" width="80" height="25" rx="5" fill="#1e40af"/>
+    <text x="110" y="142" text-anchor="middle" fill="#fff">"iphone"</text>
+    <text x="165" y="142" fill="#64748b">→</text>
+    <text x="180" y="142" fill="#60a5fa">doc2, doc5, doc23, ...</text>
+  </g>
+  <text x="480" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Best for: exact matching, boolean</text>
+  
+  <!-- Vector Index -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="195" width="620" height="130" rx="10" fill="#1e293b"/>
+    <rect x="40" y="195" width="620" height="32" rx="10 10 0 0" fill="#10b981"/>
+    <text x="70" y="217" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">VECTOR INDEX (Semantic Search)</text>
+  </g>
+  
+  <!-- Vector visualization -->
+  <circle cx="120" cy="270" r="6" fill="#34d399"/>
+  <text x="132" y="274" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">doc1</text>
+  <circle cx="180" cy="255" r="6" fill="#34d399"/>
+  <text x="192" y="259" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">doc5</text>
+  <circle cx="150" cy="295" r="6" fill="#34d399"/>
+  <text x="162" y="299" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">doc2</text>
+  <circle cx="220" cy="280" r="8" fill="#f59e0b"/>
+  <text x="235" y="284" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24" font-weight="bold">Query</text>
+  
+  <text x="320" y="270" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">← Find k nearest neighbors →</text>
+  <text x="480" y="300" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Best for: semantic similarity</text>
+  
+  <!-- Metadata Index -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="340" width="620" height="140" rx="10" fill="#1e293b"/>
+    <rect x="40" y="340" width="620" height="32" rx="10 10 0 0" fill="#f59e0b"/>
+    <text x="70" y="362" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">METADATA INDEX (Filtering)</text>
+  </g>
+  
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <rect x="70" y="390" width="160" height="50" rx="6" fill="#7c2d1280" stroke="#7c2d12" stroke-width="1"/>
+    <text x="150" y="412" text-anchor="middle" fill="#fbbf24" font-weight="bold">price andlt; 100</text>
+    <text x="150" y="430" text-anchor="middle" fill="#94a3b8" font-size="9">doc3, doc7</text>
+    
+    <rect x="250" y="390" width="160" height="50" rx="6" fill="#14532d80" stroke="#14532d" stroke-width="1"/>
+    <text x="330" y="412" text-anchor="middle" fill="#34d399" font-weight="bold">brand = nike</text>
+    <text x="330" y="430" text-anchor="middle" fill="#94a3b8" font-size="9">doc1, doc5</text>
+    
+    <rect x="430" y="390" width="160" height="50" rx="6" fill="#1e3a8a80" stroke="#1e3a8a" stroke-width="1"/>
+    <text x="510" y="412" text-anchor="middle" fill="#60a5fa" font-weight="bold">color = red</text>
+    <text x="510" y="430" text-anchor="middle" fill="#94a3b8" font-size="9">doc2, doc9</text>
+  </g>
+  <text x="350" y="465" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Best for: filtering, faceted search, range queries</text>
+</svg>

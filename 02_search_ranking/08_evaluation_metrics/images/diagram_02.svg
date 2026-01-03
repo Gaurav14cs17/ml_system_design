@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚖️ Metric Trade-offs</text>
+  
+  <!-- Trade-off 1: Relevance vs Revenue -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="55" width="620" height="120" rx="10" fill="#1e293b"/>
+    <rect x="40" y="55" width="620" height="30" rx="10 10 0 0" fill="#3b82f6"/>
+    <text x="350" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">💎 Relevance vs Revenue</text>
+  </g>
+  
+  <g font-family="Segoe UI, sans-serif" font-size="10">
+    <!-- Spectrum bar -->
+    <rect x="80" y="100" width="540" height="20" rx="10" fill="#1e40af"/>
+    <rect x="80" y="100" width="180" height="20" rx="10 0 0 10" fill="#3b82f6"/>
+    <rect x="440" y="100" width="180" height="20" rx="0 10 10 0" fill="#22c55e"/>
+    
+    <text x="170" y="115" text-anchor="middle" fill="#fff" font-weight="bold">High Relevance</text>
+    <text x="530" y="115" text-anchor="middle" fill="#fff" font-weight="bold">High Revenue</text>
+    
+    <text x="100" y="145" fill="#94a3b8">Show exactly what</text>
+    <text x="100" y="160" fill="#94a3b8">user wants</text>
+    <text x="350" y="152" text-anchor="middle" fill="#fbbf24">Balanced</text>
+    <text x="500" y="145" fill="#94a3b8">Show highest</text>
+    <text x="500" y="160" fill="#94a3b8">margin items</text>
+  </g>
+  
+  <!-- Trade-off 2: Precision vs Recall -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="190" width="620" height="120" rx="10" fill="#1e293b"/>
+    <rect x="40" y="190" width="620" height="30" rx="10 10 0 0" fill="#f59e0b"/>
+    <text x="350" y="211" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">🎯 Precision vs Recall</text>
+  </g>
+  
+  <g font-family="Segoe UI, sans-serif" font-size="10">
+    <rect x="80" y="235" width="540" height="20" rx="10" fill="#78350f"/>
+    <rect x="80" y="235" width="180" height="20" rx="10 0 0 10" fill="#f59e0b"/>
+    <rect x="440" y="235" width="180" height="20" rx="0 10 10 0" fill="#8b5cf6"/>
+    
+    <text x="170" y="250" text-anchor="middle" fill="#fff" font-weight="bold">High Precision</text>
+    <text x="530" y="250" text-anchor="middle" fill="#fff" font-weight="bold">High Recall</text>
+    
+    <text x="100" y="280" fill="#94a3b8">Fewer but highly</text>
+    <text x="100" y="295" fill="#94a3b8">relevant results</text>
+    <text x="350" y="287" text-anchor="middle" fill="#fbbf24">Balanced</text>
+    <text x="500" y="280" fill="#94a3b8">More results, may</text>
+    <text x="500" y="295" fill="#94a3b8">include irrelevant</text>
+  </g>
+  
+  <!-- Trade-off 3: Short-term vs Long-term -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="325" width="620" height="130" rx="10" fill="#1e293b"/>
+    <rect x="40" y="325" width="620" height="30" rx="10 10 0 0" fill="#10b981"/>
+    <text x="350" y="346" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">⏱️ Short-term vs Long-term</text>
+  </g>
+  
+  <g font-family="Segoe UI, sans-serif" font-size="10">
+    <rect x="80" y="370" width="540" height="20" rx="10" fill="#065f46"/>
+    <rect x="80" y="370" width="180" height="20" rx="10 0 0 10" fill="#ef4444"/>
+    <rect x="440" y="370" width="180" height="20" rx="0 10 10 0" fill="#10b981"/>
+    
+    <text x="170" y="385" text-anchor="middle" fill="#fff" font-weight="bold">CTR Focus</text>
+    <text x="530" y="385" text-anchor="middle" fill="#fff" font-weight="bold">User Retention</text>
+    
+    <text x="100" y="415" fill="#94a3b8">Clickbait titles</text>
+    <text x="100" y="430" fill="#94a3b8">immediate engagement</text>
+    <text x="350" y="422" text-anchor="middle" fill="#fbbf24">Balanced</text>
+    <text x="500" y="415" fill="#94a3b8">Quality content,</text>
+    <text x="500" y="430" fill="#94a3b8">lower immediate CTR</text>
+  </g>
+</svg>

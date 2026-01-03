@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 240">
+  <defs>
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <filter id="shadow9" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">📄 Key Papers</text>
+  
+  <g filter="url(#shadow9)">
+    <rect x="40" y="50" width="620" height="40" rx="8 8 0 0" fill="url(#paperGrad)"/>
+    <text x="250" y="77" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Paper</text>
+    <text x="490" y="77" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Year</text>
+    <text x="580" y="77" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Topic</text>
+    
+    <rect x="40" y="90" width="620" height="35" fill="#1e293b"/>
+    <text x="60" y="113" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">BM25: Robertson and Zaragoza</text>
+    <text x="490" y="113" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">2009</text>
+    <text x="580" y="113" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#22c55e">Classical retrieval</text>
+    
+    <rect x="40" y="125" width="620" height="35" fill="#334155"/>
+    <text x="60" y="148" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Learning to Rank: Burges et al.</text>
+    <text x="490" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">2010</text>
+    <text x="580" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3b82f6">LTR foundations</text>
+    
+    <rect x="40" y="160" width="620" height="35" fill="#1e293b"/>
+    <text x="60" y="183" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">BERT for IR: Nogueira and Cho</text>
+    <text x="490" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">2019</text>
+    <text x="580" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#8b5cf6">Neural ranking</text>
+    
+    <rect x="40" y="195" width="620" height="35" rx="0 0 8 8" fill="#334155"/>
+    <text x="60" y="218" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">ColBERT: Khattab and Zaharia</text>
+    <text x="490" y="218" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">2020</text>
+    <text x="580" y="218" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ec4899">Efficient neural IR</text>
+  </g>
+</svg>

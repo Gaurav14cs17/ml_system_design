@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 190">
+  <defs>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow6" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ef4444">🔴 Production Systems (Modules 8-10)</text>
+  
+  <g filter="url(#shadow6)">
+    <rect x="40" y="50" width="670" height="40" rx="8 8 0 0" fill="url(#prodGrad)"/>
+    <text x="80" y="77" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Module</text>
+    <text x="180" y="77" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Title</text>
+    <text x="420" y="77" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Description</text>
+    <text x="670" y="77" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Time</text>
+    
+    <rect x="40" y="90" width="670" height="30" fill="#1e293b"/>
+    <text x="80" y="110" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">08</text>
+    <text x="180" y="110" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Two-Stage Architecture</text>
+    <text x="420" y="110" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Retrieval + ranking pipeline</text>
+    <text x="670" y="110" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">5-6 hrs</text>
+    
+    <rect x="40" y="120" width="670" height="30" fill="#334155"/>
+    <text x="80" y="140" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">09</text>
+    <text x="180" y="140" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">System Architecture</text>
+    <text x="420" y="140" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Scaling, serving, monitoring</text>
+    <text x="670" y="140" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">6-7 hrs</text>
+    
+    <rect x="40" y="150" width="670" height="30" rx="0 0 8 8" fill="#1e293b"/>
+    <text x="80" y="170" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">10</text>
+    <text x="180" y="170" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Real-World Case Studies</text>
+    <text x="420" y="170" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Google, Amazon, LinkedIn, Netflix</text>
+    <text x="670" y="170" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">4-5 hrs</text>
+  </g>
+</svg>

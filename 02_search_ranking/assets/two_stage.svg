@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <linearGradient id="stage1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00b4db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0083b0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stage2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f857a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff5858;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropShadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="350" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Two-Stage Ranking Architecture</text>
+  
+  <!-- Input funnel -->
+  <path d="M50 80 L150 80 L130 130 L70 130 Z" fill="#3b3b5c" filter="url(#dropShadow)"/>
+  <text x="100" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Billions</text>
+  <text x="100" y="110" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="9">Documents</text>
+  
+  <!-- Arrow -->
+  <path d="M155 105 L190 105" stroke="#4facfe" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4facfe"/>
+    </marker>
+  </defs>
+  
+  <!-- Stage 1: Retrieval -->
+  <rect x="200" y="60" width="230" height="140" rx="15" fill="url(#stage1Grad)" filter="url(#dropShadow)"/>
+  <text x="315" y="90" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">STAGE 1: RETRIEVAL</text>
+  
+  <rect x="220" y="105" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)"/>
+  <text x="265" y="127" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">BM25</text>
+  
+  <rect x="320" y="105" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)"/>
+  <text x="365" y="127" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">ANN</text>
+  
+  <text x="315" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚡ ~10ms latency</text>
+  <text x="315" y="185" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">Fast, Approximate</text>
+  
+  <!-- Middle funnel -->
+  <path d="M440 105 L490 85 L490 125 L440 105" fill="#4facfe"/>
+  <path d="M500 80 L580 80 L560 130 L520 130 Z" fill="#3b3b5c" filter="url(#dropShadow)"/>
+  <text x="540" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">~1000</text>
+  <text x="540" y="110" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="9">Candidates</text>
+  
+  <!-- Arrow -->
+  <path d="M585 105 L620 105" stroke="#f857a6" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f857a6"/>
+    </marker>
+  </defs>
+  
+  <!-- Stage 2: Ranking -->
+  <rect x="200" y="220" width="230" height="110" rx="15" fill="url(#stage2Grad)" filter="url(#dropShadow)"/>
+  <text x="315" y="250" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">STAGE 2: RANKING</text>
+  
+  <rect x="220" y="265" width="85" height="30" rx="5" fill="rgba(255,255,255,0.2)"/>
+  <text x="262" y="285" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">LambdaMART</text>
+  
+  <rect x="315" y="265" width="55" height="30" rx="5" fill="rgba(255,255,255,0.2)"/>
+  <text x="342" y="285" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">BERT</text>
+  
+  <text x="315" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">🎯 ~50ms latency</text>
+  
+  <!-- Output -->
+  <rect x="500" y="250" width="120" height="50" rx="25" fill="#22c55e" filter="url(#dropShadow)"/>
+  <text x="560" y="270" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Top 10</text>
+  <text x="560" y="288" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Results ✓</text>
+  
+  <!-- Arrow from Stage 2 to output -->
+  <path d="M430 275 L490 275" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#arrowhead3)"/>
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+  
+  <!-- Connecting arrow from Stage 1 area to Stage 2 -->
+  <path d="M540 140 L540 180 L315 180 L315 210" stroke="#888" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  
+  <!-- Legend -->
+  <rect x="630" y="60" width="150" height="100" rx="8" fill="#252547"/>
+  <text x="705" y="85" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Key Trade-offs</text>
+  <circle cx="650" cy="105" r="5" fill="#00b4db"/>
+  <text x="660" y="110" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">Speed ↑ Precision ↓</text>
+  <circle cx="650" cy="130" r="5" fill="#f857a6"/>
+  <text x="660" y="135" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">Speed ↓ Precision ↑</text>
+</svg>
+

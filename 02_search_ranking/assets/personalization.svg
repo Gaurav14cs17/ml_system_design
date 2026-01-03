@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="userGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="contextGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Personalized Search Ranking</text>
+  
+  <!-- Query Input -->
+  <rect x="320" y="55" width="160" height="40" rx="20" fill="#3b3b5c"/>
+  <text x="400" y="80" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Query: "running shoes"</text>
+  
+  <!-- Arrow down -->
+  <path d="M400 95 L400 120" stroke="#8b949e" stroke-width="2"/>
+  <polygon points="395,120 400,130 405,120" fill="#8b949e"/>
+  
+  <!-- User Profile Box (Left) -->
+  <rect x="40" y="140" width="200" height="200" rx="15" fill="#161b22" stroke="#667eea" stroke-width="2"/>
+  <rect x="40" y="140" width="200" height="45" rx="15" fill="url(#userGrad2)"/>
+  <text x="140" y="168" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">👤 User Profile</text>
+  
+  <text x="55" y="205" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Past Purchases:</text>
+  <text x="55" y="222" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Nike Air Max (3x)</text>
+  <text x="55" y="237" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Running shorts</text>
+  
+  <text x="55" y="260" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Preferences:</text>
+  <text x="55" y="277" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Brand: Nike</text>
+  <text x="55" y="292" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Price: $100-200</text>
+  <text x="55" y="307" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Size: 10.5</text>
+  <text x="55" y="322" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Sport: Marathon</text>
+  
+  <!-- Context Box (Right) -->
+  <rect x="560" y="140" width="200" height="200" rx="15" fill="#161b22" stroke="#f5576c" stroke-width="2"/>
+  <rect x="560" y="140" width="200" height="45" rx="15" fill="url(#contextGrad)"/>
+  <text x="660" y="168" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🌍 Context</text>
+  
+  <text x="575" y="205" fill="#fda4af" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Session:</text>
+  <text x="575" y="222" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Browsed: Trail shoes</text>
+  <text x="575" y="237" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Added to cart: Socks</text>
+  
+  <text x="575" y="260" fill="#fda4af" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Environment:</text>
+  <text x="575" y="277" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Device: Mobile</text>
+  <text x="575" y="292" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Location: New York</text>
+  <text x="575" y="307" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Time: 8:30 PM</text>
+  <text x="575" y="322" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Weather: Cold</text>
+  
+  <!-- Center Ranking Engine -->
+  <rect x="270" y="160" width="260" height="160" rx="15" fill="#161b22" stroke="#38ef7d" stroke-width="2"/>
+  <rect x="270" y="160" width="260" height="40" rx="15" fill="url(#resultGrad)"/>
+  <text x="400" y="186" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🎯 Personalized Ranker</text>
+  
+  <text x="290" y="220" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">Score = α·Relevance + β·UserAffinity</text>
+  <text x="290" y="238" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">         + γ·ContextMatch</text>
+  
+  <text x="290" y="265" fill="#86efac" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Personalization Signals:</text>
+  <text x="290" y="282" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• User embedding similarity</text>
+  <text x="290" y="297" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Brand preference boost</text>
+  <text x="290" y="312" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">• Price range alignment</text>
+  
+  <!-- Arrows to center -->
+  <path d="M245 240 L265 240" stroke="#667eea" stroke-width="2"/>
+  <polygon points="265,235 275,240 265,245" fill="#667eea"/>
+  
+  <path d="M555 240 L535 240" stroke="#f5576c" stroke-width="2"/>
+  <polygon points="535,235 525,240 535,245" fill="#f5576c"/>
+  
+  <!-- Personalized Results -->
+  <rect x="250" y="345" width="300" height="45" rx="10" fill="#21262d" stroke="#38ef7d" stroke-width="2"/>
+  <text x="400" y="368" text-anchor="middle" fill="#38ef7d" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✓ Personalized Results</text>
+  <text x="400" y="383" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="9">1. Nike Vaporfly  2. Nike Pegasus  3. Nike Air Zoom...</text>
+  
+  <!-- Arrow down to results -->
+  <path d="M400 320 L400 340" stroke="#38ef7d" stroke-width="2"/>
+  <polygon points="395,340 400,350 405,340" fill="#38ef7d"/>
+</svg>
+

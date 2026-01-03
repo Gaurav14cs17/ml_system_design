@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="invertedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vectorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Indexing Strategies: Inverted vs Vector</text>
+  
+  <!-- Inverted Index Card -->
+  <rect x="40" y="60" width="400" height="320" rx="15" fill="#161b22" stroke="#f5576c" stroke-width="2"/>
+  <rect x="40" y="60" width="400" height="50" rx="15" fill="url(#invertedGrad)"/>
+  <text x="240" y="92" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">📚 Inverted Index</text>
+  
+  <text x="60" y="135" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Map: Term → Documents containing term</text>
+  
+  <!-- Inverted index visualization -->
+  <rect x="60" y="155" width="360" height="140" rx="8" fill="#21262d"/>
+  
+  <rect x="75" y="170" width="80" height="25" rx="4" fill="#f5576c"/>
+  <text x="115" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">"running"</text>
+  <text x="175" y="187" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">→</text>
+  <rect x="195" y="170" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="212" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D1</text>
+  <rect x="235" y="170" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="252" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D5</text>
+  <rect x="275" y="170" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="292" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D12</text>
+  <rect x="315" y="170" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="332" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D89</text>
+  
+  <rect x="75" y="205" width="80" height="25" rx="4" fill="#f5576c"/>
+  <text x="115" y="222" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">"shoes"</text>
+  <text x="175" y="222" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">→</text>
+  <rect x="195" y="205" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="212" y="222" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D1</text>
+  <rect x="235" y="205" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="252" y="222" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D3</text>
+  <rect x="275" y="205" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="292" y="222" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D5</text>
+  
+  <rect x="75" y="240" width="80" height="25" rx="4" fill="#f5576c"/>
+  <text x="115" y="257" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">"nike"</text>
+  <text x="175" y="257" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">→</text>
+  <rect x="195" y="240" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="212" y="257" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D2</text>
+  <rect x="235" y="240" width="35" height="25" rx="4" fill="#30363d"/>
+  <text x="252" y="257" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D5</text>
+  
+  <!-- Inverted index properties -->
+  <text x="60" y="320" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Exact keyword matching</text>
+  <text x="60" y="340" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Boolean queries (AND, OR)</text>
+  <text x="60" y="360" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ BM25 / TF-IDF scoring</text>
+  
+  <!-- Vector Index Card -->
+  <rect x="460" y="60" width="400" height="320" rx="15" fill="#161b22" stroke="#4facfe" stroke-width="2"/>
+  <rect x="460" y="60" width="400" height="50" rx="15" fill="url(#vectorGrad)"/>
+  <text x="660" y="92" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🎯 Vector Index (ANN)</text>
+  
+  <text x="480" y="135" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Map: Query embedding → Similar documents</text>
+  
+  <!-- Vector space visualization -->
+  <rect x="480" y="155" width="360" height="140" rx="8" fill="#21262d"/>
+  
+  <!-- Coordinate axes -->
+  <line x1="520" y1="270" x2="520" y2="170" stroke="#4facfe" stroke-width="1"/>
+  <line x1="520" y1="270" x2="800" y2="270" stroke="#4facfe" stroke-width="1"/>
+  
+  <!-- Document points -->
+  <circle cx="570" cy="200" r="8" fill="#f5576c"/>
+  <text x="582" y="205" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D1</text>
+  
+  <circle cx="610" cy="235" r="8" fill="#f5576c"/>
+  <text x="622" y="240" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D2</text>
+  
+  <circle cx="680" cy="190" r="8" fill="#f5576c"/>
+  <text x="692" y="195" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D3</text>
+  
+  <circle cx="720" cy="250" r="8" fill="#f5576c"/>
+  <text x="732" y="255" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D4</text>
+  
+  <circle cx="760" cy="210" r="8" fill="#f5576c"/>
+  <text x="772" y="215" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">D5</text>
+  
+  <!-- Query point -->
+  <circle cx="650" cy="220" r="10" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+  <text x="650" y="225" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8" font-weight="bold">Q</text>
+  
+  <!-- Distance circle -->
+  <circle cx="650" cy="220" r="50" fill="none" stroke="#22c55e" stroke-width="1" stroke-dasharray="4"/>
+  
+  <!-- Vector index properties -->
+  <text x="480" y="320" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Semantic similarity</text>
+  <text x="480" y="340" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Handles synonyms</text>
+  <text x="480" y="360" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ HNSW / FAISS / Milvus</text>
+</svg>
+

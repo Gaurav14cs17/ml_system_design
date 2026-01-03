@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="relevanceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="revenueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <linearGradient id="balanceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚖️ Relevance vs Revenue Tradeoff</text>
+  
+  <!-- Spectrum bar -->
+  <rect x="100" y="55" width="500" height="20" rx="10" fill="url(#relevanceGrad)"/>
+  <rect x="350" y="55" width="250" height="20" rx="0 10 10 0" fill="url(#revenueGrad)"/>
+  
+  <!-- Labels -->
+  <text x="100" y="95" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">High Relevance ←</text>
+  <text x="600" y="95" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#10b981">→ High Revenue</text>
+  
+  <!-- Pure Relevance -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="115" width="200" height="80" rx="12" fill="#0f172a"/>
+    <rect x="60" y="115" width="200" height="30" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="160" y="137" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🎯 Pure Relevance</text>
+    <text x="160" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Show exactly what</text>
+    <text x="160" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">user wants</text>
+  </g>
+  
+  <!-- Pure Revenue -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="115" width="200" height="80" rx="12" fill="#0f172a"/>
+    <rect x="440" y="115" width="200" height="30" rx="12 12 0 0" fill="#10b981"/>
+    <text x="540" y="137" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">💰 Pure Revenue</text>
+    <text x="540" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Show highest-margin</text>
+    <text x="540" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">products</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M350 200 L350 220" stroke="#8b5cf6" stroke-width="3"/>
+  <polygon points="345,220 350,235 355,220" fill="#8b5cf6"/>
+  
+  <!-- Balanced Approach -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="240" width="300" height="50" rx="25" fill="url(#balanceGrad)"/>
+    <text x="350" y="270" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⭐ BALANCED APPROACH</text>
+  </g>
+  
+  <text x="350" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Relevant results that also drive business value</text>
+</svg>

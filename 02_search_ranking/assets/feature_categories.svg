@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="queryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="interGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0f0f23"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Feature Categories for Search Ranking</text>
+  
+  <!-- Center circle (interaction) -->
+  <circle cx="400" cy="270" r="85" fill="url(#interGrad)" opacity="0.9"/>
+  <text x="400" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Query-Document</text>
+  <text x="400" y="275" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Interaction</text>
+  <text x="400" y="300" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• BM25 Score</text>
+  <text x="400" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• Semantic Sim</text>
+  <text x="400" y="330" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• Term Match</text>
+  
+  <!-- Query Features (Top) -->
+  <circle cx="400" cy="100" r="70" fill="url(#queryGrad)" opacity="0.9"/>
+  <text x="400" y="85" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Query</text>
+  <text x="400" y="102" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Features</text>
+  <text x="400" y="122" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Query length</text>
+  <text x="400" y="135" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Intent type</text>
+  <text x="400" y="148" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Popularity</text>
+  
+  <!-- Connection line -->
+  <line x1="400" y1="170" x2="400" y2="185" stroke="#667eea" stroke-width="3"/>
+  
+  <!-- Document Features (Left) -->
+  <circle cx="200" cy="270" r="75" fill="url(#docGrad)" opacity="0.9"/>
+  <text x="200" y="250" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Document</text>
+  <text x="200" y="267" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Features</text>
+  <text x="200" y="290" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• PageRank</text>
+  <text x="200" y="303" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Freshness</text>
+  <text x="200" y="316" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Quality score</text>
+  <text x="200" y="329" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Click count</text>
+  
+  <!-- Connection line -->
+  <line x1="275" y1="270" x2="315" y2="270" stroke="#f5576c" stroke-width="3"/>
+  
+  <!-- User Features (Right) -->
+  <circle cx="600" cy="270" r="75" fill="url(#userGrad)" opacity="0.9"/>
+  <text x="600" y="250" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">User</text>
+  <text x="600" y="267" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Features</text>
+  <text x="600" y="290" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Past clicks</text>
+  <text x="600" y="303" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Preferences</text>
+  <text x="600" y="316" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Location</text>
+  <text x="600" y="329" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">• Device</text>
+  
+  <!-- Connection line -->
+  <line x1="485" y1="270" x2="525" y2="270" stroke="#43e97b" stroke-width="3"/>
+  
+  <!-- Context Features (Bottom) -->
+  <ellipse cx="400" cy="430" rx="100" ry="50" fill="#ff9f43" opacity="0.9"/>
+  <text x="400" y="420" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Context Features</text>
+  <text x="400" y="440" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Time • Session • Device</text>
+  <text x="400" y="455" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Location • Platform</text>
+  
+  <!-- Connection line -->
+  <line x1="400" y1="355" x2="400" y2="380" stroke="#ff9f43" stroke-width="3"/>
+  
+  <!-- Legend Box -->
+  <rect x="620" y="80" width="160" height="110" rx="8" fill="#f8fafc" stroke="#444" stroke-width="1"/>
+  <text x="700" y="105" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Feature Count</text>
+  <circle cx="640" cy="125" r="6" fill="url(#queryGrad)"/>
+  <text x="655" y="130" fill="#aaa" font-family="Arial, sans-serif" font-size="10">Query: ~20</text>
+  <circle cx="640" cy="145" r="6" fill="url(#docGrad)"/>
+  <text x="655" y="150" fill="#aaa" font-family="Arial, sans-serif" font-size="10">Document: ~50</text>
+  <circle cx="640" cy="165" r="6" fill="url(#interGrad)"/>
+  <text x="655" y="170" fill="#aaa" font-family="Arial, sans-serif" font-size="10">Interaction: ~30</text>
+</svg>
+

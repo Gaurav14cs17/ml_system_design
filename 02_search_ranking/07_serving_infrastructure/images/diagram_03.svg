@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⏱️ Latency Budget (P90 Target: 100ms)</text>
+  
+  <!-- Main Container -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="50" width="620" height="410" rx="12" fill="#1e293b"/>
+    <rect x="40" y="50" width="620" height="40" rx="12 12 0 0" fill="url(#headerGrad)"/>
+  </g>
+  
+  <!-- Header -->
+  <g font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">
+    <text x="80" y="76">Component</text>
+    <text x="230" y="76">Budget</text>
+    <text x="340" y="76">Optimization Techniques</text>
+  </g>
+  
+  <!-- Row 1: Network -->
+  <rect x="55" y="100" width="590" height="55" rx="6" fill="#3b82f610"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="80" y="125" font-size="12" font-weight="bold" fill="#3b82f6">🌐 Network</text>
+    <text x="230" y="125" font-size="13" font-weight="bold" fill="#22c55e">10ms</text>
+    <text x="340" y="118" font-size="10" fill="#94a3b8">• Connection pooling</text>
+    <text x="340" y="135" font-size="10" fill="#94a3b8">• Keep-alive • Regional deployment</text>
+  </g>
+  
+  <!-- Row 2: Query Understanding -->
+  <rect x="55" y="160" width="590" height="55" rx="6" fill="#8b5cf610"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="80" y="185" font-size="12" font-weight="bold" fill="#8b5cf6">🔍 Query Understanding</text>
+    <text x="230" y="185" font-size="13" font-weight="bold" fill="#22c55e">10ms</text>
+    <text x="340" y="178" font-size="10" fill="#94a3b8">• Lightweight models</text>
+    <text x="340" y="195" font-size="10" fill="#94a3b8">• Precomputed expansions • Caching</text>
+  </g>
+  
+  <!-- Row 3: Retrieval -->
+  <rect x="55" y="220" width="590" height="55" rx="6" fill="#06b6d410"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="80" y="245" font-size="12" font-weight="bold" fill="#06b6d4">📚 Retrieval</text>
+    <text x="230" y="245" font-size="13" font-weight="bold" fill="#f59e0b">30ms</text>
+    <text x="340" y="238" font-size="10" fill="#94a3b8">• Inverted index in memory</text>
+    <text x="340" y="255" font-size="10" fill="#94a3b8">• ANN with HNSW • Parallel shard queries</text>
+  </g>
+  
+  <!-- Row 4: Feature Fetching -->
+  <rect x="55" y="280" width="590" height="55" rx="6" fill="#10b98110"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="80" y="305" font-size="12" font-weight="bold" fill="#10b981">🏪 Feature Fetching</text>
+    <text x="230" y="305" font-size="13" font-weight="bold" fill="#f59e0b">20ms</text>
+    <text x="340" y="298" font-size="10" fill="#94a3b8">• Redis with pipelining</text>
+    <text x="340" y="315" font-size="10" fill="#94a3b8">• Batch fetching • Precomputed features</text>
+  </g>
+  
+  <!-- Row 5: Model Scoring -->
+  <rect x="55" y="340" width="590" height="55" rx="6" fill="#f59e0b10"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="80" y="365" font-size="12" font-weight="bold" fill="#f59e0b">🧠 Model Scoring</text>
+    <text x="230" y="365" font-size="13" font-weight="bold" fill="#ef4444">25ms</text>
+    <text x="340" y="358" font-size="10" fill="#94a3b8">• GPU inference • Batching</text>
+    <text x="340" y="375" font-size="10" fill="#94a3b8">• Model quantization</text>
+  </g>
+  
+  <!-- Row 6: Post-processing -->
+  <rect x="55" y="400" width="590" height="45" rx="6" fill="#ef444410"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="80" y="428" font-size="12" font-weight="bold" fill="#ef4444">📤 Post-processing</text>
+    <text x="230" y="428" font-size="13" font-weight="bold" fill="#22c55e">5ms</text>
+    <text x="340" y="428" font-size="10" fill="#94a3b8">• Efficient sorting • Streaming response</text>
+  </g>
+  
+  <!-- Total -->
+  <rect x="180" y="455" width="340" height="30" rx="15" fill="#22c55e"/>
+  <text x="350" y="475" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">TOTAL: 100ms ✅</text>
+</svg>

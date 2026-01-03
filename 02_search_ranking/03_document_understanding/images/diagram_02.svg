@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 750">
+  <defs>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="stepGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="stepGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📄 Document Ingestion Pipeline</text>
+  
+  <!-- Step 1 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="50" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="50" width="600" height="28" rx="10 10 0 0" fill="url(#stepGrad)"/>
+    <text x="80" y="70" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">1. DOCUMENT ACQUISITION</text>
+    <text x="70" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Web Crawling (web search)    • Data Feeds (e-commerce)</text>
+    <text x="70" y="120" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• User Uploads (doc search)    • API Ingestion (real-time)</text>
+  </g>
+  
+  <path d="M350 140 L350 155" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,155 350,165 355,155" fill="#64748b"/>
+  
+  <!-- Step 2 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="170" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="170" width="600" height="28" rx="10 10 0 0" fill="url(#stepGrad2)"/>
+    <text x="80" y="190" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">2. FORMAT DETECTION &amp; PARSING</text>
+    <text x="70" y="220" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• HTML → Extract from tags    • PDF → OCR + text extraction</text>
+    <text x="70" y="240" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• JSON/XML → Schema parsing   • Images → Caption + OCR</text>
+  </g>
+  
+  <path d="M350 260 L350 275" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,275 350,285 355,275" fill="#64748b"/>
+  
+  <!-- Step 3 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="290" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="290" width="600" height="28" rx="10 10 0 0" fill="#f59e0b"/>
+    <text x="80" y="310" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">3. TEXT PREPROCESSING</text>
+    <text x="70" y="340" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Tokenization                 • Normalization (lowercase, unicode)</text>
+    <text x="70" y="360" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Stopword removal             • Stemming/Lemmatization</text>
+  </g>
+  
+  <path d="M350 380 L350 395" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,395 350,405 355,395" fill="#64748b"/>
+  
+  <!-- Step 4 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="410" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="410" width="600" height="28" rx="10 10 0 0" fill="#ec4899"/>
+    <text x="80" y="430" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">4. CONTENT ANALYSIS</text>
+    <text x="70" y="460" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Named Entity Recognition     • Topic Classification</text>
+    <text x="70" y="480" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Sentiment Analysis           • Quality Scoring</text>
+  </g>
+  
+  <path d="M350 500 L350 515" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,515 350,525 355,515" fill="#64748b"/>
+  
+  <!-- Step 5 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="530" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="530" width="600" height="28" rx="10 10 0 0" fill="#06b6d4"/>
+    <text x="80" y="550" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">5. EMBEDDING GENERATION</text>
+    <text x="70" y="580" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Dense Embeddings (BERT)      • Sparse Embeddings (TF-IDF, BM25)</text>
+    <text x="70" y="600" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Multi-modal (CLIP for images)</text>
+  </g>
+  
+  <path d="M350 620 L350 635" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,635 350,645 355,635" fill="#64748b"/>
+  
+  <!-- Step 6 and 7 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="650" width="290" height="80" rx="10" fill="#1e293b"/>
+    <rect x="50" y="650" width="290" height="28" rx="10 10 0 0" fill="url(#stepGrad3)"/>
+    <text x="80" y="670" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">6. INDEXING</text>
+    <text x="70" y="700" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Inverted Index (keywords)</text>
+    <text x="70" y="715" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Vector Index (semantic)</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="360" y="650" width="290" height="80" rx="10" fill="#1e293b"/>
+    <rect x="360" y="650" width="290" height="28" rx="10 10 0 0" fill="#ef4444"/>
+    <text x="390" y="670" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">7. INDEX STORAGE</text>
+    <text x="380" y="700" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Distributed storage (sharding)</text>
+    <text x="380" y="715" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Replication + Caching</text>
+  </g>
+</svg>

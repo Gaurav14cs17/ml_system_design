@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 340">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚖️ Model Comparison Summary</text>
+  
+  <!-- Table -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="50" width="690" height="270" rx="10" fill="#1e293b"/>
+    <rect x="30" y="50" width="690" height="40" rx="10 10 0 0" fill="url(#headerGrad)"/>
+  </g>
+  
+  <!-- Header -->
+  <g font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">
+    <text x="80" y="76">Model</text>
+    <text x="200" y="76">Latency</text>
+    <text x="310" y="76">Quality</text>
+    <text x="420" y="76">Training</text>
+    <text x="550" y="76">Best For</text>
+  </g>
+  
+  <!-- Row 1: LambdaMART -->
+  <rect x="45" y="100" width="660" height="50" rx="5" fill="#22c55e10"/>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <text x="60" y="125" fill="#22c55e" font-weight="bold">LambdaMART</text>
+    <text x="60" y="140" fill="#64748b" font-size="9">(GBDT)</text>
+    <text x="200" y="130" fill="#22c55e" font-weight="bold">andlt;1ms</text>
+    <text x="310" y="130" fill="#f8fafc">High</text>
+    <text x="420" y="130" fill="#22c55e">Low</text>
+    <text x="550" y="125" fill="#94a3b8">Production</text>
+    <text x="550" y="140" fill="#64748b" font-size="9">(most common)</text>
+  </g>
+  
+  <!-- Row 2: DSSM -->
+  <rect x="45" y="155" width="660" height="50" rx="5" fill="#3b82f610"/>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <text x="60" y="180" fill="#3b82f6" font-weight="bold">DSSM</text>
+    <text x="60" y="195" fill="#64748b" font-size="9">(Two-Tower)</text>
+    <text x="200" y="185" fill="#f59e0b">~5ms</text>
+    <text x="310" y="185" fill="#f8fafc">Medium</text>
+    <text x="420" y="185" fill="#f59e0b">Medium</text>
+    <text x="550" y="180" fill="#94a3b8">Retrieval</text>
+    <text x="550" y="195" fill="#64748b" font-size="9">stage</text>
+  </g>
+  
+  <!-- Row 3: BERT Cross-Encoder -->
+  <rect x="45" y="210" width="660" height="50" rx="5" fill="#ef444410"/>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <text x="60" y="235" fill="#ef4444" font-weight="bold">BERT</text>
+    <text x="60" y="250" fill="#64748b" font-size="9">(Cross-Encoder)</text>
+    <text x="200" y="240" fill="#ef4444">~100ms</text>
+    <text x="310" y="240" fill="#22c55e" font-weight="bold">Very High</text>
+    <text x="420" y="240" fill="#ef4444">High</text>
+    <text x="550" y="235" fill="#94a3b8">Re-ranking</text>
+    <text x="550" y="250" fill="#64748b" font-size="9">top-k only</text>
+  </g>
+  
+  <!-- Row 4: ColBERT -->
+  <rect x="45" y="265" width="660" height="45" rx="5" fill="#8b5cf610"/>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <text x="60" y="293" fill="#8b5cf6" font-weight="bold">ColBERT</text>
+    <text x="200" y="293" fill="#f59e0b">~10ms</text>
+    <text x="310" y="293" fill="#f8fafc">High</text>
+    <text x="420" y="293" fill="#f59e0b">Medium</text>
+    <text x="550" y="293" fill="#94a3b8">Balanced quality/speed</text>
+  </g>
+</svg>

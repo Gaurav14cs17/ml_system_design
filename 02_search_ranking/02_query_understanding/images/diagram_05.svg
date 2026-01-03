@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420">
+  <defs>
+    <linearGradient id="spellGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="200" y="20" width="350" height="50" rx="12" fill="url(#spellGrad)"/>
+    <text x="375" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">✏️ Query Spell Correction</text>
+  </g>
+  
+  <!-- Input -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="100" width="200" height="80" rx="12" fill="#0f172a"/>
+    <text x="140" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f87171">❌ Misspelled Query</text>
+    <text x="140" y="160" text-anchor="middle" font-family="monospace" font-size="14" fill="#f8fafc">"runnign shoees nikee"</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M245 140 L285 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="285,135 300,140 285,145" fill="#64748b"/>
+  
+  <!-- Correction Pipeline -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="90" width="400" height="100" rx="12" fill="#0f172a"/>
+    <text x="500" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">🔧 Correction Pipeline</text>
+    
+    <g transform="translate(320, 130)">
+      <rect x="0" y="0" width="80" height="40" rx="6" fill="#0f172a"/>
+      <text x="40" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#60a5fa">Tokenize</text>
+      <text x="40" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">Split words</text>
+    </g>
+    
+    <path d="M400 150 L415 150" stroke="#475569" stroke-width="1.5"/>
+    
+    <g transform="translate(415, 130)">
+      <rect x="0" y="0" width="80" height="40" rx="6" fill="#0f172a"/>
+      <text x="40" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#22c55e">SymSpell</text>
+      <text x="40" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">Edit distance</text>
+    </g>
+    
+    <path d="M495 150 L510 150" stroke="#475569" stroke-width="1.5"/>
+    
+    <g transform="translate(510, 130)">
+      <rect x="0" y="0" width="80" height="40" rx="6" fill="#0f172a"/>
+      <text x="40" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#ec4899">Context</text>
+      <text x="40" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">Neural check</text>
+    </g>
+    
+    <path d="M590 150 L605 150" stroke="#475569" stroke-width="1.5"/>
+    
+    <g transform="translate(605, 130)">
+      <rect x="0" y="0" width="80" height="40" rx="6" fill="#0f172a"/>
+      <text x="40" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#8b5cf6">Validate</text>
+      <text x="40" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">Confidence</text>
+    </g>
+  </g>
+  
+  <!-- Output -->
+  <g filter="url(#shadow)">
+    <rect x="510" y="210" width="200" height="80" rx="12" fill="#0f172a"/>
+    <text x="610" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#22c55e">✓ Corrected Query</text>
+    <text x="610" y="270" text-anchor="middle" font-family="monospace" font-size="14" fill="#f8fafc">"running shoes nike"</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M610 190 L610 205" stroke="#64748b" stroke-width="2"/>
+  <polygon points="605,205 610,220 615,205" fill="#64748b"/>
+  
+  <!-- Techniques -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="210" width="440" height="180" rx="12" fill="#0f172a"/>
+    <text x="260" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🛠️ Correction Techniques</text>
+    
+    <g transform="translate(60, 260)">
+      <rect x="0" y="0" width="120" height="110" rx="8" fill="#0f172a"/>
+      <text x="60" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">SymSpell</text>
+      <text x="10" y="50" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Pre-computed</text>
+      <text x="10" y="67" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Edit distance ≤ 2</text>
+      <text x="10" y="84" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• O(1) lookup</text>
+      <text x="10" y="101" font-family="Segoe UI, sans-serif" font-size="9" fill="#22c55e">1M× faster</text>
+    </g>
+    
+    <g transform="translate(200, 260)">
+      <rect x="0" y="0" width="120" height="110" rx="8" fill="#0f172a"/>
+      <text x="60" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ec4899">Seq2Seq</text>
+      <text x="10" y="50" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Context-aware</text>
+      <text x="10" y="67" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• LSTM/Transformer</text>
+      <text x="10" y="84" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Handles OOV</text>
+      <text x="10" y="101" font-family="Segoe UI, sans-serif" font-size="9" fill="#fbbf24">Higher accuracy</text>
+    </g>
+    
+    <g transform="translate(340, 260)">
+      <rect x="0" y="0" width="120" height="110" rx="8" fill="#0f172a"/>
+      <text x="60" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#22c55e">Hybrid</text>
+      <text x="10" y="50" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• SymSpell first</text>
+      <text x="10" y="67" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Neural fallback</text>
+      <text x="10" y="84" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Domain vocab</text>
+      <text x="10" y="101" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">Best of both</text>
+    </g>
+  </g>
+</svg>
+
+
+
