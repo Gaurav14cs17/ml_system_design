@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="fsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <marker id="fsArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4facfe"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#fsBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🗄️ Feature Store Architecture
+  </text>
+  
+  <!-- Data Sources -->
+  <rect x="30" y="80" width="120" height="220" rx="10" fill="#2d3748"/>
+  <text x="90" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#ffd93d">Data Sources</text>
+  
+  <rect x="45" y="125" width="90" height="30" rx="5" fill="#4a5568"/>
+  <text x="90" y="145" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">📊 Database</text>
+  
+  <rect x="45" y="165" width="90" height="30" rx="5" fill="#4a5568"/>
+  <text x="90" y="185" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">🌊 Streams</text>
+  
+  <rect x="45" y="205" width="90" height="30" rx="5" fill="#4a5568"/>
+  <text x="90" y="225" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">🔌 APIs</text>
+  
+  <rect x="45" y="245" width="90" height="30" rx="5" fill="#4a5568"/>
+  <text x="90" y="265" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">📁 Files</text>
+  
+  <!-- Arrow to Pipeline -->
+  <line x1="150" y1="190" x2="195" y2="190" stroke="#4facfe" stroke-width="3" marker-end="url(#fsArrow)"/>
+  
+  <!-- Feature Pipeline -->
+  <rect x="205" y="130" width="130" height="120" rx="10" fill="#667eea"/>
+  <text x="270" y="165" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">⚙️ Feature</text>
+  <text x="270" y="185" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Pipeline</text>
+  <text x="270" y="210" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Transform</text>
+  <text x="270" y="225" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Validate</text>
+  <text x="270" y="240" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Compute</text>
+  
+  <!-- Arrow to Store -->
+  <line x1="335" y1="190" x2="380" y2="190" stroke="#4facfe" stroke-width="3" marker-end="url(#fsArrow)"/>
+  
+  <!-- Feature Store -->
+  <rect x="390" y="80" width="170" height="230" rx="10" fill="#1a202c" stroke="#43e97b" stroke-width="2"/>
+  <text x="475" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#43e97b">🗄️ Feature Store</text>
+  
+  <!-- Offline Store -->
+  <rect x="405" y="125" width="140" height="70" rx="8" fill="#2d3748"/>
+  <text x="475" y="150" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#4facfe">📦 Offline Store</text>
+  <text x="475" y="170" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#a0aec0">Historical Features</text>
+  <text x="475" y="185" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#a0aec0">Training Data</text>
+  
+  <!-- Online Store -->
+  <rect x="405" y="205" width="140" height="70" rx="8" fill="#2d3748"/>
+  <text x="475" y="230" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f5576c">⚡ Online Store</text>
+  <text x="475" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#a0aec0">Low Latency</text>
+  <text x="475" y="265" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#a0aec0">Real-time Serving</text>
+  
+  <!-- Arrow to Training -->
+  <line x1="560" y1="160" x2="605" y2="130" stroke="#4facfe" stroke-width="3" marker-end="url(#fsArrow)"/>
+  
+  <!-- Arrow to Serving -->
+  <line x1="560" y1="240" x2="605" y2="270" stroke="#f5576c" stroke-width="3" marker-end="url(#fsArrow)"/>
+  
+  <!-- Training -->
+  <rect x="615" y="80" width="130" height="80" rx="10" fill="#4facfe"/>
+  <text x="680" y="115" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">🎓 Training</text>
+  <text x="680" y="135" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Model Development</text>
+  <text x="680" y="150" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Experiments</text>
+  
+  <!-- Serving -->
+  <rect x="615" y="220" width="130" height="80" rx="10" fill="#f5576c"/>
+  <text x="680" y="255" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">🚀 Serving</text>
+  <text x="680" y="275" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Real-time Inference</text>
+  <text x="680" y="290" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Predictions</text>
+  
+  <!-- Monitoring Metrics -->
+  <rect x="150" y="330" width="500" height="50" rx="8" fill="#2d3748"/>
+  <text x="400" y="352" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#ffd93d">📊 Feature Store Monitoring</text>
+  <text x="400" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Freshness • Quality • Consistency • Latency • Training-Serving Skew</text>
+</svg>
+

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">💰 ML Infrastructure Cost Breakdown</text>
+  
+  <!-- Training Costs -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="340" height="200" rx="12" fill="#1e293b"/>
+    <rect x="50" y="60" width="340" height="45" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="220" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧠 TRAINING COSTS</text>
+    <text x="330" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#ddd6fe">20-30%</text>
+    
+    <text x="75" y="130" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• GPU/TPU compute hours</text>
+    <text x="75" y="155" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Storage for training data</text>
+    <text x="75" y="180" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Data preprocessing compute</text>
+    <text x="75" y="205" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Experiment tracking storage</text>
+    
+    <!-- Progress bar -->
+    <rect x="75" y="230" width="290" height="15" rx="4" fill="#334155"/>
+    <rect x="75" y="230" width="75" height="15" rx="4" fill="#8b5cf6"/>
+  </g>
+  
+  <!-- Inference Costs -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="60" width="340" height="200" rx="12" fill="#1e293b"/>
+    <rect x="410" y="60" width="340" height="45" rx="12 12 0 0" fill="#ef4444"/>
+    <text x="580" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🚀 INFERENCE COSTS</text>
+    <text x="690" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#fecaca">60-70%</text>
+    
+    <text x="435" y="130" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Model serving compute (CPU/GPU)</text>
+    <text x="435" y="155" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Real-time feature computation</text>
+    <text x="435" y="180" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Load balancer and networking</text>
+    <text x="435" y="205" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Auto-scaling overhead</text>
+    
+    <!-- Progress bar -->
+    <rect x="435" y="230" width="290" height="15" rx="4" fill="#334155"/>
+    <rect x="435" y="230" width="195" height="15" rx="4" fill="#ef4444"/>
+  </g>
+  
+  <!-- Storage Costs -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="280" width="340" height="120" rx="12" fill="#1e293b"/>
+    <rect x="50" y="280" width="340" height="40" rx="12 12 0 0" fill="#10b981"/>
+    <text x="220" y="307" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">💾 STORAGE COSTS</text>
+    <text x="330" y="307" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">5-10%</text>
+    
+    <text x="75" y="345" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Model artifacts • Feature store</text>
+    <text x="75" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Training datasets • Logs and metrics</text>
+  </g>
+  
+  <!-- Hidden Costs -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="280" width="340" height="120" rx="12" fill="#1e293b"/>
+    <rect x="410" y="280" width="340" height="40" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="580" y="307" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚠️ HIDDEN COSTS</text>
+    <text x="700" y="307" font-family="Segoe UI, sans-serif" font-size="11" fill="#fef3c7">Often overlooked</text>
+    
+    <text x="435" y="345" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Data transfer between regions</text>
+    <text x="435" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Idle resources • Failed training runs</text>
+  </g>
+  
+  <!-- Cost Optimization Tips -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="420" width="700" height="85" rx="12" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="400" y="450" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#60a5fa">💡 Cost Optimization Strategies</text>
+    <text x="150" y="480" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#93c5fd">Spot instances</text>
+    <text x="300" y="480" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#93c5fd">Model quantization</text>
+    <text x="450" y="480" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#93c5fd">Right-sizing</text>
+    <text x="600" y="480" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#93c5fd">Auto-scaling</text>
+  </g>
+</svg>

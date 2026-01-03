@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="routerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="controlGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="treatAGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="treatBGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="metricsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <filter id="archShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="flowArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="550" fill="url(#archBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🔀 A/B Test Architecture
+  </text>
+  
+  <!-- Users Icon -->
+  <circle cx="400" cy="95" r="30" fill="#1e293b" stroke="#475569" stroke-width="2" filter="url(#archShadow)"/>
+  <text x="400" y="102" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" fill="#f8fafc">👥</text>
+  <text x="400" y="140" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">Users</text>
+  
+  <!-- Flow arrow to router -->
+  <line x1="400" y1="150" x2="400" y2="175" stroke="#64748b" stroke-width="2" marker-end="url(#flowArrow)"/>
+  
+  <!-- Traffic Router -->
+  <g transform="translate(300, 180)" filter="url(#archShadow)">
+    <rect width="200" height="60" rx="12" fill="url(#routerGrad)"/>
+    <text x="100" y="32" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">🔀 Traffic Router</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fef3c7">Deterministic Hash Assignment</text>
+  </g>
+  
+  <!-- Flow arrows to variants -->
+  <line x1="330" y1="240" x2="180" y2="290" stroke="#3b82f6" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="400" y1="240" x2="400" y2="290" stroke="#10b981" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="470" y1="240" x2="620" y2="290" stroke="#8b5cf6" stroke-width="2" marker-end="url(#flowArrow)"/>
+  
+  <!-- Traffic percentages -->
+  <text x="240" y="270" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#60a5fa">50%</text>
+  <text x="400" y="270" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#34d399">25%</text>
+  <text x="560" y="270" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#a78bfa">25%</text>
+  
+  <!-- Control -->
+  <g transform="translate(80, 295)" filter="url(#archShadow)">
+    <rect width="150" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#controlGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">Control</text>
+    <text x="75" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">Model v1.0</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#64748b">Baseline</text>
+  </g>
+  
+  <!-- Treatment A -->
+  <g transform="translate(325, 295)" filter="url(#archShadow)">
+    <rect width="150" height="100" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#treatAGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">Treatment A</text>
+    <text x="75" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">Model v2.0</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#64748b">New Algorithm</text>
+  </g>
+  
+  <!-- Treatment B -->
+  <g transform="translate(545, 295)" filter="url(#archShadow)">
+    <rect width="150" height="100" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#treatBGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">Treatment B</text>
+    <text x="75" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">Model v2.1</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#64748b">Optimized</text>
+  </g>
+  
+  <!-- Flow arrows to metrics -->
+  <line x1="155" y1="395" x2="300" y2="435" stroke="#64748b" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="400" y1="395" x2="400" y2="435" stroke="#64748b" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="620" y1="395" x2="500" y2="435" stroke="#64748b" stroke-width="2" marker-end="url(#flowArrow)"/>
+  
+  <!-- Metrics Logger -->
+  <g transform="translate(250, 440)" filter="url(#archShadow)">
+    <rect width="300" height="55" rx="12" fill="url(#metricsGrad)"/>
+    <text x="150" y="28" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">📊 Metrics Logger &amp; Analysis</text>
+    <text x="150" y="45" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fce7f3">Statistical Significance Testing</text>
+  </g>
+  
+  <!-- Bottom Stats -->
+  <g transform="translate(50, 510)">
+    <text x="0" y="15" font-family="Segoe UI, Arial" font-size="11" fill="#64748b">📐 Formula: bucket = hash(user_id + exp_id) % 100</text>
+    <text x="450" y="15" font-family="Segoe UI, Arial" font-size="11" fill="#64748b">⏱️ Duration: 2+ weeks for statistical power</text>
+  </g>
+</svg>

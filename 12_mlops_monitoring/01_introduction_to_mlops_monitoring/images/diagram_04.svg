@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="driftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="opsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="bizGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <filter id="compShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="compArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="580" fill="url(#compBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🔧 ML Monitoring Components
+  </text>
+  <text x="400" y="62" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">
+    Five interconnected layers of monitoring coverage
+  </text>
+  
+  <!-- Component 1: Data Monitoring -->
+  <g transform="translate(60, 85)" filter="url(#compShadow)">
+    <rect width="680" height="85" rx="12" fill="#1e293b"/>
+    <rect width="8" height="85" rx="4 0 0 4" fill="url(#dataGrad)"/>
+    <circle cx="50" cy="42" r="25" fill="url(#dataGrad)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#f8fafc">📊</text>
+    <text x="90" y="30" font-family="Segoe UI, Arial" font-size="15" font-weight="bold" fill="#60a5fa">1. DATA MONITORING</text>
+    <text x="90" y="50" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Input data quality     • Schema validation     • Feature distributions</text>
+    <text x="90" y="68" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Missing values         • Data freshness        • Outlier detection</text>
+  </g>
+  
+  <!-- Arrow 1→2 -->
+  <line x1="400" y1="170" x2="400" y2="185" stroke="#475569" stroke-width="2" marker-end="url(#compArrow)"/>
+  
+  <!-- Component 2: Model Monitoring -->
+  <g transform="translate(60, 190)" filter="url(#compShadow)">
+    <rect width="680" height="85" rx="12" fill="#1e293b"/>
+    <rect width="8" height="85" rx="4 0 0 4" fill="url(#modelGrad)"/>
+    <circle cx="50" cy="42" r="25" fill="url(#modelGrad)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#f8fafc">🎯</text>
+    <text x="90" y="30" font-family="Segoe UI, Arial" font-size="15" font-weight="bold" fill="#a78bfa">2. MODEL MONITORING</text>
+    <text x="90" y="50" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Prediction accuracy    • Precision/Recall      • F1, AUC-ROC</text>
+    <text x="90" y="68" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Confidence scores      • Feature importance    • Calibration</text>
+  </g>
+  
+  <!-- Arrow 2→3 -->
+  <line x1="400" y1="275" x2="400" y2="290" stroke="#475569" stroke-width="2" marker-end="url(#compArrow)"/>
+  
+  <!-- Component 3: Drift Monitoring -->
+  <g transform="translate(60, 295)" filter="url(#compShadow)">
+    <rect width="680" height="85" rx="12" fill="#1e293b"/>
+    <rect width="8" height="85" rx="4 0 0 4" fill="url(#driftGrad)"/>
+    <circle cx="50" cy="42" r="25" fill="url(#driftGrad)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#f8fafc">📉</text>
+    <text x="90" y="30" font-family="Segoe UI, Arial" font-size="15" font-weight="bold" fill="#fcd34d">3. DRIFT MONITORING</text>
+    <text x="90" y="50" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Data drift (PSI, KS)  • Concept drift         • Prediction drift</text>
+    <text x="90" y="68" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Prior shift            • Label drift           • Feature attribution drift</text>
+  </g>
+  
+  <!-- Arrow 3→4 -->
+  <line x1="400" y1="380" x2="400" y2="395" stroke="#475569" stroke-width="2" marker-end="url(#compArrow)"/>
+  
+  <!-- Component 4: Operational Monitoring -->
+  <g transform="translate(60, 400)" filter="url(#compShadow)">
+    <rect width="330" height="85" rx="12" fill="#1e293b"/>
+    <rect width="8" height="85" rx="4 0 0 4" fill="url(#opsGrad)"/>
+    <circle cx="50" cy="42" r="25" fill="url(#opsGrad)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#f8fafc">⚙️</text>
+    <text x="90" y="30" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#6ee7b7">4. OPERATIONAL</text>
+    <text x="90" y="50" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Latency (P50/95/99)</text>
+    <text x="90" y="68" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Throughput, Errors</text>
+  </g>
+  
+  <!-- Component 5: Business Monitoring -->
+  <g transform="translate(410, 400)" filter="url(#compShadow)">
+    <rect width="330" height="85" rx="12" fill="#1e293b"/>
+    <rect width="8" height="85" rx="4 0 0 4" fill="url(#bizGrad)"/>
+    <circle cx="50" cy="42" r="25" fill="url(#bizGrad)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#f8fafc">💰</text>
+    <text x="90" y="30" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f472b6">5. BUSINESS</text>
+    <text x="90" y="50" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• Revenue, Conversion</text>
+    <text x="90" y="68" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">• User engagement</text>
+  </g>
+  
+  <!-- Bottom summary -->
+  <rect x="150" y="510" width="500" height="50" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="1" filter="url(#compShadow)"/>
+  <text x="400" y="535" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">
+    🔗 Each layer feeds into the next — comprehensive monitoring requires all five
+  </text>
+</svg>

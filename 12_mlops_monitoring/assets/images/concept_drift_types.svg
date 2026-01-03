@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="cdBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#203a43;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c5364;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#cdBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🔄 Types of Concept Drift
+  </text>
+  
+  <!-- Chart 1: Sudden Drift -->
+  <rect x="30" y="60" width="170" height="170" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="115" y="85" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f5576c">Sudden Drift</text>
+  
+  <!-- Sudden drift line -->
+  <line x1="50" y1="200" x2="180" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <line x1="50" y1="110" x2="50" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <polyline points="55,180 75,180 95,180 95,120 115,120 135,120 155,120 175,120" 
+            fill="none" stroke="#f5576c" stroke-width="3"/>
+  <text x="115" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Time →</text>
+  
+  <!-- Chart 2: Gradual Drift -->
+  <rect x="220" y="60" width="170" height="170" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="305" y="85" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#43e97b">Gradual Drift</text>
+  
+  <!-- Gradual drift line -->
+  <line x1="240" y1="200" x2="370" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <line x1="240" y1="110" x2="240" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <path d="M245,180 Q260,175 280,165 Q300,150 320,135 Q340,130 365,120" 
+        fill="none" stroke="#43e97b" stroke-width="3"/>
+  <text x="305" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Time →</text>
+  
+  <!-- Chart 3: Incremental Drift -->
+  <rect x="410" y="60" width="170" height="170" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="495" y="85" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#4facfe">Incremental Drift</text>
+  
+  <!-- Incremental drift line -->
+  <line x1="430" y1="200" x2="560" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <line x1="430" y1="110" x2="430" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <polyline points="435,180 455,175 465,175 475,165 495,160 505,160 515,145 535,140 545,140 555,125" 
+            fill="none" stroke="#4facfe" stroke-width="3"/>
+  <text x="495" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Time →</text>
+  
+  <!-- Chart 4: Recurring Drift -->
+  <rect x="600" y="60" width="170" height="170" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="685" y="85" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#ffd93d">Recurring Drift</text>
+  
+  <!-- Recurring drift line (sine wave) -->
+  <line x1="620" y1="200" x2="750" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <line x1="620" y1="110" x2="620" y2="200" stroke="#4a5568" stroke-width="1"/>
+  <path d="M625,150 Q645,120 665,150 Q685,180 705,150 Q725,120 745,150" 
+        fill="none" stroke="#ffd93d" stroke-width="3"/>
+  <text x="685" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Time →</text>
+  
+  <!-- Description boxes -->
+  <rect x="30" y="250" width="170" height="80" rx="8" fill="#2d3748"/>
+  <text x="115" y="275" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f5576c">⚡ Abrupt change</text>
+  <text x="115" y="295" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">e.g., Regulation</text>
+  <text x="115" y="315" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">change, system update</text>
+  
+  <rect x="220" y="250" width="170" height="80" rx="8" fill="#2d3748"/>
+  <text x="305" y="275" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#43e97b">📈 Slow transition</text>
+  <text x="305" y="295" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">e.g., Consumer</text>
+  <text x="305" y="315" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">behavior evolution</text>
+  
+  <rect x="410" y="250" width="170" height="80" rx="8" fill="#2d3748"/>
+  <text x="495" y="275" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#4facfe">🪜 Step-by-step</text>
+  <text x="495" y="295" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">e.g., Technology</text>
+  <text x="495" y="315" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">adoption phases</text>
+  
+  <rect x="600" y="250" width="170" height="80" rx="8" fill="#2d3748"/>
+  <text x="685" y="275" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#ffd93d">🔄 Periodic pattern</text>
+  <text x="685" y="295" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">e.g., Seasonal</text>
+  <text x="685" y="315" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">shopping patterns</text>
+  
+  <!-- Detection methods -->
+  <rect x="100" y="360" width="600" height="70" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="400" y="385" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">
+    Detection Methods
+  </text>
+  <text x="400" y="410" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#a0aec0">
+    DDM | ADWIN | Page-Hinkley | KSWIN | Performance Monitoring
+  </text>
+</svg>
+

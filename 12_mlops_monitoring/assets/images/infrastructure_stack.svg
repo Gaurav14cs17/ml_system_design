@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="infraBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0c0c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#infraBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🖥️ ML Infrastructure Stack
+  </text>
+  
+  <!-- Layer 1: Application -->
+  <rect x="100" y="70" width="600" height="70" rx="10" fill="url(#layer1)"/>
+  <text x="400" y="100" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#f8fafc">📱 Application Layer</text>
+  <text x="400" y="125" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#f8fafc">Model Serving • Feature Store • Training Pipelines • Prediction APIs</text>
+  
+  <!-- Connector -->
+  <line x1="400" y1="140" x2="400" y2="160" stroke="#4a5568" stroke-width="3"/>
+  <polygon points="395,155 405,155 400,165" fill="#4a5568"/>
+  
+  <!-- Layer 2: Orchestration -->
+  <rect x="100" y="165" width="600" height="70" rx="10" fill="url(#layer2)"/>
+  <text x="400" y="195" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#f8fafc">⚙️ Orchestration Layer</text>
+  <text x="400" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#f8fafc">Kubernetes • Docker • Airflow • Kubeflow • MLflow</text>
+  
+  <!-- Connector -->
+  <line x1="400" y1="235" x2="400" y2="255" stroke="#4a5568" stroke-width="3"/>
+  <polygon points="395,250 405,250 400,260" fill="#4a5568"/>
+  
+  <!-- Layer 3: Compute -->
+  <rect x="100" y="260" width="600" height="70" rx="10" fill="url(#layer3)"/>
+  <text x="400" y="290" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#f8fafc">💻 Compute Layer</text>
+  <text x="400" y="315" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#f8fafc">CPU • GPU • TPU • Memory • Storage • Network</text>
+  
+  <!-- Connector -->
+  <line x1="400" y1="330" x2="400" y2="350" stroke="#4a5568" stroke-width="3"/>
+  <polygon points="395,345 405,345 400,355" fill="#4a5568"/>
+  
+  <!-- Layer 4: Infrastructure -->
+  <rect x="100" y="355" width="600" height="70" rx="10" fill="url(#layer4)"/>
+  <text x="400" y="385" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#f8fafc">☁️ Infrastructure Layer</text>
+  <text x="400" y="410" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#f8fafc">AWS • GCP • Azure • On-Premise • Hybrid Cloud</text>
+  
+  <!-- Side annotations -->
+  <text x="720" y="105" text-anchor="start" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Latency, Errors</text>
+  <text x="720" y="200" text-anchor="start" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Pod Health</text>
+  <text x="720" y="295" text-anchor="start" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">CPU, GPU, Mem</text>
+  <text x="720" y="390" text-anchor="start" font-family="Segoe UI, Arial" font-size="10" fill="#a0aec0">Cost, Uptime</text>
+  
+  <!-- Metrics icons -->
+  <text x="750" y="105" text-anchor="start" font-family="Segoe UI, Arial" font-size="14">📊</text>
+  <text x="750" y="200" text-anchor="start" font-family="Segoe UI, Arial" font-size="14">🐳</text>
+  <text x="750" y="295" text-anchor="start" font-family="Segoe UI, Arial" font-size="14">🎮</text>
+  <text x="750" y="390" text-anchor="start" font-family="Segoe UI, Arial" font-size="14">💰</text>
+</svg>
+

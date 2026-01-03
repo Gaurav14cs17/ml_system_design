@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="appGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="orchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="compGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="infraGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🏗️ ML Infrastructure Stack</text>
+  
+  <!-- Application Layer -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="70" width="600" height="80" rx="12" fill="url(#appGrad)"/>
+    <text x="400" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">APPLICATION LAYER</text>
+    <text x="200" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ddd6fe">Model Serving</text>
+    <text x="400" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ddd6fe">Feature Store</text>
+    <text x="600" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ddd6fe">Training Pipelines</text>
+  </g>
+  
+  <line x1="400" y1="150" x2="400" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Orchestration Layer -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="175" width="600" height="80" rx="12" fill="url(#orchGrad)"/>
+    <text x="400" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">ORCHESTRATION LAYER</text>
+    <text x="175" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#bfdbfe">Kubernetes</text>
+    <text x="300" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#bfdbfe">Docker</text>
+    <text x="425" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#bfdbfe">Airflow</text>
+    <text x="550" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#bfdbfe">Kubeflow</text>
+  </g>
+  
+  <line x1="400" y1="255" x2="400" y2="275" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Compute Layer -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="280" width="600" height="80" rx="12" fill="url(#compGrad)"/>
+    <text x="400" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">COMPUTE LAYER</text>
+    <text x="175" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">CPU</text>
+    <text x="275" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">GPU</text>
+    <text x="375" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">TPU</text>
+    <text x="475" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">Memory</text>
+    <text x="575" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">Storage</text>
+  </g>
+  
+  <line x1="400" y1="360" x2="400" y2="380" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Infrastructure Layer -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="385" width="600" height="55" rx="12" fill="url(#infraGrad)"/>
+    <text x="400" y="418" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">INFRASTRUCTURE LAYER</text>
+    <text x="230" y="433" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fef3c7">AWS/GCP/Azure</text>
+    <text x="400" y="433" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fef3c7">On-Premises</text>
+    <text x="570" y="433" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fef3c7">Hybrid Cloud</text>
+  </g>
+</svg>

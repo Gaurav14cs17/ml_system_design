@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="alertBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#alertBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🚨 Alert Severity Levels
+  </text>
+  
+  <!-- Critical (P1) -->
+  <rect x="50" y="70" width="160" height="280" rx="10" fill="#ff4757"/>
+  <text x="130" y="105" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" fill="#f8fafc">🔴</text>
+  <text x="130" y="140" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" font-weight="bold" fill="#f8fafc">CRITICAL</text>
+  <text x="130" y="160" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#f8fafc">(P1)</text>
+  <line x1="70" y1="175" x2="190" y2="175" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <text x="130" y="200" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#ffe0e0">⏱️ andlt; 15 min response</text>
+  <text x="130" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#ffe0e0">📞 Page + Call</text>
+  <text x="130" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Model down</text>
+  <text x="130" y="268" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Accuracy andlt; 70%</text>
+  <text x="130" y="286" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Data pipeline fail</text>
+  <text x="130" y="304" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Revenue impact</text>
+  <text x="130" y="335" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#0f172a" opacity="0.8">Wake up the team!</text>
+  
+  <!-- High (P2) -->
+  <rect x="230" y="70" width="160" height="280" rx="10" fill="#ffa502"/>
+  <text x="310" y="105" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" fill="#f8fafc">🟠</text>
+  <text x="310" y="140" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" font-weight="bold" fill="#f8fafc">HIGH</text>
+  <text x="310" y="160" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#f8fafc">(P2)</text>
+  <line x1="250" y1="175" x2="370" y2="175" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <text x="310" y="200" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f8fafc">⏱️ andlt; 1 hour response</text>
+  <text x="310" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f8fafc">📟 Page on-call</text>
+  <text x="310" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Accuracy 70-85%</text>
+  <text x="310" y="268" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Latency SLA breach</text>
+  <text x="310" y="286" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Feature pipeline delay</text>
+  <text x="310" y="304" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Error rate andgt; 5%</text>
+  <text x="310" y="335" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#f8fafc" opacity="0.8">Needs attention now</text>
+  
+  <!-- Medium (P3) -->
+  <rect x="410" y="70" width="160" height="280" rx="10" fill="#ffd93d"/>
+  <text x="490" y="105" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" fill="#f8fafc">🟡</text>
+  <text x="490" y="140" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" font-weight="bold" fill="#f8fafc">MEDIUM</text>
+  <text x="490" y="160" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#f8fafc">(P3)</text>
+  <line x1="430" y1="175" x2="550" y2="175" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <text x="490" y="200" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f8fafc">⏱️ andlt; 4 hour response</text>
+  <text x="490" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f8fafc">💬 Slack notification</text>
+  <text x="490" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Moderate drift</text>
+  <text x="490" y="268" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Error rate 1-5%</text>
+  <text x="490" y="286" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Feature staleness</text>
+  <text x="490" y="304" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Low throughput</text>
+  <text x="490" y="335" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#f8fafc" opacity="0.8">Handle during work hours</text>
+  
+  <!-- Low (P4) -->
+  <rect x="590" y="70" width="160" height="280" rx="10" fill="#2ed573"/>
+  <text x="670" y="105" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" fill="#f8fafc">🟢</text>
+  <text x="670" y="140" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" font-weight="bold" fill="#f8fafc">LOW</text>
+  <text x="670" y="160" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#f8fafc">(P4)</text>
+  <line x1="610" y1="175" x2="730" y2="175" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <text x="670" y="200" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f8fafc">⏱️ Next business day</text>
+  <text x="670" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#f8fafc">📧 Email / Ticket</text>
+  <text x="670" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Minor variations</text>
+  <text x="670" y="268" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Optimization hints</text>
+  <text x="670" y="286" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Documentation</text>
+  <text x="670" y="304" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">• Process updates</text>
+  <text x="670" y="335" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#f8fafc" opacity="0.8">Track and plan</text>
+  
+  <!-- Footer -->
+  <text x="400" y="380" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#a0aec0">
+    Every alert must be actionable • Include runbook links • Avoid alert fatigue
+  </text>
+</svg>
+

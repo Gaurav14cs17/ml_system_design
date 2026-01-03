@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="lcBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#302b63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24243e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00f2fe"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#lcBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🔄 ML Monitoring Lifecycle
+  </text>
+  
+  <!-- Circular arrow path -->
+  <ellipse cx="400" cy="220" rx="280" ry="120" fill="none" stroke="#4a5568" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- Node 1: Baseline -->
+  <circle cx="400" cy="100" r="45" fill="url(#nodeGrad)" filter="url(#glow)"/>
+  <text x="400" y="95" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">📊</text>
+  <text x="400" y="112" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">BASELINE</text>
+  
+  <!-- Node 2: Deploy -->
+  <circle cx="600" cy="160" r="45" fill="#f5576c" filter="url(#glow)"/>
+  <text x="600" y="155" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">🚀</text>
+  <text x="600" y="172" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">DEPLOY</text>
+  
+  <!-- Node 3: Collect -->
+  <circle cx="680" cy="260" r="45" fill="#4facfe" filter="url(#glow)"/>
+  <text x="680" y="255" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">📥</text>
+  <text x="680" y="272" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">COLLECT</text>
+  
+  <!-- Node 4: Analyze -->
+  <circle cx="540" cy="340" r="45" fill="#43e97b" filter="url(#glow)"/>
+  <text x="540" y="335" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">🔍</text>
+  <text x="540" y="352" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">ANALYZE</text>
+  
+  <!-- Node 5: Alert -->
+  <circle cx="260" cy="340" r="45" fill="#ffd93d" filter="url(#glow)"/>
+  <text x="260" y="335" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">🚨</text>
+  <text x="260" y="352" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">ALERT</text>
+  
+  <!-- Node 6: Improve -->
+  <circle cx="120" cy="260" r="45" fill="#ff6b6b" filter="url(#glow)"/>
+  <text x="120" y="255" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">🔧</text>
+  <text x="120" y="272" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">IMPROVE</text>
+  
+  <!-- Arrows connecting nodes -->
+  <path d="M440,115 Q520,100 560,145" fill="none" stroke="#00f2fe" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M635,185 Q680,210 680,215" fill="none" stroke="#00f2fe" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M650,295 Q600,340 585,340" fill="none" stroke="#00f2fe" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M495,340 Q400,360 305,340" fill="none" stroke="#00f2fe" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M215,340 Q150,320 135,295" fill="none" stroke="#00f2fe" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M140,220 Q160,140 355,105" fill="none" stroke="#00f2fe" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Center text -->
+  <text x="400" y="220" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#a0aec0">
+    Continuous
+  </text>
+  <text x="400" y="240" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#a0aec0">
+    Feedback Loop
+  </text>
+</svg>
+
