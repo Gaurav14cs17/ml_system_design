@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='560' viewBox='0 0 660 560'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      MORPHOLOGICAL OPERATIONS                                │
+└───────────────────────────────────────────────────────────────────────────┘
+
+EROSION                                 DILATION
+(Shrinks white regions)                 (Expands white regions)
+
+    Original        Eroded                  Original        Dilated
+    ┌───────────┐   ┌───────────┐           ┌───────────┐   ┌───────────┐
+    │  ▓▓▓▓▓▓   │   │   ▓▓▓▓    │           │  ▓▓▓▓▓▓   │   │ ▓▓▓▓▓▓▓▓  │
+    │ ▓▓▓▓▓▓▓▓  │ → │  ▓▓▓▓▓▓   │           │ ▓▓▓▓▓▓▓▓  │ → │▓▓▓▓▓▓▓▓▓▓ │
+    │  ▓▓▓▓▓▓   │   │   ▓▓▓▓    │           │  ▓▓▓▓▓▓   │   │ ▓▓▓▓▓▓▓▓  │
+    └───────────┘   └───────────┘           └───────────┘   └───────────┘
+
+• Removes small objects               • Fills small holes
+• Separates touching objects          • Connects nearby objects
+
+
+OPENING (Erosion → Dilation)          CLOSING (Dilation → Erosion)
+(Removes noise, preserves shape)      (Fills holes, preserves shape)
+
+    Noisy Input      After Opening          Holey Input     After Closing
+    ┌───────────┐   ┌───────────┐           ┌───────────┐   ┌───────────┐
+    │  ▓▓▓▓  ·  │   │  ▓▓▓▓▓▓   │           │  ▓▓ ▓▓▓   │   │  ▓▓▓▓▓▓   │
+    │ ▓▓▓▓▓ ·▓  │ → │ ▓▓▓▓▓▓▓▓  │           │ ▓▓  ▓▓▓▓  │ → │ ▓▓▓▓▓▓▓▓  │
+    │  ▓▓▓▓ ·   │   │  ▓▓▓▓▓▓   │           │  ▓▓▓ ▓▓   │   │  ▓▓▓▓▓▓   │
+    └───────────┘   └───────────┘           └───────────┘   └───────────┘
+
+• Removes small bright spots          • Fills small dark holes
+• Smooths object boundaries           • Connects narrow gaps
+  </text>
+</svg>

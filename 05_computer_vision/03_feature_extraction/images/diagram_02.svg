@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='344' viewBox='0 0 660 344'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                           FAST CORNER DETECTION                              │
+└───────────────────────────────────────────────────────────────────────────┘
+
+    Circle of 16 pixels around candidate point p:
+
+              1  2  3
+           16        4
+         15     p     5
+         14           6
+           13        7
+              12 11 10
+
+    FAST-9: Corner if 9+ contiguous pixels are ALL brighter or ALL darker
+    than center pixel p by threshold t.
+
+    Quick rejection: First check pixels 1, 5, 9, 13
+    - At least 3 must be brighter or darker for possible corner
+  </text>
+</svg>

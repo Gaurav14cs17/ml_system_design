@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="280" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">JPEG Compression Pipeline</text>
+  
+  <!-- Pipeline boxes -->
+  <g transform="translate(40, 70)">
+    <!-- Step 1: RGB to YCbCr -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="30" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#c4b5fd">RGB to</text>
+      <text x="60" y="48" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#c4b5fd">YCbCr</text>
+      <text x="60" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Color space</text>
+      <text x="60" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">conversion</text>
+    </g>
+    
+    <!-- Arrow 1 -->
+    <line x1="130" y1="35" x2="160" y2="35" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2: 8x8 Blocks -->
+    <g transform="translate(170, 0)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="30" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#60a5fa">8×8</text>
+      <text x="60" y="48" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#60a5fa">Blocks</text>
+      <text x="60" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Split into</text>
+      <text x="60" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">small blocks</text>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <line x1="300" y1="35" x2="330" y2="35" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3: DCT -->
+    <g transform="translate(340, 0)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="30" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#4ade80">DCT</text>
+      <text x="60" y="48" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#4ade80">Transform</text>
+      <text x="60" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Frequency</text>
+      <text x="60" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">domain</text>
+    </g>
+    
+    <!-- Arrow 3 -->
+    <line x1="470" y1="35" x2="500" y2="35" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4: Quantize -->
+    <g transform="translate(510, 0)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="38" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fb923c">Quantize</text>
+      <text x="60" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Reduce</text>
+      <text x="60" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">precision</text>
+    </g>
+    
+    <!-- Arrow 4 -->
+    <line x1="640" y1="35" x2="670" y2="35" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 5: Entropy Encode -->
+    <g transform="translate(680, 0)">
+      <rect x="0" y="0" width="90" height="70" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2" filter="url(#shadow)"/>
+      <text x="45" y="30" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#f87171">Entropy</text>
+      <text x="45" y="48" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#f87171">Encode</text>
+      <text x="45" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Huffman/</text>
+      <text x="45" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Arithmetic</text>
+    </g>
+  </g>
+  
+  <!-- Key Information -->
+  <g transform="translate(100, 210)">
+    <rect x="0" y="0" width="600" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="300" y="20" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fbbf24">Key: Quantization causes information loss (lossy compression)</text>
+    <text x="300" y="40" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">Higher quantization = smaller file size, lower quality</text>
+  </g>
+</svg>

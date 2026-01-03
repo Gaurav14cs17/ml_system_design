@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='708' height='362' viewBox='0 0 708 362'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      EDGE DETECTION CONCEPT                                  │
+└───────────────────────────────────────────────────────────────────────────┘
+
+    Intensity Profile              First Derivative           Second Derivative
+    (across edge)                  (Gradient)                 (Laplacian)
+
+         ▲                              ▲                           ▲
+    255  │        ╭───────              │         ╭╮                │    ╭╮
+         │       ╱                      │        ╱  ╲               │   ╱  ╲
+         │      ╱                       │       ╱    ╲              │  ╱    ╲
+         │     ╱                  ───▶  │      ╱      ╲      ───▶   ├──────────
+         │    ╱                         │     ╱        ╲            │          ╲╱
+         │───╯                          │────╯                      │
+      0  └──────────────▶               └──────────────▶            └──────────────▶
+              Position                       Position                    Position
+
+    Edge = where gradient           Edge = peak of            Edge = zero crossing
+           is high                         gradient                  of 2nd derivative
+  </text>
+</svg>

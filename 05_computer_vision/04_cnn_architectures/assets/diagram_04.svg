@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='992' viewBox='0 0 660 992'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                        RESIDUAL BLOCK CONCEPT                                │
+└───────────────────────────────────────────────────────────────────────────┘
+
+    Without Skip Connection              With Skip Connection (ResNet)
+
+         x                                      x
+         │                                      │
+         ▼                                      ├─────────────┐
+    ┌─────────┐                            ┌─────────┐        │
+    │  Conv   │                            │  Conv   │        │
+    │   BN    │                            │   BN    │        │
+    │  ReLU   │                            │  ReLU   │        │
+    ├─────────┤                            ├─────────┤        │
+    │  Conv   │                            │  Conv   │        │
+    │   BN    │                            │   BN    │        │
+    └─────────┘                            └─────────┘        │
+         │                                      │             │
+         ▼                                      ▼             │
+       F(x)                               F(x)  +  ──────────┘
+         │                                      │
+         ▼                                      ▼
+      Output                              F(x) + x = H(x)
+                                                │
+                                               ReLU
+                                                │
+                                             Output
+
+    Learn: F(x) = H(x)                    Learn: F(x) = H(x) - x
+    (transformation)                       (residual)
+
+BOTTLENECK BLOCK (ResNet-50+):
+┌─────────────────────────────────────────────┐
+│     x (256 channels)                        │
+│         │                                   │
+│    ┌────┴────┐                              │
+│    │ 1×1, 64 │  ← Reduce dimensions         │
+│    │   BN    │                              │
+│    │  ReLU   │                              │
+│    ├─────────┤                              │
+│    │ 3×3, 64 │  ← Process                   │
+│    │   BN    │                              │
+│    │  ReLU   │                              │
+│    ├─────────┤                              │
+│    │1×1, 256 │  ← Expand dimensions         │
+│    │   BN    │                              │
+│    └────┬────┘                              │
+│         │                                   │
+│         + ←────────── x (identity)          │
+│         │                                   │
+│       ReLU                                  │
+│         │                                   │
+│      Output                                 │
+└─────────────────────────────────────────────┘
+  </text>
+</svg>

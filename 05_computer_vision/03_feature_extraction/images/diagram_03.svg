@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='560' viewBox='0 0 660 560'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                           SIFT PIPELINE                                      │
+└───────────────────────────────────────────────────────────────────────────┘
+
+  Step 1: Scale-Space       Step 2: Keypoint         Step 3: Orientation
+  Extrema Detection         Localization             Assignment
+
+  ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
+  │  ○   ○   ○      │      │       ●         │      │       ●→        │
+  │   ○   ○   ○     │  →   │                 │  →   │      ↗          │
+  │    ○   ○   ○    │      │                 │      │                 │
+  └─────────────────┘      └─────────────────┘      └─────────────────┘
+
+  DoG pyramid             Sub-pixel refinement     Gradient histogram
+  Detect extrema          Remove unstable          Dominant direction
+
+  Step 4: Descriptor Generation
+
+  ┌─────────────────────────────────────────┐
+  │  16×16 window around keypoint           │
+  │  ┌───┬───┬───┬───┐                      │
+  │  │4×4│4×4│4×4│4×4│ → 8-bin histogram    │
+  │  ├───┼───┼───┼───┤    per region        │
+  │  │4×4│4×4│4×4│4×4│                      │
+  │  ├───┼───┼───┼───┤    4×4×8 = 128-dim   │
+  │  │4×4│4×4│4×4│4×4│    descriptor        │
+  │  ├───┼───┼───┼───┤                      │
+  │  │4×4│4×4│4×4│4×4│                      │
+  │  └───┴───┴───┴───┘                      │
+  └─────────────────────────────────────────┘
+  </text>
+</svg>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='794' viewBox='0 0 660 794'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    EFFICIENTNET COMPOUND SCALING                             │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Traditional Scaling (one dimension at a time):
+
+    Baseline         Width (w)           Depth (d)          Resolution (r)
+    ┌─────┐          ┌───────────┐       ┌─────┐            ┌─────────┐
+    │     │          │           │       │     │            │         │
+    │     │          │           │       │     │            │         │
+    │     │          │           │       │     │            │         │
+    └─────┘          └───────────┘       │     │            │         │
+                                         │     │            │         │
+                                         └─────┘            └─────────┘
+
+EfficientNet Compound Scaling (all dimensions together):
+
+    Baseline                     Compound Scaled (α=1.2, β=1.1, γ=1.15)
+    ┌─────┐                      ┌──────────────────┐
+    │     │                      │                  │
+    │     │          ────▶       │                  │
+    │     │                      │                  │
+    └─────┘                      │                  │
+                                 │                  │
+                                 │                  │
+                                 └──────────────────┘
+
+    depth = d^φ    width = w^φ    resolution = r^φ
+    where φ controls overall scaling
+
+EfficientNet Family:
+┌──────────┬───────────┬───────────┬────────────┬───────────┐
+│  Model   │Resolution │  Params   │   FLOPs    │  Top-1    │
+├──────────┼───────────┼───────────┼────────────┼───────────┤
+│ B0       │   224     │   5.3M    │   0.39B    │   77.1%   │
+│ B1       │   240     │   7.8M    │   0.70B    │   79.1%   │
+│ B2       │   260     │   9.2M    │   1.0B     │   80.1%   │
+│ B3       │   300     │   12M     │   1.8B     │   81.6%   │
+│ B4       │   380     │   19M     │   4.2B     │   82.9%   │
+│ B5       │   456     │   30M     │   9.9B     │   83.6%   │
+│ B6       │   528     │   43M     │   19B      │   84.0%   │
+│ B7       │   600     │   66M     │   37B      │   84.3%   │
+└──────────┴───────────┴───────────┴────────────┴───────────┘
+  </text>
+</svg>

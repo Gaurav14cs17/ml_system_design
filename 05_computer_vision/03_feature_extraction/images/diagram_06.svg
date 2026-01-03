@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='434' viewBox='0 0 660 434'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                           HOG COMPUTATION                                    │
+└───────────────────────────────────────────────────────────────────────────┘
+
+  Step 1: Compute Gradients      Step 2: Cell Histograms      Step 3: Block Norm
+
+  ┌─────────────────┐           ┌─────────────────┐          ┌─────────────────┐
+  │  → ↗ ↑ ↖ ←      │           │ ┌───┬───┬───┐   │          │ ┌───────┬───────┐
+  │  ↗ ↑ ↖ ← ↙      │      →    │ │9  │9  │9  │   │     →    │ │ norm  │ norm  │
+  │  ↑ ↖ ← ↙ ↓      │           │ │bin│bin│bin│   │          │ │ block │ block │
+  │  ↖ ← ↙ ↓ ↘      │           │ └───┴───┴───┘   │          │ └───────┴───────┘
+  └─────────────────┘           └─────────────────┘          └─────────────────┘
+
+  Magnitude &amp; direction         9-bin histogram              L2 normalize over
+  at each pixel                 per 8×8 cell                 2×2 cell blocks
+
+  HOG Descriptor Structure:
+  ─────────────────────────
+  • Image: 64×128 pixels (typical for pedestrian detection)
+  • Cells: 8×8 pixels each → 8×16 cells
+  • Blocks: 2×2 cells with 50% overlap → 7×15 blocks
+  • Histograms: 9 bins per cell
+  • Final descriptor: 7 × 15 × 2 × 2 × 9 = 3780 dimensions
+  </text>
+</svg>

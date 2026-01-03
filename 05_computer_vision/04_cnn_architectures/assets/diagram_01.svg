@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350">
+  <defs>
+    <linearGradient id="convGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="poolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="fcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="outGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🧠 LeNet-5 Architecture</text>
+  <text x="425" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">The Pioneer of CNN (1998)</text>
+  
+  <!-- Input -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="90" width="70" height="100" rx="8" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <text x="65" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Input</text>
+    <text x="65" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">32×32×1</text>
+    <text x="65" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">grayscale</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M105 140 L130 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="130,137 140,140 130,143" fill="#64748b"/>
+  
+  <!-- Conv1 -->
+  <g filter="url(#shadow)">
+    <rect x="145" y="80" width="90" height="120" rx="10" fill="url(#convGrad)"/>
+    <text x="190" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Conv</text>
+    <text x="190" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#bfdbfe">5×5×6</text>
+    <text x="190" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#93c5fd">28×28×6</text>
+    <text x="190" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#dbeafe">tanh</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M240 140 L265 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="265,137 275,140 265,143" fill="#64748b"/>
+  
+  <!-- Pool1 -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="90" width="80" height="100" rx="10" fill="url(#poolGrad)"/>
+    <text x="320" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Pool</text>
+    <text x="320" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">2×2</text>
+    <text x="320" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">14×14×6</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M365 140 L390 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="390,137 400,140 390,143" fill="#64748b"/>
+  
+  <!-- Conv2 -->
+  <g filter="url(#shadow)">
+    <rect x="405" y="80" width="90" height="120" rx="10" fill="url(#convGrad)"/>
+    <text x="450" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Conv</text>
+    <text x="450" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#bfdbfe">5×5×16</text>
+    <text x="450" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#93c5fd">10×10×16</text>
+    <text x="450" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#dbeafe">tanh</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M500 140 L525 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="525,137 535,140 525,143" fill="#64748b"/>
+  
+  <!-- Pool2 -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="90" width="80" height="100" rx="10" fill="url(#poolGrad)"/>
+    <text x="580" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Pool</text>
+    <text x="580" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">2×2</text>
+    <text x="580" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">5×5×16</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M625 140 L650 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="650,137 660,140 650,143" fill="#64748b"/>
+  
+  <!-- FC1 -->
+  <g filter="url(#shadow)">
+    <rect x="665" y="100" width="60" height="80" rx="10" fill="url(#fcGrad)"/>
+    <text x="695" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">FC</text>
+    <text x="695" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">120</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M730 140 L755 140" stroke="#64748b" stroke-width="2"/>
+  <polygon points="755,137 765,140 755,143" fill="#64748b"/>
+  
+  <!-- FC2 -->
+  <g filter="url(#shadow)">
+    <rect x="770" y="100" width="50" height="80" rx="10" fill="url(#fcGrad)"/>
+    <text x="795" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">FC</text>
+    <text x="795" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">84</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M795 185 L795 220" stroke="#64748b" stroke-width="2"/>
+  <polygon points="792,220 795,230 798,220" fill="#64748b"/>
+  
+  <!-- Output -->
+  <g filter="url(#shadow)">
+    <rect x="755" y="235" width="80" height="60" rx="10" fill="url(#outGrad)"/>
+    <text x="795" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Output</text>
+    <text x="795" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#422006">10</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="20" height="16" rx="3" fill="url(#convGrad)"/>
+    <text x="25" y="13" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Convolution</text>
+    
+    <rect x="100" y="0" width="20" height="16" rx="3" fill="url(#poolGrad)"/>
+    <text x="125" y="13" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Pooling</text>
+    
+    <rect x="200" y="0" width="20" height="16" rx="3" fill="url(#fcGrad)"/>
+    <text x="225" y="13" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fully Connected</text>
+    
+    <rect x="320" y="0" width="20" height="16" rx="3" fill="url(#outGrad)"/>
+    <text x="345" y="13" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Output (Softmax)</text>
+  </g>
+  
+  <!-- Stats -->
+  <rect x="50" y="300" width="650" height="35" rx="10" fill="#1e293b"/>
+  <text x="375" y="323" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">📊 ~60K Parameters | First successful CNN for digit recognition (MNIST)</text>
+</svg>

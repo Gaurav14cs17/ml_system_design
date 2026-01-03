@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='684' height='290' viewBox='0 0 684 290'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                              ORB PIPELINE                                    │
+└───────────────────────────────────────────────────────────────────────────┘
+
+  FAST Keypoint Detection         Orientation Assignment        rBRIEF Descriptor
+  ──────────────────────         ──────────────────────        ─────────────────
+
+  ┌───────────────────┐         ┌───────────────────┐         ┌───────────────────┐
+  │     ●   ●         │         │     ●→            │         │ Binary descriptor │
+  │   ●       ●       │    →    │   ●↗              │    →    │ 256 bits          │
+  │     ●   ●         │         │     ●↘            │         │ Rotation invariant│
+  └───────────────────┘         └───────────────────┘         └───────────────────┘
+
+  Multi-scale FAST               Intensity centroid           Steered BRIEF pairs
+  Harris for ranking             for orientation               based on orientation
+  </text>
+</svg>

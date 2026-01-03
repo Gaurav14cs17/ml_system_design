@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='506' viewBox='0 0 660 506'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    DEPTHWISE SEPARABLE CONVOLUTION                           │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Standard Convolution:
+─────────────────────
+Input: H×W×C_in       Kernel: K×K×C_in×C_out       Output: H×W×C_out
+Operations: H × W × C_in × C_out × K × K
+
+Depthwise Separable (MobileNet):
+────────────────────────────────
+
+Step 1: Depthwise Convolution (each channel separately)
+Input: H×W×C_in    Kernel: K×K×1×C_in    Output: H×W×C_in
+Operations: H × W × C_in × K × K
+
+Step 2: Pointwise Convolution (1×1 to mix channels)
+Input: H×W×C_in    Kernel: 1×1×C_in×C_out    Output: H×W×C_out
+Operations: H × W × C_in × C_out
+
+Cost Reduction:
+Standard:    H×W×C_in×C_out×K×K
+Separable:   H×W×C_in×K×K + H×W×C_in×C_out
+
+Ratio = 1/C_out + 1/K²
+
+For K=3, C_out=256: ~8-9× fewer operations!
+  </text>
+</svg>

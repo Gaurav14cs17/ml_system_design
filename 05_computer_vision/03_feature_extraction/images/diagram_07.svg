@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='470' viewBox='0 0 660 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      FEATURE MATCHING STRATEGIES                             │
+└───────────────────────────────────────────────────────────────────────────┘
+
+BRUTE FORCE MATCHING                    FLANN MATCHING
+────────────────────                    ──────────────
+Compare each descriptor                 Approximate nearest neighbor
+to all others                          using KD-trees or LSH
+
+Image 1     Image 2                    Image 1     Image 2
+●───────────────●                      ●─ ─ ─ ─ ─ ─●
+●───────────────●                      ●─ ─ ─ ─ ─ ─●
+●───────────────●                      ●─ ─ ─ ─ ─ ─●
+
+Pros: Accurate                         Pros: Much faster
+Cons: O(n²) slow                       Cons: Approximate
+
+RATIO TEST (Lowe&#x27;s)
+───────────────────
+Match only if: distance(best) / distance(second_best) andlt; threshold
+
+Good match:          Bad match:
+d1 = 0.1            d1 = 0.4
+d2 = 0.5            d2 = 0.5
+ratio = 0.2 ✓       ratio = 0.8 ✗
+  </text>
+</svg>

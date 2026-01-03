@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='452' viewBox='0 0 660 452'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                             VGG-16 ARCHITECTURE                              │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Input: 224×224×3
+
+Block 1: [Conv3-64] × 2 → MaxPool → 112×112×64
+Block 2: [Conv3-128] × 2 → MaxPool → 56×56×128
+Block 3: [Conv3-256] × 3 → MaxPool → 28×28×256
+Block 4: [Conv3-512] × 3 → MaxPool → 14×14×512
+Block 5: [Conv3-512] × 3 → MaxPool → 7×7×512
+
+Flatten: 7×7×512 = 25088
+
+FC: 25088 → 4096 → 4096 → 1000
+
+Key Insight:
+┌───────────────────────────────────────────────────────────────┐
+│ Two 3×3 convolutions = One 5×5 convolution (same receptive   │
+│ field) but with fewer parameters and more non-linearity      │
+│                                                               │
+│ 5×5 filter: 25 parameters                                     │
+│ Two 3×3 filters: 9 + 9 = 18 parameters (28% fewer!)          │
+└───────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

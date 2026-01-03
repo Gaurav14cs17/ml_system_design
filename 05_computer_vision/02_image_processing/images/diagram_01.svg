@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360">
+  <!-- Background -->
+  <rect width="800" height="360" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Image Processing Taxonomy</text>
+  
+  <!-- Main Container -->
+  <g transform="translate(40, 60)">
+    <rect x="0" y="0" width="720" height="280" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="360" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c4b5fd">IMAGE PROCESSING</text>
+    
+    <!-- Three columns -->
+    <!-- Point Operations -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="210" height="210" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+      <text x="105" y="28" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#60a5fa">POINT OPERATIONS</text>
+      <text x="105" y="45" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Pixel-by-pixel)</text>
+      
+      <circle cx="25" cy="75" r="4" fill="#3b82f6"/>
+      <text x="35" y="79" font-family="Arial" font-size="12" fill="#e2e8f0">Brightness adjust</text>
+      
+      <circle cx="25" cy="100" r="4" fill="#3b82f6"/>
+      <text x="35" y="104" font-family="Arial" font-size="12" fill="#e2e8f0">Contrast adjust</text>
+      
+      <circle cx="25" cy="125" r="4" fill="#3b82f6"/>
+      <text x="35" y="129" font-family="Arial" font-size="12" fill="#e2e8f0">Thresholding</text>
+      
+      <circle cx="25" cy="150" r="4" fill="#3b82f6"/>
+      <text x="35" y="154" font-family="Arial" font-size="12" fill="#e2e8f0">Color mapping</text>
+      
+      <circle cx="25" cy="175" r="4" fill="#3b82f6"/>
+      <text x="35" y="179" font-family="Arial" font-size="12" fill="#e2e8f0">Gamma correction</text>
+      
+      <circle cx="25" cy="200" r="4" fill="#3b82f6"/>
+      <text x="35" y="204" font-family="Arial" font-size="12" fill="#e2e8f0">Histogram equalization</text>
+    </g>
+    
+    <!-- Neighborhood Operations -->
+    <g transform="translate(255, 50)">
+      <rect x="0" y="0" width="210" height="210" rx="10" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+      <text x="105" y="28" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#4ade80">NEIGHBORHOOD OPS</text>
+      <text x="105" y="45" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Convolution)</text>
+      
+      <circle cx="25" cy="75" r="4" fill="#22c55e"/>
+      <text x="35" y="79" font-family="Arial" font-size="12" fill="#e2e8f0">Blurring</text>
+      
+      <circle cx="25" cy="100" r="4" fill="#22c55e"/>
+      <text x="35" y="104" font-family="Arial" font-size="12" fill="#e2e8f0">Sharpening</text>
+      
+      <circle cx="25" cy="125" r="4" fill="#22c55e"/>
+      <text x="35" y="129" font-family="Arial" font-size="12" fill="#e2e8f0">Edge detection</text>
+      
+      <circle cx="25" cy="150" r="4" fill="#22c55e"/>
+      <text x="35" y="154" font-family="Arial" font-size="12" fill="#e2e8f0">Noise reduction</text>
+      
+      <circle cx="25" cy="175" r="4" fill="#22c55e"/>
+      <text x="35" y="179" font-family="Arial" font-size="12" fill="#e2e8f0">Morphology</text>
+      
+      <circle cx="25" cy="200" r="4" fill="#22c55e"/>
+      <text x="35" y="204" font-family="Arial" font-size="12" fill="#e2e8f0">Feature extraction</text>
+    </g>
+    
+    <!-- Geometric Operations -->
+    <g transform="translate(490, 50)">
+      <rect x="0" y="0" width="210" height="210" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+      <text x="105" y="28" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fcd34d">GEOMETRIC OPS</text>
+      <text x="105" y="45" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Spatial transforms)</text>
+      
+      <circle cx="25" cy="75" r="4" fill="#fbbf24"/>
+      <text x="35" y="79" font-family="Arial" font-size="12" fill="#e2e8f0">Rotation</text>
+      
+      <circle cx="25" cy="100" r="4" fill="#fbbf24"/>
+      <text x="35" y="104" font-family="Arial" font-size="12" fill="#e2e8f0">Scaling</text>
+      
+      <circle cx="25" cy="125" r="4" fill="#fbbf24"/>
+      <text x="35" y="129" font-family="Arial" font-size="12" fill="#e2e8f0">Translation</text>
+      
+      <circle cx="25" cy="150" r="4" fill="#fbbf24"/>
+      <text x="35" y="154" font-family="Arial" font-size="12" fill="#e2e8f0">Affine transforms</text>
+      
+      <circle cx="25" cy="175" r="4" fill="#fbbf24"/>
+      <text x="35" y="179" font-family="Arial" font-size="12" fill="#e2e8f0">Perspective transforms</text>
+      
+      <circle cx="25" cy="200" r="4" fill="#fbbf24"/>
+      <text x="35" y="204" font-family="Arial" font-size="12" fill="#e2e8f0">Warping</text>
+    </g>
+  </g>
+</svg>
