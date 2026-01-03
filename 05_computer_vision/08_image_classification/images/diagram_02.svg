@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='488' viewBox='0 0 660 488'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    TRANSFER LEARNING CONCEPT                                 │
+└───────────────────────────────────────────────────────────────────────────┘
+
+ImageNet Pretrained Model:
+─────────────────────────
+• Trained on 1.2M images, 1000 classes
+• Learned generic visual features
+• Early layers: edges, textures (universal)
+• Later layers: object parts (more specific)
+
+Your Task (e.g., 100 images, 5 classes):
+─────────────────────────────────────────
+Option 1: Train from scratch ❌
+          → Overfit, poor generalization
+
+Option 2: Transfer learning ✅
+          → Leverage pretrained knowledge
+          → Works with limited data
+
+Feature Hierarchy:
+──────────────────
+Layer 1-2:  ▓▓▓ Edges, colors      → Universal (keep frozen)
+Layer 3-4:  ▓▓▓ Textures, patterns → Semi-universal (maybe fine-tune)
+Layer 5+:   ▓▓▓ Object parts       → Task-specific (fine-tune)
+Classifier: ▓▓▓ Categories         → Replace completely
+  </text>
+</svg>

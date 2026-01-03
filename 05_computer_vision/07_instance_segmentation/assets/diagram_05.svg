@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='488' viewBox='0 0 660 488'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    PANOPTIC SEGMENTATION                                     │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Combines semantic + instance segmentation:
+
+   Semantic Seg            Instance Seg           Panoptic Seg
+   (stuff classes)         (thing classes)        (unified)
+
+   ┌─────────────┐        ┌─────────────┐        ┌─────────────┐
+   │ ████ sky    │        │ ▓▓  car1    │        │ ████ sky    │
+   │             │   +    │   ░░ car2   │   =    │ ▓▓  car1    │
+   │ ████ road   │        │      person │        │   ░░ car2   │
+   │             │        │      ●      │        │ ████ road   │
+   └─────────────┘        └─────────────┘        └─────────────┘
+
+Thing classes: Countable objects (cars, people) → Instance labels
+Stuff classes: Amorphous regions (sky, road) → Semantic labels
+
+Panoptic Quality (PQ) Metric:
+────────────────────────────
+PQ = SQ × RQ
+
+where:
+• SQ (Segmentation Quality) = Average IoU of matched segments
+• RQ (Recognition Quality) = TP / (TP + 0.5×FP + 0.5×FN)
+  </text>
+</svg>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='684' height='452' viewBox='0 0 684 452'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                        R-CNN FAMILY EVOLUTION                                │
+└───────────────────────────────────────────────────────────────────────────┘
+
+R-CNN (2014)                    Fast R-CNN (2015)               Faster R-CNN (2015)
+────────────                    ─────────────────               ──────────────────
+
+Image                           Image                           Image
+  │                               │                               │
+  ▼                               ▼                               ▼
+Selective Search              CNN Feature                     CNN Feature
+(~2000 regions)               Extraction                      Extraction
+  │                               │                               │
+  ▼                               ▼                               ▼
+CNN per region                RoI Pooling                     Region Proposal
+(very slow!)                  (share features)                Network (RPN)
+  │                               │                               │
+  ▼                               ▼                               ▼
+SVM + Regressor               FC Layers                       RoI Pooling
+                              (classify + bbox)                    │
+                                                                   ▼
+                                                              FC Layers
+
+Speed: 47s/image              Speed: 2s/image                 Speed: 0.2s/image
+  </text>
+</svg>

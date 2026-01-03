@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='704' viewBox='0 0 660 704'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    RETINANET + FOCAL LOSS                                    │
+└───────────────────────────────────────────────────────────────────────────┘
+
+PROBLEM: One-stage detectors have massive class imbalance
+─────────────────────────────────────────────────────────
+• Thousands of easy negative anchors (background)
+• Few positive anchors (objects)
+• Easy negatives dominate the loss
+
+FOCAL LOSS SOLUTION:
+────────────────────
+
+Standard Cross Entropy:
+    CE(p) = -log(p)
+
+Focal Loss:
+    FL(p) = -α(1-p)^γ * log(p)
+
+    where:
+    • α balances positive/negative
+    • γ down-weights easy examples
+    • γ=2 works well in practice
+
+        ▲ Loss
+        │
+   1.0  │  ╲
+        │   ╲   CE (γ=0)
+   0.5  │    ╲
+        │     ───────────────────
+        │        FL (γ=2)
+   0.0  │         ──────────────
+        └────────────────────────▶
+        0.0        0.5         1.0
+                    p (confidence)
+
+Effect: Hard examples (low p) get higher weight
+        Easy examples (high p) get very low weight
+  </text>
+</svg>

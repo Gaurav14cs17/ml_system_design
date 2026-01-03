@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='704' viewBox='0 0 660 704'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                         U-NET ARCHITECTURE                                   │
+└───────────────────────────────────────────────────────────────────────────┘
+
+                                                          Output
+    Input                                                 (C classes)
+    (H×W×1)                                              (H×W×C)
+        │                                                    ▲
+        ▼                                                    │
+    ┌───────┐                                            ┌───────┐
+    │Conv 64│─────────────── Skip Connection ───────────▶│Conv 64│
+    └───┬───┘                                            └───▲───┘
+        │ Pool                                          Up  │
+        ▼                                                   │
+    ┌───────┐                                            ┌───────┐
+    │Conv128│─────────────── Skip Connection ───────────▶│Conv128│
+    └───┬───┘                                            └───▲───┘
+        │ Pool                                          Up  │
+        ▼                                                   │
+    ┌───────┐                                            ┌───────┐
+    │Conv256│─────────────── Skip Connection ───────────▶│Conv256│
+    └───┬───┘                                            └───▲───┘
+        │ Pool                                          Up  │
+        ▼                                                   │
+    ┌───────┐                                            ┌───────┐
+    │Conv512│─────────────── Skip Connection ───────────▶│Conv512│
+    └───┬───┘                                            └───▲───┘
+        │ Pool                                          Up  │
+        ▼                                                   │
+    ┌─────────────────────────────────────────────────────────┐
+    │                     Bottleneck (1024)                   │
+    └─────────────────────────────────────────────────────────┘
+
+Key Features:
+• Symmetric encoder-decoder structure
+• Skip connections preserve spatial information
+• Concatenation (not addition) for feature fusion
+• Works well with limited training data
+  </text>
+</svg>

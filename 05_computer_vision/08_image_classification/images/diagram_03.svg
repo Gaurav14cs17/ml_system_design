@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='506' viewBox='0 0 660 506'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    FINE-TUNING STRATEGIES COMPARISON                         │
+└───────────────────────────────────────────────────────────────────────────┘
+
+STRATEGY 1: Feature Extraction          STRATEGY 2: Full Fine-Tuning
+───────────────────────────              ─────────────────────────────
+┌─────────────────┐                      ┌─────────────────┐
+│  Conv Layers    │ ❄️ Frozen            │  Conv Layers    │ 🔥 Trainable
+│                 │                      │  (low LR)       │
+├─────────────────┤                      ├─────────────────┤
+│  Classifier     │ 🔥 Trainable         │  Classifier     │ 🔥 Trainable
+│  (new head)     │                      │  (high LR)      │
+└─────────────────┘                      └─────────────────┘
+
+Best for: Very small datasets            Best for: Large datasets
+          Very different domain                    Similar domain
+
+
+STRATEGY 3: Gradual Unfreezing           STRATEGY 4: Discriminative LR
+──────────────────────────────           ────────────────────────────
+Phase 1: Train head only                 Different LR per layer:
+Phase 2: Unfreeze layer4
+Phase 3: Unfreeze layer3                 Layer 1: 1e-6  (barely change)
+...                                      Layer 2: 1e-5
+                                         Layer 3: 1e-4
+                                         Layer 4: 1e-3
+                                         Head:    1e-2  (change most)
+  </text>
+</svg>

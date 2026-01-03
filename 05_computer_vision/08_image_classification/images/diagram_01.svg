@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='254' viewBox='0 0 660 254'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    IMAGE CLASSIFICATION PIPELINE                             │
+└───────────────────────────────────────────────────────────────────────────┘
+
+  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+  │  Input   │───▶│  Preproc │───▶│ Backbone │───▶│  Head    │───▶│  Output  │
+  │  Image   │    │ (resize, │    │ (feature │    │ (FC +    │    │ (probs)  │
+  │          │    │  norm)   │    │ extract) │    │ softmax) │    │          │
+  └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
+                       │               │               │
+                       ▼               ▼               ▼
+                  [0,1] range      1024-2048d       N classes
+                  224×224          features         softmax
+  </text>
+</svg>

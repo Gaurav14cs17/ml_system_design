@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="twoStage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="oneStage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Object Detection: Two-Stage vs One-Stage</text>
+  
+  <!-- Two-Stage Section -->
+  <rect x="30" y="70" width="360" height="350" rx="16" fill="#0f172a" filter="url(#cardShadow)" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="30" y="70" width="360" height="50" rx="16" fill="url(#twoStage)"/>
+  <rect x="30" y="104" width="360" height="16" fill="url(#twoStage)"/>
+  <text x="210" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🎯 Two-Stage Detectors</text>
+  
+  <!-- Two-Stage Flow -->
+  <rect x="60" y="140" width="120" height="50" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="120" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#6d28d9">Image Input</text>
+  
+  <path d="M120 195 L120 215" stroke="#8b5cf6" stroke-width="2"/>
+  <polygon points="115,215 120,225 125,215" fill="#8b5cf6"/>
+  
+  <rect x="60" y="230" width="120" height="50" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="120" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#6d28d9">Region Proposal</text>
+  <text x="120" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7c3aed">~2000 regions</text>
+  
+  <path d="M120 285 L120 305" stroke="#8b5cf6" stroke-width="2"/>
+  <polygon points="115,305 120,315 125,305" fill="#8b5cf6"/>
+  
+  <rect x="60" y="320" width="120" height="50" rx="8" fill="#8b5cf6" stroke="#6d28d9" stroke-width="2"/>
+  <text x="120" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Classify + Refine</text>
+  <text x="120" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">Per region</text>
+  
+  <!-- Two-Stage Examples -->
+  <text x="260" y="160" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Examples:</text>
+  <text x="260" y="185" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• R-CNN (2014)</text>
+  <text x="260" y="205" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Fast R-CNN</text>
+  <text x="260" y="225" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Faster R-CNN ⭐</text>
+  <text x="260" y="245" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Mask R-CNN</text>
+  
+  <text x="260" y="280" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Pros:</text>
+  <text x="260" y="300" font-family="Arial, sans-serif" font-size="11" fill="#22c55e">✓ Higher accuracy</text>
+  <text x="260" y="320" font-family="Arial, sans-serif" font-size="11" fill="#22c55e">✓ Better for small objects</text>
+  
+  <text x="260" y="350" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Cons:</text>
+  <text x="260" y="370" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">✗ Slower inference</text>
+  <text x="260" y="390" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">✗ Complex pipeline</text>
+  
+  <!-- One-Stage Section -->
+  <rect x="410" y="70" width="360" height="350" rx="16" fill="#0f172a" filter="url(#cardShadow)" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="410" y="70" width="360" height="50" rx="16" fill="url(#oneStage)"/>
+  <rect x="410" y="104" width="360" height="16" fill="url(#oneStage)"/>
+  <text x="590" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">⚡ One-Stage Detectors</text>
+  
+  <!-- One-Stage Flow -->
+  <rect x="440" y="140" width="120" height="50" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="500" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#059669">Image Input</text>
+  
+  <path d="M500 195 L500 265" stroke="#10b981" stroke-width="2"/>
+  <polygon points="495,265 500,275 505,265" fill="#10b981"/>
+  
+  <rect x="440" y="280" width="120" height="60" rx="8" fill="#10b981" stroke="#059669" stroke-width="2"/>
+  <text x="500" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Direct Detection</text>
+  <text x="500" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">Single pass</text>
+  
+  <!-- Speed indicator -->
+  <text x="500" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#10b981">🚀</text>
+  
+  <!-- One-Stage Examples -->
+  <text x="600" y="160" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Examples:</text>
+  <text x="600" y="185" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• YOLO v1-v8 ⭐</text>
+  <text x="600" y="205" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• SSD</text>
+  <text x="600" y="225" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• RetinaNet</text>
+  <text x="600" y="245" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• FCOS</text>
+  
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Pros:</text>
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="11" fill="#22c55e">✓ Real-time speed</text>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="11" fill="#22c55e">✓ Simple architecture</text>
+  
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Cons:</text>
+  <text x="600" y="370" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">✗ Slightly lower accuracy</text>
+  <text x="600" y="390" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">✗ Struggles with small obj</text>
+  
+  <!-- VS Badge -->
+  <circle cx="400" cy="245" r="25" fill="#1e293b"/>
+  <text x="400" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">VS</text>
+</svg>
+

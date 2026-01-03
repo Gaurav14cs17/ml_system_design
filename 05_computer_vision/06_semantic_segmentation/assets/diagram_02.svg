@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='758' viewBox='0 0 660 758'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                          FCN ARCHITECTURE                                    │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Traditional CNN (Classification):
+    Input → [Conv layers] → [FC layers] → Class scores
+                              ↑
+                       Fixed input size required
+
+FCN (Segmentation):
+    Input → [Conv layers] → [1×1 Conv] → [Upsample] → Pixel-wise scores
+                              ↑                ↑
+                    Replace FC          Restore resolution
+
+FCN-8s Architecture:
+────────────────────
+
+Input: H×W×3
+    │
+    ▼
+┌─────────┐
+│  VGG    │ ← Pretrained backbone
+│ Conv1-5 │
+└────┬────┘
+     │
+     ├──────────────────────────────────────────┐
+     │ Pool3 (H/8)                              │
+     │                                          │
+     ├──────────────────────────┐               │
+     │ Pool4 (H/16)             │               │
+     │                          │               │
+     ▼                          ▼               ▼
+┌─────────┐               ┌─────────┐     ┌─────────┐
+│Conv6-7  │    2× up      │ Fuse    │ 2×  │  Fuse   │ 8× up
+│(H/32)   │ ──────────▶   │ Pool4   │ ──▶ │  Pool3  │ ────────▶ Output
+└─────────┘               └─────────┘     └─────────┘          (H×W×C)
+
+Why FCN-8s is better than FCN-32s:
+• FCN-32s: Single 32× upsample → coarse output
+• FCN-16s: Fuse pool4 → better boundaries
+• FCN-8s: Fuse pool3 + pool4 → fine details
+  </text>
+</svg>

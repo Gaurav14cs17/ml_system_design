@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='830' viewBox='0 0 660 830'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      YOLACT ARCHITECTURE                                     │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Key Idea: Generate mask components (prototypes) and combine them per instance
+
+                         Input Image
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │   Backbone + FPN    │
+                    └──────────┬──────────┘
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+          ▼                    ▼                    ▼
+    ┌───────────┐       ┌───────────┐       ┌───────────┐
+    │  Protonet │       │   Head    │       │   Head    │
+    │ (generate │       │  (class,  │       │  (mask    │
+    │prototypes)│       │   bbox)   │       │  coeffs)  │
+    └─────┬─────┘       └─────┬─────┘       └─────┬─────┘
+          │                   │                   │
+          ▼                   │                   │
+    Prototypes                │                   │
+    (k × H × W)               │                   │
+          │                   │                   │
+          └───────────────────┼───────────────────┘
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │  Mask = σ(P × C^T)  │
+                    │  P: prototypes      │
+                    │  C: coefficients    │
+                    └─────────────────────┘
+
+Prototypes (k=32):           Coefficients per instance:
+┌─────┐ ┌─────┐ ┌─────┐      [c1, c2, ..., c32]
+│Proto│ │Proto│ │Proto│
+│  1  │ │  2  │ │ ... │      Final Mask = Σ(ci × Proto_i)
+└─────┘ └─────┘ └─────┘
+
+Benefits:
+• Much faster than Mask R-CNN (~30 FPS vs ~5 FPS)
+• Single-stage architecture
+• NMS-free versions available (YOLACT++)
+  </text>
+</svg>

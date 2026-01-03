@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="encoderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="decoderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <linearGradient id="bottleneckGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="unetShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="skipArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">U-Net Architecture</text>
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Encoder-Decoder with Skip Connections</text>
+  
+  <!-- Input -->
+  <rect x="30" y="90" width="60" height="80" rx="6" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" filter="url(#unetShadow)"/>
+  <text x="60" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#0369a1">Input</text>
+  <text x="60" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">572×572</text>
+  
+  <!-- Encoder blocks -->
+  <rect x="110" y="90" width="50" height="80" rx="6" fill="url(#encoderGrad)" filter="url(#unetShadow)"/>
+  <text x="135" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">64</text>
+  <text x="135" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">568×568</text>
+  
+  <rect x="180" y="110" width="50" height="100" rx="6" fill="url(#encoderGrad)" filter="url(#unetShadow)"/>
+  <text x="205" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">128</text>
+  <text x="205" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">280×280</text>
+  
+  <rect x="250" y="130" width="50" height="120" rx="6" fill="url(#encoderGrad)" filter="url(#unetShadow)"/>
+  <text x="275" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">256</text>
+  <text x="275" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">136×136</text>
+  
+  <rect x="320" y="150" width="50" height="140" rx="6" fill="url(#encoderGrad)" filter="url(#unetShadow)"/>
+  <text x="345" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">512</text>
+  <text x="345" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">64×64</text>
+  
+  <!-- Bottleneck -->
+  <rect x="390" y="170" width="60" height="160" rx="6" fill="url(#bottleneckGrad)" filter="url(#unetShadow)"/>
+  <text x="420" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">1024</text>
+  <text x="420" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">28×28</text>
+  
+  <!-- Decoder blocks -->
+  <rect x="470" y="150" width="50" height="140" rx="6" fill="url(#decoderGrad)" filter="url(#unetShadow)"/>
+  <text x="495" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">512</text>
+  <text x="495" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">52×52</text>
+  
+  <rect x="540" y="130" width="50" height="120" rx="6" fill="url(#decoderGrad)" filter="url(#unetShadow)"/>
+  <text x="565" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">256</text>
+  <text x="565" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">100×100</text>
+  
+  <rect x="610" y="110" width="50" height="100" rx="6" fill="url(#decoderGrad)" filter="url(#unetShadow)"/>
+  <text x="635" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">128</text>
+  <text x="635" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">196×196</text>
+  
+  <rect x="680" y="90" width="50" height="80" rx="6" fill="url(#decoderGrad)" filter="url(#unetShadow)"/>
+  <text x="705" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">64</text>
+  <text x="705" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">388×388</text>
+  
+  <!-- Output -->
+  <rect x="750" y="90" width="35" height="80" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2" filter="url(#unetShadow)"/>
+  <text x="768" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#16a34a">Out</text>
+  
+  <!-- Skip connections -->
+  <path d="M135 88 L135 75 L705 75 L705 88" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#skipArrow)"/>
+  <path d="M205 108 L205 70 L635 70 L635 108" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#skipArrow)"/>
+  <path d="M275 128 L275 65 L565 65 L565 128" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#skipArrow)"/>
+  <path d="M345 148 L345 60 L495 60 L495 148" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#skipArrow)"/>
+  
+  <!-- Labels -->
+  <text x="170" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">Encoder</text>
+  <text x="170" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">(Downsample)</text>
+  
+  <text x="420" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">Bottleneck</text>
+  
+  <text x="620" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">Decoder</text>
+  <text x="620" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">(Upsample)</text>
+  
+  <text x="400" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#8b5cf6">━━ Skip Connections (Concatenate)</text>
+</svg>
+

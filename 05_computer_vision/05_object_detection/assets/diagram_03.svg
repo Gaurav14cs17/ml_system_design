@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='938' viewBox='0 0 660 938'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      FASTER R-CNN ARCHITECTURE                               │
+└───────────────────────────────────────────────────────────────────────────┘
+
+                         Input Image (H×W×3)
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │   Backbone CNN      │
+                    │   (ResNet, VGG)     │
+                    └──────────┬──────────┘
+                               │
+                         Feature Map
+                          (H/16×W/16×C)
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+          ▼                    │                    │
+    ┌───────────┐              │                    │
+    │   RPN     │              │                    │
+    │ (Region   │              │                    │
+    │ Proposal) │              │                    │
+    └─────┬─────┘              │                    │
+          │                    │                    │
+          ▼                    ▼                    │
+    Region Proposals    ┌─────────────┐             │
+    (objectness +       │ RoI Pooling │◀────────────┘
+     bbox deltas)       └──────┬──────┘
+          │                    │
+          └────────────────────┤
+                               ▼
+                    ┌─────────────────────┐
+                    │   Classification    │
+                    │   + BBox Regression │
+                    └─────────────────────┘
+                               │
+                               ▼
+                    Final Detections (boxes, classes, scores)
+
+ANCHOR BOXES:
+─────────────
+┌─────────────────────────────────────────┐
+│ At each feature map location:           │
+│                                         │
+│   ┌───┐  ┌─────┐  ┌───────┐            │
+│   │   │  │     │  │       │  3 scales  │
+│   └───┘  └─────┘  └───────┘  × 3 ratios│
+│                              = 9 anchors│
+│   Scales: 128², 256², 512²             │
+│   Ratios: 1:1, 1:2, 2:1                │
+└─────────────────────────────────────────┘
+  </text>
+</svg>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='704' viewBox='0 0 660 704'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                       SOLO ARCHITECTURE                                      │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Key Idea: Instance segmentation without detection
+          Divide image into S×S grid, predict mask for each cell
+
+                         Input Image
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │   Backbone + FPN    │
+                    └──────────┬──────────┘
+                               │
+          ┌────────────────────┴────────────────────┐
+          │                                         │
+          ▼                                         ▼
+    ┌───────────────┐                       ┌───────────────┐
+    │ Category Head │                       │  Mask Head    │
+    │ (S×S×C tensor)│                       │ (S²×H×W tensor)│
+    │               │                       │               │
+    │ What class at │                       │ What mask for │
+    │ each location?│                       │ each location?│
+    └───────────────┘                       └───────────────┘
+
+Grid-based instance assignment:
+┌───┬───┬───┐
+│   │ A │   │   Object A&#x27;s center falls in grid cell (0,1)
+├───┼───┼───┤   → Predict mask at channel (0×S + 1)
+│   │   │ B │
+├───┼───┼───┤   Object B&#x27;s center falls in grid cell (1,2)
+│   │   │   │   → Predict mask at channel (1×S + 2)
+└───┴───┴───┘
+
+SOLOv2 Improvements:
+• Dynamic convolutions (adapt kernel per instance)
+• Much faster (decoupled head)
+• Better mask quality
+  </text>
+</svg>

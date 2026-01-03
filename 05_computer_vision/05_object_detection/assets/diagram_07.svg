@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='596' viewBox='0 0 660 596'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    ANCHOR-FREE vs ANCHOR-BASED                               │
+└───────────────────────────────────────────────────────────────────────────┘
+
+ANCHOR-BASED (YOLO, Faster R-CNN):
+─────────────────────────────────
+• Predefined anchor boxes at each location
+• Predict offsets from anchors
+• Hyperparameters: sizes, ratios
+
+ANCHOR-FREE (FCOS, CenterNet):
+────────────────────────────
+• Predict directly from feature map points
+• No anchor hyperparameters
+• Simpler, often faster
+
+FCOS Prediction:
+────────────────
+At each feature map location (x, y):
+• Predict distances: (l, t, r, b) to box edges
+• Predict class scores
+• Predict centerness (quality score)
+
+    ┌─────────────────┐
+    │        t        │
+    │    ┌───────┐    │
+    │ l  │   ●   │ r  │
+    │    └───────┘    │
+    │        b        │
+    └─────────────────┘
+
+    Box = (x-l, y-t, x+r, y+b)
+  </text>
+</svg>
