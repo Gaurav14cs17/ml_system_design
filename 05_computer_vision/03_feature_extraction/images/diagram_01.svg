@@ -3,6 +3,12 @@
     <filter id="shadow">
       <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.2"/>
     </filter>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
   </defs>
   
   <!-- Background -->
