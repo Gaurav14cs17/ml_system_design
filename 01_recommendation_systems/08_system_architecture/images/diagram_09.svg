@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgScale2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowScale2" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowScale2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgScale2)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">⚡ Scaling Architecture</text>
+  
+  <!-- Load Balancer -->
+  <g transform="translate(350, 70)" filter="url(#shadowScale2)">
+    <rect width="200" height="55" rx="12" fill="#f59e0b"/>
+    <text x="100" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚖️ Load Balancer</text>
+  </g>
+  
+  <!-- Arrows from LB -->
+  <path d="M450 130 L450 155 L200 155 L200 180" stroke="#64748b" stroke-width="2" marker-end="url(#arrowScale2)"/>
+  <path d="M450 155 L450 180" stroke="#64748b" stroke-width="2" marker-end="url(#arrowScale2)"/>
+  <path d="M450 155 L700 155 L700 180" stroke="#64748b" stroke-width="2" marker-end="url(#arrowScale2)"/>
+  
+  <!-- RecSys Instances -->
+  <g transform="translate(100, 185)" filter="url(#shadowScale2)">
+    <rect width="200" height="100" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🖥️ RecSys Instance 1</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Model + Features</text>
+    <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">Stateless</text>
+  </g>
+  
+  <g transform="translate(350, 185)" filter="url(#shadowScale2)">
+    <rect width="200" height="100" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🖥️ RecSys Instance 2</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Model + Features</text>
+    <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">Stateless</text>
+  </g>
+  
+  <g transform="translate(600, 185)" filter="url(#shadowScale2)">
+    <rect width="200" height="100" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🖥️ RecSys Instance N</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Model + Features</text>
+    <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">Stateless</text>
+  </g>
+  
+  <text x="560" y="240" font-family="Segoe UI, sans-serif" font-size="16" fill="#64748b">...</text>
+  
+  <!-- Arrows to Redis -->
+  <path d="M200 290 L200 320 L450 320 L450 350" stroke="#64748b" stroke-width="2"/>
+  <path d="M450 290 L450 350" stroke="#64748b" stroke-width="2"/>
+  <path d="M700 290 L700 320 L450 320" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Redis Cluster -->
+  <g transform="translate(275, 355)" filter="url(#shadowScale2)">
+    <rect width="350" height="65" rx="12" fill="#ef4444"/>
+    <text x="175" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🗄️ Redis Cluster (Sharded)</text>
+    <text x="175" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fecaca">Features, Cache, Sessions</text>
+  </g>
+  
+  <!-- Scaling Triggers -->
+  <g transform="translate(50, 440)" filter="url(#shadowScale2)">
+    <rect width="800" height="60" rx="12" fill="#334155"/>
+    <text x="75" y="25" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🚨 Scaling Triggers:</text>
+    
+    <g transform="translate(180, 18)">
+      <rect x="0" y="0" width="180" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="90" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">CPU &amp;gt; 70% sustained</text>
+      
+      <rect x="200" y="0" width="180" height="30" rx="6" fill="#f59e0b" opacity="0.2"/>
+      <text x="290" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Latency p95 &amp;gt; 100ms</text>
+      
+      <rect x="400" y="0" width="200" height="30" rx="6" fill="#8b5cf6" opacity="0.2"/>
+      <text x="500" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Queue depth &amp;gt; threshold</text>
+    </g>
+  </g>
+</svg>

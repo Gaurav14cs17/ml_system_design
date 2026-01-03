@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bgTikTok" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="tiktokGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#25f4ee"/>
+      <stop offset="100%" style="stop-color:#fe2c55"/>
+    </linearGradient>
+    <filter id="shadowTikTok" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgTikTok)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">🎬 TikTok For You Page</text>
+  
+  <!-- Unique Aspects -->
+  <g transform="translate(50, 70)" filter="url(#shadowTikTok)">
+    <rect width="800" height="90" rx="14" fill="#1e293b"/>
+    <rect width="800" height="40" rx="14 14 0 0" fill="url(#tiktokGrad)"/>
+    <text x="400" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">✨ Unique Aspects</text>
+    
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="170" height="25" rx="6" fill="#25f4ee" opacity="0.2"/>
+      <text x="85" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#25f4ee">Full-screen single video</text>
+      
+      <rect x="190" y="0" width="150" height="25" rx="6" fill="#fe2c55" opacity="0.2"/>
+      <text x="265" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fe2c55">15-60 sec videos</text>
+      
+      <rect x="360" y="0" width="160" height="25" rx="6" fill="#25f4ee" opacity="0.2"/>
+      <text x="440" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#25f4ee">Rapid feedback loop</text>
+      
+      <rect x="540" y="0" width="220" height="25" rx="6" fill="#fe2c55" opacity="0.2"/>
+      <text x="650" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fe2c55">Content-first (not social)</text>
+    </g>
+  </g>
+  
+  <!-- Signals Grid -->
+  <g transform="translate(50, 180)" filter="url(#shadowTikTok)">
+    <rect width="390" height="200" rx="14" fill="#1e293b"/>
+    <rect width="390" height="45" rx="14 14 0 0" fill="#10b981"/>
+    <text x="195" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">✅ Positive Signals</text>
+    
+    <g transform="translate(25, 60)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">⏱️</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Watch time / completion rate</text>
+      <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">🔁</text>
+      <text x="25" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Rewatches</text>
+      <text x="0" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">❤️</text>
+      <text x="25" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Likes, shares, comments</text>
+      <text x="0" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">👤</text>
+      <text x="25" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Follow after watching</text>
+      <text x="0" y="115" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">💾</text>
+      <text x="25" y="115" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Video downloads</text>
+    </g>
+  </g>
+  
+  <g transform="translate(460, 180)" filter="url(#shadowTikTok)">
+    <rect width="390" height="200" rx="14" fill="#1e293b"/>
+    <rect width="390" height="45" rx="14 14 0 0" fill="#ef4444"/>
+    <text x="195" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">❌ Negative Signals</text>
+    
+    <g transform="translate(25, 60)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">⏭️</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Skip (swipe away)</text>
+      <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">🚫</text>
+      <text x="25" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">"Not interested" tap</text>
+      <text x="0" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">⏸️</text>
+      <text x="25" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Long pause before action</text>
+      <text x="0" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">🚨</text>
+      <text x="25" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Report content</text>
+    </g>
+  </g>
+  
+  <!-- Content Understanding -->
+  <g transform="translate(50, 400)" filter="url(#shadowTikTok)">
+    <rect width="390" height="100" rx="14" fill="#1e293b"/>
+    <rect width="390" height="40" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="195" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🔍 Content Understanding</text>
+    
+    <g transform="translate(20, 50)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">•</text>
+      <text x="12" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Video: objects, scenes, text</text>
+      <text x="180" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">•</text>
+      <text x="192" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Audio: music, speech</text>
+      <text x="0" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">•</text>
+      <text x="12" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Hashtags &amp; captions</text>
+      <text x="180" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">•</text>
+      <text x="192" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Creator features</text>
+    </g>
+  </g>
+  
+  <!-- Exploration Strategy -->
+  <g transform="translate(460, 400)" filter="url(#shadowTikTok)">
+    <rect width="390" height="100" rx="14" fill="#1e293b"/>
+    <rect width="390" height="40" rx="14 14 0 0" fill="#f59e0b"/>
+    <text x="195" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🎲 Exploration Strategy</text>
+    
+    <g transform="translate(20, 50)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">•</text>
+      <text x="12" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">New videos → diverse initial exposure</text>
+      <text x="0" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">•</text>
+      <text x="12" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Performance drives future distribution</text>
+      <text x="220" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">•</text>
+      <text x="232" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Multi-armed bandit</text>
+    </g>
+  </g>
+  
+  <!-- Bottom insight -->
+  <g transform="translate(50, 530)" filter="url(#shadowTikTok)">
+    <rect width="800" height="50" rx="12" fill="#334155"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">💡 <tspan font-weight="bold" fill="url(#tiktokGrad)">Success Factor:</tspan> Content-first discovery allows new creators to go viral without existing following</text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bgStudy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowStudy" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgStudy)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📅 Suggested Study Plan</text>
+  
+  <!-- Week 1-2 -->
+  <g transform="translate(50, 70)" filter="url(#shadowStudy)">
+    <rect width="700" height="95" rx="14" fill="#1e293b"/>
+    <rect width="100" height="95" rx="14 0 0 14" fill="#3b82f6"/>
+    <text x="50" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Week</text>
+    <text x="50" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">1-2</text>
+    
+    <text x="130" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">📚 Foundations</text>
+    <text x="130" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 1: Introduction</text>
+    <text x="130" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 2: Content-Based Filtering</text>
+    <text x="130" y="88" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 3: Collaborative Filtering</text>
+  </g>
+  
+  <!-- Week 3-4 -->
+  <g transform="translate(50, 180)" filter="url(#shadowStudy)">
+    <rect width="700" height="95" rx="14" fill="#1e293b"/>
+    <rect width="100" height="95" rx="14 0 0 14" fill="#8b5cf6"/>
+    <text x="50" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Week</text>
+    <text x="50" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">3-4</text>
+    
+    <text x="130" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#c4b5fd">🔧 Advanced Techniques</text>
+    <text x="130" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 4: Hybrid Systems</text>
+    <text x="130" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 5: Feature Engineering</text>
+    <text x="130" y="88" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 6: Model Training &amp; Evaluation</text>
+  </g>
+  
+  <!-- Week 5-6 -->
+  <g transform="translate(50, 290)" filter="url(#shadowStudy)">
+    <rect width="700" height="95" rx="14" fill="#1e293b"/>
+    <rect width="100" height="95" rx="14 0 0 14" fill="#10b981"/>
+    <text x="50" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Week</text>
+    <text x="50" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">5-6</text>
+    
+    <text x="130" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">🧠 Deep Learning &amp; Production</text>
+    <text x="130" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 7: Deep Learning for RecSys</text>
+    <text x="130" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 8: System Architecture</text>
+    <text x="130" y="88" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Module 9: Case Studies</text>
+  </g>
+  
+  <!-- Week 7+ -->
+  <g transform="translate(50, 400)" filter="url(#shadowStudy)">
+    <rect width="700" height="95" rx="14" fill="#1e293b"/>
+    <rect width="100" height="95" rx="14 0 0 14" fill="#f59e0b"/>
+    <text x="50" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Week</text>
+    <text x="50" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">7+</text>
+    
+    <text x="130" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fcd34d">🚀 Practice</text>
+    <text x="130" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Build your own recommendation system</text>
+    <text x="130" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Reproduce paper implementations</text>
+    <text x="130" y="88" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Contribute to open-source RecSys projects</text>
+  </g>
+</svg>

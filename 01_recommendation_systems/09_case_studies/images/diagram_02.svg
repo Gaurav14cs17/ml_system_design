@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <defs>
+    <linearGradient id="bgYT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ytRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadowYT" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowYT" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#ef4444"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgYT)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">📺 YouTube Recommendation System</text>
+  
+  <!-- Stage 1: Candidate Generation -->
+  <g transform="translate(100, 70)" filter="url(#shadowYT)">
+    <rect width="700" height="230" rx="16" fill="#1e293b"/>
+    <rect width="700" height="55" rx="16 16 0 0" fill="url(#ytRed)"/>
+    <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">STAGE 1: Candidate Generation</text>
+    
+    <!-- Flow boxes -->
+    <g transform="translate(30, 75)">
+      <rect width="180" height="65" rx="10" fill="#334155"/>
+      <text x="90" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">📥 Input</text>
+      <text x="90" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User history + Context</text>
+    </g>
+    
+    <path d="M220 107 L280 107" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowYT)"/>
+    
+    <g transform="translate(290, 75)">
+      <rect width="200" height="65" rx="10" fill="#334155"/>
+      <text x="100" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">🧠 Processing</text>
+      <text x="100" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">DNN + User Embedding</text>
+      <text x="100" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">ANN Search</text>
+    </g>
+    
+    <path d="M500 107 L560 107" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowYT)"/>
+    
+    <g transform="translate(570, 75)">
+      <rect width="110" height="65" rx="10" fill="#334155"/>
+      <text x="55" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">📤 Output</text>
+      <text x="55" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">~1000</text>
+      <text x="55" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">candidates</text>
+    </g>
+    
+    <!-- Methods -->
+    <g transform="translate(30, 155)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">📌 Methods:</text>
+      <text x="100" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Deep neural network with user embedding</text>
+      <text x="100" y="32" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Approximate nearest neighbor search</text>
+      <text x="100" y="49" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Multiple sources (similar, trending)</text>
+      <text x="400" y="15" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">100M+ videos → 1K</text>
+    </g>
+  </g>
+  
+  <!-- Arrow between stages -->
+  <path d="M450 305 L450 335" stroke="#ef4444" stroke-width="3" marker-end="url(#arrowYT)"/>
+  
+  <!-- Stage 2: Ranking -->
+  <g transform="translate(100, 350)" filter="url(#shadowYT)">
+    <rect width="700" height="210" rx="16" fill="#1e293b"/>
+    <rect width="700" height="55" rx="16 16 0 0" fill="url(#ytRed)"/>
+    <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">STAGE 2: Ranking</text>
+    
+    <!-- Features list -->
+    <g transform="translate(30, 75)">
+      <rect width="300" height="110" rx="10" fill="#334155"/>
+      <text x="150" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">📊 Rich Features</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Video: title, description, stats</text>
+      <text x="20" y="58" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• User: watch history, demographics</text>
+      <text x="20" y="74" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Context: time of day, device</text>
+      <text x="20" y="90" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Freshness: upload time</text>
+    </g>
+    
+    <!-- Model info -->
+    <g transform="translate(360, 75)">
+      <rect width="310" height="110" rx="10" fill="#334155"/>
+      <text x="155" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">🎯 Model &amp; Objective</text>
+      <rect x="20" y="35" width="130" height="30" rx="6" fill="#8b5cf6" opacity="0.3"/>
+      <text x="85" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">Wide &amp; Deep NN</text>
+      <rect x="160" y="35" width="130" height="30" rx="6" fill="#10b981" opacity="0.3"/>
+      <text x="225" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Watch Time</text>
+      <text x="155" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Multi-objective optimization</text>
+    </g>
+  </g>
+  
+  <!-- Special Considerations -->
+  <g transform="translate(100, 575)">
+    <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">⚡ Special:</text>
+    <text x="70" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Age feature (filter bubbles) • Multi-objective (satisfaction) • Responsible AI (harmful content)</text>
+  </g>
+</svg>

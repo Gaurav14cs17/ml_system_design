@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgMon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowMon" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgMon)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📊 Monitoring Metrics</text>
+  
+  <!-- System Metrics -->
+  <g transform="translate(50, 70)" filter="url(#shadowMon)">
+    <rect width="400" height="180" rx="14" fill="#1e293b"/>
+    <rect width="400" height="50" rx="14 14 0 0" fill="#3b82f6"/>
+    <text x="200" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚙️ System Metrics</text>
+    
+    <g transform="translate(25, 65)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">📈</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Request latency (p50, p95, p99)</text>
+      <text x="0" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">📈</text>
+      <text x="25" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Throughput (req/sec)</text>
+      <text x="0" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">📈</text>
+      <text x="25" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Error rate</text>
+      <text x="0" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">📈</text>
+      <text x="25" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Cache hit ratio</text>
+      <text x="0" y="107" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">📈</text>
+      <text x="25" y="107" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Model inference time</text>
+    </g>
+  </g>
+  
+  <!-- Business Metrics -->
+  <g transform="translate(470, 70)" filter="url(#shadowMon)">
+    <rect width="380" height="180" rx="14" fill="#1e293b"/>
+    <rect width="380" height="50" rx="14 14 0 0" fill="#10b981"/>
+    <text x="190" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">💰 Business Metrics</text>
+    
+    <g transform="translate(25, 65)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">💵</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">CTR by position</text>
+      <text x="0" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">💵</text>
+      <text x="25" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Conversion rate</text>
+      <text x="0" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">💵</text>
+      <text x="25" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Revenue per recommendation</text>
+      <text x="0" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">💵</text>
+      <text x="25" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">User engagement</text>
+      <text x="0" y="107" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">💵</text>
+      <text x="25" y="107" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Item coverage</text>
+    </g>
+  </g>
+  
+  <!-- Model Metrics -->
+  <g transform="translate(50, 270)" filter="url(#shadowMon)">
+    <rect width="400" height="180" rx="14" fill="#1e293b"/>
+    <rect width="400" height="50" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="200" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧠 Model Metrics</text>
+    
+    <g transform="translate(25, 65)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">🔬</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Prediction distribution</text>
+      <text x="0" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">🔬</text>
+      <text x="25" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Embedding drift</text>
+      <text x="0" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">🔬</text>
+      <text x="25" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Feature importance drift</text>
+      <text x="0" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">🔬</text>
+      <text x="25" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">A/B test metrics</text>
+    </g>
+  </g>
+  
+  <!-- Data Metrics -->
+  <g transform="translate(470, 270)" filter="url(#shadowMon)">
+    <rect width="380" height="180" rx="14" fill="#1e293b"/>
+    <rect width="380" height="50" rx="14 14 0 0" fill="#f59e0b"/>
+    <text x="190" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 Data Metrics</text>
+    
+    <g transform="translate(25, 65)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">📋</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Feature freshness</text>
+      <text x="0" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">📋</text>
+      <text x="25" y="38" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Data pipeline lag</text>
+      <text x="0" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">📋</text>
+      <text x="25" y="61" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Missing feature rate</text>
+      <text x="0" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">📋</text>
+      <text x="25" y="84" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Event volume</text>
+    </g>
+  </g>
+</svg>
