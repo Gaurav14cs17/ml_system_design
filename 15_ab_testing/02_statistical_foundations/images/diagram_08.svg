@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='434' viewBox='0 0 524 434'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                    DECISION MATRIX                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│                        Reality                              │
+│                   ┌──────────┬──────────┐                  │
+│                   │ H₀ True  │ H₀ False │                  │
+│                   │(No Effect)│(Effect) │                  │
+│    ┌──────────────┼──────────┼──────────┤                  │
+│    │ Reject H₀    │ Type I   │ Correct  │                  │
+│ D  │ (Ship)       │ Error    │ Decision │                  │
+│ e  │              │ (α)      │ (Power)  │                  │
+│ c  │              │ False    │ True     │                  │
+│ i  │              │ Positive │ Positive │                  │
+│ s  ├──────────────┼──────────┼──────────┤                  │
+│ i  │ Fail to      │ Correct  │ Type II  │                  │
+│ o  │ Reject H₀    │ Decision │ Error    │                  │
+│ n  │ (Don&#x27;t Ship) │ (1-α)    │ (β)      │                  │
+│    │              │ True     │ False    │                  │
+│    │              │ Negative │ Negative │                  │
+│    └──────────────┴──────────┴──────────┘                  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

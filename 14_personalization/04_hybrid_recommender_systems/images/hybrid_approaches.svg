@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500">
+  <defs>
+    <linearGradient id="hybGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b4db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0083b0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hybGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f2994a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f2c94c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hybGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#834d9b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d04ed6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow11" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="500" fill="#16213e" rx="10"/>
+  
+  <text x="425" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">Hybrid Recommender Approaches</text>
+  
+  <!-- Input Sources -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="130" height="80" rx="10" fill="url(#hybGrad1)" filter="url(#shadow11)"/>
+    <text x="65" y="35" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Collaborative</text>
+    <text x="65" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">User-Item</text>
+    <text x="65" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Interactions</text>
+  </g>
+  
+  <g transform="translate(200, 60)">
+    <rect x="0" y="0" width="130" height="80" rx="10" fill="url(#hybGrad2)" filter="url(#shadow11)"/>
+    <text x="65" y="35" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Content</text>
+    <text x="65" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">Item Features</text>
+    <text x="65" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Text, Images</text>
+  </g>
+  
+  <g transform="translate(350, 60)">
+    <rect x="0" y="0" width="130" height="80" rx="10" fill="url(#hybGrad3)" filter="url(#shadow11)"/>
+    <text x="65" y="35" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Knowledge</text>
+    <text x="65" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">External KG</text>
+    <text x="65" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Entities</text>
+  </g>
+  
+  <!-- Hybrid Methods -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="750" height="290" rx="15" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="375" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Hybridization Strategies</text>
+    
+    <!-- Weighted -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="160" height="110" rx="10" fill="rgba(0,180,219,0.3)"/>
+      <text x="80" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">⚖️ Weighted</text>
+      
+      <rect x="10" y="35" width="140" height="65" rx="5" fill="rgba(255,255,255,0.1)"/>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">score = α·CF + β·CB</text>
+      <text x="80" y="75" text-anchor="middle" fill="#aaaaaa" font-size="8">Simple combination</text>
+      <text x="80" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Weights via validation</text>
+    </g>
+    
+    <!-- Switching -->
+    <g transform="translate(200, 50)">
+      <rect x="0" y="0" width="160" height="110" rx="10" fill="rgba(242,153,74,0.3)"/>
+      <text x="80" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">🔀 Switching</text>
+      
+      <rect x="10" y="35" width="140" height="65" rx="5" fill="rgba(255,255,255,0.1)"/>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">if cold: CB</text>
+      <text x="80" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">else: CF</text>
+      <text x="80" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Context-aware choice</text>
+    </g>
+    
+    <!-- Cascade -->
+    <g transform="translate(380, 50)">
+      <rect x="0" y="0" width="160" height="110" rx="10" fill="rgba(131,77,155,0.3)"/>
+      <text x="80" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">📉 Cascade</text>
+      
+      <rect x="10" y="35" width="140" height="65" rx="5" fill="rgba(255,255,255,0.1)"/>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">CF → Filter by CB</text>
+      <text x="80" y="75" text-anchor="middle" fill="#aaaaaa" font-size="8">Coarse-to-fine</text>
+      <text x="80" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">refinement</text>
+    </g>
+    
+    <!-- Feature Augmentation -->
+    <g transform="translate(560, 50)">
+      <rect x="0" y="0" width="160" height="110" rx="10" fill="rgba(56,239,125,0.3)"/>
+      <text x="80" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">🔗 Feature Aug</text>
+      
+      <rect x="10" y="35" width="140" height="65" rx="5" fill="rgba(255,255,255,0.1)"/>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">CB → Features for CF</text>
+      <text x="80" y="75" text-anchor="middle" fill="#aaaaaa" font-size="8">Content enriches</text>
+      <text x="80" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">collaborative model</text>
+    </g>
+    
+    <!-- Meta-Learning -->
+    <g transform="translate(110, 180)">
+      <rect x="0" y="0" width="220" height="90" rx="10" fill="rgba(255,107,107,0.3)"/>
+      <text x="110" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">🧠 Meta-Learning</text>
+      
+      <rect x="10" y="35" width="200" height="45" rx="5" fill="rgba(255,255,255,0.1)"/>
+      <text x="110" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">Learn optimal weights dynamically</text>
+      <text x="110" y="72" text-anchor="middle" fill="#aaaaaa" font-size="8">Neural network decides mixture</text>
+    </g>
+    
+    <!-- End-to-End -->
+    <g transform="translate(410, 180)">
+      <rect x="0" y="0" width="220" height="90" rx="10" fill="rgba(102,126,234,0.3)"/>
+      <text x="110" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">🎯 End-to-End Deep</text>
+      
+      <rect x="10" y="35" width="200" height="45" rx="5" fill="rgba(255,255,255,0.1)"/>
+      <text x="110" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">Single model handles all signals</text>
+      <text x="110" y="72" text-anchor="middle" fill="#aaaaaa" font-size="8">DeepFM, WideandDeep</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead11" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>
+

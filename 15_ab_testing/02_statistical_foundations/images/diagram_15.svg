@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='548' height='272' viewBox='0 0 548 272'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Use FREQUENTIST when:
+├── Company has established frequentist processes
+├── Regulatory requirements (FDA, etc.)
+├── Need standardized, reproducible methodology
+├── Team is more familiar with frequentist stats
+└── Want to avoid prior specification debates
+
+Use BAYESIAN when:
+├── Need intuitive probability statements (andquot;90% sure B is betterandquot;)
+├── Want to peek at results during experiment
+├── Have valid prior information to incorporate
+├── Need expected loss for business decisions
+├── Running many similar experiments (empirical Bayes)
+└── Want more natural interpretation of uncertainty
+  </text>
+</svg>

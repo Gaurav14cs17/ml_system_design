@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='218' viewBox='0 0 524 218'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  P-VALUE DEFINITION:                                        │
+│                                                             │
+│  The probability of observing a test statistic at least     │
+│  as extreme as the one calculated, ASSUMING the null        │
+│  hypothesis is true.                                        │
+│                                                             │
+│  P(data | H₀ is true)  ←── NOT P(H₀ is true | data)        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

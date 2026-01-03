@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='542' viewBox='0 0 524 542'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                 RANDOMIZATION UNITS                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  USER-LEVEL (Most Common)                                   │
+│  ├── User ID or Device ID                                  │
+│  ├── Pros: Simple, consistent experience                   │
+│  ├── Cons: Need logged-in users                            │
+│  └── Use when: Standard A/B tests                          │
+│                                                             │
+│  SESSION-LEVEL                                              │
+│  ├── Session ID                                            │
+│  ├── Pros: More samples, faster tests                      │
+│  ├── Cons: Inconsistent user experience                    │
+│  └── Use when: Session-specific features, performance     │
+│                                                             │
+│  PAGE/REQUEST-LEVEL                                         │
+│  ├── Request ID                                            │
+│  ├── Pros: Maximum samples, instant results               │
+│  ├── Cons: Very inconsistent, hard to attribute           │
+│  └── Use when: Backend optimizations, load testing        │
+│                                                             │
+│  CLUSTER-LEVEL                                              │
+│  ├── Geographic region, time period, network cluster       │
+│  ├── Pros: Handles network effects                         │
+│  ├── Cons: Fewer units, less power                        │
+│  └── Use when: Social features, marketplace changes       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

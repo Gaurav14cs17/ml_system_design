@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Four Pillars of Sample Size</text>
+  
+  <!-- Center formula -->
+  <rect x="280" y="200" width="240" height="100" rx="12" fill="#0f172a" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Sample Size Formula</text>
+  <text x="400" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">n = f(α, β, MDE, σ²)</text>
+  <text x="400" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">per group</text>
+  
+  <!-- Factor 1: Significance Level (α) -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="160" height="110" rx="12" fill="url(#grad1)" filter="url(#shadow)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Significance (α)</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">5%</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">False Positive Rate</text>
+    <text x="80" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">Lower α → More samples</text>
+  </g>
+  <line x1="180" y1="180" x2="300" y2="220" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Factor 2: Power (1-β) -->
+  <g transform="translate(540, 100)">
+    <rect x="0" y="0" width="160" height="110" rx="12" fill="url(#grad2)" filter="url(#shadow)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Power (1-β)</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">80%</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Detect True Effects</text>
+    <text x="80" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">Higher power → More samples</text>
+  </g>
+  <line x1="620" y1="180" x2="500" y2="220" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Factor 3: MDE -->
+  <g transform="translate(100, 300)">
+    <rect x="0" y="0" width="160" height="110" rx="12" fill="url(#grad3)" filter="url(#shadow)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">MDE</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">5%</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Minimum Effect to Detect</text>
+    <text x="80" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">Smaller MDE → 4x samples!</text>
+  </g>
+  <line x1="180" y1="330" x2="300" y2="280" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Factor 4: Variance -->
+  <g transform="translate(540, 300)">
+    <rect x="0" y="0" width="160" height="110" rx="12" fill="url(#grad4)" filter="url(#shadow)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Variance (σ²)</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">σ²</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Metric Variability</text>
+    <text x="80" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">Higher variance → More samples</text>
+  </g>
+  <line x1="620" y1="330" x2="500" y2="280" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Key insight -->
+  <rect x="200" y="430" width="400" height="50" rx="8" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+  <text x="400" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#92400e">💡 Key Insight: Halving MDE requires 4x the sample size!</text>
+  <text x="400" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#a16207">n ∝ 1/MDE² — This is the most impactful factor</text>
+</svg>
+

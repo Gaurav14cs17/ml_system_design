@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380">
+  <defs>
+    <linearGradient id="chartBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="noveltyLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📈 Novelty Effect Over Time</text>
+  
+  <!-- Chart area -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="60" width="580" height="240" rx="10" fill="#0f172a" stroke="#e2e8f0" stroke-width="1"/>
+  </g>
+  
+  <!-- Y axis -->
+  <line x1="100" y1="80" x2="100" y2="270" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="55" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#64748b" transform="rotate(-90, 55, 175)">Lift (%)</text>
+  
+  <!-- Y axis labels -->
+  <text x="90" y="100" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">+15%</text>
+  <line x1="95" y1="97" x2="100" y2="97" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="90" y="140" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">+10%</text>
+  <line x1="95" y1="137" x2="100" y2="137" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="90" y="180" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">+5%</text>
+  <line x1="95" y1="177" x2="100" y2="177" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="90" y="220" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">0%</text>
+  <line x1="95" y1="217" x2="100" y2="217" stroke="#cbd5e1" stroke-width="1"/>
+  
+  <!-- X axis -->
+  <line x1="100" y1="270" x2="620" y2="270" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="360" y="295" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#64748b">Time →</text>
+  
+  <!-- X axis labels -->
+  <text x="160" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Week 1</text>
+  <line x1="160" y1="270" x2="160" y2="275" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="280" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Week 2</text>
+  <line x1="280" y1="270" x2="280" y2="275" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="400" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Week 3</text>
+  <line x1="400" y1="270" x2="400" y2="275" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="520" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Week 4</text>
+  <line x1="520" y1="270" x2="520" y2="275" stroke="#cbd5e1" stroke-width="1"/>
+  
+  <!-- Novelty curve (starts high, settles to true effect) -->
+  <path d="M120 95 Q160 85, 200 105 Q280 130, 360 165 Q440 185, 520 195 L600 200" 
+        stroke="#f59e0b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Gradient fill under curve -->
+  <path d="M120 95 Q160 85, 200 105 Q280 130, 360 165 Q440 185, 520 195 L600 200 L600 270 L120 270 Z" 
+        fill="url(#noveltyLine)" opacity="0.15"/>
+  
+  <!-- True effect line -->
+  <line x1="100" y1="200" x2="620" y2="200" stroke="#10b981" stroke-width="3" stroke-dasharray="10,5"/>
+  <rect x="545" y="188" width="85" height="24" rx="4" fill="#d1fae5"/>
+  <text x="587" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">True Effect</text>
+  
+  <!-- Peak annotation -->
+  <circle cx="160" cy="90" r="6" fill="#f59e0b"/>
+  <line x1="160" y1="100" x2="160" y2="130" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="110" y="130" width="100" height="20" rx="4" fill="#422006"/>
+  <text x="160" y="144" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Novelty Peak</text>
+  
+  <!-- Stable point -->
+  <circle cx="520" cy="195" r="6" fill="#10b981"/>
+  
+  <!-- Solution box -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="320" width="460" height="45" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="2"/>
+    <text x="350" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#065f46">💡 Solution: Run experiments long enough for novelty effect to wear off</text>
+    <text x="350" y="358" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#047857">(Typically 2-4 weeks)</text>
+  </g>
+</svg>

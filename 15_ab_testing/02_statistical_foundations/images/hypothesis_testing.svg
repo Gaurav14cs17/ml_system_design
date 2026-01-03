@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nullGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="altGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Hypothesis Testing Distributions</text>
+  
+  <!-- Axes -->
+  <line x1="80" y1="350" x2="720" y2="350" stroke="#334155" stroke-width="2"/>
+  <line x1="80" y1="350" x2="80" y2="100" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Null Distribution (H₀) -->
+  <path d="M100 350 Q200 350 250 320 Q300 250 350 180 Q380 130 400 130 Q420 130 450 180 Q500 250 550 320 Q600 350 700 350" 
+        fill="url(#nullGrad)" fill-opacity="0.3" stroke="#3b82f6" stroke-width="3"/>
+  
+  <!-- Alternative Distribution (H₁) - shifted right -->
+  <path d="M250 350 Q350 350 400 320 Q450 250 500 180 Q530 130 550 130 Q570 130 600 180 Q650 250 700 320 Q750 350 750 350" 
+        fill="url(#altGrad)" fill-opacity="0.3" stroke="#10b981" stroke-width="3"/>
+  
+  <!-- Critical value line -->
+  <line x1="520" y1="100" x2="520" y2="350" stroke="#ef4444" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="520" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ef4444">Critical Value</text>
+  
+  <!-- Alpha region (rejection region) -->
+  <path d="M520 350 Q560 350 590 320 Q630 280 670 250 Q700 220 700 350 Z" 
+        fill="#ef4444" fill-opacity="0.3"/>
+  <text x="630" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">α = 0.05</text>
+  <text x="630" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">(Type I Error)</text>
+  
+  <!-- Beta region (Type II Error) -->
+  <path d="M250 350 Q350 350 400 320 Q450 250 480 200 Q500 170 520 150 L520 350 Z" 
+        fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="420" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f59e0b">β</text>
+  <text x="420" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">(Type II Error)</text>
+  
+  <!-- Power region -->
+  <text x="620" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#10b981">Power = 1 - β</text>
+  
+  <!-- Labels for distributions -->
+  <text x="400" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6">H₀: No Effect</text>
+  <text x="550" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">H₁: Effect Exists</text>
+  
+  <!-- Legend -->
+  <g transform="translate(100, 420)">
+    <rect x="0" y="0" width="600" height="70" rx="8" fill="#0f172a" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="300" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Decision Matrix</text>
+    
+    <rect x="20" y="35" width="15" height="15" fill="#ef4444" fill-opacity="0.5"/>
+    <text x="45" y="47" font-family="Arial, sans-serif" font-size="11" fill="#475569">Type I Error (α): Reject H₀ when true</text>
+    
+    <rect x="280" y="35" width="15" height="15" fill="#f59e0b" fill-opacity="0.5"/>
+    <text x="305" y="47" font-family="Arial, sans-serif" font-size="11" fill="#475569">Type II Error (β): Accept H₀ when false</text>
+    
+    <rect x="520" y="35" width="15" height="15" fill="#10b981" fill-opacity="0.5"/>
+    <text x="545" y="47" font-family="Arial, sans-serif" font-size="11" fill="#475569">Power: 1-β</text>
+  </g>
+  
+  <!-- X-axis label -->
+  <text x="400" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Effect Size</text>
+  
+  <!-- Y-axis label -->
+  <text x="50" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b" transform="rotate(-90, 50, 225)">Probability Density</text>
+</svg>
+

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='508' height='326' viewBox='0 0 508 326'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+WEAK HYPOTHESIS:
+andquot;The new model will be betterandquot;
+├── ❌ What is andquot;betterandquot;?
+├── ❌ By how much?
+└── ❌ For whom?
+
+STRONG HYPOTHESIS:
+andquot;Implementing the neural collaborative filtering model (NCF)
+will increase purchase conversion rate by at least 5% for
+US mobile users within 7 days of exposure, without decreasing
+average order value by more than 2%andquot;
+├── ✅ Specific intervention
+├── ✅ Measurable outcome
+├── ✅ Quantified expected effect
+├── ✅ Defined population
+├── ✅ Clear timeframe
+└── ✅ Guardrail conditions
+  </text>
+</svg>

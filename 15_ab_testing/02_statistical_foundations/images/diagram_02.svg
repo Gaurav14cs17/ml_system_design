@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='398' viewBox='0 0 524 398'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                    HYPOTHESIS FRAMEWORK                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Null Hypothesis (H₀):                                      │
+│  andquot;There is NO difference between control and treatmentandquot;     │
+│                                                             │
+│  Mathematically:  μ_treatment = μ_control                   │
+│                   or                                        │
+│                   μ_treatment - μ_control = 0               │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Alternative Hypothesis (H₁):                               │
+│  andquot;There IS a difference between control and treatmentandquot;      │
+│                                                             │
+│  Two-tailed:  μ_treatment ≠ μ_control                      │
+│  One-tailed:  μ_treatment andgt; μ_control  (superiority)       │
+│               μ_treatment andlt; μ_control  (non-inferiority)   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

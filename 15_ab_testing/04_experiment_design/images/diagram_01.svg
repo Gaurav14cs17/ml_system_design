@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='470' viewBox='0 0 524 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                    PICOT FRAMEWORK                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  P - Population                                             │
+│      Who is included in the experiment?                     │
+│      Example: andquot;All US mobile users, age 18+andquot;               │
+│                                                             │
+│  I - Intervention                                           │
+│      What change are you testing?                           │
+│      Example: andquot;New ML recommendation model v2.5andquot;           │
+│                                                             │
+│  C - Comparison                                             │
+│      What is the control/baseline?                          │
+│      Example: andquot;Current recommendation model v2.4andquot;          │
+│                                                             │
+│  O - Outcome                                                │
+│      What metrics will you measure?                         │
+│      Example: andquot;Click-through rate, conversion rateandquot;        │
+│                                                             │
+│  T - Time                                                   │
+│      How long will the experiment run?                      │
+│      Example: andquot;14 days minimum, 21 days maximumandquot;           │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

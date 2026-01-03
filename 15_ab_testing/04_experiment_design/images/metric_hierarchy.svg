@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="450" viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="secondaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="guardrailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+    <linearGradient id="debugGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="450" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Metric Hierarchy</text>
+  
+  <!-- Primary Metric - Top of pyramid -->
+  <g transform="translate(200, 60)">
+    <polygon points="150,0 300,100 0,100" fill="url(#primaryGrad)" filter="url(#shadow)"/>
+    <text x="150" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">PRIMARY</text>
+    <text x="150" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Decision Metric</text>
+  </g>
+  
+  <!-- Primary description -->
+  <g transform="translate(520, 90)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="80" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6366f1">• Single metric</text>
+    <text x="80" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6366f1">• Must be significant to ship</text>
+    <text x="80" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6366f1">• e.g., Conversion Rate</text>
+  </g>
+  
+  <!-- Secondary Metrics -->
+  <g transform="translate(150, 160)">
+    <polygon points="0,0 400,0 350,80 50,80" fill="url(#secondaryGrad)" filter="url(#shadow)"/>
+    <text x="200" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">SECONDARY</text>
+    <text x="200" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Supporting Metrics</text>
+  </g>
+  
+  <!-- Secondary description -->
+  <g transform="translate(520, 180)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+    <text x="80" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">• Explain primary movement</text>
+    <text x="80" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">• Provide context</text>
+    <text x="80" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">• e.g., CTR, Time on Site</text>
+  </g>
+  
+  <!-- Guardrail Metrics -->
+  <g transform="translate(100, 240)">
+    <polygon points="0,0 500,0 450,80 50,80" fill="url(#guardrailGrad)" filter="url(#shadow)"/>
+    <text x="250" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">GUARDRAILS</text>
+    <text x="250" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Do-No-Harm Metrics</text>
+  </g>
+  
+  <!-- Guardrail description -->
+  <g transform="translate(520, 270)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="2"/>
+    <text x="80" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">• Must NOT regress</text>
+    <text x="80" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">• Can block shipping</text>
+    <text x="80" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">• e.g., Revenue, Errors</text>
+  </g>
+  
+  <!-- Debug Metrics -->
+  <g transform="translate(50, 320)">
+    <polygon points="0,0 600,0 550,80 50,80" fill="url(#debugGrad)" filter="url(#shadow)"/>
+    <text x="300" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">DEBUG / DIAGNOSTIC</text>
+    <text x="300" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Technical Health Metrics</text>
+  </g>
+  
+  <!-- Debug description -->
+  <g transform="translate(520, 360)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Identify issues</text>
+    <text x="80" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Technical monitoring</text>
+    <text x="80" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• e.g., Latency, Cache</text>
+  </g>
+  
+  <!-- Arrows showing flow -->
+  <path d="M350 160 L350 150 L340 155 M350 150 L360 155" stroke="#334155" stroke-width="2" fill="none"/>
+</svg>
+

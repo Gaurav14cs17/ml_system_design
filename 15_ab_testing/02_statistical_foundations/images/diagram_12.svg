@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='548' height='686' viewBox='0 0 548 686'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│         STATISTICAL vs PRACTICAL SIGNIFICANCE              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Statistical Significance:                                  │
+│  andquot;Is the effect real (not due to chance)?andquot;                 │
+│  Measured by: p-value andlt; α                                  │
+│                                                             │
+│  Practical Significance:                                    │
+│  andquot;Is the effect large enough to matter?andquot;                   │
+│  Measured by: Effect size vs. MDE                          │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Quadrant Analysis:                                         │
+│                                                             │
+│               Statistically Significant?                    │
+│                   Yes          No                           │
+│              ┌──────────┬──────────┐                       │
+│  Practically │   SHIP!  │ Underpow-│                       │
+│  Significant?│          │   ered   │                       │
+│     Yes      │ (Ideal)  │(Need more│                       │
+│              │          │  data)   │                       │
+│              ├──────────┼──────────┤                       │
+│              │Reconsider│ No action│                       │
+│     No       │ (maybe   │ needed   │                       │
+│              │ noise)   │          │                       │
+│              └──────────┴──────────┘                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Example:
+- MDE (practical threshold): 2% relative lift
+- Observed lift: 0.5% with p-value = 0.001
+
+This is statistically significant but NOT practically significant.
+With enough data, you can detect tiny effects that don&#x27;t matter.
+  </text>
+</svg>

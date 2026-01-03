@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="phase1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="phase2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="phase3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="phase4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="phase5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="300" fill="#334155"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">A/B Testing Lifecycle</text>
+  
+  <!-- Timeline base -->
+  <line x1="50" y1="150" x2="850" y2="150" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Phase 1: Planning -->
+  <g transform="translate(90, 80)">
+    <circle cx="0" cy="70" r="25" fill="url(#phase1)" filter="url(#dropShadow)"/>
+    <text x="0" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">1</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6366f1">PLANNING</text>
+    <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Hypothesis</text>
+    <text x="0" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Metrics</text>
+    <text x="0" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Sample Size</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M130 150 L200 150" stroke="#cbd5e1" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 2: Implementation -->
+  <g transform="translate(250, 80)">
+    <circle cx="0" cy="70" r="25" fill="url(#phase2)" filter="url(#dropShadow)"/>
+    <text x="0" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">2</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6">IMPLEMENT</text>
+    <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Assignment</text>
+    <text x="0" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Logging</text>
+    <text x="0" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Validation</text>
+  </g>
+  
+  <!-- Phase 3: Running -->
+  <g transform="translate(410, 80)">
+    <circle cx="0" cy="70" r="25" fill="url(#phase3)" filter="url(#dropShadow)"/>
+    <text x="0" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">3</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">RUNNING</text>
+    <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Monitor</text>
+    <text x="0" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Guardrails</text>
+    <text x="0" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Data Collection</text>
+  </g>
+  
+  <!-- Phase 4: Analysis -->
+  <g transform="translate(570, 80)">
+    <circle cx="0" cy="70" r="25" fill="url(#phase4)" filter="url(#dropShadow)"/>
+    <text x="0" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">4</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">ANALYSIS</text>
+    <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Pre-checks</text>
+    <text x="0" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Statistics</text>
+    <text x="0" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Segments</text>
+  </g>
+  
+  <!-- Phase 5: Decision -->
+  <g transform="translate(730, 80)">
+    <circle cx="0" cy="70" r="25" fill="url(#phase5)" filter="url(#dropShadow)"/>
+    <text x="0" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">5</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">DECISION</text>
+    <text x="0" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Ship/No-Ship</text>
+    <text x="0" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Rollout</text>
+    <text x="0" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">• Document</text>
+  </g>
+  
+  <!-- Duration labels -->
+  <text x="170" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">1-2 weeks</text>
+  <text x="330" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">1-2 weeks</text>
+  <text x="490" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">2-4 weeks</text>
+  <text x="650" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">3-5 days</text>
+  <text x="810" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">1-2 days</text>
+</svg>
+

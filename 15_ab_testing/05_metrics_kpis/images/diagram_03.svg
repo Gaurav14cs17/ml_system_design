@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='632' viewBox='0 0 524 632'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│              DESIRABLE METRIC PROPERTIES                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  SENSITIVITY                                                │
+│  └─▶ Metric should detect changes in user experience       │
+│  └─▶ Lower variance = higher sensitivity                   │
+│  └─▶ Test: Does metric move when product changes?          │
+│                                                             │
+│  DIRECTIONALITY                                             │
+│  └─▶ Clear which direction is andquot;goodandquot;                       │
+│  └─▶ Avoid metrics where up or down could be good          │
+│  └─▶ Example: Time on site (good?) vs Task completion     │
+│                                                             │
+│  ATTRIBUTABILITY                                            │
+│  └─▶ Can attribute change to treatment                     │
+│  └─▶ Minimize external confounds                           │
+│  └─▶ Triggered analysis helps                              │
+│                                                             │
+│  STABILITY                                                  │
+│  └─▶ Not overly affected by outliers                       │
+│  └─▶ Consistent over time (low day-to-day variance)       │
+│  └─▶ Consider winsorization for heavy-tailed metrics      │
+│                                                             │
+│  INTERPRETABILITY                                           │
+│  └─▶ Stakeholders understand what it means                 │
+│  └─▶ Can translate to business impact                      │
+│  └─▶ Actionable insights possible                          │
+│                                                             │
+│  TIMELINESS                                                 │
+│  └─▶ Observable within reasonable timeframe                │
+│  └─▶ Consider proxy metrics for long-term outcomes        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

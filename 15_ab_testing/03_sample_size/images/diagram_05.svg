@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='470' viewBox='0 0 524 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│              VARIANCE REDUCTION TECHNIQUES                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  CUPED (Pre-experiment data)                                │
+│  ├── Best for: Metrics with strong autocorrelation         │
+│  ├── Typical reduction: 20-50%                             │
+│  └── Example: Use last month&#x27;s revenue to adjust           │
+│                                                             │
+│  Stratification                                             │
+│  ├── Best for: Heterogeneous populations                   │
+│  ├── Typical reduction: 10-30%                             │
+│  └── Example: Stratify by country, device type             │
+│                                                             │
+│  Post-stratification                                        │
+│  ├── Best for: When you can&#x27;t pre-stratify                 │
+│  ├── Typical reduction: 5-20%                              │
+│  └── Example: Adjust after experiment for demographics     │
+│                                                             │
+│  Triggered Analysis                                         │
+│  ├── Best for: Rare event experiments                      │
+│  ├── Reduction: Varies                                     │
+│  └── Example: Only count users who saw the change          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

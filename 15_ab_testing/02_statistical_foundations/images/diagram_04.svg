@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='492' height='614' viewBox='0 0 492 614'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Distribution under H₀ (assuming no effect):
+
+                         ┌─────────┐
+                         │  95%    │
+                         │ of data │
+           ┌─────────────┴─────────┴─────────────┐
+           │                                     │
+           ▼                                     ▼
+     ──────────────────────────────────────────────────
+    │█                                               █│
+    │██                                             ██│
+    │███                                           ███│
+    │████                                         ████│
+    │█████                                       █████│
+    │██████                                     ██████│
+    │███████                                   ███████│
+    │████████                                 ████████│
+    │█████████                               █████████│
+    │███████████                           ███████████│
+    │██████████████                     ██████████████│
+    │███████████████████████████████████████████████████
+     ──────────────────────────────────────────────────
+           ▲               ▲               ▲
+        -1.96              0            +1.96
+           │               │               │
+           │               │               │
+        ┌──┴──┐         ┌──┴──┐         ┌──┴──┐
+        │2.5% │         │ Mean│         │2.5% │
+        │Tail │         │     │         │Tail │
+        └─────┘         └─────┘         └─────┘
+
+    If your test statistic falls in the tails (|z| andgt; 1.96),
+    p-value andlt; 0.05, and you reject H₀
+  </text>
+</svg>

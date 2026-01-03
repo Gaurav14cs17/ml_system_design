@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="batchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="realtimeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">⚡ Real-Time vs Batch Personalization</text>
+  
+  <!-- Batch Processing Column -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="330" height="340" rx="14" fill="#0f172a" stroke="#e0e7ff" stroke-width="2"/>
+    <rect x="50" y="55" width="330" height="45" rx="14 14 0 0" fill="url(#batchGrad)"/>
+    <text x="215" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🕒 BATCH PROCESSING</text>
+    
+    <!-- Batch steps -->
+    <rect x="80" y="115" width="270" height="50" rx="10" fill="#e0e7ff"/>
+    <text x="215" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">📅 Daily/Hourly Model Updates</text>
+    <text x="215" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6366f1">Scheduled retraining</text>
+    
+    <path d="M215 170 L215 185" stroke="#6366f1" stroke-width="2"/>
+    <polygon points="210,185 215,195 220,185" fill="#6366f1"/>
+    
+    <rect x="80" y="200" width="270" height="50" rx="10" fill="#e0e7ff"/>
+    <text x="215" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">📊 Pre-computed User Profiles</text>
+    <text x="215" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6366f1">Aggregated features</text>
+    
+    <path d="M215 255 L215 270" stroke="#6366f1" stroke-width="2"/>
+    <polygon points="210,270 215,280 220,270" fill="#6366f1"/>
+    
+    <rect x="80" y="285" width="270" height="50" rx="10" fill="#e0e7ff"/>
+    <text x="215" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">📋 Static Recommendations</text>
+    <text x="215" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6366f1">Cached results</text>
+    
+    <!-- Batch characteristics -->
+    <rect x="80" y="350" width="270" height="35" rx="6" fill="#334155"/>
+    <text x="215" y="372" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">⏱️ Latency: Minutes-Hours | 📊 Historical features only</text>
+  </g>
+  
+  <!-- VS divider -->
+  <g>
+    <circle cx="400" cy="225" r="25" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="400" y="232" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">VS</text>
+  </g>
+  
+  <!-- Real-time Processing Column -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="55" width="330" height="340" rx="14" fill="#0f172a" stroke="#d1fae5" stroke-width="2"/>
+    <rect x="420" y="55" width="330" height="45" rx="14 14 0 0" fill="url(#realtimeGrad)"/>
+    <text x="585" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚡ REAL-TIME PROCESSING</text>
+    
+    <!-- Real-time steps -->
+    <rect x="450" y="115" width="270" height="50" rx="10" fill="#d1fae5"/>
+    <text x="585" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#065f46">🔄 Per-Request Model Updates</text>
+    <text x="585" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">Online learning</text>
+    
+    <path d="M585 170 L585 185" stroke="#10b981" stroke-width="2"/>
+    <polygon points="580,185 585,195 590,185" fill="#10b981"/>
+    
+    <rect x="450" y="200" width="270" height="50" rx="10" fill="#d1fae5"/>
+    <text x="585" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#065f46">⚙️ Dynamic Feature Computation</text>
+    <text x="585" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">Real-time signals</text>
+    
+    <path d="M585 255 L585 270" stroke="#10b981" stroke-width="2"/>
+    <polygon points="580,270 585,280 590,270" fill="#10b981"/>
+    
+    <rect x="450" y="285" width="270" height="50" rx="10" fill="#d1fae5"/>
+    <text x="585" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#065f46">🎯 Contextual Recommendations</text>
+    <text x="585" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">Personalized per request</text>
+    
+    <!-- Real-time characteristics -->
+    <rect x="450" y="350" width="270" height="35" rx="6" fill="#334155"/>
+    <text x="585" y="372" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">⚡ Latency: Milliseconds | 📊 Real-time + Historical</text>
+  </g>
+</svg>

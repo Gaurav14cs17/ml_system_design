@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='468' height='470' viewBox='0 0 468 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Randomization Debugging Checklist:
+
+□ Sample Ratio Mismatch Test
+  └─ Is observed ratio close to expected?
+
+□ Covariate Balance
+  └─ Are pre-treatment characteristics balanced?
+
+□ Assignment Stability
+  └─ Does same user always get same variant?
+
+□ Time-Based Patterns
+  └─ Any assignment differences by time of day/week?
+
+□ Segment Analysis
+  └─ Is ratio consistent across user segments?
+
+□ Bot/Invalid Traffic
+  └─ Are bots disproportionately in one group?
+
+□ Technical Validation
+  └─ Are there any code paths that bypass randomization?
+
+□ Edge Cases
+  └─ How are new users, logged-out users handled?
+  </text>
+</svg>

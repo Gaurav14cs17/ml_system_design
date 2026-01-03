@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="itemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="simGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="rankGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🏛️ Two-Tower Architecture</text>
+  
+  <!-- User Tower -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="60" width="200" height="260" rx="16" fill="#1e293b"/>
+    <rect x="80" y="60" width="200" height="50" rx="16 16 0 0" fill="url(#userGrad)"/>
+    <text x="180" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">👤 USER TOWER</text>
+    
+    <rect x="100" y="125" width="160" height="80" rx="8" fill="#334155"/>
+    <text x="180" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#a5b4fc">User Features</text>
+    <text x="115" y="172" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Demographics</text>
+    <text x="115" y="188" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• History • Context</text>
+    
+    <path d="M180 210 L180 230" stroke="#6366f1" stroke-width="3"/>
+    <polygon points="175,230 180,242 185,230" fill="#6366f1"/>
+    
+    <rect x="100" y="248" width="160" height="30" rx="6" fill="#4f46e5"/>
+    <text x="180" y="268" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Dense Layers</text>
+    
+    <path d="M180 283 L180 303" stroke="#6366f1" stroke-width="3"/>
+    <polygon points="175,303 180,315 185,303" fill="#6366f1"/>
+    
+    <rect x="95" y="320" width="170" height="35" rx="20" fill="url(#userGrad)"/>
+    <text x="180" y="343" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">User Embedding (128d)</text>
+  </g>
+  
+  <!-- Item Tower -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="60" width="200" height="260" rx="16" fill="#1e293b"/>
+    <rect x="420" y="60" width="200" height="50" rx="16 16 0 0" fill="url(#itemGrad)"/>
+    <text x="520" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📦 ITEM TOWER</text>
+    
+    <rect x="440" y="125" width="160" height="80" rx="8" fill="#334155"/>
+    <text x="520" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Item Features</text>
+    <text x="455" y="172" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Category</text>
+    <text x="455" y="188" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Description • Metadata</text>
+    
+    <path d="M520 210 L520 230" stroke="#10b981" stroke-width="3"/>
+    <polygon points="515,230 520,242 525,230" fill="#10b981"/>
+    
+    <rect x="440" y="248" width="160" height="30" rx="6" fill="#059669"/>
+    <text x="520" y="268" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Dense Layers</text>
+    
+    <path d="M520 283 L520 303" stroke="#10b981" stroke-width="3"/>
+    <polygon points="515,303 520,315 525,303" fill="#10b981"/>
+    
+    <rect x="435" y="320" width="170" height="35" rx="20" fill="url(#itemGrad)"/>
+    <text x="520" y="343" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Item Embedding (128d)</text>
+  </g>
+  
+  <!-- Connecting lines -->
+  <path d="M265 337 L350 380" stroke="#64748b" stroke-width="3"/>
+  <path d="M435 337 L350 380" stroke="#64748b" stroke-width="3"/>
+  
+  <!-- Similarity -->
+  <g filter="url(#shadow)">
+    <circle cx="350" cy="395" r="35" fill="url(#simGrad)"/>
+    <text x="350" y="390" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Similarity</text>
+    <text x="350" y="405" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">(dot/cosine)</text>
+  </g>
+  
+  <!-- Arrow to ranking -->
+  <path d="M350 432 L350 450" stroke="#f59e0b" stroke-width="3"/>
+  <polygon points="345,450 350,462 355,450" fill="#f59e0b"/>
+  
+  <!-- Ranking -->
+  <rect x="290" y="465" width="120" height="30" rx="15" fill="url(#rankGrad)" filter="url(#shadow)"/>
+  <text x="350" y="485" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🏆 Ranking</text>
+</svg>

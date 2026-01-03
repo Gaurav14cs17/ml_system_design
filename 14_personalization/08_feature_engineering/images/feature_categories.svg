@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <defs>
+    <linearGradient id="userFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="itemFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ctxFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="crossFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow12" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="520" fill="#0d1117" rx="10"/>
+  
+  <text x="425" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">Feature Categories for Personalization</text>
+  
+  <!-- User Features -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="380" height="200" rx="15" fill="url(#userFeatGrad)" filter="url(#shadow12)"/>
+    <text x="190" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">👤 User Features</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Static Profile</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• Demographics</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Account age</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Preferences</text>
+    </g>
+    
+    <g transform="translate(195, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Behavioral</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• Click history</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Purchase history</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Dwell time</text>
+    </g>
+    
+    <g transform="translate(15, 125)">
+      <rect x="0" y="0" width="350" height="55" rx="8" fill="rgba(255,255,255,0.15)"/>
+      <text x="175" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Aggregated Stats</text>
+      <text x="175" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">avg_session_duration | items_viewed_7d | conversion_rate | favorite_category</text>
+    </g>
+  </g>
+  
+  <!-- Item Features -->
+  <g transform="translate(440, 60)">
+    <rect x="0" y="0" width="380" height="200" rx="15" fill="url(#itemFeatGrad)" filter="url(#shadow12)"/>
+    <text x="190" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">📦 Item Features</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Content</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• Category/genre</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Text embeddings</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Image features</text>
+    </g>
+    
+    <g transform="translate(195, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Popularity</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• View count</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• CTR</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Avg rating</text>
+    </g>
+    
+    <g transform="translate(15, 125)">
+      <rect x="0" y="0" width="350" height="55" rx="8" fill="rgba(255,255,255,0.15)"/>
+      <text x="175" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Freshness</text>
+      <text x="175" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">days_since_published | trending_score | inventory_level | price_percentile</text>
+    </g>
+  </g>
+  
+  <!-- Context Features -->
+  <g transform="translate(30, 280)">
+    <rect x="0" y="0" width="380" height="200" rx="15" fill="url(#ctxFeatGrad)" filter="url(#shadow12)"/>
+    <text x="190" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">🌍 Context Features</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Temporal</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• Hour of day</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Day of week</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Season/holiday</text>
+    </g>
+    
+    <g transform="translate(195, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Device/Location</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• Device type</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Country/city</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Network type</text>
+    </g>
+    
+    <g transform="translate(15, 125)">
+      <rect x="0" y="0" width="350" height="55" rx="8" fill="rgba(255,255,255,0.15)"/>
+      <text x="175" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Session Context</text>
+      <text x="175" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">current_page | referrer | search_query | cart_items | session_length</text>
+    </g>
+  </g>
+  
+  <!-- Cross Features -->
+  <g transform="translate(440, 280)">
+    <rect x="0" y="0" width="380" height="200" rx="15" fill="url(#crossFeatGrad)" filter="url(#shadow12)"/>
+    <text x="190" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">✖️ Cross Features</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">User × Item</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• User-item affinity</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Category preference</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Historical CTR</text>
+    </g>
+    
+    <g transform="translate(195, 45)">
+      <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">User × Context</text>
+      <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">• Time preference</text>
+      <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="8">• Device preference</text>
+      <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="8">• Location patterns</text>
+    </g>
+    
+    <g transform="translate(15, 125)">
+      <rect x="0" y="0" width="350" height="55" rx="8" fill="rgba(255,255,255,0.15)"/>
+      <text x="175" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Learned Interactions</text>
+      <text x="175" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">DeepFM, WideandDeep automatically learn feature crosses</text>
+    </g>
+  </g>
+</svg>
+

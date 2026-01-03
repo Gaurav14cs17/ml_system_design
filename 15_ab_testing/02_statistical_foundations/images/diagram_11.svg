@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='556' height='542' viewBox='0 0 556 542'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Distribution under H₀             Distribution under H₁
+(No Effect)                       (True Effect Exists)
+
+      │                                   │
+      │          ┌─┐                      │          ┌─┐
+      │         ┌┴─┴┐                     │         ┌┴─┴┐
+      │        ┌┴───┴┐                    │        ┌┴───┴┐
+      │       ┌┴─────┴┐                   │       ┌┴─────┴┐
+      │      ┌┴───────┴┐                  │      ┌┴───────┴┐
+      │     ┌┴─────────┴┐                 │     ┌┴─────────┴┐
+      │    ┌┴───────────┴┐                │    ┌┴───────────┴┐
+      │   ┌┴─────────────┴┐               │   ┌┴─────────────┴┐
+      └───┴───────────────┴────────────   └───┴───────────────┴────
+          μ₀              │ Critical            μ₁
+                          │ Value
+                          │
+                          ▼
+
+    α (Type I Error)      │        β (Type II Error)
+    ████████████████████  │  ░░░░░░
+                          │
+                          │  ████████████████████████████████
+                          │        Power (1-β)
+
+The more the distributions overlap, the lower the power.
+Power increases with:
+- Larger effect size (distributions farther apart)
+- Larger sample size (narrower distributions)
+- Higher α (larger critical region)
+  </text>
+</svg>

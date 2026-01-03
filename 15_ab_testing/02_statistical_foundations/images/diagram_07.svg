@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='540' height='596' viewBox='0 0 540 596'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+CI Interpretation for Ship/No-Ship Decisions:
+
+Case 1: Clear Winner (Ship!)
+          0%
+          │
+  ├───────[●]───────┤          CI entirely above 0
+          │
+  Decision: Ship with high confidence
+  ────────────────────────────────────────────
+
+Case 2: Clear Loser (Don&#x27;t Ship!)
+                    0%
+                    │
+  ├───────[●]───────┤          CI entirely below 0
+                    │
+  Decision: Don&#x27;t ship, treatment is worse
+  ────────────────────────────────────────────
+
+Case 3: Inconclusive (Need More Data)
+              0%
+              │
+      ├───────[●]───────┤      CI crosses 0
+              │
+  Decision: Not enough evidence, run longer or accept uncertainty
+  ────────────────────────────────────────────
+
+Case 4: Practically Significant (Ship!)
+          0%     MDE
+          │       │
+  ├───────[●]─────┼───┤        CI entirely above MDE
+          │       │
+  Decision: Ship with confidence of meaningful impact
+  </text>
+</svg>

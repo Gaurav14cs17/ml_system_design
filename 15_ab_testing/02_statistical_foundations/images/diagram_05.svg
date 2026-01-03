@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='272' viewBox='0 0 524 272'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                  CONFIDENCE INTERVAL                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  A 95% confidence interval means:                           │
+│                                                             │
+│  andquot;If we repeated this experiment many times, 95% of the     │
+│   calculated intervals would contain the true parameterandquot;    │
+│                                                             │
+│  It does NOT mean:                                          │
+│  andquot;There&#x27;s a 95% probability the true value is in this       │
+│   specific intervalandquot; (Bayesian interpretation)              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

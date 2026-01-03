@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450">
+  <defs>
+    <linearGradient id="offGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b09b"/>
+      <stop offset="100%" style="stop-color:#96c93d"/>
+    </linearGradient>
+    <linearGradient id="onGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#654ea3"/>
+      <stop offset="100%" style="stop-color:#eaafc8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="750" height="450" fill="#0d1117" rx="10"/>
+  
+  <text x="375" y="35" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="bold">Offline vs Online Evaluation</text>
+  
+  <!-- Offline Metrics -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="300" height="200" rx="15" fill="url(#offGrad)" filter="url(#shadow)"/>
+    <text x="150" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Offline Metrics</text>
+    
+    <g transform="translate(25, 50)">
+      <rect x="0" y="0" width="250" height="130" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="125" y="25" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">📈 Results</text>
+      <text x="125" y="50" text-anchor="middle" fill="#f8fafc" font-size="11">NDCG: +5%</text>
+      <text x="125" y="72" text-anchor="middle" fill="#f8fafc" font-size="11">Recall@10: +8%</text>
+      <text x="125" y="94" text-anchor="middle" fill="#f8fafc" font-size="11">AUC: +3%</text>
+      <text x="125" y="118" text-anchor="middle" fill="#aaaaaa" font-size="9">Historical test set</text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(360, 150)">
+    <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(255,255,255,0.1)"/>
+    <text x="30" y="28" text-anchor="middle" fill="#f8fafc" font-size="16">???</text>
+  </g>
+  <path d="M 360 170 L 430 170" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow4)"/>
+  
+  <!-- Online Metrics -->
+  <g transform="translate(440, 70)">
+    <rect x="0" y="0" width="260" height="200" rx="15" fill="url(#onGrad)" filter="url(#shadow)"/>
+    <text x="130" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Online Metrics</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="220" height="130" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="110" y="25" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">📊 A/B Test</text>
+      <text x="110" y="50" text-anchor="middle" fill="#f8fafc" font-size="11">CTR: +2%</text>
+      <text x="110" y="72" text-anchor="middle" fill="#f8fafc" font-size="11">Conversion: +1.5%</text>
+      <text x="110" y="94" text-anchor="middle" fill="#f8fafc" font-size="11">Revenue: +3%</text>
+      <text x="110" y="118" text-anchor="middle" fill="#aaaaaa" font-size="9">Live user traffic</text>
+    </g>
+  </g>
+  
+  <!-- Why the gap? -->
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="650" height="130" rx="15" fill="rgba(255,255,255,0.05)" stroke="#f8fafc" stroke-width="1"/>
+    <text x="325" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">⚠️ Why the Gap?</text>
+    
+    <g transform="translate(30, 45)">
+      <text x="0" y="0" fill="#f8fafc" font-size="11">• Offline data has selection bias (only observed interactions)</text>
+      <text x="0" y="22" fill="#f8fafc" font-size="11">• User behavior changes with different recommendations</text>
+      <text x="0" y="44" fill="#f8fafc" font-size="11">• Offline ignores position/presentation effects</text>
+      <text x="0" y="66" fill="#f8fafc" font-size="11">• Offline can't capture long-term engagement effects</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrow4" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

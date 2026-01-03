@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 600">
+  <defs>
+    <linearGradient id="batchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2193b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6dd5ed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="speedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff416c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4b2b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#834d9b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d04ed6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eventGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7971e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd200;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="600" fill="#0d1117" rx="10"/>
+  
+  <!-- Title -->
+  <text x="475" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold" font-family="Arial, sans-serif">Lambda Architecture for Real-Time Personalization</text>
+  
+  <!-- Events Source -->
+  <g transform="translate(400, 55)">
+    <rect x="0" y="0" width="150" height="50" rx="10" fill="url(#eventGrad)" filter="url(#shadow5)"/>
+    <text x="75" y="22" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">📱 User Events</text>
+    <text x="75" y="40" text-anchor="middle" fill="#f8fafc" font-size="10">Clicks, Views, Purchases</text>
+  </g>
+  
+  <!-- Arrow splitting -->
+  <path d="M 475 110 L 475 140 L 200 180" stroke="#f7971e" stroke-width="2" fill="none" marker-end="url(#arrowhead5)"/>
+  <path d="M 475 110 L 475 140 L 750 180" stroke="#f7971e" stroke-width="2" fill="none" marker-end="url(#arrowhead5)"/>
+  
+  <!-- Batch Layer (Left) -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="300" height="220" rx="15" fill="url(#batchGrad)" filter="url(#shadow5)"/>
+    <text x="150" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">BATCH LAYER</text>
+    <text x="150" y="50" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Historical Processing (Hours)</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">💾 Data Lake</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">S3/HDFS</text>
+    </g>
+    
+    <g transform="translate(160, 70)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">⚙️ Spark Job</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Daily Training</text>
+    </g>
+    
+    <g transform="translate(25, 135)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">🧮 Full Retrain</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Complete Model</text>
+    </g>
+    
+    <g transform="translate(160, 135)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">📊 Batch Views</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Materialized</text>
+    </g>
+    
+    <!-- Latency indicator -->
+    <rect x="100" y="195" width="100" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="150" y="208" text-anchor="middle" fill="#f8fafc" font-size="9">⏱️ Latency: Hours</text>
+  </g>
+  
+  <!-- Speed Layer (Right) -->
+  <g transform="translate(600, 180)">
+    <rect x="0" y="0" width="300" height="220" rx="15" fill="url(#speedGrad)" filter="url(#shadow5)"/>
+    <text x="150" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">SPEED LAYER</text>
+    <text x="150" y="50" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Real-Time Processing (Seconds)</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">📨 Kafka</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Event Stream</text>
+    </g>
+    
+    <g transform="translate(160, 70)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">⚡ Flink</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Stream Process</text>
+    </g>
+    
+    <g transform="translate(25, 135)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">🔄 Incremental</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Online Learning</text>
+    </g>
+    
+    <g transform="translate(160, 135)">
+      <rect x="0" y="0" width="110" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="55" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">🔴 Real-time</text>
+      <text x="55" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Feature Store</text>
+    </g>
+    
+    <!-- Latency indicator -->
+    <rect x="100" y="195" width="100" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="150" y="208" text-anchor="middle" fill="#f8fafc" font-size="9">⚡ Latency: Seconds</text>
+  </g>
+  
+  <!-- Arrows down -->
+  <path d="M 200 410 L 200 440 L 400 470" stroke="#6dd5ed" stroke-width="2" fill="none" marker-end="url(#arrowhead5)"/>
+  <path d="M 750 410 L 750 440 L 550 470" stroke="#ff4b2b" stroke-width="2" fill="none" marker-end="url(#arrowhead5)"/>
+  
+  <!-- Serving Layer (Center Bottom) -->
+  <g transform="translate(275, 470)">
+    <rect x="0" y="0" width="400" height="110" rx="15" fill="url(#serveGrad)" filter="url(#shadow5)"/>
+    <text x="200" y="28" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">SERVING LAYER</text>
+    <text x="200" y="48" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Merge &amp; Serve (andlt;100ms)</text>
+    
+    <g transform="translate(25, 60)">
+      <rect x="0" y="0" width="100" height="40" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="50" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Batch Recs</text>
+      <text x="50" y="33" text-anchor="middle" fill="#f8fafc" font-size="9">Historical</text>
+    </g>
+    
+    <text x="145" y="85" fill="#f8fafc" font-size="20" font-weight="bold">+</text>
+    
+    <g transform="translate(160, 60)">
+      <rect x="0" y="0" width="100" height="40" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="50" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">RT Boosts</text>
+      <text x="50" y="33" text-anchor="middle" fill="#f8fafc" font-size="9">Real-time</text>
+    </g>
+    
+    <text x="275" y="85" fill="#f8fafc" font-size="20" font-weight="bold">=</text>
+    
+    <g transform="translate(290, 60)">
+      <rect x="0" y="0" width="100" height="40" rx="8" fill="rgba(255,255,255,0.4)"/>
+      <text x="50" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Final Recs</text>
+      <text x="50" y="33" text-anchor="middle" fill="#f8fafc" font-size="9">Merged</text>
+    </g>
+  </g>
+  
+  <!-- Comparison Box -->
+  <g transform="translate(350, 140)">
+    <rect x="0" y="0" width="250" height="55" rx="8" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="1"/>
+    <text x="125" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Why Lambda Architecture?</text>
+    <text x="125" y="35" text-anchor="middle" fill="#aaaaaa" font-size="9">Batch: Accuracy &amp; completeness</text>
+    <text x="125" y="50" text-anchor="middle" fill="#aaaaaa" font-size="9">Speed: Freshness &amp; responsiveness</text>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead5" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

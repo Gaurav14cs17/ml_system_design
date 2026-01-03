@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='470' viewBox='0 0 524 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                VARIANT DESIGN PRINCIPLES                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. ISOLATION                                               │
+│     └─▶ Treatment differs in ONE thing from control        │
+│     └─▶ Enables clear causal attribution                   │
+│                                                             │
+│  2. MINIMAL VIABLE CHANGE                                   │
+│     └─▶ Test the smallest change that tests hypothesis     │
+│     └─▶ Easier to interpret results                        │
+│                                                             │
+│  3. CONSISTENCY                                             │
+│     └─▶ Users always see same variant (sticky assignment)  │
+│     └─▶ Prevents confusion and metric pollution            │
+│                                                             │
+│  4. MEASURABILITY                                           │
+│     └─▶ Change must be detectable in metrics               │
+│     └─▶ Backend-only changes need proxy metrics            │
+│                                                             │
+│  5. REVERSIBILITY                                           │
+│     └─▶ Must be able to quickly rollback                   │
+│     └─▶ Feature flags for instant control                  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

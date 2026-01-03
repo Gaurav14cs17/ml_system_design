@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="cbfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="kbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔀 Hybrid Recommender Systems</text>
+  
+  <!-- Input Sources -->
+  <g transform="translate(50, 70)">
+    <!-- Collaborative Filtering -->
+    <rect x="0" y="0" width="200" height="100" rx="12" fill="url(#cfGrad)" filter="url(#shadow)"/>
+    <text x="100" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">👥 Collaborative</text>
+    <text x="100" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Filtering</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ddd6fe">User-item interactions</text>
+    <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ddd6fe">Similar users/items</text>
+    
+    <!-- Content-Based -->
+    <rect x="240" y="0" width="200" height="100" rx="12" fill="url(#cbfGrad)" filter="url(#shadow)"/>
+    <text x="340" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📄 Content-Based</text>
+    <text x="340" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Filtering</text>
+    <text x="340" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#cffafe">Item attributes</text>
+    <text x="340" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#cffafe">User profiles</text>
+    
+    <!-- Knowledge-Based -->
+    <rect x="480" y="0" width="200" height="100" rx="12" fill="url(#kbGrad)" filter="url(#shadow)"/>
+    <text x="580" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧠 Knowledge-Based</text>
+    <text x="580" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Methods</text>
+    <text x="580" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fef3c7">Domain knowledge</text>
+    <text x="580" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fef3c7">Explicit constraints</text>
+  </g>
+  
+  <!-- Arrows down -->
+  <path d="M 150 175 L 350 230" stroke="#8b5cf6" stroke-width="2"/>
+  <path d="M 390 175 L 390 230" stroke="#06b6d4" stroke-width="2"/>
+  <path d="M 630 175 L 430 230" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Hybrid Combiner -->
+  <g transform="translate(200, 240)">
+    <rect x="0" y="0" width="380" height="100" rx="16" fill="url(#hybridGrad)" filter="url(#shadow)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🔀 HYBRID COMBINER</text>
+    <line x1="20" y1="45" x2="360" y2="45" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="190" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#d1fae5">✓ Overcomes individual limitations</text>
+    <text x="190" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#d1fae5">✓ Leverages complementary strengths</text>
+  </g>
+  
+  <!-- Arrow to output -->
+  <path d="M 390 345 L 390 365" stroke="#10b981" stroke-width="3"/>
+  <polygon points="385,365 390,378 395,365" fill="#10b981"/>
+  
+  <!-- Output -->
+  <rect x="300" y="380" width="180" height="30" rx="15" fill="#10b981" filter="url(#shadow)"/>
+  <text x="390" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🎯 Recommendations</text>
+</svg>
