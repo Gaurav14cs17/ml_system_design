@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="userFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="adFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="ctxFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="crossFeatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🧩 Feature Taxonomy</text>
+  
+  <!-- User Features -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="50" width="700" height="95" rx="12" fill="#0f172a"/>
+    <rect x="50" y="50" width="700" height="35" rx="12 12 0 0" fill="url(#userFeatGrad)"/>
+    <text x="400" y="74" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">👤 USER FEATURES</text>
+    
+    <g transform="translate(65, 95)">
+      <rect x="0" y="0" width="125" height="40" rx="6" fill="#dbeafe"/>
+      <text x="62" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#1e40af">Demographics</text>
+      <text x="62" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#3b82f6">Age, Gender, Loc</text>
+      
+      <rect x="135" y="0" width="125" height="40" rx="6" fill="#dbeafe"/>
+      <text x="197" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#1e40af">Behavior</text>
+      <text x="197" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#3b82f6">CTR, Freq, Recency</text>
+      
+      <rect x="270" y="0" width="125" height="40" rx="6" fill="#dbeafe"/>
+      <text x="332" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#1e40af">Historical</text>
+      <text x="332" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#3b82f6">7d, 30d, Lifetime</text>
+      
+      <rect x="405" y="0" width="125" height="40" rx="6" fill="#dbeafe"/>
+      <text x="467" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#1e40af">Real-time</text>
+      <text x="467" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#3b82f6">Session, Device</text>
+      
+      <rect x="540" y="0" width="125" height="40" rx="6" fill="#dbeafe"/>
+      <text x="602" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#1e40af">Embeddings</text>
+      <text x="602" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#3b82f6">Interest, Cluster</text>
+    </g>
+  </g>
+  
+  <!-- Ad Features -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="160" width="700" height="95" rx="12" fill="#0f172a"/>
+    <rect x="50" y="160" width="700" height="35" rx="12 12 0 0" fill="url(#adFeatGrad)"/>
+    <text x="400" y="184" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📺 AD FEATURES</text>
+    
+    <g transform="translate(65, 205)">
+      <rect x="0" y="0" width="125" height="40" rx="6" fill="#d1fae5"/>
+      <text x="62" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#065f46">Static</text>
+      <text x="62" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#10b981">ID, Format, Size</text>
+      
+      <rect x="135" y="0" width="125" height="40" rx="6" fill="#d1fae5"/>
+      <text x="197" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#065f46">Content</text>
+      <text x="197" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#10b981">Category, Keywords</text>
+      
+      <rect x="270" y="0" width="125" height="40" rx="6" fill="#d1fae5"/>
+      <text x="332" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#065f46">Performance</text>
+      <text x="332" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#10b981">CTR, CVR, Age</text>
+      
+      <rect x="405" y="0" width="125" height="40" rx="6" fill="#d1fae5"/>
+      <text x="467" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#065f46">Advertiser</text>
+      <text x="467" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#10b981">Industry, Budget</text>
+      
+      <rect x="540" y="0" width="125" height="40" rx="6" fill="#d1fae5"/>
+      <text x="602" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#065f46">Embeddings</text>
+      <text x="602" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#10b981">Creative, Visual</text>
+    </g>
+  </g>
+  
+  <!-- Context Features -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="270" width="700" height="95" rx="12" fill="#0f172a"/>
+    <rect x="50" y="270" width="700" height="35" rx="12 12 0 0" fill="url(#ctxFeatGrad)"/>
+    <text x="400" y="294" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🌍 CONTEXT FEATURES</text>
+    
+    <g transform="translate(65, 315)">
+      <rect x="0" y="0" width="125" height="40" rx="6" fill="#422006"/>
+      <text x="62" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#92400e">Temporal</text>
+      <text x="62" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#f59e0b">Hour, Day, Season</text>
+      
+      <rect x="135" y="0" width="125" height="40" rx="6" fill="#422006"/>
+      <text x="197" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#92400e">Device</text>
+      <text x="197" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#f59e0b">Type, OS, Browser</text>
+      
+      <rect x="270" y="0" width="125" height="40" rx="6" fill="#422006"/>
+      <text x="332" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#92400e">Location</text>
+      <text x="332" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#f59e0b">Country, City, TZ</text>
+      
+      <rect x="405" y="0" width="125" height="40" rx="6" fill="#422006"/>
+      <text x="467" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#92400e">Page</text>
+      <text x="467" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#f59e0b">Category, Content</text>
+      
+      <rect x="540" y="0" width="125" height="40" rx="6" fill="#422006"/>
+      <text x="602" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#92400e">Placement</text>
+      <text x="602" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#f59e0b">Position, Format</text>
+    </g>
+  </g>
+  
+  <!-- Cross Features -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="380" width="700" height="100" rx="12" fill="#0f172a"/>
+    <rect x="50" y="380" width="700" height="35" rx="12 12 0 0" fill="url(#crossFeatGrad)"/>
+    <text x="400" y="404" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">✖️ CROSS FEATURES (Interactions)</text>
+    
+    <g transform="translate(90, 430)">
+      <rect x="0" y="0" width="180" height="40" rx="6" fill="#ede9fe"/>
+      <text x="90" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#5b21b6">User × Ad</text>
+      <text x="90" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#8b5cf6">Category affinity, Format pref</text>
+      
+      <rect x="200" y="0" width="180" height="40" rx="6" fill="#ede9fe"/>
+      <text x="290" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#5b21b6">User × Context</text>
+      <text x="290" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#8b5cf6">Device pref, Time pref</text>
+      
+      <rect x="400" y="0" width="180" height="40" rx="6" fill="#ede9fe"/>
+      <text x="490" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#5b21b6">Ad × Context</text>
+      <text x="490" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#8b5cf6">Category × Time, Size × Device</text>
+    </g>
+  </g>
+</svg>

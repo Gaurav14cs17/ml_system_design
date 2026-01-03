@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="400" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    ⏱️ Request Lifecycle
+  </text>
+  
+  <!-- Timeline -->
+  <rect x="50" y="60" width="600" height="320" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  
+  <g font-family="Arial" font-size="12">
+    <!-- Step 1 -->
+    <circle cx="100" cy="100" r="15" fill="#3b82f6"/>
+    <text x="100" y="105" text-anchor="middle" fill="#fff" font-weight="bold">1</text>
+    <text x="130" y="95" fill="#60a5fa" font-weight="bold">Request Received (0ms)</text>
+    <text x="130" y="115" fill="#94a3b8">Parse request, extract user_id, ad_ids, context</text>
+    
+    <!-- Step 2 -->
+    <circle cx="100" cy="160" r="15" fill="#10b981"/>
+    <text x="100" y="165" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
+    <text x="130" y="155" fill="#34d399" font-weight="bold">Feature Lookup (1-2ms)</text>
+    <text x="130" y="175" fill="#94a3b8">Fetch user &amp; ad features from Redis (parallel)</text>
+    
+    <!-- Step 3 -->
+    <circle cx="100" cy="220" r="15" fill="#8b5cf6"/>
+    <text x="100" y="225" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
+    <text x="130" y="215" fill="#a78bfa" font-weight="bold">Feature Transform (1ms)</text>
+    <text x="130" y="235" fill="#94a3b8">Apply transformations, build feature vector</text>
+    
+    <!-- Step 4 -->
+    <circle cx="100" cy="280" r="15" fill="#f59e0b"/>
+    <text x="100" y="285" text-anchor="middle" fill="#fff" font-weight="bold">4</text>
+    <text x="130" y="275" fill="#fbbf24" font-weight="bold">Model Inference (3ms)</text>
+    <text x="130" y="295" fill="#94a3b8">Call TensorFlow Serving, get predictions</text>
+    
+    <!-- Step 5 -->
+    <circle cx="100" cy="340" r="15" fill="#ec4899"/>
+    <text x="100" y="345" text-anchor="middle" fill="#fff" font-weight="bold">5</text>
+    <text x="130" y="335" fill="#f472b6" font-weight="bold">Response (0.5ms)</text>
+    <text x="130" y="355" fill="#94a3b8">Format response, return pCTR scores</text>
+  </g>
+  
+  <!-- Total time indicator -->
+  <rect x="500" y="100" width="120" height="250" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="560" y="130" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="12" font-weight="bold">Total Time</text>
+  <text x="560" y="200" text-anchor="middle" fill="#10b981" font-family="Arial" font-size="32" font-weight="bold">~7ms</text>
+  <text x="560" y="230" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">p50 latency</text>
+  <text x="560" y="280" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="20" font-weight="bold">~12ms</text>
+  <text x="560" y="305" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">p99 latency</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <rect width="700" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🔄 Experiment Lifecycle
+  </text>
+  
+  <!-- Phase boxes -->
+  <g font-family="Arial">
+    <!-- Design -->
+    <rect x="50" y="70" width="120" height="100" rx="10" fill="#3b82f6"/>
+    <text x="110" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1. DESIGN</text>
+    <text x="110" y="120" text-anchor="middle" fill="#fff" font-size="10">1-2 days</text>
+    <text x="110" y="140" text-anchor="middle" fill="#fff" font-size="9">Hypothesis</text>
+    <text x="110" y="155" text-anchor="middle" fill="#fff" font-size="9">Sample size</text>
+    
+    <!-- Setup -->
+    <rect x="195" y="70" width="120" height="100" rx="10" fill="#10b981"/>
+    <text x="255" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2. SETUP</text>
+    <text x="255" y="120" text-anchor="middle" fill="#fff" font-size="10">1-2 days</text>
+    <text x="255" y="140" text-anchor="middle" fill="#fff" font-size="9">Assignment</text>
+    <text x="255" y="155" text-anchor="middle" fill="#fff" font-size="9">Logging</text>
+    
+    <!-- Run -->
+    <rect x="340" y="70" width="120" height="100" rx="10" fill="#8b5cf6"/>
+    <text x="400" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">3. RUN</text>
+    <text x="400" y="120" text-anchor="middle" fill="#fff" font-size="10">1-4 weeks</text>
+    <text x="400" y="140" text-anchor="middle" fill="#fff" font-size="9">Collect data</text>
+    <text x="400" y="155" text-anchor="middle" fill="#fff" font-size="9">Monitor</text>
+    
+    <!-- Analyze -->
+    <rect x="485" y="70" width="120" height="100" rx="10" fill="#f59e0b"/>
+    <text x="545" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">4. ANALYZE</text>
+    <text x="545" y="120" text-anchor="middle" fill="#fff" font-size="10">1-3 days</text>
+    <text x="545" y="140" text-anchor="middle" fill="#fff" font-size="9">Statistics</text>
+    <text x="545" y="155" text-anchor="middle" fill="#fff" font-size="9">Insights</text>
+  </g>
+  
+  <!-- Arrows -->
+  <line x1="170" y1="120" x2="185" y2="120" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="315" y1="120" x2="330" y2="120" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="460" y1="120" x2="475" y2="120" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Decision -->
+  <rect x="200" y="200" width="300" height="60" rx="10" fill="#ec4899"/>
+  <text x="350" y="225" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14" font-weight="bold">5. DECISION</text>
+  <text x="350" y="245" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Ship / Iterate / Kill</text>
+  
+  <line x1="545" y1="170" x2="545" y2="210" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="545" y1="210" x2="510" y2="210" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Timeline summary -->
+  <rect x="100" y="290" width="500" height="130" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="350" y="320" text-anchor="middle" fill="#a5b4fc" font-family="Arial" font-size="14" font-weight="bold">Typical Timeline</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="150" y="355">Design &amp; Setup:</text><text x="280" y="355" fill="#f8fafc">3-4 days</text>
+    <text x="150" y="380">Experiment Run:</text><text x="280" y="380" fill="#f8fafc">1-4 weeks</text>
+    <text x="150" y="405">Analysis &amp; Decision:</text><text x="280" y="405" fill="#f8fafc">2-3 days</text>
+    <text x="400" y="355" fill="#10b981" font-weight="bold">Total: 2-6 weeks</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="550" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🏗️ Serving Architecture
+  </text>
+  
+  <!-- Ad Request -->
+  <rect x="350" y="60" width="100" height="40" rx="8" fill="#3b82f6"/>
+  <text x="400" y="85" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">Ad Request</text>
+  
+  <line x1="400" y1="100" x2="400" y2="130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Load Balancer -->
+  <rect x="320" y="140" width="160" height="50" rx="8" fill="#10b981"/>
+  <text x="400" y="170" text-anchor="middle" fill="#fff" font-family="Arial" font-size="13" font-weight="bold">Load Balancer</text>
+  
+  <line x1="400" y1="190" x2="400" y2="220" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Main Service Box -->
+  <rect x="100" y="230" width="600" height="250" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="400" y="260" text-anchor="middle" fill="#a5b4fc" font-family="Arial" font-size="14" font-weight="bold">CTR Prediction Service</text>
+  
+  <!-- Feature Store -->
+  <rect x="130" y="290" width="150" height="70" rx="8" fill="#8b5cf6"/>
+  <text x="205" y="320" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Feature Store</text>
+  <text x="205" y="340" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">Redis + S3</text>
+  
+  <!-- Model Server -->
+  <rect x="320" y="290" width="150" height="70" rx="8" fill="#f59e0b"/>
+  <text x="395" y="320" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Model Server</text>
+  <text x="395" y="340" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">TF Serving</text>
+  
+  <!-- Cache -->
+  <rect x="510" y="290" width="150" height="70" rx="8" fill="#ec4899"/>
+  <text x="585" y="320" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Cache Layer</text>
+  <text x="585" y="340" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">L1 + L2</text>
+  
+  <!-- Monitoring -->
+  <rect x="320" y="390" width="150" height="60" rx="8" fill="#3b82f6"/>
+  <text x="395" y="420" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Monitoring</text>
+  <text x="395" y="438" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">Prometheus</text>
+  
+  <!-- Response -->
+  <line x1="400" y1="490" x2="400" y2="520" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="400" y="545" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">pCTR Response (andlt; 10ms)</text>
+  
+  <!-- Arrows between components -->
+  <line x1="280" y1="325" x2="310" y2="325" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="470" y1="325" x2="500" y2="325" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

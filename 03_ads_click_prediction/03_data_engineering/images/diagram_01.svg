@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="impGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="clickGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="convGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="joinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🗄️ Data Sources Ecosystem</text>
+  
+  <!-- Impression Logs -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="210" height="160" rx="12" fill="#0f172a"/>
+    <rect x="50" y="55" width="210" height="40" rx="12 12 0 0" fill="url(#impGrad)"/>
+    <text x="155" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">👁️ Impression Logs</text>
+    
+    <g transform="translate(65, 110)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Request ID</text>
+      <text x="0" y="18" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• User ID</text>
+      <text x="0" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Ad ID</text>
+      <text x="0" y="54" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Timestamp</text>
+      <text x="100" y="0" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Context</text>
+      <text x="100" y="18" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Predicted CTR</text>
+      <text x="100" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Bid Amount</text>
+    </g>
+  </g>
+  
+  <!-- Click Logs -->
+  <g filter="url(#shadow)">
+    <rect x="295" y="55" width="210" height="160" rx="12" fill="#0f172a"/>
+    <rect x="295" y="55" width="210" height="40" rx="12 12 0 0" fill="url(#clickGrad)"/>
+    <text x="400" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">👆 Click Logs</text>
+    
+    <g transform="translate(310, 110)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Click ID</text>
+      <text x="0" y="18" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Request ID</text>
+      <text x="0" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Timestamp</text>
+      <text x="100" y="0" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Position</text>
+      <text x="100" y="18" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Click Type</text>
+    </g>
+  </g>
+  
+  <!-- Conversion Logs -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="55" width="210" height="160" rx="12" fill="#0f172a"/>
+    <rect x="540" y="55" width="210" height="40" rx="12 12 0 0" fill="url(#convGrad)"/>
+    <text x="645" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">💰 Conversion Logs</text>
+    
+    <g transform="translate(555, 110)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Conversion ID</text>
+      <text x="0" y="18" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Click ID</text>
+      <text x="0" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Type</text>
+      <text x="100" y="0" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Revenue</text>
+      <text x="100" y="18" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">• Timestamp</text>
+    </g>
+  </g>
+  
+  <!-- Arrows converging -->
+  <path d="M155 220 L155 250 L400 250" stroke="#64748b" stroke-width="2"/>
+  <path d="M400 220 L400 250" stroke="#64748b" stroke-width="2"/>
+  <path d="M645 220 L645 250 L400 250" stroke="#64748b" stroke-width="2"/>
+  <path d="M400 250 L400 275" stroke="#64748b" stroke-width="2"/>
+  <polygon points="395,275 400,285 405,275" fill="#64748b"/>
+  
+  <!-- Join Layer -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="290" width="400" height="40" rx="10" fill="url(#joinGrad)"/>
+    <text x="400" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔗 Join and Enrichment Layer</text>
+  </g>
+  
+  <!-- Arrows to enrichment -->
+  <path d="M300 335 L300 365" stroke="#64748b" stroke-width="2"/>
+  <path d="M400 335 L400 365" stroke="#64748b" stroke-width="2"/>
+  <path d="M500 335 L500 365" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Enrichment sources -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="370" width="160" height="95" rx="10" fill="#0f172a" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="200" y="395" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">👤 User Profile</text>
+    <text x="135" y="420" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Demographics</text>
+    <text x="135" y="435" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Interests</text>
+    <text x="135" y="450" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• History / Segments</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="320" y="370" width="160" height="95" rx="10" fill="#0f172a" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="400" y="395" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">📺 Ad Metadata</text>
+    <text x="335" y="420" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Creative</text>
+    <text x="335" y="435" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Advertiser</text>
+    <text x="335" y="450" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Category / Budget</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="520" y="370" width="160" height="95" rx="10" fill="#0f172a" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="600" y="395" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🌍 Context Data</text>
+    <text x="535" y="420" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Page Content</text>
+    <text x="535" y="435" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Publisher Info</text>
+    <text x="535" y="450" font-family="Segoe UI, sans-serif" font-size="8" fill="#64748b">• Geo / Device Info</text>
+  </g>
+</svg>

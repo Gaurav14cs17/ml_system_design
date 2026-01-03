@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <defs>
+    <linearGradient id="advertiserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="platformGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="publisherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">💰 Digital Advertising Flow</text>
+  
+  <!-- Advertiser -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="140" height="120" rx="14" fill="#1e293b"/>
+    <rect x="50" y="70" width="140" height="40" rx="14 14 0 0" fill="url(#advertiserGrad)"/>
+    <text x="120" y="97" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Advertiser</text>
+    <text x="120" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#f8fafc">💼</text>
+    <text x="120" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Budget and</text>
+    <text x="120" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Creatives</text>
+  </g>
+  
+  <path d="M195 130 L245 130" stroke="#10b981" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Ad Platform -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="70" width="180" height="120" rx="14" fill="#1e293b"/>
+    <rect x="250" y="70" width="180" height="40" rx="14 14 0 0" fill="url(#platformGrad)"/>
+    <text x="340" y="97" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Ad Platform</text>
+    <text x="340" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#f8fafc">🎯</text>
+    <text x="340" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Ad Selection</text>
+    <text x="340" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">and Bidding</text>
+    <rect x="280" y="155" width="120" height="20" rx="4" fill="#4f46e5"/>
+    <text x="340" y="169" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#f8fafc">OUR FOCUS</text>
+  </g>
+  
+  <path d="M435 130 L485 130" stroke="#6366f1" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Publisher -->
+  <g filter="url(#shadow)">
+    <rect x="490" y="70" width="140" height="120" rx="14" fill="#1e293b"/>
+    <rect x="490" y="70" width="140" height="40" rx="14 14 0 0" fill="url(#publisherGrad)"/>
+    <text x="560" y="97" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Publisher</text>
+    <text x="560" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#f8fafc">🌐</text>
+    <text x="560" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Impression</text>
+    <text x="560" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">and Clicks</text>
+  </g>
+  
+  <path d="M635 130 L685 130" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- User -->
+  <g filter="url(#shadow)">
+    <rect x="690" y="70" width="100" height="120" rx="14" fill="#1e293b"/>
+    <rect x="690" y="70" width="100" height="40" rx="14 14 0 0" fill="url(#userGrad)"/>
+    <text x="740" y="97" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">User</text>
+    <text x="740" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="40" fill="#f8fafc">👤</text>
+  </g>
+  
+  <!-- Feedback loop -->
+  <path d="M120 195 L120 240 L740 240 L740 195" stroke="#475569" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+  <text x="430" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">← Feedback and Conversion Data →</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="headerGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <filter id="shadow6" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🎯 Common Interview Topics</text>
+  
+  <g filter="url(#shadow6)">
+    <!-- Header -->
+    <rect x="40" y="55" width="620" height="40" rx="8 8 0 0" fill="url(#headerGrad6)"/>
+    <text x="180" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Topic</text>
+    <text x="420" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Frequency</text>
+    <text x="570" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Modules</text>
+    
+    <!-- Row 1 -->
+    <rect x="40" y="95" width="620" height="40" fill="#1e293b"/>
+    <text x="180" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">System Design</text>
+    <text x="420" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">⭐⭐⭐⭐⭐</text>
+    <text x="570" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">01, 02, 06</text>
+    
+    <!-- Row 2 -->
+    <rect x="40" y="135" width="620" height="40" fill="#334155"/>
+    <text x="180" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#10b981">Feature Engineering</text>
+    <text x="420" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">⭐⭐⭐⭐⭐</text>
+    <text x="570" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">04</text>
+    
+    <!-- Row 3 -->
+    <rect x="40" y="175" width="620" height="40" fill="#1e293b"/>
+    <text x="180" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">Model Architecture</text>
+    <text x="420" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">⭐⭐⭐⭐</text>
+    <text x="570" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">05</text>
+    
+    <!-- Row 4 -->
+    <rect x="40" y="215" width="620" height="40" rx="0 0 8 8" fill="#334155"/>
+    <text x="180" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ec4899">A/B Testing</text>
+    <text x="420" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">⭐⭐⭐⭐</text>
+    <text x="570" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">07</text>
+  </g>
+</svg>
+
+

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="barGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="barGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#43e97b"/>
+      <stop offset="100%" style="stop-color:#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="barGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fa709a"/>
+      <stop offset="100%" style="stop-color:#fee140"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0f0f23"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    Latency Budget Breakdown (10ms Target)
+  </text>
+  
+  <!-- Chart area -->
+  <g transform="translate(200, 70)">
+    <!-- Y-axis labels -->
+    <text x="-10" y="30" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Network In</text>
+    <text x="-10" y="75" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Load Balancer</text>
+    <text x="-10" y="120" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Feature Lookup</text>
+    <text x="-10" y="165" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Feature Transform</text>
+    <text x="-10" y="210" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Model Inference</text>
+    <text x="-10" y="255" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Post-processing</text>
+    <text x="-10" y="300" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Network Out</text>
+    <text x="-10" y="345" text-anchor="end" fill="#a0aec0" font-family="Arial" font-size="12">Buffer</text>
+    
+    <!-- Bars (scaled: 1ms = 50px) -->
+    <!-- Network In: 0.5ms -->
+    <rect x="0" y="15" width="25" height="28" rx="4" fill="url(#barGrad1)"/>
+    <text x="35" y="35" fill="#667eea" font-family="Arial" font-size="11" font-weight="bold">0.5ms</text>
+    
+    <!-- Load Balancer: 0.2ms -->
+    <rect x="0" y="60" width="10" height="28" rx="4" fill="url(#barGrad1)"/>
+    <text x="20" y="80" fill="#667eea" font-family="Arial" font-size="11" font-weight="bold">0.2ms</text>
+    
+    <!-- Feature Lookup: 2.0ms -->
+    <rect x="0" y="105" width="100" height="28" rx="4" fill="url(#barGrad2)"/>
+    <text x="110" y="125" fill="#f093fb" font-family="Arial" font-size="11" font-weight="bold">2.0ms</text>
+    <text x="50" y="122" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="9">Redis Cache</text>
+    
+    <!-- Feature Transform: 1.0ms -->
+    <rect x="0" y="150" width="50" height="28" rx="4" fill="url(#barGrad3)"/>
+    <text x="60" y="170" fill="#4facfe" font-family="Arial" font-size="11" font-weight="bold">1.0ms</text>
+    
+    <!-- Model Inference: 3.0ms (largest) -->
+    <rect x="0" y="195" width="150" height="28" rx="4" fill="url(#barGrad4)"/>
+    <text x="160" y="215" fill="#43e97b" font-family="Arial" font-size="11" font-weight="bold">3.0ms</text>
+    <text x="75" y="212" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="9">TF Serving</text>
+    
+    <!-- Post-processing: 0.5ms -->
+    <rect x="0" y="240" width="25" height="28" rx="4" fill="url(#barGrad5)"/>
+    <text x="35" y="260" fill="#fa709a" font-family="Arial" font-size="11" font-weight="bold">0.5ms</text>
+    
+    <!-- Network Out: 0.5ms -->
+    <rect x="0" y="285" width="25" height="28" rx="4" fill="url(#barGrad1)"/>
+    <text x="35" y="305" fill="#667eea" font-family="Arial" font-size="11" font-weight="bold">0.5ms</text>
+    
+    <!-- Buffer: 2.3ms -->
+    <rect x="0" y="330" width="115" height="28" rx="4" fill="#2d3748" stroke="#4a5568"/>
+    <text x="125" y="350" fill="#718096" font-family="Arial" font-size="11" font-weight="bold">2.3ms</text>
+    <text x="57" y="347" text-anchor="middle" fill="#718096" font-family="Arial" font-size="9">Safety Buffer</text>
+    
+    <!-- Total line -->
+    <line x1="500" y1="0" x2="500" y2="370" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="510" y="185" fill="#e53e3e" font-family="Arial" font-size="14" font-weight="bold">10ms</text>
+    <text x="510" y="205" fill="#e53e3e" font-family="Arial" font-size="11">Target</text>
+    
+    <!-- Scale markers -->
+    <g transform="translate(0, 375)">
+      <line x1="0" y1="0" x2="550" y2="0" stroke="#4a5568"/>
+      <text x="0" y="15" fill="#718096" font-family="Arial" font-size="10">0ms</text>
+      <text x="125" y="15" fill="#718096" font-family="Arial" font-size="10">2.5ms</text>
+      <text x="250" y="15" fill="#718096" font-family="Arial" font-size="10">5ms</text>
+      <text x="375" y="15" fill="#718096" font-family="Arial" font-size="10">7.5ms</text>
+      <text x="500" y="15" fill="#718096" font-family="Arial" font-size="10">10ms</text>
+    </g>
+  </g>
+  
+  <!-- Summary box -->
+  <g transform="translate(550, 80)">
+    <rect x="0" y="0" width="200" height="150" rx="10" fill="#1a202c" stroke="#4a5568"/>
+    <text x="100" y="25" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Summary</text>
+    <line x1="20" y1="35" x2="180" y2="35" stroke="#2d3748"/>
+    
+    <text x="20" y="60" fill="#a0aec0" font-family="Arial" font-size="11">Processing:</text>
+    <text x="180" y="60" text-anchor="end" fill="#43e97b" font-family="Arial" font-size="11" font-weight="bold">7.7ms</text>
+    
+    <text x="20" y="85" fill="#a0aec0" font-family="Arial" font-size="11">Buffer:</text>
+    <text x="180" y="85" text-anchor="end" fill="#718096" font-family="Arial" font-size="11" font-weight="bold">2.3ms</text>
+    
+    <line x1="20" y1="100" x2="180" y2="100" stroke="#2d3748"/>
+    
+    <text x="20" y="120" fill="#1e293b" font-family="Arial" font-size="12" font-weight="bold">Total:</text>
+    <text x="180" y="120" text-anchor="end" fill="#48bb78" font-family="Arial" font-size="12" font-weight="bold">10.0ms</text>
+    
+    <text x="100" y="145" text-anchor="middle" fill="#48bb78" font-family="Arial" font-size="11">✓ Within Budget</text>
+  </g>
+  
+  <!-- Priority indicators -->
+  <g transform="translate(550, 250)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#1a202c" stroke="#4a5568"/>
+    <text x="100" y="25" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Optimization Priority</text>
+    <line x1="20" y1="35" x2="180" y2="35" stroke="#2d3748"/>
+    
+    <circle cx="30" cy="55" r="8" fill="#e53e3e"/>
+    <text x="45" y="60" fill="#a0aec0" font-family="Arial" font-size="11">P0: Inference, Features</text>
+    
+    <circle cx="30" cy="80" r="8" fill="#ed8936"/>
+    <text x="45" y="85" fill="#a0aec0" font-family="Arial" font-size="11">P1: Transform, Network</text>
+    
+    <circle cx="30" cy="105" r="8" fill="#48bb78"/>
+    <text x="45" y="110" fill="#a0aec0" font-family="Arial" font-size="11">P2: Post-processing</text>
+  </g>
+</svg>
+

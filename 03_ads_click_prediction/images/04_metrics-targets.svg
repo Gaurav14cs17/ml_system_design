@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360">
+  <defs>
+    <linearGradient id="headerGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow4" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📊 Key Metrics &amp; Targets</text>
+  
+  <g filter="url(#shadow4)">
+    <!-- Header -->
+    <rect x="40" y="55" width="620" height="40" rx="8 8 0 0" fill="url(#headerGrad4)"/>
+    <text x="120" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Metric</text>
+    <text x="320" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Definition</text>
+    <text x="520" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Target</text>
+    
+    <!-- Business Metrics -->
+    <rect x="40" y="95" width="620" height="25" fill="#1e293b"/>
+    <text x="350" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f59e0b">Business Metrics</text>
+    
+    <rect x="40" y="120" width="620" height="35" fill="#334155"/>
+    <text x="120" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">CTR</text>
+    <text x="320" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Clicks / Impressions</text>
+    <text x="520" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#10b981">2-3%</text>
+    
+    <rect x="40" y="155" width="620" height="35" fill="#1e293b"/>
+    <text x="120" y="177" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">RPM</text>
+    <text x="320" y="177" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Revenue / 1000 Impressions</text>
+    <text x="520" y="177" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#10b981">$10+</text>
+    
+    <!-- Technical Metrics -->
+    <rect x="40" y="190" width="620" height="25" fill="#334155"/>
+    <text x="350" y="207" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#3b82f6">Technical Metrics</text>
+    
+    <rect x="40" y="215" width="620" height="35" fill="#1e293b"/>
+    <text x="120" y="237" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Latency p99</text>
+    <text x="320" y="237" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">99th percentile response time</text>
+    <text x="520" y="237" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#10b981">andlt; 10ms</text>
+    
+    <rect x="40" y="250" width="620" height="35" fill="#334155"/>
+    <text x="120" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Availability</text>
+    <text x="320" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Uptime percentage</text>
+    <text x="520" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#10b981">99.99%</text>
+    
+    <!-- Model Metrics -->
+    <rect x="40" y="285" width="620" height="25" fill="#1e293b"/>
+    <text x="350" y="302" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#8b5cf6">Model Metrics</text>
+    
+    <rect x="40" y="310" width="620" height="35" rx="0 0 8 8" fill="#334155"/>
+    <text x="120" y="332" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">AUC-ROC</text>
+    <text x="320" y="332" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Ranking quality</text>
+    <text x="520" y="332" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#10b981">andgt; 0.78</text>
+  </g>
+</svg>
+
+

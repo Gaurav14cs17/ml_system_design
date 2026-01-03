@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🌍 Multi-Region Architecture
+  </text>
+  
+  <!-- Global Load Balancer -->
+  <rect x="300" y="60" width="200" height="50" rx="8" fill="#ec4899"/>
+  <text x="400" y="90" text-anchor="middle" fill="#fff" font-family="Arial" font-size="13" font-weight="bold">Global Load Balancer</text>
+  
+  <!-- Arrows -->
+  <line x1="300" y1="85" x2="160" y2="150" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="400" y1="110" x2="400" y2="150" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="500" y1="85" x2="640" y2="150" stroke="#60a5fa" stroke-width="2"/>
+  
+  <!-- US Region -->
+  <rect x="50" y="160" width="200" height="250" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="150" y="195" text-anchor="middle" fill="#60a5fa" font-family="Arial" font-size="14" font-weight="bold">🇺🇸 US-WEST</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <rect x="80" y="220" width="140" height="35" rx="4" fill="#3b82f6" opacity="0.3"/>
+    <text x="150" y="242" text-anchor="middle">Model Servers (x10)</text>
+    
+    <rect x="80" y="265" width="140" height="35" rx="4" fill="#10b981" opacity="0.3"/>
+    <text x="150" y="287" text-anchor="middle">Feature Store</text>
+    
+    <rect x="80" y="310" width="140" height="35" rx="4" fill="#f59e0b" opacity="0.3"/>
+    <text x="150" y="332" text-anchor="middle">Redis Cache</text>
+    
+    <text x="150" y="375" text-anchor="middle" fill="#10b981">500K QPS</text>
+  </g>
+  
+  <!-- EU Region -->
+  <rect x="300" y="160" width="200" height="250" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="400" y="195" text-anchor="middle" fill="#a78bfa" font-family="Arial" font-size="14" font-weight="bold">🇪🇺 EU-WEST</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <rect x="330" y="220" width="140" height="35" rx="4" fill="#8b5cf6" opacity="0.3"/>
+    <text x="400" y="242" text-anchor="middle">Model Servers (x8)</text>
+    
+    <rect x="330" y="265" width="140" height="35" rx="4" fill="#10b981" opacity="0.3"/>
+    <text x="400" y="287" text-anchor="middle">Feature Store</text>
+    
+    <rect x="330" y="310" width="140" height="35" rx="4" fill="#f59e0b" opacity="0.3"/>
+    <text x="400" y="332" text-anchor="middle">Redis Cache</text>
+    
+    <text x="400" y="375" text-anchor="middle" fill="#10b981">400K QPS</text>
+  </g>
+  
+  <!-- APAC Region -->
+  <rect x="550" y="160" width="200" height="250" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="650" y="195" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">🌏 APAC</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <rect x="580" y="220" width="140" height="35" rx="4" fill="#10b981" opacity="0.3"/>
+    <text x="650" y="242" text-anchor="middle">Model Servers (x6)</text>
+    
+    <rect x="580" y="265" width="140" height="35" rx="4" fill="#10b981" opacity="0.3"/>
+    <text x="650" y="287" text-anchor="middle">Feature Store</text>
+    
+    <rect x="580" y="310" width="140" height="35" rx="4" fill="#f59e0b" opacity="0.3"/>
+    <text x="650" y="332" text-anchor="middle">Redis Cache</text>
+    
+    <text x="650" y="375" text-anchor="middle" fill="#10b981">300K QPS</text>
+  </g>
+  
+  <!-- Total capacity -->
+  <text x="400" y="435" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="14" font-weight="bold">Total Capacity: 1.2M QPS | 99.99% Availability</text>
+</svg>

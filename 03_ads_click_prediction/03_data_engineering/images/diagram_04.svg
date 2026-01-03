@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="400" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    💾 Storage Tier Strategy
+  </text>
+  
+  <!-- Hot Tier -->
+  <rect x="50" y="60" width="600" height="90" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="80" y="90" fill="#f87171" font-family="Arial" font-size="14" font-weight="bold">🔥 HOT TIER (andlt; 7 days)</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="100" y="115">Storage: SSD-backed S3</text>
+    <text x="280" y="115">Format: Parquet (snappy)</text>
+    <text x="480" y="115">Access: Frequent</text>
+    <text x="100" y="135">Cost: $$$</text>
+  </g>
+  
+  <!-- Warm Tier -->
+  <rect x="50" y="170" width="600" height="90" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="80" y="200" fill="#fbbf24" font-family="Arial" font-size="14" font-weight="bold">⚡ WARM TIER (7-30 days)</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="100" y="225">Storage: Standard S3</text>
+    <text x="280" y="225">Format: Parquet (gzip)</text>
+    <text x="480" y="225">Access: Occasional</text>
+    <text x="100" y="245">Cost: $$</text>
+  </g>
+  
+  <!-- Cold Tier -->
+  <rect x="50" y="280" width="600" height="90" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="80" y="310" fill="#60a5fa" font-family="Arial" font-size="14" font-weight="bold">❄️ COLD TIER (andgt; 30 days)</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="100" y="335">Storage: S3 Glacier</text>
+    <text x="280" y="335">Format: Parquet (zstd)</text>
+    <text x="480" y="335">Access: Rare</text>
+    <text x="100" y="355">Cost: $</text>
+  </g>
+</svg>

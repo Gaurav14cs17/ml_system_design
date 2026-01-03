@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="400" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📊 Feature Importance Summary
+  </text>
+  
+  <!-- Chart -->
+  <rect x="50" y="60" width="600" height="320" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  
+  <text x="350" y="90" text-anchor="middle" fill="#a5b4fc" font-family="Arial" font-size="14" font-weight="bold">Top 10 Most Important Features</text>
+  
+  <!-- Bars -->
+  <g font-family="Arial" font-size="11">
+    <text x="230" y="125" text-anchor="end" fill="#94a3b8">user_ad_similarity</text>
+    <rect x="240" y="110" width="320" height="20" rx="4" fill="#ec4899"/>
+    <text x="570" y="125" fill="#f8fafc">14.2%</text>
+    
+    <text x="230" y="155" text-anchor="end" fill="#94a3b8">user_category_ctr</text>
+    <rect x="240" y="140" width="280" height="20" rx="4" fill="#8b5cf6"/>
+    <text x="530" y="155" fill="#f8fafc">12.1%</text>
+    
+    <text x="230" y="185" text-anchor="end" fill="#94a3b8">ad_historical_ctr</text>
+    <rect x="240" y="170" width="240" height="20" rx="4" fill="#6366f1"/>
+    <text x="490" y="185" fill="#f8fafc">10.4%</text>
+    
+    <text x="230" y="215" text-anchor="end" fill="#94a3b8">position</text>
+    <rect x="240" y="200" width="200" height="20" rx="4" fill="#3b82f6"/>
+    <text x="450" y="215" fill="#f8fafc">8.7%</text>
+    
+    <text x="230" y="245" text-anchor="end" fill="#94a3b8">user_recency</text>
+    <rect x="240" y="230" width="180" height="20" rx="4" fill="#10b981"/>
+    <text x="430" y="245" fill="#f8fafc">7.8%</text>
+    
+    <text x="230" y="275" text-anchor="end" fill="#94a3b8">device_type</text>
+    <rect x="240" y="260" width="160" height="20" rx="4" fill="#14b8a6"/>
+    <text x="410" y="275" fill="#f8fafc">6.9%</text>
+    
+    <text x="230" y="305" text-anchor="end" fill="#94a3b8">hour_of_day</text>
+    <rect x="240" y="290" width="140" height="20" rx="4" fill="#f59e0b"/>
+    <text x="390" y="305" fill="#f8fafc">6.1%</text>
+    
+    <text x="230" y="335" text-anchor="end" fill="#94a3b8">user_frequency</text>
+    <rect x="240" y="320" width="120" height="20" rx="4" fill="#ef4444"/>
+    <text x="370" y="335" fill="#f8fafc">5.2%</text>
+  </g>
+</svg>

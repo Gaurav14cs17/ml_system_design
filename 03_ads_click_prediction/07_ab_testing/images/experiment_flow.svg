@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="controlGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#5a67d8"/>
+    </linearGradient>
+    <linearGradient id="treatmentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#48bb78"/>
+      <stop offset="100%" style="stop-color:#38a169"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e6edf3" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    A/B Testing Experiment Flow
+  </text>
+  
+  <!-- Traffic funnel -->
+  <g transform="translate(100, 70)">
+    <!-- All Traffic -->
+    <rect x="200" y="0" width="200" height="50" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+    <text x="300" y="30" text-anchor="middle" fill="#e6edf3" font-family="Arial" font-size="14" font-weight="bold">All Traffic (100%)</text>
+    
+    <!-- Funnel lines -->
+    <path d="M300 50 L300 80" stroke="#8b949e" stroke-width="2"/>
+    <path d="M300 80 L200 130 M300 80 L400 130" stroke="#8b949e" stroke-width="2"/>
+    
+    <!-- Eligible -->
+    <rect x="100" y="130" width="150" height="45" rx="8" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+    <text x="175" y="158" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="12" font-weight="bold">Eligible (10%)</text>
+    
+    <!-- Not Eligible -->
+    <rect x="350" y="130" width="150" height="45" rx="8" fill="#21262d" stroke="#6e7681" stroke-width="2"/>
+    <text x="425" y="158" text-anchor="middle" fill="#6e7681" font-family="Arial" font-size="12">Not Eligible (90%)</text>
+    
+    <!-- Split to Control/Treatment -->
+    <path d="M175 175 L175 210" stroke="#58a6ff" stroke-width="2"/>
+    <path d="M175 210 L100 250 M175 210 L250 250" stroke="#58a6ff" stroke-width="2"/>
+    
+    <!-- Control Group -->
+    <rect x="20" y="250" width="140" height="80" rx="10" fill="url(#controlGrad)"/>
+    <text x="90" y="280" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="14" font-weight="bold">Control (50%)</text>
+    <text x="90" y="300" text-anchor="middle" fill="#c3dafe" font-family="Arial" font-size="11">Model v1.0</text>
+    <text x="90" y="318" text-anchor="middle" fill="#c3dafe" font-family="Arial" font-size="10">Wide &amp; Deep</text>
+    
+    <!-- Treatment Group -->
+    <rect x="180" y="250" width="140" height="80" rx="10" fill="url(#treatmentGrad)"/>
+    <text x="250" y="280" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="14" font-weight="bold">Treatment (50%)</text>
+    <text x="250" y="300" text-anchor="middle" fill="#c6f6d5" font-family="Arial" font-size="11">Model v2.0</text>
+    <text x="250" y="318" text-anchor="middle" fill="#c6f6d5" font-family="Arial" font-size="10">DCN</text>
+    
+    <!-- Metrics collection -->
+    <path d="M90 330 L90 360 M250 330 L250 360" stroke="#8b949e" stroke-width="2"/>
+    <path d="M90 360 L170 380 M250 360 L170 380" stroke="#8b949e" stroke-width="2"/>
+    
+    <rect x="100" y="380" width="140" height="50" rx="8" fill="#21262d" stroke="#f85149" stroke-width="2"/>
+    <text x="170" y="400" text-anchor="middle" fill="#f85149" font-family="Arial" font-size="12" font-weight="bold">Metrics Collection</text>
+    <text x="170" y="418" text-anchor="middle" fill="#ffa198" font-family="Arial" font-size="10">CTR, Revenue, Latency</text>
+  </g>
+  
+  <!-- Analysis Panel -->
+  <g transform="translate(450, 90)">
+    <rect x="0" y="0" width="300" height="350" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <text x="150" y="28" text-anchor="middle" fill="#e6edf3" font-family="Arial" font-size="16" font-weight="bold">Statistical Analysis</text>
+    <line x1="20" y1="40" x2="280" y2="40" stroke="#30363d"/>
+    
+    <!-- Metrics comparison -->
+    <text x="30" y="70" fill="#8b949e" font-family="Arial" font-size="12">Primary Metric: CTR</text>
+    
+    <g transform="translate(30, 85)">
+      <rect x="0" y="0" width="110" height="40" rx="5" fill="#667eea" opacity="0.2"/>
+      <text x="55" y="17" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="11">Control</text>
+      <text x="55" y="33" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="14" font-weight="bold">2.10%</text>
+    </g>
+    
+    <g transform="translate(160, 85)">
+      <rect x="0" y="0" width="110" height="40" rx="5" fill="#48bb78" opacity="0.2"/>
+      <text x="55" y="17" text-anchor="middle" fill="#48bb78" font-family="Arial" font-size="11">Treatment</text>
+      <text x="55" y="33" text-anchor="middle" fill="#48bb78" font-family="Arial" font-size="14" font-weight="bold">2.21%</text>
+    </g>
+    
+    <!-- Lift -->
+    <g transform="translate(30, 140)">
+      <text x="0" y="0" fill="#8b949e" font-family="Arial" font-size="11">Relative Lift:</text>
+      <text x="240" y="0" text-anchor="end" fill="#48bb78" font-family="Arial" font-size="14" font-weight="bold">+5.2%</text>
+    </g>
+    
+    <!-- Significance -->
+    <g transform="translate(30, 165)">
+      <text x="0" y="0" fill="#8b949e" font-family="Arial" font-size="11">P-Value:</text>
+      <text x="240" y="0" text-anchor="end" fill="#3fb950" font-family="Arial" font-size="14" font-weight="bold">0.003</text>
+    </g>
+    
+    <g transform="translate(30, 190)">
+      <text x="0" y="0" fill="#8b949e" font-family="Arial" font-size="11">Confidence Interval:</text>
+      <text x="240" y="0" text-anchor="end" fill="#e6edf3" font-family="Arial" font-size="12">[+3.1%, +7.3%]</text>
+    </g>
+    
+    <!-- Significance badge -->
+    <g transform="translate(70, 220)">
+      <rect x="0" y="0" width="160" height="35" rx="17" fill="#238636"/>
+      <text x="80" y="23" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="13" font-weight="bold">✓ Significant</text>
+    </g>
+    
+    <!-- Sample size -->
+    <g transform="translate(30, 275)">
+      <text x="0" y="0" fill="#8b949e" font-family="Arial" font-size="11">Sample Size:</text>
+      <text x="240" y="0" text-anchor="end" fill="#e6edf3" font-family="Arial" font-size="12">2.4M per group</text>
+    </g>
+    
+    <g transform="translate(30, 300)">
+      <text x="0" y="0" fill="#8b949e" font-family="Arial" font-size="11">Duration:</text>
+      <text x="240" y="0" text-anchor="end" fill="#e6edf3" font-family="Arial" font-size="12">14 days</text>
+    </g>
+    
+    <!-- Decision -->
+    <line x1="20" y1="320" x2="280" y2="320" stroke="#30363d"/>
+    <text x="150" y="342" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="14" font-weight="bold">
+      🚀 Recommendation: LAUNCH
+    </text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(100, 460)">
+    <rect x="0" y="0" width="600" height="30" rx="5" fill="#161b22"/>
+    
+    <circle cx="30" cy="15" r="8" fill="#667eea"/>
+    <text x="50" y="20" fill="#8b949e" font-family="Arial" font-size="11">Control Group</text>
+    
+    <circle cx="170" cy="15" r="8" fill="#48bb78"/>
+    <text x="190" y="20" fill="#8b949e" font-family="Arial" font-size="11">Treatment Group</text>
+    
+    <circle cx="330" cy="15" r="8" fill="#238636"/>
+    <text x="350" y="20" fill="#8b949e" font-family="Arial" font-size="11">Significant (p andlt; 0.05)</text>
+    
+    <circle cx="510" cy="15" r="8" fill="#f85149"/>
+    <text x="530" y="20" fill="#8b949e" font-family="Arial" font-size="11">Not Significant</text>
+  </g>
+</svg>
+

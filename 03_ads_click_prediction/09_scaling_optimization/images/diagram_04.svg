@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="400" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🔥 Cache Warming Strategy
+  </text>
+  
+  <!-- Strategy 1 -->
+  <rect x="50" y="70" width="600" height="90" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="80" y="100" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">1. STARTUP WARMING</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="100" y="125">Pre-load top 10K users and ads before serving traffic</text>
+    <text x="100" y="145" fill="#60a5fa">Time: 5-10 min | Coverage: 80% of traffic</text>
+  </g>
+  
+  <!-- Strategy 2 -->
+  <rect x="50" y="175" width="600" height="90" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="80" y="205" fill="#a78bfa" font-family="Arial" font-size="14" font-weight="bold">2. PREDICTIVE WARMING</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="100" y="230">Use access patterns to pre-fetch likely needed features</text>
+    <text x="100" y="250" fill="#60a5fa">Based on: Time-of-day patterns, trending ads, user sessions</text>
+  </g>
+  
+  <!-- Strategy 3 -->
+  <rect x="50" y="280" width="600" height="90" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="80" y="310" fill="#fbbf24" font-family="Arial" font-size="14" font-weight="bold">3. CONTINUOUS REFRESH</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="100" y="335">Background jobs refresh expiring cache entries</text>
+    <text x="100" y="355" fill="#60a5fa">Prevents: Cache stampedes, cold start latency spikes</text>
+  </g>
+</svg>

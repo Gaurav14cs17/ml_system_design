@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    ⚡ Real-Time vs Batch Processing
+  </text>
+  
+  <!-- Real-time -->
+  <rect x="50" y="60" width="290" height="360" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="195" y="95" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="16" font-weight="bold">REAL-TIME (Streaming)</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="70" y="130" fill="#60a5fa" font-weight="bold">Use For:</text>
+    <text x="70" y="155">• Session-level features</text>
+    <text x="70" y="175">• Current session activity</text>
+    <text x="70" y="195">• Real-time counters</text>
+    <text x="70" y="215">• Live CTR updates</text>
+    
+    <text x="70" y="250" fill="#60a5fa" font-weight="bold">Latency:</text>
+    <text x="70" y="275" fill="#10b981">Seconds to minutes</text>
+    
+    <text x="70" y="310" fill="#60a5fa" font-weight="bold">Technology:</text>
+    <text x="70" y="335">• Apache Kafka</text>
+    <text x="70" y="355">• Apache Flink</text>
+    <text x="70" y="375">• Redis Streams</text>
+  </g>
+  
+  <!-- Batch -->
+  <rect x="360" y="60" width="290" height="360" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="505" y="95" text-anchor="middle" fill="#a5b4fc" font-family="Arial" font-size="16" font-weight="bold">BATCH (Scheduled)</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="380" y="130" fill="#60a5fa" font-weight="bold">Use For:</text>
+    <text x="380" y="155">• Historical aggregates</text>
+    <text x="380" y="175">• User lifetime features</text>
+    <text x="380" y="195">• Ad performance stats</text>
+    <text x="380" y="215">• Training data generation</text>
+    
+    <text x="380" y="250" fill="#60a5fa" font-weight="bold">Latency:</text>
+    <text x="380" y="275" fill="#f59e0b">Hours to days</text>
+    
+    <text x="380" y="310" fill="#60a5fa" font-weight="bold">Technology:</text>
+    <text x="380" y="335">• Apache Spark</text>
+    <text x="380" y="355">• Apache Hive</text>
+    <text x="380" y="375">• Airflow / Dagster</text>
+  </g>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📊 Observability Pillars
+  </text>
+  
+  <!-- Metrics -->
+  <rect x="50" y="70" width="220" height="350" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="160" y="105" text-anchor="middle" fill="#60a5fa" font-family="Arial" font-size="16" font-weight="bold">📈 METRICS</text>
+  <text x="160" y="130" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">Aggregated numeric data</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="75" y="170">• QPS / Throughput</text>
+    <text x="75" y="195">• Latency percentiles</text>
+    <text x="75" y="220">• Error rates</text>
+    <text x="75" y="245">• CPU / Memory</text>
+    <text x="75" y="270">• Prediction distribution</text>
+    <text x="75" y="295">• CTR trends</text>
+  </g>
+  
+  <rect x="75" y="330" width="150" height="30" rx="6" fill="#3b82f6"/>
+  <text x="150" y="350" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Prometheus</text>
+  
+  <rect x="75" y="370" width="150" height="30" rx="6" fill="#6366f1"/>
+  <text x="150" y="390" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Grafana</text>
+  
+  <!-- Logs -->
+  <rect x="290" y="70" width="220" height="350" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="400" y="105" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="16" font-weight="bold">📝 LOGS</text>
+  <text x="400" y="130" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">Detailed event records</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="315" y="170">• Request/response logs</text>
+    <text x="315" y="195">• Error stack traces</text>
+    <text x="315" y="220">• Feature values</text>
+    <text x="315" y="245">• Model predictions</text>
+    <text x="315" y="270">• Debug information</text>
+    <text x="315" y="295">• Audit trails</text>
+  </g>
+  
+  <rect x="315" y="330" width="150" height="30" rx="6" fill="#10b981"/>
+  <text x="390" y="350" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">ELK Stack</text>
+  
+  <rect x="315" y="370" width="150" height="30" rx="6" fill="#14b8a6"/>
+  <text x="390" y="390" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Splunk</text>
+  
+  <!-- Traces -->
+  <rect x="530" y="70" width="220" height="350" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="640" y="105" text-anchor="middle" fill="#fbbf24" font-family="Arial" font-size="16" font-weight="bold">🔍 TRACES</text>
+  <text x="640" y="130" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">Request flow tracking</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="555" y="170">• End-to-end latency</text>
+    <text x="555" y="195">• Service dependencies</text>
+    <text x="555" y="220">• Bottleneck detection</text>
+    <text x="555" y="245">• Error propagation</text>
+    <text x="555" y="270">• Cross-service calls</text>
+    <text x="555" y="295">• Span analysis</text>
+  </g>
+  
+  <rect x="555" y="330" width="150" height="30" rx="6" fill="#f59e0b"/>
+  <text x="630" y="350" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Jaeger</text>
+  
+  <rect x="555" y="370" width="150" height="30" rx="6" fill="#ef4444"/>
+  <text x="630" y="390" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Zipkin</text>
+</svg>

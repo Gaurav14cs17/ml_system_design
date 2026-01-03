@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380">
+  <defs>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">⏱️ Latency Distribution Target</text>
+  
+  <!-- Chart area -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="50" width="540" height="280" rx="12" fill="#1e293b"/>
+    
+    <!-- Y-axis -->
+    <text x="90" y="100" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">50%</text>
+    <text x="90" y="150" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">40%</text>
+    <text x="90" y="200" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">20%</text>
+    <text x="90" y="250" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">10%</text>
+    <text x="90" y="300" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">0%</text>
+    
+    <!-- Y-axis title -->
+    <text x="55" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b" transform="rotate(-90, 55, 175)">Requests</text>
+    
+    <!-- Grid lines -->
+    <line x1="100" y1="95" x2="600" y2="95" stroke="#334155" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="100" y1="145" x2="600" y2="145" stroke="#334155" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="100" y1="195" x2="600" y2="195" stroke="#334155" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="100" y1="245" x2="600" y2="245" stroke="#334155" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- Distribution bars (histogram style) -->
+    <rect x="130" y="95" width="80" height="200" rx="4" fill="#3b82f6" opacity="0.9"/>
+    <rect x="215" y="140" width="80" height="155" rx="4" fill="#3b82f6" opacity="0.75"/>
+    <rect x="300" y="180" width="80" height="115" rx="4" fill="#3b82f6" opacity="0.6"/>
+    <rect x="385" y="220" width="80" height="75" rx="4" fill="#3b82f6" opacity="0.45"/>
+    <rect x="470" y="250" width="80" height="45" rx="4" fill="#3b82f6" opacity="0.3"/>
+    
+    <!-- Percentile markers -->
+    <line x1="170" y1="95" x2="170" y2="310" stroke="#10b981" stroke-width="3"/>
+    <rect x="135" y="75" width="70" height="20" rx="4" fill="#10b981"/>
+    <text x="170" y="89" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#f8fafc">p50 = 3ms</text>
+    
+    <line x1="295" y1="140" x2="295" y2="310" stroke="#f59e0b" stroke-width="3"/>
+    <rect x="260" y="120" width="70" height="20" rx="4" fill="#f59e0b"/>
+    <text x="295" y="134" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#f8fafc">p90 = 7ms</text>
+    
+    <line x1="470" y1="220" x2="470" y2="310" stroke="#ef4444" stroke-width="3"/>
+    <rect x="433" y="200" width="74" height="20" rx="4" fill="#ef4444"/>
+    <text x="470" y="214" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#f8fafc">p99 = 15ms</text>
+    
+    <!-- X-axis -->
+    <line x1="100" y1="295" x2="600" y2="295" stroke="#475569" stroke-width="2"/>
+    
+    <!-- X-axis labels -->
+    <text x="170" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">3ms</text>
+    <text x="255" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">5ms</text>
+    <text x="340" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">10ms</text>
+    <text x="425" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">15ms</text>
+    <text x="510" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">20ms</text>
+    <text x="590" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Latency</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(180, 345)">
+    <rect x="0" y="0" width="12" height="12" rx="2" fill="#10b981"/>
+    <text x="18" y="10" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">p50 (Target: andlt;5ms)</text>
+    
+    <rect x="140" y="0" width="12" height="12" rx="2" fill="#f59e0b"/>
+    <text x="158" y="10" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">p90 (Target: andlt;10ms)</text>
+    
+    <rect x="300" y="0" width="12" height="12" rx="2" fill="#ef4444"/>
+    <text x="318" y="10" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">p99 (Target: andlt;20ms)</text>
+  </g>
+</svg>

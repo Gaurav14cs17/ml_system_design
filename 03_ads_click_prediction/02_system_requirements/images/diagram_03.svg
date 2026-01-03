@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="300" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🔒 Privacy Requirements
+  </text>
+  
+  <!-- Box -->
+  <rect x="50" y="60" width="600" height="220" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  
+  <!-- Checkmarks -->
+  <g fill="#94a3b8" font-family="Arial" font-size="14">
+    <text x="80" y="100"><tspan fill="#10b981">✓</tspan> All user identifiers must be hashed/anonymized</text>
+    <text x="80" y="135"><tspan fill="#10b981">✓</tspan> PII must not be used as model features</text>
+    <text x="80" y="170"><tspan fill="#10b981">✓</tspan> Data retention: 90 days maximum</text>
+    <text x="80" y="205"><tspan fill="#10b981">✓</tspan> Right to deletion: Process within 30 days</text>
+    <text x="80" y="240"><tspan fill="#10b981">✓</tspan> Cross-border data transfer: Comply with local regulations</text>
+  </g>
+  
+  <!-- GDPR/CCPA badges -->
+  <g transform="translate(500, 80)">
+    <rect x="0" y="0" width="80" height="30" rx="6" fill="#6366f1"/>
+    <text x="40" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">GDPR</text>
+  </g>
+  <g transform="translate(500, 120)">
+    <rect x="0" y="0" width="80" height="30" rx="6" fill="#8b5cf6"/>
+    <text x="40" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">CCPA</text>
+  </g>
+</svg>

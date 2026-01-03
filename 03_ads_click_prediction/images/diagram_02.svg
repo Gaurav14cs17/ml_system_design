@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="featureGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="serveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <rect width="900" height="550" fill="url(#bgGrad)"/>
+  
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    System Architecture
+  </text>
+  
+  <!-- Ad Server -->
+  <rect x="380" y="70" width="140" height="50" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+  <text x="450" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="14">Ad Server</text>
+  
+  <!-- Arrow down -->
+  <line x1="450" y1="120" x2="450" y2="160" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- CTR Service -->
+  <rect x="300" y="170" width="300" height="280" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="200" text-anchor="middle" fill="#a5b4fc" font-family="Arial" font-size="16" font-weight="bold">CTR Prediction Service</text>
+  
+  <!-- Feature Store -->
+  <rect x="330" y="220" width="110" height="50" rx="8" fill="url(#featureGrad)"/>
+  <text x="385" y="250" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">Feature Store</text>
+  
+  <!-- Model Server -->
+  <rect x="460" y="220" width="110" height="50" rx="8" fill="url(#modelGrad)"/>
+  <text x="515" y="250" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">Model Server</text>
+  
+  <!-- Cache -->
+  <rect x="330" y="290" width="110" height="50" rx="8" fill="url(#serveGrad)"/>
+  <text x="385" y="320" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">Cache Layer</text>
+  
+  <!-- Load Balancer -->
+  <rect x="460" y="290" width="110" height="50" rx="8" fill="url(#dataGrad)"/>
+  <text x="515" y="320" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">Load Balancer</text>
+  
+  <!-- Monitoring -->
+  <rect x="395" y="360" width="110" height="50" rx="8" fill="#ec4899" opacity="0.8"/>
+  <text x="450" y="390" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">Monitoring</text>
+  
+  <!-- Data Pipeline on left -->
+  <rect x="50" y="200" width="180" height="200" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="140" y="230" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">Data Pipeline</text>
+  <text x="140" y="260" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Kafka</text>
+  <text x="140" y="285" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Flink/Spark</text>
+  <text x="140" y="310" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Feature ETL</text>
+  <text x="140" y="335" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Training Data</text>
+  
+  <!-- Arrow from pipeline to service -->
+  <line x1="230" y1="300" x2="290" y2="300" stroke="#34d399" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Training on right -->
+  <rect x="670" y="200" width="180" height="200" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="760" y="230" text-anchor="middle" fill="#fbbf24" font-family="Arial" font-size="14" font-weight="bold">Training</text>
+  <text x="760" y="260" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Model Training</text>
+  <text x="760" y="285" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Validation</text>
+  <text x="760" y="310" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">A/B Testing</text>
+  <text x="760" y="335" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Deployment</text>
+  
+  <!-- Arrow from service to training -->
+  <line x1="610" y1="300" x2="660" y2="300" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Response arrow -->
+  <line x1="450" y1="460" x2="450" y2="510" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="450" y="530" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">pCTR Response</text>
+</svg>

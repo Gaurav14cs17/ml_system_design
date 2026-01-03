@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="scaleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#e6edf3" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    Auto-Scaling Strategy
+  </text>
+  
+  <!-- Before scaling -->
+  <g transform="translate(50, 70)">
+    <text x="180" y="0" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="14" font-weight="bold">Normal Load</text>
+    
+    <!-- Servers -->
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+      <text x="40" y="25" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="10">Server 1</text>
+      <text x="40" y="45" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="9">CPU: 65%</text>
+    </g>
+    <g transform="translate(90, 20)">
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+      <text x="40" y="25" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="10">Server 2</text>
+      <text x="40" y="45" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="9">CPU: 60%</text>
+    </g>
+    <g transform="translate(180, 20)">
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+      <text x="40" y="25" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="10">Server 3</text>
+      <text x="40" y="45" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="9">CPU: 70%</text>
+    </g>
+    <g transform="translate(270, 20)">
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#21262d" stroke="#6e7681" stroke-dasharray="5,3"/>
+      <text x="40" y="35" text-anchor="middle" fill="#6e7681" font-family="Arial" font-size="20">+</text>
+    </g>
+    
+    <text x="180" y="105" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="11">3 instances | 500K QPS</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(400, 120)">
+    <path d="M0 20 L80 20" stroke="#f85149" stroke-width="3" fill="none"/>
+    <polygon points="80,15 95,20 80,25" fill="#f85149"/>
+    <text x="47" y="10" text-anchor="middle" fill="#f85149" font-family="Arial" font-size="11">Traffic Spike!</text>
+  </g>
+  
+  <!-- After scaling -->
+  <g transform="translate(520, 70)">
+    <text x="180" y="0" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="14" font-weight="bold">Scaled Up</text>
+    
+    <!-- Servers row 1 -->
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+      <text x="35" y="30" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="9">S1</text>
+    </g>
+    <g transform="translate(80, 20)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+      <text x="35" y="30" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="9">S2</text>
+    </g>
+    <g transform="translate(160, 20)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+      <text x="35" y="30" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="9">S3</text>
+    </g>
+    <g transform="translate(240, 20)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+      <text x="35" y="25" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="9">S4</text>
+      <text x="35" y="40" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="7">NEW</text>
+    </g>
+    
+    <!-- Servers row 2 -->
+    <g transform="translate(40, 80)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+      <text x="35" y="25" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="9">S5</text>
+      <text x="35" y="40" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="7">NEW</text>
+    </g>
+    <g transform="translate(120, 80)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+      <text x="35" y="25" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="9">S6</text>
+      <text x="35" y="40" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="7">NEW</text>
+    </g>
+    <g transform="translate(200, 80)">
+      <rect x="0" y="0" width="70" height="50" rx="6" fill="#21262d" stroke="#6e7681" stroke-dasharray="5,3"/>
+      <text x="35" y="30" text-anchor="middle" fill="#6e7681" font-family="Arial" font-size="16">...</text>
+    </g>
+    
+    <text x="180" y="155" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="11">6+ instances | 1.5M QPS</text>
+  </g>
+  
+  <!-- Scaling Rules Box -->
+  <g transform="translate(50, 230)">
+    <rect x="0" y="0" width="380" height="220" rx="10" fill="#161b22" stroke="#30363d"/>
+    <text x="190" y="28" text-anchor="middle" fill="#e6edf3" font-family="Arial" font-size="14" font-weight="bold">Scaling Rules (HPA)</text>
+    <line x1="20" y1="40" x2="360" y2="40" stroke="#30363d"/>
+    
+    <!-- Scale Up Rules -->
+    <text x="30" y="65" fill="#3fb950" font-family="Arial" font-size="12" font-weight="bold">⬆ Scale Up When:</text>
+    <text x="40" y="90" fill="#8b949e" font-family="Arial" font-size="11">• CPU andgt; 70% for 2 minutes</text>
+    <text x="40" y="110" fill="#8b949e" font-family="Arial" font-size="11">• QPS per pod andgt; 10,000</text>
+    <text x="40" y="130" fill="#8b949e" font-family="Arial" font-size="11">• Latency p99 andgt; 10ms</text>
+    
+    <!-- Scale Down Rules -->
+    <text x="30" y="160" fill="#f85149" font-family="Arial" font-size="12" font-weight="bold">⬇ Scale Down When:</text>
+    <text x="40" y="185" fill="#8b949e" font-family="Arial" font-size="11">• CPU andlt; 30% for 10 minutes</text>
+    <text x="40" y="205" fill="#8b949e" font-family="Arial" font-size="11">• Stabilization window: 5 min</text>
+  </g>
+  
+  <!-- Performance Optimizations -->
+  <g transform="translate(470, 230)">
+    <rect x="0" y="0" width="380" height="220" rx="10" fill="#161b22" stroke="#30363d"/>
+    <text x="190" y="28" text-anchor="middle" fill="#e6edf3" font-family="Arial" font-size="14" font-weight="bold">Performance Optimizations</text>
+    <line x1="20" y1="40" x2="360" y2="40" stroke="#30363d"/>
+    
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="160" height="45" rx="5" fill="#21262d"/>
+      <text x="80" y="20" text-anchor="middle" fill="#a371f7" font-family="Arial" font-size="11" font-weight="bold">Quantization</text>
+      <text x="80" y="38" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="10">4x smaller, 2x faster</text>
+    </g>
+    
+    <g transform="translate(195, 55)">
+      <rect x="0" y="0" width="160" height="45" rx="5" fill="#21262d"/>
+      <text x="80" y="20" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="11" font-weight="bold">Batching</text>
+      <text x="80" y="38" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="10">2x throughput</text>
+    </g>
+    
+    <g transform="translate(20, 110)">
+      <rect x="0" y="0" width="160" height="45" rx="5" fill="#21262d"/>
+      <text x="80" y="20" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="11" font-weight="bold">Caching</text>
+      <text x="80" y="38" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="10">99% hit rate</text>
+    </g>
+    
+    <g transform="translate(195, 110)">
+      <rect x="0" y="0" width="160" height="45" rx="5" fill="#21262d"/>
+      <text x="80" y="20" text-anchor="middle" fill="#d29922" font-family="Arial" font-size="11" font-weight="bold">Pruning</text>
+      <text x="80" y="38" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="10">50% sparse</text>
+    </g>
+    
+    <g transform="translate(20, 165)">
+      <text x="0" y="15" fill="#3fb950" font-family="Arial" font-size="12" font-weight="bold">Result: 70% cost reduction</text>
+      <text x="0" y="38" fill="#8b949e" font-family="Arial" font-size="11">$24K → $7.2K/month</text>
+    </g>
+  </g>
+  
+  <!-- Multi-region diagram -->
+  <g transform="translate(50, 470)">
+    <rect x="0" y="0" width="800" height="25" rx="5" fill="#161b22"/>
+    <text x="100" y="17" text-anchor="middle" fill="#58a6ff" font-family="Arial" font-size="11">🌎 US-East</text>
+    <text x="300" y="17" text-anchor="middle" fill="#3fb950" font-family="Arial" font-size="11">🌍 EU-West</text>
+    <text x="500" y="17" text-anchor="middle" fill="#d29922" font-family="Arial" font-size="11">🌏 Asia-Pac</text>
+    <text x="700" y="17" text-anchor="middle" fill="#8b949e" font-family="Arial" font-size="11">Multi-Region HA: 99.999%</text>
+  </g>
+</svg>
+

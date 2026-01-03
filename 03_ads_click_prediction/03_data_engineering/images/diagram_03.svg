@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="350" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📊 Data Quality Dashboard
+  </text>
+  
+  <!-- Health score -->
+  <rect x="50" y="60" width="600" height="60" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="80" y="95" fill="#94a3b8" font-family="Arial" font-size="14">Overall Health Score:</text>
+  <text x="250" y="95" fill="#10b981" font-family="Arial" font-size="18" font-weight="bold">98.5%</text>
+  
+  <!-- Progress bar -->
+  <rect x="330" y="80" width="300" height="20" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <rect x="330" y="80" width="295" height="20" rx="10" fill="#10b981"/>
+  
+  <!-- Metrics table -->
+  <rect x="50" y="140" width="600" height="180" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="50" y="140" width="600" height="35" rx="12 12 0 0" fill="#6366f1"/>
+  <text x="150" y="163" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Metric</text>
+  <text x="320" y="163" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Current</text>
+  <text x="450" y="163" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Threshold</text>
+  <text x="570" y="163" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12" font-weight="bold">Status</text>
+  
+  <g fill="#f8fafc" font-family="Arial" font-size="12">
+    <text x="150" y="200" text-anchor="middle">Completeness</text>
+    <text x="320" y="200" text-anchor="middle">99.8%</text>
+    <text x="450" y="200" text-anchor="middle">andgt; 99%</text>
+    <text x="570" y="200" text-anchor="middle" fill="#10b981">✓ Pass</text>
+    
+    <line x1="70" y1="215" x2="630" y2="215" stroke="#475569" stroke-width="1"/>
+    
+    <text x="150" y="245" text-anchor="middle">Freshness</text>
+    <text x="320" y="245" text-anchor="middle">2.3h</text>
+    <text x="450" y="245" text-anchor="middle">andlt; 24h</text>
+    <text x="570" y="245" text-anchor="middle" fill="#10b981">✓ Pass</text>
+    
+    <line x1="70" y1="260" x2="630" y2="260" stroke="#475569" stroke-width="1"/>
+    
+    <text x="150" y="290" text-anchor="middle">Validity</text>
+    <text x="320" y="290" text-anchor="middle">99.95%</text>
+    <text x="450" y="290" text-anchor="middle">andgt; 99.9%</text>
+    <text x="570" y="290" text-anchor="middle" fill="#10b981">✓ Pass</text>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    ⚠️ Common A/B Testing Pitfalls
+  </text>
+  
+  <!-- Pitfall 1 -->
+  <rect x="50" y="60" width="600" height="80" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="80" y="90" fill="#f87171" font-family="Arial" font-size="13" font-weight="bold">1. PEEKING PROBLEM</text>
+  <text x="80" y="115" fill="#94a3b8" font-family="Arial" font-size="11">Problem: Checking results too early inflates false positive rate</text>
+  <text x="80" y="130" fill="#10b981" font-family="Arial" font-size="11">Solution: Use sequential testing or wait for full sample size</text>
+  
+  <!-- Pitfall 2 -->
+  <rect x="50" y="155" width="600" height="80" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="80" y="185" fill="#fbbf24" font-family="Arial" font-size="13" font-weight="bold">2. SIMPSON'S PARADOX</text>
+  <text x="80" y="210" fill="#94a3b8" font-family="Arial" font-size="11">Problem: Aggregate results can mislead when segments differ</text>
+  <text x="80" y="225" fill="#10b981" font-family="Arial" font-size="11">Solution: Analyze segments separately, use stratification</text>
+  
+  <!-- Pitfall 3 -->
+  <rect x="50" y="250" width="600" height="80" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="80" y="280" fill="#a78bfa" font-family="Arial" font-size="13" font-weight="bold">3. NOVELTY EFFECT</text>
+  <text x="80" y="305" fill="#94a3b8" font-family="Arial" font-size="11">Problem: New features get more attention initially</text>
+  <text x="80" y="320" fill="#10b981" font-family="Arial" font-size="11">Solution: Run experiments for 2+ weeks, exclude first few days</text>
+  
+  <!-- Pitfall 4 -->
+  <rect x="50" y="345" width="600" height="80" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="80" y="375" fill="#60a5fa" font-family="Arial" font-size="13" font-weight="bold">4. SELECTION BIAS</text>
+  <text x="80" y="400" fill="#94a3b8" font-family="Arial" font-size="11">Problem: Non-random assignment corrupts results</text>
+  <text x="80" y="415" fill="#10b981" font-family="Arial" font-size="11">Solution: Use hash-based randomization, check balance</text>
+</svg>
