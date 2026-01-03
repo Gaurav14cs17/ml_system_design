@@ -22,7 +22,7 @@
     <line x1="200" y1="50" x2="100" y2="100" stroke="#334155" stroke-width="2"/>
     
     <!-- Corner colors -->
-    <circle cx="100" cy="0" r="12" fill="#ffffff" stroke="#334155" filter="url(#glow)"/>
+    <circle cx="100" cy="0" r="12" fill="#0f172a" stroke="#334155" filter="url(#glow)"/>
     <text x="100" y="-20" text-anchor="middle" font-family="Arial" font-size="10" fill="#f8fafc">White</text>
     
     <circle cx="0" cy="50" r="12" fill="#00ff00" filter="url(#glow)"/>
