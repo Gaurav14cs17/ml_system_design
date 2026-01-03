@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+  <defs>
+    <linearGradient id="lbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚡ Real-Time Inference Flow</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="650" height="400" rx="16" fill="#1e293b"/>
+    
+    <!-- Client -->
+    <g transform="translate(350, 80)">
+      <circle cx="25" cy="15" r="15" fill="#f59e0b"/>
+      <text x="25" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Client</text>
+    </g>
+    
+    <line x1="375" y1="100" x2="375" y2="130" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Load Balancer -->
+    <g transform="translate(250, 140)">
+      <rect x="0" y="0" width="250" height="55" rx="12" fill="url(#lbGrad)"/>
+      <text x="125" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">⚖️ Load Balancer</text>
+      <text x="125" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c7d2fe">Round-robin, least connections</text>
+    </g>
+    
+    <!-- Split arrows -->
+    <line x1="375" y1="195" x2="375" y2="215" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="250" y1="215" x2="500" y2="215" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="250" y1="215" x2="250" y2="245" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="500" y1="215" x2="500" y2="245" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- API Servers -->
+    <g transform="translate(150, 255)">
+      <rect x="0" y="0" width="150" height="55" rx="12" fill="url(#apiGrad)"/>
+      <text x="75" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🖥️ API Server 1</text>
+      <text x="75" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#d1fae5">Stateless</text>
+    </g>
+    
+    <g transform="translate(450, 255)">
+      <rect x="0" y="0" width="150" height="55" rx="12" fill="url(#apiGrad)"/>
+      <text x="75" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🖥️ API Server 2</text>
+      <text x="75" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#d1fae5">Stateless</text>
+    </g>
+    
+    <!-- Merge arrows -->
+    <line x1="250" y1="310" x2="250" y2="330" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="500" y1="310" x2="500" y2="330" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="250" y1="330" x2="500" y2="330" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="375" y1="330" x2="375" y2="360" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Feature Store -->
+    <g transform="translate(225, 370)">
+      <rect x="0" y="0" width="300" height="55" rx="12" fill="#8b5cf6"/>
+      <text x="150" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">📊 Feature Store</text>
+      <text x="150" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ddd6fe">Real-time feature lookup</text>
+    </g>
+    
+    <!-- SLA Box -->
+    <g transform="translate(550, 425)">
+      <rect x="0" y="0" width="130" height="25" rx="6" fill="#164e63"/>
+      <text x="65" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#22d3ee">P99 andlt; 100ms | 99.9%</text>
+    </g>
+  </g>
+</svg>

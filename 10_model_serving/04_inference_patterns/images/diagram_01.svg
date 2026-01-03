@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="rtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="batchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚙️ Inference Patterns</text>
+  
+  <!-- Real-Time -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="220" height="230" rx="16" fill="#0f172a"/>
+    <rect x="50" y="55" width="220" height="50" rx="16 16 0 0" fill="url(#rtGrad)"/>
+    <text x="160" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚡ REAL-TIME</text>
+    
+    <!-- Icon representation -->
+    <rect x="130" y="125" width="60" height="50" rx="8" fill="#450a0a" stroke="#ef4444" stroke-width="2"/>
+    <text x="160" y="157" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">1️⃣</text>
+    
+    <path d="M195 150 L230 150" stroke="#ef4444" stroke-width="3"/>
+    <polygon points="230,145 245,150 230,155" fill="#ef4444"/>
+    
+    <text x="160" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Single Request</text>
+    <text x="160" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Low latency andlt; 100ms</text>
+    <text x="160" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">User-facing APIs</text>
+    
+    <rect x="90" y="258" width="140" height="20" rx="4" fill="#fecaca"/>
+    <text x="160" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#991b1b">p99 latency critical</text>
+  </g>
+  
+  <!-- Batch -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="55" width="220" height="230" rx="16" fill="#0f172a"/>
+    <rect x="290" y="55" width="220" height="50" rx="16 16 0 0" fill="url(#batchGrad)"/>
+    <text x="400" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📦 BATCH</text>
+    
+    <!-- Icon representation -->
+    <g transform="translate(335, 125)">
+      <rect x="0" y="0" width="30" height="25" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="35" y="0" width="30" height="25" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="70" y="0" width="30" height="25" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="0" y="30" width="100" height="20" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#2563eb">1,2,3...N</text>
+    </g>
+    
+    <text x="400" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Process in Bulk</text>
+    <text x="400" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">High throughput</text>
+    <text x="400" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Cost efficient</text>
+    
+    <rect x="330" y="258" width="140" height="20" rx="4" fill="#bfdbfe"/>
+    <text x="400" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e40af">Scheduled jobs</text>
+  </g>
+  
+  <!-- Streaming -->
+  <g filter="url(#shadow)">
+    <rect x="530" y="55" width="220" height="230" rx="16" fill="#0f172a"/>
+    <rect x="530" y="55" width="220" height="50" rx="16 16 0 0" fill="url(#streamGrad)"/>
+    <text x="640" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🌊 STREAMING</text>
+    
+    <!-- Icon representation -->
+    <g transform="translate(575, 125)">
+      <rect x="0" y="0" width="130" height="50" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+      <path d="M20 15 L50 15" stroke="#10b981" stroke-width="2"/>
+      <polygon points="48,12 55,15 48,18" fill="#10b981"/>
+      <path d="M20 25 L50 25" stroke="#10b981" stroke-width="2"/>
+      <polygon points="48,22 55,25 48,28" fill="#10b981"/>
+      <path d="M20 35 L50 35" stroke="#10b981" stroke-width="2"/>
+      <polygon points="48,32 55,35 48,38" fill="#10b981"/>
+      <text x="90" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">Events</text>
+    </g>
+    
+    <text x="640" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Continuous Flow</text>
+    <text x="640" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Event-driven</text>
+    <text x="640" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Near real-time</text>
+    
+    <rect x="570" y="258" width="140" height="20" rx="4" fill="#a7f3d0"/>
+    <text x="640" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">Kafka/Flink</text>
+  </g>
+</svg>

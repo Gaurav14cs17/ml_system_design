@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="unstructGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="structGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">✂️ Pruning Strategies</text>
+  
+  <!-- Unstructured Pruning -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="60" width="370" height="370" rx="16" fill="#1e293b"/>
+    <rect x="40" y="60" width="370" height="55" rx="16 16 0 0" fill="url(#unstructGrad)"/>
+    <text x="225" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Unstructured Pruning</text>
+    
+    <!-- Matrix visualization -->
+    <g transform="translate(85, 130)">
+      <!-- Matrix grid -->
+      <rect x="0" y="0" width="280" height="120" rx="8" fill="#334155"/>
+      
+      <!-- Matrix cells with random zeros -->
+      <!-- Row 1 -->
+      <rect x="10" y="10" width="35" height="35" rx="4" fill="#3b82f6"/><text x="27" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.8</text>
+      <rect x="50" y="10" width="35" height="35" rx="4" fill="#1e293b"/><text x="67" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="90" y="10" width="35" height="35" rx="4" fill="#1e293b"/><text x="107" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="130" y="10" width="35" height="35" rx="4" fill="#3b82f6"/><text x="147" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.5</text>
+      <rect x="170" y="10" width="35" height="35" rx="4" fill="#1e293b"/><text x="187" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="210" y="10" width="35" height="35" rx="4" fill="#3b82f6"/><text x="227" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.9</text>
+      <rect x="250" y="10" width="20" height="35" rx="4" fill="#475569"/>
+      
+      <!-- Row 2 -->
+      <rect x="10" y="50" width="35" height="35" rx="4" fill="#1e293b"/><text x="27" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="50" y="50" width="35" height="35" rx="4" fill="#3b82f6"/><text x="67" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.3</text>
+      <rect x="90" y="50" width="35" height="35" rx="4" fill="#1e293b"/><text x="107" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="130" y="50" width="35" height="35" rx="4" fill="#1e293b"/><text x="147" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="170" y="50" width="35" height="35" rx="4" fill="#3b82f6"/><text x="187" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.7</text>
+      <rect x="210" y="50" width="35" height="35" rx="4" fill="#1e293b"/><text x="227" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="250" y="50" width="20" height="35" rx="4" fill="#475569"/>
+    </g>
+    
+    <text x="225" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#94a3b8">Random individual weights → 0</text>
+    
+    <!-- Characteristics -->
+    <rect x="60" y="300" width="330" height="115" rx="10" fill="#334155"/>
+    <text x="225" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fca5a5">Characteristics:</text>
+    <text x="75" y="350" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Higher sparsity achievable (90%+)</text>
+    <text x="75" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Minimal accuracy loss</text>
+    <text x="75" y="390" font-family="Segoe UI, sans-serif" font-size="11" fill="#f87171">✗ Needs sparse tensor format</text>
+    <text x="75" y="410" font-family="Segoe UI, sans-serif" font-size="11" fill="#f87171">✗ Limited hardware acceleration</text>
+  </g>
+  
+  <!-- Structured Pruning -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="60" width="370" height="370" rx="16" fill="#1e293b"/>
+    <rect x="440" y="60" width="370" height="55" rx="16 16 0 0" fill="url(#structGrad)"/>
+    <text x="625" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Structured Pruning</text>
+    
+    <!-- Matrix visualization -->
+    <g transform="translate(485, 130)">
+      <!-- Matrix grid -->
+      <rect x="0" y="0" width="280" height="120" rx="8" fill="#334155"/>
+      
+      <!-- Matrix cells with entire columns zeroed -->
+      <!-- Row 1 -->
+      <rect x="10" y="10" width="35" height="35" rx="4" fill="#10b981"/><text x="27" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.8</text>
+      <rect x="50" y="10" width="35" height="35" rx="4" fill="#10b981"/><text x="67" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.5</text>
+      <rect x="90" y="10" width="35" height="35" rx="4" fill="#10b981"/><text x="107" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.9</text>
+      <rect x="130" y="10" width="35" height="35" rx="4" fill="#1e293b" opacity="0.5"/><text x="147" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="170" y="10" width="35" height="35" rx="4" fill="#1e293b" opacity="0.5"/><text x="187" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="210" y="10" width="35" height="35" rx="4" fill="#1e293b" opacity="0.5"/><text x="227" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="250" y="10" width="20" height="35" rx="4" fill="#475569"/>
+      
+      <!-- Row 2 -->
+      <rect x="10" y="50" width="35" height="35" rx="4" fill="#10b981"/><text x="27" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.3</text>
+      <rect x="50" y="50" width="35" height="35" rx="4" fill="#10b981"/><text x="67" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.7</text>
+      <rect x="90" y="50" width="35" height="35" rx="4" fill="#10b981"/><text x="107" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">0.4</text>
+      <rect x="130" y="50" width="35" height="35" rx="4" fill="#1e293b" opacity="0.5"/><text x="147" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="170" y="50" width="35" height="35" rx="4" fill="#1e293b" opacity="0.5"/><text x="187" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="210" y="50" width="35" height="35" rx="4" fill="#1e293b" opacity="0.5"/><text x="227" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">0</text>
+      <rect x="250" y="50" width="20" height="35" rx="4" fill="#475569"/>
+      
+      <!-- Annotation for pruned columns -->
+      <rect x="130" y="95" width="115" height="20" rx="4" fill="#ef4444" opacity="0.3"/>
+      <text x="187" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fca5a5">Pruned Columns</text>
+    </g>
+    
+    <text x="625" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#94a3b8">Entire rows/columns/filters removed</text>
+    
+    <!-- Characteristics -->
+    <rect x="460" y="300" width="330" height="115" rx="10" fill="#334155"/>
+    <text x="625" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Characteristics:</text>
+    <text x="475" y="350" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Works with dense operations</text>
+    <text x="475" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Native hardware acceleration</text>
+    <text x="475" y="390" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Directly reduces dimensions</text>
+    <text x="475" y="410" font-family="Segoe UI, sans-serif" font-size="11" fill="#f87171">✗ Lower sparsity (30-50%)</text>
+  </g>
+</svg>

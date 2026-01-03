@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔄 Edge vs Cloud Deployment Decision</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="700" height="345" rx="16" fill="#1e293b"/>
+    
+    <!-- Edge -->
+    <g transform="translate(75, 80)">
+      <rect x="0" y="0" width="300" height="295" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="300" height="50" rx="12 12 0 0" fill="url(#edgeGrad)"/>
+      <text x="150" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#fff">📱 Use EDGE when:</text>
+      
+      <g transform="translate(20, 70)">
+        <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">⚡</text>
+        <text x="25" y="0" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Latency critical (andlt;50ms)</text>
+        
+        <text x="0" y="35" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">📴</text>
+        <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Offline operation needed</text>
+        
+        <text x="0" y="70" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">🔒</text>
+        <text x="25" y="70" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Privacy-sensitive data</text>
+        
+        <text x="0" y="105" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">💰</text>
+        <text x="25" y="105" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">High inference volume</text>
+        
+        <text x="0" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">🎮</text>
+        <text x="25" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Real-time interaction (AR)</text>
+      </g>
+      
+      <rect x="20" y="230" width="260" height="45" rx="8" fill="#1e293b"/>
+      <text x="150" y="258" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Best for: Mobile, IoT, Privacy</text>
+    </g>
+    
+    <!-- Cloud -->
+    <g transform="translate(425, 80)">
+      <rect x="0" y="0" width="300" height="295" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="300" height="50" rx="12 12 0 0" fill="url(#cloudGrad)"/>
+      <text x="150" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#fff">☁️ Use CLOUD when:</text>
+      
+      <g transform="translate(20, 70)">
+        <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">🧠</text>
+        <text x="25" y="0" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Large/complex models</text>
+        
+        <text x="0" y="35" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">🔄</text>
+        <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Frequent model updates</text>
+        
+        <text x="0" y="70" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">📊</text>
+        <text x="25" y="70" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Centralized data analysis</text>
+        
+        <text x="0" y="105" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">📱</text>
+        <text x="25" y="105" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Limited device capabilities</text>
+        
+        <text x="0" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">⚙️</text>
+        <text x="25" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Need GPU/TPU acceleration</text>
+      </g>
+      
+      <rect x="20" y="230" width="260" height="45" rx="8" fill="#1e293b"/>
+      <text x="150" y="258" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">Best for: LLMs, Training, Analytics</text>
+    </g>
+  </g>
+</svg>

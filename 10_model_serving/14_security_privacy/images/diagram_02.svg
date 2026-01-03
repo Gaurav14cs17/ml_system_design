@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="attackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔓 ML Attack Taxonomy</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="700" height="445" rx="16" fill="#1e293b"/>
+    
+    <!-- Attack 1 -->
+    <g transform="translate(75, 80)">
+      <rect x="0" y="0" width="650" height="70" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="70" rx="12 0 0 12" fill="url(#attackGrad)"/>
+      <text x="25" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fca5a5">1. MODEL EXTRACTION</text>
+      <text x="25" y="48" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Query API → Clone model behavior</text>
+      <rect x="480" y="18" width="150" height="35" rx="6" fill="#1e293b"/>
+      <text x="555" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Impact: IP theft</text>
+    </g>
+    
+    <!-- Attack 2 -->
+    <g transform="translate(75, 165)">
+      <rect x="0" y="0" width="650" height="70" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="70" rx="12 0 0 12" fill="url(#attackGrad)"/>
+      <text x="25" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fca5a5">2. ADVERSARIAL EXAMPLES</text>
+      <text x="25" y="48" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Crafted inputs → Misclassification</text>
+      <rect x="480" y="18" width="150" height="35" rx="6" fill="#1e293b"/>
+      <text x="555" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Impact: System manipulation</text>
+    </g>
+    
+    <!-- Attack 3 -->
+    <g transform="translate(75, 250)">
+      <rect x="0" y="0" width="650" height="70" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="70" rx="12 0 0 12" fill="url(#attackGrad)"/>
+      <text x="25" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fca5a5">3. MEMBERSHIP INFERENCE</text>
+      <text x="25" y="48" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Query model → Determine if data was in training</text>
+      <rect x="480" y="18" width="150" height="35" rx="6" fill="#1e293b"/>
+      <text x="555" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Impact: Privacy violation</text>
+    </g>
+    
+    <!-- Attack 4 -->
+    <g transform="translate(75, 335)">
+      <rect x="0" y="0" width="650" height="70" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="70" rx="12 0 0 12" fill="url(#attackGrad)"/>
+      <text x="25" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fca5a5">4. MODEL INVERSION</text>
+      <text x="25" y="48" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Query model → Reconstruct training data</text>
+      <rect x="480" y="18" width="150" height="35" rx="6" fill="#1e293b"/>
+      <text x="555" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Impact: PII exposure</text>
+    </g>
+    
+    <!-- Attack 5 -->
+    <g transform="translate(75, 420)">
+      <rect x="0" y="0" width="650" height="70" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="70" rx="12 0 0 12" fill="url(#attackGrad)"/>
+      <text x="25" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fca5a5">5. DATA POISONING</text>
+      <text x="25" y="48" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Corrupt training data → Compromise model</text>
+      <rect x="480" y="18" width="150" height="35" rx="6" fill="#1e293b"/>
+      <text x="555" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Impact: Backdoors</text>
+    </g>
+  </g>
+</svg>

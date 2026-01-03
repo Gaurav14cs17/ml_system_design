@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 600">
+  <defs>
+    <linearGradient id="decisionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowY" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+    <marker id="arrowN" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f87171"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔍 Framework Selection Decision Tree</text>
+  
+  <!-- Start -->
+  <g filter="url(#shadow)">
+    <circle cx="425" cy="70" r="25" fill="url(#decisionGrad)"/>
+    <text x="425" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">Start</text>
+  </g>
+  
+  <line x1="425" y1="95" x2="425" y2="120" stroke="#6ee7b7" stroke-width="2"/>
+  
+  <!-- GPU Optimization? -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="125" width="250" height="45" rx="22" fill="#334155"/>
+    <text x="425" y="153" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Need GPU optimization?</text>
+  </g>
+  
+  <!-- Yes branch - GPU -->
+  <line x1="550" y1="147" x2="590" y2="147" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="565" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Yes</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="600" y="125" width="180" height="45" rx="22" fill="#334155"/>
+    <text x="690" y="153" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Multiple frameworks?</text>
+  </g>
+  
+  <line x1="780" y1="147" x2="810" y2="147" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="792" y="140" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Yes</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="720" y="180" width="100" height="35" rx="8" fill="url(#resultGrad)"/>
+    <text x="770" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">TRITON</text>
+  </g>
+  <line x1="780" y1="147" x2="780" y2="180" stroke="#6ee7b7" stroke-width="2"/>
+  
+  <!-- TF/PyTorch branch -->
+  <line x1="690" y1="170" x2="690" y2="230" stroke="#f87171" stroke-width="2"/>
+  <text x="700" y="195" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">No</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="605" y="230" width="170" height="40" rx="22" fill="#334155"/>
+    <text x="690" y="255" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">TensorFlow?</text>
+  </g>
+  
+  <line x1="775" y1="250" x2="800" y2="250" stroke="#6ee7b7" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="720" y="280" width="110" height="35" rx="8" fill="#f59e0b"/>
+    <text x="775" y="303" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">TF SERVING</text>
+  </g>
+  <line x1="780" y1="250" x2="780" y2="280" stroke="#6ee7b7" stroke-width="2"/>
+  
+  <line x1="690" y1="270" x2="690" y2="320" stroke="#f87171" stroke-width="2"/>
+  <text x="700" y="295" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">No</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="605" y="320" width="170" height="40" rx="22" fill="#334155"/>
+    <text x="690" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">PyTorch?</text>
+  </g>
+  
+  <line x1="775" y1="340" x2="800" y2="340" stroke="#6ee7b7" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="720" y="370" width="110" height="35" rx="8" fill="#ef4444"/>
+    <text x="775" y="393" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">TORCHSERVE</text>
+  </g>
+  <line x1="780" y1="340" x2="780" y2="370" stroke="#6ee7b7" stroke-width="2"/>
+  
+  <!-- No GPU branch -->
+  <line x1="300" y1="147" x2="265" y2="147" stroke="#f87171" stroke-width="2"/>
+  <text x="280" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#f87171">No</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="70" y="125" width="195" height="45" rx="22" fill="#334155"/>
+    <text x="167" y="153" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Kubernetes deployment?</text>
+  </g>
+  
+  <!-- Yes - K8s -->
+  <line x1="167" y1="170" x2="167" y2="210" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="180" y="190" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Yes</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="70" y="210" width="195" height="40" rx="22" fill="#334155"/>
+    <text x="167" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Need A/B testing?</text>
+  </g>
+  
+  <line x1="265" y1="230" x2="295" y2="230" stroke="#6ee7b7" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="295" y="210" width="90" height="40" rx="8" fill="#8b5cf6"/>
+    <text x="340" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">SELDON</text>
+  </g>
+  
+  <line x1="167" y1="250" x2="167" y2="290" stroke="#f87171" stroke-width="2"/>
+  <text x="180" y="270" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">No</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="70" y="290" width="195" height="35" rx="8" fill="url(#resultGrad)"/>
+    <text x="167" y="313" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">BENTOML / KSERVE</text>
+  </g>
+  
+  <!-- No K8s - Simple -->
+  <line x1="70" y1="147" x2="40" y2="147" stroke="#f87171" stroke-width="2"/>
+  <line x1="40" y1="147" x2="40" y2="400" stroke="#f87171" stroke-width="2"/>
+  <line x1="40" y1="400" x2="70" y2="400" stroke="#f87171" stroke-width="2"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="70" y="380" width="195" height="40" rx="22" fill="#334155"/>
+    <text x="167" y="405" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Simple / Prototype?</text>
+  </g>
+  
+  <line x1="265" y1="400" x2="295" y2="400" stroke="#6ee7b7" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="295" y="380" width="90" height="40" rx="8" fill="#10b981"/>
+    <text x="340" y="405" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">FASTAPI</text>
+  </g>
+  
+  <line x1="167" y1="420" x2="167" y2="460" stroke="#f87171" stroke-width="2"/>
+  <text x="180" y="440" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">No</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="70" y="460" width="195" height="40" rx="22" fill="#334155"/>
+    <text x="167" y="485" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Need flexibility?</text>
+  </g>
+  
+  <line x1="265" y1="480" x2="295" y2="480" stroke="#6ee7b7" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="295" y="460" width="90" height="40" rx="8" fill="#ec4899"/>
+    <text x="340" y="485" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">BENTOML</text>
+  </g>
+  
+  <line x1="167" y1="500" x2="167" y2="540" stroke="#f87171" stroke-width="2"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="70" y="540" width="195" height="40" rx="8" fill="#3b82f6"/>
+    <text x="167" y="565" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">FASTAPI + Batching</text>
+  </g>
+</svg>

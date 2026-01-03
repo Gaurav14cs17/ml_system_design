@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="onlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📦 Online vs Offline Feature Stores</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="700" height="325" rx="16" fill="#1e293b"/>
+    
+    <!-- Offline Store -->
+    <g transform="translate(75, 80)">
+      <rect x="0" y="0" width="300" height="280" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="300" height="45" rx="12 12 0 0" fill="url(#offlineGrad)"/>
+      <text x="150" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">📁 OFFLINE STORE</text>
+      
+      <g transform="translate(20, 60)">
+        <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">Storage:</text>
+        <text x="80" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Data Lake/Warehouse</text>
+        
+        <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">Latency:</text>
+        <text x="80" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Seconds - Minutes</text>
+        
+        <text x="0" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">Data:</text>
+        <text x="80" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Historical (years)</text>
+        
+        <text x="0" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">Query:</text>
+        <text x="80" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Batch, time-travel</text>
+        
+        <text x="0" y="115" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">Use:</text>
+        <text x="80" y="115" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Training, backfill</text>
+        
+        <text x="0" y="155" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#a5b4fc">Technologies:</text>
+        <rect x="0" y="165" width="80" height="25" rx="5" fill="#1e293b"/>
+        <text x="40" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Parquet/S3</text>
+        <rect x="90" y="165" width="75" height="25" rx="5" fill="#1e293b"/>
+        <text x="127" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">BigQuery</text>
+        <rect x="175" y="165" width="80" height="25" rx="5" fill="#1e293b"/>
+        <text x="215" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Delta Lake</text>
+      </g>
+    </g>
+    
+    <!-- VS -->
+    <g transform="translate(385, 200)">
+      <circle cx="15" cy="15" r="20" fill="#475569"/>
+      <text x="15" y="21" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">vs</text>
+    </g>
+    
+    <!-- Online Store -->
+    <g transform="translate(425, 80)">
+      <rect x="0" y="0" width="300" height="280" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="300" height="45" rx="12 12 0 0" fill="url(#onlineGrad)"/>
+      <text x="150" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">⚡ ONLINE STORE</text>
+      
+      <g transform="translate(20, 60)">
+        <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">Storage:</text>
+        <text x="80" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Redis/DynamoDB</text>
+        
+        <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">Latency:</text>
+        <text x="80" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">andlt;10ms</text>
+        
+        <text x="0" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">Data:</text>
+        <text x="80" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Latest values</text>
+        
+        <text x="0" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">Query:</text>
+        <text x="80" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Key-value lookup</text>
+        
+        <text x="0" y="115" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">Use:</text>
+        <text x="80" y="115" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Real-time inference</text>
+        
+        <text x="0" y="155" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">Technologies:</text>
+        <rect x="0" y="165" width="60" height="25" rx="5" fill="#1e293b"/>
+        <text x="30" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ef4444">Redis</text>
+        <rect x="70" y="165" width="80" height="25" rx="5" fill="#1e293b"/>
+        <text x="110" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f59e0b">DynamoDB</text>
+        <rect x="160" y="165" width="75" height="25" rx="5" fill="#1e293b"/>
+        <text x="197" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#3b82f6">Bigtable</text>
+      </g>
+    </g>
+  </g>
+</svg>

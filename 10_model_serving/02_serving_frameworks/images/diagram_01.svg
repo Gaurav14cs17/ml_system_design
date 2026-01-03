@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340">
+  <defs>
+    <linearGradient id="fastapiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#009688"/>
+      <stop offset="100%" style="stop-color:#00796b"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚡ FastAPI Advantages</text>
+  
+  <!-- Main container -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="55" width="500" height="270" rx="16" fill="#0f172a"/>
+    <rect x="100" y="55" width="500" height="50" rx="16 16 0 0" fill="url(#fastapiGrad)"/>
+    <text x="350" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🚀 FastAPI</text>
+  </g>
+  
+  <!-- Advantage items -->
+  <g transform="translate(130, 125)">
+    <rect x="0" y="0" width="210" height="45" rx="10" fill="#e0f2f1"/>
+    <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="20">⚡</text>
+    <text x="45" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Async/await support</text>
+    <text x="45" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#4db6ac">Non-blocking I/O</text>
+  </g>
+  
+  <g transform="translate(360, 125)">
+    <rect x="0" y="0" width="210" height="45" rx="10" fill="#e0f2f1"/>
+    <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="20">✅</text>
+    <text x="45" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Auto validation</text>
+    <text x="45" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#4db6ac">Type safety with Pydantic</text>
+  </g>
+  
+  <g transform="translate(130, 180)">
+    <rect x="0" y="0" width="210" height="45" rx="10" fill="#e0f2f1"/>
+    <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="20">📚</text>
+    <text x="45" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Auto-generated docs</text>
+    <text x="45" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#4db6ac">OpenAPI/Swagger UI</text>
+  </g>
+  
+  <g transform="translate(360, 180)">
+    <rect x="0" y="0" width="210" height="45" rx="10" fill="#e0f2f1"/>
+    <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="20">🏎️</text>
+    <text x="45" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#00695c">High performance</text>
+    <text x="45" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#4db6ac">On par with Node.js/Go</text>
+  </g>
+  
+  <g transform="translate(130, 235)">
+    <rect x="0" y="0" width="210" height="45" rx="10" fill="#e0f2f1"/>
+    <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="20">🧪</text>
+    <text x="45" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Easy testing</text>
+    <text x="45" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#4db6ac">Built-in test client</text>
+  </g>
+  
+  <g transform="translate(360, 235)">
+    <rect x="0" y="0" width="210" height="45" rx="10" fill="#e0f2f1"/>
+    <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="20">💉</text>
+    <text x="45" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#00695c">Dependency injection</text>
+    <text x="45" y="36" font-family="Segoe UI, sans-serif" font-size="9" fill="#4db6ac">Clean architecture</text>
+  </g>
+</svg>

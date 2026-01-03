@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="chartGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📉 Accuracy vs Compression Trade-off</text>
+  
+  <!-- Chart area -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="60" width="550" height="330" rx="12" fill="url(#chartGrad)" stroke="#334155" stroke-width="2"/>
+    
+    <!-- Y-axis -->
+    <line x1="150" y1="90" x2="150" y2="360" stroke="#475569" stroke-width="2"/>
+    <text x="130" y="95" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">100%</text>
+    <text x="130" y="145" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">99%</text>
+    <text x="130" y="195" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">97%</text>
+    <text x="130" y="245" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">95%</text>
+    <text x="130" y="295" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">90%</text>
+    <text x="130" y="355" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">85%</text>
+    
+    <!-- Y-axis label -->
+    <text x="70" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8" transform="rotate(-90, 70, 225)">Accuracy (%)</text>
+    
+    <!-- X-axis -->
+    <line x1="150" y1="360" x2="620" y2="360" stroke="#475569" stroke-width="2"/>
+    <text x="170" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">1x</text>
+    <text x="250" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">2x</text>
+    <text x="330" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">4x</text>
+    <text x="410" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">8x</text>
+    <text x="490" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">16x</text>
+    <text x="570" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">32x</text>
+    
+    <!-- X-axis label -->
+    <text x="385" y="405" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Compression Ratio</text>
+    
+    <!-- Grid lines -->
+    <g stroke="#334155" stroke-width="1" stroke-dasharray="4,4">
+      <line x1="150" y1="145" x2="620" y2="145"/>
+      <line x1="150" y1="195" x2="620" y2="195"/>
+      <line x1="150" y1="245" x2="620" y2="245"/>
+      <line x1="150" y1="295" x2="620" y2="295"/>
+    </g>
+    
+    <!-- Data points and curve -->
+    <!-- FP32 baseline -->
+    <circle cx="170" cy="95" r="8" fill="#3b82f6" filter="url(#glow)"/>
+    <text x="180" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">FP32</text>
+    
+    <!-- FP16 -->
+    <circle cx="250" cy="105" r="8" fill="#8b5cf6" filter="url(#glow)"/>
+    <text x="260" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#a78bfa">FP16</text>
+    
+    <!-- INT8 - Sweet spot -->
+    <circle cx="330" cy="140" r="12" fill="#10b981" filter="url(#glow)"/>
+    <text x="350" y="130" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#34d399">INT8 ✓</text>
+    
+    <!-- INT8 + Pruning -->
+    <circle cx="410" cy="175" r="8" fill="#22c55e" filter="url(#glow)"/>
+    <text x="420" y="165" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">+Prune</text>
+    
+    <!-- INT4 -->
+    <circle cx="490" cy="220" r="8" fill="#f59e0b" filter="url(#glow)"/>
+    <text x="500" y="210" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">INT4</text>
+    
+    <!-- Aggressive compression -->
+    <circle cx="570" cy="295" r="8" fill="#ef4444" filter="url(#glow)"/>
+    <text x="575" y="285" font-family="Segoe UI, sans-serif" font-size="10" fill="#f87171">Binary</text>
+    
+    <!-- Trend curve -->
+    <path d="M170 95 Q250 100, 330 140 Q410 180, 490 220 Q530 260, 570 295" stroke="#64748b" stroke-width="2" fill="none" stroke-dasharray="6,3"/>
+    
+    <!-- Sweet spot zone -->
+    <rect x="290" y="100" width="80" height="90" rx="8" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="330" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Sweet Spot</text>
+  </g>
+  
+  <!-- Legend -->
+  <g filter="url(#shadow)">
+    <rect x="680" y="80" width="150" height="200" rx="12" fill="#1e293b"/>
+    <text x="755" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Techniques</text>
+    
+    <circle cx="700" cy="130" r="6" fill="#3b82f6"/>
+    <text x="715" y="134" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">FP32 (baseline)</text>
+    
+    <circle cx="700" cy="155" r="6" fill="#8b5cf6"/>
+    <text x="715" y="159" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">FP16 (2x)</text>
+    
+    <circle cx="700" cy="180" r="6" fill="#10b981"/>
+    <text x="715" y="184" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">INT8 (4x) ✓</text>
+    
+    <circle cx="700" cy="205" r="6" fill="#22c55e"/>
+    <text x="715" y="209" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">+Pruning (8x)</text>
+    
+    <circle cx="700" cy="230" r="6" fill="#f59e0b"/>
+    <text x="715" y="234" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">INT4 (8-16x)</text>
+    
+    <circle cx="700" cy="255" r="6" fill="#ef4444"/>
+    <text x="715" y="259" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Binary (32x)</text>
+  </g>
+  
+  <!-- Key insight box -->
+  <g filter="url(#shadow)">
+    <rect x="680" y="300" width="150" height="90" rx="12" fill="#064e3b"/>
+    <text x="755" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">💡 Key Insight</text>
+    <text x="755" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">INT8 quantization:</text>
+    <text x="755" y="368" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">4× smaller</text>
+    <text x="755" y="385" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">andlt;1% accuracy loss</text>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420">
+  <defs>
+    <linearGradient id="ttlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="eventGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="versionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔄 Cache Invalidation Strategies</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="650" height="350" rx="16" fill="#1e293b"/>
+    
+    <!-- TTL -->
+    <g transform="translate(75, 80)">
+      <rect x="0" y="0" width="280" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="80" rx="12 0 0 12" fill="url(#ttlGrad)"/>
+      <text x="20" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">1. TIME-BASED (TTL)</text>
+      <text x="20" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Entry expires after fixed time</text>
+      <text x="20" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">⚠ May serve stale data</text>
+    </g>
+    
+    <!-- Event-Based -->
+    <g transform="translate(370, 80)">
+      <rect x="0" y="0" width="305" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="80" rx="12 0 0 12" fill="url(#eventGrad)"/>
+      <text x="20" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">2. EVENT-BASED</text>
+      <text x="20" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Invalidate on data change events</text>
+      <text x="20" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Accurate, requires event infra</text>
+    </g>
+    
+    <!-- Version-Based -->
+    <g transform="translate(75, 180)">
+      <rect x="0" y="0" width="280" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="80" rx="12 0 0 12" fill="url(#versionGrad)"/>
+      <text x="20" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a78bfa">3. VERSION-BASED</text>
+      <text x="20" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Include version in cache key</text>
+      <text x="20" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">New version = cache miss</text>
+    </g>
+    
+    <!-- Hybrid -->
+    <g transform="translate(370, 180)">
+      <rect x="0" y="0" width="305" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="80" rx="12 0 0 12" fill="url(#hybridGrad)"/>
+      <text x="20" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fcd34d">4. HYBRID</text>
+      <text x="20" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">TTL + Event invalidation</text>
+      <text x="20" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Best of both worlds</text>
+    </g>
+    
+    <!-- Comparison table -->
+    <g transform="translate(75, 285)">
+      <rect x="0" y="0" width="600" height="100" rx="12" fill="#334155"/>
+      <text x="300" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Quick Comparison</text>
+      
+      <g transform="translate(20, 45)">
+        <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Strategy</text>
+        <text x="130" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Complexity</text>
+        <text x="240" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Freshness</text>
+        <text x="350" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Use Case</text>
+        
+        <text x="0" y="25" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">TTL</text>
+        <text x="130" y="25" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Low</text>
+        <text x="240" y="25" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">Eventual</text>
+        <text x="350" y="25" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Static data</text>
+        
+        <text x="0" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Event</text>
+        <text x="130" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Medium</text>
+        <text x="240" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Real-time</text>
+        <text x="350" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Dynamic features</text>
+      </g>
+    </g>
+  </g>
+</svg>

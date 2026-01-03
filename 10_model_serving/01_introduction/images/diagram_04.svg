@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 350">
+  <defs>
+    <linearGradient id="registryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📦 Model Registry</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="75" y="55" width="600" height="280" rx="16" fill="#1e293b"/>
+    <rect x="75" y="55" width="600" height="50" rx="16 16 0 0" fill="url(#registryGrad)"/>
+    <text x="375" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🧠 recommendation_v2.3.1</text>
+    
+    <g transform="translate(100, 125)">
+      <rect x="0" y="0" width="250" height="35" rx="6" fill="#334155"/>
+      <text x="15" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">📁 Artifact:</text>
+      <text x="80" y="23" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">s3://models/rec/v2.3.1/</text>
+      
+      <rect x="270" y="0" width="280" height="35" rx="6" fill="#334155"/>
+      <text x="285" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">📊 Metrics:</text>
+      <text x="350" y="23" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">AUC=0.89, NDCG=0.76</text>
+    </g>
+    
+    <g transform="translate(100, 170)">
+      <rect x="0" y="0" width="250" height="35" rx="6" fill="#334155"/>
+      <text x="15" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">📅 Created:</text>
+      <text x="85" y="23" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">2024-01-15</text>
+      
+      <rect x="270" y="0" width="280" height="35" rx="6" fill="#334155"/>
+      <text x="285" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">🔧 Framework:</text>
+      <text x="370" y="23" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">PyTorch 2.0</text>
+    </g>
+    
+    <g transform="translate(100, 215)">
+      <rect x="0" y="0" width="250" height="35" rx="6" fill="#334155"/>
+      <text x="15" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">📈 Dataset:</text>
+      <text x="85" y="23" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">dataset_20240101</text>
+      
+      <rect x="270" y="0" width="280" height="35" rx="6" fill="#064e3b"/>
+      <text x="285" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">🚀 Stage:</text>
+      <text x="345" y="23" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Production</text>
+    </g>
+    
+    <g transform="translate(100, 265)">
+      <rect x="0" y="0" width="550" height="35" rx="6" fill="#334155"/>
+      <text x="15" y="23" font-family="Segoe UI, sans-serif" font-size="11" fill="#a5b4fc">🏷️ Tags:</text>
+      <rect x="70" y="7" width="100" height="20" rx="10" fill="#6366f1"/>
+      <text x="120" y="21" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">recommendation</text>
+      <rect x="180" y="7" width="75" height="20" rx="10" fill="#10b981"/>
+      <text x="217" y="21" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">production</text>
+      <rect x="265" y="7" width="35" height="20" rx="10" fill="#f59e0b"/>
+      <text x="282" y="21" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">v2</text>
+    </g>
+  </g>
+</svg>

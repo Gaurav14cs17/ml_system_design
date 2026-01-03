@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+  <defs>
+    <filter id="shadow3" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="350" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">Serving Paradigms Comparison</text>
+  
+  <!-- Online Serving -->
+  <g filter="url(#shadow3)">
+    <rect x="30" y="55" width="270" height="280" rx="12" fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+    <text x="165" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2e7d32">⚡ ONLINE SERVING</text>
+    
+    <!-- Flow diagram -->
+    <rect x="55" y="105" width="80" height="35" rx="5" fill="#0f172a" stroke="#66bb6a"/>
+    <text x="95" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#388e3c">👤 Request</text>
+    
+    <path d="M140 122 L160 122" stroke="#388e3c" stroke-width="2"/>
+    <polygon points="160,118 170,122 160,126" fill="#388e3c"/>
+    
+    <rect x="175" y="105" width="60" height="35" rx="5" fill="#0f172a" stroke="#66bb6a"/>
+    <text x="205" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#388e3c">🧠 Model</text>
+    
+    <path d="M240 122 L260 122" stroke="#388e3c" stroke-width="2"/>
+    <polygon points="260,118 270,122 260,126" fill="#388e3c"/>
+    
+    <rect x="55" y="150" width="220" height="25" rx="5" fill="#a5d6a7"/>
+    <text x="165" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1b5e20">⏱️ andlt; 100ms latency</text>
+    
+    <!-- Characteristics -->
+    <text x="50" y="200" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32">✓ Real-time predictions</text>
+    <text x="50" y="220" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32">✓ Single request processing</text>
+    <text x="50" y="240" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32">✓ High availability (99.9%)</text>
+    <text x="50" y="260" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32">✓ Synchronous response</text>
+    
+    <!-- Use cases -->
+    <text x="50" y="290" font-family="Arial, sans-serif" font-size="10" fill="#666">Use: Fraud detection, Recommendations</text>
+    <text x="50" y="305" font-family="Arial, sans-serif" font-size="10" fill="#666">Chatbots, Real-time pricing</text>
+  </g>
+  
+  <!-- Batch Serving -->
+  <g filter="url(#shadow3)">
+    <rect x="315" y="55" width="270" height="280" rx="12" fill="#bbdefb" stroke="#1976d2" stroke-width="2"/>
+    <text x="450" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1565c0">📦 BATCH SERVING</text>
+    
+    <!-- Flow diagram -->
+    <rect x="340" y="105" width="70" height="35" rx="5" fill="#0f172a" stroke="#64b5f6"/>
+    <text x="375" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1976d2">💾 Data</text>
+    <text x="375" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1976d2">Lake</text>
+    
+    <path d="M415 122 L435 122" stroke="#1976d2" stroke-width="2"/>
+    <polygon points="435,118 445,122 435,126" fill="#1976d2"/>
+    
+    <rect x="450" y="105" width="60" height="35" rx="5" fill="#0f172a" stroke="#64b5f6"/>
+    <text x="480" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976d2">🧠 Batch</text>
+    
+    <path d="M515 122 L535 122" stroke="#1976d2" stroke-width="2"/>
+    <polygon points="535,118 545,122 535,126" fill="#1976d2"/>
+    
+    <rect x="340" y="150" width="220" height="25" rx="5" fill="#90caf9"/>
+    <text x="450" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#0d47a1">⏱️ Hours to complete</text>
+    
+    <!-- Characteristics -->
+    <text x="335" y="200" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">✓ High throughput priority</text>
+    <text x="335" y="220" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">✓ Large batch sizes (1000s)</text>
+    <text x="335" y="240" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">✓ Scheduled execution</text>
+    <text x="335" y="260" font-family="Arial, sans-serif" font-size="11" fill="#1565c0">✓ Cost-efficient (spot)</text>
+    
+    <!-- Use cases -->
+    <text x="335" y="290" font-family="Arial, sans-serif" font-size="10" fill="#666">Use: Nightly recommendations</text>
+    <text x="335" y="305" font-family="Arial, sans-serif" font-size="10" fill="#666">Report generation, ETL</text>
+  </g>
+  
+  <!-- Streaming -->
+  <g filter="url(#shadow3)">
+    <rect x="600" y="55" width="270" height="280" rx="12" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+    <text x="735" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f57f17">🌊 STREAMING</text>
+    
+    <!-- Flow diagram -->
+    <rect x="625" y="105" width="70" height="35" rx="5" fill="#0f172a" stroke="#ffca28"/>
+    <text x="660" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f9a825">📡 Event</text>
+    <text x="660" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f9a825">Stream</text>
+    
+    <path d="M700 122 L720 122" stroke="#f9a825" stroke-width="2"/>
+    <polygon points="720,118 730,122 720,126" fill="#f9a825"/>
+    
+    <rect x="735" y="105" width="60" height="35" rx="5" fill="#0f172a" stroke="#ffca28"/>
+    <text x="765" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f9a825">⚙️ Kafka</text>
+    
+    <path d="M800 122 L820 122" stroke="#f9a825" stroke-width="2"/>
+    <polygon points="820,118 830,122 820,126" fill="#f9a825"/>
+    
+    <rect x="625" y="150" width="220" height="25" rx="5" fill="#fff59d"/>
+    <text x="735" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ff6f00">⏱️ Seconds latency</text>
+    
+    <!-- Characteristics -->
+    <text x="620" y="200" font-family="Arial, sans-serif" font-size="11" fill="#f57f17">✓ Continuous processing</text>
+    <text x="620" y="220" font-family="Arial, sans-serif" font-size="11" fill="#f57f17">✓ Event-driven architecture</text>
+    <text x="620" y="240" font-family="Arial, sans-serif" font-size="11" fill="#f57f17">✓ Windowed aggregations</text>
+    <text x="620" y="260" font-family="Arial, sans-serif" font-size="11" fill="#f57f17">✓ Exactly-once semantics</text>
+    
+    <!-- Use cases -->
+    <text x="620" y="290" font-family="Arial, sans-serif" font-size="10" fill="#666">Use: IoT anomaly detection</text>
+    <text x="620" y="305" font-family="Arial, sans-serif" font-size="10" fill="#666">Clickstream, Content moderation</text>
+  </g>
+</svg>
+

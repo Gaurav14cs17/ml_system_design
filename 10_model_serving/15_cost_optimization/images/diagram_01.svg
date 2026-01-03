@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="computeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="storageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="networkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">💰 ML Serving Cost Breakdown</text>
+  
+  <!-- Pie Chart -->
+  <g transform="translate(200, 220)">
+    <!-- Compute (70%) -->
+    <path d="M0,0 L0,-150 A150,150 0 1,1 -142.658,46.353 Z" fill="url(#computeGrad)" filter="url(#shadow)"/>
+    <text x="-30" y="50" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#fff">70%</text>
+    
+    <!-- Storage (10%) -->
+    <path d="M0,0 L-142.658,46.353 A150,150 0 0,1 -92.705,-118.882 Z" fill="url(#storageGrad)" filter="url(#shadow)"/>
+    
+    <!-- Network (10%) -->
+    <path d="M0,0 L-92.705,-118.882 A150,150 0 0,1 46.353,-142.658 Z" fill="url(#networkGrad)" filter="url(#shadow)"/>
+    
+    <!-- Other (10%) -->
+    <path d="M0,0 L46.353,-142.658 A150,150 0 0,1 0,-150 Z" fill="#f59e0b" filter="url(#shadow)"/>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(420, 100)">
+    <rect x="0" y="0" width="380" height="220" rx="14" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Cost Components</text>
+    
+    <!-- Compute -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="24" height="24" rx="4" fill="#ef4444"/>
+      <text x="35" y="12" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fca5a5">Compute (GPU/CPU) - 70%</text>
+      <text x="35" y="28" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Model inference, preprocessing</text>
+    </g>
+    
+    <!-- Storage -->
+    <g transform="translate(20, 95)">
+      <rect x="0" y="0" width="24" height="24" rx="4" fill="#3b82f6"/>
+      <text x="35" y="12" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Storage - 10%</text>
+      <text x="35" y="28" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Model artifacts, logs, features</text>
+    </g>
+    
+    <!-- Network -->
+    <g transform="translate(20, 140)">
+      <rect x="0" y="0" width="24" height="24" rx="4" fill="#10b981"/>
+      <text x="35" y="12" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Network - 10%</text>
+      <text x="35" y="28" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Data transfer, API calls</text>
+    </g>
+    
+    <!-- Other -->
+    <g transform="translate(20, 185)">
+      <rect x="0" y="0" width="24" height="24" rx="4" fill="#f59e0b"/>
+      <text x="35" y="12" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fcd34d">Other - 10%</text>
+      <text x="35" y="28" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Monitoring, logging, ops</text>
+    </g>
+  </g>
+  
+  <!-- Key insight -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="330" width="380" height="50" rx="10" fill="#450a0a"/>
+    <text x="610" y="355" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">💡 Compute costs dominate! Focus optimization on:</text>
+    <text x="610" y="373" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fecaca">GPU utilization, batching, quantization, right-sizing</text>
+  </g>
+  
+  <!-- Cost formula -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="330" width="320" height="50" rx="10" fill="#1e293b"/>
+    <text x="210" y="352" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Cost per prediction =</text>
+    <text x="210" y="372" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">($/hour) × (latency/3600) / utilization</text>
+  </g>
+</svg>

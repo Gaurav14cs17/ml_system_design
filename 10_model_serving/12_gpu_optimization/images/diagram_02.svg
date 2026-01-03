@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500">
+  <defs>
+    <linearGradient id="regGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="sharedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="l2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="globalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="cpuMemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🏗️ GPU Memory Hierarchy</text>
+  
+  <!-- Pyramid structure -->
+  <g filter="url(#shadow)">
+    <!-- Registers (Top - Fastest, Smallest) -->
+    <polygon points="425,70 525,130 325,130" fill="url(#regGrad)" stroke="#fca5a5" stroke-width="2"/>
+    <text x="425" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">Registers</text>
+    
+    <!-- Shared Memory / L1 -->
+    <polygon points="325,135 525,135 575,195 275,195" fill="url(#sharedGrad)" stroke="#fcd34d" stroke-width="2"/>
+    <text x="425" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">Shared Memory / L1</text>
+    
+    <!-- L2 Cache -->
+    <polygon points="275,200 575,200 625,260 225,260" fill="url(#l2Grad)" stroke="#c4b5fd" stroke-width="2"/>
+    <text x="425" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">L2 Cache</text>
+    
+    <!-- Global Memory (HBM) -->
+    <polygon points="225,265 625,265 675,325 175,325" fill="url(#globalGrad)" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="425" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">Global Memory (HBM)</text>
+    
+    <!-- CPU Memory -->
+    <rect x="150" y="340" width="550" height="60" rx="8" fill="url(#cpuMemGrad)" stroke="#60a5fa" stroke-width="2"/>
+    <text x="425" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">CPU Memory (System RAM)</text>
+  </g>
+  
+  <!-- Speed/Size indicators -->
+  <g transform="translate(720, 70)">
+    <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#94a3b8">Speed</text>
+    <path d="M30 10 L30 320" stroke="#475569" stroke-width="2"/>
+    <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#ef4444">Fastest</text>
+    <polygon points="25,10 30,0 35,10" fill="#ef4444"/>
+    <text x="40" y="310" font-family="Segoe UI, sans-serif" font-size="10" fill="#3b82f6">Slowest</text>
+    <polygon points="25,320 30,330 35,320" fill="#3b82f6"/>
+  </g>
+  
+  <g transform="translate(50, 70)">
+    <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#94a3b8">Size</text>
+    <path d="M30 10 L30 320" stroke="#475569" stroke-width="2"/>
+    <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#ef4444">Smallest</text>
+    <polygon points="25,10 30,0 35,10" fill="#ef4444"/>
+    <text x="40" y="310" font-family="Segoe UI, sans-serif" font-size="10" fill="#3b82f6">Largest</text>
+    <polygon points="25,320 30,330 35,320" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Specifications table -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="420" width="550" height="70" rx="10" fill="#1e293b"/>
+    
+    <!-- Headers -->
+    <text x="225" y="442" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Level</text>
+    <text x="350" y="442" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Size</text>
+    <text x="475" y="442" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Bandwidth</text>
+    <text x="600" y="442" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Latency</text>
+    
+    <line x1="160" y1="450" x2="690" y2="450" stroke="#334155" stroke-width="1"/>
+    
+    <!-- Data rows -->
+    <circle cx="185" cy="465" r="5" fill="#ef4444"/>
+    <text x="225" y="470" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fca5a5">Registers</text>
+    <text x="350" y="470" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">~256KB</text>
+    <text x="475" y="470" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">~TB/s</text>
+    <text x="600" y="470" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">~1 cycle</text>
+    
+    <circle cx="185" cy="482" r="5" fill="#f59e0b"/>
+    <text x="225" y="487" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fcd34d">L1/Shared</text>
+    <text x="350" y="487" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">48-164KB</text>
+    <text x="475" y="487" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">~10 TB/s</text>
+    <text x="600" y="487" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">~5 cycles</text>
+  </g>
+  
+  <!-- Key insight -->
+  <rect x="720" y="420" width="120" height="70" rx="8" fill="#064e3b"/>
+  <text x="780" y="445" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#6ee7b7">💡 Key Insight</text>
+  <text x="780" y="465" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a7f3d0">Keep data on</text>
+  <text x="780" y="480" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a7f3d0">GPU, minimize</text>
+  <text x="780" y="495" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a7f3d0">CPU transfers!</text>
+</svg>

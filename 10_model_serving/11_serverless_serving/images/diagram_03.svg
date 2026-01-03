@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="lambdaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="ec2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">💰 Serverless vs Always-On Cost Comparison</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="700" height="445" rx="16" fill="#1e293b"/>
+    
+    <text x="75" y="85" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Scenario: 1M requests/month, 100ms avg latency</text>
+    
+    <!-- Lambda -->
+    <g transform="translate(75, 105)">
+      <rect x="0" y="0" width="300" height="130" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="300" height="40" rx="12 12 0 0" fill="url(#lambdaGrad)"/>
+      <text x="150" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">AWS Lambda (1GB)</text>
+      
+      <text x="15" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Compute: 1M × 0.1s × $0.0000167 =</text>
+      <text x="265" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">$1.67</text>
+      
+      <text x="15" y="85" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Requests: 1M × $0.20/1M =</text>
+      <text x="265" y="85" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">$0.20</text>
+      
+      <rect x="15" y="100" width="270" height="20" rx="4" fill="#1e293b"/>
+      <text x="150" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7">Total: ~$2/month</text>
+    </g>
+    
+    <!-- EC2 -->
+    <g transform="translate(425, 105)">
+      <rect x="0" y="0" width="300" height="130" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="300" height="40" rx="12 12 0 0" fill="url(#ec2Grad)"/>
+      <text x="150" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">EC2 (t3.medium, always-on)</text>
+      
+      <text x="15" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Instance: $0.0416/hr × 730hrs =</text>
+      <text x="265" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">$30.37</text>
+      
+      <rect x="15" y="100" width="270" height="20" rx="4" fill="#1e293b"/>
+      <text x="150" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fca5a5">Total: ~$30/month</text>
+    </g>
+    
+    <!-- Breakeven Analysis -->
+    <g transform="translate(75, 255)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a5b4fc">BREAKEVEN ANALYSIS</text>
+      
+      <rect x="0" y="15" width="650" height="170" rx="12" fill="#334155"/>
+      
+      <!-- Graph area -->
+      <g transform="translate(30, 30)">
+        <!-- Axes -->
+        <line x1="0" y1="120" x2="450" y2="120" stroke="#475569" stroke-width="2"/>
+        <line x1="0" y1="0" x2="0" y2="120" stroke="#475569" stroke-width="2"/>
+        
+        <text x="-15" y="10" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Cost</text>
+        <text x="420" y="135" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Requests</text>
+        
+        <!-- EC2 flat line -->
+        <line x1="0" y1="40" x2="450" y2="40" stroke="#3b82f6" stroke-width="3"/>
+        <text x="460" y="45" font-family="Segoe UI, sans-serif" font-size="9" fill="#60a5fa">EC2 (flat)</text>
+        
+        <!-- Lambda linear -->
+        <line x1="0" y1="110" x2="350" y2="20" stroke="#f59e0b" stroke-width="3"/>
+        <text x="320" y="10" font-family="Segoe UI, sans-serif" font-size="9" fill="#fcd34d">Lambda</text>
+        
+        <!-- Crossover point -->
+        <circle cx="230" cy="40" r="6" fill="#ef4444"/>
+        <text x="230" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fca5a5">Crossover</text>
+        <text x="230" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fca5a5">~18M req/mo</text>
+      </g>
+      
+      <!-- Legend -->
+      <g transform="translate(500, 50)">
+        <rect x="0" y="0" width="130" height="60" rx="6" fill="#1e293b"/>
+        <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Lambda cheaper:</text>
+        <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">andlt;18M req/month</text>
+        <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">EC2 cheaper: steady</text>
+      </g>
+    </g>
+    
+    <!-- Recommendation -->
+    <g transform="translate(75, 445)">
+      <rect x="0" y="0" width="650" height="35" rx="6" fill="#164e63"/>
+      <text x="325" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#22d3ee">💡 Use serverless for variable/low traffic, containers for steady high-volume workloads</text>
+    </g>
+  </g>
+</svg>

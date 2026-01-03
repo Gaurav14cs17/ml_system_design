@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="threatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="defenseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔒 ML Security Threat Model</text>
+  
+  <!-- Central Model -->
+  <g filter="url(#shadow)">
+    <rect x="325" y="170" width="200" height="120" rx="16" fill="#1e293b" stroke="#6366f1" stroke-width="3"/>
+    <text x="425" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🧠 ML Model</text>
+    <text x="425" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Inference Endpoint</text>
+    <text x="425" y="255" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a5b4fc">/predict</text>
+    <text x="425" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Contains sensitive patterns</text>
+  </g>
+  
+  <!-- Threat 1: Model Extraction -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="60" width="180" height="100" rx="12" fill="#450a0a"/>
+    <text x="130" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">🎯 Model Extraction</text>
+    <text x="130" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">Query API repeatedly to</text>
+    <text x="130" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">reconstruct model</text>
+    <text x="130" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">IP theft, competitive harm</text>
+  </g>
+  <path d="M225 110 L320 200" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Threat 2: Adversarial Attacks -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="290" width="180" height="100" rx="12" fill="#450a0a"/>
+    <text x="130" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">🎭 Adversarial Inputs</text>
+    <text x="130" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">Crafted inputs that cause</text>
+    <text x="130" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">misclassification</text>
+    <text x="130" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">Bypass fraud detection</text>
+  </g>
+  <path d="M225 340 L320 260" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Threat 3: Data Poisoning -->
+  <g filter="url(#shadow)">
+    <rect x="630" y="60" width="180" height="100" rx="12" fill="#450a0a"/>
+    <text x="720" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">☠️ Data Poisoning</text>
+    <text x="720" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">Inject malicious data</text>
+    <text x="720" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">during training</text>
+    <text x="720" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">Backdoor attacks</text>
+  </g>
+  <path d="M625 110 L530 200" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Threat 4: Privacy Leakage -->
+  <g filter="url(#shadow)">
+    <rect x="630" y="290" width="180" height="100" rx="12" fill="#450a0a"/>
+    <text x="720" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">🔓 Privacy Leakage</text>
+    <text x="720" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">Extract training data</text>
+    <text x="720" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fecaca">from model outputs</text>
+    <text x="720" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">GDPR violations, PII</text>
+  </g>
+  <path d="M625 340 L530 260" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Defense Layer -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="320" width="350" height="110" rx="14" fill="#064e3b"/>
+    <text x="425" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">🛡️ Defense Strategies</text>
+    
+    <g transform="translate(270, 360)">
+      <rect x="0" y="0" width="145" height="25" rx="4" fill="#10b981"/>
+      <text x="72" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Rate limiting</text>
+      
+      <rect x="155" y="0" width="145" height="25" rx="4" fill="#10b981"/>
+      <text x="227" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Input validation</text>
+    </g>
+    
+    <g transform="translate(270, 390)">
+      <rect x="0" y="0" width="145" height="25" rx="4" fill="#10b981"/>
+      <text x="72" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Differential privacy</text>
+      
+      <rect x="155" y="0" width="145" height="25" rx="4" fill="#10b981"/>
+      <text x="227" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Model watermarking</text>
+    </g>
+  </g>
+</svg>

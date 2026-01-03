@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="tritonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#76b900"/>
+      <stop offset="100%" style="stop-color:#5a8f00"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📊 Throughput Comparison (RPS)</text>
+  <text x="400" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">ResNet-50, Batch Size 1, V100 GPU</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="75" y="70" width="650" height="290" rx="16" fill="#1e293b"/>
+    
+    <g transform="translate(100, 100)">
+      <!-- Flask -->
+      <text x="0" y="18" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">Flask</text>
+      <rect x="100" y="0" width="73" height="30" rx="4" fill="#ef4444"/>
+      <text x="520" y="20" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">120 RPS</text>
+      
+      <!-- FastAPI -->
+      <text x="0" y="58" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">FastAPI</text>
+      <rect x="100" y="40" width="91" height="30" rx="4" fill="#10b981"/>
+      <text x="520" y="60" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">150 RPS</text>
+      
+      <!-- TF Serving -->
+      <text x="0" y="98" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">TF Serving</text>
+      <rect x="100" y="80" width="212" height="30" rx="4" fill="#f59e0b"/>
+      <text x="520" y="100" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">350 RPS</text>
+      
+      <!-- TorchServe -->
+      <text x="0" y="138" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">TorchServe</text>
+      <rect x="100" y="120" width="194" height="30" rx="4" fill="#ef4444"/>
+      <text x="520" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">320 RPS</text>
+      
+      <!-- Triton -->
+      <text x="0" y="178" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">Triton</text>
+      <rect x="100" y="160" width="364" height="30" rx="4" fill="#3b82f6"/>
+      <text x="520" y="180" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">600 RPS</text>
+      
+      <!-- Triton+TRT -->
+      <text x="0" y="218" font-family="Segoe UI, sans-serif" font-size="13" fill="#6ee7b7" font-weight="bold">Triton+TRT</text>
+      <rect x="100" y="200" width="500" height="30" rx="4" fill="url(#tritonGrad)"/>
+      <text x="520" y="220" font-family="Segoe UI, sans-serif" font-size="14" fill="#6ee7b7" font-weight="bold">1100 RPS</text>
+    </g>
+    
+    <!-- Scale reference line -->
+    <line x1="200" y1="335" x2="700" y2="335" stroke="#475569" stroke-width="1"/>
+    <text x="200" y="350" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">0</text>
+    <text x="322" y="350" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">250</text>
+    <text x="450" y="350" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">500</text>
+    <text x="578" y="350" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">750</text>
+    <text x="695" y="350" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">1100</text>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 280">
+  <defs>
+    <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="preGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="infGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="postGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="respGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⏱️ Request Lifecycle Breakdown (100ms Total)</text>
+  
+  <!-- Timeline bar background -->
+  <rect x="50" y="70" width="750" height="60" rx="10" fill="#1e293b" filter="url(#shadow)"/>
+  
+  <!-- Network (10ms = 10%) -->
+  <rect x="50" y="70" width="75" height="60" rx="10 0 0 10" fill="url(#netGrad)"/>
+  <text x="87" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">Network</text>
+  <text x="87" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#bfdbfe">10ms</text>
+  
+  <!-- Preprocess (15ms = 15%) -->
+  <rect x="125" y="70" width="112" height="60" fill="url(#preGrad)"/>
+  <text x="181" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">Preprocess</text>
+  <text x="181" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#ddd6fe">15ms</text>
+  
+  <!-- Inference (50ms = 50%) - Highlighted -->
+  <rect x="237" y="60" width="375" height="80" rx="8" fill="url(#infGrad)" filter="url(#shadow)"/>
+  <text x="424" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">🧠 Model Inference</text>
+  <text x="424" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#a7f3d0">50ms (50%)</text>
+  <text x="424" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#d1fae5">← Primary optimization target</text>
+  
+  <!-- Postprocess (10ms = 10%) -->
+  <rect x="612" y="70" width="75" height="60" fill="url(#postGrad)"/>
+  <text x="649" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">Postproc</text>
+  <text x="649" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fef3c7">10ms</text>
+  
+  <!-- Response (10ms = 10%) -->
+  <rect x="687" y="70" width="75" height="60" fill="url(#respGrad)"/>
+  <text x="724" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">Response</text>
+  <text x="724" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fecaca">10ms</text>
+  
+  <!-- Overhead indicator -->
+  <rect x="762" y="70" width="38" height="60" rx="0 10 10 0" fill="#475569"/>
+  <text x="781" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">OH</text>
+  <text x="781" y="113" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">5ms</text>
+  
+  <!-- Bottom legend -->
+  <g transform="translate(50, 170)">
+    <rect x="0" y="0" width="750" height="90" rx="10" fill="#1e293b"/>
+    
+    <text x="375" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Optimization Impact by Stage</text>
+    
+    <g transform="translate(50, 45)">
+      <circle cx="10" cy="10" r="8" fill="#3b82f6"/>
+      <text x="25" y="14" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Network: CDN, compression</text>
+    </g>
+    
+    <g transform="translate(200, 45)">
+      <circle cx="10" cy="10" r="8" fill="#8b5cf6"/>
+      <text x="25" y="14" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Preproc: Vectorization, caching</text>
+    </g>
+    
+    <g transform="translate(400, 45)">
+      <circle cx="10" cy="10" r="8" fill="#10b981"/>
+      <text x="25" y="14" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7" font-weight="bold">Inference: Batching, quantization, GPU</text>
+    </g>
+    
+    <g transform="translate(100, 70)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b"/>
+      <text x="25" y="14" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Postproc: Async processing</text>
+    </g>
+    
+    <g transform="translate(320, 70)">
+      <circle cx="10" cy="10" r="8" fill="#ef4444"/>
+      <text x="25" y="14" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Response: Streaming, compression</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="opt1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="opt2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="opt3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🚀 Cost Optimization Journey</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="700" height="475" rx="16" fill="#1e293b"/>
+    
+    <!-- Month 1 -->
+    <g transform="translate(75, 85)">
+      <rect x="0" y="0" width="300" height="90" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="90" rx="12 0 0 12" fill="url(#baseGrad)"/>
+      <text x="25" y="25" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fca5a5">Month 1: Baseline</text>
+      <text x="25" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Cost: <tspan fill="#fca5a5">$10,000</tspan>/month</text>
+      <text x="25" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Throughput: 100 RPS | Cost/M: $3.86</text>
+    </g>
+    
+    <!-- Bar 1 -->
+    <g transform="translate(400, 110)">
+      <rect x="0" y="0" width="300" height="40" rx="6" fill="url(#baseGrad)"/>
+      <text x="290" y="26" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">$10,000</text>
+    </g>
+    
+    <line x1="400" y1="175" x2="400" y2="195" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Month 2 -->
+    <g transform="translate(75, 205)">
+      <rect x="0" y="0" width="300" height="90" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="90" rx="12 0 0 12" fill="url(#opt1Grad)"/>
+      <text x="25" y="25" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fcd34d">Month 2: + Right-sizing + Autoscaling</text>
+      <text x="25" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Cost: <tspan fill="#fcd34d">$6,000</tspan>/month <tspan fill="#6ee7b7">(-40%)</tspan></text>
+      <text x="25" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Throughput: 100 RPS | Cost/M: $2.31</text>
+    </g>
+    
+    <!-- Bar 2 -->
+    <g transform="translate(400, 230)">
+      <rect x="0" y="0" width="180" height="40" rx="6" fill="url(#opt1Grad)"/>
+      <text x="170" y="26" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">$6,000</text>
+    </g>
+    
+    <line x1="400" y1="295" x2="400" y2="315" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Month 3 -->
+    <g transform="translate(75, 325)">
+      <rect x="0" y="0" width="300" height="90" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="90" rx="12 0 0 12" fill="url(#opt2Grad)"/>
+      <text x="25" y="25" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#60a5fa">Month 3: + Spot Instances</text>
+      <text x="25" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Cost: <tspan fill="#60a5fa">$2,500</tspan>/month <tspan fill="#6ee7b7">(-75%)</tspan></text>
+      <text x="25" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Throughput: 100 RPS | Cost/M: $0.96</text>
+    </g>
+    
+    <!-- Bar 3 -->
+    <g transform="translate(400, 350)">
+      <rect x="0" y="0" width="75" height="40" rx="6" fill="url(#opt2Grad)"/>
+      <text x="65" y="26" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">$2,500</text>
+    </g>
+    
+    <line x1="400" y1="415" x2="400" y2="435" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Month 4 -->
+    <g transform="translate(75, 445)">
+      <rect x="0" y="0" width="300" height="70" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="8" height="70" rx="12 0 0 12" fill="url(#opt3Grad)"/>
+      <text x="25" y="25" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7">Month 4: + Model Opt + Batching</text>
+      <text x="25" y="50" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Cost: <tspan fill="#6ee7b7">$1,000</tspan>/month <tspan fill="#6ee7b7">(-90%)</tspan> | 500 RPS</text>
+    </g>
+    
+    <!-- Bar 4 -->
+    <g transform="translate(400, 460)">
+      <rect x="0" y="0" width="30" height="40" rx="6" fill="url(#opt3Grad)"/>
+      <text x="45" y="26" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">$1,000</text>
+    </g>
+    
+    <!-- Result -->
+    <g transform="translate(550, 465)">
+      <rect x="0" y="0" width="145" height="45" rx="10" fill="#064e3b"/>
+      <text x="72" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">TOTAL:</text>
+      <text x="72" y="38" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">48× cheaper!</text>
+    </g>
+  </g>
+</svg>

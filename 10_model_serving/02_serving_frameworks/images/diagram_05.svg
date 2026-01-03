@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+  <defs>
+    <linearGradient id="folderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📁 Triton Model Repository Structure</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="75" y="50" width="550" height="355" rx="16" fill="#1e293b"/>
+    
+    <g transform="translate(100, 75)" font-family="JetBrains Mono, monospace" font-size="13">
+      <!-- Root folder -->
+      <text x="0" y="0" fill="url(#folderGrad)">📁 model_repository/</text>
+      
+      <!-- text_classification -->
+      <text x="20" y="30" fill="#94a3b8">├──</text>
+      <text x="55" y="30" fill="#6ee7b7">📁 text_classification/</text>
+      <text x="40" y="55" fill="#94a3b8">│   ├──</text>
+      <text x="95" y="55" fill="#f8fafc">config.pbtxt</text>
+      <text x="40" y="80" fill="#94a3b8">│   └──</text>
+      <text x="95" y="80" fill="#a5b4fc">📁 1/</text>
+      <text x="60" y="105" fill="#94a3b8">│       └──</text>
+      <text x="135" y="105" fill="#3b82f6">model.onnx</text>
+      
+      <!-- image_classifier -->
+      <text x="20" y="140" fill="#94a3b8">├──</text>
+      <text x="55" y="140" fill="#6ee7b7">📁 image_classifier/</text>
+      <text x="40" y="165" fill="#94a3b8">│   ├──</text>
+      <text x="95" y="165" fill="#f8fafc">config.pbtxt</text>
+      <text x="40" y="190" fill="#94a3b8">│   └──</text>
+      <text x="95" y="190" fill="#a5b4fc">📁 1/</text>
+      <text x="60" y="215" fill="#94a3b8">│       └──</text>
+      <text x="135" y="215" fill="#76b900">model.plan</text>
+      <text x="235" y="215" fill="#64748b" font-size="11"># TensorRT optimized</text>
+      
+      <!-- ensemble_pipeline -->
+      <text x="20" y="250" fill="#94a3b8">├──</text>
+      <text x="55" y="250" fill="#6ee7b7">📁 ensemble_pipeline/</text>
+      <text x="40" y="275" fill="#94a3b8">│   ├──</text>
+      <text x="95" y="275" fill="#f8fafc">config.pbtxt</text>
+      <text x="40" y="300" fill="#94a3b8">│   └──</text>
+      <text x="95" y="300" fill="#a5b4fc">📁 1/</text>
+      <text x="135" y="300" fill="#64748b" font-size="11"># orchestration only</text>
+      
+      <!-- python_preprocessor -->
+      <text x="20" y="335" fill="#94a3b8">└──</text>
+      <text x="55" y="335" fill="#6ee7b7">📁 python_preprocessor/</text>
+      <text x="40" y="360" fill="#94a3b8">    ├──</text>
+      <text x="95" y="360" fill="#f8fafc">config.pbtxt</text>
+      <text x="40" y="385" fill="#94a3b8">    └──</text>
+      <text x="95" y="385" fill="#a5b4fc">📁 1/</text>
+      <text x="130" y="385" fill="#94a3b8">└──</text>
+      <text x="165" y="385" fill="#8b5cf6">model.py</text>
+    </g>
+  </g>
+</svg>

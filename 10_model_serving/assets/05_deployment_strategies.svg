@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <filter id="shadow5" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">Deployment Strategies</text>
+  
+  <!-- Blue-Green -->
+  <g filter="url(#shadow5)">
+    <rect x="25" y="50" width="200" height="160" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="125" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">🔵🟢 Blue-Green</text>
+    
+    <rect x="45" y="90" width="70" height="35" rx="5" fill="#2196f3" stroke="#1565c0"/>
+    <text x="80" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Blue v1</text>
+    <text x="80" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976d2">100% →</text>
+    
+    <rect x="130" y="90" width="70" height="35" rx="5" fill="#4caf50" stroke="#2e7d32"/>
+    <text x="165" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Green v2</text>
+    <text x="165" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#388e3c">Standby</text>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">⚡ Instant switch</text>
+    <text x="125" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🔄 Easy rollback</text>
+    <text x="125" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">💰 2x resources</text>
+  </g>
+  
+  <!-- Canary -->
+  <g filter="url(#shadow5)">
+    <rect x="240" y="50" width="200" height="160" rx="10" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+    <text x="340" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f57f17">🐤 Canary</text>
+    
+    <rect x="260" y="90" width="100" height="35" rx="5" fill="#4caf50" stroke="#2e7d32"/>
+    <text x="310" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Stable 95%</text>
+    
+    <rect x="370" y="90" width="50" height="35" rx="5" fill="#ff9800" stroke="#f57c00"/>
+    <text x="395" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">5%</text>
+    
+    <text x="340" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">📈 5% → 25% → 50% → 100%</text>
+    <text x="340" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🔍 Monitor metrics</text>
+    <text x="340" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🛡️ Low risk</text>
+    <text x="340" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">⏱️ Gradual rollout</text>
+  </g>
+  
+  <!-- Shadow -->
+  <g filter="url(#shadow5)">
+    <rect x="455" y="50" width="200" height="160" rx="10" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="555" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6a1b9a">👤 Shadow</text>
+    
+    <rect x="475" y="90" width="80" height="35" rx="5" fill="#4caf50" stroke="#2e7d32"/>
+    <text x="515" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Production</text>
+    
+    <path d="M560 107 L580 107" stroke="#7b1fa2" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <rect x="585" y="90" width="55" height="35" rx="5" fill="#9e9e9e" stroke="#757575"/>
+    <text x="612" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f8fafc">Shadow</text>
+    <text x="612" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f8fafc">(copy)</text>
+    
+    <text x="555" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">📊 Compare outputs</text>
+    <text x="555" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🔕 No user impact</text>
+    <text x="555" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🧪 Safe testing</text>
+    <text x="555" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">💰 Extra compute</text>
+  </g>
+  
+  <!-- A/B Test -->
+  <g filter="url(#shadow5)">
+    <rect x="670" y="50" width="200" height="160" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="770" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32">📊 A/B Test</text>
+    
+    <rect x="690" y="90" width="70" height="35" rx="5" fill="#2196f3" stroke="#1565c0"/>
+    <text x="725" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">A: 50%</text>
+    
+    <rect x="780" y="90" width="70" height="35" rx="5" fill="#ff9800" stroke="#f57c00"/>
+    <text x="815" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">B: 50%</text>
+    
+    <text x="770" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">📈 Statistical analysis</text>
+    <text x="770" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🎯 Business metrics</text>
+    <text x="770" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">⏱️ Run for weeks</text>
+    <text x="770" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">🧪 Hypothesis testing</text>
+  </g>
+  
+  <!-- Comparison -->
+  <g filter="url(#shadow5)">
+    <rect x="25" y="230" width="845" height="155" rx="10" fill="#0f172a" stroke="#e0e0e0"/>
+    <text x="450" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">When to Use Each Strategy</text>
+    
+    <line x1="25" y1="265" x2="870" y2="265" stroke="#e0e0e0"/>
+    
+    <text x="130" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976d2">Blue-Green</text>
+    <text x="130" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Major releases</text>
+    <text x="130" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Breaking changes</text>
+    <text x="130" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Quick rollback needed</text>
+    
+    <line x1="240" y1="275" x2="240" y2="375" stroke="#e0e0e0"/>
+    
+    <text x="345" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f57f17">Canary</text>
+    <text x="345" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Gradual rollouts</text>
+    <text x="345" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Risk mitigation</text>
+    <text x="345" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Monitor as you go</text>
+    
+    <line x1="455" y1="275" x2="455" y2="375" stroke="#e0e0e0"/>
+    
+    <text x="560" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#7b1fa2">Shadow</text>
+    <text x="560" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">New model testing</text>
+    <text x="560" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Performance comparison</text>
+    <text x="560" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">No user impact</text>
+    
+    <line x1="670" y1="275" x2="670" y2="375" stroke="#e0e0e0"/>
+    
+    <text x="775" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">A/B Test</text>
+    <text x="775" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Business experiments</text>
+    <text x="775" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Feature validation</text>
+    <text x="775" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Statistical rigor</text>
+  </g>
+</svg>
+

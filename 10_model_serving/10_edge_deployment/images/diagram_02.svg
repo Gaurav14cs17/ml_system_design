@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📦 Edge Optimization Pipeline</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="75" y="55" width="650" height="525" rx="16" fill="#1e293b"/>
+    
+    <!-- Original Model -->
+    <g transform="translate(275, 75)">
+      <rect x="0" y="0" width="250" height="50" rx="10" fill="#ef4444"/>
+      <text x="125" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">Original Model (500MB, FP32)</text>
+    </g>
+    
+    <line x1="400" y1="125" x2="400" y2="150" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 1 -->
+    <g transform="translate(100, 160)">
+      <rect x="0" y="0" width="600" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="50" height="80" rx="12 0 0 12" fill="url(#stepGrad)"/>
+      <text x="25" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#fff">1</text>
+      <text x="65" y="30" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">ARCHITECTURE OPTIMIZATION</text>
+      <text x="65" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• MobileNet, EfficientNet instead of ResNet</text>
+      <text x="65" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Depthwise separable convolutions • Reduced depth/width</text>
+      <text x="560" y="55" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" fill="#fcd34d">→ 200MB</text>
+    </g>
+    
+    <line x1="400" y1="240" x2="400" y2="265" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2 -->
+    <g transform="translate(100, 275)">
+      <rect x="0" y="0" width="600" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="50" height="80" rx="12 0 0 12" fill="url(#stepGrad)"/>
+      <text x="25" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#fff">2</text>
+      <text x="65" y="30" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">QUANTIZATION</text>
+      <text x="65" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• FP32 → FP16 (2× smaller) → INT8 (4× smaller)</text>
+      <text x="65" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Dynamic vs Static quantization</text>
+      <text x="560" y="55" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" fill="#fcd34d">→ 50MB</text>
+    </g>
+    
+    <line x1="400" y1="355" x2="400" y2="380" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3 -->
+    <g transform="translate(100, 390)">
+      <rect x="0" y="0" width="600" height="80" rx="12" fill="#334155"/>
+      <rect x="0" y="0" width="50" height="80" rx="12 0 0 12" fill="url(#stepGrad)"/>
+      <text x="25" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#fff">3</text>
+      <text x="65" y="30" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">PRUNING</text>
+      <text x="65" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Remove low-magnitude weights • Structured pruning</text>
+      <text x="65" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• 50-90% sparsity achievable</text>
+      <text x="560" y="55" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" fill="#fcd34d">→ 25MB</text>
+    </g>
+    
+    <line x1="400" y1="470" x2="400" y2="495" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Final -->
+    <g transform="translate(275, 505)">
+      <rect x="0" y="0" width="250" height="50" rx="10" fill="#10b981"/>
+      <text x="125" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">Edge-Optimized Model</text>
+      <text x="125" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#d1fae5">10MB (50× reduction!)</text>
+    </g>
+  </g>
+</svg>
