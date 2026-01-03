@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgSparse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowSparse" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgSparse)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🕳️ Sparsity Problem (99%+ Empty)</text>
+  
+  <!-- Matrix Visualization -->
+  <g transform="translate(50, 70)" filter="url(#shadowSparse)">
+    <rect width="400" height="220" rx="14" fill="#1e293b"/>
+    <rect width="400" height="45" rx="14 14 0 0" fill="#ef4444"/>
+    <text x="200" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">User-Item Rating Matrix</text>
+    
+    <!-- Matrix grid -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="360" height="140" rx="8" fill="#334155"/>
+      
+      <!-- Empty cells (majority) -->
+      <g fill="#475569" opacity="0.3">
+        <rect x="10" y="10" width="20" height="15" rx="2"/>
+        <rect x="35" y="10" width="20" height="15" rx="2"/>
+        <rect x="60" y="10" width="20" height="15" rx="2"/>
+        <rect x="110" y="10" width="20" height="15" rx="2"/>
+        <rect x="135" y="10" width="20" height="15" rx="2"/>
+        <rect x="160" y="10" width="20" height="15" rx="2"/>
+        <rect x="185" y="10" width="20" height="15" rx="2"/>
+        <rect x="210" y="10" width="20" height="15" rx="2"/>
+        <rect x="235" y="10" width="20" height="15" rx="2"/>
+        <rect x="260" y="10" width="20" height="15" rx="2"/>
+        <rect x="285" y="10" width="20" height="15" rx="2"/>
+        <rect x="310" y="10" width="20" height="15" rx="2"/>
+        <rect x="335" y="10" width="20" height="15" rx="2"/>
+        
+        <rect x="10" y="30" width="20" height="15" rx="2"/>
+        <rect x="60" y="30" width="20" height="15" rx="2"/>
+        <rect x="85" y="30" width="20" height="15" rx="2"/>
+        <rect x="110" y="30" width="20" height="15" rx="2"/>
+        <rect x="160" y="30" width="20" height="15" rx="2"/>
+        <rect x="185" y="30" width="20" height="15" rx="2"/>
+        <rect x="210" y="30" width="20" height="15" rx="2"/>
+        <rect x="235" y="30" width="20" height="15" rx="2"/>
+        <rect x="260" y="30" width="20" height="15" rx="2"/>
+        <rect x="310" y="30" width="20" height="15" rx="2"/>
+        
+        <rect x="10" y="50" width="20" height="15" rx="2"/>
+        <rect x="35" y="50" width="20" height="15" rx="2"/>
+        <rect x="60" y="50" width="20" height="15" rx="2"/>
+        <rect x="85" y="50" width="20" height="15" rx="2"/>
+        <rect x="135" y="50" width="20" height="15" rx="2"/>
+        <rect x="160" y="50" width="20" height="15" rx="2"/>
+        <rect x="185" y="50" width="20" height="15" rx="2"/>
+        <rect x="235" y="50" width="20" height="15" rx="2"/>
+        <rect x="260" y="50" width="20" height="15" rx="2"/>
+        <rect x="285" y="50" width="20" height="15" rx="2"/>
+        <rect x="335" y="50" width="20" height="15" rx="2"/>
+        
+        <rect x="35" y="70" width="20" height="15" rx="2"/>
+        <rect x="60" y="70" width="20" height="15" rx="2"/>
+        <rect x="85" y="70" width="20" height="15" rx="2"/>
+        <rect x="110" y="70" width="20" height="15" rx="2"/>
+        <rect x="135" y="70" width="20" height="15" rx="2"/>
+        <rect x="185" y="70" width="20" height="15" rx="2"/>
+        <rect x="210" y="70" width="20" height="15" rx="2"/>
+        <rect x="260" y="70" width="20" height="15" rx="2"/>
+        <rect x="285" y="70" width="20" height="15" rx="2"/>
+        <rect x="310" y="70" width="20" height="15" rx="2"/>
+        <rect x="335" y="70" width="20" height="15" rx="2"/>
+        
+        <rect x="10" y="90" width="20" height="15" rx="2"/>
+        <rect x="35" y="90" width="20" height="15" rx="2"/>
+        <rect x="85" y="90" width="20" height="15" rx="2"/>
+        <rect x="110" y="90" width="20" height="15" rx="2"/>
+        <rect x="135" y="90" width="20" height="15" rx="2"/>
+        <rect x="160" y="90" width="20" height="15" rx="2"/>
+        <rect x="185" y="90" width="20" height="15" rx="2"/>
+        <rect x="210" y="90" width="20" height="15" rx="2"/>
+        <rect x="260" y="90" width="20" height="15" rx="2"/>
+        <rect x="285" y="90" width="20" height="15" rx="2"/>
+        <rect x="335" y="90" width="20" height="15" rx="2"/>
+        
+        <rect x="10" y="110" width="20" height="15" rx="2"/>
+        <rect x="60" y="110" width="20" height="15" rx="2"/>
+        <rect x="85" y="110" width="20" height="15" rx="2"/>
+        <rect x="110" y="110" width="20" height="15" rx="2"/>
+        <rect x="135" y="110" width="20" height="15" rx="2"/>
+        <rect x="160" y="110" width="20" height="15" rx="2"/>
+        <rect x="210" y="110" width="20" height="15" rx="2"/>
+        <rect x="235" y="110" width="20" height="15" rx="2"/>
+        <rect x="260" y="110" width="20" height="15" rx="2"/>
+        <rect x="310" y="110" width="20" height="15" rx="2"/>
+      </g>
+      
+      <!-- Observed ratings (rare) -->
+      <g fill="#10b981">
+        <rect x="85" y="10" width="20" height="15" rx="2"/>
+        <rect x="35" y="30" width="20" height="15" rx="2"/>
+        <rect x="135" y="30" width="20" height="15" rx="2"/>
+        <rect x="285" y="30" width="20" height="15" rx="2"/>
+        <rect x="335" y="30" width="20" height="15" rx="2"/>
+        <rect x="110" y="50" width="20" height="15" rx="2"/>
+        <rect x="210" y="50" width="20" height="15" rx="2"/>
+        <rect x="310" y="50" width="20" height="15" rx="2"/>
+        <rect x="10" y="70" width="20" height="15" rx="2"/>
+        <rect x="160" y="70" width="20" height="15" rx="2"/>
+        <rect x="235" y="70" width="20" height="15" rx="2"/>
+        <rect x="60" y="90" width="20" height="15" rx="2"/>
+        <rect x="235" y="90" width="20" height="15" rx="2"/>
+        <rect x="310" y="90" width="20" height="15" rx="2"/>
+        <rect x="35" y="110" width="20" height="15" rx="2"/>
+        <rect x="185" y="110" width="20" height="15" rx="2"/>
+        <rect x="285" y="110" width="20" height="15" rx="2"/>
+        <rect x="335" y="110" width="20" height="15" rx="2"/>
+      </g>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(30, 195)">
+      <rect x="0" y="0" width="15" height="10" rx="2" fill="#475569" opacity="0.3"/>
+      <text x="22" y="9" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Missing rating (99%+)</text>
+      
+      <rect x="150" y="0" width="15" height="10" rx="2" fill="#10b981"/>
+      <text x="172" y="9" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Observed rating (&amp;lt;1%)</text>
+    </g>
+  </g>
+  
+  <!-- Solutions -->
+  <g transform="translate(480, 70)" filter="url(#shadowSparse)">
+    <rect width="370" height="350" rx="14" fill="#1e293b"/>
+    <rect width="370" height="45" rx="14 14 0 0" fill="#10b981"/>
+    <text x="185" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">✅ Solutions</text>
+    
+    <g transform="translate(20, 60)">
+      <!-- Solution 1 -->
+      <rect x="0" y="0" width="330" height="55" rx="10" fill="#334155"/>
+      <circle cx="25" cy="27" r="18" fill="#3b82f6"/>
+      <text x="25" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">1</text>
+      <text x="55" y="22" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Matrix Factorization</text>
+      <text x="55" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Handles sparsity naturally via latent factors</text>
+      
+      <!-- Solution 2 -->
+      <rect x="0" y="65" width="330" height="55" rx="10" fill="#334155"/>
+      <circle cx="25" cy="92" r="18" fill="#8b5cf6"/>
+      <text x="25" y="97" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">2</text>
+      <text x="55" y="87" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Default Voting</text>
+      <text x="55" y="107" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fill missing with user/item/global average</text>
+      
+      <!-- Solution 3 -->
+      <rect x="0" y="130" width="330" height="55" rx="10" fill="#334155"/>
+      <circle cx="25" cy="157" r="18" fill="#f59e0b"/>
+      <text x="25" y="162" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">3</text>
+      <text x="55" y="152" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Implicit Feedback</text>
+      <text x="55" y="172" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Use views, clicks, time spent (denser signal)</text>
+      
+      <!-- Solution 4 -->
+      <rect x="0" y="195" width="330" height="55" rx="10" fill="#334155"/>
+      <circle cx="25" cy="222" r="18" fill="#ec4899"/>
+      <text x="25" y="227" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">4</text>
+      <text x="55" y="217" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Side Information (Hybrid)</text>
+      <text x="55" y="237" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Combine with content-based features</text>
+    </g>
+    
+    <!-- Pro tip -->
+    <g transform="translate(20, 280)">
+      <rect x="0" y="0" width="330" height="50" rx="8" fill="#10b981" opacity="0.15"/>
+      <text x="165" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">💡 Netflix Prize winning solution used</text>
+      <text x="165" y="38" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">ensemble of 100+ models to handle sparsity</text>
+    </g>
+  </g>
+  
+  <!-- Stats -->
+  <g transform="translate(50, 310)" filter="url(#shadowSparse)">
+    <rect width="400" height="100" rx="14" fill="#334155"/>
+    <text x="200" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📊 Real-World Sparsity Examples</text>
+    
+    <g transform="translate(20, 45)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Netflix:</text>
+      <text x="70" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">98.8% sparse</text>
+      <text x="200" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Amazon:</text>
+      <text x="270" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">99.9% sparse</text>
+      
+      <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• MovieLens:</text>
+      <text x="90" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">95% sparse</text>
+      <text x="200" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Spotify:</text>
+      <text x="260" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">99.99% sparse</text>
+    </g>
+  </g>
+</svg>

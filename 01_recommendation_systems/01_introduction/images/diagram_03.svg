@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="servGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🏗️ Recommendation System Architecture</text>
+  
+  <!-- Data Layer -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="200" height="220" rx="14" fill="#0f172a"/>
+    <rect x="50" y="70" width="200" height="50" rx="14 14 0 0" fill="url(#dataGrad)"/>
+    <text x="150" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📊 DATA LAYER</text>
+    
+    <g transform="translate(70, 135)">
+      <rect x="0" y="0" width="160" height="30" rx="6" fill="#dbeafe"/>
+      <text x="80" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e40af">👤 User Data</text>
+      
+      <rect x="0" y="40" width="160" height="30" rx="6" fill="#dbeafe"/>
+      <text x="80" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e40af">📦 Item Data</text>
+      
+      <rect x="0" y="80" width="160" height="30" rx="6" fill="#dbeafe"/>
+      <text x="80" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e40af">🔗 Interactions</text>
+      
+      <rect x="0" y="120" width="160" height="30" rx="6" fill="#dbeafe"/>
+      <text x="80" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e40af">📍 Context</text>
+    </g>
+  </g>
+  
+  <path d="M255 180 L295 180" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Model Layer -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="70" width="200" height="220" rx="14" fill="#0f172a"/>
+    <rect x="300" y="70" width="200" height="50" rx="14 14 0 0" fill="url(#modelGrad)"/>
+    <text x="400" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🧠 MODEL LAYER</text>
+    
+    <g transform="translate(320, 135)">
+      <rect x="0" y="0" width="160" height="30" rx="6" fill="#ede9fe"/>
+      <text x="80" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#5b21b6">⚙️ Training</text>
+      
+      <rect x="0" y="40" width="160" height="30" rx="6" fill="#ede9fe"/>
+      <text x="80" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#5b21b6">🔢 Features</text>
+      
+      <rect x="0" y="80" width="160" height="30" rx="6" fill="#ede9fe"/>
+      <text x="80" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#5b21b6">📐 Embeddings</text>
+      
+      <rect x="0" y="120" width="160" height="30" rx="6" fill="#ede9fe"/>
+      <text x="80" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#5b21b6">🏆 Ranking</text>
+    </g>
+  </g>
+  
+  <path d="M505 180 L545 180" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Serving Layer -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="70" width="200" height="220" rx="14" fill="#0f172a"/>
+    <rect x="550" y="70" width="200" height="50" rx="14 14 0 0" fill="url(#servGrad)"/>
+    <text x="650" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🚀 SERVING LAYER</text>
+    
+    <g transform="translate(570, 135)">
+      <rect x="0" y="0" width="160" height="30" rx="6" fill="#d1fae5"/>
+      <text x="80" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">⚡ Real-time</text>
+      
+      <rect x="0" y="40" width="160" height="30" rx="6" fill="#d1fae5"/>
+      <text x="80" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">📦 Batch</text>
+      
+      <rect x="0" y="80" width="160" height="30" rx="6" fill="#d1fae5"/>
+      <text x="80" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">🔬 A/B Testing</text>
+      
+      <rect x="0" y="120" width="160" height="30" rx="6" fill="#d1fae5"/>
+      <text x="80" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">📈 Monitoring</text>
+    </g>
+  </g>
+</svg>

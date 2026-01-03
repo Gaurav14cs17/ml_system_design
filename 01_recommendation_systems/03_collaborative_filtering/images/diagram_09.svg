@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgCold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="coldBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+    <linearGradient id="warmOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadowCold" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgCold)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">❄️ Cold Start Solutions</text>
+  
+  <!-- New User Section -->
+  <g transform="translate(50, 70)" filter="url(#shadowCold)">
+    <rect width="380" height="340" rx="14" fill="#1e293b"/>
+    <rect width="380" height="50" rx="14 14 0 0" fill="url(#coldBlue)"/>
+    <text x="190" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">👤 New User (No History)</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- Solution 1 -->
+      <rect x="0" y="0" width="340" height="45" rx="8" fill="#334155"/>
+      <circle cx="25" cy="22" r="15" fill="#0ea5e9"/>
+      <text x="25" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">1</text>
+      <text x="50" y="18" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Onboarding</text>
+      <text x="50" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Ask for initial preferences during signup</text>
+      
+      <!-- Solution 2 -->
+      <rect x="0" y="55" width="340" height="45" rx="8" fill="#334155"/>
+      <circle cx="25" cy="77" r="15" fill="#0ea5e9"/>
+      <text x="25" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">2</text>
+      <text x="50" y="73" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Demographics</text>
+      <text x="50" y="90" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Use age, location, device for inference</text>
+      
+      <!-- Solution 3 -->
+      <rect x="0" y="110" width="340" height="45" rx="8" fill="#334155"/>
+      <circle cx="25" cy="132" r="15" fill="#0ea5e9"/>
+      <text x="25" y="137" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">3</text>
+      <text x="50" y="128" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Popular Items</text>
+      <text x="50" y="145" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Recommend trending/popular content</text>
+      
+      <!-- Solution 4 -->
+      <rect x="0" y="165" width="340" height="45" rx="8" fill="#334155"/>
+      <circle cx="25" cy="187" r="15" fill="#0ea5e9"/>
+      <text x="25" y="192" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">4</text>
+      <text x="50" y="183" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Content-Based Fallback</text>
+      <text x="50" y="200" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Use item features until history builds</text>
+      
+      <!-- Solution 5 -->
+      <rect x="0" y="220" width="340" height="45" rx="8" fill="#334155"/>
+      <circle cx="25" cy="242" r="15" fill="#0ea5e9"/>
+      <text x="25" y="247" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">5</text>
+      <text x="50" y="238" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Exploration</text>
+      <text x="50" y="255" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Random sampling with feedback collection</text>
+    </g>
+  </g>
+  
+  <!-- New Item Section -->
+  <g transform="translate(470, 70)" filter="url(#shadowCold)">
+    <rect width="380" height="340" rx="14" fill="#1e293b"/>
+    <rect width="380" height="50" rx="14 14 0 0" fill="url(#warmOrange)"/>
+    <text x="190" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📦 New Item (No Ratings)</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- Solution 1 -->
+      <rect x="0" y="0" width="340" height="50" rx="8" fill="#334155"/>
+      <circle cx="25" cy="25" r="15" fill="#f59e0b"/>
+      <text x="25" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">1</text>
+      <text x="50" y="18" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Content-Based</text>
+      <text x="50" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Use item features (description, category, etc.)</text>
+      
+      <!-- Solution 2 -->
+      <rect x="0" y="60" width="340" height="50" rx="8" fill="#334155"/>
+      <circle cx="25" cy="85" r="15" fill="#f59e0b"/>
+      <text x="25" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">2</text>
+      <text x="50" y="78" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Expert Curation</text>
+      <text x="50" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Editorial recommendations by humans</text>
+      
+      <!-- Solution 3 -->
+      <rect x="0" y="120" width="340" height="50" rx="8" fill="#334155"/>
+      <circle cx="25" cy="145" r="15" fill="#f59e0b"/>
+      <text x="25" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">3</text>
+      <text x="50" y="138" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Boost Exposure</text>
+      <text x="50" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Include in exploration/discovery slots</text>
+      
+      <!-- Solution 4 -->
+      <rect x="0" y="180" width="340" height="50" rx="8" fill="#334155"/>
+      <circle cx="25" cy="205" r="15" fill="#f59e0b"/>
+      <text x="25" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">4</text>
+      <text x="50" y="198" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Similar Items Mapping</text>
+      <text x="50" y="215" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Map to existing similar items</text>
+    </g>
+    
+    <!-- Pro tip -->
+    <g transform="translate(20, 260)">
+      <rect x="0" y="0" width="340" height="55" rx="8" fill="#10b981" opacity="0.15"/>
+      <text x="170" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">💡 Pro Tip</text>
+      <text x="170" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Combine multiple strategies for best results.</text>
+      <text x="170" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Transition to CF as data accumulates.</text>
+    </g>
+  </g>
+</svg>

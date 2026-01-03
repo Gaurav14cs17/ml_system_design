@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        table { width: 100%; border-collapse: collapse; font-family: "Inter", Arial, sans-serif; font-size: 14px; color: #1f2933; }
+        th, td { border: 1px solid #d8dde7; padding: 10px 12px; text-align: left; vertical-align: top; }
+        th { background: #eef2f7; font-weight: 700; }
+        tbody tr:nth-child(even) td { background: #f8fafc; }
+      </style>
+      <table>
+        <thead>
+          <tr>
+            <th>Advantage</th>
+            <th>Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>No Cold Start for Items</strong></td><td>New items can be recommended immediately using features</td></tr>
+          <tr><td><strong>Transparency</strong></td><td>Easy to explain: &amp;quot;Because you liked X with feature Y&amp;quot;</td></tr>
+          <tr><td><strong>User Independence</strong></td><td>Doesn't need other users' data</td></tr>
+          <tr><td><strong>Domain Expertise</strong></td><td>Can leverage rich domain knowledge</td></tr>
+          <tr><td><strong>Niche Items</strong></td><td>Can recommend unpopular items with matching features</td></tr>
+          <tr><td><strong>Privacy</strong></td><td>No need to share user behavior with others</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>
+

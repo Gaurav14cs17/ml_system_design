@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <linearGradient id="dlBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="50%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="700" fill="url(#dlBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Deep Learning Models for Recommendations</text>
+  
+  <!-- NCF -->
+  <g transform="translate(50, 70)">
+    <rect width="250" height="280" rx="15" fill="#e74c3c" opacity="0.85"/>
+    <text x="125" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Neural CF (NCF)</text>
+    
+    <!-- Architecture -->
+    <g transform="translate(25, 50)">
+      <rect x="0" y="0" width="70" height="30" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="35" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">User Embed</text>
+      
+      <rect x="130" y="0" width="70" height="30" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="165" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">Item Embed</text>
+      
+      <!-- GMF path -->
+      <line x1="35" y1="35" x2="35" y2="70" stroke="#fff" stroke-width="1"/>
+      <rect x="10" y="70" width="50" height="25" rx="3" fill="#0f172a" opacity="0.7"/>
+      <text x="35" y="87" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">GMF</text>
+      
+      <!-- MLP path -->
+      <line x1="165" y1="35" x2="165" y2="70" stroke="#fff" stroke-width="1"/>
+      <rect x="140" y="70" width="50" height="25" rx="3" fill="#0f172a" opacity="0.7"/>
+      <text x="165" y="87" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">MLP</text>
+      
+      <!-- Concat -->
+      <line x1="35" y1="95" x2="100" y2="120" stroke="#fff" stroke-width="1"/>
+      <line x1="165" y1="95" x2="100" y2="120" stroke="#fff" stroke-width="1"/>
+      
+      <rect x="60" y="115" width="80" height="25" rx="5" fill="#f39c12"/>
+      <text x="100" y="132" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Concat</text>
+      
+      <!-- Output -->
+      <line x1="100" y1="140" x2="100" y2="160" stroke="#fff" stroke-width="1"/>
+      <circle cx="100" cy="175" r="15" fill="#2ecc71"/>
+      <text x="100" y="180" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">ŷ</text>
+    </g>
+    
+    <text x="125" y="260" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Combines MF + Neural Nets</text>
+  </g>
+  
+  <!-- Two-Tower -->
+  <g transform="translate(325, 70)">
+    <rect width="250" height="280" rx="15" fill="#3498db" opacity="0.85"/>
+    <text x="125" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Two-Tower</text>
+    
+    <!-- Architecture -->
+    <g transform="translate(25, 50)">
+      <!-- User Tower -->
+      <rect x="0" y="0" width="70" height="120" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="35" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9" font-weight="bold">User</text>
+      <text x="35" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">Tower</text>
+      <rect x="10" y="45" width="50" height="15" rx="2" fill="#3498db" opacity="0.5"/>
+      <rect x="10" y="65" width="50" height="15" rx="2" fill="#3498db" opacity="0.5"/>
+      <rect x="10" y="85" width="50" height="15" rx="2" fill="#3498db" opacity="0.5"/>
+      <text x="35" y="110" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">DNN</text>
+      
+      <!-- Item Tower -->
+      <rect x="130" y="0" width="70" height="120" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="165" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Item</text>
+      <text x="165" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">Tower</text>
+      <rect x="140" y="45" width="50" height="15" rx="2" fill="#3498db" opacity="0.5"/>
+      <rect x="140" y="65" width="50" height="15" rx="2" fill="#3498db" opacity="0.5"/>
+      <rect x="140" y="85" width="50" height="15" rx="2" fill="#3498db" opacity="0.5"/>
+      <text x="165" y="110" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">DNN</text>
+      
+      <!-- Embeddings -->
+      <line x1="35" y1="125" x2="35" y2="145" stroke="#fff" stroke-width="1"/>
+      <line x1="165" y1="125" x2="165" y2="145" stroke="#fff" stroke-width="1"/>
+      
+      <circle cx="35" cy="155" r="12" fill="#e74c3c"/>
+      <circle cx="165" cy="155" r="12" fill="#2ecc71"/>
+      
+      <!-- Dot product -->
+      <line x1="47" y1="155" x2="153" y2="155" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="100" y="152" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="10">dot</text>
+      
+      <text x="100" y="185" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">similarity score</text>
+    </g>
+    
+    <text x="125" y="260" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">YouTube-style retrieval</text>
+  </g>
+  
+  <!-- Sequence Models -->
+  <g transform="translate(600, 70)">
+    <rect width="250" height="280" rx="15" fill="#9b59b6" opacity="0.85"/>
+    <text x="125" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Sequence Models</text>
+    
+    <!-- GRU cells -->
+    <g transform="translate(25, 55)">
+      <text x="100" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">User History</text>
+      
+      <rect x="0" y="15" width="40" height="30" rx="3" fill="#0f172a" opacity="0.8"/>
+      <text x="20" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">i₁</text>
+      
+      <rect x="55" y="15" width="40" height="30" rx="3" fill="#0f172a" opacity="0.8"/>
+      <text x="75" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">i₂</text>
+      
+      <rect x="110" y="15" width="40" height="30" rx="3" fill="#0f172a" opacity="0.8"/>
+      <text x="130" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">i₃</text>
+      
+      <rect x="165" y="15" width="40" height="30" rx="3" fill="#0f172a" opacity="0.8"/>
+      <text x="185" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="8">i₄</text>
+      
+      <!-- Arrows down -->
+      <line x1="20" y1="48" x2="20" y2="70" stroke="#fff" stroke-width="1"/>
+      <line x1="75" y1="48" x2="75" y2="70" stroke="#fff" stroke-width="1"/>
+      <line x1="130" y1="48" x2="130" y2="70" stroke="#fff" stroke-width="1"/>
+      <line x1="185" y1="48" x2="185" y2="70" stroke="#fff" stroke-width="1"/>
+      
+      <!-- GRU/Transformer layer -->
+      <rect x="0" y="75" width="200" height="40" rx="5" fill="#f39c12" opacity="0.9"/>
+      <text x="100" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">GRU / Transformer</text>
+      
+      <!-- Hidden states -->
+      <line x1="20" y1="115" x2="20" y2="135" stroke="#fff" stroke-width="1"/>
+      <line x1="75" y1="115" x2="75" y2="135" stroke="#fff" stroke-width="1"/>
+      <line x1="130" y1="115" x2="130" y2="135" stroke="#fff" stroke-width="1"/>
+      <line x1="185" y1="115" x2="185" y2="135" stroke="#fff" stroke-width="1"/>
+      
+      <circle cx="20" cy="145" r="8" fill="#2ecc71" opacity="0.7"/>
+      <circle cx="75" cy="145" r="8" fill="#2ecc71" opacity="0.7"/>
+      <circle cx="130" cy="145" r="8" fill="#2ecc71" opacity="0.7"/>
+      <circle cx="185" cy="145" r="12" fill="#2ecc71"/>
+      
+      <text x="185" y="175" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">→ predict i₅</text>
+    </g>
+    
+    <text x="125" y="260" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">GRU4Rec, SASRec, BERT4Rec</text>
+  </g>
+  
+  <!-- GNN -->
+  <g transform="translate(50, 380)">
+    <rect width="380" height="280" rx="15" fill="#1abc9c" opacity="0.85"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Graph Neural Networks (LightGCN)</text>
+    
+    <!-- Graph visualization -->
+    <g transform="translate(30, 50)">
+      <!-- Users (red) -->
+      <circle cx="50" cy="50" r="20" fill="#e74c3c"/>
+      <text x="50" y="55" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">U1</text>
+      
+      <circle cx="50" cy="130" r="20" fill="#e74c3c"/>
+      <text x="50" y="135" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">U2</text>
+      
+      <circle cx="50" cy="210" r="20" fill="#e74c3c"/>
+      <text x="50" y="215" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">U3</text>
+      
+      <!-- Items (green) -->
+      <circle cx="180" cy="90" r="20" fill="#2ecc71"/>
+      <text x="180" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">I1</text>
+      
+      <circle cx="180" cy="170" r="20" fill="#2ecc71"/>
+      <text x="180" y="175" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">I2</text>
+      
+      <!-- Edges -->
+      <line x1="70" y1="50" x2="160" y2="90" stroke="#fff" stroke-width="1" opacity="0.7"/>
+      <line x1="70" y1="130" x2="160" y2="90" stroke="#fff" stroke-width="1" opacity="0.7"/>
+      <line x1="70" y1="130" x2="160" y2="170" stroke="#fff" stroke-width="1" opacity="0.7"/>
+      <line x1="70" y1="210" x2="160" y2="170" stroke="#fff" stroke-width="1" opacity="0.7"/>
+      
+      <!-- Message passing -->
+      <text x="250" y="60" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Message Passing:</text>
+      <text x="250" y="85" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">e_u = Σ neighbors</text>
+      <text x="250" y="105" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Multi-hop aggregation</text>
+      
+      <text x="250" y="140" fill="#f39c12" font-family="Arial, sans-serif" font-size="10">Final embeddings:</text>
+      <text x="250" y="165" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">E = avg(E⁰, E¹, E², ...)</text>
+      
+      <text x="250" y="200" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Prediction:</text>
+      <text x="250" y="220" fill="#2ecc71" font-family="Arial, sans-serif" font-size="9">score = e_u · e_i</text>
+    </g>
+  </g>
+  
+  <!-- Attention -->
+  <g transform="translate(470, 380)">
+    <rect width="380" height="280" rx="15" fill="#f39c12" opacity="0.85"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Attention Mechanism</text>
+    
+    <g transform="translate(30, 55)">
+      <!-- Query, Key, Value -->
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="40" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Query (Q)</text>
+      
+      <rect x="100" y="0" width="80" height="30" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="140" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Key (K)</text>
+      
+      <rect x="220" y="0" width="80" height="30" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="260" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Value (V)</text>
+      
+      <!-- Arrows -->
+      <line x1="40" y1="35" x2="160" y2="70" stroke="#fff" stroke-width="1"/>
+      <line x1="140" y1="35" x2="160" y2="70" stroke="#fff" stroke-width="1"/>
+      
+      <!-- Attention scores -->
+      <rect x="100" y="75" width="120" height="35" rx="5" fill="#e74c3c"/>
+      <text x="160" y="97" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">softmax(QK^T/√d)</text>
+      
+      <!-- Output -->
+      <line x1="160" y1="110" x2="160" y2="130" stroke="#fff" stroke-width="1"/>
+      <line x1="260" y1="35" x2="160" y2="130" stroke="#fff" stroke-width="1"/>
+      
+      <rect x="100" y="135" width="120" height="35" rx="5" fill="#2ecc71"/>
+      <text x="160" y="157" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Attention × V</text>
+      
+      <!-- Formula -->
+      <text x="160" y="195" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Self-Attention:</text>
+      <text x="160" y="215" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Captures item-item relations</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="450" y="680" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" opacity="0.7">Deep Learning enables learning complex patterns from user behavior at scale</text>
+</svg>
+

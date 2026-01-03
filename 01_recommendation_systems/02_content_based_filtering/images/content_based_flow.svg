@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="cbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72"/>
+      <stop offset="100%" style="stop-color:#2a5298"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00c6ff"/>
+      <stop offset="100%" style="stop-color:#0072ff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00c6ff"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#cbBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Content-Based Filtering Pipeline</text>
+  
+  <!-- Step 1: Item Features -->
+  <g transform="translate(50, 80)">
+    <rect width="200" height="180" rx="15" fill="url(#stepGrad)" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">1. Item Features</text>
+    
+    <!-- Movie example -->
+    <rect x="20" y="50" width="160" height="110" rx="8" fill="#0f172a" opacity="0.95"/>
+    <text x="100" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🎬 Inception</text>
+    <line x1="30" y1="82" x2="170" y2="82" stroke="#ddd" stroke-width="1"/>
+    <text x="35" y="98" fill="#666" font-family="Arial, sans-serif" font-size="10">Genre: Sci-Fi, Action</text>
+    <text x="35" y="113" fill="#666" font-family="Arial, sans-serif" font-size="10">Director: Nolan</text>
+    <text x="35" y="128" fill="#666" font-family="Arial, sans-serif" font-size="10">Year: 2010</text>
+    <text x="35" y="143" fill="#666" font-family="Arial, sans-serif" font-size="10">Keywords: dreams, heist</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M260 170 L310 170" stroke="url(#arrowGrad)" stroke-width="4" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Feature Extraction -->
+  <g transform="translate(320, 80)">
+    <rect width="200" height="180" rx="15" fill="url(#stepGrad)" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">2. Feature Vector</text>
+    
+    <rect x="20" y="50" width="160" height="110" rx="8" fill="#0f172a" opacity="0.95"/>
+    <text x="100" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">TF-IDF / Embeddings</text>
+    <line x1="30" y1="82" x2="170" y2="82" stroke="#ddd" stroke-width="1"/>
+    
+    <!-- Vector representation -->
+    <text x="35" y="100" fill="#666" font-family="monospace" font-size="10">[0.8, 0.0, 0.7,</text>
+    <text x="35" y="115" fill="#666" font-family="monospace" font-size="10"> 0.0, 0.9, 0.2,</text>
+    <text x="35" y="130" fill="#666" font-family="monospace" font-size="10"> 0.5, 0.0, 0.3]</text>
+    <text x="100" y="152" text-anchor="middle" fill="#f5576c" font-family="Arial, sans-serif" font-size="10">→ n-dimensional vector</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M530 170 L580 170" stroke="url(#arrowGrad)" stroke-width="4" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: User Profile -->
+  <g transform="translate(590, 80)">
+    <rect width="260" height="180" rx="15" fill="url(#stepGrad)" opacity="0.9"/>
+    <text x="130" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">3. User Profile</text>
+    
+    <rect x="20" y="50" width="220" height="110" rx="8" fill="#0f172a" opacity="0.95"/>
+    <text x="130" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Aggregated from liked items</text>
+    <line x1="30" y1="82" x2="230" y2="82" stroke="#ddd" stroke-width="1"/>
+    
+    <text x="35" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">User likes: Inception, Matrix, Tenet</text>
+    <text x="35" y="118" fill="#666" font-family="Arial, sans-serif" font-size="10">Profile = weighted_avg(features)</text>
+    <text x="35" y="140" fill="#f5576c" font-family="monospace" font-size="10">[0.85, 0.1, 0.75, 0.0, 0.88...]</text>
+  </g>
+  
+  <!-- Step 4: Similarity Computation -->
+  <g transform="translate(160, 310)">
+    <rect width="260" height="180" rx="15" fill="url(#stepGrad)" opacity="0.9"/>
+    <text x="130" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">4. Similarity Calculation</text>
+    
+    <rect x="20" y="50" width="220" height="110" rx="8" fill="#0f172a" opacity="0.95"/>
+    
+    <!-- Cosine similarity formula -->
+    <text x="130" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Cosine Similarity</text>
+    <text x="130" y="100" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">cos(θ) = (A·B) / (|A|×|B|)</text>
+    
+    <!-- Visual -->
+    <line x1="60" y1="130" x2="120" y2="130" stroke="#f5576c" stroke-width="2"/>
+    <line x1="60" y1="130" x2="100" y2="110" stroke="#00c6ff" stroke-width="2"/>
+    <text x="80" y="145" fill="#666" font-family="Arial, sans-serif" font-size="9">θ = angle</text>
+    <text x="150" y="130" fill="#666" font-family="Arial, sans-serif" font-size="10">sim = 0.92</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M430 400 L480 400" stroke="url(#arrowGrad)" stroke-width="4" marker-end="url(#arrow)"/>
+  
+  <!-- Step 5: Recommendations -->
+  <g transform="translate(490, 310)">
+    <rect width="360" height="180" rx="15" fill="url(#stepGrad)" opacity="0.9"/>
+    <text x="180" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">5. Top-K Recommendations</text>
+    
+    <rect x="20" y="50" width="320" height="110" rx="8" fill="#0f172a" opacity="0.95"/>
+    
+    <!-- Ranked list -->
+    <text x="35" y="72" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Sorted by similarity score:</text>
+    <text x="35" y="95" fill="#4CAF50" font-family="Arial, sans-serif" font-size="11">🥇 Interstellar (0.94)</text>
+    <text x="35" y="115" fill="#2196F3" font-family="Arial, sans-serif" font-size="11">🥈 The Prestige (0.89)</text>
+    <text x="35" y="135" fill="#FF9800" font-family="Arial, sans-serif" font-size="11">🥉 Blade Runner 2049 (0.85)</text>
+    
+    <text x="220" y="95" fill="#666" font-family="Arial, sans-serif" font-size="10">Similar: Sci-Fi</text>
+    <text x="220" y="115" fill="#666" font-family="Arial, sans-serif" font-size="10">Similar: Nolan</text>
+    <text x="220" y="135" fill="#666" font-family="Arial, sans-serif" font-size="10">Similar: Visuals</text>
+  </g>
+  
+  <!-- Key insight box -->
+  <g transform="translate(50, 520)">
+    <rect width="800" height="60" rx="10" fill="#0f172a" opacity="0.1"/>
+    <text x="400" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">💡 Key Insight</text>
+    <text x="400" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Content-Based Filtering recommends items with features similar to what the user has liked before</text>
+  </g>
+</svg>
+

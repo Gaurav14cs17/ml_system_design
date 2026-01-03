@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="feBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#232526"/>
+      <stop offset="100%" style="stop-color:#414345"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="550" fill="url(#feBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Feature Types for Recommendation Systems</text>
+  
+  <!-- User Features -->
+  <g transform="translate(50, 80)">
+    <rect width="380" height="200" rx="15" fill="#3498db" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">👤 User Features</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="160" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Static</text>
+      <text x="10" y="40" fill="#666" font-family="Arial, sans-serif" font-size="10">• Age, Gender</text>
+      <text x="10" y="55" fill="#666" font-family="Arial, sans-serif" font-size="10">• Location</text>
+      <text x="10" y="70" fill="#666" font-family="Arial, sans-serif" font-size="10">• Account type</text>
+      <text x="10" y="85" fill="#666" font-family="Arial, sans-serif" font-size="10">• Registration date</text>
+      <text x="10" y="105" fill="#3498db" font-family="Arial, sans-serif" font-size="9">→ Demographics</text>
+    </g>
+    
+    <g transform="translate(200, 50)">
+      <rect width="160" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Behavioral</text>
+      <text x="10" y="40" fill="#666" font-family="Arial, sans-serif" font-size="10">• Click history</text>
+      <text x="10" y="55" fill="#666" font-family="Arial, sans-serif" font-size="10">• Purchase patterns</text>
+      <text x="10" y="70" fill="#666" font-family="Arial, sans-serif" font-size="10">• Session duration</text>
+      <text x="10" y="85" fill="#666" font-family="Arial, sans-serif" font-size="10">• Avg rating given</text>
+      <text x="10" y="105" fill="#3498db" font-family="Arial, sans-serif" font-size="9">→ Preferences</text>
+    </g>
+  </g>
+  
+  <!-- Item Features -->
+  <g transform="translate(470, 80)">
+    <rect width="380" height="200" rx="15" fill="#e74c3c" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">📦 Item Features</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="160" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Content</text>
+      <text x="10" y="40" fill="#666" font-family="Arial, sans-serif" font-size="10">• Title, Description</text>
+      <text x="10" y="55" fill="#666" font-family="Arial, sans-serif" font-size="10">• Category, Tags</text>
+      <text x="10" y="70" fill="#666" font-family="Arial, sans-serif" font-size="10">• Price, Brand</text>
+      <text x="10" y="85" fill="#666" font-family="Arial, sans-serif" font-size="10">• Image features</text>
+      <text x="10" y="105" fill="#e74c3c" font-family="Arial, sans-serif" font-size="9">→ Metadata</text>
+    </g>
+    
+    <g transform="translate(200, 50)">
+      <rect width="160" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Popularity</text>
+      <text x="10" y="40" fill="#666" font-family="Arial, sans-serif" font-size="10">• View count</text>
+      <text x="10" y="55" fill="#666" font-family="Arial, sans-serif" font-size="10">• CTR, Conv rate</text>
+      <text x="10" y="70" fill="#666" font-family="Arial, sans-serif" font-size="10">• Avg rating</text>
+      <text x="10" y="85" fill="#666" font-family="Arial, sans-serif" font-size="10">• Trending score</text>
+      <text x="10" y="105" fill="#e74c3c" font-family="Arial, sans-serif" font-size="9">→ Quality signals</text>
+    </g>
+  </g>
+  
+  <!-- Interaction Features -->
+  <g transform="translate(50, 310)">
+    <rect width="380" height="200" rx="15" fill="#9b59b6" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🔗 Interaction Features</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="340" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">User-Item History</text>
+      
+      <text x="20" y="45" fill="#666" font-family="Arial, sans-serif" font-size="10">• Has user viewed this item?</text>
+      <text x="20" y="62" fill="#666" font-family="Arial, sans-serif" font-size="10">• Previous rating on this item</text>
+      <text x="20" y="79" fill="#666" font-family="Arial, sans-serif" font-size="10">• Days since last interaction</text>
+      <text x="20" y="96" fill="#666" font-family="Arial, sans-serif" font-size="10">• Similar items user liked</text>
+      <text x="20" y="113" fill="#9b59b6" font-family="Arial, sans-serif" font-size="9">→ Cross features between user &amp; item</text>
+    </g>
+  </g>
+  
+  <!-- Context Features -->
+  <g transform="translate(470, 310)">
+    <rect width="380" height="200" rx="15" fill="#1abc9c" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🌍 Context Features</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="160" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Temporal</text>
+      <text x="10" y="40" fill="#666" font-family="Arial, sans-serif" font-size="10">• Time of day</text>
+      <text x="10" y="55" fill="#666" font-family="Arial, sans-serif" font-size="10">• Day of week</text>
+      <text x="10" y="70" fill="#666" font-family="Arial, sans-serif" font-size="10">• Season</text>
+      <text x="10" y="85" fill="#666" font-family="Arial, sans-serif" font-size="10">• Holiday</text>
+      <text x="10" y="105" fill="#1abc9c" font-family="Arial, sans-serif" font-size="9">→ When</text>
+    </g>
+    
+    <g transform="translate(200, 50)">
+      <rect width="160" height="130" rx="8" fill="#0f172a" opacity="0.95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Environmental</text>
+      <text x="10" y="40" fill="#666" font-family="Arial, sans-serif" font-size="10">• Device type</text>
+      <text x="10" y="55" fill="#666" font-family="Arial, sans-serif" font-size="10">• Platform (iOS/Web)</text>
+      <text x="10" y="70" fill="#666" font-family="Arial, sans-serif" font-size="10">• Location</text>
+      <text x="10" y="85" fill="#666" font-family="Arial, sans-serif" font-size="10">• Session info</text>
+      <text x="10" y="105" fill="#1abc9c" font-family="Arial, sans-serif" font-size="9">→ Where/How</text>
+    </g>
+  </g>
+</svg>
+

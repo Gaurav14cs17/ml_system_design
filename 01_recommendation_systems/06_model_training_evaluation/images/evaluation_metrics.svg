@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="evalBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#evalBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Evaluation Metrics for RecSys</text>
+  
+  <!-- Offline Metrics -->
+  <g transform="translate(50, 70)">
+    <rect width="380" height="480" rx="15" fill="#2980b9" opacity="0.2"/>
+    <text x="190" y="30" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="20" font-weight="bold">📊 Offline Metrics</text>
+    
+    <!-- Precision@K -->
+    <g transform="translate(20, 50)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Precision@K</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Relevant items in top-K / K</text>
+      <text x="20" y="65" fill="#2980b9" font-family="Arial, sans-serif" font-size="10">Example: 3 relevant in top-10 → P@10 = 0.30</text>
+    </g>
+    
+    <!-- Recall@K -->
+    <g transform="translate(20, 140)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Recall@K</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Relevant in top-K / All relevant</text>
+      <text x="20" y="65" fill="#2980b9" font-family="Arial, sans-serif" font-size="10">Example: Found 3 of 5 relevant → R@10 = 0.60</text>
+    </g>
+    
+    <!-- NDCG@K -->
+    <g transform="translate(20, 230)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">NDCG@K</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Normalized Discounted Cumulative Gain</text>
+      <text x="20" y="65" fill="#2980b9" font-family="Arial, sans-serif" font-size="10">Rewards items at higher positions more</text>
+    </g>
+    
+    <!-- MRR -->
+    <g transform="translate(20, 320)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">MRR (Mean Reciprocal Rank)</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">1 / position of first relevant item</text>
+      <text x="20" y="65" fill="#2980b9" font-family="Arial, sans-serif" font-size="10">First hit at pos 3 → RR = 1/3 = 0.33</text>
+    </g>
+    
+    <!-- Hit Rate -->
+    <g transform="translate(20, 410)">
+      <rect width="340" height="60" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Hit Rate@K</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">% of users with at least 1 hit in top-K</text>
+    </g>
+  </g>
+  
+  <!-- Online Metrics -->
+  <g transform="translate(470, 70)">
+    <rect width="380" height="480" rx="15" fill="#27ae60" opacity="0.2"/>
+    <text x="190" y="30" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="20" font-weight="bold">📈 Online Metrics</text>
+    
+    <!-- CTR -->
+    <g transform="translate(20, 50)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Click-Through Rate (CTR)</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Clicks / Impressions</text>
+      <text x="20" y="65" fill="#27ae60" font-family="Arial, sans-serif" font-size="10">100 clicks on 2000 impressions → CTR = 5%</text>
+    </g>
+    
+    <!-- Conversion -->
+    <g transform="translate(20, 140)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Conversion Rate</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Purchases / Clicks (or Impressions)</text>
+      <text x="20" y="65" fill="#27ae60" font-family="Arial, sans-serif" font-size="10">Direct business impact measure</text>
+    </g>
+    
+    <!-- Engagement -->
+    <g transform="translate(20, 230)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Engagement Metrics</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Session duration, pages viewed, dwell time</text>
+      <text x="20" y="65" fill="#27ae60" font-family="Arial, sans-serif" font-size="10">Measures user satisfaction indirectly</text>
+    </g>
+    
+    <!-- Retention -->
+    <g transform="translate(20, 320)">
+      <rect width="340" height="80" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">User Retention</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">% of users returning in N days</text>
+      <text x="20" y="65" fill="#27ae60" font-family="Arial, sans-serif" font-size="10">Long-term health of recommendations</text>
+    </g>
+    
+    <!-- Revenue -->
+    <g transform="translate(20, 410)">
+      <rect width="340" height="60" rx="10" fill="#0f172a" opacity="0.95"/>
+      <text x="170" y="22" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Revenue per User</text>
+      <text x="170" y="42" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="11">Total revenue / active users</text>
+    </g>
+  </g>
+  
+  <!-- A/B Testing note -->
+  <g transform="translate(250, 565)">
+    <text x="200" y="0" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚠️ Online metrics via A/B testing are the gold standard</text>
+  </g>
+</svg>
+

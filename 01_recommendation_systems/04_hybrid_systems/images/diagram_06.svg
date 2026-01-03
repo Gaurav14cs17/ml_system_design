@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgWS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowWS" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgWS)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🎚️ Weight Selection Strategies</text>
+  
+  <!-- Row 1 -->
+  <!-- Fixed Weights -->
+  <g transform="translate(50, 70)" filter="url(#shadowWS)">
+    <rect width="260" height="120" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#64748b"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">1. 🔧 Fixed Weights</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Based on domain knowledge</text>
+    <rect x="60" y="90" width="140" height="22" rx="5" fill="#64748b" opacity="0.3"/>
+    <text x="130" y="106" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#94a3b8">α=0.7, β=0.3</text>
+  </g>
+  
+  <!-- Grid Search -->
+  <g transform="translate(320, 70)" filter="url(#shadowWS)">
+    <rect width="260" height="120" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">2. 🔍 Grid Search</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Try all combinations on</text>
+    <text x="130" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">validation set</text>
+  </g>
+  
+  <!-- Learned Weights -->
+  <g transform="translate(590, 70)" filter="url(#shadowWS)">
+    <rect width="260" height="120" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">3. 🧠 Learned Weights</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Use regression to learn</text>
+    <text x="130" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">optimal combination</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <!-- User-Specific -->
+  <g transform="translate(50, 210)" filter="url(#shadowWS)">
+    <rect width="260" height="150" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#10b981"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">4. 👤 User-Specific</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="220" height="35" rx="6" fill="#10b981" opacity="0.15"/>
+      <text x="110" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">New users:</text>
+      <text x="110" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Weight content-based higher</text>
+      
+      <rect x="0" y="45" width="220" height="35" rx="6" fill="#10b981" opacity="0.15"/>
+      <text x="110" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Power users:</text>
+      <text x="110" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Weight collaborative higher</text>
+    </g>
+  </g>
+  
+  <!-- Item-Specific -->
+  <g transform="translate(320, 210)" filter="url(#shadowWS)">
+    <rect width="260" height="150" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">5. 📦 Item-Specific</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="220" height="35" rx="6" fill="#f59e0b" opacity="0.15"/>
+      <text x="110" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">New items:</text>
+      <text x="110" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Weight content-based higher</text>
+      
+      <rect x="0" y="45" width="220" height="35" rx="6" fill="#f59e0b" opacity="0.15"/>
+      <text x="110" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Popular items:</text>
+      <text x="110" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Weight collaborative higher</text>
+    </g>
+  </g>
+  
+  <!-- Confidence-Based -->
+  <g transform="translate(590, 210)" filter="url(#shadowWS)">
+    <rect width="260" height="150" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#ec4899"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">6. 📊 Confidence-Based</text>
+    
+    <g transform="translate(20, 60)">
+      <text x="110" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Weight each method by its</text>
+      <text x="110" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">prediction confidence</text>
+      
+      <rect x="0" y="50" width="220" height="30" rx="6" fill="#ec4899" opacity="0.15"/>
+      <text x="110" y="70" text-anchor="middle" font-family="Segoe UI, monospace" font-size="9" fill="#f9a8d4">w = softmax(confidences)</text>
+    </g>
+  </g>
+  
+  <!-- Best Practice -->
+  <g transform="translate(50, 390)" filter="url(#shadowWS)">
+    <rect width="800" height="80" rx="12" fill="#334155"/>
+    <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">💡 Best Practice: Start Simple, Then Optimize</text>
+    <text x="400" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Begin with fixed weights (e.g., 0.6/0.4), then use grid search or learned weights</text>
+    <text x="400" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">as you collect more data on user behavior</text>
+  </g>
+</svg>

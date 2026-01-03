@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGRU" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="gruGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <filter id="shadowGRU" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowGRU" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#ec4899"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGRU)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🔄 GRU4Rec: Session-Based Recommendations</text>
+  
+  <!-- Session -->
+  <g transform="translate(100, 70)">
+    <rect width="700" height="50" rx="10" fill="#334155"/>
+    <text x="350" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Session:</text>
+    <text x="350" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">[Item1, Item2, Item3, Item4] → Predict: Item5</text>
+  </g>
+  
+  <!-- Items row -->
+  <g transform="translate(100, 140)">
+    <g transform="translate(0, 0)" filter="url(#shadowGRU)">
+      <rect width="130" height="50" rx="10" fill="#8b5cf6"/>
+      <text x="65" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Item1</text>
+    </g>
+    <g transform="translate(150, 0)" filter="url(#shadowGRU)">
+      <rect width="130" height="50" rx="10" fill="#8b5cf6"/>
+      <text x="65" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Item2</text>
+    </g>
+    <g transform="translate(300, 0)" filter="url(#shadowGRU)">
+      <rect width="130" height="50" rx="10" fill="#8b5cf6"/>
+      <text x="65" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Item3</text>
+    </g>
+    <g transform="translate(450, 0)" filter="url(#shadowGRU)">
+      <rect width="130" height="50" rx="10" fill="#8b5cf6"/>
+      <text x="65" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Item4</text>
+    </g>
+  </g>
+  
+  <!-- Arrows down -->
+  <path d="M165 195 L165 225" stroke="#64748b" stroke-width="2"/>
+  <path d="M315 195 L315 225" stroke="#64748b" stroke-width="2"/>
+  <path d="M465 195 L465 225" stroke="#64748b" stroke-width="2"/>
+  <path d="M615 195 L615 225" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Embeddings -->
+  <g transform="translate(100, 230)">
+    <rect x="30" y="0" width="70" height="30" rx="6" fill="#334155"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Embed</text>
+    <rect x="180" y="0" width="70" height="30" rx="6" fill="#334155"/>
+    <text x="215" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Embed</text>
+    <rect x="330" y="0" width="70" height="30" rx="6" fill="#334155"/>
+    <text x="365" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Embed</text>
+    <rect x="480" y="0" width="70" height="30" rx="6" fill="#334155"/>
+    <text x="515" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Embed</text>
+  </g>
+  
+  <!-- Arrows down to GRU -->
+  <path d="M165 265 L165 295" stroke="#64748b" stroke-width="2"/>
+  <path d="M315 265 L315 295" stroke="#64748b" stroke-width="2"/>
+  <path d="M465 265 L465 295" stroke="#64748b" stroke-width="2"/>
+  <path d="M615 265 L615 295" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- GRU Layer -->
+  <g transform="translate(80, 300)" filter="url(#shadowGRU)">
+    <rect width="640" height="80" rx="14" fill="#1e293b"/>
+    <rect width="640" height="35" rx="14 14 0 0" fill="url(#gruGrad)"/>
+    <text x="320" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">GRU Layer</text>
+    
+    <!-- Hidden states -->
+    <g transform="translate(40, 45)">
+      <circle cx="45" cy="15" r="15" fill="#ec4899"/>
+      <text x="45" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">h₁</text>
+      
+      <path d="M70 15 L120 15" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowGRU)"/>
+      
+      <circle cx="150" cy="15" r="15" fill="#ec4899"/>
+      <text x="150" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">h₂</text>
+      
+      <path d="M175 15 L225 15" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowGRU)"/>
+      
+      <circle cx="255" cy="15" r="15" fill="#ec4899"/>
+      <text x="255" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">h₃</text>
+      
+      <path d="M280 15 L330 15" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowGRU)"/>
+      
+      <circle cx="360" cy="15" r="15" fill="#f59e0b"/>
+      <text x="360" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">h₄</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down from h4 -->
+  <path d="M480 385 L480 415" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowGRU)"/>
+  
+  <!-- Output Layer -->
+  <g transform="translate(380, 420)" filter="url(#shadowGRU)">
+    <rect width="200" height="60" rx="12" fill="#10b981"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Output Layer</text>
+    <text x="100" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">Scores for all items</text>
+  </g>
+  
+  <!-- Key Features -->
+  <g transform="translate(650, 300)">
+    <rect width="170" height="100" rx="10" fill="#334155"/>
+    <text x="85" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🔑 Key Features</text>
+    <text x="85" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Sequential modeling</text>
+    <text x="85" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Session-aware</text>
+    <text x="85" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• No explicit user ID</text>
+    <text x="85" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Real-time capable</text>
+  </g>
+</svg>

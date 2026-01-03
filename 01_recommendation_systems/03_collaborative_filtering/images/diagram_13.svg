@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bgBest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowBest" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgBest)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">✅ Data Quality Best Practices</text>
+  
+  <!-- DO Section -->
+  <g transform="translate(50, 70)" filter="url(#shadowBest)">
+    <rect width="340" height="290" rx="14" fill="#1e293b"/>
+    <rect width="340" height="50" rx="14 14 0 0" fill="#10b981"/>
+    <text x="170" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">✅ DO</text>
+    
+    <g transform="translate(20, 70)">
+      <rect x="0" y="0" width="300" height="45" rx="8" fill="#10b981" opacity="0.1"/>
+      <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">✓</text>
+      <text x="40" y="18" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Clean and validate ratings data</text>
+      <text x="40" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Remove duplicates, check constraints</text>
+      
+      <rect x="0" y="55" width="300" height="45" rx="8" fill="#10b981" opacity="0.1"/>
+      <text x="15" y="73" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">✓</text>
+      <text x="40" y="73" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Handle outliers</text>
+      <text x="40" y="90" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Remove or cap extreme ratings</text>
+      
+      <rect x="0" y="110" width="300" height="45" rx="8" fill="#10b981" opacity="0.1"/>
+      <text x="15" y="128" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">✓</text>
+      <text x="40" y="128" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Use implicit signals</text>
+      <text x="40" y="145" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">When explicit ratings are sparse</text>
+      
+      <rect x="0" y="165" width="300" height="45" rx="8" fill="#10b981" opacity="0.1"/>
+      <text x="15" y="183" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">✓</text>
+      <text x="40" y="183" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Time-based weighting</text>
+      <text x="40" y="200" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Recent interactions &amp;gt; old ones</text>
+    </g>
+  </g>
+  
+  <!-- DON'T Section -->
+  <g transform="translate(410, 70)" filter="url(#shadowBest)">
+    <rect width="340" height="290" rx="14" fill="#1e293b"/>
+    <rect width="340" height="50" rx="14 14 0 0" fill="#ef4444"/>
+    <text x="170" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">❌ DON'T</text>
+    
+    <g transform="translate(20, 70)">
+      <rect x="0" y="0" width="300" height="55" rx="8" fill="#ef4444" opacity="0.1"/>
+      <text x="15" y="23" font-family="Segoe UI, sans-serif" font-size="16" fill="#f87171">✗</text>
+      <text x="40" y="23" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Include bot/spam accounts</text>
+      <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Detect and filter fake interactions</text>
+      
+      <rect x="0" y="65" width="300" height="55" rx="8" fill="#ef4444" opacity="0.1"/>
+      <text x="15" y="88" font-family="Segoe UI, sans-serif" font-size="16" fill="#f87171">✗</text>
+      <text x="40" y="88" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Mix different rating scales</text>
+      <text x="40" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Normalize before combining</text>
+      
+      <rect x="0" y="130" width="300" height="55" rx="8" fill="#ef4444" opacity="0.1"/>
+      <text x="15" y="153" font-family="Segoe UI, sans-serif" font-size="16" fill="#f87171">✗</text>
+      <text x="40" y="153" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Ignore data freshness</text>
+      <text x="40" y="170" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Stale data = bad recommendations</text>
+    </g>
+    
+    <!-- Pro tip -->
+    <g transform="translate(20, 210)">
+      <rect x="0" y="0" width="300" height="55" rx="8" fill="#f59e0b" opacity="0.15"/>
+      <text x="150" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">💡 Pro Tip</text>
+      <text x="150" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Build a data quality pipeline with</text>
+      <text x="150" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">automated anomaly detection</text>
+    </g>
+  </g>
+</svg>

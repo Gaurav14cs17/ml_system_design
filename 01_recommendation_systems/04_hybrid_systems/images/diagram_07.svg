@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgSwitch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowSwitch" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowSw" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgSwitch)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🔀 Switching Hybrid</text>
+  
+  <!-- Condition Check -->
+  <g transform="translate(350, 70)" filter="url(#shadowSwitch)">
+    <path d="M100 0 L200 50 L100 100 L0 50 Z" fill="#8b5cf6"/>
+    <text x="100" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Condition</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Check</text>
+  </g>
+  
+  <!-- Arrows from condition -->
+  <path d="M380 170 L250 210" stroke="#64748b" stroke-width="2" marker-end="url(#arrowSw)"/>
+  <path d="M450 170 L450 210" stroke="#64748b" stroke-width="2" marker-end="url(#arrowSw)"/>
+  <path d="M520 170 L650 210" stroke="#64748b" stroke-width="2" marker-end="url(#arrowSw)"/>
+  
+  <!-- New User -->
+  <g transform="translate(100, 220)" filter="url(#shadowSwitch)">
+    <rect width="220" height="130" rx="12" fill="#1e293b"/>
+    <rect width="220" height="45" rx="12 12 0 0" fill="#0ea5e9"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">👤 New User?</text>
+    
+    <text x="110" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Use:</text>
+    <rect x="30" y="80" width="160" height="35" rx="6" fill="#0ea5e9" opacity="0.2"/>
+    <text x="110" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#38bdf8">Content-Based +</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#38bdf8">Popular Items</text>
+  </g>
+  
+  <!-- New Item -->
+  <g transform="translate(340, 220)" filter="url(#shadowSwitch)">
+    <rect width="220" height="130" rx="12" fill="#1e293b"/>
+    <rect width="220" height="45" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 New Item?</text>
+    
+    <text x="110" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Use:</text>
+    <rect x="30" y="80" width="160" height="35" rx="6" fill="#f59e0b" opacity="0.2"/>
+    <text x="110" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">Content-Based</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">Filtering</text>
+  </g>
+  
+  <!-- Enough Data -->
+  <g transform="translate(580, 220)" filter="url(#shadowSwitch)">
+    <rect width="220" height="130" rx="12" fill="#1e293b"/>
+    <rect width="220" height="45" rx="12 12 0 0" fill="#10b981"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">✅ Enough Data?</text>
+    
+    <text x="110" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Use:</text>
+    <rect x="30" y="80" width="160" height="35" rx="6" fill="#10b981" opacity="0.2"/>
+    <text x="110" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Collaborative</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Filtering</text>
+  </g>
+  
+  <!-- Code Example -->
+  <g transform="translate(100, 380)" filter="url(#shadowSwitch)">
+    <rect width="700" height="100" rx="12" fill="#1e293b"/>
+    <rect width="700" height="35" rx="12 12 0 0" fill="#334155"/>
+    <text x="350" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📝 Example Logic</text>
+    
+    <g transform="translate(30, 45)">
+      <text x="0" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#f87171">if</text>
+      <text x="20" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#94a3b8">user.rating_count &amp;lt; 10:</text>
+      <text x="40" y="32" font-family="Segoe UI, monospace" font-size="11" fill="#f87171">return</text>
+      <text x="90" y="32" font-family="Segoe UI, monospace" font-size="11" fill="#38bdf8">content_based.recommend(user)</text>
+      
+      <text x="300" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#f87171">elif</text>
+      <text x="335" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#94a3b8">item.rating_count &amp;lt; 5:</text>
+      <text x="340" y="32" font-family="Segoe UI, monospace" font-size="11" fill="#f87171">return</text>
+      <text x="390" y="32" font-family="Segoe UI, monospace" font-size="11" fill="#fcd34d">content_based.recommend(user)</text>
+      
+      <text x="0" y="50" font-family="Segoe UI, monospace" font-size="11" fill="#f87171">else:</text>
+      <text x="40" y="50" font-family="Segoe UI, monospace" font-size="11" fill="#f87171">return</text>
+      <text x="90" y="50" font-family="Segoe UI, monospace" font-size="11" fill="#6ee7b7">collaborative.recommend(user)</text>
+    </g>
+  </g>
+</svg>

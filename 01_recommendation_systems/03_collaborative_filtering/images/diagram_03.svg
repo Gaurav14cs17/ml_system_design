@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bgCF3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <filter id="shadowCF3" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowCF3" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgCF3)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">👥 User-Based Collaborative Filtering Algorithm</text>
+  
+  <!-- Step 1: Rating Matrix -->
+  <g transform="translate(50, 70)" filter="url(#shadowCF3)">
+    <rect width="400" height="180" rx="12" fill="#1e293b"/>
+    <rect width="400" height="40" rx="12 12 0 0" fill="url(#stepGrad)"/>
+    <text x="200" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">STEP 1: User-Item Rating Matrix</text>
+    
+    <!-- Matrix visualization -->
+    <g transform="translate(30, 55)">
+      <!-- Headers -->
+      <text x="80" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Item1</text>
+      <text x="130" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Item2</text>
+      <text x="180" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Item3</text>
+      <text x="230" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Item4</text>
+      <text x="280" y="0" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Item5</text>
+      
+      <!-- UserA (target) -->
+      <rect x="0" y="10" width="340" height="25" rx="4" fill="#3b82f6" opacity="0.2"/>
+      <text x="30" y="27" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">UserA</text>
+      <text x="90" y="27" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">5</text>
+      <text x="140" y="27" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">3</text>
+      <text x="190" y="27" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">?</text>
+      <text x="240" y="27" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">4</text>
+      <text x="290" y="27" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">?</text>
+      <text x="320" y="27" font-family="Segoe UI, sans-serif" font-size="9" fill="#60a5fa">← Target</text>
+      
+      <!-- UserB -->
+      <text x="30" y="52" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">UserB</text>
+      <text x="90" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">5</text>
+      <text x="140" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">-</text>
+      <text x="190" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#4ade80">4</text>
+      <text x="240" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">5</text>
+      <text x="290" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">3</text>
+      
+      <!-- UserC -->
+      <text x="30" y="77" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">UserC</text>
+      <text x="90" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">-</text>
+      <text x="140" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">3</text>
+      <text x="190" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">4</text>
+      <text x="240" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">-</text>
+      <text x="290" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">5</text>
+      
+      <!-- UserD -->
+      <text x="30" y="102" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">UserD</text>
+      <text x="90" y="102" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">4</text>
+      <text x="140" y="102" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">2</text>
+      <text x="190" y="102" font-family="Segoe UI, sans-serif" font-size="11" fill="#4ade80">5</text>
+      <text x="240" y="102" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">4</text>
+      <text x="290" y="102" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">-</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M250 260 L250 290" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowCF3)"/>
+  
+  <!-- Step 2: Find Similar Users -->
+  <g transform="translate(50, 300)" filter="url(#shadowCF3)">
+    <rect width="400" height="120" rx="12" fill="#1e293b"/>
+    <rect width="400" height="40" rx="12 12 0 0" fill="#10b981"/>
+    <text x="200" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">STEP 2: Find Similar Users</text>
+    
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="360" height="25" rx="4" fill="#10b981" opacity="0.2"/>
+      <text x="10" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">sim(UserA, UserB) = 0.95</text>
+      <text x="220" y="17" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ High similarity</text>
+      
+      <text x="10" y="42" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">sim(UserA, UserC) = 0.45</text>
+      
+      <rect x="0" y="50" width="360" height="25" rx="4" fill="#10b981" opacity="0.2"/>
+      <text x="10" y="67" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">sim(UserA, UserD) = 0.87</text>
+      <text x="220" y="67" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ High similarity</text>
+    </g>
+  </g>
+  
+  <!-- Step 3: Predict Rating -->
+  <g transform="translate(480, 70)" filter="url(#shadowCF3)">
+    <rect width="380" height="180" rx="12" fill="#1e293b"/>
+    <rect width="380" height="40" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="190" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">STEP 3: Predict Rating</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Predicting UserA's rating for Item3:</text>
+      
+      <rect x="0" y="25" width="340" height="50" rx="6" fill="#334155"/>
+      <text x="170" y="45" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#fcd34d">pred = Σ(sim × rating) / Σ(sim)</text>
+      <text x="170" y="65" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#fcd34d">= (0.95×4 + 0.87×5) / (0.95+0.87)</text>
+      
+      <rect x="100" y="85" width="140" height="35" rx="8" fill="#f59e0b"/>
+      <text x="170" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">= 4.48 ⭐</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M670 260 L670 290" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCF3)"/>
+  
+  <!-- Step 4: Recommend -->
+  <g transform="translate(480, 300)" filter="url(#shadowCF3)">
+    <rect width="380" height="120" rx="12" fill="#1e293b"/>
+    <rect width="380" height="40" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="190" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">STEP 4: Recommend Top-K</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Sort unrated items by predicted rating:</text>
+      
+      <rect x="0" y="25" width="100" height="35" rx="6" fill="#8b5cf6" opacity="0.3"/>
+      <text x="50" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Item3</text>
+      <text x="50" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">4.48</text>
+      
+      <rect x="110" y="25" width="100" height="35" rx="6" fill="#8b5cf6" opacity="0.2"/>
+      <text x="160" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Item5</text>
+      <text x="160" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">4.12</text>
+      
+      <text x="230" y="50" font-family="Segoe UI, sans-serif" font-size="20" fill="#64748b">...</text>
+    </g>
+  </g>
+  
+  <!-- Bottom Summary -->
+  <g transform="translate(50, 450)">
+    <rect width="810" height="70" rx="12" fill="#334155"/>
+    <text x="405" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 User-Based CF Summary</text>
+    <g transform="translate(50, 45)">
+      <rect x="0" y="0" width="150" height="20" rx="4" fill="#3b82f6" opacity="0.2"/>
+      <text x="75" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">Uses user similarity</text>
+      
+      <rect x="170" y="0" width="150" height="20" rx="4" fill="#10b981" opacity="0.2"/>
+      <text x="245" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Neighborhood method</text>
+      
+      <rect x="340" y="0" width="150" height="20" rx="4" fill="#f59e0b" opacity="0.2"/>
+      <text x="415" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">Weighted average</text>
+      
+      <rect x="510" y="0" width="150" height="20" rx="4" fill="#ef4444" opacity="0.2"/>
+      <text x="585" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">Scalability issues</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        table { width: 100%; border-collapse: collapse; font-family: "Inter", Arial, sans-serif; font-size: 14px; color: #1f2933; }
+        th, td { border: 1px solid #d8dde7; padding: 10px 12px; text-align: left; vertical-align: top; }
+        th { background: #eef2f7; font-weight: 700; }
+        tbody tr:nth-child(even) td { background: #f8fafc; }
+        caption { caption-side: top; text-align: left; font-weight: 700; color: #0b3d91; padding: 6px 0 12px 0; }
+      </style>
+      <table>
+        <caption>Mitigation Strategies</caption>
+        <thead>
+          <tr><th>Challenge</th><th>What to Do</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cold start (users)</td>
+            <td>Onboarding questionnaire; start with popular items; demographic defaults.</td>
+          </tr>
+          <tr>
+            <td>Limited serendipity</td>
+            <td>Inject random exploration (ε-greedy); hybrid with collaborative filtering; diversify ranking.</td>
+          </tr>
+          <tr>
+            <td>Over-specialization</td>
+            <td>Add novelty/diversity bonus; periodically refresh profile components; use bandits for exploration.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>
+
+

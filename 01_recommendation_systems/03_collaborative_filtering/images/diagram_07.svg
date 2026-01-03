@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgLatent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="factorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <filter id="shadowLatent" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgLatent)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🎭 Interpreting Latent Factors</text>
+  <text x="450" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#94a3b8">Automatically learned dimensions of preference</text>
+  
+  <!-- Latent Factor Examples -->
+  <g transform="translate(50, 90)" filter="url(#shadowLatent)">
+    <rect width="380" height="160" rx="12" fill="#1e293b"/>
+    <rect width="380" height="45" rx="12 12 0 0" fill="url(#factorGrad)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎬 Movie Latent Factors (Learned)</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="340" height="25" rx="5" fill="#8b5cf6" opacity="0.15"/>
+      <text x="10" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">Factor 1:</text>
+      <text x="75" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">"Action ← → Drama" spectrum</text>
+      
+      <rect x="0" y="30" width="340" height="25" rx="5" fill="#3b82f6" opacity="0.15"/>
+      <text x="10" y="47" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">Factor 2:</text>
+      <text x="75" y="47" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">"Mainstream ← → Arthouse" spectrum</text>
+      
+      <rect x="0" y="60" width="340" height="25" rx="5" fill="#10b981" opacity="0.15"/>
+      <text x="10" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Factor 3:</text>
+      <text x="75" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">"Old Classics ← → New Releases" spectrum</text>
+    </g>
+  </g>
+  
+  <!-- Movie Embeddings Table -->
+  <g transform="translate(470, 90)" filter="url(#shadowLatent)">
+    <rect width="380" height="160" rx="12" fill="#1e293b"/>
+    <rect width="380" height="45" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 Movie Embeddings Example</text>
+    
+    <!-- Headers -->
+    <g transform="translate(20, 55)">
+      <text x="0" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Movie</text>
+      <text x="140" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">F1</text>
+      <text x="185" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">F2</text>
+      <text x="230" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">F3</text>
+      <text x="275" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">F4</text>
+    </g>
+    
+    <!-- Rows -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="340" height="22" rx="4" fill="#ef4444" opacity="0.15"/>
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">🦇 The Dark Knight</text>
+      <text x="140" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#fca5a5">0.9</text>
+      <text x="185" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#fca5a5">0.3</text>
+      <text x="230" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#fca5a5">0.6</text>
+      <text x="275" y="15" font-family="Segoe UI, monospace" font-size="11" fill="#fca5a5">-0.2</text>
+      
+      <rect x="0" y="26" width="340" height="22" rx="4" fill="#3b82f6" opacity="0.15"/>
+      <text x="10" y="41" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">🌀 Inception</text>
+      <text x="140" y="41" font-family="Segoe UI, monospace" font-size="11" fill="#93c5fd">0.7</text>
+      <text x="185" y="41" font-family="Segoe UI, monospace" font-size="11" fill="#93c5fd">0.4</text>
+      <text x="230" y="41" font-family="Segoe UI, monospace" font-size="11" fill="#93c5fd">0.5</text>
+      <text x="275" y="41" font-family="Segoe UI, monospace" font-size="11" fill="#93c5fd">-0.3</text>
+      
+      <rect x="0" y="52" width="340" height="22" rx="4" fill="#ec4899" opacity="0.15"/>
+      <text x="10" y="67" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">💕 The Notebook</text>
+      <text x="140" y="67" font-family="Segoe UI, monospace" font-size="11" fill="#f9a8d4">-0.8</text>
+      <text x="185" y="67" font-family="Segoe UI, monospace" font-size="11" fill="#f9a8d4">0.2</text>
+      <text x="230" y="67" font-family="Segoe UI, monospace" font-size="11" fill="#f9a8d4">0.4</text>
+      <text x="275" y="67" font-family="Segoe UI, monospace" font-size="11" fill="#f9a8d4">0.1</text>
+    </g>
+  </g>
+  
+  <!-- User factors explanation -->
+  <g transform="translate(50, 270)" filter="url(#shadowLatent)">
+    <rect width="800" height="180" rx="12" fill="#1e293b"/>
+    <rect width="800" height="45" rx="12 12 0 0" fill="#10b981"/>
+    <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">👤 User Factors = Preferences on Same Dimensions</text>
+    
+    <g transform="translate(30, 60)">
+      <!-- User Example -->
+      <rect x="0" y="0" width="350" height="100" rx="10" fill="#334155"/>
+      <text x="175" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">User "John" Embedding</text>
+      
+      <g transform="translate(20, 35)">
+        <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">F1: 0.85</text>
+        <text x="70" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ Loves action</text>
+        
+        <text x="0" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">F2: 0.20</text>
+        <text x="70" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ Prefers mainstream</text>
+        
+        <text x="0" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">F3: 0.60</text>
+        <text x="70" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ Slight preference for newer</text>
+      </g>
+      
+      <!-- Arrow -->
+      <text x="380" y="50" font-family="Segoe UI, sans-serif" font-size="30" fill="#f59e0b">→</text>
+      
+      <!-- Prediction -->
+      <rect x="420" y="0" width="340" height="100" rx="10" fill="#f59e0b" opacity="0.15"/>
+      <text x="590" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fcd34d">Prediction via Dot Product</text>
+      
+      <text x="440" y="45" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">John · Dark Knight = 0.85×0.9 + 0.20×0.3 + ...</text>
+      <text x="440" y="65" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">= High match! → Recommend 🎬</text>
+      
+      <text x="440" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">John · Notebook = 0.85×(-0.8) + ... = Low match</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgCF5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="userGradCF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="itemGradCF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowCF5" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgCF5)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">⚖️ User-Based vs Item-Based CF</text>
+  
+  <!-- VS Badge -->
+  <g transform="translate(415, 180)">
+    <circle cx="35" cy="35" r="35" fill="#f59e0b" filter="url(#shadowCF5)"/>
+    <text x="35" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">VS</text>
+  </g>
+  
+  <!-- User-Based -->
+  <g transform="translate(50, 80)" filter="url(#shadowCF5)">
+    <rect width="350" height="330" rx="16" fill="#1e293b"/>
+    <rect width="350" height="50" rx="16 16 0 0" fill="url(#userGradCF)"/>
+    <text x="175" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">👥 User-Based CF</text>
+    
+    <!-- Characteristics -->
+    <g transform="translate(20, 70)">
+      <rect x="0" y="0" width="310" height="80" rx="10" fill="#334155"/>
+      <text x="155" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Characteristics</text>
+      <text x="20" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Users change often</text>
+      <text x="20" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• New users added daily</text>
+      <text x="20" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Preferences evolve over time</text>
+    </g>
+    
+    <!-- Consequence -->
+    <g transform="translate(20, 165)">
+      <rect x="0" y="0" width="310" height="55" rx="10" fill="#ef4444" opacity="0.2"/>
+      <text x="155" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fca5a5">⚠️ Consequence</text>
+      <text x="155" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">Must recompute similarity frequently</text>
+    </g>
+    
+    <!-- Result -->
+    <g transform="translate(20, 235)">
+      <rect x="0" y="0" width="310" height="75" rx="10" fill="#ef4444" opacity="0.15"/>
+      <text x="155" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f87171">❌ SCALABILITY CHALLENGE</text>
+      <text x="155" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">O(n²) user comparisons</text>
+      <text x="155" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Expensive for large user bases</text>
+    </g>
+  </g>
+  
+  <!-- Item-Based -->
+  <g transform="translate(500, 80)" filter="url(#shadowCF5)">
+    <rect width="350" height="330" rx="16" fill="#1e293b"/>
+    <rect width="350" height="50" rx="16 16 0 0" fill="url(#itemGradCF)"/>
+    <text x="175" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📦 Item-Based CF</text>
+    
+    <!-- Characteristics -->
+    <g transform="translate(20, 70)">
+      <rect x="0" y="0" width="310" height="80" rx="10" fill="#334155"/>
+      <text x="155" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Characteristics</text>
+      <text x="20" y="40" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Items stay stable</text>
+      <text x="20" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Catalog changes slowly</text>
+      <text x="20" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Item relationships stable</text>
+    </g>
+    
+    <!-- Consequence -->
+    <g transform="translate(20, 165)">
+      <rect x="0" y="0" width="310" height="55" rx="10" fill="#10b981" opacity="0.2"/>
+      <text x="155" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">✅ Advantage</text>
+      <text x="155" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Similarity can be precomputed &amp; cached</text>
+    </g>
+    
+    <!-- Result -->
+    <g transform="translate(20, 235)">
+      <rect x="0" y="0" width="310" height="75" rx="10" fill="#10b981" opacity="0.15"/>
+      <text x="155" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#4ade80">✅ PRODUCTION-READY</text>
+      <text x="155" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Used by Amazon since 1998</text>
+      <text x="155" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Scales to millions of items</text>
+    </g>
+  </g>
+</svg>
