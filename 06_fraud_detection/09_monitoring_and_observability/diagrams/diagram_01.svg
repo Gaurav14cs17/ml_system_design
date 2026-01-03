@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 480">
+  <defs>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="sysGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="infraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">📊 Fraud Detection Monitoring Layers</text>
+  
+  <!-- Layer 1: Model Performance -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="320" height="180" rx="14" fill="#1e293b"/>
+    <rect x="50" y="55" width="320" height="45" rx="14 14 0 0" fill="url(#modelGrad)"/>
+    <text x="210" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🎯 Model Performance</text>
+    
+    <g transform="translate(70, 115)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#d1fae5"/>
+      <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">Prediction Distribution</text>
+      
+      <rect x="140" y="0" width="130" height="30" rx="6" fill="#d1fae5"/>
+      <text x="205" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">Decision Distribution</text>
+      
+      <rect x="0" y="40" width="130" height="30" rx="6" fill="#d1fae5"/>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">Precision/Recall</text>
+      
+      <rect x="140" y="40" width="130" height="30" rx="6" fill="#d1fae5"/>
+      <text x="205" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">Business Metrics</text>
+    </g>
+    
+    <text x="210" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Fraud rate • False positive rate</text>
+  </g>
+  
+  <!-- Layer 2: Data Quality -->
+  <g filter="url(#shadow)">
+    <rect x="390" y="55" width="320" height="180" rx="14" fill="#1e293b"/>
+    <rect x="390" y="55" width="320" height="45" rx="14 14 0 0" fill="url(#dataGrad)"/>
+    <text x="550" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📊 Data Quality</text>
+    
+    <g transform="translate(410, 115)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#dbeafe"/>
+      <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e40af">Feature Distributions</text>
+      
+      <rect x="140" y="0" width="130" height="30" rx="6" fill="#dbeafe"/>
+      <text x="205" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e40af">Missing Values</text>
+      
+      <rect x="0" y="40" width="130" height="30" rx="6" fill="#dbeafe"/>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e40af">Feature Drift</text>
+      
+      <rect x="140" y="40" width="130" height="30" rx="6" fill="#dbeafe"/>
+      <text x="205" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e40af">Data Freshness</text>
+    </g>
+    
+    <text x="550" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#93c5fd">Schema validation • Anomaly detection</text>
+  </g>
+  
+  <!-- Layer 3: System Performance -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="255" width="320" height="180" rx="14" fill="#1e293b"/>
+    <rect x="50" y="255" width="320" height="45" rx="14 14 0 0" fill="url(#sysGrad)"/>
+    <text x="210" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">⚡ System Performance</text>
+    
+    <g transform="translate(70, 315)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#422006"/>
+      <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Latency (p50/95/99)</text>
+      
+      <rect x="140" y="0" width="130" height="30" rx="6" fill="#422006"/>
+      <text x="205" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Throughput (RPS)</text>
+      
+      <rect x="0" y="40" width="130" height="30" rx="6" fill="#422006"/>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Error Rates</text>
+      
+      <rect x="140" y="40" width="130" height="30" rx="6" fill="#422006"/>
+      <text x="205" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Resource Usage</text>
+    </g>
+    
+    <text x="210" y="415" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fcd34d">CPU • Memory • GPU utilization</text>
+  </g>
+  
+  <!-- Layer 4: Infrastructure -->
+  <g filter="url(#shadow)">
+    <rect x="390" y="255" width="320" height="180" rx="14" fill="#1e293b"/>
+    <rect x="390" y="255" width="320" height="45" rx="14 14 0 0" fill="url(#infraGrad)"/>
+    <text x="550" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🔧 Infrastructure</text>
+    
+    <g transform="translate(410, 315)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#ede9fe"/>
+      <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#5b21b6">Service Health</text>
+      
+      <rect x="140" y="0" width="130" height="30" rx="6" fill="#ede9fe"/>
+      <text x="205" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#5b21b6">Dependencies</text>
+      
+      <rect x="0" y="40" width="130" height="30" rx="6" fill="#ede9fe"/>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#5b21b6">Queue Depths</text>
+      
+      <rect x="140" y="40" width="130" height="30" rx="6" fill="#ede9fe"/>
+      <text x="205" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#5b21b6">Storage Capacity</text>
+    </g>
+    
+    <text x="550" y="415" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#c4b5fd">Feature store • Model servers</text>
+  </g>
+  
+  <!-- Bottom summary -->
+  <rect x="150" y="450" width="450" height="25" rx="8" fill="#334155"/>
+  <text x="375" y="467" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">🔔 Alerting • 📊 Dashboards • 📝 Logging • 🔍 Tracing</text>
+</svg>

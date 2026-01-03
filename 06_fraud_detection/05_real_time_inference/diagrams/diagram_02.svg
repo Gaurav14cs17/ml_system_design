@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a14"/>
+      <stop offset="50%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0a0a14"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <pattern id="wave" width="100" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 10 Q25 0, 50 10 T100 10" fill="none" stroke="#1e293b" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#bgGrad)"/>
+  <rect width="800" height="420" fill="url(#wave)"/>
+  
+  <!-- Decorative -->
+  <circle cx="700" cy="100" r="100" fill="#8b5cf6" opacity="0.03"/>
+  <circle cx="100" cy="350" r="80" fill="#22c55e" opacity="0.03"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🚀 Model Serving Infrastructure
+  </text>
+  
+  <!-- Load Balancer -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="60" width="200" height="50" rx="10" fill="#1e3a5f"/>
+    <text x="400" y="92" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔀 Load Balancer (L7)</text>
+  </g>
+  
+  <!-- Arrows -->
+  <path d="M 400 110 L 400 140" stroke="#e94560" stroke-width="2"/>
+  
+  <!-- Model Servers -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="145" width="700" height="130" rx="12" fill="#0f1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="400" y="175" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      🧠 Model Serving Cluster (Kubernetes)
+    </text>
+    
+    <rect x="80" y="195" width="130" height="60" rx="8" fill="#1e293b"/>
+    <text x="145" y="220" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Pod 1</text>
+    <text x="145" y="240" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">🟢 XGBoost</text>
+    
+    <rect x="230" y="195" width="130" height="60" rx="8" fill="#1e293b"/>
+    <text x="295" y="220" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Pod 2</text>
+    <text x="295" y="240" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">🟢 XGBoost</text>
+    
+    <rect x="380" y="195" width="130" height="60" rx="8" fill="#1e293b"/>
+    <text x="445" y="220" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Pod 3</text>
+    <text x="445" y="240" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">🟢 Neural Net</text>
+    
+    <rect x="530" y="195" width="130" height="60" rx="8" fill="#1e293b"/>
+    <text x="595" y="220" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Pod N...</text>
+    <text x="595" y="240" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="9">⚡ Auto-scaling</text>
+    
+    <rect x="680" y="195" width="50" height="60" rx="8" fill="#14532d"/>
+    <text x="705" y="230" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">HPA</text>
+  </g>
+  
+  <!-- Key metrics -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="295" width="220" height="105" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="160" y="325" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📊 Performance</text>
+    <text x="70" y="355" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">P99 Latency: <tspan fill="#4ade80" font-weight="bold">andlt;50ms</tspan></text>
+    <text x="70" y="380" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Throughput: <tspan fill="#4ade80" font-weight="bold">100K+ TPS</tspan></text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="290" y="295" width="220" height="105" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="325" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🛡️ Reliability</text>
+    <text x="310" y="355" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Availability: <tspan fill="#60a5fa" font-weight="bold">99.99%</tspan></text>
+    <text x="310" y="380" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Circuit breaker: <tspan fill="#60a5fa" font-weight="bold">Enabled</tspan></text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="530" y="295" width="220" height="105" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="640" y="325" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Scaling</text>
+    <text x="550" y="355" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Min replicas: <tspan fill="#fbbf24" font-weight="bold">3</tspan></text>
+    <text x="550" y="380" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Scale trigger: <tspan fill="#fbbf24" font-weight="bold">70% CPU</tspan></text>
+  </g>
+</svg>

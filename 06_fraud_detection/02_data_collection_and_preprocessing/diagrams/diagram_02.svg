@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a14"/>
+      <stop offset="50%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0a0a14"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <pattern id="circuit" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M25 0 L25 25 L0 25" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.3"/>
+      <path d="M75 0 L75 25 L100 25" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.3"/>
+      <path d="M25 100 L25 75 L0 75" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.3"/>
+      <path d="M75 100 L75 75 L100 75" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.3"/>
+      <circle cx="25" cy="25" r="3" fill="#1e293b" opacity="0.3"/>
+      <circle cx="75" cy="25" r="3" fill="#1e293b" opacity="0.3"/>
+      <circle cx="25" cy="75" r="3" fill="#1e293b" opacity="0.3"/>
+      <circle cx="75" cy="75" r="3" fill="#1e293b" opacity="0.3"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#bgGrad)"/>
+  <rect width="800" height="420" fill="url(#circuit)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="750" cy="50" r="100" fill="#3b82f6" opacity="0.03"/>
+  <circle cx="50" cy="400" r="120" fill="#22c55e" opacity="0.03"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🔄 Data Quality Pipeline
+  </text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="700" height="340" rx="12" fill="#0f1a2e" stroke="#3b82f6" stroke-width="2"/>
+    
+    <!-- Stage 1 -->
+    <rect x="80" y="90" width="150" height="80" rx="8" fill="#1e3a5f"/>
+    <text x="155" y="125" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📥 Ingestion</text>
+    <text x="155" y="145" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Schema validation</text>
+    <text x="155" y="160" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Type checking</text>
+    
+    <path d="M 230 130 L 270 130" stroke="#e94560" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    
+    <!-- Stage 2 -->
+    <rect x="280" y="90" width="150" height="80" rx="8" fill="#2e1065"/>
+    <text x="355" y="125" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧹 Cleaning</text>
+    <text x="355" y="145" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Missing values</text>
+    <text x="355" y="160" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Outlier handling</text>
+    
+    <path d="M 430 130 L 470 130" stroke="#e94560" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    
+    <!-- Stage 3 -->
+    <rect x="480" y="90" width="150" height="80" rx="8" fill="#14532d"/>
+    <text x="555" y="125" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">✅ Validation</text>
+    <text x="555" y="145" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Business rules</text>
+    <text x="555" y="160" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Anomaly detection</text>
+    
+    <path d="M 630 130 L 680 130" stroke="#e94560" stroke-width="2" fill="none"/>
+    <circle cx="700" cy="130" r="15" fill="#22c55e"/>
+    <text x="700" y="135" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">✓</text>
+    
+    <!-- Quality Checks -->
+    <rect x="80" y="195" width="280" height="185" rx="8" fill="#1e293b"/>
+    <text x="220" y="225" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📋 Quality Checks</text>
+    <text x="100" y="255" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Completeness: andgt;99.9%</text>
+    <text x="100" y="280" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Freshness: andlt;100ms delay</text>
+    <text x="100" y="305" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Accuracy: Schema compliant</text>
+    <text x="100" y="330" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Consistency: No duplicates</text>
+    <text x="100" y="360" fill="#f59e0b" font-family="Arial, sans-serif" font-size="11">⚠ Missing: Log &amp; default</text>
+    
+    <!-- Alerting -->
+    <rect x="400" y="195" width="320" height="185" rx="8" fill="#1e293b"/>
+    <text x="560" y="225" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🚨 Alerting Thresholds</text>
+    <text x="420" y="255" fill="#ef4444" font-family="Arial, sans-serif" font-size="11">🔴 Critical: andgt;1% null rate</text>
+    <text x="420" y="280" fill="#f59e0b" font-family="Arial, sans-serif" font-size="11">🟡 Warning: andgt;0.1% null rate</text>
+    <text x="420" y="305" fill="#ef4444" font-family="Arial, sans-serif" font-size="11">🔴 Critical: Schema violation</text>
+    <text x="420" y="330" fill="#f59e0b" font-family="Arial, sans-serif" font-size="11">🟡 Warning: Volume anomaly (andgt;30%)</text>
+    <text x="420" y="360" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">→ PagerDuty + Slack alerts</text>
+  </g>
+</svg>

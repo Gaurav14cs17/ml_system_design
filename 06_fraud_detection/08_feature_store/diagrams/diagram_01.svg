@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+  <defs>
+    <linearGradient id="problemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">⚠️ Problems Without Feature Store</text>
+  
+  <!-- Problem 1 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="290" height="150" rx="14" fill="#0f172a"/>
+    <rect x="50" y="55" width="290" height="45" rx="14 14 0 0" fill="url(#problemGrad)"/>
+    <text x="195" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔄 Training/Serving Skew</text>
+    
+    <g transform="translate(65, 115)">
+      <rect x="0" y="0" width="260" height="22" rx="4" fill="#450a0a"/>
+      <text x="130" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#991b1b">Training: Python pandas aggregations</text>
+      <rect x="0" y="28" width="260" height="22" rx="4" fill="#450a0a"/>
+      <text x="130" y="43" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#991b1b">Serving: Java/SQL real-time calculations</text>
+      <rect x="0" y="56" width="260" height="22" rx="4" fill="#fecaca"/>
+      <text x="130" y="71" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#b91c1c">→ Different values = Model degradation</text>
+    </g>
+  </g>
+  
+  <!-- Problem 2 -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="55" width="290" height="150" rx="14" fill="#0f172a"/>
+    <rect x="360" y="55" width="290" height="45" rx="14 14 0 0" fill="#f59e0b"/>
+    <text x="505" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📊 Duplicate Computation</text>
+    
+    <g transform="translate(375, 115)">
+      <rect x="0" y="0" width="260" height="22" rx="4" fill="#422006"/>
+      <text x="130" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Multiple teams computing same features</text>
+      <rect x="0" y="28" width="260" height="22" rx="4" fill="#422006"/>
+      <text x="130" y="43" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#92400e">Inconsistent implementations</text>
+      <rect x="0" y="56" width="260" height="22" rx="4" fill="#422006"/>
+      <text x="130" y="71" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#a16207">→ Wasted compute resources</text>
+    </g>
+  </g>
+  
+  <!-- Problem 3 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="225" width="290" height="150" rx="14" fill="#0f172a"/>
+    <rect x="50" y="225" width="290" height="45" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="195" y="255" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">⏰ Point-in-Time Leakage</text>
+    
+    <g transform="translate(65, 285)">
+      <rect x="0" y="0" width="260" height="22" rx="4" fill="#ede9fe"/>
+      <text x="130" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#5b21b6">Using future data in training</text>
+      <rect x="0" y="28" width="260" height="22" rx="4" fill="#ede9fe"/>
+      <text x="130" y="43" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#5b21b6">Hard to reproduce feature values</text>
+      <rect x="0" y="56" width="260" height="22" rx="4" fill="#ddd6fe"/>
+      <text x="130" y="71" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#7c3aed">→ Model looks good, fails in prod</text>
+    </g>
+  </g>
+  
+  <!-- Problem 4 -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="225" width="290" height="150" rx="14" fill="#0f172a"/>
+    <rect x="360" y="225" width="290" height="45" rx="14 14 0 0" fill="#64748b"/>
+    <text x="505" y="255" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🐌 Slow Feature Development</text>
+    
+    <g transform="translate(375, 285)">
+      <rect x="0" y="0" width="260" height="22" rx="4" fill="#334155"/>
+      <text x="130" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#475569">Each feature requires full pipeline</text>
+      <rect x="0" y="28" width="260" height="22" rx="4" fill="#334155"/>
+      <text x="130" y="43" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#475569">Hard to experiment with features</text>
+      <rect x="0" y="56" width="260" height="22" rx="4" fill="#1e293b"/>
+      <text x="130" y="71" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#334155">→ Long time from idea to production</text>
+    </g>
+  </g>
+  
+  <!-- Solution hint -->
+  <rect x="200" y="390" width="300" height="25" rx="12" fill="#10b981"/>
+  <text x="350" y="407" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">💡 Solution: Implement a Feature Store</text>
+</svg>

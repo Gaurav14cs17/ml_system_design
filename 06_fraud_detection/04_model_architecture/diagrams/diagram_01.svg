@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320">
+  <defs>
+    <linearGradient id="spectrumGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="33%" style="stop-color:#3b82f6"/>
+      <stop offset="66%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚖️ Model Complexity vs Interpretability Trade-off</text>
+  
+  <!-- Spectrum bar -->
+  <rect x="100" y="55" width="550" height="12" rx="6" fill="url(#spectrumGrad)" filter="url(#shadow)"/>
+  
+  <!-- High Interpretability label -->
+  <text x="100" y="90" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#10b981">High Interpretability</text>
+  
+  <!-- Low Interpretability label -->
+  <text x="650" y="90" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ef4444">Low Interpretability</text>
+  
+  <!-- Arrow -->
+  <path d="M100 73 L650 73" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <polygon points="645,70 655,73 645,76" fill="#64748b"/>
+  
+  <!-- Model cards -->
+  <!-- Rules Engine -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="110" width="150" height="120" rx="12" fill="#0f172a"/>
+    <rect x="70" y="110" width="150" height="35" rx="12 12 0 0" fill="#10b981"/>
+    <text x="145" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📋 Rules Engine</text>
+    <text x="145" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Simple Patterns</text>
+    <text x="145" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">✓ Very Interpretable</text>
+    <text x="145" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ef4444">✗ Low Accuracy</text>
+    <text x="145" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Manual updates</text>
+  </g>
+  
+  <!-- Logistic Regression -->
+  <g filter="url(#shadow)">
+    <rect x="240" y="110" width="150" height="120" rx="12" fill="#0f172a"/>
+    <rect x="240" y="110" width="150" height="35" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="315" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📈 Logistic Reg</text>
+    <text x="315" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Linear Relationships</text>
+    <text x="315" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">✓ Coefficients</text>
+    <text x="315" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f59e0b">○ Moderate Accuracy</text>
+    <text x="315" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Fast training</text>
+  </g>
+  
+  <!-- Gradient Boosting -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="110" width="150" height="120" rx="12" fill="#0f172a"/>
+    <rect x="410" y="110" width="150" height="35" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="485" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🌲 XGBoost/GBM</text>
+    <text x="485" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Non-linear Complex</text>
+    <text x="485" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f59e0b">○ SHAP values</text>
+    <text x="485" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">✓ High Accuracy</text>
+    <text x="485" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Tree-based</text>
+  </g>
+  
+  <!-- Deep Learning -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="110" width="150" height="120" rx="12" fill="#0f172a"/>
+    <rect x="580" y="110" width="150" height="35" rx="12 12 0 0" fill="#ef4444"/>
+    <text x="655" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🧠 Deep Learning</text>
+    <text x="655" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Neural Networks</text>
+    <text x="655" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ef4444">✗ Black Box</text>
+    <text x="655" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">✓ Highest Accuracy</text>
+    <text x="655" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Pattern extraction</text>
+  </g>
+  
+  <!-- Bottom accuracy spectrum -->
+  <rect x="100" y="260" width="550" height="12" rx="6" fill="url(#spectrumGrad)" style="transform: scaleX(-1); transform-origin: center;"/>
+  <text x="100" y="295" text-anchor="start" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ef4444">Low Accuracy</text>
+  <text x="650" y="295" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#10b981">High Accuracy</text>
+  <path d="M100 275 L650 275" stroke="#64748b" stroke-width="2"/>
+  <polygon points="645,272 655,275 645,278" fill="#64748b"/>
+</svg>

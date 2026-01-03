@@ -1,0 +1,87 @@
+<svg width="1100" height="520" viewBox="0 0 1100 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font: 700 20px "Inter", "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .label { font: 600 14px "Inter", "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .sub { font: 400 12px "Inter", "Segoe UI", Arial, sans-serif; fill: #334155; }
+      .box { fill: #ffffff; stroke: #0f172a; stroke-width: 1.5; rx: 8; }
+      .area { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.2; rx: 10; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0f172a"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text class="title" x="550" y="40" text-anchor="middle">Feature Store Architecture</text>
+
+  <!-- Columns background -->
+  <rect class="area" x="40" y="60" width="280" height="360"/>
+  <rect class="area" x="360" y="60" width="280" height="360"/>
+  <rect class="area" x="680" y="60" width="380" height="360"/>
+
+  <text class="label" x="180" y="88" text-anchor="middle">Data Sources</text>
+  <text class="label" x="500" y="88" text-anchor="middle">Feature Computation</text>
+  <text class="label" x="870" y="88" text-anchor="middle">Feature Storage and Serving</text>
+
+  <!-- Data sources -->
+  <rect class="box" x="90" y="120" width="180" height="60"/>
+  <text class="label" x="180" y="150" text-anchor="middle">Transactions</text>
+  <text class="sub" x="180" y="168" text-anchor="middle">(Kafka)</text>
+
+  <rect class="box" x="90" y="210" width="180" height="60"/>
+  <text class="label" x="180" y="240" text-anchor="middle">Events</text>
+  <text class="sub" x="180" y="258" text-anchor="middle">(Stream)</text>
+
+  <rect class="box" x="90" y="320" width="180" height="60"/>
+  <text class="label" x="180" y="350" text-anchor="middle">Feature Registry</text>
+
+  <!-- Computation -->
+  <rect class="box" x="410" y="120" width="180" height="60"/>
+  <text class="label" x="500" y="150" text-anchor="middle">Batch Pipeline</text>
+  <text class="sub" x="500" y="168" text-anchor="middle">(Spark / dbt)</text>
+
+  <rect class="box" x="410" y="210" width="180" height="60"/>
+  <text class="label" x="500" y="240" text-anchor="middle">Stream Pipeline</text>
+  <text class="sub" x="500" y="258" text-anchor="middle">(Flink / ksqlDB)</text>
+
+  <!-- Storage -->
+  <rect class="box" x="740" y="120" width="180" height="60"/>
+  <text class="label" x="830" y="150" text-anchor="middle">Offline Store</text>
+  <text class="sub" x="830" y="168" text-anchor="middle">(S3 / BigQuery)</text>
+
+  <rect class="box" x="740" y="210" width="180" height="60"/>
+  <text class="label" x="830" y="240" text-anchor="middle">Online Store</text>
+  <text class="sub" x="830" y="258" text-anchor="middle">(Redis)</text>
+
+  <rect class="box" x="740" y="320" width="180" height="60"/>
+  <text class="label" x="830" y="350" text-anchor="middle">Feature API</text>
+
+  <rect class="box" x="940" y="320" width="120" height="110"/>
+  <text class="label" x="1000" y="350" text-anchor="middle">ML Models</text>
+  <text class="sub" x="1000" y="368" text-anchor="middle">Training and</text>
+  <text class="sub" x="1000" y="386" text-anchor="middle">Serving</text>
+
+  <!-- Arrows -->
+  <line x1="270" y1="150" x2="410" y2="150" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="270" y1="240" x2="410" y2="240" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <line x1="590" y1="150" x2="740" y2="150" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="590" y1="240" x2="740" y2="240" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <line x1="500" y1="180" x2="180" y2="340" stroke="#0f172a" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="500" y1="240" x2="180" y2="340" stroke="#0f172a" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <line x1="830" y1="270" x2="830" y2="320" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="910" y1="350" x2="940" y2="350" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <line x1="830" y1="180" x2="830" y2="320" stroke="#0f172a" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <line x1="250" y1="350" x2="740" y2="350" stroke="#0f172a" stroke-width="1.4" marker-end="url(#arrow)"/>
+</svg>
+
+
+
+
+
+

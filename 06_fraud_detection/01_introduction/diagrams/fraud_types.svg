@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    Types of Fraud in Financial Systems
+  </text>
+  
+  <!-- Central Hub -->
+  <circle cx="450" cy="250" r="60" fill="#e94560" filter="url(#glow)"/>
+  <text x="450" y="245" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">FRAUD</text>
+  <text x="450" y="262" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">DETECTION</text>
+  
+  <!-- Payment Fraud -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="180" height="130" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="30" rx="10" fill="#3b82f6"/>
+    <text x="90" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">💳 Payment Fraud</text>
+    <text x="15" y="50" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Card-Not-Present (CNP)</text>
+    <text x="15" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Card-Present (Skimming)</text>
+    <text x="15" y="86" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Mobile Wallet Fraud</text>
+    <text x="15" y="104" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Wire/ACH Fraud</text>
+    <text x="90" y="122" text-anchor="middle" fill="#f97316" font-family="Arial, sans-serif" font-size="11" font-weight="bold">~0.1% of transactions</text>
+  </g>
+  <line x1="280" y1="165" x2="390" y2="220" stroke="#3b82f6" stroke-width="2"/>
+  
+  <!-- Account Takeover -->
+  <g transform="translate(620, 100)">
+    <rect x="0" y="0" width="180" height="130" rx="10" fill="#1e3a5f" stroke="#a855f7" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="30" rx="10" fill="#a855f7"/>
+    <text x="90" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔓 Account Takeover</text>
+    <text x="15" y="50" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Credential Stuffing</text>
+    <text x="15" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Phishing Attacks</text>
+    <text x="15" y="86" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• SIM Swapping</text>
+    <text x="15" y="104" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Social Engineering</text>
+    <text x="90" y="122" text-anchor="middle" fill="#f97316" font-family="Arial, sans-serif" font-size="11" font-weight="bold">250% YoY growth</text>
+  </g>
+  <line x1="620" y1="165" x2="510" y2="220" stroke="#a855f7" stroke-width="2"/>
+  
+  <!-- Synthetic Identity -->
+  <g transform="translate(100, 280)">
+    <rect x="0" y="0" width="180" height="130" rx="10" fill="#1e3a5f" stroke="#22c55e" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="30" rx="10" fill="#22c55e"/>
+    <text x="90" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🎭 Synthetic Identity</text>
+    <text x="15" y="50" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Fake + Real Data Mix</text>
+    <text x="15" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Credit Building Fraud</text>
+    <text x="15" y="86" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Bust-Out Schemes</text>
+    <text x="15" y="104" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Loan Stacking</text>
+    <text x="90" y="122" text-anchor="middle" fill="#f97316" font-family="Arial, sans-serif" font-size="11" font-weight="bold">$20B+ annual losses</text>
+  </g>
+  <line x1="280" y1="345" x2="390" y2="280" stroke="#22c55e" stroke-width="2"/>
+  
+  <!-- First Party Fraud -->
+  <g transform="translate(620, 280)">
+    <rect x="0" y="0" width="180" height="130" rx="10" fill="#1e3a5f" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="30" rx="10" fill="#f59e0b"/>
+    <text x="90" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🤝 First Party Fraud</text>
+    <text x="15" y="50" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Friendly Fraud</text>
+    <text x="15" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Chargeback Abuse</text>
+    <text x="15" y="86" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Return Fraud</text>
+    <text x="15" y="104" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Promo Abuse</text>
+    <text x="90" y="122" text-anchor="middle" fill="#f97316" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Hardest to detect</text>
+  </g>
+  <line x1="620" y1="345" x2="510" y2="280" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Stats Bar -->
+  <rect x="50" y="440" width="800" height="50" rx="8" fill="#1e293b"/>
+  <text x="450" y="470" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">
+    📊 Global Fraud: $48B+ annually | 🎯 Detection Rate Target: 95%+ | ⚡ Decision Time: andlt;100ms
+  </text>
+</svg>
+

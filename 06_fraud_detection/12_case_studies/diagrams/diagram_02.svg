@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="380" fill="#0a0a14"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🛒 Case Study: E-Commerce Platform
+  </text>
+  
+  <!-- Challenge -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="220" height="140" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="160" y="90" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Challenge</text>
+    <text x="70" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Peak: 10K TPS (Black Friday)</text>
+    <text x="70" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• High false positive rate (8%)</text>
+    <text x="70" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Customer churn from declines</text>
+    <text x="70" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Account takeover attacks</text>
+  </g>
+  
+  <!-- Solution -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="60" width="220" height="140" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="90" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🛠️ Solution</text>
+    <text x="310" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• LightGBM for speed</text>
+    <text x="310" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Device fingerprinting</text>
+    <text x="310" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Behavioral biometrics</text>
+    <text x="310" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 3DS smart friction</text>
+  </g>
+  
+  <!-- Results -->
+  <g filter="url(#shadow)">
+    <rect x="530" y="60" width="220" height="140" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="640" y="90" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📈 Results</text>
+    <text x="550" y="120" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">FP rate: 8% → 1.2%</text>
+    <text x="550" y="140" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">+$2.4M recovered revenue</text>
+    <text x="550" y="160" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">ATO detection: +85%</text>
+    <text x="550" y="180" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">Customer satisfaction ↑15%</text>
+  </g>
+  
+  <!-- Key Learnings -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="220" width="700" height="140" rx="12" fill="#0f1a2e" stroke="#f59e0b" stroke-width="2"/>
+    <text x="400" y="250" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      💡 Key Learnings
+    </text>
+    
+    <text x="80" y="280" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      1. Device signals are gold - fingerprinting caught 60% of fraud alone
+    </text>
+    <text x="80" y="305" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      2. Smart friction andgt; blanket blocking - 3DS challenge only high-risk txns
+    </text>
+    <text x="80" y="330" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      3. Session-level features critical - page velocity, mouse patterns
+    </text>
+    <text x="80" y="350" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">
+      ROI: 18x return on fraud prevention investment
+    </text>
+  </g>
+</svg>
