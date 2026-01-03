@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="entityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="relGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔗 Knowledge Graph Embeddings (TransE)</text>
+  
+  <!-- Triple visualization -->
+  <g filter="url(#shadow)" transform="translate(100, 80)">
+    <rect width="600" height="120" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="300" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Knowledge Triple: (head, relation, tail)</text>
+    
+    <!-- Head entity -->
+    <circle cx="100" cy="75" r="30" fill="url(#entityGrad)"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Paris</text>
+    <text x="100" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">head (h)</text>
+    
+    <!-- Relation arrow -->
+    <path d="M140 75 L240 75" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="160" y="55" width="80" height="25" rx="4" fill="url(#relGrad)"/>
+    <text x="200" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#1e293b">capital_of</text>
+    <text x="200" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">relation (r)</text>
+    
+    <!-- Tail entity -->
+    <circle cx="300" cy="75" r="30" fill="url(#entityGrad)"/>
+    <text x="300" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">France</text>
+    <text x="300" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">tail (t)</text>
+    
+    <!-- Vector equation -->
+    <rect x="380" y="50" width="200" height="50" rx="8" fill="#0f172a"/>
+    <text x="480" y="80" text-anchor="middle" font-family="Courier New, monospace" font-size="12" fill="#fbbf24">h + r ≈ t</text>
+  </g>
+  
+  <!-- Embedding space -->
+  <g filter="url(#shadow)" transform="translate(100, 220)">
+    <rect width="600" height="110" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="300" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">TransE Principle in Embedding Space</text>
+    
+    <!-- Vector visualization -->
+    <circle cx="100" cy="65" r="15" fill="#10b981"/>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">h</text>
+    
+    <line x1="118" y1="60" x2="218" y2="60" stroke="#f59e0b" stroke-width="3"/>
+    <text x="168" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f59e0b">+ r</text>
+    
+    <circle cx="240" cy="65" r="15" fill="#3b82f6"/>
+    <text x="240" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">t</text>
+    
+    <text x="280" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#4ade80">≈</text>
+    
+    <!-- Loss function -->
+    <rect x="320" y="45" width="260" height="50" rx="8" fill="#0f172a"/>
+    <text x="450" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Loss: minimize ||h + r - t||</text>
+    <text x="450" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">for positive triples</text>
+  </g>
+</svg>

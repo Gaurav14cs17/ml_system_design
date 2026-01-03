@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="stage1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="stage2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🚀 Two-Stage Retrieval Pipeline</text>
+  
+  <!-- Stage 1 -->
+  <g filter="url(#shadow)" transform="translate(50, 70)">
+    <rect width="700" height="130" rx="14" fill="#1e293b" stroke="url(#stage1Grad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">STAGE 1: CANDIDATE RETRIEVAL</text>
+    <text x="400" y="30" font-family="Segoe UI, sans-serif" font-size="11" fill="#10b981">⚡ ~10ms</text>
+    
+    <rect x="20" y="50" width="100" height="60" rx="8" fill="#0f172a"/>
+    <text x="70" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Query</text>
+    
+    <path d="M130 80 L170 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="180" y="50" width="130" height="60" rx="8" fill="url(#stage1Grad)"/>
+    <text x="245" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">Bi-Encoder</text>
+    <text x="245" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">(fast)</text>
+    
+    <path d="M320 80 L360 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="370" y="50" width="130" height="60" rx="8" fill="url(#stage1Grad)"/>
+    <text x="435" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">ANN Search</text>
+    <text x="435" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">(HNSW)</text>
+    
+    <path d="M510 80 L550 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="560" y="50" width="120" height="60" rx="8" fill="#0f172a"/>
+    <text x="620" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">100-1000</text>
+    <text x="620" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Candidates</text>
+  </g>
+  
+  <!-- Arrow between stages -->
+  <path d="M620 205 L620 235" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Stage 2 -->
+  <g filter="url(#shadow)" transform="translate(50, 240)">
+    <rect width="700" height="130" rx="14" fill="#1e293b" stroke="url(#stage2Grad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">STAGE 2: RE-RANKING</text>
+    <text x="400" y="30" font-family="Segoe UI, sans-serif" font-size="11" fill="#f59e0b">🎯 ~50-100ms</text>
+    
+    <rect x="200" y="50" width="180" height="60" rx="8" fill="url(#stage2Grad)"/>
+    <text x="290" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">Cross-Encoder</text>
+    <text x="290" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">(accurate)</text>
+    
+    <path d="M390 80 L450 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="460" y="50" width="160" height="60" rx="8" fill="#10b981"/>
+    <text x="540" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">Top 10 Results</text>
+    <text x="540" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.6)">High quality ✓</text>
+  </g>
+  
+  <!-- Total time -->
+  <rect x="250" y="380" width="300" height="22" rx="6" fill="#1e293b"/>
+  <text x="400" y="395" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#10b981">TOTAL: ~60-110ms for high-quality semantic search</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ivfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📊 IVF: Inverted File Index</text>
+  
+  <!-- Centroids -->
+  <g filter="url(#shadow)" transform="translate(60, 80)">
+    <rect width="280" height="260" rx="14" fill="#1e293b" stroke="url(#ivfGrad)" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#a855f7">Centroid-based Clustering</text>
+    
+    <!-- Cluster 1 -->
+    <circle cx="80" cy="100" r="15" fill="#ec4899" filter="url(#glow)"/>
+    <text x="80" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#fff">C1</text>
+    <circle cx="50" cy="80" r="6" fill="#fda4af"/>
+    <circle cx="60" cy="120" r="6" fill="#fda4af"/>
+    <circle cx="100" cy="85" r="6" fill="#fda4af"/>
+    <circle cx="105" cy="115" r="6" fill="#fda4af"/>
+    <circle cx="70" cy="135" r="6" fill="#fda4af"/>
+    
+    <!-- Cluster 2 -->
+    <circle cx="200" cy="100" r="15" fill="#3b82f6" filter="url(#glow)"/>
+    <text x="200" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#fff">C2</text>
+    <circle cx="170" cy="85" r="6" fill="#93c5fd"/>
+    <circle cx="180" cy="120" r="6" fill="#93c5fd"/>
+    <circle cx="220" cy="80" r="6" fill="#93c5fd"/>
+    <circle cx="230" cy="110" r="6" fill="#93c5fd"/>
+    
+    <!-- Cluster 3 -->
+    <circle cx="140" cy="200" r="15" fill="#10b981" filter="url(#glow)"/>
+    <text x="140" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#fff">C3</text>
+    <circle cx="110" cy="185" r="6" fill="#6ee7b7"/>
+    <circle cx="120" cy="220" r="6" fill="#6ee7b7"/>
+    <circle cx="160" cy="180" r="6" fill="#6ee7b7"/>
+    <circle cx="165" cy="215" r="6" fill="#6ee7b7"/>
+    <circle cx="175" cy="195" r="6" fill="#6ee7b7"/>
+    
+    <!-- Query point -->
+    <circle cx="190" cy="170" r="8" fill="#fbbf24" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+    <text x="205" y="175" font-family="Segoe UI, sans-serif" font-size="9" fill="#fbbf24">query</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M350 200 L410 200" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Search process -->
+  <g filter="url(#shadow)" transform="translate(420, 80)">
+    <rect width="340" height="260" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="170" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">IVF Search Process</text>
+    
+    <rect x="20" y="50" width="300" height="55" rx="8" fill="#0f172a"/>
+    <text x="170" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Step 1: Find nearest centroid(s)</text>
+    <text x="170" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">nprobe = 2 → check C2 and C3</text>
+    
+    <rect x="20" y="115" width="300" height="55" rx="8" fill="#0f172a"/>
+    <text x="170" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Step 2: Search within clusters</text>
+    <text x="170" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Only compare ~10% of vectors</text>
+    
+    <rect x="20" y="180" width="300" height="55" rx="8" fill="#0f172a"/>
+    <text x="170" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Step 3: Return top-k results</text>
+    <text x="170" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Merge results from searched clusters</text>
+  </g>
+  
+  <!-- Bottom info -->
+  <rect x="150" y="355" width="500" height="22" rx="4" fill="#1e293b"/>
+  <text x="400" y="370" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Trade-off: Higher nprobe → Better recall, slower search | O(√n) query time</text>
+</svg>

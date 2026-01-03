@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cnnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="resnetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="vitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="clipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="dinoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🖼️ Image Embedding Evolution</text>
+  
+  <!-- Timeline line -->
+  <line x1="80" y1="150" x2="820" y2="150" stroke="#475569" stroke-width="3"/>
+  
+  <!-- Era labels -->
+  <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">2012</text>
+  <text x="280" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">2015</text>
+  <text x="460" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">2020</text>
+  <text x="640" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">2021</text>
+  <text x="820" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">2023</text>
+  
+  <!-- Timeline dots -->
+  <circle cx="100" cy="150" r="10" fill="url(#cnnGrad)"/>
+  <circle cx="280" cy="150" r="10" fill="url(#resnetGrad)"/>
+  <circle cx="460" cy="150" r="10" fill="url(#vitGrad)"/>
+  <circle cx="640" cy="150" r="10" fill="url(#clipGrad)"/>
+  <circle cx="820" cy="150" r="10" fill="url(#dinoGrad)"/>
+  
+  <!-- Arrows -->
+  <path d="M115 150 L260 150" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M295 150 L440 150" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M475 150 L620 150" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M655 150 L800 150" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Model cards -->
+  <!-- AlexNet -->
+  <g filter="url(#shadow)" transform="translate(30, 175)">
+    <rect width="140" height="150" rx="12" fill="url(#cnnGrad)"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">AlexNet</text>
+    <text x="70" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">CNN Pioneer</text>
+    <rect x="15" y="60" width="110" height="80" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">ImageNet 1000</text>
+    <text x="70" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">5 conv layers</text>
+    <text x="70" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">4096-d features</text>
+    <text x="70" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(255,255,255,0.7)">Deep learning era</text>
+  </g>
+  
+  <!-- ResNet -->
+  <g filter="url(#shadow)" transform="translate(210, 175)">
+    <rect width="140" height="150" rx="12" fill="url(#resnetGrad)"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ResNet</text>
+    <text x="70" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.7)">Skip Connections</text>
+    <rect x="15" y="60" width="110" height="80" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="70" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">50-152 layers</text>
+    <text x="70" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">Residual learning</text>
+    <text x="70" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">2048-d features</text>
+    <text x="70" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">Deeper = better</text>
+  </g>
+  
+  <!-- ViT -->
+  <g filter="url(#shadow)" transform="translate(390, 175)">
+    <rect width="140" height="150" rx="12" fill="url(#vitGrad)"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ViT</text>
+    <text x="70" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.7)">Vision Transformer</text>
+    <rect x="15" y="60" width="110" height="80" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="70" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">Patches as tokens</text>
+    <text x="70" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">Self-attention</text>
+    <text x="70" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">768-1024 dims</text>
+    <text x="70" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">No convolutions!</text>
+  </g>
+  
+  <!-- CLIP -->
+  <g filter="url(#shadow)" transform="translate(570, 175)">
+    <rect width="140" height="150" rx="12" fill="url(#clipGrad)"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">CLIP</text>
+    <text x="70" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Multi-Modal</text>
+    <rect x="15" y="60" width="110" height="80" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">Image + Text</text>
+    <text x="70" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">Contrastive</text>
+    <text x="70" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">Zero-shot</text>
+    <text x="70" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(255,255,255,0.7)">OpenAI</text>
+  </g>
+  
+  <!-- DINOv2 -->
+  <g filter="url(#shadow)" transform="translate(750, 175)">
+    <rect width="140" height="150" rx="12" fill="url(#dinoGrad)"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">DINOv2</text>
+    <text x="70" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Self-Supervised</text>
+    <rect x="15" y="60" width="110" height="80" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">No labels needed</text>
+    <text x="70" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">Student-teacher</text>
+    <text x="70" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">Universal features</text>
+    <text x="70" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(255,255,255,0.7)">Meta AI</text>
+  </g>
+  
+  <!-- Bottom -->
+  <rect x="200" y="340" width="500" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="360" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">CNN → Transformers → Multi-modal → Self-supervised: The vision revolution</text>
+</svg>

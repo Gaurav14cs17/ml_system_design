@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="lossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="optGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🎓 Embedding Training Pipeline</text>
+  
+  <!-- Step 1: Data Preparation -->
+  <g filter="url(#shadow)" transform="translate(50, 70)">
+    <rect width="700" height="95" rx="14" fill="#1e293b" stroke="url(#dataGrad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">1. DATA PREPARATION</text>
+    
+    <rect x="20" y="45" width="95" height="35" rx="6" fill="#0f172a"/>
+    <text x="67" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">📄 Raw Data</text>
+    
+    <path d="M125 63 L165 63" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="175" y="45" width="120" height="35" rx="6" fill="#3b82f6"/>
+    <text x="235" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Positive Pairs</text>
+    
+    <path d="M305 63 L345 63" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="355" y="45" width="120" height="35" rx="6" fill="#f59e0b"/>
+    <text x="415" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#1e293b">Hard Negatives</text>
+    
+    <path d="M485 63 L525 63" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="535" y="45" width="95" height="35" rx="6" fill="#10b981"/>
+    <text x="582" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#1e293b">Batch Ready</text>
+  </g>
+  
+  <path d="M400 170 L400 195" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Model Architecture -->
+  <g filter="url(#shadow)" transform="translate(50, 200)">
+    <rect width="700" height="110" rx="14" fill="#1e293b" stroke="url(#modelGrad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">2. MODEL ARCHITECTURE</text>
+    
+    <rect x="30" y="45" width="80" height="25" rx="4" fill="#ec4899"/>
+    <text x="70" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Anchor</text>
+    
+    <rect x="30" y="75" width="80" height="25" rx="4" fill="#10b981"/>
+    <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Positive</text>
+    
+    <path d="M115 57 L180 75" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M115 87 L180 75" stroke="#64748b" stroke-width="1.5"/>
+    
+    <rect x="185" y="50" width="150" height="50" rx="10" fill="url(#modelGrad)"/>
+    <text x="260" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">ENCODER</text>
+    <text x="260" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">(shared weights)</text>
+    
+    <path d="M340 75 L400 75" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="410" y="50" width="130" height="50" rx="10" fill="#0f172a"/>
+    <text x="475" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">EMBEDDINGS</text>
+    <text x="475" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">[768 dimensions]</text>
+    
+    <rect x="570" y="45" width="100" height="60" rx="8" fill="#0f172a"/>
+    <text x="620" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• BERT</text>
+    <text x="620" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• RoBERTa</text>
+    <text x="620" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• MiniLM</text>
+  </g>
+  
+  <path d="M400 315 L400 340" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Loss Computation -->
+  <g filter="url(#shadow)" transform="translate(50, 345)">
+    <rect width="700" height="95" rx="14" fill="#1e293b" stroke="url(#lossGrad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f97316">3. LOSS COMPUTATION</text>
+    
+    <circle cx="80" cy="65" r="12" fill="#fbbf24"/>
+    <text x="80" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" font-weight="bold" fill="#1e293b">A</text>
+    
+    <line x1="95" y1="58" x2="160" y2="50" stroke="#10b981" stroke-width="2"/>
+    <text x="125" y="45" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">PULL</text>
+    
+    <circle cx="175" cy="50" r="10" fill="#10b981"/>
+    <text x="175" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">+</text>
+    
+    <line x1="95" y1="72" x2="160" y2="80" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="125" y="90" font-family="Segoe UI, sans-serif" font-size="9" fill="#ef4444">PUSH</text>
+    
+    <circle cx="175" cy="80" r="10" fill="#ef4444"/>
+    <text x="175" y="84" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">−</text>
+    
+    <rect x="250" y="42" width="420" height="45" rx="8" fill="#0f172a"/>
+    <text x="460" y="70" text-anchor="middle" font-family="Courier New, monospace" font-size="11" fill="#fbbf24">L = -log( exp(sim(a,p)/τ) / Σexp(sim(a,n)/τ) )</text>
+  </g>
+  
+  <path d="M400 445 L400 470" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Optimization -->
+  <g filter="url(#shadow)" transform="translate(50, 475)">
+    <rect width="700" height="60" rx="14" fill="#1e293b" stroke="url(#optGrad)" stroke-width="2"/>
+    <text x="25" y="25" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#34d399">4. OPTIMIZATION</text>
+    
+    <rect x="20" y="35" width="90" height="22" rx="4" fill="url(#optGrad)"/>
+    <text x="65" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">Backprop</text>
+    
+    <path d="M115 46 L145 46" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="155" y="35" width="120" height="22" rx="4" fill="url(#optGrad)"/>
+    <text x="215" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">Update Weights</text>
+    
+    <path d="M280 46 L310 46" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="320" y="35" width="70" height="22" rx="4" fill="url(#optGrad)"/>
+    <text x="355" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">Repeat</text>
+    
+    <path d="M395 46 L425 46" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="435" y="35" width="100" height="22" rx="4" fill="#fbbf24"/>
+    <text x="485" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#1e293b">Final Model ✓</text>
+  </g>
+</svg>

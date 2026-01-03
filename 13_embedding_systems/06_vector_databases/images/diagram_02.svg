@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 380">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="pineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="milvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="qdrantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="faissGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🗄️ Vector Database Comparison</text>
+  
+  <!-- Pinecone -->
+  <g filter="url(#shadow)" transform="translate(30, 70)">
+    <rect width="190" height="280" rx="12" fill="#1e293b" stroke="url(#pineGrad)" stroke-width="3"/>
+    <rect width="190" height="40" rx="12 12 0 0" fill="url(#pineGrad)"/>
+    <text x="95" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">Pinecone</text>
+    
+    <text x="95" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#10b981">☁️ Managed Service</text>
+    
+    <rect x="15" y="80" width="160" height="85" rx="6" fill="#0f172a"/>
+    <text x="95" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">✓ Pros</text>
+    <text x="95" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Zero ops overhead</text>
+    <text x="95" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Easy scaling</text>
+    <text x="95" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Metadata filtering</text>
+    
+    <rect x="15" y="175" width="160" height="55" rx="6" fill="#0f172a"/>
+    <text x="95" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">✗ Cons</text>
+    <text x="95" y="213" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Vendor lock-in</text>
+    <text x="95" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Cost at scale</text>
+    
+    <text x="95" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Best for: Quick start</text>
+  </g>
+  
+  <!-- Milvus -->
+  <g filter="url(#shadow)" transform="translate(235, 70)">
+    <rect width="190" height="280" rx="12" fill="#1e293b" stroke="url(#milvGrad)" stroke-width="3"/>
+    <rect width="190" height="40" rx="12 12 0 0" fill="url(#milvGrad)"/>
+    <text x="95" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">Milvus</text>
+    
+    <text x="95" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">🐳 Self-hosted</text>
+    
+    <rect x="15" y="80" width="160" height="85" rx="6" fill="#0f172a"/>
+    <text x="95" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">✓ Pros</text>
+    <text x="95" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Massive scale</text>
+    <text x="95" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">GPU support</text>
+    <text x="95" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Multiple index types</text>
+    
+    <rect x="15" y="175" width="160" height="55" rx="6" fill="#0f172a"/>
+    <text x="95" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">✗ Cons</text>
+    <text x="95" y="213" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Complex setup</text>
+    <text x="95" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Resource heavy</text>
+    
+    <text x="95" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Best for: Enterprise</text>
+  </g>
+  
+  <!-- Qdrant -->
+  <g filter="url(#shadow)" transform="translate(440, 70)">
+    <rect width="190" height="280" rx="12" fill="#1e293b" stroke="url(#qdrantGrad)" stroke-width="3"/>
+    <rect width="190" height="40" rx="12 12 0 0" fill="url(#qdrantGrad)"/>
+    <text x="95" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">Qdrant</text>
+    
+    <text x="95" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f97316">🦀 Rust-based</text>
+    
+    <rect x="15" y="80" width="160" height="85" rx="6" fill="#0f172a"/>
+    <text x="95" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">✓ Pros</text>
+    <text x="95" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Fast and efficient</text>
+    <text x="95" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Great filtering</text>
+    <text x="95" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Easy to deploy</text>
+    
+    <rect x="15" y="175" width="160" height="55" rx="6" fill="#0f172a"/>
+    <text x="95" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">✗ Cons</text>
+    <text x="95" y="213" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Newer ecosystem</text>
+    <text x="95" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Fewer integrations</text>
+    
+    <text x="95" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Best for: Performance</text>
+  </g>
+  
+  <!-- FAISS -->
+  <g filter="url(#shadow)" transform="translate(645, 70)">
+    <rect width="190" height="280" rx="12" fill="#1e293b" stroke="url(#faissGrad)" stroke-width="3"/>
+    <rect width="190" height="40" rx="12 12 0 0" fill="url(#faissGrad)"/>
+    <text x="95" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">FAISS</text>
+    
+    <text x="95" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a855f7">📚 Library</text>
+    
+    <rect x="15" y="80" width="160" height="85" rx="6" fill="#0f172a"/>
+    <text x="95" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">✓ Pros</text>
+    <text x="95" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Extremely fast</text>
+    <text x="95" y="133" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">GPU optimized</text>
+    <text x="95" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Research-grade</text>
+    
+    <rect x="15" y="175" width="160" height="55" rx="6" fill="#0f172a"/>
+    <text x="95" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">✗ Cons</text>
+    <text x="95" y="213" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Not a database</text>
+    <text x="95" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">No persistence</text>
+    
+    <text x="95" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Best for: Research</text>
+  </g>
+  
+  <rect x="225" y="360" width="400" height="18" rx="4" fill="#1e293b"/>
+  <text x="425" y="373" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Choose based on: scale, ops capacity, budget, and feature requirements</text>
+</svg>

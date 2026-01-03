@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="preGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="tfidfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="w2vGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="gloveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="ftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📚 Word Embedding Evolution Timeline</text>
+  
+  <!-- Timeline line -->
+  <line x1="80" y1="170" x2="820" y2="170" stroke="#475569" stroke-width="3"/>
+  
+  <!-- Era labels -->
+  <text x="120" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Pre-2000</text>
+  <text x="280" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">2000-2012</text>
+  <text x="450" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">2013</text>
+  <text x="620" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">2014</text>
+  <text x="780" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">2016</text>
+  
+  <!-- Timeline dots -->
+  <circle cx="120" cy="170" r="8" fill="url(#preGrad)"/>
+  <circle cx="280" cy="170" r="8" fill="url(#tfidfGrad)"/>
+  <circle cx="450" cy="170" r="8" fill="url(#w2vGrad)"/>
+  <circle cx="620" cy="170" r="8" fill="url(#gloveGrad)"/>
+  <circle cx="780" cy="170" r="8" fill="url(#ftGrad)"/>
+  
+  <!-- Arrow connections -->
+  <path d="M135 170 L260 170" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M300 170 L430 170" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M470 170 L600 170" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M640 170 L760 170" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Method cards -->
+  <!-- One-Hot -->
+  <g filter="url(#shadow)" transform="translate(50, 195)">
+    <rect width="140" height="130" rx="12" fill="url(#preGrad)"/>
+    <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">One-Hot</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Sparse Binary</text>
+    <rect x="15" y="55" width="110" height="65" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">100,000+ dims</text>
+    <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fca5a5">❌ No similarity</text>
+    <text x="70" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fca5a5">❌ Huge vectors</text>
+  </g>
+  
+  <!-- TF-IDF/LSA -->
+  <g filter="url(#shadow)" transform="translate(210, 195)">
+    <rect width="140" height="130" rx="12" fill="url(#tfidfGrad)"/>
+    <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">TF-IDF / LSA</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.7)">SVD Reduction</text>
+    <rect x="15" y="55" width="110" height="65" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="70" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.8)">100-500 dims</text>
+    <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">✓ Some similarity</text>
+    <text x="70" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#b45309">⚠ Limited semantic</text>
+  </g>
+  
+  <!-- Word2Vec -->
+  <g filter="url(#shadow)" transform="translate(380, 195)">
+    <rect width="140" height="130" rx="12" fill="url(#w2vGrad)"/>
+    <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">Word2Vec</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">CBOW / Skip-gram</text>
+    <rect x="15" y="55" width="110" height="65" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">100-300 dims</text>
+    <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a7f3d0">✓ Great similarity</text>
+    <text x="70" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#a7f3d0">✓ Analogies work!</text>
+  </g>
+  
+  <!-- GloVe -->
+  <g filter="url(#shadow)" transform="translate(550, 195)">
+    <rect width="140" height="130" rx="12" fill="url(#gloveGrad)"/>
+    <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">GloVe</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Global Vectors</text>
+    <rect x="15" y="55" width="110" height="65" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">50-300 dims</text>
+    <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#bfdbfe">✓ Better analogies</text>
+    <text x="70" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#bfdbfe">✓ Global statistics</text>
+  </g>
+  
+  <!-- FastText -->
+  <g filter="url(#shadow)" transform="translate(710, 195)">
+    <rect width="140" height="130" rx="12" fill="url(#ftGrad)"/>
+    <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">FastText</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Subwords</text>
+    <rect x="15" y="55" width="110" height="65" rx="6" fill="rgba(0,0,0,0.2)"/>
+    <text x="70" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.9)">100-300 dims</text>
+    <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ddd6fe">✓ OOV handling</text>
+    <text x="70" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ddd6fe">✓ Morphology</text>
+  </g>
+  
+  <!-- Bottom annotation -->
+  <rect x="150" y="340" width="600" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="360" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Neural embeddings (2013+) revolutionized NLP with semantic understanding</text>
+</svg>

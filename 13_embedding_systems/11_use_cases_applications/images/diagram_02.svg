@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="onlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🤖 RAG System Architecture</text>
+  
+  <!-- Offline Indexing -->
+  <g filter="url(#shadow)" transform="translate(50, 70)">
+    <rect width="750" height="130" rx="14" fill="#1e293b" stroke="url(#offlineGrad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">OFFLINE: INDEXING</text>
+    
+    <rect x="20" y="50" width="120" height="60" rx="8" fill="#0f172a"/>
+    <text x="80" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">📄 Documents</text>
+    <text x="80" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">PDF, HTML, etc.</text>
+    
+    <path d="M150 80 L190 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="200" y="50" width="130" height="60" rx="8" fill="url(#offlineGrad)"/>
+    <text x="265" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">Chunk Splitter</text>
+    <text x="265" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">512 tokens</text>
+    
+    <path d="M340 80 L380 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="390" y="50" width="130" height="60" rx="8" fill="url(#offlineGrad)"/>
+    <text x="455" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">Embed</text>
+    <text x="455" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">BERT / E5</text>
+    
+    <path d="M530 80 L570 80" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="580" y="50" width="150" height="60" rx="8" fill="#3b82f6"/>
+    <text x="655" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">Vector Store</text>
+    <text x="655" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">●●●●● indexed</text>
+  </g>
+  
+  <!-- Online Querying -->
+  <g filter="url(#shadow)" transform="translate(50, 220)">
+    <rect width="750" height="230" rx="14" fill="#1e293b" stroke="url(#onlineGrad)" stroke-width="2"/>
+    <text x="25" y="30" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#34d399">ONLINE: QUERYING</text>
+    
+    <rect x="20" y="50" width="120" height="50" rx="8" fill="#0f172a"/>
+    <text x="80" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">"What is...?"</text>
+    <text x="80" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">User Query</text>
+    
+    <path d="M150 75 L190 75" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="200" y="50" width="100" height="50" rx="8" fill="url(#onlineGrad)"/>
+    <text x="250" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#1e293b">Embed</text>
+    <text x="250" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.6)">Query</text>
+    
+    <path d="M310 75 L350 75" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="360" y="50" width="120" height="50" rx="8" fill="url(#onlineGrad)"/>
+    <text x="420" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#1e293b">Retrieve</text>
+    <text x="420" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.6)">Top-K Chunks</text>
+    
+    <path d="M420 105 L420 125" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- LLM Box -->
+    <rect x="160" y="130" width="520" height="80" rx="10" fill="#f59e0b"/>
+    <text x="420" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">🧠 LLM (GPT-4 / Claude)</text>
+    <text x="420" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.7)">Context: [retrieved chunks] + Question: [user query]</text>
+    <text x="420" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.7)">→ Generate grounded answer</text>
+  </g>
+  
+  <!-- Output -->
+  <rect x="300" y="455" width="250" height="25" rx="6" fill="#10b981"/>
+  <text x="425" y="472" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#1e293b">💬 "Based on the documents..."</text>
+</svg>

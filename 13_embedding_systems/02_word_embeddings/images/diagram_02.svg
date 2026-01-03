@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrowX" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowY" markerWidth="10" markerHeight="10" refX="5" refY="1" orient="auto">
+      <path d="M0,10 L5,0 L10,10 L5,7 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">👑 Word2Vec: Vector Arithmetic Magic</text>
+  
+  <!-- Main visualization area -->
+  <g transform="translate(50, 70)">
+    <!-- Coordinate system -->
+    <path d="M200 330 L200 30" stroke="#475569" stroke-width="2" marker-end="url(#arrowY)"/>
+    <path d="M30 250 L450 250" stroke="#475569" stroke-width="2" marker-end="url(#arrowX)"/>
+    
+    <!-- Grid lines -->
+    <line x1="100" y1="250" x2="100" y2="50" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="300" y1="250" x2="300" y2="50" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="400" y1="250" x2="400" y2="50" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="30" y1="150" x2="450" y2="150" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="30" y1="100" x2="450" y2="100" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+    
+    <!-- Axis labels -->
+    <text x="455" y="255" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">dimension 1</text>
+    <text x="205" y="25" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">dimension 2</text>
+    
+    <!-- Gender vector (horizontal) -->
+    <line x1="100" y1="200" x2="340" y2="200" stroke="#ec4899" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+    <line x1="100" y1="80" x2="340" y2="80" stroke="#ec4899" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+    <text x="220" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ec4899">← gender direction →</text>
+    
+    <!-- Royalty vector (vertical) -->
+    <line x1="100" y1="200" x2="100" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+    <line x1="340" y1="200" x2="340" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+    <text x="70" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24" transform="rotate(-90, 70, 140)">royalty direction</text>
+    
+    <!-- Points with glow -->
+    <!-- man -->
+    <circle cx="100" cy="200" r="16" fill="#3b82f6" filter="url(#glow)"/>
+    <text x="100" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">♂</text>
+    <text x="100" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#3b82f6">"man"</text>
+    
+    <!-- woman -->
+    <circle cx="340" cy="200" r="16" fill="#ec4899" filter="url(#glow)"/>
+    <text x="340" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">♀</text>
+    <text x="340" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#ec4899">"woman"</text>
+    
+    <!-- king -->
+    <circle cx="100" cy="80" r="16" fill="#fbbf24" filter="url(#glow)"/>
+    <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#1e293b">👑</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">"king"</text>
+    
+    <!-- queen -->
+    <circle cx="340" cy="80" r="16" fill="#a855f7" filter="url(#glow)"/>
+    <text x="340" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">👸</text>
+    <text x="340" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#a855f7">"queen"</text>
+    
+    <!-- Parallelogram lines -->
+    <line x1="100" y1="200" x2="100" y2="80" stroke="#64748b" stroke-width="1"/>
+    <line x1="340" y1="200" x2="340" y2="80" stroke="#64748b" stroke-width="1"/>
+    <line x1="100" y1="200" x2="340" y2="200" stroke="#64748b" stroke-width="1"/>
+    <line x1="100" y1="80" x2="340" y2="80" stroke="#64748b" stroke-width="1"/>
+  </g>
+  
+  <!-- Formula box -->
+  <g filter="url(#shadow)" transform="translate(530, 80)">
+    <rect width="280" height="280" rx="16" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    
+    <text x="140" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">The Famous Equation</text>
+    
+    <rect x="20" y="55" width="240" height="55" rx="10" fill="#0f172a"/>
+    <text x="140" y="85" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#fbbf24">
+      king - man + woman
+    </text>
+    <text x="140" y="102" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#a855f7">
+      ≈ queen
+    </text>
+    
+    <text x="140" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Why it works:</text>
+    
+    <rect x="20" y="155" width="240" height="110" rx="8" fill="#0f172a"/>
+    <text x="30" y="178" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">1. king - man = royalty vector</text>
+    <text x="30" y="200" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">2. woman + royalty = queen</text>
+    <text x="30" y="225" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">3. Semantic relations are</text>
+    <text x="45" y="245" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">captured geometrically!</text>
+  </g>
+  
+  <!-- More analogies -->
+  <g filter="url(#shadow)" transform="translate(530, 375)">
+    <rect width="280" height="55" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="140" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#10b981">More Analogies That Work:</text>
+    <text x="140" y="38" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#64748b">paris - france + italy ≈ rome</text>
+    <text x="140" y="50" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#64748b">walking - walk + swim ≈ swimming</text>
+  </g>
+</svg>

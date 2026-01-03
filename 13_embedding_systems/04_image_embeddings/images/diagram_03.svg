@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="imageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="vitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="embedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🔗 CLIP: Contrastive Language-Image Pre-training</text>
+  
+  <!-- Image Side -->
+  <g filter="url(#shadow)" transform="translate(80, 80)">
+    <rect width="130" height="100" rx="12" fill="url(#imageGrad)"/>
+    <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#fff">🖼️</text>
+    <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">Image</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">224×224</text>
+  </g>
+  
+  <path d="M215 130 L275 130" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(280, 90)">
+    <rect width="130" height="80" rx="10" fill="url(#vitGrad)"/>
+    <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Vision</text>
+    <text x="65" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Transformer</text>
+    <text x="65" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">ViT-B/32</text>
+  </g>
+  
+  <path d="M415 130 L475 130" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(480, 90)">
+    <rect width="130" height="80" rx="10" fill="url(#embedGrad)"/>
+    <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Image</text>
+    <text x="65" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Embedding</text>
+    <text x="65" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.6)">[512 dims]</text>
+  </g>
+  
+  <!-- Text Side -->
+  <g filter="url(#shadow)" transform="translate(80, 220)">
+    <rect width="130" height="100" rx="12" fill="url(#textGrad)"/>
+    <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#fff">📝</text>
+    <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">Text</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(255,255,255,0.7)">"a cat sitting"</text>
+  </g>
+  
+  <path d="M215 270 L275 270" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(280, 230)">
+    <rect width="130" height="80" rx="10" fill="url(#vitGrad)"/>
+    <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Text</text>
+    <text x="65" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">Transformer</text>
+    <text x="65" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">GPT-style</text>
+  </g>
+  
+  <path d="M415 270 L475 270" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(480, 230)">
+    <rect width="130" height="80" rx="10" fill="url(#embedGrad)"/>
+    <text x="65" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Text</text>
+    <text x="65" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Embedding</text>
+    <text x="65" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.6)">[512 dims]</text>
+  </g>
+  
+  <!-- ALIGNED text -->
+  <text x="545" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">◄─ ALIGNED ─►</text>
+  <text x="545" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Same Space</text>
+  
+  <!-- Contrastive Training Box -->
+  <g filter="url(#shadow)" transform="translate(650, 80)">
+    <rect width="220" height="240" rx="14" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fbbf24">Contrastive Training</text>
+    
+    <text x="30" y="60" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Images</text>
+    <text x="80" y="60" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">I₁ I₂ I₃ I₄</text>
+    
+    <!-- Similarity Matrix -->
+    <rect x="30" y="75" width="25" height="25" rx="3" fill="#10b981"/>
+    <rect x="58" y="75" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="86" y="75" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="114" y="75" width="25" height="25" rx="3" fill="#334155"/>
+    <text x="170" y="92" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">T₁</text>
+    
+    <rect x="30" y="103" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="58" y="103" width="25" height="25" rx="3" fill="#10b981"/>
+    <rect x="86" y="103" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="114" y="103" width="25" height="25" rx="3" fill="#334155"/>
+    <text x="170" y="120" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">T₂</text>
+    
+    <rect x="30" y="131" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="58" y="131" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="86" y="131" width="25" height="25" rx="3" fill="#10b981"/>
+    <rect x="114" y="131" width="25" height="25" rx="3" fill="#334155"/>
+    <text x="170" y="148" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">T₃</text>
+    
+    <rect x="30" y="159" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="58" y="159" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="86" y="159" width="25" height="25" rx="3" fill="#334155"/>
+    <rect x="114" y="159" width="25" height="25" rx="3" fill="#10b981"/>
+    <text x="170" y="176" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">T₄</text>
+    
+    <text x="110" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#10b981">✓ Maximize diagonal</text>
+    <text x="110" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ef4444">✗ Minimize off-diagonal</text>
+  </g>
+  
+  <!-- Bottom Use Cases -->
+  <rect x="100" y="350" width="700" height="60" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="450" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Zero-Shot Capabilities</text>
+  <text x="450" y="395" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Image classification • Image search • Image-text matching • Visual QA</text>
+</svg>

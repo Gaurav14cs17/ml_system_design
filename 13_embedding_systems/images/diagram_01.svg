@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="imageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="graphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="encoderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="vectorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="appGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">🎯 EMBEDDING SYSTEMS: THE BIG PICTURE</text>
+  <line x1="200" y1="60" x2="700" y2="60" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Raw Data Section -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="90" width="160" height="320" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="120" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📥 RAW DATA</text>
+    
+    <!-- Text input -->
+    <rect x="55" y="145" width="130" height="60" rx="10" fill="url(#textGrad)" opacity="0.9"/>
+    <text x="120" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fff">📝 TEXT</text>
+    <text x="120" y="190" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)">"hello world"</text>
+    
+    <!-- Image input -->
+    <rect x="55" y="215" width="130" height="60" rx="10" fill="url(#imageGrad)" opacity="0.9"/>
+    <text x="120" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fff">🖼️ IMAGE</text>
+    <text x="120" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">224×224 pixels</text>
+    
+    <!-- Graph input -->
+    <rect x="55" y="285" width="130" height="60" rx="10" fill="url(#graphGrad)" opacity="0.9"/>
+    <text x="120" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fff">🕸️ GRAPH</text>
+    <text x="120" y="330" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">nodes + edges</text>
+    
+    <!-- Audio input -->
+    <rect x="55" y="355" width="130" height="45" rx="10" fill="#ec4899" opacity="0.9"/>
+    <text x="120" y="382" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fff">🔊 AUDIO</text>
+  </g>
+  
+  <!-- Arrow to encoder -->
+  <path d="M205 250 L275 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Encoder Section -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="150" width="180" height="200" rx="20" fill="url(#encoderGrad)" opacity="0.95"/>
+    <text x="370" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#fff">🧠 ENCODER</text>
+    <text x="370" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)">BERT, CLIP, ViT</text>
+    <text x="370" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)">Node2Vec, etc.</text>
+    
+    <!-- Neural network visualization -->
+    <circle cx="330" cy="290" r="8" fill="#fff" opacity="0.8"/>
+    <circle cx="350" cy="280" r="8" fill="#fff" opacity="0.8"/>
+    <circle cx="370" cy="295" r="8" fill="#fff" opacity="0.8"/>
+    <circle cx="390" cy="280" r="8" fill="#fff" opacity="0.8"/>
+    <circle cx="410" cy="290" r="8" fill="#fff" opacity="0.8"/>
+    
+    <line x1="330" y1="290" x2="350" y2="280" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    <line x1="350" y1="280" x2="370" y2="295" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    <line x1="370" y1="295" x2="390" y2="280" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    <line x1="390" y1="280" x2="410" y2="290" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    
+    <text x="370" y="335" text-anchor="middle" font-family="Courier New, monospace" font-size="11" fill="#fff">f(x) → ℝⁿ</text>
+  </g>
+  
+  <!-- Arrow to vector DB -->
+  <path d="M465 250 L535 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Vector Database Section -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="130" width="160" height="240" rx="16" fill="url(#vectorGrad)" opacity="0.95"/>
+    <text x="620" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#fff">🗄️ VECTOR DB</text>
+    
+    <!-- Vector visualization -->
+    <rect x="560" y="185" width="120" height="30" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="620" y="205" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">[0.2, -0.4, 0.7...]</text>
+    
+    <!-- Points visualization -->
+    <circle cx="580" cy="250" r="6" fill="#fbbf24"/>
+    <circle cx="600" cy="265" r="6" fill="#fbbf24"/>
+    <circle cx="620" cy="245" r="6" fill="#34d399"/>
+    <circle cx="640" cy="270" r="6" fill="#34d399"/>
+    <circle cx="660" cy="255" r="6" fill="#f472b6"/>
+    
+    <!-- Cluster lines -->
+    <ellipse cx="590" cy="257" rx="25" ry="20" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+    <ellipse cx="630" cy="257" rx="25" ry="20" fill="none" stroke="#34d399" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+    
+    <text x="620" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">ANN Index</text>
+    <text x="620" y="330" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">HNSW / IVF / PQ</text>
+    <text x="620" y="355" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">Billions of vectors</text>
+  </g>
+  
+  <!-- Arrow to applications -->
+  <path d="M705 250 L755 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Applications Section -->
+  <g filter="url(#shadow)">
+    <rect x="760" y="90" width="125" height="320" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="822" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🚀 APPS</text>
+    
+    <rect x="770" y="145" width="105" height="45" rx="8" fill="url(#appGrad)" opacity="0.9"/>
+    <text x="822" y="173" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#1e293b">🔍 Search</text>
+    
+    <rect x="770" y="200" width="105" height="45" rx="8" fill="#f472b6" opacity="0.9"/>
+    <text x="822" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">⭐ Recommend</text>
+    
+    <rect x="770" y="255" width="105" height="45" rx="8" fill="#a78bfa" opacity="0.9"/>
+    <text x="822" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">📚 RAG</text>
+    
+    <rect x="770" y="310" width="105" height="45" rx="8" fill="#22d3ee" opacity="0.9"/>
+    <text x="822" y="338" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#1e293b">📊 Cluster</text>
+    
+    <rect x="770" y="365" width="105" height="35" rx="8" fill="#4ade80" opacity="0.9"/>
+    <text x="822" y="388" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#1e293b">🎯 Classify</text>
+  </g>
+  
+  <!-- Bottom info bar -->
+  <rect x="100" y="440" width="700" height="40" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="465" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#94a3b8">Transform any data → Dense vectors → Enable similarity-based applications</text>
+</svg>

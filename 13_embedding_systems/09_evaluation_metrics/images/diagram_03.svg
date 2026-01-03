@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📏 Metrics Categories</text>
+  
+  <!-- Intrinsic -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="230" height="150" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="115" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#10b981">Intrinsic Metrics</text>
+    <text x="115" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Embedding quality directly</text>
+    
+    <rect x="15" y="65" width="200" height="25" rx="4" fill="#0f172a"/>
+    <text x="25" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">├ Similarity correlation</text>
+    
+    <rect x="15" y="95" width="200" height="25" rx="4" fill="#0f172a"/>
+    <text x="25" y="112" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">├ Analogy accuracy</text>
+    
+    <rect x="15" y="125" width="200" height="20" rx="4" fill="#0f172a"/>
+    <text x="25" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">└ Clustering quality</text>
+  </g>
+  
+  <!-- Extrinsic -->
+  <g filter="url(#shadow)" transform="translate(285, 70)">
+    <rect width="230" height="150" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="115" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#3b82f6">Extrinsic Metrics</text>
+    <text x="115" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Downstream task performance</text>
+    
+    <rect x="15" y="65" width="200" height="25" rx="4" fill="#0f172a"/>
+    <text x="25" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">├ Retrieval (Recall, MRR)</text>
+    
+    <rect x="15" y="95" width="200" height="25" rx="4" fill="#0f172a"/>
+    <text x="25" y="112" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">├ Classification (Acc, F1)</text>
+    
+    <rect x="15" y="125" width="200" height="20" rx="4" fill="#0f172a"/>
+    <text x="25" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">└ Ranking (MAP, NDCG)</text>
+  </g>
+  
+  <!-- System -->
+  <g filter="url(#shadow)" transform="translate(530, 70)">
+    <rect width="230" height="150" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="115" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f59e0b">System Metrics</text>
+    <text x="115" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Operational performance</text>
+    
+    <rect x="15" y="65" width="200" height="25" rx="4" fill="#0f172a"/>
+    <text x="25" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">├ Latency (p50, p99)</text>
+    
+    <rect x="15" y="95" width="200" height="25" rx="4" fill="#0f172a"/>
+    <text x="25" y="112" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">├ Throughput (QPS)</text>
+    
+    <rect x="15" y="125" width="200" height="20" rx="4" fill="#0f172a"/>
+    <text x="25" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">└ Recall vs Speed</text>
+  </g>
+  
+  <!-- MTEB benchmark -->
+  <g filter="url(#shadow)" transform="translate(150, 240)">
+    <rect width="500" height="90" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">🏆 MTEB Benchmark</text>
+    <text x="250" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Massive Text Embedding Benchmark</text>
+    <text x="250" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">56 datasets across 8 tasks: Classification, Clustering, Pair Classification,</text>
+    <text x="250" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Reranking, Retrieval, STS, Summarization, Question Answering</text>
+  </g>
+</svg>

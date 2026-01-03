@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="bertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="poolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="embedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="simGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔄 Bi-Encoder Architecture (Sentence-BERT)</text>
+  
+  <!-- Sentence A Path -->
+  <g filter="url(#shadow)" transform="translate(50, 70)">
+    <rect width="140" height="50" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#f8fafc">Sentence A</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Courier New, monospace" font-size="9" fill="#64748b">"I love dogs"</text>
+  </g>
+  
+  <path d="M195 95 L235 95" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(240, 60)">
+    <rect width="120" height="70" rx="12" fill="url(#bertGrad)"/>
+    <text x="60" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">BERT</text>
+    <text x="60" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Encoder</text>
+    <text x="60" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">(shared weights)</text>
+  </g>
+  
+  <path d="M365 95 L405 95" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(410, 70)">
+    <rect width="100" height="50" rx="10" fill="url(#poolGrad)"/>
+    <text x="50" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Pooling</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.6)">mean/[CLS]</text>
+  </g>
+  
+  <path d="M515 95 L555 95" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(560, 65)">
+    <rect width="130" height="60" rx="10" fill="url(#embedGrad)"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Embedding A</text>
+    <text x="65" y="43" text-anchor="middle" font-family="Courier New, monospace" font-size="9" fill="rgba(0,0,0,0.7)">[0.23, -0.45,...]</text>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.5)">384-768 dims</text>
+  </g>
+  
+  <!-- Similarity box -->
+  <g filter="url(#shadow)" transform="translate(700, 120)">
+    <rect width="90" height="80" rx="12" fill="url(#simGrad)"/>
+    <text x="45" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">Cosine</text>
+    <text x="45" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fff">Similarity</text>
+    <text x="45" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">0.87</text>
+  </g>
+  
+  <!-- Arrows to similarity -->
+  <path d="M692 110 L708 135" stroke="#10b981" stroke-width="2" stroke-dasharray="4,2"/>
+  <path d="M692 210 L708 185" stroke="#10b981" stroke-width="2" stroke-dasharray="4,2"/>
+  
+  <!-- Sentence B Path -->
+  <g filter="url(#shadow)" transform="translate(50, 200)">
+    <rect width="140" height="50" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#f8fafc">Sentence B</text>
+    <text x="70" y="45" text-anchor="middle" font-family="Courier New, monospace" font-size="9" fill="#64748b">"Puppies are great"</text>
+  </g>
+  
+  <path d="M195 225 L235 225" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(240, 190)">
+    <rect width="120" height="70" rx="12" fill="url(#bertGrad)"/>
+    <text x="60" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fff">BERT</text>
+    <text x="60" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Encoder</text>
+    <text x="60" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">(shared weights)</text>
+  </g>
+  
+  <path d="M365 225 L405 225" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(410, 200)">
+    <rect width="100" height="50" rx="10" fill="url(#poolGrad)"/>
+    <text x="50" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Pooling</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(0,0,0,0.6)">mean/[CLS]</text>
+  </g>
+  
+  <path d="M515 225 L555 225" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(560, 195)">
+    <rect width="130" height="60" rx="10" fill="url(#embedGrad)"/>
+    <text x="65" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Embedding B</text>
+    <text x="65" y="43" text-anchor="middle" font-family="Courier New, monospace" font-size="9" fill="rgba(0,0,0,0.7)">[0.19, -0.41,...]</text>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.5)">384-768 dims</text>
+  </g>
+  
+  <!-- Advantage box -->
+  <rect x="150" y="275" width="500" height="35" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="400" y="297" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#10b981">✓ Encode once, search millions • O(1) per comparison after encoding</text>
+</svg>
