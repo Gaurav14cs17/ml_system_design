@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="bleuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="metricShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Translation Evaluation Metrics</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Measuring translation quality automatically</text>
+  
+  <!-- BLEU -->
+  <g transform="translate(50, 85)" filter="url(#metricShadow)">
+    <rect width="340" height="180" rx="12" fill="#1e293b" stroke="url(#bleuGrad)" stroke-width="2"/>
+    <text x="170" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">BLEU Score</text>
+    <text x="170" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Bilingual Evaluation Understudy</text>
+    
+    <text x="170" y="75" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">BLEU = BP · exp(Σ wₙ log pₙ)</text>
+    
+    <g transform="translate(20, 95)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">• pₙ = n-gram precision</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">• BP = brevity penalty</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">• wₙ = weights (usually 1/N)</text>
+    </g>
+    
+    <text x="170" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Range: 0-100 | Higher = Better</text>
+  </g>
+  
+  <!-- Other metrics -->
+  <g transform="translate(410, 85)" filter="url(#metricShadow)">
+    <rect width="340" height="180" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="170" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#34d399">Other Metrics</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="300" height="35" rx="6" fill="#064e3b"/>
+      <text x="150" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6ee7b7">METEOR</text>
+      <text x="150" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#a7f3d0">Synonyms + stemming + word order</text>
+    </g>
+    
+    <g transform="translate(20, 95)">
+      <rect x="0" y="0" width="300" height="35" rx="6" fill="#1e3a5f"/>
+      <text x="150" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#60a5fa">chrF</text>
+      <text x="150" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">Character-level F-score</text>
+    </g>
+    
+    <g transform="translate(20, 140)">
+      <rect x="0" y="0" width="300" height="35" rx="6" fill="#312e81"/>
+      <text x="150" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#a5b4fc">COMET</text>
+      <text x="150" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#c7d2fe">Neural metric using embeddings</text>
+    </g>
+  </g>
+  
+  <!-- Example -->
+  <g transform="translate(50, 285)" filter="url(#metricShadow)">
+    <rect width="700" height="75" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="350" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#94a3b8">Example BLEU Calculation</text>
+    <text x="350" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">Reference: "The cat sat on the mat" | Hypothesis: "A cat is on the mat"</text>
+    <text x="350" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fbbf24">1-gram: 4/6 matches | 2-gram: 2/5 matches | BLEU-4 ≈ 0.35</text>
+  </g>
+</svg>

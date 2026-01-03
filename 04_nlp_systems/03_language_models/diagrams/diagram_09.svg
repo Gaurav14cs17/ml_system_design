@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="bertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <filter id="bertShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">BERT: Bidirectional Encoder</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Masked Language Modeling + Next Sentence Prediction</text>
+  
+  <!-- MLM visualization -->
+  <g transform="translate(50, 85)" filter="url(#bertShadow)">
+    <rect width="340" height="180" rx="12" fill="#1e293b" stroke="url(#bertGrad)" stroke-width="2"/>
+    <text x="170" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Masked Language Modeling</text>
+    
+    <g transform="translate(20, 45)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">Input: "The [MASK] sat on the mat"</text>
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">Target: predict "cat"</text>
+    </g>
+    
+    <g transform="translate(20, 100)">
+      <rect x="0" y="0" width="55" height="25" rx="4" fill="#1e3a5f"/>
+      <text x="27" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">The</text>
+      
+      <rect x="60" y="0" width="55" height="25" rx="4" fill="#dc2626"/>
+      <text x="87" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">[MASK]</text>
+      
+      <rect x="120" y="0" width="55" height="25" rx="4" fill="#1e3a5f"/>
+      <text x="147" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">sat</text>
+      
+      <rect x="180" y="0" width="55" height="25" rx="4" fill="#1e3a5f"/>
+      <text x="207" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">on</text>
+      
+      <rect x="240" y="0" width="55" height="25" rx="4" fill="#1e3a5f"/>
+      <text x="267" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">...</text>
+    </g>
+    
+    <text x="170" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">15% tokens masked, 80% [MASK], 10% random, 10% unchanged</text>
+  </g>
+  
+  <!-- Bidirectional attention -->
+  <g transform="translate(410, 85)" filter="url(#bertShadow)">
+    <rect width="340" height="180" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="170" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#34d399">Bidirectional Context</text>
+    
+    <g transform="translate(30, 50)">
+      <text x="140" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">"The cat sat on the mat"</text>
+      
+      <!-- Bidirectional arrows -->
+      <line x1="70" y1="30" x2="210" y2="30" stroke="#6ee7b7" stroke-width="2"/>
+      <polygon points="70,30 80,25 80,35" fill="#6ee7b7"/>
+      <polygon points="210,30 200,25 200,35" fill="#6ee7b7"/>
+      
+      <text x="140" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">← Attends both directions →</text>
+    </g>
+    
+    <text x="170" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">vs GPT (left-to-right only)</text>
+    <text x="170" y="150" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">Better for understanding tasks</text>
+    <text x="170" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Classification, QA, NER</text>
+  </g>
+  
+  <!-- Key numbers -->
+  <g transform="translate(50, 285)" filter="url(#bertShadow)">
+    <rect width="700" height="70" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="350" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">BERT Variants</text>
+    <text x="350" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#e2e8f0">BERT-base: 12 layers, 768 dim, 12 heads, 110M params</text>
+    <text x="350" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#e2e8f0">BERT-large: 24 layers, 1024 dim, 16 heads, 340M params</text>
+  </g>
+</svg>

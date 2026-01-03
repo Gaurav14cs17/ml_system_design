@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="cleanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="normGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="tokenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="encodeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="pipeShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="pipeArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Text Preprocessing Pipeline</text>
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">Σ* → V* → ℤⁿ : From raw text to numerical tensors</text>
+  
+  <!-- Raw Input -->
+  <g transform="translate(40, 90)" filter="url(#pipeShadow)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">📄 Raw Text</text>
+    <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="10" fill="#e2e8f0">"Hello!! 🌍"</text>
+    <text x="80" y="72" text-anchor="middle" font-family="monospace" font-size="10" fill="#e2e8f0">"andlt;pandgt;Worldandlt;/pandgt;"</text>
+    <rect x="15" y="90" width="130" height="20" rx="4" fill="#334155"/>
+    <text x="80" y="104" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">Σ* (Unicode)</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M205 150 L245 150" stroke="#64748b" stroke-width="3" marker-end="url(#pipeArrow)"/>
+  
+  <!-- Clean -->
+  <g transform="translate(250, 90)" filter="url(#pipeShadow)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="url(#cleanGrad)" stroke-width="2"/>
+    <rect width="160" height="35" rx="12 12 0 0" fill="url(#cleanGrad)"/>
+    <text x="80" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🧹 Clean</text>
+    <text x="80" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">Remove HTML, URLs</text>
+    <text x="80" y="75" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">Handle special chars</text>
+    <rect x="15" y="90" width="130" height="20" rx="4" fill="#1e3a5f"/>
+    <text x="80" y="104" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">Noise reduction</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M415 150 L455 150" stroke="#64748b" stroke-width="3" marker-end="url(#pipeArrow)"/>
+  
+  <!-- Normalize -->
+  <g transform="translate(460, 90)" filter="url(#pipeShadow)">
+    <rect width="160" height="120" rx="12" fill="#1e293b" stroke="url(#normGrad)" stroke-width="2"/>
+    <rect width="160" height="35" rx="12 12 0 0" fill="url(#normGrad)"/>
+    <text x="80" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🔄 Normalize</text>
+    <text x="80" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">Unicode NFC</text>
+    <text x="80" y="75" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">Case folding</text>
+    <rect x="15" y="90" width="130" height="20" rx="4" fill="#2e1065"/>
+    <text x="80" y="104" text-anchor="middle" font-family="monospace" font-size="9" fill="#a78bfa">φ: Σ* → Σ'*</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M625 150 L665 150" stroke="#64748b" stroke-width="3" marker-end="url(#pipeArrow)"/>
+  
+  <!-- Tokenize -->
+  <g transform="translate(670, 90)" filter="url(#pipeShadow)">
+    <rect width="180" height="120" rx="12" fill="#1e293b" stroke="url(#tokenGrad)" stroke-width="2"/>
+    <rect width="180" height="35" rx="12 12 0 0" fill="url(#tokenGrad)"/>
+    <text x="90" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">✂️ Tokenize</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fcd34d">BPE / WordPiece</text>
+    <text x="90" y="75" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fcd34d">Subword units</text>
+    <rect x="15" y="90" width="150" height="20" rx="4" fill="#422006"/>
+    <text x="90" y="104" text-anchor="middle" font-family="monospace" font-size="9" fill="#fbbf24">τ: Σ* → V*</text>
+  </g>
+  
+  <!-- Second row -->
+  <!-- Encode -->
+  <g transform="translate(460, 250)" filter="url(#pipeShadow)">
+    <rect width="180" height="120" rx="12" fill="#1e293b" stroke="url(#encodeGrad)" stroke-width="2"/>
+    <rect width="180" height="35" rx="12 12 0 0" fill="url(#encodeGrad)"/>
+    <text x="90" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🔢 Encode</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">Token → ID mapping</text>
+    <text x="90" y="75" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">Add special tokens</text>
+    <rect x="15" y="90" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="90" y="104" text-anchor="middle" font-family="monospace" font-size="9" fill="#10b981">e: V → {0,...,|V|-1}</text>
+  </g>
+  
+  <!-- Arrow from tokenize to encode -->
+  <path d="M760 215 L760 260 L645 260" stroke="#64748b" stroke-width="3" marker-end="url(#pipeArrow)"/>
+  
+  <!-- Output -->
+  <g transform="translate(670, 250)" filter="url(#pipeShadow)">
+    <rect width="180" height="120" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#22d3ee">📊 Output</text>
+    <text x="90" y="55" text-anchor="middle" font-family="monospace" font-size="10" fill="#67e8f9">input_ids: [101, 7592, ...]</text>
+    <text x="90" y="75" text-anchor="middle" font-family="monospace" font-size="10" fill="#67e8f9">attention_mask: [1, 1, ...]</text>
+    <rect x="15" y="90" width="150" height="20" rx="4" fill="#164e63"/>
+    <text x="90" y="104" text-anchor="middle" font-family="monospace" font-size="9" fill="#06b6d4">ℤⁿ (tensor ready)</text>
+  </g>
+  
+  <!-- Mathematical note -->
+  <g transform="translate(40, 270)">
+    <rect width="380" height="100" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="20" y="25" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Key Transformations</text>
+    <text x="20" y="50" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">Clean: Remove tokens t where P(t|y) ≈ P(t)</text>
+    <text x="20" y="70" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">Normalize: φ(w) = φ(w') ⟹ w ≈ w' semantically</text>
+    <text x="20" y="90" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">Tokenize: Minimize |V| + α·E[|τ(s)|]</text>
+  </g>
+</svg>

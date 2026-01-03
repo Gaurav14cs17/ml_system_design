@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="greedyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="sampleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="decShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Decoding Strategies</text>
+  <text x="425" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Different methods for selecting the next token</text>
+  
+  <!-- Greedy -->
+  <g transform="translate(30, 80)" filter="url(#decShadow)">
+    <rect width="250" height="180" rx="12" fill="#1e293b" stroke="url(#greedyGrad)" stroke-width="2"/>
+    <rect width="250" height="38" rx="12 12 0 0" fill="url(#greedyGrad)"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fff">Greedy Decoding</text>
+    
+    <text x="125" y="65" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">x_t = argmax P(x | context)</text>
+    
+    <g transform="translate(15, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#fca5a5">• Pick highest prob token</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#fca5a5">• Fast (single path)</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#fca5a5">• Can get stuck in loops</text>
+      <text x="0" y="54" font-family="Inter, sans-serif" font-size="10" fill="#fca5a5">• Deterministic output</text>
+    </g>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Simple but suboptimal</text>
+  </g>
+  
+  <!-- Beam Search -->
+  <g transform="translate(300, 80)" filter="url(#decShadow)">
+    <rect width="250" height="180" rx="12" fill="#1e293b" stroke="url(#beamGrad)" stroke-width="2"/>
+    <rect width="250" height="38" rx="12 12 0 0" fill="url(#beamGrad)"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fff">Beam Search</text>
+    
+    <text x="125" y="65" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">Keep top-k candidates</text>
+    
+    <g transform="translate(15, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">• Explore k paths parallel</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">• Balance quality/speed</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">• k=1 = greedy</text>
+      <text x="0" y="54" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">• k=5 common choice</text>
+    </g>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Standard for translation</text>
+  </g>
+  
+  <!-- Sampling -->
+  <g transform="translate(570, 80)" filter="url(#decShadow)">
+    <rect width="250" height="180" rx="12" fill="#1e293b" stroke="url(#sampleGrad)" stroke-width="2"/>
+    <rect width="250" height="38" rx="12 12 0 0" fill="url(#sampleGrad)"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fff">Sampling Methods</text>
+    
+    <text x="125" y="65" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">x_t ~ P(x | context)</text>
+    
+    <g transform="translate(15, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">• Random from distribution</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">• Temperature τ controls</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">• Top-k / Top-p filtering</text>
+      <text x="0" y="54" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">• Creative outputs</text>
+    </g>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Best for chat/creative</text>
+  </g>
+  
+  <!-- Temperature explanation -->
+  <g transform="translate(50, 280)" filter="url(#decShadow)">
+    <rect width="750" height="95" rx="10" fill="#1e293b" stroke="#f59e0b"/>
+    <text x="375" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Temperature &amp; Top-p</text>
+    <text x="375" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">P'(x) = exp(logit(x)/τ) / Σ exp(logit(y)/τ)</text>
+    <text x="375" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">τ → 0: deterministic | τ = 1: unchanged | τ → ∞: uniform</text>
+    <text x="375" y="88" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Top-p (nucleus): sample from smallest set with cumulative prob ≥ p</text>
+  </g>
+</svg>

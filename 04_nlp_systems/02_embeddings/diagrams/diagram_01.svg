@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 380">
+  <defs>
+    <linearGradient id="sparseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="denseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔤 From Text to Vectors</text>
+  
+  <!-- Word display -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="50" width="150" height="50" rx="25" fill="#1e293b"/>
+    <text x="375" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Word: "king"</text>
+  </g>
+  
+  <!-- One-Hot Encoding -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="130" width="300" height="210" rx="14" fill="#0f172a"/>
+    <rect x="50" y="130" width="300" height="45" rx="14 14 0 0" fill="url(#sparseGrad)"/>
+    <text x="200" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 One-Hot (Sparse)</text>
+    
+    <!-- Vector visualization -->
+    <g transform="translate(70, 195)">
+      <rect x="0" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="11" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">0</text>
+      <rect x="24" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="35" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">0</text>
+      <rect x="48" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="59" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">0</text>
+      <rect x="72" y="0" width="22" height="22" rx="3" fill="#ef4444"/><text x="83" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">1</text>
+      <rect x="96" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="107" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">0</text>
+      <rect x="120" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="131" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">...</text>
+      <rect x="144" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="155" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">0</text>
+      <rect x="168" y="0" width="22" height="22" rx="3" fill="#450a0a"/><text x="179" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">0</text>
+      <rect x="192" y="0" width="60" height="22" rx="3" fill="#fecaca"/>
+      <text x="222" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#991b1b">~100K dims</text>
+    </g>
+    
+    <g transform="translate(70, 245)">
+      <rect x="0" y="0" width="260" height="25" rx="5" fill="#450a0a"/>
+      <text x="130" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ No semantic meaning</text>
+    </g>
+    <g transform="translate(70, 275)">
+      <rect x="0" y="0" width="260" height="25" rx="5" fill="#450a0a"/>
+      <text x="130" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ Huge dimensions</text>
+    </g>
+    <g transform="translate(70, 305)">
+      <rect x="0" y="0" width="260" height="25" rx="5" fill="#450a0a"/>
+      <text x="130" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ All words equally distant</text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M365 235 L385 235" stroke="#64748b" stroke-width="3"/>
+  <polygon points="385,230 400,235 385,240" fill="#64748b"/>
+  
+  <!-- Word Embedding -->
+  <g filter="url(#shadow)">
+    <rect x="400" y="130" width="300" height="210" rx="14" fill="#0f172a"/>
+    <rect x="400" y="130" width="300" height="45" rx="14 14 0 0" fill="url(#denseGrad)"/>
+    <text x="550" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧠 Word Embedding (Dense)</text>
+    
+    <!-- Vector visualization -->
+    <g transform="translate(420, 195)">
+      <rect x="0" y="0" width="30" height="22" rx="3" fill="#10b981"/><text x="15" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">0.25</text>
+      <rect x="32" y="0" width="30" height="22" rx="3" fill="#059669"/><text x="47" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">-0.73</text>
+      <rect x="64" y="0" width="30" height="22" rx="3" fill="#10b981"/><text x="79" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">0.89</text>
+      <rect x="96" y="0" width="22" height="22" rx="3" fill="#d1fae5"/><text x="107" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#065f46">...</text>
+      <rect x="120" y="0" width="30" height="22" rx="3" fill="#059669"/><text x="135" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">0.12</text>
+      <rect x="160" y="0" width="95" height="22" rx="3" fill="#d1fae5"/>
+      <text x="207" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#065f46">300 dimensions</text>
+    </g>
+    
+    <g transform="translate(420, 245)">
+      <rect x="0" y="0" width="260" height="25" rx="5" fill="#d1fae5"/>
+      <text x="130" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#065f46">✓ Captures meaning</text>
+    </g>
+    <g transform="translate(420, 275)">
+      <rect x="0" y="0" width="260" height="25" rx="5" fill="#d1fae5"/>
+      <text x="130" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#065f46">✓ Compact representation</text>
+    </g>
+    <g transform="translate(420, 305)">
+      <rect x="0" y="0" width="260" height="25" rx="5" fill="#d1fae5"/>
+      <text x="130" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#065f46">✓ Similar words → Similar vectors</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420">
+  <defs>
+    <linearGradient id="attnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="attnShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Self-Attention Mechanism</text>
+  <text x="425" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Attention(Q, K, V) = softmax(QK^T / √d_k) · V</text>
+  
+  <!-- QKV explanation -->
+  <g transform="translate(50, 85)" filter="url(#attnShadow)">
+    <rect width="230" height="130" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="115" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Query, Key, Value</text>
+    <text x="115" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">Q = X · W_Q</text>
+    <text x="115" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">K = X · W_K</text>
+    <text x="115" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">V = X · W_V</text>
+    <text x="115" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Linear projections of input</text>
+  </g>
+  
+  <g transform="translate(310, 85)" filter="url(#attnShadow)">
+    <rect width="230" height="130" rx="10" fill="#1e293b" stroke="url(#attnGrad)" stroke-width="2"/>
+    <text x="115" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f472b6">Attention Scores</text>
+    <text x="115" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">scores = Q · K^T / √d_k</text>
+    <text x="115" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fbcfe8">Scale by √d_k prevents</text>
+    <text x="115" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fbcfe8">softmax saturation</text>
+    <text x="115" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Dot product similarity</text>
+  </g>
+  
+  <g transform="translate(570, 85)" filter="url(#attnShadow)">
+    <rect width="230" height="130" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="115" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#34d399">Output</text>
+    <text x="115" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">weights = softmax(scores)</text>
+    <text x="115" y="75" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">output = weights · V</text>
+    <text x="115" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">Weighted combination</text>
+    <text x="115" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">of value vectors</text>
+  </g>
+  
+  <!-- Visual attention matrix -->
+  <g transform="translate(50, 240)" filter="url(#attnShadow)">
+    <rect width="350" height="150" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Attention Matrix (example)</text>
+    
+    <g transform="translate(60, 40)">
+      <text x="0" y="15" font-family="monospace" font-size="9" fill="#64748b">        The   cat   sat</text>
+      <text x="0" y="35" font-family="monospace" font-size="9" fill="#e2e8f0">The    0.7   0.2   0.1</text>
+      <text x="0" y="55" font-family="monospace" font-size="9" fill="#e2e8f0">cat    0.3   0.5   0.2</text>
+      <text x="0" y="75" font-family="monospace" font-size="9" fill="#e2e8f0">sat    0.1   0.3   0.6</text>
+    </g>
+    <text x="175" y="135" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Rows sum to 1 (softmax)</text>
+  </g>
+  
+  <!-- Key properties -->
+  <g transform="translate(430, 240)" filter="url(#attnShadow)">
+    <rect width="370" height="150" rx="10" fill="#1e293b" stroke="#8b5cf6"/>
+    <text x="185" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">Why Self-Attention Works</text>
+    <g transform="translate(20, 45)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">✓ Parallel computation (unlike RNN)</text>
+      <text x="0" y="22" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">✓ O(1) path length between any tokens</text>
+      <text x="0" y="44" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">✓ Learns which tokens to attend to</text>
+      <text x="0" y="66" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">✓ Captures long-range dependencies</text>
+    </g>
+    <text x="185" y="135" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Complexity: O(n²d) time, O(n²) space</text>
+  </g>
+</svg>

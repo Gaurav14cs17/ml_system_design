@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="algGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="infraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" fill="#f8fafc">The Three Pillars of NLP System Design</text>
+  <text x="400" y="75" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">Balancing algorithmic excellence, infrastructure robustness, and product thinking</text>
+  
+  <!-- Pillar 1: Algorithms -->
+  <g transform="translate(60, 110)" filter="url(#shadow)">
+    <rect width="200" height="260" rx="16" fill="#1e1b4b" stroke="url(#algGrad)" stroke-width="2"/>
+    <rect width="200" height="60" rx="16 16 0 0" fill="url(#algGrad)"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28">🧠</text>
+    <text x="100" y="52" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">ALGORITHMS</text>
+    
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a5b4fc">• Model Architecture</text>
+      <text x="0" y="28" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a5b4fc">• Training Strategies</text>
+      <text x="0" y="56" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a5b4fc">• Loss Functions</text>
+      <text x="0" y="84" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a5b4fc">• Optimization</text>
+      <text x="0" y="112" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a5b4fc">• Evaluation Metrics</text>
+      <text x="0" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a5b4fc">• Hyperparameter Tuning</text>
+    </g>
+    
+    <rect x="20" y="230" width="160" height="20" rx="4" fill="#312e81"/>
+    <text x="100" y="244" text-anchor="middle" font-family="monospace" font-size="10" fill="#c4b5fd">F1, BLEU, Perplexity</text>
+  </g>
+  
+  <!-- Pillar 2: Infrastructure -->
+  <g transform="translate(300, 110)" filter="url(#shadow)">
+    <rect width="200" height="260" rx="16" fill="#022c22" stroke="url(#infraGrad)" stroke-width="2"/>
+    <rect width="200" height="60" rx="16 16 0 0" fill="url(#infraGrad)"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28">⚙️</text>
+    <text x="100" y="52" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">INFRASTRUCTURE</text>
+    
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6ee7b7">• Scalable Serving</text>
+      <text x="0" y="28" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6ee7b7">• Low Latency (andlt;100ms)</text>
+      <text x="0" y="56" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6ee7b7">• Cost Optimization</text>
+      <text x="0" y="84" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6ee7b7">• Monitoring &amp; Logging</text>
+      <text x="0" y="112" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6ee7b7">• Auto-scaling</text>
+      <text x="0" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6ee7b7">• Caching Strategies</text>
+    </g>
+    
+    <rect x="20" y="230" width="160" height="20" rx="4" fill="#064e3b"/>
+    <text x="100" y="244" text-anchor="middle" font-family="monospace" font-size="10" fill="#a7f3d0">P99 andlt; 500ms, 99.9% SLA</text>
+  </g>
+  
+  <!-- Pillar 3: Product -->
+  <g transform="translate(540, 110)" filter="url(#shadow)">
+    <rect width="200" height="260" rx="16" fill="#422006" stroke="url(#prodGrad)" stroke-width="2"/>
+    <rect width="200" height="60" rx="16 16 0 0" fill="url(#prodGrad)"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28">🎯</text>
+    <text x="100" y="52" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">PRODUCT THINKING</text>
+    
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#fcd34d">• User Experience</text>
+      <text x="0" y="28" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#fcd34d">• Edge Case Handling</text>
+      <text x="0" y="56" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#fcd34d">• Graceful Degradation</text>
+      <text x="0" y="84" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#fcd34d">• Feedback Loops</text>
+      <text x="0" y="112" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#fcd34d">• A/B Testing</text>
+      <text x="0" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#fcd34d">• Continuous Iteration</text>
+    </g>
+    
+    <rect x="20" y="230" width="160" height="20" rx="4" fill="#78350f"/>
+    <text x="100" y="244" text-anchor="middle" font-family="monospace" font-size="10" fill="#fef3c7">User satisfaction ↑</text>
+  </g>
+</svg>

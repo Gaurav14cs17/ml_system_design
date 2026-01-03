@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 600">
+  <defs>
+    <linearGradient id="ragBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a"/>
+      <stop offset="100%" style="stop-color:#1a1a3e"/>
+    </linearGradient>
+    <linearGradient id="queryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="retrieveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="augmentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="generateGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="600" fill="url(#ragBg)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="#8b5cf6" opacity="0.05"/>
+  <circle cx="750" cy="500" r="200" fill="#06b6d4" opacity="0.05"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold">RAG ARCHITECTURE</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">Retrieval-Augmented Generation</text>
+  
+  <!-- User Query Example -->
+  <rect x="200" y="85" width="450" height="40" rx="20" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+  <text x="225" y="110" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12">💬</text>
+  <text x="250" y="110" fill="#1e293b" font-family="Georgia, serif" font-size="12" font-style="italic">"What are the latest features in Python 3.12?"</text>
+  
+  <!-- Main RAG Pipeline -->
+  <text x="425" y="160" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Core Pipeline</text>
+  
+  <!-- Step 1: Query -->
+  <g transform="translate(50, 180)">
+    <rect width="160" height="100" rx="15" fill="#0f172a" stroke="url(#queryGrad)" stroke-width="3" filter="url(#dropShadow)"/>
+    <rect width="160" height="35" rx="15" fill="url(#queryGrad)"/>
+    <rect y="20" width="160" height="15" fill="url(#queryGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">1️⃣ QUERY</text>
+    <text x="80" y="60" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="24">🔍</text>
+    <text x="80" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Embed user query</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 220 230 L 260 230" stroke="#22d3ee" stroke-width="3" marker-end="url(#arrowCyan)"/>
+  <polygon points="260,225 275,230 260,235" fill="#22d3ee"/>
+  
+  <!-- Step 2: Retrieve -->
+  <g transform="translate(280, 180)">
+    <rect width="160" height="100" rx="15" fill="#0f172a" stroke="url(#retrieveGrad)" stroke-width="3" filter="url(#dropShadow)"/>
+    <rect width="160" height="35" rx="15" fill="url(#retrieveGrad)"/>
+    <rect y="20" width="160" height="15" fill="url(#retrieveGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">2️⃣ RETRIEVE</text>
+    <text x="80" y="60" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="24">📚</text>
+    <text x="80" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Find relevant docs</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 450 230 L 490 230" stroke="#a78bfa" stroke-width="3"/>
+  <polygon points="490,225 505,230 490,235" fill="#a78bfa"/>
+  
+  <!-- Step 3: Augment -->
+  <g transform="translate(510, 180)">
+    <rect width="160" height="100" rx="15" fill="#0f172a" stroke="url(#augmentGrad)" stroke-width="3" filter="url(#dropShadow)"/>
+    <rect width="160" height="35" rx="15" fill="url(#augmentGrad)"/>
+    <rect y="20" width="160" height="15" fill="url(#augmentGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">3️⃣ AUGMENT</text>
+    <text x="80" y="60" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="24">✨</text>
+    <text x="80" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Build context prompt</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M 680 230 L 720 230" stroke="#fbbf24" stroke-width="3"/>
+  <polygon points="720,225 735,230 720,235" fill="#fbbf24"/>
+  
+  <!-- Step 4: Generate -->
+  <g transform="translate(740, 180)">
+    <rect width="100" height="100" rx="15" fill="#0f172a" stroke="url(#generateGrad)" stroke-width="3" filter="url(#dropShadow)"/>
+    <rect width="100" height="35" rx="15" fill="url(#generateGrad)"/>
+    <rect y="20" width="100" height="15" fill="url(#generateGrad)"/>
+    <text x="50" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">4️⃣ GEN</text>
+    <text x="50" y="60" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="24">🤖</text>
+    <text x="50" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">LLM response</text>
+  </g>
+  
+  <!-- Vector Database Section -->
+  <g transform="translate(280, 300)">
+    <rect width="160" height="80" rx="12" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" fill="#818cf8" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🗄️ Vector Database</text>
+    <text x="80" y="50" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">Pinecone / Weaviate</text>
+    <text x="80" y="65" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">Chroma / Qdrant</text>
+  </g>
+  <path d="M 360 280 L 360 298" stroke="#6366f1" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Why RAG Section -->
+  <text x="425" y="420" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Why RAG?</text>
+  
+  <g transform="translate(50, 440)">
+    <rect width="180" height="70" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <text x="90" y="28" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✅ Up-to-Date Info</text>
+    <text x="90" y="48" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">Not limited to</text>
+    <text x="90" y="62" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">training cutoff</text>
+  </g>
+  
+  <g transform="translate(250, 440)">
+    <rect width="180" height="70" rx="12" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="90" y="28" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✅ Reduced Hallucination</text>
+    <text x="90" y="48" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">Grounded in</text>
+    <text x="90" y="62" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">actual documents</text>
+  </g>
+  
+  <g transform="translate(450, 440)">
+    <rect width="180" height="70" rx="12" fill="#164e63" stroke="#06b6d4" stroke-width="2"/>
+    <text x="90" y="28" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✅ Verifiable Sources</text>
+    <text x="90" y="48" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10">Can cite retrieved</text>
+    <text x="90" y="62" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10">documents</text>
+  </g>
+  
+  <g transform="translate(650, 440)">
+    <rect width="180" height="70" rx="12" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+    <text x="90" y="28" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✅ Domain-Specific</text>
+    <text x="90" y="48" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="10">Use your own</text>
+    <text x="90" y="62" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="10">private data</text>
+  </g>
+  
+  <!-- Advanced RAG -->
+  <text x="425" y="545" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Advanced Techniques:</text>
+  
+  <g transform="translate(100, 555)">
+    <rect width="120" height="30" rx="6" fill="#1e293b" stroke="#6366f1" stroke-width="1"/>
+    <text x="60" y="20" text-anchor="middle" fill="#818cf8" font-family="Arial, sans-serif" font-size="10">Hybrid Search</text>
+  </g>
+  
+  <g transform="translate(240, 555)">
+    <rect width="120" height="30" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+    <text x="60" y="20" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="10">Reranking</text>
+  </g>
+  
+  <g transform="translate(380, 555)">
+    <rect width="120" height="30" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="60" y="20" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10">Query Expansion</text>
+  </g>
+  
+  <g transform="translate(520, 555)">
+    <rect width="120" height="30" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <text x="60" y="20" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10">Chunking Strategy</text>
+  </g>
+  
+  <g transform="translate(660, 555)">
+    <rect width="120" height="30" rx="6" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+    <text x="60" y="20" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="10">Multi-hop RAG</text>
+  </g>
+</svg>

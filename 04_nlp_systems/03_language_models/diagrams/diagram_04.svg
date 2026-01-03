@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="rnnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <filter id="rnnShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Recurrent Neural Network (RNN)</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Sequential processing with hidden state memory</text>
+  
+  <!-- RNN unfolded diagram -->
+  <g transform="translate(100, 100)">
+    <!-- Time step 1 -->
+    <g filter="url(#rnnShadow)">
+      <rect x="0" y="80" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="40" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">x₁</text>
+      
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#rnnGrad)"/>
+      <text x="40" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fff">RNN</text>
+      
+      <line x1="40" y1="75" x2="40" y2="60" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="80" y1="30" x2="120" y2="30" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3"/>
+      
+      <rect x="0" y="-60" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="40" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">h₁</text>
+      <line x1="40" y1="0" x2="40" y2="-20" stroke="#60a5fa" stroke-width="2"/>
+    </g>
+    
+    <!-- Time step 2 -->
+    <g transform="translate(150, 0)" filter="url(#rnnShadow)">
+      <rect x="0" y="80" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="40" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">x₂</text>
+      
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#rnnGrad)"/>
+      <text x="40" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fff">RNN</text>
+      
+      <line x1="40" y1="75" x2="40" y2="60" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="80" y1="30" x2="120" y2="30" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3"/>
+      
+      <rect x="0" y="-60" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="40" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">h₂</text>
+      <line x1="40" y1="0" x2="40" y2="-20" stroke="#60a5fa" stroke-width="2"/>
+    </g>
+    
+    <!-- Time step 3 -->
+    <g transform="translate(300, 0)" filter="url(#rnnShadow)">
+      <rect x="0" y="80" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="40" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">x₃</text>
+      
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#rnnGrad)"/>
+      <text x="40" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fff">RNN</text>
+      
+      <line x1="40" y1="75" x2="40" y2="60" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="80" y1="30" x2="120" y2="30" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3"/>
+      
+      <rect x="0" y="-60" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="40" y="-35" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">h₃</text>
+      <line x1="40" y1="0" x2="40" y2="-20" stroke="#60a5fa" stroke-width="2"/>
+    </g>
+    
+    <text x="480" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#64748b">...</text>
+  </g>
+  
+  <!-- Equations -->
+  <g transform="translate(50, 270)" filter="url(#rnnShadow)">
+    <rect width="340" height="100" rx="10" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="170" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">RNN Equations</text>
+    <text x="170" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">h_t = tanh(W_hh · h_{t-1} + W_xh · x_t + b_h)</text>
+    <text x="170" y="75" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">y_t = softmax(W_hy · h_t + b_y)</text>
+  </g>
+  
+  <!-- Problem box -->
+  <g transform="translate(410, 270)" filter="url(#rnnShadow)">
+    <rect width="340" height="100" rx="10" fill="#1e293b" stroke="#ef4444"/>
+    <text x="170" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f87171">Vanishing Gradient Problem</text>
+    <text x="170" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#fca5a5">∂L/∂h_t = ∂L/∂h_T · Π_{k=t}^{T-1} ∂h_{k+1}/∂h_k</text>
+    <text x="170" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Gradients vanish exponentially</text>
+    <text x="170" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">→ Hard to learn long dependencies</text>
+  </g>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+  <defs>
+    <linearGradient id="cbowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00b894"/>
+      <stop offset="100%" style="stop-color:#00cec9"/>
+    </linearGradient>
+    <linearGradient id="skipGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c5ce7"/>
+      <stop offset="100%" style="stop-color:#a29bfe"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#888"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="500" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Word2Vec Architectures</text>
+  <text x="500" y="60" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">Sentence: "The [cat] sat on mat"</text>
+  
+  <!-- CBOW Section -->
+  <g transform="translate(50, 90)">
+    <rect width="420" height="350" rx="15" fill="#161b22" stroke="url(#cbowGrad)" stroke-width="2"/>
+    <text x="210" y="35" text-anchor="middle" fill="url(#cbowGrad)" font-family="Arial, sans-serif" font-size="20" font-weight="bold">CBOW</text>
+    <text x="210" y="55" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12">Continuous Bag of Words</text>
+    
+    <!-- Input Context Words -->
+    <g transform="translate(30, 80)">
+      <text x="60" y="0" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Context Words</text>
+      
+      <rect x="20" y="15" width="80" height="35" rx="8" fill="#00b894" opacity="0.2" stroke="#00b894"/>
+      <text x="60" y="38" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="14">"The"</text>
+      
+      <rect x="20" y="60" width="80" height="35" rx="8" fill="#00b894" opacity="0.2" stroke="#00b894"/>
+      <text x="60" y="83" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="14">"sat"</text>
+      
+      <rect x="20" y="105" width="80" height="35" rx="8" fill="#00b894" opacity="0.2" stroke="#00b894"/>
+      <text x="60" y="128" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="14">"on"</text>
+      
+      <rect x="20" y="150" width="80" height="35" rx="8" fill="#00b894" opacity="0.2" stroke="#00b894"/>
+      <text x="60" y="173" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="14">"mat"</text>
+    </g>
+    
+    <!-- Arrows to hidden -->
+    <path d="M135 120 L180 160" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M135 145 L180 160" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M135 190 L180 170" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M135 235 L180 175" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Hidden Layer -->
+    <g transform="translate(180, 140)">
+      <rect width="80" height="50" rx="8" fill="#2d3748" stroke="#00cec9"/>
+      <text x="40" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Average</text>
+      <text x="40" y="35" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="10">Hidden Layer</text>
+    </g>
+    
+    <!-- Arrow to output -->
+    <path d="M265 165 L310 165" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Output -->
+    <g transform="translate(315, 145)">
+      <rect width="80" height="40" rx="8" fill="#00cec9" opacity="0.3" stroke="#00cec9" stroke-width="2"/>
+      <text x="40" y="25" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="16" font-weight="bold">"cat"</text>
+    </g>
+    
+    <!-- Label -->
+    <text x="355" y="205" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">Target Word</text>
+    
+    <!-- Pros/Cons -->
+    <g transform="translate(30, 260)">
+      <text x="0" y="0" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Faster training</text>
+      <text x="0" y="20" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Better for frequent words</text>
+      <text x="0" y="45" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">✗ Context gets averaged</text>
+    </g>
+  </g>
+  
+  <!-- Skip-gram Section -->
+  <g transform="translate(530, 90)">
+    <rect width="420" height="350" rx="15" fill="#161b22" stroke="url(#skipGrad)" stroke-width="2"/>
+    <text x="210" y="35" text-anchor="middle" fill="url(#skipGrad)" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Skip-gram</text>
+    <text x="210" y="55" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12">Predict Context from Word</text>
+    
+    <!-- Input Target Word -->
+    <g transform="translate(30, 120)">
+      <text x="60" y="-10" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Target Word</text>
+      <rect x="20" y="10" width="80" height="50" rx="8" fill="#6c5ce7" opacity="0.3" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="60" y="42" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">"cat"</text>
+    </g>
+    
+    <!-- Hidden Layer -->
+    <g transform="translate(160, 130)">
+      <rect width="80" height="50" rx="8" fill="#2d3748" stroke="#a29bfe"/>
+      <text x="40" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Embedding</text>
+      <text x="40" y="35" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="10">Hidden Layer</text>
+    </g>
+    
+    <!-- Arrows from input -->
+    <path d="M135 155 L158 155" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Arrows to outputs -->
+    <path d="M245 140 L290 100" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M245 150 L290 135" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M245 165 L290 180" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M245 175 L290 215" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Output Context Words -->
+    <g transform="translate(295, 70)">
+      <text x="60" y="0" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Context Words</text>
+      
+      <rect x="20" y="15" width="80" height="35" rx="8" fill="#a29bfe" opacity="0.2" stroke="#a29bfe"/>
+      <text x="60" y="38" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="14">"The"</text>
+      
+      <rect x="20" y="55" width="80" height="35" rx="8" fill="#a29bfe" opacity="0.2" stroke="#a29bfe"/>
+      <text x="60" y="78" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="14">"sat"</text>
+      
+      <rect x="20" y="95" width="80" height="35" rx="8" fill="#a29bfe" opacity="0.2" stroke="#a29bfe"/>
+      <text x="60" y="118" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="14">"on"</text>
+      
+      <rect x="20" y="135" width="80" height="35" rx="8" fill="#a29bfe" opacity="0.2" stroke="#a29bfe"/>
+      <text x="60" y="158" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="14">"mat"</text>
+    </g>
+    
+    <!-- Pros/Cons -->
+    <g transform="translate(30, 260)">
+      <text x="0" y="0" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Better for rare words</text>
+      <text x="0" y="20" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Works well with small data</text>
+      <text x="0" y="45" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">✗ Slower training</text>
+    </g>
+  </g>
+</svg>
+

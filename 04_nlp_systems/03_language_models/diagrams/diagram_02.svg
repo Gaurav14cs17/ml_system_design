@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="evoGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="evoGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="evoGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="evoGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="evoShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Evolution of Language Models</text>
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">From statistical counts to learned representations</text>
+  
+  <!-- Timeline line -->
+  <line x1="100" y1="100" x2="800" y2="100" stroke="#334155" stroke-width="4"/>
+  
+  <!-- Era 1: N-grams -->
+  <g transform="translate(70, 120)" filter="url(#evoShadow)">
+    <circle cx="60" cy="-20" r="12" fill="url(#evoGrad1)"/>
+    <text x="60" y="-16" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#0f172a">1</text>
+    <rect width="160" height="130" rx="10" fill="#1e293b" stroke="url(#evoGrad1)" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">N-grams</text>
+    <text x="80" y="45" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">1980s - 2000s</text>
+    <text x="80" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#cbd5e1">P(w|context) = C(w,ctx)/C(ctx)</text>
+    <text x="80" y="95" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#94a3b8">Count-based, local context</text>
+    <text x="80" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#94a3b8">Markov assumption</text>
+  </g>
+  
+  <!-- Era 2: RNN/LSTM -->
+  <g transform="translate(250, 120)" filter="url(#evoShadow)">
+    <circle cx="60" cy="-20" r="12" fill="url(#evoGrad2)"/>
+    <text x="60" y="-16" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#0f172a">2</text>
+    <rect width="160" height="130" rx="10" fill="#1e293b" stroke="url(#evoGrad2)" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#60a5fa">RNN / LSTM</text>
+    <text x="80" y="45" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">2010 - 2017</text>
+    <text x="80" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#cbd5e1">h_t = f(h_{t-1}, x_t)</text>
+    <text x="80" y="95" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#93c5fd">Learned representations</text>
+    <text x="80" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#93c5fd">Sequential processing</text>
+  </g>
+  
+  <!-- Era 3: Transformers -->
+  <g transform="translate(430, 120)" filter="url(#evoShadow)">
+    <circle cx="60" cy="-20" r="12" fill="url(#evoGrad3)"/>
+    <text x="60" y="-16" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#0f172a">3</text>
+    <rect width="160" height="130" rx="10" fill="#1e293b" stroke="url(#evoGrad3)" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">Transformers</text>
+    <text x="80" y="45" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">2017 - 2020</text>
+    <text x="80" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#cbd5e1">Attention(Q,K,V)</text>
+    <text x="80" y="95" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#c4b5fd">Parallel computation</text>
+    <text x="80" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#c4b5fd">BERT, GPT-2</text>
+  </g>
+  
+  <!-- Era 4: LLMs -->
+  <g transform="translate(610, 120)" filter="url(#evoShadow)">
+    <circle cx="80" cy="-20" r="12" fill="url(#evoGrad4)"/>
+    <text x="80" y="-16" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#0f172a">4</text>
+    <rect width="180" height="130" rx="10" fill="#1e293b" stroke="url(#evoGrad4)" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">Large LMs</text>
+    <text x="90" y="45" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">2020 - Present</text>
+    <text x="90" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#cbd5e1">Scale: 10⁹ - 10¹² params</text>
+    <text x="90" y="95" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#6ee7b7">Emergent abilities</text>
+    <text x="90" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#6ee7b7">GPT-4, Claude, Gemini</text>
+  </g>
+  
+  <!-- Progress arrows -->
+  <path d="M235 185 L245 185" stroke="#475569" stroke-width="2" marker-end="url(#evoArrow)"/>
+  <path d="M415 185 L425 185" stroke="#475569" stroke-width="2" marker-end="url(#evoArrow)"/>
+  <path d="M595 185 L605 185" stroke="#475569" stroke-width="2" marker-end="url(#evoArrow)"/>
+  <defs>
+    <marker id="evoArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Key metrics row -->
+  <g transform="translate(70, 280)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748b">Key Metrics Over Time:</text>
+    
+    <rect y="15" width="160" height="60" rx="8" fill="#1e293b"/>
+    <text x="80" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">Parameters</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e2e8f0">10⁶ → 10¹²</text>
+    
+    <rect x="180" y="15" width="160" height="60" rx="8" fill="#1e293b"/>
+    <text x="260" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">Training Data</text>
+    <text x="260" y="55" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e2e8f0">MB → TB</text>
+    
+    <rect x="360" y="15" width="160" height="60" rx="8" fill="#1e293b"/>
+    <text x="440" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">Context Length</text>
+    <text x="440" y="55" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e2e8f0">5 → 128K tokens</text>
+    
+    <rect x="540" y="15" width="160" height="60" rx="8" fill="#1e293b"/>
+    <text x="620" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">Perplexity</text>
+    <text x="620" y="55" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e2e8f0">100+ → andlt;10</text>
+  </g>
+</svg>

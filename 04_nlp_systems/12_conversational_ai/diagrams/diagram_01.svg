@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 550">
+  <defs>
+    <linearGradient id="chatBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="550" fill="url(#chatBg)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="26" font-weight="bold">CONVERSATIONAL AI</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Dialog Systems Architecture</text>
+  
+  <!-- System Types -->
+  <text x="425" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">System Types</text>
+  
+  <!-- Task-Oriented -->
+  <g transform="translate(50, 120)">
+    <rect width="240" height="150" rx="15" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="240" height="35" rx="15" fill="#3b82f6"/>
+    <rect x="0" y="22" width="240" height="13" fill="#3b82f6"/>
+    <text x="120" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🎯 Task-Oriented</text>
+    
+    <text x="20" y="60" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">Goal: Complete specific tasks</text>
+    <text x="20" y="80" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Book flights, order food</text>
+    <text x="20" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Customer support</text>
+    <text x="20" y="110" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• IoT/Smart home control</text>
+    
+    <text x="20" y="135" fill="#60a5fa" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Examples: Alexa, Siri, Google Assistant</text>
+  </g>
+  
+  <!-- Open-Domain -->
+  <g transform="translate(310, 120)">
+    <rect width="240" height="150" rx="15" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="240" height="35" rx="15" fill="#8b5cf6"/>
+    <rect x="0" y="22" width="240" height="13" fill="#8b5cf6"/>
+    <text x="120" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">💬 Open-Domain</text>
+    
+    <text x="20" y="60" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">Goal: Engage in free conversation</text>
+    <text x="20" y="80" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• General chat</text>
+    <text x="20" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Entertainment</text>
+    <text x="20" y="110" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Companionship</text>
+    
+    <text x="20" y="135" fill="#a78bfa" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Examples: ChatGPT, Claude, Gemini</text>
+  </g>
+  
+  <!-- Hybrid -->
+  <g transform="translate(570, 120)">
+    <rect width="240" height="150" rx="15" fill="#1e293b" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="240" height="35" rx="15" fill="#10b981"/>
+    <rect x="0" y="22" width="240" height="13" fill="#10b981"/>
+    <text x="120" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚡ Hybrid</text>
+    
+    <text x="20" y="60" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">Goal: Combine both approaches</text>
+    <text x="20" y="80" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Natural conversation + tasks</text>
+    <text x="20" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Context awareness</text>
+    <text x="20" y="110" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Flexible interaction</text>
+    
+    <text x="20" y="135" fill="#34d399" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Examples: Modern LLM agents</text>
+  </g>
+  
+  <!-- Pipeline Architecture -->
+  <text x="425" y="300" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Traditional Pipeline</text>
+  
+  <g transform="translate(50, 315)">
+    <!-- ASR -->
+    <rect width="120" height="60" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🎤 ASR</text>
+    <text x="60" y="42" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Speech-to-Text</text>
+    <text x="60" y="55" text-anchor="middle" fill="#431407" font-family="Arial, sans-serif" font-size="7">Whisper, DeepSpeech</text>
+    
+    <path d="M 180 345 L 210 345" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="210,340 225,345 210,350" fill="#94a3b8"/>
+    
+    <!-- NLU -->
+    <rect x="230" y="0" width="120" height="60" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="290" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🧠 NLU</text>
+    <text x="290" y="42" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Intent + Entities</text>
+    <text x="290" y="55" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="7">BERT, Rasa NLU</text>
+    
+    <path d="M 360 345 L 390 345" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="390,340 405,345 390,350" fill="#94a3b8"/>
+    
+    <!-- Dialog Manager -->
+    <rect x="410" y="0" width="120" height="60" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="470" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🎭 DM</text>
+    <text x="470" y="42" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Dialog Manager</text>
+    <text x="470" y="55" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="7">State tracking</text>
+    
+    <path d="M 540 345 L 570 345" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="570,340 585,345 570,350" fill="#94a3b8"/>
+    
+    <!-- NLG -->
+    <rect x="590" y="0" width="100" height="60" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="640" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">✨ NLG</text>
+    <text x="640" y="42" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Response Gen</text>
+    <text x="640" y="55" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="7">Templates/LLM</text>
+    
+    <path d="M 700 345 L 730 345" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="730,340 745,345 730,350" fill="#94a3b8"/>
+    
+    <!-- TTS -->
+    <rect x="750" y="0" width="80" height="60" rx="10" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="790" y="25" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🔊 TTS</text>
+    <text x="790" y="42" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Text-Speech</text>
+    <text x="790" y="55" text-anchor="middle" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="7">ElevenLabs</text>
+  </g>
+  
+  <!-- End-to-End LLM Approach -->
+  <text x="425" y="415" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Modern End-to-End LLM Approach</text>
+  
+  <g transform="translate(100, 430)">
+    <rect width="650" height="70" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    
+    <!-- User -->
+    <rect x="20" y="15" width="100" height="40" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="70" y="40" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">👤 User</text>
+    
+    <path d="M 130 435 L 180 435" stroke="#60a5fa" stroke-width="2"/>
+    <polygon points="180,430 195,435 180,440" fill="#60a5fa"/>
+    
+    <!-- LLM Core -->
+    <rect x="200" y="10" width="250" height="50" rx="10" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="325" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧠 Large Language Model</text>
+    <text x="325" y="48" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Chat + Tools + Memory + RAG</text>
+    
+    <path d="M 460 435 L 510 435" stroke="#a78bfa" stroke-width="2"/>
+    <polygon points="510,430 525,435 510,440" fill="#a78bfa"/>
+    
+    <!-- Response -->
+    <rect x="530" y="15" width="100" height="40" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="580" y="40" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">💬 Response</text>
+  </g>
+  
+  <!-- Key Challenges -->
+  <g transform="translate(100, 520)">
+    <rect width="150" height="25" rx="5" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    <text x="75" y="17" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9">⚠️ Hallucinations</text>
+  </g>
+  
+  <g transform="translate(270, 520)">
+    <rect width="150" height="25" rx="5" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <text x="75" y="17" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="9">🔄 Context Length</text>
+  </g>
+  
+  <g transform="translate(440, 520)">
+    <rect width="150" height="25" rx="5" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+    <text x="75" y="17" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="9">🎯 Task Adherence</text>
+  </g>
+  
+  <g transform="translate(610, 520)">
+    <rect width="150" height="25" rx="5" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="75" y="17" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="9">🔒 Safety/Alignment</text>
+  </g>
+</svg>

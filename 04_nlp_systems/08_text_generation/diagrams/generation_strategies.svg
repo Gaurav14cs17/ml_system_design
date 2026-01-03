@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 500">
+  <defs>
+    <linearGradient id="greedyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#c0392b"/>
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f39c12"/>
+      <stop offset="100%" style="stop-color:#d35400"/>
+    </linearGradient>
+    <linearGradient id="samplingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="nucleusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="500" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="475" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Text Generation Decoding Strategies</text>
+  
+  <!-- Greedy Decoding -->
+  <g transform="translate(40, 70)">
+    <rect width="200" height="180" rx="15" fill="#161b22" stroke="url(#greedyGrad)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Greedy Decoding</text>
+    
+    <text x="100" y="60" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">Always pick highest</text>
+    <text x="100" y="75" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">probability token</text>
+    
+    <!-- Visual -->
+    <g transform="translate(30, 90)">
+      <rect x="0" y="0" width="40" height="25" rx="5" fill="#e74c3c" opacity="0.5"/>
+      <text x="20" y="17" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">0.7</text>
+      
+      <rect x="50" y="0" width="40" height="20" rx="5" fill="#e74c3c" opacity="0.3"/>
+      <text x="70" y="14" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">0.2</text>
+      
+      <rect x="100" y="0" width="40" height="15" rx="5" fill="#e74c3c" opacity="0.2"/>
+      <text x="120" y="12" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">0.1</text>
+    </g>
+    
+    <text x="20" y="140" fill="#2ecc71" font-family="Arial, sans-serif" font-size="10">✓ Fast, deterministic</text>
+    <text x="20" y="158" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10">✗ Repetitive, boring</text>
+  </g>
+  
+  <!-- Beam Search -->
+  <g transform="translate(260, 70)">
+    <rect width="200" height="180" rx="15" fill="#161b22" stroke="url(#beamGrad)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Beam Search</text>
+    
+    <text x="100" y="60" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">Keep top-k candidates</text>
+    <text x="100" y="75" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">at each step</text>
+    
+    <!-- Visual - branching paths -->
+    <g transform="translate(100, 95)">
+      <circle cx="0" cy="0" r="8" fill="#f39c12"/>
+      <line x1="5" y1="5" x2="30" y2="15" stroke="#f39c12" stroke-width="2"/>
+      <line x1="5" y1="5" x2="30" y2="-15" stroke="#f39c12" stroke-width="2"/>
+      <circle cx="35" cy="20" r="6" fill="#f39c12" opacity="0.7"/>
+      <circle cx="35" cy="-10" r="6" fill="#f39c12" opacity="0.7"/>
+    </g>
+    
+    <text x="20" y="140" fill="#2ecc71" font-family="Arial, sans-serif" font-size="10">✓ Higher quality</text>
+    <text x="20" y="158" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10">✗ Still repetitive</text>
+  </g>
+  
+  <!-- Top-K Sampling -->
+  <g transform="translate(480, 70)">
+    <rect width="200" height="180" rx="15" fill="#161b22" stroke="url(#samplingGrad)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Top-K Sampling</text>
+    
+    <text x="100" y="60" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">Sample from top K</text>
+    <text x="100" y="75" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">most likely tokens</text>
+    
+    <!-- Visual -->
+    <g transform="translate(30, 90)">
+      <rect x="0" y="0" width="35" height="25" rx="5" fill="#3498db" opacity="0.5"/>
+      <rect x="40" y="0" width="35" height="22" rx="5" fill="#3498db" opacity="0.4"/>
+      <rect x="80" y="0" width="35" height="20" rx="5" fill="#3498db" opacity="0.3"/>
+      <rect x="120" y="0" width="35" height="10" rx="5" fill="#555" opacity="0.2"/>
+      <text x="137" y="22" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">cut off</text>
+    </g>
+    
+    <text x="20" y="140" fill="#2ecc71" font-family="Arial, sans-serif" font-size="10">✓ More diverse</text>
+    <text x="20" y="158" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10">✗ Fixed cutoff</text>
+  </g>
+  
+  <!-- Nucleus/Top-P Sampling -->
+  <g transform="translate(700, 70)">
+    <rect width="210" height="180" rx="15" fill="#161b22" stroke="url(#nucleusGrad)" stroke-width="2"/>
+    <text x="105" y="30" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Nucleus (Top-P)</text>
+    
+    <text x="105" y="60" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">Sample from smallest set</text>
+    <text x="105" y="75" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">with cumulative prob > p</text>
+    
+    <!-- Visual - dynamic cutoff -->
+    <g transform="translate(30, 90)">
+      <rect x="0" y="0" width="40" height="25" rx="5" fill="#2ecc71" opacity="0.5"/>
+      <rect x="45" y="0" width="35" height="20" rx="5" fill="#2ecc71" opacity="0.4"/>
+      <rect x="85" y="0" width="30" height="15" rx="5" fill="#2ecc71" opacity="0.3"/>
+      <text x="65" y="35" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="9">p = 0.9</text>
+    </g>
+    
+    <text x="20" y="140" fill="#2ecc71" font-family="Arial, sans-serif" font-size="10">✓ Dynamic vocabulary</text>
+    <text x="20" y="158" fill="#2ecc71" font-family="Arial, sans-serif" font-size="10">✓ Best quality</text>
+  </g>
+  
+  <!-- Temperature -->
+  <g transform="translate(40, 280)">
+    <text x="420" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Temperature Effect</text>
+    
+    <g transform="translate(0, 30)">
+      <!-- Low temp -->
+      <rect x="0" y="0" width="260" height="90" rx="12" fill="#161b22" stroke="#3498db"/>
+      <text x="130" y="25" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Low Temperature (0.1-0.3)</text>
+      <text x="130" y="50" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">More focused, deterministic</text>
+      <text x="130" y="70" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Good for: factual tasks, code</text>
+      
+      <!-- Medium temp -->
+      <rect x="290" y="0" width="260" height="90" rx="12" fill="#161b22" stroke="#f39c12"/>
+      <text x="420" y="25" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Medium Temperature (0.7)</text>
+      <text x="420" y="50" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Balanced creativity</text>
+      <text x="420" y="70" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Good for: general use</text>
+      
+      <!-- High temp -->
+      <rect x="580" y="0" width="260" height="90" rx="12" fill="#161b22" stroke="#e74c3c"/>
+      <text x="710" y="25" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="13" font-weight="bold">High Temperature (1.0+)</text>
+      <text x="710" y="50" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">More random, creative</text>
+      <text x="710" y="70" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Good for: brainstorming</text>
+    </g>
+  </g>
+  
+  <!-- Tasks -->
+  <g transform="translate(40, 420)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Common Generation Tasks:</text>
+    <text x="200" y="0" fill="#9b59b6" font-family="Arial, sans-serif" font-size="12">Summarization</text>
+    <text x="330" y="0" fill="#3498db" font-family="Arial, sans-serif" font-size="12">Story Generation</text>
+    <text x="480" y="0" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">Paraphrasing</text>
+    <text x="600" y="0" fill="#f39c12" font-family="Arial, sans-serif" font-size="12">Code Generation</text>
+    <text x="740" y="0" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">Translation</text>
+  </g>
+</svg>
+

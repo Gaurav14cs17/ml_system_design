@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="tcInput" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="tcPreproc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="tcFeature" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="tcModel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="tcOutput" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="tcShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="tcArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Text Classification Pipeline</text>
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">From raw text to predicted class labels with confidence scores</text>
+  
+  <!-- Step 1: Input -->
+  <g transform="translate(30, 90)" filter="url(#tcShadow)">
+    <rect width="150" height="130" rx="14" fill="#1e293b" stroke="url(#tcInput)" stroke-width="2"/>
+    <rect width="150" height="40" rx="14 14 0 0" fill="url(#tcInput)"/>
+    <text x="75" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">📝</text>
+    <text x="75" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Input Text</text>
+    <text x="75" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#67e8f9">Raw text</text>
+    <text x="75" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#a5f3fc">"Great product!"</text>
+    <rect x="15" y="100" width="120" height="20" rx="4" fill="#164e63"/>
+    <text x="75" y="114" text-anchor="middle" font-family="monospace" font-size="9" fill="#22d3ee">String input</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M185 155 L215 155" stroke="#64748b" stroke-width="3" marker-end="url(#tcArrow)"/>
+  
+  <!-- Step 2: Preprocess -->
+  <g transform="translate(220, 90)" filter="url(#tcShadow)">
+    <rect width="150" height="130" rx="14" fill="#1e293b" stroke="url(#tcPreproc)" stroke-width="2"/>
+    <rect width="150" height="40" rx="14 14 0 0" fill="url(#tcPreproc)"/>
+    <text x="75" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">🔧</text>
+    <text x="75" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Preprocess</text>
+    <text x="75" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">Cleaned text</text>
+    <text x="75" y="85" text-anchor="middle" font-family="monospace" font-size="10" fill="#ddd6fe">"great product"</text>
+    <rect x="15" y="100" width="120" height="20" rx="4" fill="#2e1065"/>
+    <text x="75" y="114" text-anchor="middle" font-family="monospace" font-size="9" fill="#a78bfa">lower, clean</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M375 155 L405 155" stroke="#64748b" stroke-width="3" marker-end="url(#tcArrow)"/>
+  
+  <!-- Step 3: Feature Extraction -->
+  <g transform="translate(410, 90)" filter="url(#tcShadow)">
+    <rect width="150" height="130" rx="14" fill="#1e293b" stroke="url(#tcFeature)" stroke-width="2"/>
+    <rect width="150" height="40" rx="14 14 0 0" fill="url(#tcFeature)"/>
+    <text x="75" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">🧮</text>
+    <text x="75" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Features</text>
+    <text x="75" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">TF-IDF / BERT</text>
+    <text x="75" y="85" text-anchor="middle" font-family="monospace" font-size="9" fill="#fef3c7">[0.2, -0.5, 0.8...]</text>
+    <rect x="15" y="100" width="120" height="20" rx="4" fill="#422006"/>
+    <text x="75" y="114" text-anchor="middle" font-family="monospace" font-size="9" fill="#fbbf24">ℝᵈ vector</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M565 155 L595 155" stroke="#64748b" stroke-width="3" marker-end="url(#tcArrow)"/>
+  
+  <!-- Step 4: Model -->
+  <g transform="translate(600, 90)" filter="url(#tcShadow)">
+    <rect width="150" height="130" rx="14" fill="#1e293b" stroke="url(#tcModel)" stroke-width="2"/>
+    <rect width="150" height="40" rx="14 14 0 0" fill="url(#tcModel)"/>
+    <text x="75" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">🤖</text>
+    <text x="75" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Classifier</text>
+    <text x="75" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fbcfe8">Logits</text>
+    <text x="75" y="85" text-anchor="middle" font-family="monospace" font-size="9" fill="#fce7f3">[2.1, -1.3, 0.5]</text>
+    <rect x="15" y="100" width="120" height="20" rx="4" fill="#500724"/>
+    <text x="75" y="114" text-anchor="middle" font-family="monospace" font-size="9" fill="#f472b6">Wx + b</text>
+  </g>
+  
+  <!-- Arrow 4 -->
+  <path d="M755 155 L785 155" stroke="#64748b" stroke-width="3" marker-end="url(#tcArrow)"/>
+  
+  <!-- Step 5: Output -->
+  <g transform="translate(790, 90)" filter="url(#tcShadow)">
+    <rect width="100" height="130" rx="14" fill="#1e293b" stroke="url(#tcOutput)" stroke-width="2"/>
+    <rect width="100" height="40" rx="14 14 0 0" fill="url(#tcOutput)"/>
+    <text x="50" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">✅</text>
+    <text x="50" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Output</text>
+    <text x="50" y="68" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#34d399">Positive</text>
+    <text x="50" y="88" text-anchor="middle" font-family="monospace" font-size="10" fill="#6ee7b7">P=0.89</text>
+    <rect x="10" y="100" width="80" height="20" rx="4" fill="#064e3b"/>
+    <text x="50" y="114" text-anchor="middle" font-family="monospace" font-size="9" fill="#10b981">softmax</text>
+  </g>
+  
+  <!-- Mathematical formulation -->
+  <g transform="translate(30, 250)" filter="url(#tcShadow)">
+    <rect width="860" height="140" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">Classification Mathematics</text>
+    
+    <text x="40" y="55" font-family="Georgia, serif" font-size="12" fill="#94a3b8">Softmax:</text>
+    <text x="120" y="55" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">P(y=c|x) = exp(z_c) / Σ_j exp(z_j)</text>
+    
+    <text x="40" y="80" font-family="Georgia, serif" font-size="12" fill="#94a3b8">Cross-Entropy Loss:</text>
+    <text x="180" y="80" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">ℒ = -Σ_c y_c · log(P(y=c|x))</text>
+    
+    <text x="40" y="105" font-family="Georgia, serif" font-size="12" fill="#94a3b8">Prediction:</text>
+    <text x="130" y="105" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">ŷ = argmax_c P(y=c|x)</text>
+    
+    <text x="450" y="55" font-family="Georgia, serif" font-size="12" fill="#94a3b8">F1 Score:</text>
+    <text x="530" y="55" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">F1 = 2 · (P · R) / (P + R)</text>
+    
+    <text x="450" y="80" font-family="Georgia, serif" font-size="12" fill="#94a3b8">Precision:</text>
+    <text x="530" y="80" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">P = TP / (TP + FP)</text>
+    
+    <text x="450" y="105" font-family="Georgia, serif" font-size="12" fill="#94a3b8">Recall:</text>
+    <text x="520" y="105" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">R = TP / (TP + FN)</text>
+  </g>
+</svg>

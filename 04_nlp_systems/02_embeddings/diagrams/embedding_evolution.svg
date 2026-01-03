@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450">
+  <defs>
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="50%" style="stop-color:#764ba2"/>
+      <stop offset="100%" style="stop-color:#f093fb"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="450" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Evolution of Word Embeddings</text>
+  
+  <!-- Timeline -->
+  <line x1="80" y1="100" x2="920" y2="100" stroke="url(#timelineGrad)" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Era 1: Count-Based -->
+  <g transform="translate(80, 70)">
+    <circle r="12" fill="#667eea" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="40" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2000s</text>
+    
+    <g transform="translate(-70, 60)">
+      <rect width="140" height="120" rx="10" fill="#161b22" stroke="#667eea" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="70" y="25" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Count-Based</text>
+      <text x="70" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">TF-IDF</text>
+      <text x="70" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">LSA/LSI</text>
+      <text x="70" y="90" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Sparse vectors</text>
+      <text x="70" y="105" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Co-occurrence</text>
+    </g>
+  </g>
+  
+  <!-- Era 2: Word2Vec -->
+  <g transform="translate(260, 70)">
+    <circle r="12" fill="#764ba2" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="40" text-anchor="middle" fill="#764ba2" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2013</text>
+    
+    <g transform="translate(-70, 60)">
+      <rect width="140" height="120" rx="10" fill="#161b22" stroke="#764ba2" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="70" y="25" text-anchor="middle" fill="#764ba2" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Word2Vec</text>
+      <text x="70" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">CBOW</text>
+      <text x="70" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Skip-gram</text>
+      <text x="70" y="90" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Dense vectors</text>
+      <text x="70" y="105" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">king - man + woman</text>
+    </g>
+  </g>
+  
+  <!-- Era 3: GloVe -->
+  <g transform="translate(440, 70)">
+    <circle r="12" fill="#9b59b6" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="40" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2014</text>
+    
+    <g transform="translate(-70, 60)">
+      <rect width="140" height="120" rx="10" fill="#161b22" stroke="#9b59b6" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="70" y="25" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">GloVe</text>
+      <text x="70" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">FastText</text>
+      <text x="70" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Subword info</text>
+      <text x="70" y="90" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Global statistics</text>
+      <text x="70" y="105" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">OOV handling</text>
+    </g>
+  </g>
+  
+  <!-- Era 4: ELMo -->
+  <g transform="translate(620, 70)">
+    <circle r="12" fill="#e056fd" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="40" text-anchor="middle" fill="#e056fd" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2018</text>
+    
+    <g transform="translate(-70, 60)">
+      <rect width="140" height="120" rx="10" fill="#161b22" stroke="#e056fd" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="70" y="25" text-anchor="middle" fill="#e056fd" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ELMo</text>
+      <text x="70" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">BiLSTM</text>
+      <text x="70" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Contextual</text>
+      <text x="70" y="90" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Dynamic embeddings</text>
+      <text x="70" y="105" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Context-aware</text>
+    </g>
+  </g>
+  
+  <!-- Era 5: BERT/GPT -->
+  <g transform="translate(800, 70)">
+    <circle r="12" fill="#f093fb" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="40" text-anchor="middle" fill="#f093fb" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2018+</text>
+    
+    <g transform="translate(-70, 60)">
+      <rect width="140" height="120" rx="10" fill="#161b22" stroke="#f093fb" stroke-width="1" filter="url(#cardShadow)"/>
+      <text x="70" y="25" text-anchor="middle" fill="#f093fb" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Transformer</text>
+      <text x="70" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">BERT / GPT</text>
+      <text x="70" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Sentence-BERT</text>
+      <text x="70" y="90" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Self-attention</text>
+      <text x="70" y="105" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">State-of-the-art</text>
+    </g>
+  </g>
+  
+  <!-- Comparison: Static vs Contextual -->
+  <g transform="translate(50, 290)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Static vs Contextual Embeddings</text>
+    
+    <!-- Static Example -->
+    <g transform="translate(0, 30)">
+      <rect width="420" height="100" rx="10" fill="#161b22" stroke="#667eea" stroke-width="1"/>
+      <text x="210" y="25" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Static (Word2Vec, GloVe)</text>
+      
+      <text x="20" y="50" fill="#888" font-family="Arial, sans-serif" font-size="12">"I went to the bank to deposit money"</text>
+      <text x="20" y="70" fill="#888" font-family="Arial, sans-serif" font-size="12">"I sat on the river bank"</text>
+      
+      <text x="20" y="90" fill="#e74c3c" font-family="Arial, sans-serif" font-size="11">⚠ Same vector for "bank" in both!</text>
+    </g>
+    
+    <!-- Contextual Example -->
+    <g transform="translate(460, 30)">
+      <rect width="420" height="100" rx="10" fill="#161b22" stroke="#f093fb" stroke-width="1"/>
+      <text x="210" y="25" text-anchor="middle" fill="#f093fb" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Contextual (BERT)</text>
+      
+      <text x="20" y="50" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">"bank" → [0.23, -0.45, ...] (financial)</text>
+      <text x="20" y="70" fill="#3498db" font-family="Arial, sans-serif" font-size="12">"bank" → [-0.12, 0.89, ...] (geography)</text>
+      
+      <text x="20" y="90" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Different vectors based on context!</text>
+    </g>
+  </g>
+</svg>
+

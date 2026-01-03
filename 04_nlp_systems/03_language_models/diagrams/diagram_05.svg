@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420">
+  <defs>
+    <linearGradient id="lstmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="lstmShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">LSTM: Long Short-Term Memory</text>
+  <text x="425" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Gating mechanisms to control information flow</text>
+  
+  <!-- Gate boxes -->
+  <g transform="translate(30, 85)" filter="url(#lstmShadow)">
+    <rect width="190" height="130" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Forget Gate</text>
+    <text x="95" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">f_t = σ(W_f · [h_{t-1}, x_t] + b_f)</text>
+    <text x="95" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">What to remove from</text>
+    <text x="95" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">cell state</text>
+    <text x="95" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Output: 0 = forget, 1 = keep</text>
+  </g>
+  
+  <g transform="translate(235, 85)" filter="url(#lstmShadow)">
+    <rect width="190" height="130" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Input Gate</text>
+    <text x="95" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">i_t = σ(W_i · [h_{t-1}, x_t] + b_i)</text>
+    <text x="95" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">c̃_t = tanh(W_c · [h_{t-1}, x_t])</text>
+    <text x="95" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">What new info to store</text>
+    <text x="95" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">i_t gates candidate c̃_t</text>
+  </g>
+  
+  <g transform="translate(440, 85)" filter="url(#lstmShadow)">
+    <rect width="190" height="130" rx="10" fill="#1e293b" stroke="url(#lstmGrad)" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#34d399">Cell State Update</text>
+    <text x="95" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">c_t = f_t ⊙ c_{t-1} + i_t ⊙ c̃_t</text>
+    <text x="95" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">Forget old + add new</text>
+    <text x="95" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">⊙ = element-wise multiply</text>
+  </g>
+  
+  <g transform="translate(645, 85)" filter="url(#lstmShadow)">
+    <rect width="170" height="130" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">Output Gate</text>
+    <text x="85" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">o_t = σ(W_o · [h_{t-1}, x_t])</text>
+    <text x="85" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">h_t = o_t ⊙ tanh(c_t)</text>
+    <text x="85" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">What to output</text>
+    <text x="85" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Hidden state h_t</text>
+  </g>
+  
+  <!-- Why it works -->
+  <g transform="translate(50, 240)" filter="url(#lstmShadow)">
+    <rect width="750" height="70" rx="10" fill="#064e3b" stroke="#10b981"/>
+    <text x="375" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#34d399">Why LSTM Solves Vanishing Gradients</text>
+    <text x="375" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">∂c_T/∂c_t = Π_{k=t}^{T-1} f_{k+1} → When f ≈ 1, gradients flow unchanged (gradient highway)</text>
+  </g>
+  
+  <!-- GRU comparison -->
+  <g transform="translate(50, 330)" filter="url(#lstmShadow)">
+    <rect width="750" height="70" rx="10" fill="#1e293b" stroke="#06b6d4"/>
+    <text x="375" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#22d3ee">GRU: Simpler Alternative</text>
+    <text x="375" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#a5f3fc">Combines forget + input gates | No separate cell state | Often comparable performance with fewer params</text>
+  </g>
+</svg>

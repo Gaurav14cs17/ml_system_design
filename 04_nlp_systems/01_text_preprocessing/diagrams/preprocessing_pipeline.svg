@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#f8fafc" rx="10"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="url(#headerGrad)" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Text Preprocessing Pipeline</text>
+  
+  <!-- Pipeline Steps -->
+  <!-- Step 1: Raw Text -->
+  <g transform="translate(50, 80)">
+    <rect width="130" height="80" rx="10" fill="#16213e" stroke="#4a69bd" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Raw Text</text>
+    <text x="65" y="55" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="11">"Hello!!! 🌍"</text>
+    <text x="65" y="70" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="11">"andlt;pandgt;Worldandlt;/pandgt;"</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M185 120 L220 120" stroke="#4a69bd" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a69bd"/>
+    </marker>
+  </defs>
+  
+  <!-- Step 2: Clean -->
+  <g transform="translate(230, 80)">
+    <rect width="130" height="80" rx="10" fill="#16213e" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="25" text-anchor="middle" fill="#00d9ff" font-family="Arial, sans-serif" font-size="12">STEP 1</text>
+    <text x="65" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Clean</text>
+    <text x="65" y="65" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">Remove HTML, URLs</text>
+    <text x="65" y="78" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">Special chars</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M365 120 L400 120" stroke="#00d9ff" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00d9ff"/>
+    </marker>
+  </defs>
+  
+  <!-- Step 3: Normalize -->
+  <g transform="translate(410, 80)">
+    <rect width="130" height="80" rx="10" fill="#16213e" stroke="#f39c12" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="25" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="12">STEP 2</text>
+    <text x="65" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Normalize</text>
+    <text x="65" y="65" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">Lowercase, Unicode</text>
+    <text x="65" y="78" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">Accents removal</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M545 120 L580 120" stroke="#f39c12" stroke-width="3" fill="none" marker-end="url(#arrowhead3)"/>
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f39c12"/>
+    </marker>
+  </defs>
+  
+  <!-- Step 4: Tokenize -->
+  <g transform="translate(590, 80)">
+    <rect width="130" height="80" rx="10" fill="#16213e" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="25" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">STEP 3</text>
+    <text x="65" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Tokenize</text>
+    <text x="65" y="65" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">Word/Subword split</text>
+    <text x="65" y="78" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">BPE, WordPiece</text>
+  </g>
+  
+  <!-- Arrow 4 -->
+  <path d="M725 120 L760 120" stroke="#2ecc71" stroke-width="3" fill="none" marker-end="url(#arrowhead4)"/>
+  <defs>
+    <marker id="arrowhead4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2ecc71"/>
+    </marker>
+  </defs>
+  
+  <!-- Step 5: Encode -->
+  <g transform="translate(770, 80)">
+    <rect width="110" height="80" rx="10" fill="#16213e" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+    <text x="55" y="25" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">STEP 4</text>
+    <text x="55" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Encode</text>
+    <text x="55" y="65" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">Token IDs</text>
+    <text x="55" y="78" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="10">[101, 7592...]</text>
+  </g>
+  
+  <!-- Example Flow -->
+  <g transform="translate(50, 200)">
+    <text x="0" y="20" fill="#667eea" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Example Flow:</text>
+    
+    <!-- Input -->
+    <rect x="0" y="40" width="160" height="50" rx="8" fill="#2d3748" stroke="#667eea" stroke-width="1"/>
+    <text x="80" y="60" text-anchor="middle" fill="#667eea" font-family="monospace" font-size="10">Input:</text>
+    <text x="80" y="78" text-anchor="middle" fill="#f8fafc" font-family="monospace" font-size="11">"Hello WORLD!! 🌍"</text>
+    
+    <path d="M165 65 L195 65" stroke="#a0a0a0" stroke-width="2" stroke-dasharray="4" fill="none"/>
+    
+    <!-- After Clean -->
+    <rect x="200" y="40" width="140" height="50" rx="8" fill="#2d3748" stroke="#00d9ff" stroke-width="1"/>
+    <text x="270" y="60" text-anchor="middle" fill="#00d9ff" font-family="monospace" font-size="10">Clean:</text>
+    <text x="270" y="78" text-anchor="middle" fill="#f8fafc" font-family="monospace" font-size="11">"Hello WORLD"</text>
+    
+    <path d="M345 65 L375 65" stroke="#a0a0a0" stroke-width="2" stroke-dasharray="4" fill="none"/>
+    
+    <!-- After Normalize -->
+    <rect x="380" y="40" width="140" height="50" rx="8" fill="#2d3748" stroke="#f39c12" stroke-width="1"/>
+    <text x="450" y="60" text-anchor="middle" fill="#f39c12" font-family="monospace" font-size="10">Normalize:</text>
+    <text x="450" y="78" text-anchor="middle" fill="#f8fafc" font-family="monospace" font-size="11">"hello world"</text>
+    
+    <path d="M525 65 L555 65" stroke="#a0a0a0" stroke-width="2" stroke-dasharray="4" fill="none"/>
+    
+    <!-- After Tokenize -->
+    <rect x="560" y="40" width="150" height="50" rx="8" fill="#2d3748" stroke="#2ecc71" stroke-width="1"/>
+    <text x="635" y="60" text-anchor="middle" fill="#2ecc71" font-family="monospace" font-size="10">Tokenize:</text>
+    <text x="635" y="78" text-anchor="middle" fill="#f8fafc" font-family="monospace" font-size="11">["hello", "world"]</text>
+    
+    <path d="M715 65 L745 65" stroke="#a0a0a0" stroke-width="2" stroke-dasharray="4" fill="none"/>
+    
+    <!-- After Encode -->
+    <rect x="750" y="40" width="130" height="50" rx="8" fill="#2d3748" stroke="#e74c3c" stroke-width="1"/>
+    <text x="815" y="60" text-anchor="middle" fill="#e74c3c" font-family="monospace" font-size="10">Encode:</text>
+    <text x="815" y="78" text-anchor="middle" fill="#f8fafc" font-family="monospace" font-size="11">[101, 7592, 2088]</text>
+  </g>
+  
+  <!-- Footer note -->
+  <text x="450" y="380" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="12" font-style="italic">Each step transforms text closer to model-consumable format</text>
+</svg>
+
