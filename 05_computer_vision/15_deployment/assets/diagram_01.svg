@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='632' viewBox='0 0 660 632'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    OPTIMIZATION TECHNIQUES                                   │
+└───────────────────────────────────────────────────────────────────────────┘
+
+QUANTIZATION:                          PRUNING:
+─────────────                          ────────
+
+FP32 → INT8/FP16                       Remove unimportant weights
+
+┌─────────────┐    ┌─────────────┐     ┌───────────────┐    ┌───────────────┐
+│ 32-bit      │ →  │ 8-bit       │     │ ████████████  │ →  │ ██░░██░░██░░  │
+│ weights     │    │ weights     │     │ Dense weights │    │ Sparse weights│
+│ (4 bytes)   │    │ (1 byte)    │     │               │    │ (zeros removed)
+└─────────────┘    └─────────────┘     └───────────────┘    └───────────────┘
+
+Speedup: 2-4×                          Speedup: 2-10×
+Size: 4× smaller                       Size: 2-5× smaller
+
+
+KNOWLEDGE DISTILLATION:                 ARCHITECTURE SEARCH:
+───────────────────────                 ────────────────────
+
+Teacher → Student                       Find optimal architecture
+
+┌───────────────┐                       ┌───────────────┐
+│ Large Model   │                       │ Search Space  │
+│ (Teacher)     │                       │ ┌───┬───┬───┐ │
+└───────┬───────┘                       │ │ A │ B │ C │ │
+        │ Soft labels                   │ └───┴───┴───┘ │
+        ▼                               │       ↓       │
+┌───────────────┐                       │ Best Config   │
+│ Small Model   │                       │       ↓       │
+│ (Student)     │                       │ Optimal Model │
+└───────────────┘                       └───────────────┘
+  </text>
+</svg>

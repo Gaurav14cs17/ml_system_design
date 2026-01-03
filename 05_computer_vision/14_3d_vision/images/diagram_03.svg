@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='236' viewBox='0 0 660 236'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      POINT CLOUD PROCESSING                                  │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Point Cloud: Set of 3D points (x, y, z) + optional attributes (color, normal)
+
+Common Operations:
+─────────────────
+• Filtering: Remove outliers, downsample
+• Registration: Align multiple point clouds (ICP)
+• Segmentation: Separate objects/planes
+• Classification: PointNet, PointNet++
+  </text>
+</svg>

@@ -1,0 +1,68 @@
+# Computer Vision - Core Dependencies
+# =====================================
+
+# Deep Learning Frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+tensorflow>=2.13.0
+
+# Computer Vision Libraries
+opencv-python>=4.8.0
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+scikit-image>=0.21.0
+
+# Data Augmentation
+albumentations>=1.3.1
+imgaug>=0.4.0
+kornia>=0.7.0
+
+# Model Zoo & Pretrained Models
+timm>=0.9.0
+transformers>=4.30.0
+ultralytics>=8.0.0  # YOLOv8
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Numerical Computing
+numpy>=1.24.0
+scipy>=1.11.0
+pandas>=2.0.0
+
+# Video Processing
+decord>=0.6.0
+moviepy>=1.0.3
+
+# 3D Vision
+open3d>=0.17.0
+trimesh>=3.23.0
+
+# OCR
+pytesseract>=0.3.10
+easyocr>=1.7.0
+
+# Face Recognition
+face-recognition>=1.3.0
+deepface>=0.0.79
+mediapipe>=0.10.0
+
+# Model Optimization
+onnx>=1.14.0
+onnxruntime>=1.15.0
+
+# MLOps & Experiment Tracking
+mlflow>=2.5.0
+wandb>=0.15.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Jupyter Support
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+

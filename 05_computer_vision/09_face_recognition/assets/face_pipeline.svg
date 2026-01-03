@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="faceGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="faceGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="faceGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <linearGradient id="faceGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <filter id="faceShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="200" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Face Recognition Pipeline</text>
+  
+  <!-- Step 1: Input -->
+  <rect x="30" y="55" width="150" height="100" rx="12" fill="url(#faceGrad1)" filter="url(#faceShadow)"/>
+  <text x="105" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">📷</text>
+  <text x="105" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Input Image</text>
+  <text x="105" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Photo/Video</text>
+  
+  <!-- Arrow -->
+  <path d="M185 105 L225 105" stroke="#94a3b8" stroke-width="3"/>
+  <polygon points="225,100 240,105 225,110" fill="#94a3b8"/>
+  
+  <!-- Step 2: Detection -->
+  <rect x="245" y="55" width="150" height="100" rx="12" fill="url(#faceGrad2)" filter="url(#faceShadow)"/>
+  <text x="320" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">🔍</text>
+  <text x="320" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Face Detection</text>
+  <text x="320" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">MTCNN/RetinaFace</text>
+  
+  <!-- Arrow -->
+  <path d="M400 105 L440 105" stroke="#94a3b8" stroke-width="3"/>
+  <polygon points="440,100 455,105 440,110" fill="#94a3b8"/>
+  
+  <!-- Step 3: Alignment -->
+  <rect x="460" y="55" width="150" height="100" rx="12" fill="url(#faceGrad3)" filter="url(#faceShadow)"/>
+  <text x="535" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">📐</text>
+  <text x="535" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Face Alignment</text>
+  <text x="535" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Normalize Pose</text>
+  
+  <!-- Arrow -->
+  <path d="M615 105 L655 105" stroke="#94a3b8" stroke-width="3"/>
+  <polygon points="655,100 670,105 655,110" fill="#94a3b8"/>
+  
+  <!-- Step 4: Embedding -->
+  <rect x="675" y="55" width="150" height="100" rx="12" fill="url(#faceGrad4)" filter="url(#faceShadow)"/>
+  <text x="750" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">🧠</text>
+  <text x="750" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Embedding</text>
+  <text x="750" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">512-d Vector</text>
+  
+  <!-- Bottom: Output options -->
+  <text x="750" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">→ Verify (1:1) or Identify (1:N)</text>
+</svg>
+

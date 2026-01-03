@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='218' viewBox='0 0 660 218'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    GENERATIVE MODEL APPLICATIONS                             │
+└───────────────────────────────────────────────────────────────────────────┘
+
+• Text-to-Image: DALL-E, Stable Diffusion, Midjourney
+• Image Editing: Inpainting, outpainting, style transfer
+• Super Resolution: ESRGAN, Real-ESRGAN
+• Face Generation: StyleGAN, This Person Does Not Exist
+• Data Augmentation: Generate training samples
+• Image Restoration: Denoising, deblurring
+• Video Generation: Make-A-Video, Runway Gen-2
+  </text>
+</svg>

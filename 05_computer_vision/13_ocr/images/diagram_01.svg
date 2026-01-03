@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='470' viewBox='0 0 660 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    TEXT DETECTION METHODS                                    │
+└───────────────────────────────────────────────────────────────────────────┘
+
+REGRESSION-BASED (EAST, TextBoxes):
+───────────────────────────────────
+• Predict bounding boxes directly
+• Fast but struggles with curved text
+
+SEGMENTATION-BASED (DB, PSENet):
+────────────────────────────────
+• Predict text/non-text map
+• Better for arbitrary shapes
+
+    ┌─────────────────────┐         ┌─────────────────────┐
+    │  HELLO              │    →    │  ██████             │
+    │       WORLD         │         │        █████        │
+    └─────────────────────┘         └─────────────────────┘
+           Image                      Probability Map
+
+DBNet (Differentiable Binarization):
+─────────────────────────────────────
+• Learns threshold for binarization
+• Fast and accurate
+• SOTA for scene text detection
+  </text>
+</svg>

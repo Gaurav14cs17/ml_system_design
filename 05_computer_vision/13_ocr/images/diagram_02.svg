@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='506' viewBox='0 0 660 506'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                        CRNN ARCHITECTURE                                     │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Input: Text region image (H × W × C)
+
+    ┌────────────────────────────────────────────────────────────────┐
+    │                        CRNN                                     │
+    │                                                                 │
+    │  Image    →    CNN    →    Map to     →   BiLSTM   →   CTC    │
+    │ (32×W×3)      Feature     Sequence       Encoder      Decoder  │
+    │               Extract                                          │
+    │                                                                 │
+    │  ┌─────┐     ┌─────┐      ┌─────┐       ┌─────┐      ┌─────┐  │
+    │  │HELLO│  →  │█████│  →   │→→→→→│   →   │↔↔↔↔↔│  →  │HELLO│  │
+    │  └─────┘     └─────┘      └─────┘       └─────┘      └─────┘  │
+    │                                                                 │
+    │  W×32×3       W/4×512      Seq×512      Seq×256      Text     │
+    └────────────────────────────────────────────────────────────────┘
+
+CTC (Connectionist Temporal Classification):
+────────────────────────────────────────────
+• Handles variable length sequences
+• No need for character-level alignment
+• Removes repeated characters and blanks
+
+Raw output: andquot;H-EE-L-LL-O--andquot; → andquot;HELLOandquot;
+  </text>
+</svg>

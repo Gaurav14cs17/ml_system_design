@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='488' viewBox='0 0 660 488'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    VERIFICATION vs IDENTIFICATION                            │
+└───────────────────────────────────────────────────────────────────────────┘
+
+VERIFICATION (1:1)                       IDENTIFICATION (1:N)
+──────────────────                       ────────────────────
+
+andquot;Is this person who they claim to be?andquot;   andquot;Who is this person?andquot;
+
+    Query    Claimed ID                      Query        Database
+    ┌───┐    ┌───┐                          ┌───┐       ┌───┬───┬───┐
+    │ 😊 │ vs │ 😊 │  → Match?               │ 😊 │ vs   │😀│😊│😐│
+    └───┘    └───┘                          └───┘       └───┴───┴───┘
+                                                              │
+    Output: True/False                       Output: Best match or andquot;Unknownandquot;
+
+    Use case: Phone unlock,                  Use case: Surveillance,
+              Access control                           Photo tagging
+
+Threshold selection:
+────────────────────
+• Verification: Single threshold, balance FAR/FRR
+• Identification: Threshold + ranking, handle unknown faces
+
+FAR (False Accept Rate): Impostors accepted
+FRR (False Reject Rate): Genuine users rejected
+  </text>
+</svg>

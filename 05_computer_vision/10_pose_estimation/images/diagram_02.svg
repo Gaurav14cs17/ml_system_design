@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='416' viewBox='0 0 660 416'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    STACKED HOURGLASS                                         │
+└───────────────────────────────────────────────────────────────────────────┘
+
+Single Hourglass (encoder-decoder with skip connections):
+
+Input        Encoder              Decoder         Output
+  │            │                     │              │
+  ▼            ▼                     ▼              ▼
+┌────┐      ┌────┐               ┌────┐          ┌────┐
+│256 │──────│128 │───────────────│128 │──────────│Heatmaps
+├────┤      ├────┤               ├────┤          │(K×H×W)
+│    │──────│64  │───────────────│64  │──────────│
+├────┤      ├────┤               ├────┤          │K = num
+│    │──────│32  │               │32  │──────────│keypoints
+└────┘      └────┘               └────┘          └────┘
+              │                     ▲
+              └──────►──────────────┘
+               Bottleneck
+
+Stacking: Chain multiple hourglasses for refinement
+          Each hourglass refines previous predictions
+  </text>
+</svg>

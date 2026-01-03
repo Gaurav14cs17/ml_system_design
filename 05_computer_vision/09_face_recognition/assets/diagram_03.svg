@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='748' height='452' viewBox='0 0 748 452'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    FACE EMBEDDING ARCHITECTURES                              │
+└───────────────────────────────────────────────────────────────────────────┘
+
+FaceNet (2015):                          ArcFace (2019):
+──────────────                           ──────────────
+• Inception backbone                     • ResNet backbone
+• 128-dim embeddings                     • 512-dim embeddings
+• Triplet loss training                  • Angular margin loss
+• ~99% LFW accuracy                      • ~99.8% LFW accuracy
+
+InsightFace / ArcFace Loss:
+───────────────────────────
+
+Standard Softmax:     L = -log(e^(W_y·x) / Σ e^(W_j·x))
+
+ArcFace:             L = -log(e^(s·cos(θ_y + m)) / (e^(s·cos(θ_y + m)) + Σ e^(s·cos(θ_j))))
+
+where:
+• θ_y = angle between feature x and weight W_y
+• m = angular margin (typically 0.5)
+• s = scale factor (typically 64)
+
+Effect: Forces larger angular separation between classes
+  </text>
+</svg>

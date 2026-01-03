@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='470' viewBox='0 0 660 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      TRACKING APPROACHES                                     │
+└───────────────────────────────────────────────────────────────────────────┘
+
+SINGLE OBJECT TRACKING (SOT):            MULTI-OBJECT TRACKING (MOT):
+─────────────────────────────            ────────────────────────────
+
+Given: First frame bounding box          Given: Detector running each frame
+Task: Track that object                  Task: Associate detections over time
+
+    Frame 1         Frame N                  Frame 1         Frame N
+    ┌─────┐         ┌─────┐                  ┌─────┐         ┌─────┐
+    │[🚗] │   →     │   [🚗]│                │[🚗1][🚗2]│ →   │[🚗1]  [🚗2]│
+    └─────┘         └─────┘                  └─────┘         └─────┘
+
+Methods: KCF, SiamFC,                    Methods: SORT, DeepSORT,
+         STARK, MixFormer                         ByteTrack, OC-SORT
+
+TRACKING BY DETECTION:
+──────────────────────
+1. Run detector on each frame
+2. Associate detections across frames using:
+   • IoU (Intersection over Union)
+   • Appearance features (Re-ID)
+   • Motion prediction (Kalman filter)
+  </text>
+</svg>

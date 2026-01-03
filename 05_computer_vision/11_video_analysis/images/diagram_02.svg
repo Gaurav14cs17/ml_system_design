@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='660' height='470' viewBox='0 0 660 470'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#0f172a' stroke='#334155' />
+  <text x='10' y='24' fill='#e2e8f0' xml:space='preserve'>
+┌───────────────────────────────────────────────────────────────────────────┐
+│                    ACTION RECOGNITION APPROACHES                             │
+└───────────────────────────────────────────────────────────────────────────┘
+
+2D CNN + LSTM:                    3D CNN (C3D, I3D):
+──────────────                    ─────────────────
+
+Frame 1 → CNN → ┐                 Video clip → 3D Conv layers → Action
+Frame 2 → CNN → ├→ LSTM → Action
+Frame 3 → CNN → ┘                 Captures spatial-temporal features
+                                  in single network
+Process frames
+independently,
+then aggregate
+
+
+TWO-STREAM:                       TRANSFORMER-BASED:
+───────────                       ─────────────────
+
+RGB stream   → CNN ─┐             Frames → Patch embedding →
+                    ├→ Fusion → Action    Temporal Transformer → Action
+Optical flow → CNN ─┘
+                                  (TimeSformer, VideoMAE)
+Separate appearance
+and motion
+  </text>
+</svg>
