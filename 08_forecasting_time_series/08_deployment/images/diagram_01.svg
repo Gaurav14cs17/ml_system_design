@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <linearGradient id="prodBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#prodBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🚀 Production Forecasting Challenges</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Key Challenges When Deploying Time Series Models</text>
+  
+  <!-- Data Challenges -->
+  <g transform="translate(30, 80)">
+    <rect width="235" height="240" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="235" height="38" rx="12" fill="#3b82f6"/>
+    <text x="117" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📊 Data Challenges</text>
+    
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="195" height="35" rx="6" fill="#1e3a5f"/>
+      <text x="15" y="17" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa" font-weight="bold">Data Freshness</text>
+      <text x="15" y="30" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Timely data availability</text>
+      
+      <rect x="0" y="42" width="195" height="35" rx="6" fill="#1e3a5f"/>
+      <text x="15" y="59" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa" font-weight="bold">Missing Data</text>
+      <text x="15" y="72" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Real-time imputation</text>
+      
+      <rect x="0" y="84" width="195" height="35" rx="6" fill="#1e3a5f"/>
+      <text x="15" y="101" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa" font-weight="bold">Schema Changes</text>
+      <text x="15" y="114" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Pipeline compatibility</text>
+      
+      <rect x="0" y="126" width="195" height="35" rx="6" fill="#1e3a5f"/>
+      <text x="15" y="143" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa" font-weight="bold">Data Quality</text>
+      <text x="15" y="156" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Validation and monitoring</text>
+    </g>
+  </g>
+  
+  <!-- Model Challenges -->
+  <g transform="translate(282, 80)">
+    <rect width="235" height="240" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="235" height="38" rx="12" fill="#f59e0b"/>
+    <text x="117" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🤖 Model Challenges</text>
+    
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="195" height="35" rx="6" fill="#78350f"/>
+      <text x="15" y="17" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24" font-weight="bold">Model Drift</text>
+      <text x="15" y="30" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Performance degradation</text>
+      
+      <rect x="0" y="42" width="195" height="35" rx="6" fill="#78350f"/>
+      <text x="15" y="59" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24" font-weight="bold">Concept Drift</text>
+      <text x="15" y="72" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Changing patterns</text>
+      
+      <rect x="0" y="84" width="195" height="35" rx="6" fill="#78350f"/>
+      <text x="15" y="101" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24" font-weight="bold">Retraining Strategy</text>
+      <text x="15" y="114" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Schedule vs triggered</text>
+      
+      <rect x="0" y="126" width="195" height="35" rx="6" fill="#78350f"/>
+      <text x="15" y="143" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24" font-weight="bold">Version Control</text>
+      <text x="15" y="156" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Model lineage and rollback</text>
+    </g>
+  </g>
+  
+  <!-- System Challenges -->
+  <g transform="translate(534, 80)">
+    <rect width="235" height="240" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <rect width="235" height="38" rx="12" fill="#22c55e"/>
+    <text x="117" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">⚙️ System Challenges</text>
+    
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="195" height="35" rx="6" fill="#064e3b"/>
+      <text x="15" y="17" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399" font-weight="bold">Latency Requirements</text>
+      <text x="15" y="30" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Real-time vs batch</text>
+      
+      <rect x="0" y="42" width="195" height="35" rx="6" fill="#064e3b"/>
+      <text x="15" y="59" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399" font-weight="bold">Scalability</text>
+      <text x="15" y="72" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Handle load spikes</text>
+      
+      <rect x="0" y="84" width="195" height="35" rx="6" fill="#064e3b"/>
+      <text x="15" y="101" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399" font-weight="bold">Monitoring</text>
+      <text x="15" y="114" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Metrics and alerting</text>
+      
+      <rect x="0" y="126" width="195" height="35" rx="6" fill="#064e3b"/>
+      <text x="15" y="143" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399" font-weight="bold">Fault Tolerance</text>
+      <text x="15" y="156" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Graceful degradation</text>
+    </g>
+  </g>
+</svg>

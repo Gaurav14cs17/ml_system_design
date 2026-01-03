@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="lagBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#lagBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Lag Feature Selection Guide</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Optimal Lag Features Based on Data Frequency and Forecast Horizon</text>
+  
+  <!-- Frequency-based recommendations -->
+  <g transform="translate(30, 80)">
+    <rect width="460" height="200" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="460" height="40" rx="12" fill="#3b82f6"/>
+    <text x="230" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">📊 Recommended Lags by Data Frequency</text>
+    
+    <!-- Table header -->
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">Frequency</text>
+    <text x="130" y="65" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">Recommended Lags</text>
+    
+    <line x1="20" y1="75" x2="440" y2="75" stroke="#334155" stroke-width="1"/>
+    
+    <!-- Hourly -->
+    <rect x="15" y="82" width="100" height="24" rx="4" fill="#1e3a5f"/>
+    <text x="65" y="99" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">Hourly</text>
+    <text x="130" y="99" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">1, 2, 3, 24, 48, 168 (1 week)</text>
+    
+    <!-- Daily -->
+    <rect x="15" y="112" width="100" height="24" rx="4" fill="#064e3b"/>
+    <text x="65" y="129" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#34d399">Daily</text>
+    <text x="130" y="129" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">1, 2, 3, 7, 14, 28, 365</text>
+    
+    <!-- Weekly -->
+    <rect x="15" y="142" width="100" height="24" rx="4" fill="#4c1d95"/>
+    <text x="65" y="159" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">Weekly</text>
+    <text x="130" y="159" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">1, 2, 4, 13, 26, 52</text>
+    
+    <!-- Monthly -->
+    <rect x="15" y="172" width="100" height="24" rx="4" fill="#78350f"/>
+    <text x="65" y="189" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">Monthly</text>
+    <text x="130" y="189" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">1, 2, 3, 6, 12</text>
+  </g>
+  
+  <!-- Forecast Horizon Rules -->
+  <g transform="translate(510, 80)">
+    <rect width="260" height="200" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <rect width="260" height="40" rx="12" fill="#22c55e"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">⏱️ Horizon Rules</text>
+    
+    <text x="20" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Forecast h steps ahead:</text>
+    
+    <rect x="20" y="85" width="220" height="45" rx="6" fill="#064e3b"/>
+    <text x="130" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7" font-weight="bold">Minimum lag ≥ h</text>
+    <text x="130" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">To avoid data leakage</text>
+    
+    <text x="20" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">• 1-step: lag ≥ 1</text>
+    <text x="20" y="175" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">• 7-step: lag ≥ 7</text>
+    <text x="20" y="195" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">• h-step: lag ≥ h</text>
+  </g>
+  
+  <!-- ACF/PACF Analysis -->
+  <g transform="translate(30, 300)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#8b5cf6"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📈 ACF/PACF Analysis</text>
+    
+    <!-- ACF visualization -->
+    <g transform="translate(20, 50)">
+      <text x="0" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#a78bfa" font-weight="bold">ACF</text>
+      <rect x="35" y="0" width="130" height="30" rx="4" fill="#0f172a"/>
+      <!-- ACF bars -->
+      <rect x="45" y="5" width="8" height="20" fill="#a78bfa"/>
+      <rect x="60" y="8" width="8" height="14" fill="#a78bfa"/>
+      <rect x="75" y="10" width="8" height="10" fill="#a78bfa"/>
+      <rect x="90" y="12" width="8" height="6" fill="#a78bfa"/>
+      <rect x="105" y="6" width="8" height="18" fill="#f59e0b"/>
+      <rect x="120" y="12" width="8" height="6" fill="#a78bfa"/>
+      <rect x="135" y="11" width="8" height="8" fill="#a78bfa"/>
+    </g>
+    
+    <!-- PACF visualization -->
+    <g transform="translate(190, 50)">
+      <text x="0" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#22d3ee" font-weight="bold">PACF</text>
+      <rect x="40" y="0" width="110" height="30" rx="4" fill="#0f172a"/>
+      <!-- PACF bars -->
+      <rect x="50" y="5" width="8" height="20" fill="#22d3ee"/>
+      <rect x="65" y="13" width="8" height="4" fill="#22d3ee"/>
+      <rect x="80" y="12" width="8" height="6" fill="#22d3ee"/>
+      <rect x="95" y="6" width="8" height="18" fill="#f59e0b"/>
+      <rect x="110" y="12" width="8" height="6" fill="#22d3ee"/>
+      <rect x="125" y="13" width="8" height="4" fill="#22d3ee"/>
+    </g>
+    
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Significant spikes indicate important lags</text>
+    <text x="20" y="120" font-family="Segoe UI, sans-serif" font-size="10" fill="#f59e0b">• Seasonal lags show periodic patterns</text>
+  </g>
+  
+  <!-- Best Practices -->
+  <g transform="translate(410, 300)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#06b6d4"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">💡 Best Practices</text>
+    
+    <text x="20" y="58" font-family="Segoe UI, sans-serif" font-size="10" fill="#67e8f9">✓ Start with domain knowledge (seasonality)</text>
+    <text x="20" y="76" font-family="Segoe UI, sans-serif" font-size="10" fill="#67e8f9">✓ Use ACF/PACF to identify significant lags</text>
+    <text x="20" y="94" font-family="Segoe UI, sans-serif" font-size="10" fill="#67e8f9">✓ Include recent lags (1, 2, 3) for short-term</text>
+    <text x="20" y="112" font-family="Segoe UI, sans-serif" font-size="10" fill="#67e8f9">✓ Include seasonal lags for periodicity</text>
+  </g>
+</svg>

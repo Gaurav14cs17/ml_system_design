@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="servBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#servBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔄 Serving Patterns Comparison</text>
+  
+  <!-- Header Row -->
+  <g transform="translate(50, 60)">
+    <rect width="140" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="70" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ffffff">Pattern</text>
+    
+    <rect x="150" y="0" width="200" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="250" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ffffff">Use Case</text>
+    
+    <rect x="360" y="0" width="100" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="410" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ffffff">Latency</text>
+    
+    <rect x="470" y="0" width="130" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="535" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ffffff">Freshness</text>
+  </g>
+  
+  <!-- Batch Row -->
+  <g transform="translate(50, 105)">
+    <rect width="140" height="40" rx="6" fill="#1e3a5f"/>
+    <text x="70" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa" font-weight="bold">Batch</text>
+    
+    <rect x="150" y="0" width="200" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="250" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Daily/weekly reports</text>
+    
+    <rect x="360" y="0" width="100" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="410" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">N/A</text>
+    
+    <rect x="470" y="0" width="130" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="535" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Scheduled</text>
+  </g>
+  
+  <!-- Pre-compute Row -->
+  <g transform="translate(50, 155)">
+    <rect width="140" height="40" rx="6" fill="#064e3b"/>
+    <text x="70" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#34d399" font-weight="bold">Pre-compute</text>
+    
+    <rect x="150" y="0" width="200" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="250" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Known query patterns</text>
+    
+    <rect x="360" y="0" width="100" height="40" rx="6" fill="#064e3b"/>
+    <text x="410" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399">andlt;10ms</text>
+    
+    <rect x="470" y="0" width="130" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="535" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f59e0b">Stale possible</text>
+  </g>
+  
+  <!-- On-demand Row -->
+  <g transform="translate(50, 205)">
+    <rect width="140" height="40" rx="6" fill="#78350f"/>
+    <text x="70" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24" font-weight="bold">On-demand</text>
+    
+    <rect x="150" y="0" width="200" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="250" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Ad-hoc requests</text>
+    
+    <rect x="360" y="0" width="100" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="410" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">~100ms</text>
+    
+    <rect x="470" y="0" width="130" height="40" rx="6" fill="#064e3b"/>
+    <text x="535" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399">Real-time</text>
+  </g>
+  
+  <!-- Streaming Row -->
+  <g transform="translate(50, 255)">
+    <rect width="140" height="40" rx="6" fill="#4c1d95"/>
+    <text x="70" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa" font-weight="bold">Streaming</text>
+    
+    <rect x="150" y="0" width="200" height="40" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="250" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Continuous updates</text>
+    
+    <rect x="360" y="0" width="100" height="40" rx="6" fill="#064e3b"/>
+    <text x="410" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399">Low</text>
+    
+    <rect x="470" y="0" width="130" height="40" rx="6" fill="#064e3b"/>
+    <text x="535" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399">Real-time</text>
+  </g>
+  
+  <!-- Recommendations -->
+  <g transform="translate(50, 315)">
+    <rect width="650" height="50" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="20" y="22" font-family="Segoe UI, sans-serif" font-size="11" fill="#22d3ee" font-weight="bold">💡 Recommendation:</text>
+    <text x="20" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Batch for routine • Pre-compute common queries • On-demand for edge cases</text>
+  </g>
+</svg>

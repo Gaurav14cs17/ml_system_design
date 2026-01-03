@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="forecastGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#14b8a6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="300" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📈 Time Series Forecasting</text>
+  
+  <!-- Chart area -->
+  <rect x="60" y="50" width="500" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Y-axis -->
+  <line x1="80" y1="70" x2="80" y2="230" stroke="#475569" stroke-width="2"/>
+  <text x="40" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8" transform="rotate(-90, 40, 150)">Value</text>
+  
+  <!-- X-axis -->
+  <line x1="80" y1="230" x2="540" y2="230" stroke="#475569" stroke-width="2"/>
+  <text x="310" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Time →</text>
+  
+  <!-- Grid lines -->
+  <line x1="80" y1="110" x2="540" y2="110" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="150" x2="540" y2="150" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="190" x2="540" y2="190" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  
+  <!-- Historical data line -->
+  <path d="M100 180 L140 150 L180 170 L220 130 L260 140 L300 120 L340 160 L380 140" 
+        stroke="url(#chartGrad)" stroke-width="3" fill="none" filter="url(#glow)"/>
+  
+  <!-- Historical data points -->
+  <circle cx="100" cy="180" r="5" fill="#3b82f6"/>
+  <circle cx="140" cy="150" r="5" fill="#3b82f6"/>
+  <circle cx="180" cy="170" r="5" fill="#3b82f6"/>
+  <circle cx="220" cy="130" r="5" fill="#3b82f6"/>
+  <circle cx="260" cy="140" r="5" fill="#3b82f6"/>
+  <circle cx="300" cy="120" r="5" fill="#3b82f6"/>
+  <circle cx="340" cy="160" r="5" fill="#3b82f6"/>
+  <circle cx="380" cy="140" r="5" fill="#3b82f6"/>
+  
+  <!-- Divider line -->
+  <line x1="380" y1="70" x2="380" y2="230" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="380" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f59e0b">Now</text>
+  
+  <!-- Forecast line -->
+  <path d="M380 140 L420 125 L460 110 L500 95 L540 80" 
+        stroke="url(#forecastGrad)" stroke-width="3" fill="none" stroke-dasharray="8,4" filter="url(#glow)"/>
+  
+  <!-- Forecast confidence band -->
+  <path d="M380 140 L420 135 L460 125 L500 120 L540 110 L540 50 L500 70 L460 95 L420 115 L380 140 Z" 
+        fill="#10b981" opacity="0.15"/>
+  
+  <!-- Forecast points -->
+  <circle cx="420" cy="125" r="5" fill="#10b981"/>
+  <circle cx="460" cy="110" r="5" fill="#10b981"/>
+  <circle cx="500" cy="95" r="5" fill="#10b981"/>
+  <circle cx="540" cy="80" r="5" fill="#10b981"/>
+  
+  <!-- Legend -->
+  <rect x="100" y="275" width="160" height="20" rx="4" fill="#1e293b"/>
+  <line x1="115" y1="285" x2="145" y2="285" stroke="#3b82f6" stroke-width="3"/>
+  <text x="155" y="290" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Historical</text>
+  
+  <rect x="280" y="275" width="160" height="20" rx="4" fill="#1e293b"/>
+  <line x1="295" y1="285" x2="325" y2="285" stroke="#10b981" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="335" y="290" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Forecast</text>
+</svg>

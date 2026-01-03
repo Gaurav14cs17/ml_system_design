@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="lessonsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#lessonsBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📚 Key Lessons Across Case Studies</text>
+  
+  <!-- Lesson 1 -->
+  <g transform="translate(30, 60)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="15" y="10" width="35" height="35" rx="8" fill="#3b82f6"/>
+    <text x="32" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">1</text>
+    <text x="65" y="32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Domain Knowledge is Crucial</text>
+    
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Understand business drivers before modeling</text>
+    <text x="20" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Engage domain experts for feature eng.</text>
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Business constraints shape model design</text>
+  </g>
+  
+  <!-- Lesson 2 -->
+  <g transform="translate(410, 60)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <rect x="15" y="10" width="35" height="35" rx="8" fill="#22c55e"/>
+    <text x="32" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">2</text>
+    <text x="65" y="32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#34d399">Simple Baselines First</text>
+    
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Start with seasonal naive, moving avg</text>
+    <text x="20" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Complex should significantly beat baselines</text>
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Sometimes simple is good enough</text>
+  </g>
+  
+  <!-- Lesson 3 -->
+  <g transform="translate(30, 205)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="15" y="10" width="35" height="35" rx="8" fill="#f59e0b"/>
+    <text x="32" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">3</text>
+    <text x="65" y="32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Features Matter More Than Model</text>
+    
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• 80% of improvement from features</text>
+    <text x="20" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Lag/rolling features universally useful</text>
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• External data (weather, events) critical</text>
+  </g>
+  
+  <!-- Lesson 4 -->
+  <g transform="translate(410, 205)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="15" y="10" width="35" height="35" rx="8" fill="#8b5cf6"/>
+    <text x="32" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">4</text>
+    <text x="65" y="32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#a78bfa">Ensembles Win</text>
+    
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Combine statistical and ML methods</text>
+    <text x="20" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Stacking usually outperforms averaging</text>
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Diversity in base models is key</text>
+  </g>
+  
+  <!-- Lesson 5 -->
+  <g transform="translate(30, 350)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect x="15" y="10" width="35" height="35" rx="8" fill="#ef4444"/>
+    <text x="32" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">5</text>
+    <text x="65" y="32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">Production is Different</text>
+    
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Data quality issues in real-time</text>
+    <text x="20" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Latency constrains model choice</text>
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Monitoring is essential, not optional</text>
+  </g>
+  
+  <!-- Lesson 6 -->
+  <g transform="translate(410, 350)">
+    <rect width="360" height="130" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2" filter="url(#glow)"/>
+    <rect x="15" y="10" width="35" height="35" rx="8" fill="#06b6d4"/>
+    <text x="32" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">6</text>
+    <text x="65" y="32" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22d3ee">Continuous Improvement</text>
+    
+    <text x="20" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Regular retraining needed</text>
+    <text x="20" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Track performance over time</text>
+    <text x="20" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Be ready for concept drift</text>
+  </g>
+  
+  <!-- Summary banner -->
+  <g transform="translate(150, 500)">
+    <rect width="500" height="35" rx="17" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="250" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#22c55e" font-weight="bold">✨ Apply these lessons to your forecasting projects!</text>
+  </g>
+</svg>

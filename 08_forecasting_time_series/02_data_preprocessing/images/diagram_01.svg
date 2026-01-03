@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="tsPrepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#tsPrepBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="24" font-weight="bold">TIME SERIES PREPROCESSING</text>
+  <text x="400" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Preparing Data for Forecasting Models</text>
+  
+  <!-- Pipeline Steps -->
+  <g transform="translate(30, 90)">
+    <!-- Missing Values -->
+    <rect width="145" height="100" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="72" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11" font-weight="bold">❌ Missing Values</text>
+    <text x="15" y="48" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">• Forward fill</text>
+    <text x="15" y="63" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">• Interpolation</text>
+    <text x="15" y="78" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">• Seasonal patterns</text>
+    <text x="15" y="93" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Gap analysis</text>
+    
+    <path d="M 185 140 L 210 140" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="210,135 225,140 210,145" fill="#94a3b8"/>
+    
+    <!-- Outliers -->
+    <rect x="230" y="0" width="145" height="100" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="302" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📊 Outliers</text>
+    <text x="245" y="48" fill="#431407" font-family="Arial, sans-serif" font-size="9">• Z-score</text>
+    <text x="245" y="63" fill="#431407" font-family="Arial, sans-serif" font-size="9">• IQR method</text>
+    <text x="245" y="78" fill="#431407" font-family="Arial, sans-serif" font-size="9">• Rolling window</text>
+    <text x="245" y="93" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Clip or remove</text>
+    
+    <path d="M 385 140 L 410 140" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="410,135 425,140 410,145" fill="#94a3b8"/>
+    
+    <!-- Normalization -->
+    <rect x="430" y="0" width="145" height="100" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="502" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📈 Normalize</text>
+    <text x="445" y="48" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Min-Max [0,1]</text>
+    <text x="445" y="63" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Z-score (μ=0, σ=1)</text>
+    <text x="445" y="78" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">• Log transform</text>
+    <text x="445" y="93" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Variance stabilization</text>
+    
+    <path d="M 585 140 L 610 140" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="610,135 625,140 610,145" fill="#94a3b8"/>
+    
+    <!-- Stationarity -->
+    <rect x="630" y="0" width="145" height="100" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="702" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📉 Stationarity</text>
+    <text x="645" y="48" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Differencing</text>
+    <text x="645" y="63" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Detrending</text>
+    <text x="645" y="78" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Deseasonalize</text>
+    <text x="645" y="93" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">ADF test</text>
+  </g>
+  
+  <!-- Decomposition Visualization -->
+  <text x="400" y="225" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Time Series Decomposition</text>
+  
+  <g transform="translate(80, 240)">
+    <rect width="640" height="140" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    
+    <!-- Original -->
+    <g transform="translate(20, 20)">
+      <text x="0" y="15" fill="#22d3ee" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Original</text>
+      <rect x="80" y="0" width="100" height="25" rx="4" fill="#164e63"/>
+      <path d="M 85 18 Q 95 5 110 15 T 135 10 T 160 18 T 175 8" stroke="#22d3ee" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- = -->
+    <text x="205" y="32" fill="#94a3b8" font-family="Arial, sans-serif" font-size="20">=</text>
+    
+    <!-- Trend -->
+    <g transform="translate(230, 20)">
+      <text x="0" y="15" fill="#10b981" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Trend</text>
+      <rect x="50" y="0" width="80" height="25" rx="4" fill="#064e3b"/>
+      <line x1="55" y1="18" x2="125" y2="8" stroke="#34d399" stroke-width="2"/>
+    </g>
+    
+    <!-- + -->
+    <text x="375" y="32" fill="#94a3b8" font-family="Arial, sans-serif" font-size="20">+</text>
+    
+    <!-- Seasonal -->
+    <g transform="translate(395, 20)">
+      <text x="0" y="15" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Seasonal</text>
+      <rect x="65" y="0" width="80" height="25" rx="4" fill="#78350f"/>
+      <path d="M 70 13 Q 85 5 100 13 T 140 13" stroke="#fbbf24" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- + -->
+    <text x="560" y="32" fill="#94a3b8" font-family="Arial, sans-serif" font-size="20">+</text>
+    
+    <!-- Residual -->
+    <g transform="translate(575, 20)">
+      <text x="0" y="15" fill="#ec4899" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Residual</text>
+    </g>
+    
+    <!-- Visual decomposition chart -->
+    <g transform="translate(20, 60)">
+      <rect width="600" height="70" rx="4" fill="#0f172a"/>
+      
+      <!-- Trend line -->
+      <line x1="30" y1="50" x2="580" y2="25" stroke="#34d399" stroke-width="2"/>
+      
+      <!-- Seasonal wave -->
+      <path d="M 30 35 Q 70 20 110 35 T 190 35 T 270 35 T 350 35 T 430 35 T 510 35 T 580 35" stroke="#fbbf24" stroke-width="1.5" fill="none" stroke-dasharray="4,2"/>
+      
+      <!-- Combined with noise -->
+      <path d="M 30 45 Q 50 30 70 38 Q 90 42 110 35 Q 130 28 150 40 Q 170 50 190 42 Q 210 35 230 45 Q 250 52 270 38 Q 290 25 310 40 Q 330 48 350 35 Q 370 28 390 42 Q 410 55 430 38 Q 450 22 470 35 Q 490 45 510 32 Q 530 20 550 38 Q 570 48 580 30" stroke="#22d3ee" stroke-width="2" fill="none"/>
+      
+      <!-- Labels -->
+      <text x="300" y="68" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Y(t) = T(t) + S(t) + R(t) or Y(t) = T(t) × S(t) × R(t)</text>
+    </g>
+  </g>
+  
+  <!-- Windowing -->
+  <text x="400" y="410" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Windowing for ML Models</text>
+  
+  <g transform="translate(100, 425)">
+    <rect width="600" height="55" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    
+    <!-- Window visualization -->
+    <g transform="translate(20, 10)">
+      <!-- Input window -->
+      <rect x="0" y="5" width="200" height="25" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+      <text x="100" y="22" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="9">Input Window (lookback=n)</text>
+      
+      <!-- Arrow -->
+      <path d="M 210 17 L 250 17" stroke="#60a5fa" stroke-width="2"/>
+      <polygon points="250,12 265,17 250,22" fill="#60a5fa"/>
+      
+      <!-- Model -->
+      <rect x="270" y="0" width="80" height="35" rx="6" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="310" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Model</text>
+      
+      <!-- Arrow -->
+      <path d="M 360 17 L 400 17" stroke="#a78bfa" stroke-width="2"/>
+      <polygon points="400,12 415,17 400,22" fill="#a78bfa"/>
+      
+      <!-- Output -->
+      <rect x="420" y="5" width="140" height="25" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="490" y="22" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="9">Forecast (horizon=h)</text>
+    </g>
+    
+    <text x="300" y="48" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Sliding window creates training samples: X[t-n:t] → y[t+1:t+h]</text>
+  </g>
+</svg>

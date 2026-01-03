@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="sysBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#sysBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚡ Time Series Forecasting System Architecture</text>
+  
+  <!-- Data Ingestion -->
+  <g transform="translate(30, 70)">
+    <rect width="170" height="120" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="170" height="32" rx="12" fill="#3b82f6"/>
+    <text x="85" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">📊 Data Ingestion</text>
+    
+    <text x="15" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">• Streaming data</text>
+    <text x="15" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">• Batch imports</text>
+    <text x="15" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">• API connections</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 200 130 L 240 130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <polygon points="235,125 250,130 235,135" fill="#60a5fa"/>
+  
+  <!-- Processing Pipeline -->
+  <g transform="translate(260, 70)">
+    <rect width="170" height="120" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="170" height="32" rx="12" fill="#f59e0b"/>
+    <text x="85" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">🔧 Processing</text>
+    
+    <text x="15" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">• Validation</text>
+    <text x="15" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">• Transformation</text>
+    <text x="15" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">• Windowing</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 430 130 L 470 130" stroke="#fbbf24" stroke-width="2"/>
+  <polygon points="465,125 480,130 465,135" fill="#fbbf24"/>
+  
+  <!-- Model Layer -->
+  <g transform="translate(490, 70)">
+    <rect width="280" height="120" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2" filter="url(#glow)"/>
+    <rect width="280" height="32" rx="12" fill="#22c55e"/>
+    <text x="140" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">🤖 Model Layer</text>
+    
+    <rect x="15" y="45" width="115" height="55" rx="6" fill="#064e3b"/>
+    <text x="72" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399" font-weight="bold">Training</text>
+    <text x="72" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Pipeline</text>
+    
+    <rect x="145" y="45" width="120" height="55" rx="6" fill="#064e3b"/>
+    <text x="205" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399" font-weight="bold">Inference</text>
+    <text x="205" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Service</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <line x1="630" y1="190" x2="630" y2="230" stroke="#22c55e" stroke-width="2"/>
+  <polygon points="625,225 630,240 635,225" fill="#22c55e"/>
+  
+  <!-- Monitoring -->
+  <g transform="translate(80, 250)">
+    <rect width="640" height="100" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="640" height="32" rx="12" fill="#8b5cf6"/>
+    <text x="320" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">📈 Monitoring &amp; Feedback</text>
+    
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="140" height="40" rx="6" fill="#4c1d95"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Model Performance</text>
+      
+      <rect x="160" y="0" width="120" height="40" rx="6" fill="#4c1d95"/>
+      <text x="220" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Data Drift</text>
+      
+      <rect x="300" y="0" width="150" height="40" rx="6" fill="#4c1d95"/>
+      <text x="375" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Prediction Quality</text>
+      
+      <rect x="470" y="0" width="100" height="40" rx="6" fill="#4c1d95"/>
+      <text x="520" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">Alerts</text>
+    </g>
+  </g>
+</svg>

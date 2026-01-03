@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="pitfallBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#pitfallBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">⚠️ Time Series Evaluation Pitfalls</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Common Mistakes and How to Avoid Them</text>
+  
+  <!-- Pitfall Grid -->
+  <!-- Row 1 -->
+  <g transform="translate(30, 80)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ Random train/test split</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Causes temporal data leakage</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Use temporal split only</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Train on past, test on future</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">TimeSeriesSplit()</text>
+  </g>
+  
+  <g transform="translate(410, 80)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ Single test period</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Results may be period-specific</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Rolling/expanding backtest</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Multiple evaluation windows</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Walk-forward validation</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <g transform="translate(30, 180)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ MAPE with zero values</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Division by zero, undefined</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Use SMAPE, MASE, or wMAPE</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Zero-safe alternatives</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">MASE is scale-free</text>
+  </g>
+  
+  <g transform="translate(410, 180)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ Ignoring forecast horizon</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Aggregating all steps together</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Report metrics by horizon</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">h=1, h=7, h=30 separately</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Error grows with h</text>
+  </g>
+  
+  <!-- Row 3 -->
+  <g transform="translate(30, 280)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ Only point forecasts</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">No uncertainty quantification</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Include prediction intervals</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">90%, 95% confidence bands</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">CRPS, Pinball Loss</text>
+  </g>
+  
+  <g transform="translate(410, 280)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ Averaging different scales</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Large series dominate metrics</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Use scale-independent MASE</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Or report per-series metrics</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Normalized by naive</text>
+  </g>
+  
+  <!-- Row 4 -->
+  <g transform="translate(30, 380)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ No baseline comparison</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Can't judge improvement</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Always include naive benchmark</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Seasonal naive, persistence</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Skill Score vs naive</text>
+  </g>
+  
+  <g transform="translate(410, 380)">
+    <rect width="360" height="85" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="15" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f87171">❌ Evaluating on training data</text>
+    <text x="15" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Overly optimistic results</text>
+    <line x1="180" y1="10" x2="180" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="195" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✅ Use held-out test set</text>
+    <text x="195" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">True out-of-sample evaluation</text>
+    <rect x="195" y="55" width="150" height="20" rx="4" fill="#064e3b"/>
+    <text x="270" y="69" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Never seen during training</text>
+  </g>
+</svg>

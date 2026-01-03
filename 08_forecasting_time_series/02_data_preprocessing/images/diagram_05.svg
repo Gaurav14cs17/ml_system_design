@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="splitBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#splitBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Time Series Splitting Strategies</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Proper Temporal Validation to Prevent Data Leakage</text>
+  
+  <!-- WRONG: Random Split -->
+  <g transform="translate(30, 80)">
+    <rect width="740" height="80" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">❌ WRONG: Random Split (Data Leakage!)</text>
+    
+    <!-- Timeline -->
+    <g transform="translate(20, 40)">
+      <rect x="0" y="0" width="60" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="65" y="0" width="40" height="28" fill="#22c55e" rx="4"/>
+      <rect x="110" y="0" width="70" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="185" y="0" width="80" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="270" y="0" width="45" height="28" fill="#22c55e" rx="4"/>
+      <rect x="320" y="0" width="90" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="415" y="0" width="50" height="28" fill="#22c55e" rx="4"/>
+      <rect x="470" y="0" width="60" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="535" y="0" width="85" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="625" y="0" width="55" height="28" fill="#22c55e" rx="4"/>
+      
+      <text x="30" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">T</text>
+      <text x="85" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">V</text>
+      <text x="145" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">T</text>
+      <text x="225" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">T</text>
+      <text x="292" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">V</text>
+      <text x="365" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">T</text>
+      <text x="440" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">V</text>
+      <text x="500" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">T</text>
+      <text x="577" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">T</text>
+      <text x="652" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">V</text>
+    </g>
+  </g>
+  
+  <!-- CORRECT: Temporal Split -->
+  <g transform="translate(30, 175)">
+    <rect width="740" height="80" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#22c55e">✅ CORRECT: Temporal Split</text>
+    
+    <!-- Timeline -->
+    <g transform="translate(20, 40)">
+      <rect x="0" y="0" width="420" height="28" fill="#3b82f6" rx="4"/>
+      <rect x="425" y="0" width="130" height="28" fill="#f59e0b" rx="4"/>
+      <rect x="560" y="0" width="120" height="28" fill="#22c55e" rx="4"/>
+      
+      <text x="210" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">TRAIN (70%)</text>
+      <text x="490" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">VAL (15%)</text>
+      <text x="620" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">TEST (15%)</text>
+    </g>
+  </g>
+  
+  <!-- Expanding Window CV -->
+  <g transform="translate(30, 270)">
+    <rect width="355" height="200" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a78bfa">✅ Expanding Window CV</text>
+    
+    <!-- Folds -->
+    <g transform="translate(20, 45)">
+      <!-- Fold 1 -->
+      <text x="0" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 1:</text>
+      <rect x="55" y="0" width="80" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="140" y="0" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 2 -->
+      <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 2:</text>
+      <rect x="55" y="28" width="120" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="180" y="28" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 3 -->
+      <text x="0" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 3:</text>
+      <rect x="55" y="56" width="160" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="220" y="56" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 4 -->
+      <text x="0" y="96" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 4:</text>
+      <rect x="55" y="84" width="200" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="260" y="84" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 5 -->
+      <text x="0" y="124" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 5:</text>
+      <rect x="55" y="112" width="240" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="300" y="112" width="40" height="20" fill="#22c55e" rx="3"/>
+    </g>
+    
+    <text x="177" y="188" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Training set grows with each fold</text>
+  </g>
+  
+  <!-- Sliding Window CV -->
+  <g transform="translate(415, 270)">
+    <rect width="355" height="200" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#22d3ee">✅ Sliding Window CV</text>
+    
+    <!-- Folds -->
+    <g transform="translate(20, 45)">
+      <!-- Fold 1 -->
+      <text x="0" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 1:</text>
+      <rect x="55" y="0" width="120" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="180" y="0" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 2 -->
+      <text x="0" y="40" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 2:</text>
+      <rect x="95" y="28" width="120" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="220" y="28" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 3 -->
+      <text x="0" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 3:</text>
+      <rect x="135" y="56" width="120" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="260" y="56" width="40" height="20" fill="#22c55e" rx="3"/>
+      
+      <!-- Fold 4 -->
+      <text x="0" y="96" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fold 4:</text>
+      <rect x="175" y="84" width="120" height="20" fill="#3b82f6" rx="3"/>
+      <rect x="300" y="84" width="40" height="20" fill="#22c55e" rx="3"/>
+    </g>
+    
+    <text x="177" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fixed window size slides forward</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(280, 480)">
+    <rect x="0" y="0" width="20" height="12" fill="#3b82f6" rx="2"/>
+    <text x="28" y="10" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Train</text>
+    <rect x="80" y="0" width="20" height="12" fill="#f59e0b" rx="2"/>
+    <text x="108" y="10" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Validation</text>
+    <rect x="180" y="0" width="20" height="12" fill="#22c55e" rx="2"/>
+    <text x="208" y="10" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Test</text>
+  </g>
+</svg>

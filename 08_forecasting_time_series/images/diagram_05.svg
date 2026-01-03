@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">✅ Time Series Forecasting Best Practices</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#94a3b8">Comprehensive Checklist for Production-Ready Systems</text>
+  
+  <!-- Data Preparation -->
+  <rect x="30" y="80" width="235" height="170" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="80" width="235" height="35" rx="12" fill="#3b82f6"/>
+  <text x="147" y="103" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📊 Data Preparation</text>
+  
+  <text x="45" y="135" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">☑ Check for stationarity (ADF test)</text>
+  <text x="45" y="155" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">☑ Handle missing values properly</text>
+  <text x="45" y="175" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">☑ Apply appropriate scaling</text>
+  <text x="45" y="195" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">☑ Temporal train/test split</text>
+  <text x="45" y="215" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">☑ Preserve temporal order</text>
+  <text x="45" y="235" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">☑ Document transformations</text>
+  
+  <!-- Feature Engineering -->
+  <rect x="282" y="80" width="235" height="170" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="282" y="80" width="235" height="35" rx="12" fill="#22c55e"/>
+  <text x="400" y="103" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🔧 Feature Engineering</text>
+  
+  <text x="297" y="135" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">☑ Create lag features (ACF/PACF)</text>
+  <text x="297" y="155" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">☑ Rolling window statistics</text>
+  <text x="297" y="175" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">☑ Calendar/cyclical features</text>
+  <text x="297" y="195" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">☑ Fourier terms for seasonality</text>
+  <text x="297" y="215" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">☑ Avoid future data leakage</text>
+  <text x="297" y="235" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">☑ Feature selection/importance</text>
+  
+  <!-- Modeling -->
+  <rect x="534" y="80" width="235" height="170" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="534" y="80" width="235" height="35" rx="12" fill="#f59e0b"/>
+  <text x="652" y="103" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🎯 Modeling</text>
+  
+  <text x="549" y="135" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">☑ Start with simple baseline</text>
+  <text x="549" y="155" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">☑ Time series cross-validation</text>
+  <text x="549" y="175" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">☑ Multiple evaluation metrics</text>
+  <text x="549" y="195" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">☑ Compare vs seasonal naive</text>
+  <text x="549" y="215" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">☑ Residual diagnostics</text>
+  <text x="549" y="235" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">☑ Hyperparameter tuning</text>
+  
+  <!-- Production -->
+  <rect x="130" y="265" width="235" height="165" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="130" y="265" width="235" height="35" rx="12" fill="#8b5cf6"/>
+  <text x="247" y="288" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🚀 Production</text>
+  
+  <text x="145" y="320" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">☑ Model versioning (MLflow)</text>
+  <text x="145" y="340" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">☑ Automated retraining pipeline</text>
+  <text x="145" y="360" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">☑ Performance monitoring</text>
+  <text x="145" y="380" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">☑ Data drift detection</text>
+  <text x="145" y="400" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">☑ Alerting and logging</text>
+  <text x="145" y="420" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">☑ A/B testing framework</text>
+  
+  <!-- Communication -->
+  <rect x="434" y="265" width="235" height="165" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="434" y="265" width="235" height="35" rx="12" fill="#ec4899"/>
+  <text x="551" y="288" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📈 Reporting</text>
+  
+  <text x="449" y="320" font-family="Segoe UI, sans-serif" font-size="11" fill="#67e8f9">☑ Prediction intervals (90/95%)</text>
+  <text x="449" y="340" font-family="Segoe UI, sans-serif" font-size="11" fill="#67e8f9">☑ Error analysis by horizon</text>
+  <text x="449" y="360" font-family="Segoe UI, sans-serif" font-size="11" fill="#67e8f9">☑ Business impact metrics</text>
+  <text x="449" y="380" font-family="Segoe UI, sans-serif" font-size="11" fill="#67e8f9">☑ Model comparison reports</text>
+  <text x="449" y="400" font-family="Segoe UI, sans-serif" font-size="11" fill="#67e8f9">☑ Visualization dashboards</text>
+  <text x="449" y="420" font-family="Segoe UI, sans-serif" font-size="11" fill="#67e8f9">☑ Documentation</text>
+</svg>
