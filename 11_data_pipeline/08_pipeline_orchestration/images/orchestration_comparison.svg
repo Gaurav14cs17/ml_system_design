@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="airflowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#017CEE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0159A8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prefectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dagsterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dbtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF694A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E84C30;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" fill="#F8FAFC" font-family="system-ui" font-size="24" font-weight="bold" text-anchor="middle">Pipeline Orchestration Tools</text>
+  
+  <!-- DAG Visualization Example -->
+  <g transform="translate(500, 65)">
+    <text x="175" y="15" fill="#94A3B8" font-family="system-ui" font-size="11" text-anchor="middle">DAG (Directed Acyclic Graph)</text>
+    
+    <rect x="0" y="30" width="350" height="120" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+    
+    <!-- DAG Nodes -->
+    <circle cx="60" cy="90" r="20" fill="#10B981"/>
+    <text x="60" y="95" fill="#f8fafc" font-family="system-ui" font-size="10" text-anchor="middle">Extract</text>
+    
+    <circle cx="175" cy="55" r="20" fill="#F59E0B"/>
+    <text x="175" y="60" fill="#f8fafc" font-family="system-ui" font-size="10" text-anchor="middle">Clean</text>
+    
+    <circle cx="175" cy="125" r="20" fill="#F59E0B"/>
+    <text x="175" y="130" fill="#f8fafc" font-family="system-ui" font-size="10" text-anchor="middle">Validate</text>
+    
+    <circle cx="290" cy="90" r="20" fill="#8B5CF6"/>
+    <text x="290" y="95" fill="#f8fafc" font-family="system-ui" font-size="10" text-anchor="middle">Load</text>
+    
+    <!-- DAG Edges -->
+    <path d="M 80 80 L 155 55" stroke="#64748B" stroke-width="2" marker-end="url(#dagArrow)"/>
+    <path d="M 80 100 L 155 125" stroke="#64748B" stroke-width="2" marker-end="url(#dagArrow)"/>
+    <path d="M 195 55 L 270 80" stroke="#64748B" stroke-width="2" marker-end="url(#dagArrow)"/>
+    <path d="M 195 125 L 270 100" stroke="#64748B" stroke-width="2" marker-end="url(#dagArrow)"/>
+    <defs>
+      <marker id="dagArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#64748B"/>
+      </marker>
+    </defs>
+  </g>
+  
+  <!-- Tool Cards -->
+  <g transform="translate(30, 210)">
+    <!-- Airflow -->
+    <rect x="0" y="0" width="200" height="250" rx="12" fill="#1E293B" stroke="#017CEE" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="55" rx="12" fill="url(#airflowGrad)"/>
+    <text x="100" y="35" fill="#f8fafc" font-family="system-ui" font-size="16" font-weight="bold" text-anchor="middle">Apache Airflow</text>
+    
+    <text x="100" y="80" fill="#94A3B8" font-family="system-ui" font-size="10" text-anchor="middle">Industry Standard</text>
+    
+    <text x="20" y="105" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Mature ecosystem</text>
+    <text x="20" y="125" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Python DAGs</text>
+    <text x="20" y="145" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Rich UI</text>
+    <text x="20" y="165" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Many operators</text>
+    <text x="20" y="185" fill="#F87171" font-family="system-ui" font-size="10">✗ Complex setup</text>
+    <text x="20" y="205" fill="#F87171" font-family="system-ui" font-size="10">✗ Testing is hard</text>
+    
+    <rect x="15" y="220" width="170" height="20" rx="4" fill="#0159A8"/>
+    <text x="100" y="234" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Best for: Production ETL</text>
+  </g>
+  
+  <g transform="translate(245, 210)">
+    <!-- Prefect -->
+    <rect x="0" y="0" width="200" height="250" rx="12" fill="#1E293B" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="55" rx="12" fill="url(#prefectGrad)"/>
+    <text x="100" y="35" fill="#f8fafc" font-family="system-ui" font-size="16" font-weight="bold" text-anchor="middle">Prefect</text>
+    
+    <text x="100" y="80" fill="#94A3B8" font-family="system-ui" font-size="10" text-anchor="middle">Modern Python</text>
+    
+    <text x="20" y="105" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Native Python</text>
+    <text x="20" y="125" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Easy testing</text>
+    <text x="20" y="145" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Cloud offering</text>
+    <text x="20" y="165" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Dynamic workflows</text>
+    <text x="20" y="185" fill="#F87171" font-family="system-ui" font-size="10">✗ Newer ecosystem</text>
+    <text x="20" y="205" fill="#F87171" font-family="system-ui" font-size="10">✗ Less mature</text>
+    
+    <rect x="15" y="220" width="170" height="20" rx="4" fill="#1D4ED8"/>
+    <text x="100" y="234" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Best for: Python-first teams</text>
+  </g>
+  
+  <g transform="translate(460, 210)">
+    <!-- Dagster -->
+    <rect x="0" y="0" width="200" height="250" rx="12" fill="#1E293B" stroke="#6366F1" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="55" rx="12" fill="url(#dagsterGrad)"/>
+    <text x="100" y="35" fill="#f8fafc" font-family="system-ui" font-size="16" font-weight="bold" text-anchor="middle">Dagster</text>
+    
+    <text x="100" y="80" fill="#94A3B8" font-family="system-ui" font-size="10" text-anchor="middle">Data-Aware</text>
+    
+    <text x="20" y="105" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Software-defined assets</text>
+    <text x="20" y="125" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Type system</text>
+    <text x="20" y="145" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Built-in testing</text>
+    <text x="20" y="165" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Asset lineage</text>
+    <text x="20" y="185" fill="#F87171" font-family="system-ui" font-size="10">✗ Learning curve</text>
+    <text x="20" y="205" fill="#F87171" font-family="system-ui" font-size="10">✗ Different paradigm</text>
+    
+    <rect x="15" y="220" width="170" height="20" rx="4" fill="#4F46E5"/>
+    <text x="100" y="234" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Best for: Data platforms</text>
+  </g>
+  
+  <g transform="translate(675, 210)">
+    <!-- dbt -->
+    <rect x="0" y="0" width="200" height="250" rx="12" fill="#1E293B" stroke="#FF694A" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="55" rx="12" fill="url(#dbtGrad)"/>
+    <text x="100" y="35" fill="#f8fafc" font-family="system-ui" font-size="16" font-weight="bold" text-anchor="middle">dbt</text>
+    
+    <text x="100" y="80" fill="#94A3B8" font-family="system-ui" font-size="10" text-anchor="middle">SQL Transformations</text>
+    
+    <text x="20" y="105" fill="#22D3EE" font-family="system-ui" font-size="10">✓ SQL-first</text>
+    <text x="20" y="125" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Testing built-in</text>
+    <text x="20" y="145" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Documentation</text>
+    <text x="20" y="165" fill="#22D3EE" font-family="system-ui" font-size="10">✓ Version control</text>
+    <text x="20" y="185" fill="#F87171" font-family="system-ui" font-size="10">✗ SQL only</text>
+    <text x="20" y="205" fill="#F87171" font-family="system-ui" font-size="10">✗ Warehouse focused</text>
+    
+    <rect x="15" y="220" width="170" height="20" rx="4" fill="#E84C30"/>
+    <text x="100" y="234" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Best for: SQL transforms</text>
+  </g>
+  
+  <!-- Decision Guide -->
+  <rect x="30" y="470" width="840" height="25" rx="6" fill="#334155"/>
+  <text x="450" y="487" fill="#94A3B8" font-family="system-ui" font-size="11" text-anchor="middle">💡 Start with Airflow for proven reliability, Prefect for simplicity, Dagster for data-aware pipelines, dbt for SQL</text>
+</svg>
+

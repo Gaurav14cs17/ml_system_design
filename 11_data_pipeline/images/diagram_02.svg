@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="foundationsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="implementGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="advancedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="50%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#8B5CF6"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.25"/>
+    </filter>
+    <marker id="pathArrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#F8FAFC">📚 Learning Path</text>
+  <text x="450" y="65" text-anchor="middle" font-family="system-ui" font-size="12" fill="#94A3B8">Master data pipelines from fundamentals to production</text>
+  
+  <!-- Progress path line -->
+  <path d="M100 200 C200 200 200 200 300 200 C400 200 400 200 500 200 C600 200 600 200 700 200 L800 200" stroke="url(#pathGrad)" stroke-width="4" fill="none" stroke-dasharray="8,4" opacity="0.5"/>
+  
+  <!-- FOUNDATIONS Section -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="100" width="240" height="200" rx="16" fill="#1E293B"/>
+    <rect x="50" y="100" width="240" height="50" rx="16 16 0 0" fill="url(#foundationsGrad)"/>
+    <text x="170" y="132" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">🎯 FOUNDATIONS</text>
+    
+    <!-- Foundation items -->
+    <g transform="translate(70, 165)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">📖 Introduction to Pipelines</text>
+    </g>
+    <g transform="translate(70, 200)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">✅ Data Quality Fundamentals</text>
+    </g>
+    <g transform="translate(70, 235)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">💾 Storage and Formats</text>
+    </g>
+    
+    <text x="170" y="290" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748B">Understand the fundamentals</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M295 200 L325 200" stroke="#64748B" stroke-width="3" marker-end="url(#pathArrow)"/>
+  
+  <!-- IMPLEMENTATION Section -->
+  <g filter="url(#cardShadow)">
+    <rect x="330" y="100" width="240" height="200" rx="16" fill="#1E293B"/>
+    <rect x="330" y="100" width="240" height="50" rx="16 16 0 0" fill="url(#implementGrad)"/>
+    <text x="450" y="132" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">⚙️ IMPLEMENTATION</text>
+    
+    <!-- Implementation items -->
+    <g transform="translate(350, 165)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">📥 Data Ingestion Patterns</text>
+    </g>
+    <g transform="translate(350, 200)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">🔄 ETL/ELT Transformations</text>
+    </g>
+    <g transform="translate(350, 235)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">✨ Feature Engineering</text>
+    </g>
+    
+    <text x="450" y="290" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748B">Build production pipelines</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M575 200 L605 200" stroke="#64748B" stroke-width="3" marker-end="url(#pathArrow)"/>
+  
+  <!-- ADVANCED Section -->
+  <g filter="url(#cardShadow)">
+    <rect x="610" y="100" width="240" height="200" rx="16" fill="#1E293B"/>
+    <rect x="610" y="100" width="240" height="50" rx="16 16 0 0" fill="url(#advancedGrad)"/>
+    <text x="730" y="132" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">🚀 ADVANCED</text>
+    
+    <!-- Advanced items -->
+    <g transform="translate(630, 165)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">🌊 Stream Processing</text>
+    </g>
+    <g transform="translate(630, 200)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">🎭 Orchestration</text>
+    </g>
+    <g transform="translate(630, 235)">
+      <rect x="0" y="0" width="200" height="30" rx="6" fill="#334155"/>
+      <text x="15" y="20" font-family="system-ui" font-size="11" fill="#F8FAFC">📊 Monitoring and Scale</text>
+    </g>
+    
+    <text x="730" y="290" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748B">Scale and operate</text>
+  </g>
+  
+  <!-- Bottom stats -->
+  <g transform="translate(150, 340)">
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="#1E293B" stroke="#3B82F6" stroke-width="2"/>
+    <text x="60" y="18" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#3B82F6">12</text>
+    <text x="60" y="32" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Chapters</text>
+  </g>
+  <g transform="translate(390, 340)">
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+    <text x="60" y="18" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#10B981">47</text>
+    <text x="60" y="32" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Visualizations</text>
+  </g>
+  <g transform="translate(630, 340)">
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="60" y="18" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#8B5CF6">∞</text>
+    <text x="60" y="32" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Possibilities</text>
+  </g>
+</svg>

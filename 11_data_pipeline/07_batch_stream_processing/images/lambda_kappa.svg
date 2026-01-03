@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="batchLayerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="speedLayerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="servingLayerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="kappaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <filter id="archShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="#0F172A"/>
+  
+  <!-- Lambda Architecture Title -->
+  <text x="225" y="35" fill="#F8FAFC" font-family="system-ui" font-size="20" font-weight="bold" text-anchor="middle">λ Lambda Architecture</text>
+  
+  <!-- Lambda Architecture -->
+  <g transform="translate(30, 55)">
+    <rect x="0" y="0" width="390" height="250" rx="12" fill="#1E293B" stroke="#475569" stroke-width="2" filter="url(#archShadow)"/>
+    
+    <!-- Data Source -->
+    <rect x="160" y="15" width="80" height="35" rx="6" fill="#334155"/>
+    <text x="200" y="38" fill="#F8FAFC" font-family="system-ui" font-size="11" text-anchor="middle">📡 Events</text>
+    
+    <!-- Split arrows -->
+    <path d="M 200 55 L 200 75" stroke="#64748B" stroke-width="2"/>
+    <path d="M 200 75 L 100 100" stroke="#64748B" stroke-width="2"/>
+    <path d="M 200 75 L 300 100" stroke="#64748B" stroke-width="2"/>
+    
+    <!-- Batch Layer -->
+    <rect x="30" y="100" width="140" height="50" rx="8" fill="url(#batchLayerGrad)"/>
+    <text x="100" y="120" fill="#f8fafc" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">📦 Batch Layer</text>
+    <text x="100" y="138" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="9" text-anchor="middle">Historical Data</text>
+    
+    <!-- Speed Layer -->
+    <rect x="220" y="100" width="140" height="50" rx="8" fill="url(#speedLayerGrad)"/>
+    <text x="290" y="120" fill="#f8fafc" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">⚡ Speed Layer</text>
+    <text x="290" y="138" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="9" text-anchor="middle">Real-time</text>
+    
+    <!-- Arrows to serving -->
+    <path d="M 100 155 L 100 175" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M 290 155 L 290 175" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M 100 175 L 195 190" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M 290 175 L 195 190" stroke="#F59E0B" stroke-width="2"/>
+    
+    <!-- Serving Layer -->
+    <rect x="115" y="190" width="160" height="45" rx="8" fill="url(#servingLayerGrad)"/>
+    <text x="195" y="218" fill="#f8fafc" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">🎯 Serving Layer</text>
+  </g>
+  
+  <!-- Lambda Pros/Cons -->
+  <g transform="translate(30, 320)">
+    <rect x="0" y="0" width="185" height="110" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+    <text x="92" y="22" fill="#10B981" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">✅ Pros</text>
+    <text x="15" y="42" fill="#6EE7B7" font-family="system-ui" font-size="9">• Best of both worlds</text>
+    <text x="15" y="58" fill="#6EE7B7" font-family="system-ui" font-size="9">• Fault tolerant</text>
+    <text x="15" y="74" fill="#6EE7B7" font-family="system-ui" font-size="9">• Complete + Real-time</text>
+    <text x="15" y="90" fill="#6EE7B7" font-family="system-ui" font-size="9">• Reprocessing capability</text>
+    
+    <rect x="195" y="0" width="185" height="110" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1"/>
+    <text x="287" y="22" fill="#EF4444" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">❌ Cons</text>
+    <text x="210" y="42" fill="#F87171" font-family="system-ui" font-size="9">• Two codebases</text>
+    <text x="210" y="58" fill="#F87171" font-family="system-ui" font-size="9">• Complex maintenance</text>
+    <text x="210" y="74" fill="#F87171" font-family="system-ui" font-size="9">• Data reconciliation</text>
+    <text x="210" y="90" fill="#F87171" font-family="system-ui" font-size="9">• Higher infrastructure</text>
+  </g>
+  
+  <!-- Kappa Architecture Title -->
+  <text x="675" y="35" fill="#F8FAFC" font-family="system-ui" font-size="20" font-weight="bold" text-anchor="middle">κ Kappa Architecture</text>
+  
+  <!-- Kappa Architecture -->
+  <g transform="translate(480, 55)">
+    <rect x="0" y="0" width="390" height="250" rx="12" fill="#1E293B" stroke="#475569" stroke-width="2" filter="url(#archShadow)"/>
+    
+    <!-- Data Source -->
+    <rect x="155" y="15" width="80" height="35" rx="6" fill="#334155"/>
+    <text x="195" y="38" fill="#F8FAFC" font-family="system-ui" font-size="11" text-anchor="middle">📡 Events</text>
+    
+    <!-- Arrow down -->
+    <path d="M 195 55 L 195 80" stroke="#64748B" stroke-width="2"/>
+    
+    <!-- Event Log (Kafka) -->
+    <rect x="85" y="80" width="220" height="45" rx="8" fill="url(#kappaGrad)"/>
+    <text x="195" y="100" fill="#f8fafc" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">📜 Immutable Event Log</text>
+    <text x="195" y="118" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="9" text-anchor="middle">Kafka (Full History)</text>
+    
+    <!-- Arrow to Stream Processor -->
+    <path d="M 195 130 L 195 150" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- Stream Processing -->
+    <rect x="85" y="150" width="220" height="45" rx="8" fill="#7C3AED"/>
+    <text x="195" y="170" fill="#f8fafc" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">🌊 Stream Processor</text>
+    <text x="195" y="188" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="9" text-anchor="middle">Flink / Kafka Streams</text>
+    
+    <!-- Arrow to Serving -->
+    <path d="M 195 200 L 195 215" stroke="#7C3AED" stroke-width="2"/>
+    
+    <!-- Serving Layer -->
+    <rect x="115" y="215" width="160" height="25" rx="6" fill="url(#servingLayerGrad)"/>
+    <text x="195" y="232" fill="#f8fafc" font-family="system-ui" font-size="10" font-weight="bold" text-anchor="middle">🎯 Serving</text>
+    
+    <!-- Replay Arrow -->
+    <path d="M 330 155 L 360 155 L 360 105 L 330 105" stroke="#A78BFA" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#replayArrow)"/>
+    <text x="375" y="135" fill="#A78BFA" font-family="system-ui" font-size="8" transform="rotate(90, 375, 135)">Replay</text>
+    <defs>
+      <marker id="replayArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#A78BFA"/>
+      </marker>
+    </defs>
+  </g>
+  
+  <!-- Kappa Pros/Cons -->
+  <g transform="translate(480, 320)">
+    <rect x="0" y="0" width="185" height="110" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+    <text x="92" y="22" fill="#10B981" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">✅ Pros</text>
+    <text x="15" y="42" fill="#6EE7B7" font-family="system-ui" font-size="9">• Single codebase</text>
+    <text x="15" y="58" fill="#6EE7B7" font-family="system-ui" font-size="9">• Simpler architecture</text>
+    <text x="15" y="74" fill="#6EE7B7" font-family="system-ui" font-size="9">• Replay for reprocessing</text>
+    <text x="15" y="90" fill="#6EE7B7" font-family="system-ui" font-size="9">• Lower maintenance</text>
+    
+    <rect x="195" y="0" width="185" height="110" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1"/>
+    <text x="287" y="22" fill="#EF4444" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">❌ Cons</text>
+    <text x="210" y="42" fill="#F87171" font-family="system-ui" font-size="9">• Streaming expertise needed</text>
+    <text x="210" y="58" fill="#F87171" font-family="system-ui" font-size="9">• Replay can be slow</text>
+    <text x="210" y="74" fill="#F87171" font-family="system-ui" font-size="9">• Storage costs (Kafka)</text>
+    <text x="210" y="90" fill="#F87171" font-family="system-ui" font-size="9">• Complex windowing</text>
+  </g>
+  
+  <!-- When to Use -->
+  <g transform="translate(30, 450)">
+    <rect x="0" y="0" width="840" height="130" rx="12" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+    <text x="420" y="25" fill="#F8FAFC" font-family="system-ui" font-size="14" font-weight="bold" text-anchor="middle">🤔 When to Use Which?</text>
+    
+    <!-- Lambda Use Cases -->
+    <rect x="30" y="45" width="380" height="70" rx="8" fill="#334155"/>
+    <text x="220" y="65" fill="#3B82F6" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">Use Lambda When:</text>
+    <text x="40" y="82" fill="#94A3B8" font-family="system-ui" font-size="10">• Complex aggregations requiring batch processing</text>
+    <text x="40" y="98" fill="#94A3B8" font-family="system-ui" font-size="10">• Existing batch infrastructure you can't change</text>
+    <text x="40" y="114" fill="#94A3B8" font-family="system-ui" font-size="10">• Need guaranteed data completeness</text>
+    
+    <!-- Kappa Use Cases -->
+    <rect x="430" y="45" width="380" height="70" rx="8" fill="#334155"/>
+    <text x="620" y="65" fill="#8B5CF6" font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">Use Kappa When:</text>
+    <text x="440" y="82" fill="#94A3B8" font-family="system-ui" font-size="10">• Greenfield project with streaming expertise</text>
+    <text x="440" y="98" fill="#94A3B8" font-family="system-ui" font-size="10">• Real-time is primary use case</text>
+    <text x="440" y="114" fill="#94A3B8" font-family="system-ui" font-size="10">• Simpler maintenance is priority</text>
+  </g>
+</svg>
+

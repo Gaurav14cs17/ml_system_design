@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="obsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <linearGradient id="metGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="logGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="traceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <filter id="obsShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+    <marker id="obsArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="850" height="450" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="790" height="410" rx="12" fill="#1E293B" stroke="url(#obsGrad)" stroke-width="2"/>
+  <rect x="30" y="20" width="790" height="40" rx="12 12 0 0" fill="url(#obsGrad)"/>
+  <text x="425" y="47" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">📊 ML Observability Stack</text>
+  
+  <!-- Dashboards -->
+  <g filter="url(#obsShadow)" transform="translate(150, 80)">
+    <rect x="0" y="0" width="550" height="50" rx="8" fill="#334155" stroke="#22D3EE" stroke-width="2"/>
+    <text x="275" y="22" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#22D3EE">📈 DASHBOARDS &amp; ALERTS</text>
+    <text x="275" y="40" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">(Grafana, Datadog, Custom UIs)</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M425 135 L425 160" stroke="#64748B" stroke-width="2" marker-end="url(#obsArrow)"/>
+  
+  <!-- Three pillars -->
+  <g filter="url(#obsShadow)" transform="translate(60, 170)">
+    <rect x="0" y="0" width="220" height="130" rx="8" fill="url(#metGrad)"/>
+    <text x="110" y="28" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">📊 METRICS</text>
+    <text x="110" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.8)">(Prometheus)</text>
+    <rect x="15" y="60" width="190" height="55" rx="4" fill="rgba(0,0,0,0.2)"/>
+    <text x="110" y="80" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Data quality scores</text>
+    <text x="110" y="95" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Throughput &amp; latency</text>
+    <text x="110" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Drift scores</text>
+  </g>
+  
+  <g filter="url(#obsShadow)" transform="translate(300, 170)">
+    <rect x="0" y="0" width="220" height="130" rx="8" fill="url(#logGrad)"/>
+    <text x="110" y="28" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">📋 LOGS</text>
+    <text x="110" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.8)">(Elasticsearch)</text>
+    <rect x="15" y="60" width="190" height="55" rx="4" fill="rgba(0,0,0,0.2)"/>
+    <text x="110" y="80" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Pipeline errors</text>
+    <text x="110" y="95" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Debug info</text>
+    <text x="110" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Audit trail</text>
+  </g>
+  
+  <g filter="url(#obsShadow)" transform="translate(540, 170)">
+    <rect x="0" y="0" width="220" height="130" rx="8" fill="url(#traceGrad)"/>
+    <text x="110" y="28" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">🔍 TRACES</text>
+    <text x="110" y="48" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.8)">(Jaeger)</text>
+    <rect x="15" y="60" width="190" height="55" rx="4" fill="rgba(0,0,0,0.2)"/>
+    <text x="110" y="80" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Request latency</text>
+    <text x="110" y="95" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Data flow</text>
+    <text x="110" y="110" text-anchor="middle" font-family="system-ui" font-size="9" fill="#F8FAFC">• Bottlenecks</text>
+  </g>
+  
+  <!-- ML-Specific Metrics -->
+  <g filter="url(#obsShadow)" transform="translate(60, 320)">
+    <rect x="0" y="0" width="700" height="85" rx="8" fill="url(#mlGrad)"/>
+    <text x="350" y="25" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#F8FAFC">🤖 ML-SPECIFIC METRICS</text>
+    <g transform="translate(30, 40)">
+      <text x="0" y="15" font-family="system-ui" font-size="10" fill="#F8FAFC">• Feature drift</text>
+      <text x="0" y="35" font-family="system-ui" font-size="10" fill="#F8FAFC">• Data freshness</text>
+    </g>
+    <g transform="translate(200, 40)">
+      <text x="0" y="15" font-family="system-ui" font-size="10" fill="#F8FAFC">• Model accuracy</text>
+      <text x="0" y="35" font-family="system-ui" font-size="10" fill="#F8FAFC">• Training metrics</text>
+    </g>
+    <g transform="translate(400, 40)">
+      <text x="0" y="15" font-family="system-ui" font-size="10" fill="#F8FAFC">• Prediction distribution</text>
+      <text x="0" y="35" font-family="system-ui" font-size="10" fill="#F8FAFC">• Label distribution</text>
+    </g>
+    <g transform="translate(600, 40)">
+      <text x="0" y="15" font-family="system-ui" font-size="10" fill="#F8FAFC">• Inference latency</text>
+      <text x="0" y="35" font-family="system-ui" font-size="10" fill="#F8FAFC">• Serving errors</text>
+    </g>
+  </g>
+</svg>

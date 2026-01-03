@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="serveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="featureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <filter id="tsShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+    <marker id="tsArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="400" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui" font-size="20" font-weight="bold" fill="#F8FAFC">🔄 Training vs Serving Pipelines</text>
+  
+  <!-- TRAINING PIPELINE -->
+  <g filter="url(#tsShadow)">
+    <rect x="40" y="60" width="720" height="130" rx="12" fill="#1E293B" stroke="url(#trainGrad)" stroke-width="2"/>
+    <rect x="40" y="60" width="720" height="35" rx="12 12 0 0" fill="url(#trainGrad)"/>
+    <text x="400" y="85" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">📚 TRAINING PIPELINE</text>
+  </g>
+  
+  <!-- Training flow -->
+  <g transform="translate(70, 110)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#334155"/>
+    <text x="70" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#3B82F6">📊 Historical Data</text>
+    <text x="70" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Batch sources</text>
+  </g>
+  
+  <path d="M215 137 L265 137" stroke="#64748B" stroke-width="2" marker-end="url(#tsArrow)"/>
+  
+  <g transform="translate(270, 110)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#334155"/>
+    <text x="70" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F59E0B">✨ Feature Eng.</text>
+    <text x="70" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Transformations</text>
+  </g>
+  
+  <path d="M415 137 L465 137" stroke="#64748B" stroke-width="2" marker-end="url(#tsArrow)"/>
+  
+  <g transform="translate(470, 110)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#334155"/>
+    <text x="70" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#22C55E">🎯 Training Set</text>
+    <text x="70" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Model input</text>
+  </g>
+  
+  <path d="M615 137 L665 137" stroke="#64748B" stroke-width="2" marker-end="url(#tsArrow)"/>
+  
+  <g transform="translate(670, 110)">
+    <rect x="0" y="0" width="70" height="55" rx="8" fill="#3B82F6"/>
+    <text x="35" y="35" text-anchor="middle" font-family="system-ui" font-size="20" fill="#F8FAFC">🤖</text>
+  </g>
+  
+  <!-- FEATURE STORE (Center) -->
+  <g filter="url(#tsShadow)">
+    <rect x="300" y="195" width="200" height="60" rx="12" fill="url(#featureGrad)"/>
+    <text x="400" y="230" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">🏪 Feature Store</text>
+  </g>
+  
+  <!-- Connections to Feature Store -->
+  <path d="M340 165 L340 192" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4,2"/>
+  <path d="M340 258 L340 285" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="355" y="180" font-family="system-ui" font-size="9" fill="#A78BFA">write</text>
+  <text x="355" y="278" font-family="system-ui" font-size="9" fill="#A78BFA">read</text>
+  
+  <!-- SERVING PIPELINE -->
+  <g filter="url(#tsShadow)">
+    <rect x="40" y="260" width="720" height="130" rx="12" fill="#1E293B" stroke="url(#serveGrad)" stroke-width="2"/>
+    <rect x="40" y="260" width="720" height="35" rx="12 12 0 0" fill="url(#serveGrad)"/>
+    <text x="400" y="285" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">⚡ SERVING PIPELINE</text>
+  </g>
+  
+  <!-- Serving flow -->
+  <g transform="translate(70, 310)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#334155"/>
+    <text x="70" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#10B981">📡 Real-time Events</text>
+    <text x="70" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Stream data</text>
+  </g>
+  
+  <path d="M215 337 L265 337" stroke="#64748B" stroke-width="2" marker-end="url(#tsArrow)"/>
+  
+  <g transform="translate(270, 310)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#334155"/>
+    <text x="70" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#8B5CF6">🔍 Feature Lookup</text>
+    <text x="70" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Online retrieval</text>
+  </g>
+  
+  <path d="M415 337 L465 337" stroke="#64748B" stroke-width="2" marker-end="url(#tsArrow)"/>
+  
+  <g transform="translate(470, 310)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#334155"/>
+    <text x="70" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#EC4899">🎯 Inference</text>
+    <text x="70" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Predictions</text>
+  </g>
+  
+  <path d="M615 337 L665 337" stroke="#64748B" stroke-width="2" marker-end="url(#tsArrow)"/>
+  
+  <g transform="translate(670, 310)">
+    <rect x="0" y="0" width="70" height="55" rx="8" fill="#10B981"/>
+    <text x="35" y="35" text-anchor="middle" font-family="system-ui" font-size="20" fill="#F8FAFC">📤</text>
+  </g>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">ML Data Pipeline Architecture</text>
+  
+  <!-- Sources Box -->
+  <rect x="30" y="80" width="160" height="240" rx="12" fill="#1E293B" stroke="#334155" stroke-width="2" filter="url(#shadow)"/>
+  <text x="110" y="110" fill="#94A3B8" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">DATA SOURCES</text>
+  
+  <rect x="45" y="130" width="130" height="35" rx="6" fill="url(#blueGrad)"/>
+  <text x="110" y="152" fill="#f8fafc" font-family="system-ui" font-size="11" text-anchor="middle">🗄️ Databases</text>
+  
+  <rect x="45" y="175" width="130" height="35" rx="6" fill="url(#blueGrad)"/>
+  <text x="110" y="197" fill="#f8fafc" font-family="system-ui" font-size="11" text-anchor="middle">🌐 APIs</text>
+  
+  <rect x="45" y="220" width="130" height="35" rx="6" fill="url(#blueGrad)"/>
+  <text x="110" y="242" fill="#f8fafc" font-family="system-ui" font-size="11" text-anchor="middle">📁 Files</text>
+  
+  <rect x="45" y="265" width="130" height="35" rx="6" fill="url(#blueGrad)"/>
+  <text x="110" y="287" fill="#f8fafc" font-family="system-ui" font-size="11" text-anchor="middle">📡 Streams</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 195 200 L 235 200" stroke="#6366F1" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366F1"/>
+    </marker>
+  </defs>
+  
+  <!-- Ingestion Box -->
+  <rect x="240" y="130" width="140" height="140" rx="12" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="310" y="175" fill="#f8fafc" font-family="system-ui" font-size="14" font-weight="bold" text-anchor="middle">INGESTION</text>
+  <text x="310" y="200" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Extract</text>
+  <text x="310" y="220" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Validate</text>
+  <text x="310" y="240" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Buffer</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 385 200 L 425 200" stroke="#10B981" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+    </marker>
+  </defs>
+  
+  <!-- Transform Box -->
+  <rect x="430" y="130" width="140" height="140" rx="12" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+  <text x="500" y="175" fill="#f8fafc" font-family="system-ui" font-size="14" font-weight="bold" text-anchor="middle">TRANSFORM</text>
+  <text x="500" y="200" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Clean</text>
+  <text x="500" y="220" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Enrich</text>
+  <text x="500" y="240" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Engineer</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M 575 200 L 615 200" stroke="#F59E0B" stroke-width="3" fill="none" marker-end="url(#arrowhead3)"/>
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F59E0B"/>
+    </marker>
+  </defs>
+  
+  <!-- Serve Box -->
+  <rect x="620" y="130" width="140" height="140" rx="12" fill="url(#pinkGrad)" filter="url(#shadow)"/>
+  <text x="690" y="175" fill="#f8fafc" font-family="system-ui" font-size="14" font-weight="bold" text-anchor="middle">SERVE</text>
+  <text x="690" y="200" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Feature Store</text>
+  <text x="690" y="220" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Training Data</text>
+  <text x="690" y="240" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11" text-anchor="middle">Inference</text>
+  
+  <!-- ML Outputs -->
+  <rect x="780" y="100" width="100" height="60" rx="8" fill="#1E293B" stroke="#EC4899" stroke-width="2"/>
+  <text x="830" y="135" fill="#F8FAFC" font-family="system-ui" font-size="11" text-anchor="middle">🤖 Training</text>
+  
+  <rect x="780" y="170" width="100" height="60" rx="8" fill="#1E293B" stroke="#EC4899" stroke-width="2"/>
+  <text x="830" y="205" fill="#F8FAFC" font-family="system-ui" font-size="11" text-anchor="middle">⚡ Serving</text>
+  
+  <rect x="780" y="240" width="100" height="60" rx="8" fill="#1E293B" stroke="#EC4899" stroke-width="2"/>
+  <text x="830" y="275" fill="#F8FAFC" font-family="system-ui" font-size="11" text-anchor="middle">📊 Analytics</text>
+  
+  <!-- Arrows to outputs -->
+  <path d="M 760 180 L 775 130" stroke="#EC4899" stroke-width="2" fill="none"/>
+  <path d="M 760 200 L 775 200" stroke="#EC4899" stroke-width="2" fill="none"/>
+  <path d="M 760 220 L 775 270" stroke="#EC4899" stroke-width="2" fill="none"/>
+  
+  <!-- Orchestration Bar -->
+  <rect x="240" y="290" width="520" height="50" rx="8" fill="#1E293B" stroke="#6366F1" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="500" y="320" fill="#94A3B8" font-family="system-ui" font-size="12" text-anchor="middle">🔄 Orchestration • 📊 Monitoring • 🔔 Alerting</text>
+  
+  <!-- Legend -->
+  <rect x="30" y="350" width="15" height="15" rx="3" fill="url(#greenGrad)"/>
+  <text x="52" y="362" fill="#94A3B8" font-family="system-ui" font-size="10">Batch</text>
+  
+  <rect x="100" y="350" width="15" height="15" rx="3" fill="url(#orangeGrad)"/>
+  <text x="122" y="362" fill="#94A3B8" font-family="system-ui" font-size="10">Stream</text>
+  
+  <rect x="175" y="350" width="15" height="15" rx="3" fill="url(#pinkGrad)"/>
+  <text x="197" y="362" fill="#94A3B8" font-family="system-ui" font-size="10">Hybrid</text>
+</svg>
+

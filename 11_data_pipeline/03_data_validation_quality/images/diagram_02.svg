@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 380">
+  <defs>
+    <linearGradient id="validGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="passGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22C55E"/>
+      <stop offset="100%" style="stop-color:#16A34A"/>
+    </linearGradient>
+    <linearGradient id="failGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <filter id="valShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+    <marker id="valArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="850" height="380" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="790" height="340" rx="12" fill="#1E293B" stroke="url(#validGrad)" stroke-width="2"/>
+  <rect x="30" y="20" width="790" height="40" rx="12 12 0 0" fill="url(#validGrad)"/>
+  <text x="425" y="47" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">✅ Data Validation Pipeline</text>
+  
+  <!-- Input -->
+  <g filter="url(#valShadow)" transform="translate(60, 85)">
+    <rect x="0" y="0" width="100" height="60" rx="8" fill="#6366F1"/>
+    <text x="50" y="28" text-anchor="middle" font-family="system-ui" font-size="18">📥</text>
+    <text x="50" y="48" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Raw Data</text>
+  </g>
+  
+  <path d="M165 115 L205 115" stroke="#64748B" stroke-width="2" marker-end="url(#valArrow)"/>
+  
+  <!-- Stage 1: Schema -->
+  <g filter="url(#valShadow)" transform="translate(210, 80)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#334155"/>
+    <text x="65" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#22D3EE">📋 Schema</text>
+    <text x="65" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Type validation</text>
+    <text x="65" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Required fields</text>
+  </g>
+  
+  <path d="M345 115 L385 115" stroke="#64748B" stroke-width="2" marker-end="url(#valArrow)"/>
+  
+  <!-- Stage 2: Business Rules -->
+  <g filter="url(#valShadow)" transform="translate(390, 80)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#334155"/>
+    <text x="65" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F59E0B">⚖️ Business Rules</text>
+    <text x="65" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Range checks</text>
+    <text x="65" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Constraints</text>
+  </g>
+  
+  <path d="M525 115 L565 115" stroke="#64748B" stroke-width="2" marker-end="url(#valArrow)"/>
+  
+  <!-- Stage 3: Statistical -->
+  <g filter="url(#valShadow)" transform="translate(570, 80)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#334155"/>
+    <text x="65" y="25" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#EC4899">📊 Statistical</text>
+    <text x="65" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Distributions</text>
+    <text x="65" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Anomalies</text>
+  </g>
+  
+  <!-- Arrows down to metrics -->
+  <path d="M275 155 L275 180" stroke="#64748B" stroke-width="2"/>
+  <path d="M455 155 L455 180" stroke="#64748B" stroke-width="2"/>
+  <path d="M635 155 L635 180" stroke="#64748B" stroke-width="2"/>
+  <path d="M275 180 L455 180 L455 200" stroke="#64748B" stroke-width="2" marker-end="url(#valArrow)"/>
+  
+  <!-- Quality Metrics Box -->
+  <g filter="url(#valShadow)" transform="translate(250, 205)">
+    <rect x="0" y="0" width="350" height="55" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="175" y="22" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#8B5CF6">📈 QUALITY METRICS</text>
+    <text x="175" y="42" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Completeness • Accuracy • Consistency • Timeliness</text>
+  </g>
+  
+  <!-- Decision split -->
+  <path d="M425 265 L425 290" stroke="#64748B" stroke-width="2"/>
+  <path d="M425 290 L280 290 L280 310" stroke="#22C55E" stroke-width="2" marker-end="url(#valArrow)"/>
+  <path d="M425 290 L570 290 L570 310" stroke="#EF4444" stroke-width="2" marker-end="url(#valArrow)"/>
+  
+  <!-- Pass Box -->
+  <g filter="url(#valShadow)" transform="translate(180, 315)">
+    <rect x="0" y="0" width="200" height="60" rx="8" fill="url(#passGrad)"/>
+    <text x="100" y="25" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">✅ PASS</text>
+    <text x="100" y="45" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">Continue Pipeline</text>
+  </g>
+  
+  <!-- Fail Box -->
+  <g filter="url(#valShadow)" transform="translate(470, 315)">
+    <rect x="0" y="0" width="200" height="60" rx="8" fill="url(#failGrad)"/>
+    <text x="100" y="25" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">❌ FAIL</text>
+    <text x="100" y="45" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">Quarantine + Alert</text>
+  </g>
+</svg>

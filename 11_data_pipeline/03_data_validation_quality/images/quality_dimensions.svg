@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="qualityGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="qualityGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="qualityGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="qualityGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="qualityGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="qualityGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="450" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" fill="#F8FAFC" font-family="system-ui" font-size="24" font-weight="bold" text-anchor="middle">Data Quality Dimensions</text>
+  
+  <!-- Hexagon arrangement -->
+  <!-- Center: Data Quality -->
+  <polygon points="450,220 510,180 510,120 450,80 390,120 390,180" fill="#1E293B" stroke="#6366F1" stroke-width="3"/>
+  <text x="450" y="145" fill="#F8FAFC" font-family="system-ui" font-size="12" font-weight="bold" text-anchor="middle">DATA</text>
+  <text x="450" y="162" fill="#F8FAFC" font-family="system-ui" font-size="12" font-weight="bold" text-anchor="middle">QUALITY</text>
+  
+  <!-- Surrounding dimensions -->
+  <!-- Completeness -->
+  <g transform="translate(280, 70)">
+    <rect x="0" y="0" width="140" height="90" rx="12" fill="url(#qualityGrad1)"/>
+    <text x="70" y="30" fill="#f8fafc" font-family="system-ui" font-size="13" font-weight="bold" text-anchor="middle">📊 Completeness</text>
+    <text x="70" y="50" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="9" text-anchor="middle">No missing data</text>
+    <text x="70" y="65" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">NULL rate andlt; 5%</text>
+    <text x="70" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Required fields present</text>
+  </g>
+  
+  <!-- Accuracy -->
+  <g transform="translate(480, 70)">
+    <rect x="0" y="0" width="140" height="90" rx="12" fill="url(#qualityGrad2)"/>
+    <text x="70" y="30" fill="#f8fafc" font-family="system-ui" font-size="13" font-weight="bold" text-anchor="middle">🎯 Accuracy</text>
+    <text x="70" y="50" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="9" text-anchor="middle">Data reflects reality</text>
+    <text x="70" y="65" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Cross-validation</text>
+    <text x="70" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Source verification</text>
+  </g>
+  
+  <!-- Consistency -->
+  <g transform="translate(580, 180)">
+    <rect x="0" y="0" width="140" height="90" rx="12" fill="url(#qualityGrad3)"/>
+    <text x="70" y="30" fill="#f8fafc" font-family="system-ui" font-size="13" font-weight="bold" text-anchor="middle">🔗 Consistency</text>
+    <text x="70" y="50" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="9" text-anchor="middle">Same across systems</text>
+    <text x="70" y="65" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">No train-serve skew</text>
+    <text x="70" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Referential integrity</text>
+  </g>
+  
+  <!-- Timeliness -->
+  <g transform="translate(480, 290)">
+    <rect x="0" y="0" width="140" height="90" rx="12" fill="url(#qualityGrad4)"/>
+    <text x="70" y="30" fill="#f8fafc" font-family="system-ui" font-size="13" font-weight="bold" text-anchor="middle">⏰ Timeliness</text>
+    <text x="70" y="50" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="9" text-anchor="middle">Data is fresh</text>
+    <text x="70" y="65" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Age andlt; 24h</text>
+    <text x="70" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">SLA compliance</text>
+  </g>
+  
+  <!-- Uniqueness -->
+  <g transform="translate(280, 290)">
+    <rect x="0" y="0" width="140" height="90" rx="12" fill="url(#qualityGrad5)"/>
+    <text x="70" y="30" fill="#f8fafc" font-family="system-ui" font-size="13" font-weight="bold" text-anchor="middle">🔢 Uniqueness</text>
+    <text x="70" y="50" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="9" text-anchor="middle">No duplicates</text>
+    <text x="70" y="65" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Dup rate andlt; 1%</text>
+    <text x="70" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Primary key integrity</text>
+  </g>
+  
+  <!-- Validity -->
+  <g transform="translate(180, 180)">
+    <rect x="0" y="0" width="140" height="90" rx="12" fill="url(#qualityGrad6)"/>
+    <text x="70" y="30" fill="#f8fafc" font-family="system-ui" font-size="13" font-weight="bold" text-anchor="middle">✅ Validity</text>
+    <text x="70" y="50" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="9" text-anchor="middle">Meets business rules</text>
+    <text x="70" y="65" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Range checks</text>
+    <text x="70" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="8" text-anchor="middle">Format validation</text>
+  </g>
+  
+  <!-- Connecting lines -->
+  <line x1="350" y1="115" x2="390" y2="140" stroke="#475569" stroke-width="2"/>
+  <line x1="550" y1="115" x2="510" y2="140" stroke="#475569" stroke-width="2"/>
+  <line x1="580" y1="225" x2="510" y2="180" stroke="#475569" stroke-width="2"/>
+  <line x1="550" y1="335" x2="510" y2="220" stroke="#475569" stroke-width="2"/>
+  <line x1="350" y1="335" x2="390" y2="220" stroke="#475569" stroke-width="2"/>
+  <line x1="320" y1="225" x2="390" y2="180" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Bottom tip -->
+  <rect x="30" y="400" width="840" height="40" rx="8" fill="#334155"/>
+  <text x="450" y="425" fill="#94A3B8" font-family="system-ui" font-size="12" text-anchor="middle">💡 Each dimension should have defined SLOs and automated monitoring</text>
+</svg>
+

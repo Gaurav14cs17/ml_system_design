@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200">
+  <defs>
+    <linearGradient id="batchCompGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="streamCompGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <filter id="compShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="650" height="200" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="20" y="15" width="610" height="170" rx="10" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <text x="325" y="40" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">⚖️ Batch vs Streaming Layer Comparison</text>
+  
+  <!-- Batch Layer -->
+  <g filter="url(#compShadow)" transform="translate(40, 60)">
+    <rect x="0" y="0" width="270" height="110" rx="8" fill="url(#batchCompGrad)"/>
+    <text x="135" y="25" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">📦 BATCH LAYER</text>
+    <text x="135" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Historical aggregates</text>
+    <text x="135" y="68" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Complex ML features</text>
+    <text x="135" y="86" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Training data</text>
+    <text x="135" y="104" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.6)">⏱️ Daily/hourly refresh</text>
+  </g>
+  
+  <!-- Streaming Layer -->
+  <g filter="url(#compShadow)" transform="translate(340, 60)">
+    <rect x="0" y="0" width="270" height="110" rx="8" fill="url(#streamCompGrad)"/>
+    <text x="135" y="25" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">🌊 STREAMING LAYER</text>
+    <text x="135" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Real-time counters</text>
+    <text x="135" y="68" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Current state</text>
+    <text x="135" y="86" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Session features</text>
+    <text x="135" y="104" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.6)">⚡ Millisecond updates</text>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="eventGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="featureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="servingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🔄 Real-Time Data Pipeline</text>
+  
+  <!-- Event Source -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="60" width="140" height="90" rx="12" fill="url(#eventGrad)"/>
+    <text x="110" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#f8fafc">📡</text>
+    <text x="110" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Event Source</text>
+  </g>
+  
+  <!-- Arrow with flow animation representation -->
+  <path d="M185 105 L255 105" stroke="#3b82f6" stroke-width="4" marker-end="url(#arrow)"/>
+  <circle cx="200" cy="105" r="4" fill="#60a5fa"/>
+  <circle cx="220" cy="105" r="4" fill="#60a5fa"/>
+  <circle cx="240" cy="105" r="4" fill="#60a5fa"/>
+  
+  <!-- Stream Process -->
+  <g filter="url(#shadow)">
+    <rect x="260" y="60" width="140" height="90" rx="12" fill="url(#streamGrad)"/>
+    <text x="330" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#f8fafc">⚡</text>
+    <text x="330" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Stream Process</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M405 105 L475 105" stroke="#8b5cf6" stroke-width="4" marker-end="url(#arrow)"/>
+  <circle cx="420" cy="105" r="4" fill="#a78bfa"/>
+  <circle cx="440" cy="105" r="4" fill="#a78bfa"/>
+  <circle cx="460" cy="105" r="4" fill="#a78bfa"/>
+  
+  <!-- Feature Store -->
+  <g filter="url(#shadow)">
+    <rect x="480" y="60" width="140" height="90" rx="12" fill="url(#featureGrad)"/>
+    <text x="550" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#f8fafc">🗃️</text>
+    <text x="550" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Feature Store</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M625 105 L695 105" stroke="#10b981" stroke-width="4" marker-end="url(#arrow)"/>
+  <circle cx="640" cy="105" r="4" fill="#34d399"/>
+  <circle cx="660" cy="105" r="4" fill="#34d399"/>
+  <circle cx="680" cy="105" r="4" fill="#34d399"/>
+  
+  <!-- Real-Time Serving -->
+  <g filter="url(#shadow)">
+    <rect x="700" y="60" width="140" height="90" rx="12" fill="url(#servingGrad)"/>
+    <text x="770" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#f8fafc">🚀</text>
+    <text x="770" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Real-Time</text>
+  </g>
+  
+  <!-- Label -->
+  <rect x="250" y="165" width="300" height="25" rx="6" fill="#334155"/>
+  <text x="400" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">← Continuous Flow (milliseconds latency) →</text>
+</svg>

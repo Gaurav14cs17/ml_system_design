@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300">
+  <defs>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22D3EE;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="300" fill="#0F172A"/>
+  
+  <!-- Decorative grid pattern -->
+  <g opacity="0.1">
+    <line x1="0" y1="50" x2="900" y2="50" stroke="#6366F1" stroke-width="1"/>
+    <line x1="0" y1="100" x2="900" y2="100" stroke="#6366F1" stroke-width="1"/>
+    <line x1="0" y1="150" x2="900" y2="150" stroke="#6366F1" stroke-width="1"/>
+    <line x1="0" y1="200" x2="900" y2="200" stroke="#6366F1" stroke-width="1"/>
+    <line x1="0" y1="250" x2="900" y2="250" stroke="#6366F1" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="700" y1="0" x2="700" y2="300" stroke="#6366F1" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="300" stroke="#6366F1" stroke-width="1"/>
+  </g>
+  
+  <!-- Decorative flowing data lines -->
+  <g opacity="0.3">
+    <path d="M0 80 Q150 60 300 90 T600 70 T900 95" stroke="url(#accentGrad)" stroke-width="2" fill="none"/>
+    <path d="M0 220 Q200 200 400 230 T800 210 T900 225" stroke="url(#accentGrad)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Floating data nodes -->
+  <g filter="url(#glow)">
+    <circle cx="120" cy="70" r="6" fill="#22D3EE"/>
+    <circle cx="250" cy="85" r="4" fill="#10B981"/>
+    <circle cx="380" cy="75" r="5" fill="#6366F1"/>
+    <circle cx="520" cy="68" r="4" fill="#EC4899"/>
+    <circle cx="650" cy="82" r="6" fill="#F59E0B"/>
+    <circle cx="780" cy="72" r="5" fill="#22D3EE"/>
+    
+    <circle cx="150" cy="225" r="4" fill="#10B981"/>
+    <circle cx="320" cy="218" r="5" fill="#8B5CF6"/>
+    <circle cx="480" cy="232" r="6" fill="#22D3EE"/>
+    <circle cx="620" cy="215" r="4" fill="#EC4899"/>
+    <circle cx="750" cy="228" r="5" fill="#F59E0B"/>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="450" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="url(#titleGrad)" filter="url(#shadow)">DATA PIPELINES</text>
+  
+  <!-- Subtitle -->
+  <text x="450" y="175" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#F8FAFC">for Machine Learning Systems</text>
+  
+  <!-- Tagline -->
+  <text x="450" y="215" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94A3B8">Building Production-Grade Data Infrastructure</text>
+  
+  <!-- Bottom accent bar -->
+  <rect x="300" y="245" width="300" height="4" rx="2" fill="url(#accentGrad)"/>
+  
+  <!-- Pipeline flow icons -->
+  <g transform="translate(200, 260)">
+    <rect x="0" y="0" width="80" height="25" rx="4" fill="#1E293B" stroke="#334155"/>
+    <text x="40" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">📥 Ingest</text>
+  </g>
+  <g transform="translate(310, 260)">
+    <rect x="0" y="0" width="80" height="25" rx="4" fill="#1E293B" stroke="#334155"/>
+    <text x="40" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">⚙️ Transform</text>
+  </g>
+  <g transform="translate(420, 260)">
+    <rect x="0" y="0" width="80" height="25" rx="4" fill="#1E293B" stroke="#334155"/>
+    <text x="40" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">✨ Engineer</text>
+  </g>
+  <g transform="translate(530, 260)">
+    <rect x="0" y="0" width="80" height="25" rx="4" fill="#1E293B" stroke="#334155"/>
+    <text x="40" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">💾 Store</text>
+  </g>
+  <g transform="translate(640, 260)">
+    <rect x="0" y="0" width="80" height="25" rx="4" fill="#1E293B" stroke="#334155"/>
+    <text x="40" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">🚀 Serve</text>
+  </g>
+  
+  <!-- Connecting arrows -->
+  <path d="M283 272 L307 272" stroke="#64748B" stroke-width="2" marker-end="url(#arrowSmall)"/>
+  <path d="M393 272 L417 272" stroke="#64748B" stroke-width="2"/>
+  <path d="M503 272 L527 272" stroke="#64748B" stroke-width="2"/>
+  <path d="M613 272 L637 272" stroke="#64748B" stroke-width="2"/>
+  
+  <defs>
+    <marker id="arrowSmall" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#64748B"/>
+    </marker>
+  </defs>
+</svg>

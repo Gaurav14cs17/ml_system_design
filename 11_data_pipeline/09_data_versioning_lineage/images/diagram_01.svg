@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="linGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="rawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="cleanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="featGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="modGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="linShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <marker id="linArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748B"/>
+    </marker>
+    <marker id="linArrowDown" markerWidth="6" markerHeight="8" refX="3" refY="7" orient="auto">
+      <polygon points="0 0, 6 0, 3 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="850" height="400" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="790" height="360" rx="12" fill="#1E293B" stroke="url(#linGrad)" stroke-width="2"/>
+  <rect x="30" y="20" width="790" height="40" rx="12 12 0 0" fill="url(#linGrad)"/>
+  <text x="425" y="47" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">🔗 Data Versioning &amp; Lineage Graph</text>
+  
+  <!-- Version 1 Row -->
+  <g filter="url(#linShadow)" transform="translate(60, 85)">
+    <rect x="0" y="0" width="120" height="45" rx="6" fill="url(#rawGrad)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">📊 Raw Data</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">v1</text>
+  </g>
+  
+  <path d="M185 107 L225 107" stroke="#64748B" stroke-width="2" marker-end="url(#linArrow)"/>
+  
+  <g filter="url(#linShadow)" transform="translate(230, 85)">
+    <rect x="0" y="0" width="120" height="45" rx="6" fill="url(#cleanGrad)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#0F172A">🧹 Cleaned</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(0,0,0,0.6)">v1</text>
+  </g>
+  
+  <path d="M355 107 L395 107" stroke="#64748B" stroke-width="2" marker-end="url(#linArrow)"/>
+  
+  <g filter="url(#linShadow)" transform="translate(400, 85)">
+    <rect x="0" y="0" width="120" height="45" rx="6" fill="url(#featGrad)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#0F172A">✨ Features</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(0,0,0,0.6)">v1</text>
+  </g>
+  
+  <!-- Version arrows down -->
+  <path d="M120 135 L120 160" stroke="#6366F1" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#linArrowDown)"/>
+  <path d="M290 135 L290 160" stroke="#22D3EE" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#linArrowDown)"/>
+  <path d="M460 135 L460 160" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#linArrowDown)"/>
+  
+  <!-- Version 2 Row -->
+  <g filter="url(#linShadow)" transform="translate(60, 170)">
+    <rect x="0" y="0" width="120" height="45" rx="6" fill="url(#rawGrad)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">📊 Raw Data</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">v2</text>
+  </g>
+  
+  <path d="M185 192 L225 192" stroke="#64748B" stroke-width="2" marker-end="url(#linArrow)"/>
+  
+  <g filter="url(#linShadow)" transform="translate(230, 170)">
+    <rect x="0" y="0" width="120" height="45" rx="6" fill="url(#cleanGrad)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#0F172A">🧹 Cleaned</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(0,0,0,0.6)">v2</text>
+  </g>
+  
+  <path d="M355 192 L395 192" stroke="#64748B" stroke-width="2" marker-end="url(#linArrow)"/>
+  
+  <g filter="url(#linShadow)" transform="translate(400, 170)">
+    <rect x="0" y="0" width="120" height="45" rx="6" fill="url(#featGrad)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#0F172A">✨ Features</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(0,0,0,0.6)">v2</text>
+  </g>
+  
+  <!-- Model chain -->
+  <path d="M460 220 L460 250 L540 250" stroke="#64748B" stroke-width="2"/>
+  <path d="M540 250 L575 250" stroke="#64748B" stroke-width="2" marker-end="url(#linArrow)"/>
+  
+  <g filter="url(#linShadow)" transform="translate(580, 225)">
+    <rect x="0" y="0" width="130" height="50" rx="6" fill="url(#modGrad)"/>
+    <text x="65" y="22" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">🤖 Model v1</text>
+    <text x="65" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Training v1</text>
+  </g>
+  
+  <path d="M645 280 L645 310" stroke="#10B981" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#linArrowDown)"/>
+  
+  <g filter="url(#linShadow)" transform="translate(580, 320)">
+    <rect x="0" y="0" width="130" height="50" rx="6" fill="url(#modGrad)"/>
+    <text x="65" y="22" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">🤖 Model v2</text>
+    <text x="65" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Training v2</text>
+  </g>
+  
+  <!-- Bottom labels -->
+  <g transform="translate(60, 340)">
+    <rect x="0" y="0" width="140" height="35" rx="6" fill="#334155"/>
+    <text x="70" y="15" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#8B5CF6">📌 Version Datasets</text>
+    <text x="70" y="28" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Track every change</text>
+  </g>
+  
+  <g transform="translate(220, 340)">
+    <rect x="0" y="0" width="140" height="35" rx="6" fill="#334155"/>
+    <text x="70" y="15" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#22D3EE">🔗 Track Lineage</text>
+    <text x="70" y="28" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Know data origins</text>
+  </g>
+  
+  <g transform="translate(380, 340)">
+    <rect x="0" y="0" width="140" height="35" rx="6" fill="#334155"/>
+    <text x="70" y="15" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#10B981">🔄 Reproduce</text>
+    <text x="70" y="28" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Recreate experiments</text>
+  </g>
+</svg>

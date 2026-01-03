@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="connGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="connGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="connGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="connGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <linearGradient id="queueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="lakeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <filter id="platShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+    <marker id="platArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0F172A"/>
+  
+  <!-- Main container -->
+  <rect x="30" y="20" width="840" height="460" rx="16" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Title -->
+  <rect x="30" y="20" width="840" height="50" rx="16 16 0 0" fill="#334155"/>
+  <text x="450" y="52" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold" fill="#F8FAFC">🏗️ Multi-Source Ingestion Platform</text>
+  
+  <!-- Connectors Row -->
+  <text x="450" y="95" text-anchor="middle" font-family="system-ui" font-size="12" fill="#94A3B8">DATA SOURCE CONNECTORS</text>
+  
+  <g filter="url(#platShadow)">
+    <rect x="60" y="110" width="160" height="70" rx="10" fill="url(#connGrad1)"/>
+    <text x="140" y="140" text-anchor="middle" font-family="system-ui" font-size="18">🗄️</text>
+    <text x="140" y="165" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Database Connectors</text>
+  </g>
+  
+  <g filter="url(#platShadow)">
+    <rect x="240" y="110" width="160" height="70" rx="10" fill="url(#connGrad2)"/>
+    <text x="320" y="140" text-anchor="middle" font-family="system-ui" font-size="18">🔌</text>
+    <text x="320" y="165" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">API Connectors</text>
+  </g>
+  
+  <g filter="url(#platShadow)">
+    <rect x="420" y="110" width="160" height="70" rx="10" fill="url(#connGrad3)"/>
+    <text x="500" y="140" text-anchor="middle" font-family="system-ui" font-size="18">📁</text>
+    <text x="500" y="165" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">File Connectors</text>
+  </g>
+  
+  <g filter="url(#platShadow)">
+    <rect x="600" y="110" width="160" height="70" rx="10" fill="url(#connGrad4)"/>
+    <text x="680" y="140" text-anchor="middle" font-family="system-ui" font-size="18">🌊</text>
+    <text x="680" y="165" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Stream Connectors</text>
+  </g>
+  
+  <!-- Arrows down to queue -->
+  <path d="M140 185 L140 210 L450 230" stroke="#64748B" stroke-width="2"/>
+  <path d="M320 185 L320 215 L450 230" stroke="#64748B" stroke-width="2"/>
+  <path d="M500 185 L500 215 L450 230" stroke="#64748B" stroke-width="2"/>
+  <path d="M680 185 L680 210 L450 230" stroke="#64748B" stroke-width="2"/>
+  <path d="M450 230 L450 250" stroke="#64748B" stroke-width="3" marker-end="url(#platArrow)"/>
+  
+  <!-- Unified Queue -->
+  <g filter="url(#platShadow)">
+    <rect x="300" y="260" width="300" height="60" rx="12" fill="url(#queueGrad)"/>
+    <text x="450" y="295" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">📨 Unified Queue (Kafka)</text>
+  </g>
+  
+  <!-- Arrow down to processors -->
+  <path d="M450 325 L450 345" stroke="#64748B" stroke-width="3" marker-end="url(#platArrow)"/>
+  
+  <!-- Processing Layer -->
+  <text x="450" y="375" text-anchor="middle" font-family="system-ui" font-size="12" fill="#94A3B8">PROCESSING LAYER</text>
+  
+  <g filter="url(#platShadow)">
+    <rect x="100" y="385" width="180" height="50" rx="8" fill="url(#processGrad)"/>
+    <text x="190" y="417" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">✅ Validator</text>
+  </g>
+  
+  <g filter="url(#platShadow)">
+    <rect x="310" y="385" width="180" height="50" rx="8" fill="url(#processGrad)"/>
+    <text x="400" y="417" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">🔄 Transformer</text>
+  </g>
+  
+  <g filter="url(#platShadow)">
+    <rect x="520" y="385" width="180" height="50" rx="8" fill="url(#processGrad)"/>
+    <text x="610" y="417" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">🔀 Router</text>
+  </g>
+  
+  <!-- Arrows from queue to processors -->
+  <path d="M350 320 L350 355 L190 380" stroke="#64748B" stroke-width="2"/>
+  <path d="M450 320 L450 355 L400 380" stroke="#64748B" stroke-width="2"/>
+  <path d="M550 320 L550 355 L610 380" stroke="#64748B" stroke-width="2"/>
+  
+  <!-- Arrows to data lake -->
+  <path d="M190 440 L190 455 L400 455" stroke="#64748B" stroke-width="2"/>
+  <path d="M400 440 L400 455" stroke="#64748B" stroke-width="2"/>
+  <path d="M610 440 L610 455 L400 455" stroke="#64748B" stroke-width="2"/>
+  <path d="M400 455 L400 470" stroke="#64748B" stroke-width="3" marker-end="url(#platArrow)"/>
+  
+  <!-- Data Lake indicator at bottom -->
+  <rect x="720" y="435" width="130" height="35" rx="8" fill="url(#lakeGrad)" filter="url(#platShadow)"/>
+  <text x="785" y="458" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">💾 Data Lake</text>
+  <path d="M640 455 L718 455" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4,2"/>
+</svg>
