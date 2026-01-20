@@ -670,11 +670,17 @@ class EthicalDecisionFramework:
 Legal and ethical content moderation requires:
 
 1. **Regulatory Compliance**: Meet jurisdiction-specific requirements
+
 2. **Platform Liability**: Understand and manage legal exposure
+
 3. **Free Speech Balance**: Proportional, rights-respecting decisions
+
 4. **Transparency**: Regular public reporting
+
 5. **Fairness**: Regular bias audits and mitigation
+
 6. **User Rights**: Robust appeal systems
+
 7. **Ethical Framework**: Principled decision-making
 
 ---

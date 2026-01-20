@@ -361,17 +361,29 @@ print(f"Moderators with ML: {moderators_with_ml:,.0f}")
 This comprehensive guide covers:
 
 1. **System Architecture**: Designing scalable moderation pipelines
+
 2. **Data Strategy**: Collection, labeling, and quality
+
 3. **Text Moderation**: NLP techniques for harmful text
+
 4. **Visual Moderation**: Image and video analysis
+
 5. **Model Training**: Building effective classifiers
+
 6. **Serving Infrastructure**: Low-latency inference
+
 7. **Evaluation**: Metrics that matter
+
 8. **Human-in-the-Loop**: Combining AI and human judgment
+
 9. **Scalability**: Handling billions of requests
+
 10. **Monitoring**: Keeping systems healthy
+
 11. **Edge Cases**: Handling the hard problems
+
 12. **Ethics & Legal**: Navigating complex requirements
+
 13. **Case Studies**: Real-world implementations
 
 ---
@@ -429,9 +441,13 @@ The following chapters will dive deep into each component, providing both theore
 ## References
 
 1. "The Facebook Files" - Wall Street Journal Investigation
+
 2. "Content Moderation at Scale" - Harvard Berkman Klein Center
+
 3. "Online Content Moderation" - Congressional Research Service
+
 4. "The Moderators" - Documentary
+
 5. "Custodians of the Internet" - Tarleton Gillespie
 
 ---

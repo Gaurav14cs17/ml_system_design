@@ -159,18 +159,27 @@ Every production NLP system follows a similar high-level architecture:
 ## 🎓 Learning Path
 
 ### Beginner Path
+
 1. Start with **Text Preprocessing** - understand tokenization and text cleaning
+
 2. Learn **Embeddings** - how text becomes numbers
+
 3. Study **Text Classification** - your first NLP model
 
 ### Intermediate Path
+
 4. Master **Language Models** - from RNNs to Transformers
+
 5. Build **NER Systems** - sequence labeling at production scale
+
 6. Understand **Search & Retrieval** - semantic search fundamentals
 
 ### Advanced Path
+
 7. Deploy **LLM Systems** - large model serving and optimization
+
 8. Architect **RAG Systems** - combine retrieval with generation
+
 9. Build **Conversational AI** - end-to-end dialogue systems
 
 ---
@@ -260,7 +269,9 @@ Before diving into specific NLP topics, ensure familiarity with these concepts:
 Each subdirectory contains:
 
 1. **README.md** - Comprehensive explanation with mathematical foundations
+
 2. **diagrams/** - Architecture and concept visualizations
+
 3. Code examples integrated within documentation
 
 ### Suggested Workflow
@@ -282,18 +293,23 @@ cat README.md
 ## 🌟 Key Principles
 
 ### 1. Start Simple, Iterate
+
 > "The best model is the one that ships. Start with a baseline and improve."
 
 ### 2. Data Quality > Model Complexity
+
 > "Garbage in, garbage out. Invest in data quality before model tuning."
 
 ### 3. Measure Everything
+
 > "If you can't measure it, you can't improve it. Log metrics from day one."
 
 ### 4. Design for Failure
+
 > "Systems fail. Design graceful degradation and fallbacks."
 
 ### 5. Think About Scale Early
+
 > "Rewriting for scale is expensive. Consider scale in initial design."
 
 ---
@@ -319,8 +335,11 @@ Before diving in, ensure familiarity with:
 This is a living document. Contributions welcome:
 
 1. Fix errors or outdated information
+
 2. Add new examples or use cases
+
 3. Improve explanations
+
 4. Share production experiences
 
 ---

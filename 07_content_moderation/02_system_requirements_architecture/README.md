@@ -854,10 +854,15 @@ class TieredModerationPipeline:
 A robust content moderation architecture requires:
 
 1. **Scalable ingestion** handling multiple formats and sources
+
 2. **Efficient preprocessing** for text, image, video, and audio
+
 3. **Multi-model inference** with appropriate hardware
+
 4. **Flexible policy engine** for configurable rules
+
 5. **Human review integration** for uncertain cases
+
 6. **Comprehensive monitoring** and feedback loops
 
 The architecture should be designed for:

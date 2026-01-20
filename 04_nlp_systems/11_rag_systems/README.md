@@ -526,7 +526,9 @@ recall = evaluator.retrieval_recall_at_k(retrieved, relevant, k=5)
 ## 📚 References
 
 1. [RAG Paper](https://arxiv.org/abs/2005.11401)
+
 2. [LangChain](https://python.langchain.com/)
+
 3. [LlamaIndex](https://www.llamaindex.ai/)
 
 ---

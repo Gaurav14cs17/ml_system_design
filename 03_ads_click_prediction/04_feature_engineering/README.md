@@ -15,11 +15,17 @@
 ## 📖 Table of Contents
 
 1. [Feature Taxonomy](#feature-taxonomy)
+
 2. [User Features](#user-features)
+
 3. [Ad Features](#ad-features)
+
 4. [Context Features](#context-features)
+
 5. [Cross Features](#cross-features)
+
 6. [Feature Transformations](#feature-transformations)
+
 7. [Feature Store](#feature-store)
 
 ---
@@ -370,9 +376,13 @@ Avoid **data leakage**: Never use future information.
 ## Key Takeaways
 
 1. **Smoothed CTR**: Use Bayesian averaging for sparse data
+
 2. **Cyclical encoding**: sin/cos for periodic features
+
 3. **Cross features**: User-Ad interactions are most predictive
+
 4. **Feature hashing**: Handle high cardinality efficiently
+
 5. **Point-in-time**: Prevent data leakage in training
 
 ---

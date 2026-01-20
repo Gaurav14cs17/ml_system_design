@@ -1,12 +1,19 @@
 # Advanced Topics in Search Ranking
 
 ## 📋 Table of Contents
+
 1. [Personalization](#personalization)
+
 2. [Multi-Objective Optimization](#multi-objective-optimization)
+
 3. [Handling Cold Start](#handling-cold-start)
+
 4. [Bias & Fairness](#bias-fairness)
+
 5. [Real-Time Learning](#real-time-learning)
+
 6. [Federated Search](#federated-search)
+
 7. [Conversational Search](#conversational-search)
 
 ---
@@ -837,11 +844,17 @@ class QueryRewriter:
 ## Key Takeaways
 
 1. **Personalization**: Balance relevance with user preferences
+
 2. **Multi-Objective**: Trade off relevance, revenue, diversity, fairness
+
 3. **Cold Start**: Use content + popularity for new users/items
+
 4. **Fairness**: Correct position bias, ensure fair exposure
+
 5. **Online Learning**: Continuously adapt from user feedback
+
 6. **Federated Search**: Merge results from multiple sources
+
 7. **Conversational**: Handle multi-turn context
 
 ---

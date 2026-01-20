@@ -1,13 +1,21 @@
 # Statistical Foundations of A/B Testing
 
 ## Table of Contents
+
 1. [Hypothesis Testing Framework](#hypothesis-testing-framework)
+
 2. [Understanding P-Values](#understanding-p-values)
+
 3. [Confidence Intervals](#confidence-intervals)
+
 4. [Type I and Type II Errors](#type-i-and-type-ii-errors)
+
 5. [Statistical Power](#statistical-power)
+
 6. [Effect Size](#effect-size)
+
 7. [Common Statistical Tests for A/B Testing](#common-statistical-tests-for-ab-testing)
+
 8. [Bayesian vs Frequentist Approaches](#bayesian-vs-frequentist-approaches)
 
 ---
@@ -858,12 +866,19 @@ print(f"Expected Loss (choosing Treatment): {results['expected_loss']['expected_
 Understanding statistical foundations is crucial for running valid A/B tests:
 
 1. **Hypothesis Testing** provides the framework for making decisions
+
 2. **P-values** measure evidence against the null, not probability of truth
+
 3. **Confidence Intervals** provide range of plausible effect sizes
+
 4. **Type I & II Errors** are the risks we balance
+
 5. **Statistical Power** determines ability to detect real effects
+
 6. **Effect Size** matters more than statistical significance
+
 7. **Choose the right test** based on your metric type
+
 8. **Bayesian methods** offer intuitive alternatives
 
 ---

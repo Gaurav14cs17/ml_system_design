@@ -553,7 +553,9 @@ class ConversationManager:
 ## 📚 References
 
 1. [Rasa Open Source](https://rasa.com/)
+
 2. [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling)
+
 3. [Dialogue Systems Survey](https://arxiv.org/abs/2006.10958)
 
 ---

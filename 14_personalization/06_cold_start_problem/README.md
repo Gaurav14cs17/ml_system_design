@@ -11,12 +11,19 @@
 ---
 
 ## Table of Contents
+
 1. [Problem Definition](#problem-definition)
+
 2. [Mathematical Framework](#mathematical-framework)
+
 3. [Solutions for New Users](#solutions-for-new-users)
+
 4. [Solutions for New Items](#solutions-for-new-items)
+
 5. [Exploration-Exploitation](#exploration-exploitation)
+
 6. [Meta-Learning Approaches](#meta-learning-approaches)
+
 7. [Interview Questions](#interview-questions)
 
 ---
@@ -243,7 +250,9 @@ Where:
 Maintain posterior over reward parameters:
 
 1. Sample \(\theta_i \sim P(\theta_i \mid \mathcal{D})\) for each item
+
 2. Select \(a_t = \arg\max_i \mathbb{E}[r \mid \theta_i]\)
+
 3. Update posterior with observed reward
 
 For binary rewards (click/no-click):
@@ -297,13 +306,16 @@ Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text
 ### MAML for Recommendations
 
 **Meta-training:**
+
 1. Sample user \(u\) with history split into support/query
+
 2. Inner loop: Adapt to support set
 
 ```math
 \theta_u' = \theta - \alpha \nabla_\theta \mathcal{L}_{\text{support}}(\theta)
 
 ```math
+
 3. Outer loop: Update on query set
 
 ```
@@ -323,7 +335,9 @@ Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text
 Simulate cold start during training:
 
 1. Randomly drop user interactions
+
 2. Train model to be robust to missing data
+
 3. At test time: handles cold users naturally
 
 **Training objective:**
@@ -341,8 +355,11 @@ Simulate cold start during training:
 
 ```
 1. No history → Popular items + Exploration
+
 2. 1-5 interactions → Content-based + Demographic priors
+
 3. 5-20 interactions → Hybrid (blend CF with content)
+
 4. 20+ interactions → Full collaborative filtering
 
 ```
@@ -351,8 +368,11 @@ Simulate cold start during training:
 
 ```
 1. Pre-launch → Content embedding + Expert curation
+
 2. Launch → Exploration boost + Targeted exposure
+
 3. 100+ impressions → Reduce exploration bonus
+
 4. 1000+ impressions → Standard ranking
 
 ```
@@ -364,15 +384,23 @@ Simulate cold start during training:
 ### Q1: How would you handle cold start for a new music streaming service?
 
 **New Users:**
+
 1. Onboarding: Genre/artist preferences
+
 2. Demographics: Location-based popular music
+
 3. Social: Import from existing platforms (if available)
+
 4. Bandits: Explore diverse genres initially
 
 **New Songs:**
+
 1. Audio features (tempo, energy, mood)
+
 2. Artist similarity
+
 3. Playlist co-occurrence from similar services
+
 4. Exploration bonus for fresh releases
 
 ### Q2: Compare bandit approaches for cold start
@@ -407,9 +435,13 @@ Simulate cold start during training:
 ### Q4: How do you evaluate cold start solutions?
 
 **Metrics:**
+
 1. **NDCG@K for cold users:** Ranking quality in first sessions
+
 2. **Time to first engagement:** How fast users find value
+
 3. **Retention at day 1/7:** Do cold users return?
+
 4. **Exploration efficiency:** Regret in bandit formulation
 
 **A/B Testing:**
@@ -425,9 +457,13 @@ Simulate cold start during training:
 ## Further Reading
 
 1. **Schein et al. (2002)** — Methods for Collaborative Filtering
+
 2. **Li et al. (2010)** — A Contextual-Bandit Approach to Personalized News
+
 3. **Finn et al. (2017)** — MAML: Model-Agnostic Meta-Learning
+
 4. **Volkovs et al. (2017)** — DropoutNet for Cold Start
+
 5. **Vartak et al. (2017)** — Meta-Prod2Vec for Cold Start
 
 ---

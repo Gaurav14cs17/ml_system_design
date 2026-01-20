@@ -118,23 +118,35 @@ Without a feature store, teams often create different code paths for training an
 ## 🎓 Learning Path
 
 ### Beginner
+
 1. Start with [Introduction](./01_introduction/) to understand the fundamentals
+
 2. Learn [Core Concepts](./02_core_concepts/) - features, entities, feature groups
+
 3. Explore [Architecture](./03_architecture/) for system understanding
 
 ### Intermediate
+
 4. Deep dive into [Feature Engineering](./04_feature_engineering/)
+
 5. Understand [Online Serving](./05_online_serving/) patterns
+
 6. Master [Offline Serving](./06_offline_serving/) for training
 
 ### Advanced
+
 7. Implement [Feature Registry](./07_feature_registry/) for governance
+
 8. Design [Data Sources](./08_data_sources/) integration
+
 9. Build [Monitoring](./09_monitoring/) systems
 
 ### Expert
+
 10. Compare [Tools](./10_tools_comparison/) for your use case
+
 11. Build with [Implementation](./11_implementation/) examples
+
 12. Apply [Best Practices](./12_best_practices/) for production
 
 ---

@@ -21,10 +21,15 @@
 ## 📚 Table of Contents
 
 1. [Registry Overview](#registry-overview)
+
 2. [Metadata Schema](#metadata-schema)
+
 3. [Feature Discovery](#feature-discovery)
+
 4. [Lineage Tracking](#lineage-tracking)
+
 5. [Governance](#governance)
+
 6. [Implementation Patterns](#implementation-patterns)
 
 ---
@@ -633,9 +638,13 @@ def deprecate_feature(feature_name: str):
 ### Key Takeaways
 
 1. Registry is the **brain** of the feature store
+
 2. **Metadata quality** drives feature reuse
+
 3. **Lineage** enables impact analysis
+
 4. **Governance** ensures compliance
+
 5. **GitOps** enables versioning and review
 
 ---

@@ -82,23 +82,35 @@ Embeddings are the backbone of modern ML systems. This comprehensive guide cover
 ## 🎯 Quick Start by Use Case
 
 ### "I want to build a search engine"
+
 1. [Sentence Embeddings](./03_sentence_document_embeddings/README.md) → Choose your encoder
+
 2. [Vector Databases](./06_vector_databases/README.md) → Store your embeddings
+
 3. [Use Cases: Semantic Search](./11_use_cases_applications/README.md#semantic-search) → Implementation guide
 
 ### "I want to build a recommendation system"
+
 1. [Introduction](./01_introduction_to_embeddings/README.md) → Understand the basics
+
 2. [Use Cases: Recommendations](./11_use_cases_applications/README.md#recommendation-systems) → Two-tower models
+
 3. [ANN Search](./07_similarity_search_ann/README.md) → Fast retrieval
 
 ### "I want to build a RAG system"
+
 1. [Sentence Embeddings](./03_sentence_document_embeddings/README.md) → Document encoding
+
 2. [Vector Databases](./06_vector_databases/README.md) → Knowledge storage
+
 3. [Use Cases: RAG](./11_use_cases_applications/README.md#rag-retrieval-augmented-generation) → Full pipeline
 
 ### "I want to deploy embeddings at scale"
+
 1. [Production Deployment](./10_production_deployment/README.md) → Architecture & scaling
+
 2. [Similarity Search](./07_similarity_search_ann/README.md) → Index optimization
+
 3. [Evaluation](./09_evaluation_metrics/README.md) → Monitoring quality
 
 ---
@@ -283,8 +295,11 @@ pip install numpy pandas scikit-learn
 ## 🤝 How to Use This Guide
 
 1. **Sequential Learning**: Start from Chapter 01 and progress through each topic
+
 2. **Reference**: Jump to specific chapters when you need them
+
 3. **Hands-On**: Each chapter includes runnable code examples
+
 4. **Production**: Focus on chapters 06-10 for deployment
 
 ---

@@ -15,10 +15,15 @@
 ## 📖 Table of Contents
 
 1. [Monitoring Architecture](#monitoring-architecture)
+
 2. [Key Metrics](#key-metrics)
+
 3. [Alerting Strategy](#alerting-strategy)
+
 4. [Model Monitoring](#model-monitoring)
+
 5. [Dashboards](#dashboards)
+
 6. [Incident Response](#incident-response)
 
 ---
@@ -340,15 +345,21 @@ During experiments, monitor:
 ### Metric Collection
 
 1. **Use percentiles** over averages for latency
+
 2. **Set baselines** before comparing
+
 3. **Aggregate appropriately** (rates for errors, sums for counts)
+
 4. **Retain history** for trend analysis (30+ days)
 
 ### Alert Hygiene
 
 1. **Every alert must be actionable**
+
 2. **Reduce noise**: tune thresholds, use aggregation
+
 3. **Test alerts**: verify they fire correctly
+
 4. **Review regularly**: remove stale alerts
 
 ### Capacity Planning
@@ -365,9 +376,13 @@ Maintain > 30% headroom for traffic spikes.
 ## Key Takeaways
 
 1. **Three pillars**: Metrics, logs, traces for complete observability
+
 2. **Percentiles**: Use p50, p90, p99 instead of averages
+
 3. **SLO-based alerting**: Burn rate alerts on error budget
+
 4. **Model monitoring**: Track PSI, calibration, feature health
+
 5. **Runbooks**: Prepare for common incidents
 
 ---

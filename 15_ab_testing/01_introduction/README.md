@@ -1,12 +1,19 @@
 # Introduction to A/B Testing in Machine Learning Systems
 
 ## Table of Contents
+
 1. [What is A/B Testing?](#what-is-ab-testing)
+
 2. [Why A/B Testing Matters for ML Systems](#why-ab-testing-matters-for-ml-systems)
+
 3. [A/B Testing vs Other Experimentation Methods](#ab-testing-vs-other-experimentation-methods)
+
 4. [The A/B Testing Lifecycle](#the-ab-testing-lifecycle)
+
 5. [Key Terminology](#key-terminology)
+
 6. [When to Use A/B Testing](#when-to-use-ab-testing)
+
 7. [Challenges in ML A/B Testing](#challenges-in-ml-ab-testing)
 
 ---
@@ -474,8 +481,11 @@ In the following chapters, we'll dive deeper into each aspect of A/B testing, fr
 ## Further Reading
 
 1. Kohavi, R., Tang, D., & Xu, Y. (2020). *Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing*
+
 2. [Google's A/B Testing Blog](https://www.exp-platform.com/resources)
+
 3. [Netflix Tech Blog - Experimentation](https://netflixtechblog.com/tagged/experimentation)
+
 4. [Microsoft's ExP Platform Papers](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/)
 
 ---

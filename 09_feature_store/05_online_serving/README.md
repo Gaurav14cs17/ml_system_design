@@ -25,10 +25,15 @@
 ## 📚 Table of Contents
 
 1. [Online Serving Overview](#online-serving-overview)
+
 2. [Latency Requirements](#latency-requirements)
+
 3. [Online Store Design](#online-store-design)
+
 4. [Serving Patterns](#serving-patterns)
+
 5. [Caching Strategies](#caching-strategies)
+
 6. [Scaling and Performance](#scaling-and-performance)
 
 ---
@@ -362,9 +367,13 @@ METRICS = {
 ### Key Takeaways
 
 1. **Latency is critical** - Every millisecond counts
+
 2. **Batch requests** - Amortize overhead
+
 3. **Cache aggressively** - Multi-level caching
+
 4. **Select only needed features** - Minimize data transfer
+
 5. **Monitor everything** - Latency, throughput, errors
 
 ---

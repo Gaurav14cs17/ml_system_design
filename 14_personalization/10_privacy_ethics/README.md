@@ -3,15 +3,25 @@
 ![Privacy Techniques](./images/privacy_techniques.svg)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Privacy Challenges](#privacy-challenges)
+
 3. [Privacy-Preserving Techniques](#privacy-preserving-techniques)
+
 4. [Differential Privacy](#differential-privacy)
+
 5. [Federated Learning](#federated-learning)
+
 6. [Ethical Considerations](#ethical-considerations)
+
 7. [Bias in Recommendations](#bias-in-recommendations)
+
 8. [Transparency & Explainability](#transparency-explainability)
+
 9. [Regulatory Compliance](#regulatory-compliance)
+
 10. [Interview Questions](#interview-questions)
 
 ---
@@ -1089,10 +1099,15 @@ class GDPRCompliance:
 ### Q1: How would you build a privacy-preserving recommendation system?
 
 **Key Approaches**:
+
 1. **Data minimization**: Only collect necessary data
+
 2. **Federated learning**: Train on-device, share only gradients
+
 3. **Differential privacy**: Add noise to protect individuals
+
 4. **Secure aggregation**: Combine data without exposing individual records
+
 5. **Anonymization**: Remove/hash identifiers
 
 ### Q2: How do you detect and mitigate bias in recommendations?
@@ -1138,9 +1153,13 @@ class GDPRCompliance:
 Building ethical personalization systems requires:
 
 1. **Privacy by design**: Build privacy in from the start
+
 2. **Fairness awareness**: Measure and mitigate bias
+
 3. **Transparency**: Explain recommendations to users
+
 4. **User control**: Give users power over their data
+
 5. **Regulatory compliance**: Meet legal requirements (GDPR, etc.)
 
 ---

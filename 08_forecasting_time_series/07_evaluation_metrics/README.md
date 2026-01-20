@@ -890,10 +890,15 @@ print(f"MAE: {summary['mae_mean']:.4f} ± {summary['mae_std']:.4f}")
 ## Summary
 
 Effective evaluation requires:
+
 1. **Multiple metrics**: No single metric tells the whole story
+
 2. **Proper baselines**: Compare against naive forecasts
+
 3. **Business context**: Weight errors by business impact
+
 4. **Probabilistic assessment**: Evaluate uncertainty estimates
+
 5. **Robust backtesting**: Use temporal cross-validation
 
 ### Recommended Metrics by Use Case

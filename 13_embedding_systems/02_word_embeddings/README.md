@@ -16,16 +16,27 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [The Evolution of Word Representations](#the-evolution-of-word-representations)
+
 3. [Word2Vec: The Revolution](#word2vec-the-revolution)
+
 4. [GloVe: Global Vectors](#glove-global-vectors)
+
 5. [FastText: Subword Embeddings](#fasttext-subword-embeddings)
+
 6. [Comparison of Methods](#comparison-of-methods)
+
 7. [Training Word Embeddings](#training-word-embeddings)
+
 8. [Evaluating Word Embeddings](#evaluating-word-embeddings)
+
 9. [Practical Implementation](#practical-implementation)
+
 10. [Advanced Topics](#advanced-topics)
+
 11. [Summary](#summary)
 
 ---
@@ -1052,9 +1063,13 @@ def debias_embeddings(embeddings, gender_pairs):
 ## References
 
 1. Mikolov, T., et al. (2013). "Efficient Estimation of Word Representations in Vector Space"
+
 2. Mikolov, T., et al. (2013). "Distributed Representations of Words and Phrases"
+
 3. Pennington, J., et al. (2014). "GloVe: Global Vectors for Word Representation"
+
 4. Bojanowski, P., et al. (2017). "Enriching Word Vectors with Subword Information"
+
 5. Levy, O., et al. (2015). "Improving Distributional Similarity with Lessons Learned from Word Embeddings"
 
 ---

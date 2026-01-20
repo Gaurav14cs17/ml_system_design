@@ -17,12 +17,19 @@
 ## 📖 Table of Contents
 
 1. [What is Fraud Detection?](#what-is-fraud-detection)
+
 2. [Mathematical Foundation](#mathematical-foundation)
+
 3. [Types of Fraud](#types-of-fraud)
+
 4. [Business Impact](#business-impact)
+
 5. [Traditional vs ML-Based Approaches](#traditional-vs-ml-based-approaches)
+
 6. [System Requirements](#system-requirements)
+
 7. [Key Challenges](#key-challenges)
+
 8. [Success Metrics](#success-metrics)
 
 ---
@@ -93,7 +100,9 @@ In fraud detection, the class distribution is highly skewed:
 This creates several mathematical issues:
 
 1. **Accuracy Paradox**: A model predicting "no fraud" for everything achieves $(1 - \eta) \approx 99\%$ accuracy
+
 2. **Learning Bias**: Standard loss functions weight all samples equally, causing the model to ignore the minority class
+
 3. **Evaluation Metrics**: Traditional metrics fail; we need area under the PR curve (AUPRC) instead of AUROC
 
 ### Information-Theoretic Perspective
@@ -533,9 +542,13 @@ So for 0.1% fraud rate, random baseline AUPRC = 0.001, making improvements clear
 Building an effective fraud detection system requires:
 
 1. **Understanding the problem space**: Different fraud types need different approaches
+
 2. **Balancing trade-offs**: Precision vs recall, speed vs accuracy
+
 3. **Hybrid architecture**: Combining rules and ML for best results
+
 4. **Continuous adaptation**: Fraudsters evolve, so must your system
+
 5. **Proper metrics**: Focus on business impact, not just ML metrics
 
 ---

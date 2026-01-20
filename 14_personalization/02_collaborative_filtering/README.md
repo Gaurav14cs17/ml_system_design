@@ -11,12 +11,19 @@
 ---
 
 ## Table of Contents
+
 1. [Mathematical Foundation](#mathematical-foundation)
+
 2. [Memory-Based Methods](#memory-based-methods)
+
 3. [Model-Based Methods](#model-based-methods)
+
 4. [Matrix Factorization](#matrix-factorization)
+
 5. [Implicit Feedback](#implicit-feedback)
+
 6. [Scalability](#scalability)
+
 7. [Interview Questions](#interview-questions)
 
 ---
@@ -132,8 +139,11 @@ Where:
 ### Why Model-Based?
 
 Memory-based limitations:
+
 1. **Scalability**: Computing similarities is expensive at query time
+
 2. **Sparsity**: Few co-rated items → noisy similarity estimates
+
 3. **Coverage**: Can't recommend items with no co-raters
 
 Model-based solution: Learn a **compressed representation** that generalizes beyond observed data.
@@ -325,6 +335,7 @@ Where \(\bar{n}\) is average items per user, \(T\) is iterations.
 ALS is **embarrassingly parallel**:
 
 1. **Fix Q, update P**: Each \(\mathbf{p}_u\) independent
+
 2. **Fix P, update Q**: Each \(\mathbf{q}_i\) independent
 
 ```math
@@ -384,8 +395,11 @@ Train on sampled negative examples instead of all \(m \times n\) pairs.
 **Key insight:** MF learns a **compressed representation** that generalizes.
 
 1. **Latent factors** capture underlying patterns
+
 2. **Regularization** prevents overfitting to observed data
+
 3. **All entries predicted**, not just co-rated items
+
 4. **Low-rank assumption** → similar users/items share factors
 
 ### Q3: Explain the difference between SGD and ALS for MF.
@@ -403,8 +417,11 @@ Train on sampled negative examples instead of all \(m \times n\) pairs.
 **Strategies:**
 
 1. **Uniform sampling**: Random unobserved items
+
 2. **Popularity sampling**: \(P(j) \propto |U_j|^{0.75}\)
+
 3. **Hard negatives**: Items similar to positives
+
 4. **In-batch negatives**: Use other users' positives
 
 **Trade-off:** Easy negatives → fast but poor discrimination  
@@ -415,9 +432,13 @@ Hard negatives → slower but better boundaries
 ## Further Reading
 
 1. **Koren et al. (2009)** — Matrix Factorization Techniques for Recommender Systems
+
 2. **Hu et al. (2008)** — Collaborative Filtering for Implicit Feedback Datasets
+
 3. **Rendle et al. (2009)** — BPR: Bayesian Personalized Ranking
+
 4. **Koren (2008)** — Factorization Meets the Neighborhood
+
 5. **He et al. (2017)** — Neural Collaborative Filtering
 
 ---

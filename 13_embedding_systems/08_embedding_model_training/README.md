@@ -16,14 +16,23 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Training Objectives](#training-objectives)
+
 3. [Data Preparation](#data-preparation)
+
 4. [Contrastive Learning](#contrastive-learning)
+
 5. [Hard Negative Mining](#hard-negative-mining)
+
 6. [Multi-Task Training](#multi-task-training)
+
 7. [Distillation and Compression](#distillation-and-compression)
+
 8. [Practical Training Pipeline](#practical-training-pipeline)
+
 9. [Summary](#summary)
 
 ---
@@ -35,8 +44,11 @@ Training embedding models involves learning representations where similar items 
 ### Key Questions
 
 1. **What makes items similar?** (Training signal)
+
 2. **How do we push similar items together?** (Loss function)
+
 3. **How do we find dissimilar items?** (Negative sampling)
+
 4. **How do we scale training?** (Distributed, efficient)
 
 ---
@@ -749,9 +761,13 @@ trainer.save("./my_embedding_model")
 ### Key Takeaways
 
 1. **Contrastive learning is king**: InfoNCE, in-batch negatives work well
+
 2. **Hard negatives matter**: Mining improves fine-grained distinctions
+
 3. **Multi-task helps**: Training on diverse data improves generalization
+
 4. **Distillation enables efficiency**: Compress large models to small
+
 5. **Scale carefully**: Mixed precision, gradient accumulation for large batches
 
 ### Training Checklist

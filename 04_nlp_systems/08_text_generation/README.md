@@ -425,7 +425,9 @@ print(f"ROUGE-L: {rouge['rougeL']:.4f}")
 ## 📚 References
 
 1. [GPT-2 Paper](https://openai.com/research/better-language-models)
+
 2. [BART Paper](https://arxiv.org/abs/1910.13461)
+
 3. [Nucleus Sampling](https://arxiv.org/abs/1904.09751)
 
 ---

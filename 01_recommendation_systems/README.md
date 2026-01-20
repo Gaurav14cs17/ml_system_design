@@ -157,12 +157,19 @@ This course provides an in-depth exploration of recommendation systems, from fou
 By completing this course, you will be able to:
 
 1. **Understand** the fundamentals of recommendation systems
+
 2. **Implement** content-based and collaborative filtering from scratch
+
 3. **Design** hybrid systems that combine multiple approaches
+
 4. **Engineer** features for recommendation models
+
 5. **Train and evaluate** models with appropriate metrics
+
 6. **Apply** deep learning techniques for modern RecSys
+
 7. **Architect** production-scale recommendation systems
+
 8. **Learn from** real-world case studies at top companies
 
 ---
@@ -249,9 +256,13 @@ By completing this course, you will be able to:
 ## 🚀 Getting Started
 
 1. Start with [Module 1: Introduction](./01_introduction/README.md)
+
 2. Follow the modules in order
+
 3. Run the code examples in each module
+
 4. Complete the exercises at the end of each section
+
 5. Build a project applying what you've learned
 
 ---

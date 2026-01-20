@@ -376,7 +376,9 @@ def evaluate_translation(hypotheses: List[str], references: List[str]):
 ## 📚 References
 
 1. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+
 2. [Neural Machine Translation](https://arxiv.org/abs/1409.0473)
+
 3. [OPUS-MT Models](https://github.com/Helsinki-NLP/Opus-MT)
 
 ---

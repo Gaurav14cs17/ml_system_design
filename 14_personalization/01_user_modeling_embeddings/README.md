@@ -11,11 +11,17 @@
 ---
 
 ## Table of Contents
+
 1. [Mathematical Foundation](#mathematical-foundation)
+
 2. [Embedding Theory](#embedding-theory)
+
 3. [Learning Methods](#learning-methods)
+
 4. [Architecture Patterns](#architecture-patterns)
+
 5. [Implementation Considerations](#implementation-considerations)
+
 6. [Interview Questions](#interview-questions)
 
 ---
@@ -71,7 +77,9 @@ This compression captures latent semantic structure.
 User embeddings exist in a **learned metric space** where:
 
 1. **Distance = Dissimilarity**: \(\|\mathbf{u}_a - \mathbf{u}_b\|\) measures preference divergence
+
 2. **Direction = Preference**: Movement along axes represents change in taste
+
 3. **Clusters = User Segments**: Natural groupings emerge from interaction patterns
 
 ### Embedding Similarity Metrics
@@ -358,6 +366,7 @@ d \approx \sqrt[4]{|\text{vocabulary}|}
 For users with \(|\mathcal{H}_u| < \tau\) interactions:
 
 1. **Content-based fallback**: Use demographic/profile features
+
 2. **Warm-up period**: Blend learned + content-based embeddings:
 
 ```math
@@ -409,9 +418,13 @@ For users with \(|\mathcal{H}_u| < \tau\) interactions:
 ### Q3: How do you handle embedding updates in production?
 
 **Strategies:**
+
 1. **Batch updates**: Retrain periodically (daily/weekly)
+
 2. **Online learning**: Incremental SGD on new interactions
+
 3. **Hybrid**: Batch model + real-time feature adjustments
+
 4. **Versioning**: A/B test new embeddings before full rollout
 
 ### Q4: Multi-interest vs single embedding?
@@ -431,9 +444,13 @@ For users with \(|\mathcal{H}_u| < \tau\) interactions:
 ## Further Reading
 
 1. **Word2Vec** (Mikolov et al., 2013) — Foundational embedding learning
+
 2. **Neural Collaborative Filtering** (He et al., 2017) — Deep learning for recommendations
+
 3. **BERT4Rec** (Sun et al., 2019) — Transformers for sequential recommendation
+
 4. **PinSage** (Ying et al., 2018) — Graph embeddings at Pinterest scale
+
 5. **MIND** (Li et al., 2019) — Multi-interest network for news recommendation
 
 ---

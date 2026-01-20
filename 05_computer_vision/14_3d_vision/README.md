@@ -7,8 +7,11 @@
 ## 📑 Table of Contents
 
 1. [3D Vision Overview](#3d-vision-overview)
+
 2. [Depth Estimation](#depth-estimation)
+
 3. [Stereo Vision](#stereo-vision)
+
 4. [Point Clouds](#point-clouds)
 
 ---
@@ -364,9 +367,13 @@ class PointCloudProcessor:
 ## 📚 Key Takeaways
 
 1. **Monocular depth** is convenient but relative (not metric)
+
 2. **Stereo** gives metric depth but needs calibration
+
 3. **Point clouds** are the bridge to 3D understanding
+
 4. **NeRF** enables novel view synthesis from images
+
 5. **LiDAR** is gold standard for autonomous driving
 
 ---

@@ -724,10 +724,15 @@ with tracker.start_run("bert_fine_tuning_v1"):
 Effective model training for content moderation requires:
 
 1. **Model Selection**: Match model complexity to requirements
+
 2. **Custom Loss Functions**: Handle class imbalance
+
 3. **Optimization**: Mixed precision, gradient accumulation
+
 4. **Compression**: Distillation, quantization for deployment
+
 5. **Hyperparameter Tuning**: Systematic search with Optuna
+
 6. **Experiment Tracking**: MLflow/W&B for reproducibility
 
 ---

@@ -7,12 +7,19 @@
 ## 📑 Table of Contents
 
 1. [What are Image Features?](#what-are-image-features)
+
 2. [Interest Point Detection](#interest-point-detection)
+
 3. [SIFT (Scale-Invariant Feature Transform)](#sift)
+
 4. [SURF (Speeded-Up Robust Features)](#surf)
+
 5. [ORB (Oriented FAST and Rotated BRIEF)](#orb)
+
 6. [HOG (Histogram of Oriented Gradients)](#hog)
+
 7. [Feature Matching](#feature-matching)
+
 8. [System Design Considerations](#system-design-considerations)
 
 ---
@@ -693,9 +700,13 @@ def choose_feature_detector(requirements):
 ## 📚 Key Takeaways
 
 1. **SIFT** is most robust but slowest - use for accuracy-critical applications
+
 2. **ORB** is best for real-time - fast, open-source, good enough for most cases
+
 3. **HOG** is for dense detection - sliding window approaches
+
 4. **Ratio test** is essential - reject ambiguous matches
+
 5. **RANSAC** filters outliers - always use for homography estimation
 
 ---

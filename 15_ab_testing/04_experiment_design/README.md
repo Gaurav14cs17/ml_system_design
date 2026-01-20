@@ -1,12 +1,19 @@
 # Experiment Design for A/B Testing
 
 ## Table of Contents
+
 1. [Experiment Design Framework](#experiment-design-framework)
+
 2. [Hypothesis Formulation](#hypothesis-formulation)
+
 3. [Control and Treatment Design](#control-and-treatment-design)
+
 4. [Traffic Allocation Strategies](#traffic-allocation-strategies)
+
 5. [Experiment Types](#experiment-types)
+
 6. [Guardrails and Safety](#guardrails-and-safety)
+
 7. [Documentation Template](#documentation-template)
 
 ---
@@ -657,10 +664,15 @@ def generate_experiment_spec(config: dict) -> str:
 Good experiment design is the foundation of trustworthy A/B testing:
 
 1. **Use PICOT framework** for structured design
+
 2. **Write specific hypotheses** with measurable outcomes
+
 3. **Design variants carefully** with minimal changes
+
 4. **Plan traffic allocation** based on risk tolerance
+
 5. **Define guardrails** before starting
+
 6. **Document everything** for reproducibility
 
 ---

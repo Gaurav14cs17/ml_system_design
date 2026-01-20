@@ -440,8 +440,11 @@ For auction bidding:
 ### Mathematical Questions
 
 1. **Derive the gradient of log loss** for logistic regression
+
 2. **Prove FM can be computed in $O(kd)$** instead of $O(k d^2)$
+
 3. **Explain why NCE is better than raw log loss** for comparing models
+
 4. **Calculate sample size** for A/B test with 0.1% CTR lift detection
 
 ---

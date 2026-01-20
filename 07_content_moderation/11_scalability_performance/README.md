@@ -370,6 +370,7 @@ BEGIN
         partition_name, start_date, end_date
     );
 END;
+
 $$ LANGUAGE plpgsql;
 
 ```
@@ -665,10 +666,15 @@ class CostAnalyzer:
 Scaling content moderation requires:
 
 1. **Horizontal Scaling**: K8s auto-scaling, GPU clusters
+
 2. **Caching**: Multi-layer, content hash caching
+
 3. **Database**: Sharding, time-series partitioning
+
 4. **Async Processing**: Kafka, batch processing
+
 5. **Optimization**: ONNX, quantization, batching
+
 6. **Cost Control**: Monitor and optimize spend
 
 ---

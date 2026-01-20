@@ -717,9 +717,13 @@ Subject to:
 You've completed the Model Serving guide! Key takeaways:
 
 1. **Start simple** with FastAPI, scale to specialized frameworks
+
 2. **Optimize models** with quantization and batching
+
 3. **Scale smart** with autoscaling and spot instances
+
 4. **Monitor everything** including costs
+
 5. **Secure by design** with encryption and privacy
 
 ---

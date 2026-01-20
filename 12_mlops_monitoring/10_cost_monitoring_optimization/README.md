@@ -463,9 +463,13 @@ COST_QUERIES = {
 ## 🔑 Key Takeaways
 
 1. **Inference costs dominate** - Focus optimization there first
+
 2. **Tag everything** - Cost attribution requires proper tagging
+
 3. **Monitor cost per prediction** - Not just total cost
+
 4. **Auto-scaling saves money** - Match resources to demand
+
 5. **Set budgets and alerts** - Catch surprises early
 
 ---

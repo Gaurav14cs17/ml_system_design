@@ -1,12 +1,19 @@
 # Sample Size Calculation for A/B Testing
 
 ## Table of Contents
+
 1. [Why Sample Size Matters](#why-sample-size-matters)
+
 2. [Key Components](#key-components)
+
 3. [Sample Size Formulas](#sample-size-formulas)
+
 4. [Practical Calculators](#practical-calculators)
+
 5. [Duration Estimation](#duration-estimation)
+
 6. [Variance Reduction Techniques](#variance-reduction-techniques)
+
 7. [Common Mistakes](#common-mistakes)
 
 ---

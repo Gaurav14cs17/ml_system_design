@@ -412,8 +412,11 @@ In distributed systems with retries, an operation may execute multiple times. Wi
 - **With idempotency**: Safe to retry without side effects
 
 **Achieving Idempotency:**
+
 1. **Keyed upserts** instead of appends: $\text{UPSERT}(key, value)$
+
 2. **Partition overwrites**: Replace entire partition rather than append
+
 3. **Deterministic processing**: Same input always produces same output
 
 ```python

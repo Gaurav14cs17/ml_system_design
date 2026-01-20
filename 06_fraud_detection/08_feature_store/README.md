@@ -14,13 +14,21 @@
 ## 📖 Table of Contents
 
 1. [Why Feature Stores?](#why-feature-stores)
+
 2. [Feature Store Architecture](#feature-store-architecture)
+
 3. [Online vs Offline Features](#online-vs-offline-features)
+
 4. [Feature Computation Pipelines](#feature-computation-pipelines)
+
 5. [Point-in-Time Correctness](#point-in-time-correctness)
+
 6. [Feature Store Implementations](#feature-store-implementations)
+
 7. [Feature Management](#feature-management)
+
 8. [Monitoring Features](#monitoring-features)
+
 9. [Best Practices](#best-practices)
 
 ---
@@ -957,9 +965,13 @@ Windows:
 A robust feature store for fraud detection:
 
 1. **Separate online and offline**: Different latency requirements
+
 2. **Point-in-time correctness**: Prevent data leakage
+
 3. **Streaming pipelines**: Real-time velocity features
+
 4. **Feature registry**: Discover and manage features
+
 5. **Monitoring**: Track quality, drift, and freshness
 
 ---

@@ -16,14 +16,23 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [System Architecture](#system-architecture)
+
 3. [Model Serving](#model-serving)
+
 4. [Scaling Strategies](#scaling-strategies)
+
 5. [Monitoring and Observability](#monitoring-and-observability)
+
 6. [Cost Optimization](#cost-optimization)
+
 7. [Reliability and Fault Tolerance](#reliability-and-fault-tolerance)
+
 8. [Practical Implementation](#practical-implementation)
+
 9. [Summary](#summary)
 
 ---
@@ -62,10 +71,15 @@ Query → [Embedding Model] → Query Vector
 Production Embedding System Architecture
 
 Components:
+
 1. Embedding Service (Model serving)
+
 2. Vector Database (Index + storage)
+
 3. Reranking Service (Optional)
+
 4. Caching Layer
+
 5. Load Balancer
 """
 

@@ -1,14 +1,23 @@
 # Ranking Models: From Traditional to Deep Learning
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Learning to Rank Overview](#learning-to-rank-overview)
+
 3. [Pointwise Models](#pointwise-models)
+
 4. [Pairwise Models](#pairwise-models)
+
 5. [Listwise Models](#listwise-models)
+
 6. [Gradient Boosted Trees](#gradient-boosted-trees)
+
 7. [Neural Ranking Models](#neural-ranking-models)
+
 8. [Transformer-Based Rankers](#transformer-based-rankers)
+
 9. [Model Comparison](#model-comparison)
 
 ---

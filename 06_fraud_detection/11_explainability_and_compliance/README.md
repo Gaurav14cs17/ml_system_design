@@ -14,13 +14,21 @@
 ## 📖 Table of Contents
 
 1. [Why Explainability Matters](#why-explainability-matters)
+
 2. [Explainability Techniques](#explainability-techniques)
+
 3. [SHAP for Fraud Detection](#shap-for-fraud-detection)
+
 4. [LIME for Local Explanations](#lime-for-local-explanations)
+
 5. [Rule-Based Explanations](#rule-based-explanations)
+
 6. [Regulatory Requirements](#regulatory-requirements)
+
 7. [Audit Trails](#audit-trails)
+
 8. [Fairness and Bias](#fairness-and-bias)
+
 9. [Documentation Standards](#documentation-standards)
 
 ---
@@ -855,9 +863,13 @@ class FairnessAnalyzer:
 Key explainability and compliance principles:
 
 1. **Multiple explanation types**: SHAP, LIME, rules
+
 2. **Regulatory compliance**: Adverse action notices, audit trails
+
 3. **Fairness monitoring**: Regular bias audits
+
 4. **Documentation**: Model cards, decision logs
+
 5. **Human review**: Enable appeals and overrides
 
 ---

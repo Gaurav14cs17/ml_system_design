@@ -15,10 +15,15 @@
 ## 📖 Table of Contents
 
 1. [Executive Summary](#executive-summary)
+
 2. [Business Context](#business-context)
+
 3. [Mathematical Problem Formulation](#mathematical-problem-formulation)
+
 4. [Stakeholder Analysis](#stakeholder-analysis)
+
 5. [Success Metrics](#success-metrics)
+
 6. [Scope & Constraints](#scope--constraints)
 
 ---
@@ -240,9 +245,13 @@ Expected difference between predicted and actual probabilities:
 ## Key Takeaways
 
 1. **CTR = Binary Classification**: Predict $P(\text{click} \mid u, a, c) \in [0, 1]$
+
 2. **Extreme Imbalance**: ~1-2% positive rate requires special handling
+
 3. **Calibration Matters**: Predictions must match actual rates for bidding
+
 4. **Multiple Metrics**: AUC for ranking, LogLoss for calibration, business metrics for impact
+
 5. **Latency Critical**: Sub-10ms inference at million QPS scale
 
 ---

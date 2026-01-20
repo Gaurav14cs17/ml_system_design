@@ -11,10 +11,15 @@
 ## 📑 Table of Contents
 
 1. [What is Instance Segmentation?](#what-is-instance-segmentation)
+
 2. [Mask R-CNN](#mask-r-cnn)
+
 3. [YOLACT](#yolact)
+
 4. [SOLO/SOLOv2](#solo)
+
 5. [Panoptic Segmentation](#panoptic-segmentation)
+
 6. [Implementation Guide](#implementation-guide)
 
 ---
@@ -335,9 +340,13 @@ if __name__ == "__main__":
 ## 📚 Key Takeaways
 
 1. **Mask R-CNN** extends Faster R-CNN with mask head
+
 2. **RoI Align** is crucial for precise mask alignment
+
 3. **YOLACT** trades accuracy for real-time speed
+
 4. **SOLO** removes detection step entirely
+
 5. **Panoptic** unifies thing and stuff segmentation
 
 ---

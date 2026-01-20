@@ -1,14 +1,23 @@
 # Document Understanding & Indexing
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Document Processing Pipeline](#document-processing-pipeline)
+
 3. [Text Extraction & Cleaning](#text-extraction-cleaning)
+
 4. [Document Representation](#document-representation)
+
 5. [Indexing Strategies](#indexing-strategies)
+
 6. [Inverted Index Deep Dive](#inverted-index-deep-dive)
+
 7. [Vector Indexing for Semantic Search](#vector-indexing-for-semantic-search)
+
 8. [Real-Time Indexing](#real-time-indexing)
+
 9. [Scalability Considerations](#scalability-considerations)
 
 ---

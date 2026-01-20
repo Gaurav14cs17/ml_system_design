@@ -1,14 +1,23 @@
 # Query Understanding: Decoding User Intent
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Query Analysis Pipeline](#query-analysis-pipeline)
+
 3. [Query Classification](#query-classification)
+
 4. [Query Rewriting & Expansion](#query-rewriting-expansion)
+
 5. [Spell Correction](#spell-correction)
+
 6. [Named Entity Recognition](#named-entity-recognition)
+
 7. [Semantic Understanding](#semantic-understanding)
+
 8. [Implementation Deep Dive](#implementation-deep-dive)
+
 9. [Real-World Challenges](#real-world-challenges)
 
 ---

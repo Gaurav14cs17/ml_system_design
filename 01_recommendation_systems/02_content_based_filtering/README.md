@@ -13,14 +13,23 @@
 ## 📖 Table of Contents
 
 1. [Introduction](#introduction)
+
 2. [How Content-Based Filtering Works](#how-content-based-filtering-works)
+
 3. [Feature Extraction Techniques](#feature-extraction-techniques)
+
 4. [Similarity Metrics](#similarity-metrics)
+
 5. [Building User Profiles](#building-user-profiles)
+
 6. [Implementation from Scratch](#implementation-from-scratch)
+
 7. [Advanced Techniques](#advanced-techniques)
+
 8. [Pros and Cons](#pros-and-cons)
+
 9. [Real-World Applications](#real-world-applications)
+
 10. [Best Practices](#best-practices)
 
 ---
@@ -746,9 +755,13 @@ Content-Based Filtering is a powerful technique that leverages item features to 
 ### Key Takeaways
 
 1. **Feature quality is paramount** - invest in good feature extraction
+
 2. **Combine multiple feature types** - text, metadata, images, etc.
+
 3. **Handle user preferences dynamically** - time decay, negative feedback
+
 4. **Balance relevance and diversity** - avoid over-specialization
+
 5. **Use as part of a hybrid system** - combine with collaborative filtering
 
 ---

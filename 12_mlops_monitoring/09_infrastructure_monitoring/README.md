@@ -431,9 +431,13 @@ groups:
 ## 🔑 Key Takeaways
 
 1. **Monitor all layers** - Application, orchestration, compute, infrastructure
+
 2. **GPU metrics are critical** - Utilization, memory, temperature
+
 3. **Kubernetes needs ML-specific monitoring** - Not just standard pod metrics
+
 4. **Auto-scaling needs good signals** - Queue depth, latency, utilization
+
 5. **Set up alerts proactively** - Before you need them at 3 AM
 
 ---

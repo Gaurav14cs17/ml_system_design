@@ -14,12 +14,19 @@
 ## 📖 Table of Contents
 
 1. [Monitoring Overview](#monitoring-overview)
+
 2. [Model Performance Monitoring](#model-performance-monitoring)
+
 3. [Data and Feature Drift](#data-and-feature-drift)
+
 4. [System Health Monitoring](#system-health-monitoring)
+
 5. [Alerting Strategies](#alerting-strategies)
+
 6. [Dashboards](#dashboards)
+
 7. [Logging Best Practices](#logging-best-practices)
+
 8. [Incident Response](#incident-response)
 
 ---
@@ -1032,9 +1039,13 @@ Fraud Detection Incident Response:
 Comprehensive monitoring for fraud detection:
 
 1. **Model metrics**: Track predictions, scores, and delayed performance
+
 2. **Drift detection**: Monitor feature and concept drift continuously
+
 3. **System health**: Latency, throughput, error rates
+
 4. **Smart alerting**: Severity-based routing with runbooks
+
 5. **Incident readiness**: Playbooks and quick rollback capabilities
 
 ---

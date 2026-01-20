@@ -1,13 +1,21 @@
 # Serving Infrastructure: Production at Scale
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [System Architecture](#system-architecture)
+
 3. [Real-Time Serving](#real-time-serving)
+
 4. [Caching Strategies](#caching-strategies)
+
 5. [Load Balancing](#load-balancing)
+
 6. [Model Serving](#model-serving)
+
 7. [Latency Optimization](#latency-optimization)
+
 8. [Monitoring & Alerting](#monitoring-alerting)
 
 ---
@@ -619,9 +627,13 @@ class MetricsMiddleware:
 ## Key Takeaways
 
 1. **Parallel Processing**: Run independent operations concurrently
+
 2. **Multi-Level Caching**: L1 in-memory → L2 Redis → L3 CDN
+
 3. **Graceful Degradation**: Always have fallback models
+
 4. **Latency Budgets**: Allocate time budgets to each component
+
 5. **Monitor Everything**: Track latency percentiles, not averages
 
 ---

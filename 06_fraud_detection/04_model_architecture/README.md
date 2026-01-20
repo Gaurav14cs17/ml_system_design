@@ -14,15 +14,25 @@
 ## 📖 Table of Contents
 
 1. [Model Selection Philosophy](#model-selection-philosophy)
+
 2. [Mathematical Foundations](#mathematical-foundations)
+
 3. [Traditional ML Models](#traditional-ml-models)
+
 4. [Gradient Boosting Models](#gradient-boosting-models)
+
 5. [Deep Learning Models](#deep-learning-models)
+
 6. [Sequence Models](#sequence-models)
+
 7. [Graph Neural Networks](#graph-neural-networks)
+
 8. [Anomaly Detection Models](#anomaly-detection-models)
+
 9. [Ensemble Methods](#ensemble-methods)
+
 10. [Model Comparison](#model-comparison)
+
 11. [Production Considerations](#production-considerations)
 
 ---
@@ -1422,9 +1432,13 @@ class ModelRegistry:
 Key takeaways for fraud detection model architecture:
 
 1. **Start simple**: Logistic regression baseline, then gradient boosting
+
 2. **Layer complexity**: Add sequence/graph models only when needed
+
 3. **Ensemble for production**: Combine multiple model types
+
 4. **Optimize for latency**: Use ONNX, quantization, caching
+
 5. **Monitor continuously**: Track model drift and performance
 
 ---

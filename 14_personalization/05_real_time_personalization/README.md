@@ -3,14 +3,23 @@
 ![Real-Time Architecture](./images/real_time_architecture.svg)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Architecture Patterns](#architecture-patterns)
+
 3. [Real-Time Feature Engineering](#real-time-feature-engineering)
+
 4. [Session-Based Recommendations](#session-based-recommendations)
+
 5. [Online Learning](#online-learning)
+
 6. [Stream Processing](#stream-processing)
+
 7. [Low-Latency Model Serving](#low-latency-model-serving)
+
 9. [Case Studies](#case-studies)
+
 10. [Interview Questions](#interview-questions)
 
 ---
@@ -1067,25 +1076,37 @@ class LowLatencyModelServer:
 ### Q1: Design a real-time recommendation system for a news app
 
 **Key Points**:
+
 1. **Freshness is critical**: News items expire quickly
+
 2. **Real-time signals**: Current reading session, breaking news
+
 3. **Low latency**: < 100ms response time
+
 4. **Exploration**: Surface new topics user might like
 
 ### Q2: How do you handle the latency-accuracy trade-off?
 
 **Solutions**:
+
 1. **Precompute candidates**: Batch compute top-1000, real-time re-rank
+
 2. **Caching**: Cache embeddings, update periodically
+
 3. **Approximate methods**: Use ANN instead of exact search
+
 4. **Tiered architecture**: Fast simple model first, slower accurate model refines
 
 ### Q3: How do you evaluate real-time personalization systems?
 
 **Metrics**:
+
 1. **Online metrics**: CTR, conversion, session duration
+
 2. **Latency metrics**: P50, P95, P99 response times
+
 3. **Freshness metrics**: Time to incorporate new signals
+
 4. **A/B tests**: Compare against batch baseline
 
 ---
@@ -1095,9 +1116,13 @@ class LowLatencyModelServer:
 Real-time personalization is essential for modern recommendation systems. Key principles:
 
 1. **Session matters**: Current behavior is highly predictive
+
 2. **Speed is a feature**: Lower latency = better engagement
+
 3. **Combine batch + real-time**: Lambda architecture wins
+
 4. **Continuous learning**: Models should adapt to feedback
+
 5. **Monitor everything**: Latency, accuracy, freshness
 
 ---

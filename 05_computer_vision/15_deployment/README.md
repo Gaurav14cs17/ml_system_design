@@ -11,10 +11,15 @@
 ## 📑 Table of Contents
 
 1. [Deployment Overview](#deployment-overview)
+
 2. [Model Optimization](#model-optimization)
+
 3. [Export Formats](#export-formats)
+
 4. [Serving Infrastructure](#serving-infrastructure)
+
 5. [Edge Deployment](#edge-deployment)
+
 6. [Monitoring & MLOps](#monitoring-mlops)
 
 ---
@@ -533,9 +538,13 @@ class MonitoredModel:
 ## 📚 Key Takeaways
 
 1. **Quantization** gives 2-4× speedup with minimal accuracy loss
+
 2. **ONNX** is the universal exchange format
+
 3. **TensorRT** for NVIDIA, **CoreML** for Apple, **TFLite** for mobile
+
 4. **Batch inference** maximizes GPU utilization
+
 5. **Monitor** latency, throughput, and accuracy drift
 
 ---

@@ -812,9 +812,13 @@ test_features = engineer.transform(test_df)
 Effective time series feature engineering:
 
 1. **Temporal Features**: Capture calendar patterns
+
 2. **Lag Features**: Use past values as predictors
+
 3. **Rolling Features**: Capture local trends and volatility
+
 4. **Seasonal Features**: Model periodic patterns
+
 5. **External Features**: Incorporate domain knowledge
 
 ### Next Steps

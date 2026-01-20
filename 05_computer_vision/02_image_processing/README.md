@@ -7,14 +7,23 @@
 ## 📑 Table of Contents
 
 1. [Introduction to Image Processing](#introduction-to-image-processing)
+
 2. [Convolution and Filtering](#convolution-and-filtering)
+
 3. [Noise Reduction](#noise-reduction)
+
 4. [Edge Detection](#edge-detection)
+
 5. [Morphological Operations](#morphological-operations)
+
 6. [Image Thresholding](#image-thresholding)
+
 7. [Geometric Transformations](#geometric-transformations)
+
 8. [Image Enhancement](#image-enhancement)
+
 9. [Production Pipeline Design](#production-pipeline-design)
+
 10. [Code Examples](#usage-example)
 
 ---
@@ -372,7 +381,9 @@ G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix} * I \
 ```
 
 These kernels combine:
+
 1. **Smoothing** (weighted average of neighbors)
+
 2. **Differentiation** (difference between sides)
 
 **Separable Form:**
@@ -1271,10 +1282,15 @@ if __name__ == "__main__":
 ## 📚 Key Takeaways
 
 1. **Convolution** is the fundamental operation - understand kernels and their effects
+
 2. **Choose denoising methods** based on noise type and edge preservation needs
+
 3. **Canny is gold standard** for edge detection - use auto-thresholding for robustness
+
 4. **Morphological ops** are essential for binary image cleaning
+
 5. **Adaptive thresholding** handles varying lighting better than global
+
 6. **Pipeline consistency** between training and inference is critical
 
 ---

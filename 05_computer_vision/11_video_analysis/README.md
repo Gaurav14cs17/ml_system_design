@@ -7,9 +7,13 @@
 ## 📑 Table of Contents
 
 1. [Video Analysis Overview](#video-analysis-overview)
+
 2. [Object Tracking](#object-tracking)
+
 3. [Action Recognition](#action-recognition)
+
 4. [Video Classification](#video-classification-with-timesformer)
+
 5. [Implementation Guide](#deepsort-implementation)
 
 ---
@@ -338,9 +342,13 @@ class VideoClassifier:
 ## 📚 Key Takeaways
 
 1. **Tracking** = Detection + Association across frames
+
 2. **DeepSORT** adds appearance features to SORT
+
 3. **3D CNNs** capture spatial-temporal features jointly
+
 4. **Transformers** (TimeSformer) are SOTA for video understanding
+
 5. **Optical flow** helps with motion-centric actions
 
 ---

@@ -25,8 +25,11 @@
 ## 📚 Table of Contents
 
 1. [High-Level Architecture](#high-level-architecture)
+
 2. [Component Deep-Dive](#component-deep-dive)
+
 3. [Data Flow Patterns](#data-flow-patterns)
+
 6. [Reference Architectures](#reference-architectures)
 
 ---
@@ -143,9 +146,13 @@ class FeatureRegistry:
 ### Key Design Principles
 
 1. **Separate compute from storage** - Scale independently
+
 2. **Dual-store pattern** - Offline for training, online for serving
+
 3. **Registry as single source of truth** - All metadata centralized
+
 4. **Idempotent writes** - Safe retries and reprocessing
+
 5. **Backfill capability** - Reconstruct any point in time
 
 ---

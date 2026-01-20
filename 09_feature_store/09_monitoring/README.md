@@ -25,10 +25,15 @@
 ## 📚 Table of Contents
 
 1. [Monitoring Overview](#monitoring-overview)
+
 2. [Key Metrics](#key-metrics)
+
 3. [Data Drift Detection](#data-drift-detection)
+
 4. [Feature Quality](#feature-quality)
+
 5. [Alerting](#alerting)
+
 6. [Dashboards](#dashboards)
 
 ---
@@ -649,9 +654,13 @@ class AlertManager:
 ### Key Takeaways
 
 1. **Monitor freshness** - Know when features are stale
+
 2. **Track quality** - Catch issues before they impact models
+
 3. **Detect drift** - Distributions change over time
+
 4. **Alert appropriately** - Right severity, right channel
+
 5. **Visualize everything** - Dashboards for quick insights
 
 ---

@@ -14,15 +14,25 @@
 ---
 
 ## Table of Contents
+
 1. [What Are Embeddings?](#what-are-embeddings)
+
 2. [Why Do We Need Embeddings?](#why-do-we-need-embeddings)
+
 3. [The Mathematics Behind Embeddings](#the-mathematics-behind-embeddings)
+
 4. [Properties of Good Embeddings](#properties-of-good-embeddings)
+
 5. [Types of Embeddings](#types-of-embeddings)
+
 6. [Embedding Dimensions](#embedding-dimensions)
+
 7. [How Embeddings Are Learned](#how-embeddings-are-learned)
+
 8. [Real-World Applications](#real-world-applications)
+
 9. [Challenges and Considerations](#challenges-and-considerations)
+
 10. [Summary](#summary)
 
 ---
@@ -614,9 +624,13 @@ In the following sections, we'll deep-dive into:
 ## References
 
 1. Mikolov, T., et al. "Efficient Estimation of Word Representations in Vector Space" (Word2Vec)
+
 2. Pennington, J., et al. "GloVe: Global Vectors for Word Representation"
+
 3. Devlin, J., et al. "BERT: Pre-training of Deep Bidirectional Transformers"
+
 4. He, K., et al. "Deep Residual Learning for Image Recognition" (ResNet)
+
 5. Radford, A., et al. "Learning Transferable Visual Models From Natural Language Supervision" (CLIP)
 
 ---

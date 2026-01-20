@@ -16,14 +16,23 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Intrinsic Evaluation](#intrinsic-evaluation)
+
 3. [Retrieval Metrics](#retrieval-metrics)
+
 4. [Ranking Metrics](#ranking-metrics)
+
 5. [Clustering Metrics](#clustering-metrics)
+
 6. [Semantic Similarity](#semantic-similarity)
+
 7. [ANN Quality Metrics](#ann-quality-metrics)
+
 8. [Practical Evaluation Pipeline](#practical-evaluation-pipeline)
+
 9. [Summary](#summary)
 
 ---
@@ -736,8 +745,11 @@ report = evaluator.generate_report(results, 'evaluation_report.json')
 ### Common Pitfalls
 
 1. **Overfitting to benchmarks**: Evaluate on held-out domain data
+
 2. **Ignoring efficiency**: Fast but low-quality is often useless
+
 3. **Single metric focus**: Use multiple complementary metrics
+
 4. **Missing baselines**: Compare against BM25, random
 
 ---

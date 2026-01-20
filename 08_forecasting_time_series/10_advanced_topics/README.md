@@ -665,7 +665,9 @@ Advanced techniques enable:
 ### Recommended Reading
 
 1. Hyndman & Athanasopoulos - *Forecasting: Principles and Practice*
+
 2. Petropoulos et al. - *Forecasting: Theory and Practice*
+
 3. Lim & Zohren - *Time Series Forecasting with Deep Learning*
 
 ### Return to [Main README](../README.md)

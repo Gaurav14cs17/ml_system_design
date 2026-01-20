@@ -11,12 +11,19 @@
 ---
 
 ## Table of Contents
+
 1. [Evaluation Framework](#evaluation-framework)
+
 2. [Prediction Accuracy Metrics](#prediction-accuracy-metrics)
+
 3. [Ranking Metrics](#ranking-metrics)
+
 4. [Beyond Accuracy](#beyond-accuracy)
+
 5. [Online Evaluation](#online-evaluation)
+
 6. [Statistical Testing](#statistical-testing)
+
 7. [Interview Questions](#interview-questions)
 
 ---
@@ -407,7 +414,9 @@ For ordered p-values \(p_{(1)} \leq p_{(2)} \leq \ldots \leq p_{(m)}\).
 For complex metrics without closed-form variance:
 
 1. Resample data with replacement \(B\) times
+
 2. Compute metric on each sample
+
 3. Use percentiles for CI
 
 ```math
@@ -494,9 +503,13 @@ Optimizing pure accuracy leads to:
 **Possible causes:**
 
 1. **Position bias:** Model trained on biased click data
+
 2. **Exploration gap:** Users only see old recommendations
+
 3. **Metric mismatch:** NDCG optimizes ranking, CTR measures engagement
+
 4. **Temporal shift:** Test data from past, users changed
+
 5. **Sample size:** Online change within noise
 
 ### Q3: How do you measure diversity without hurting relevance?
@@ -547,8 +560,11 @@ Optimizing pure accuracy leads to:
 ## Further Reading
 
 1. **Järvelin & Kekäläinen (2002)** — Cumulated Gain-Based Evaluation
+
 2. **Herlocker et al. (2004)** — Evaluating Collaborative Filtering Recommender Systems
+
 3. **McNee et al. (2006)** — Being Accurate is Not Enough
+
 4. **Kohavi et al. (2013)** — Online Controlled Experiments at Large Scale
 
 ---

@@ -199,7 +199,9 @@ graph TB
 ## 📖 How to Use This Guide
 
 1. **Sequential Learning**: Follow modules 01-15 for comprehensive coverage
+
 2. **Project-Based**: Jump to specific topics for targeted learning
+
 3. **Reference**: Use as documentation for production implementations
 
 Each module contains:

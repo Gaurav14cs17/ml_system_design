@@ -489,16 +489,27 @@ class FeatureStore:
 This comprehensive guide covered 12 essential topics for building production ML data pipelines:
 
 1. **Introduction** - Foundations and why pipelines matter
+
 2. **Data Ingestion** - Patterns for collecting data
+
 3. **Data Validation** - Ensuring quality at scale
+
 4. **ETL/ELT** - Transformation strategies
+
 5. **Feature Engineering** - The art of creating features
+
 6. **Storage Formats** - Choosing the right format
+
 7. **Batch vs Stream** - Processing paradigms
+
 8. **Orchestration** - Coordinating complex workflows
+
 9. **Versioning & Lineage** - Tracking data history
+
 10. **Monitoring** - Observability for pipelines
+
 11. **Scalability** - Patterns for growth
+
 12. **Case Studies** - Real-world examples
 
 Remember: Great ML systems are built on great data pipelines!

@@ -884,11 +884,17 @@ class BusinessImpactMetrics:
 Comprehensive evaluation for content moderation requires:
 
 1. **Classification Metrics**: Precision, recall, F1, ROC-AUC
+
 2. **Threshold Analysis**: Optimize for specific constraints
+
 3. **Ranking Metrics**: P@k for human review prioritization
+
 4. **Operational Metrics**: Latency, throughput, availability
+
 5. **Fairness Metrics**: Equal treatment across groups
+
 6. **Human Review Metrics**: Agreement, alignment, queue health
+
 7. **Business Metrics**: Safety, UX, and business impact
 
 The key trade-off: maximizing recall (catching violations) while maintaining high precision (avoiding wrongful removals).

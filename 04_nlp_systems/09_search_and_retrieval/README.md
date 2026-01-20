@@ -475,7 +475,9 @@ class TwoStageRetriever:
 ## 📚 References
 
 1. [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906)
+
 2. [FAISS Library](https://github.com/facebookresearch/faiss)
+
 3. [Sentence Transformers](https://www.sbert.net/)
 
 ---

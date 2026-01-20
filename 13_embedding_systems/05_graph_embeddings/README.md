@@ -18,15 +18,25 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Graph Fundamentals](#graph-fundamentals)
+
 3. [Random Walk Methods](#random-walk-methods)
+
 4. [Graph Neural Networks](#graph-neural-networks)
+
 5. [Knowledge Graph Embeddings](#knowledge-graph-embeddings)
+
 6. [Heterogeneous Graph Embeddings](#heterogeneous-graph-embeddings)
+
 7. [Temporal Graph Embeddings](#heterogeneous-graph-embeddings)
+
 8. [Practical Implementation](#practical-implementation)
+
 9. [Applications](#applications)
+
 10. [Summary](#summary)
 
 ---
@@ -89,8 +99,11 @@ L = D - A
 ### What Makes a Good Graph Embedding?
 
 1. **Structural similarity**: Connected nodes have similar embeddings
+
 2. **Community preservation**: Clusters remain intact
+
 3. **Role similarity**: Nodes with similar structural roles are close
+
 4. **Scalability**: Works on large graphs
 
 ---
@@ -594,10 +607,15 @@ def link_prediction_loss(pos_edge_index, node_embeddings):
 ## Applications
 
 1. **Social Networks**: Friend recommendations, community detection
+
 2. **Drug Discovery**: Molecular property prediction
+
 3. **Fraud Detection**: Identify suspicious patterns
+
 4. **Recommendation Systems**: User-item interactions
+
 5. **Knowledge Graphs**: Question answering, reasoning
+
 6. **Citation Networks**: Paper similarity, impact prediction
 
 ---

@@ -11,13 +11,21 @@
 ---
 
 ## Table of Contents
+
 1. [Why Deep Learning?](#why-deep-learning)
+
 2. [Neural Collaborative Filtering](#neural-collaborative-filtering)
+
 3. [Sequential Recommenders](#sequential-recommenders)
+
 4. [Graph Neural Networks](#graph-neural-networks)
+
 5. [Attention Mechanisms](#attention-mechanisms)
+
 6. [Multi-Task Learning](#multi-task-learning)
+
 7. [Training at Scale](#training-at-scale)
+
 8. [Interview Questions](#interview-questions)
 
 ---
@@ -277,7 +285,9 @@ Empirical finding: For bipartite graphs in recommendations:
 Pinterest's production GNN with innovations for scale:
 
 1. **Importance Sampling:** Sample neighbors by personalized PageRank
+
 2. **Curriculum Learning:** Harder negatives over training
+
 3. **Producer-Consumer:** Separate embedding generation from serving
 
 ---
@@ -463,9 +473,13 @@ Multiple hash functions with smaller tables.
 ### Q1: Why does LightGCN remove non-linearity?
 
 **Answer:**
+
 1. User-item bipartite graphs lack node features
+
 2. Non-linearity adds unnecessary complexity
+
 3. Empirically: linear propagation + layer combination works better
+
 4. Simpler model → better generalization
 
 ### Q2: Compare SASRec vs BERT4Rec
@@ -481,10 +495,15 @@ Multiple hash functions with smaller tables.
 ### Q3: How do you handle billion-scale item embeddings?
 
 **Strategies:**
+
 1. **Hash embeddings:** Multiple hash functions
+
 2. **Product quantization:** Sub-vector codebooks
+
 3. **Compositional embeddings:** Build from sub-ID components
+
 4. **Pruning:** Remove inactive items
+
 5. **Mixed precision:** FP16 storage
 
 ### Q4: When would you use GNNs for recommendations?
@@ -512,9 +531,13 @@ Multiple hash functions with smaller tables.
 ## Further Reading
 
 1. **He et al. (2017)** — Neural Collaborative Filtering
+
 2. **Kang & McAuley (2018)** — Self-Attentive Sequential Recommendation
+
 3. **Sun et al. (2019)** — BERT4Rec
+
 4. **He et al. (2020)** — LightGCN
+
 5. **Ma et al. (2018)** — MMoE: Modeling Task Relationships
 
 ---

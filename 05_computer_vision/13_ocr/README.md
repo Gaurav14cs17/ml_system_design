@@ -7,9 +7,13 @@
 ## 📑 Table of Contents
 
 1. [OCR Pipeline](#ocr-pipeline)
+
 2. [Text Detection](#text-detection)
+
 3. [Text Recognition](#text-recognition)
+
 4. [End-to-End Systems](#end-to-end-systems)
+
 5. [Implementation Guide](#easyocr-implementation)
 
 ---
@@ -273,9 +277,13 @@ class DocumentAnalyzer:
 ## 📚 Key Takeaways
 
 1. **Detection** finds text regions, **Recognition** reads them
+
 2. **CRNN + CTC** is the classic recognition approach
+
 3. **DBNet** is fast and accurate for detection
+
 4. **Transformers** (TrOCR) are SOTA but slower
+
 5. **Document understanding** adds layout analysis
 
 ---

@@ -11,12 +11,19 @@
 ## 📑 Table of Contents
 
 1. [What is Computer Vision?](#what-is-computer-vision)
+
 2. [Digital Image Representation](#digital-image-representation)
+
 3. [Color Spaces](#color-spaces)
+
 4. [Image Formats and Compression](#image-formats-and-compression)
+
 5. [Image Coordinates and Transformations](#image-coordinates-and-transformations)
+
 6. [Histograms and Statistics](#histograms-and-statistics)
+
 7. [System Design Considerations](#system-design-considerations)
+
 8. [Code Examples](#code-examples)
 
 ---
@@ -801,8 +808,11 @@ s = T(r) = (L - 1) \cdot \text{CDF}(r)
 This maps the CDF to a straight line, effectively flattening the histogram.
 
 **Algorithm:**
+
 1. Compute histogram $h(k)$
+
 2. Compute normalized CDF: $\text{CDF}(k) = \frac{1}{HW}\sum\_{j=0}^{k} h(j)$
+
 3. Map each pixel: $I'(i,j) = \lfloor (L-1) \cdot \text{CDF}(I(i,j)) \rfloor$
 
 **CLAHE (Contrast Limited Adaptive Histogram Equalization):**
@@ -810,8 +820,11 @@ This maps the CDF to a straight line, effectively flattening the histogram.
 Standard histogram equalization is global. CLAHE applies equalization locally:
 
 1. Divide image into tiles (e.g., 8×8)
+
 2. Apply histogram equalization to each tile
+
 3. Apply contrast limiting to prevent noise amplification
+
 4. Bilinearly interpolate at tile boundaries
 
 ```math
@@ -1254,10 +1267,15 @@ if __name__ == "__main__":
 ## 📚 Key Takeaways
 
 1. **Digital images are 2D arrays** of pixels with intensity/color values
+
 2. **Color spaces** serve different purposes - RGB for display, HSV for segmentation, LAB for perception
+
 3. **Compression trade-offs** exist between quality, size, and use case
+
 4. **Coordinate systems** differ between libraries - always verify (x,y) vs (row,col)
+
 5. **Production systems** need efficient loading, caching, and batch processing
+
 6. **Preprocessing consistency** is critical - training and inference must match
 
 ---

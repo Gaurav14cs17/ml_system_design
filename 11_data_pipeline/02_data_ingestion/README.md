@@ -147,8 +147,11 @@ t_{overflow} = \frac{Q_{max}}{\lambda - \mu}
 ```
 
 **Backpressure strategies:**
+
 1. **Drop**: Discard excess events (lossy)
+
 2. **Buffer**: Queue events (bounded by memory)
+
 3. **Throttle**: Slow down source (requires feedback)
 
 ### Exactly-Once Delivery

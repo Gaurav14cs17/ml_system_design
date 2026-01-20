@@ -15,13 +15,21 @@
 ## 📖 Table of Contents
 
 1. [What are Recommendation Systems?](#what-are-recommendation-systems)
+
 2. [Why Recommendation Systems Matter](#why-recommendation-systems-matter)
+
 3. [Historical Evolution](#historical-evolution)
+
 4. [Core Components](#core-components)
+
 5. [Types of Recommendation Systems](#types-of-recommendation-systems)
+
 6. [Key Challenges](#key-challenges)
+
 7. [Industry Applications](#industry-applications)
+
 8. [Metrics and Evaluation](#metrics-and-evaluation)
+
 9. [Getting Started](#getting-started)
 
 ---
@@ -317,10 +325,15 @@ Recommendation systems are at the heart of modern digital experiences. They solv
 ### Key Takeaways
 
 1. **RecSys is essential** for any platform with large catalogs
+
 2. **Multiple approaches** exist with different trade-offs
+
 3. **Hybrid systems** often perform best in practice
+
 4. **Evaluation** requires both offline metrics and online A/B tests
+
 5. **Challenges** like cold start and scalability need careful design
+
 6. **Ethics** matter - be mindful of filter bubbles and bias
 
 ---

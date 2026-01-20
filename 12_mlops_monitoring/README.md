@@ -100,10 +100,15 @@ D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}
 ### The Continuous Feedback Loop
 
 1. **Baseline** — Establish reference metrics during training/validation
+
 2. **Deploy** — Release model to production with monitoring hooks
+
 3. **Collect** — Gather predictions, features, and ground truth
+
 4. **Analyze** — Apply statistical tests to detect anomalies
+
 5. **Alert** — Trigger notifications when thresholds are breached
+
 6. **Improve** — Retrain, recalibrate, or rollback as needed
 
 ---

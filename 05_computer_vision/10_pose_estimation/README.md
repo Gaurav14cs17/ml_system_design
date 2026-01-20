@@ -7,9 +7,13 @@
 ## 📑 Table of Contents
 
 1. [Pose Estimation Overview](#pose-estimation-overview)
+
 2. [Top-Down vs Bottom-Up](#approaches)
+
 3. [Key Architectures](#key-architectures)
+
 4. [MediaPipe & OpenPose](#mediapipe-openpose)
+
 5. [Implementation Guide](#implementation-guide)
 
 ---
@@ -286,9 +290,13 @@ class MultiPersonPose:
 ## 📚 Key Takeaways
 
 1. **Top-down** is more accurate but slower for many people
+
 2. **Bottom-up** is faster for crowds (OpenPose)
+
 3. **MediaPipe** is great for real-time single-person
+
 4. **HRNet** maintains high resolution for better accuracy
+
 5. **Pose** enables action recognition, fitness tracking, AR
 
 ---

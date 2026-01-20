@@ -391,8 +391,11 @@ flowchart LR
 ```
 
 1. **Sequential Learning**: Follow topics 1-15 in order for comprehensive understanding
+
 2. **Reference Mode**: Jump to specific topics as needed for your current project
+
 3. **Hands-on Practice**: Each topic includes code examples and exercises
+
 4. **Deep Dives**: Follow links to external resources for advanced topics
 
 ---

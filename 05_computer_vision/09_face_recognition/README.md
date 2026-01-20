@@ -11,10 +11,15 @@
 ## 📑 Table of Contents
 
 1. [Face Recognition Pipeline](#face-recognition-pipeline)
+
 2. [Face Detection](#face-detection)
+
 3. [Face Alignment](#face-alignment)
+
 4. [Face Embeddings](#face-embeddings)
+
 5. [Verification vs Identification](#verification-vs-identification)
+
 6. [Implementation Guide](#alignment-implementation)
 
 ---
@@ -448,9 +453,13 @@ class FaceRecognitionSystem:
 ## 📚 Key Takeaways
 
 1. **Detection** must come before recognition - use MTCNN or MediaPipe
+
 2. **Alignment** is crucial - normalize pose before embedding
+
 3. **ArcFace** embeddings are current SOTA
+
 4. **Threshold tuning** balances FAR vs FRR
+
 5. **Verification** (1:1) is easier than **identification** (1:N)
 
 ---

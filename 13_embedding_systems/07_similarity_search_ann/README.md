@@ -18,14 +18,23 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Exact vs Approximate Search](#exact-vs-approximate-search)
+
 3. [Distance Metrics](#distance-metrics)
+
 4. [ANN Algorithms](#ann-algorithms)
+
 5. [HNSW Deep Dive](#hnsw-deep-dive)
+
 6. [Product Quantization](#product-quantization)
+
 7. [Benchmarking and Tuning](#benchmarking-and-tuning)
+
 8. [Practical Implementation](#practical-implementation)
+
 9. [Summary](#summary)
 
 ---

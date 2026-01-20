@@ -13,12 +13,19 @@
 ## 📖 Table of Contents
 
 1. [Training Strategies](#training-strategies)
+
 2. [Loss Functions](#loss-functions)
+
 3. [Optimization Techniques](#run-optimization)
+
 4. [Offline Evaluation Metrics](#offline-evaluation-metrics)
+
 5. [Online Evaluation](#online-evaluation)
+
 6. [Cross-Validation Strategies](#cross-validation-strategies)
+
 7. [Hyperparameter Tuning](#hyperparameter-tuning)
+
 8. [Common Pitfalls](#common-pitfalls)
 
 ---
@@ -451,9 +458,13 @@ Proper training and evaluation are essential for building effective recommendati
 ### Key Takeaways
 
 1. **Temporal splits** prevent data leakage
+
 2. **Pairwise losses** work better for ranking
+
 3. **Beyond-accuracy metrics** matter (coverage, diversity)
+
 4. **A/B testing** is the gold standard
+
 5. **Watch for biases** in sampling and evaluation
 
 ---

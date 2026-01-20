@@ -224,8 +224,11 @@ For $p = 10\%$ and $d = 10$: side = 0.79 (most of the space is empty).
 
 **Feature Selection Trade-off:**
 Adding features increases model capacity but:
+
 1. Increases overfitting risk
+
 2. Requires more data (sample complexity grows with $\sqrt{d}$)
+
 3. Increases computational cost
 
 ---

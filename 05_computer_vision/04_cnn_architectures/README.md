@@ -11,10 +11,15 @@
 ## 📑 Table of Contents
 
 1. [Evolution of CNN Architectures](#evolution-of-cnn-architectures)
+
 2. [Foundational Architectures](#foundational-architectures)
+
 3. [Modern Architectures](#modern-architectures)
+
 4. [Vision Transformers](#vision-transformers)
+
 5. [Architecture Selection Guide](#architecture-selection-guide)
+
 6. [Implementation Examples](#vit-implementation)
 
 ---
@@ -192,6 +197,7 @@ y = \mathcal{F}(x, \{W_i\}) + x
 **Why it works:**
 
 1. **Easier optimization:** Learning $\mathcal{F}(x) \approx 0$ is easier than learning identity
+
 2. **Gradient flow:** Skip connections provide "gradient highways"
 
 **Gradient during backpropagation:**
@@ -502,9 +508,13 @@ quadrantChart
 ## 📚 Key Takeaways
 
 1. **Depth matters** but skip connections are essential (ResNet)
+
 2. **Width, depth, resolution** should scale together (EfficientNet)
+
 3. **Transformers** are SOTA but need more data and compute
+
 4. **MobileNets** trade accuracy for speed - right choice for edge
+
 5. **Transfer learning** is almost always better than training from scratch
 
 ---

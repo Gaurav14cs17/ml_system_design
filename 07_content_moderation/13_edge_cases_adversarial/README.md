@@ -669,9 +669,13 @@ class AmbiguityResolver:
 Handling edge cases and adversarial attacks requires:
 
 1. **Edge Case Detection**: Identify satire, news, art, etc.
+
 2. **Adversarial Defense**: Multi-layer normalization and detection
+
 3. **Context Analysis**: Author, community, conversation context
+
 4. **Ambiguity Resolution**: Clear processes for uncertain cases
+
 5. **Continuous Learning**: Adapt to new attack patterns
 
 ---

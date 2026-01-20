@@ -15,10 +15,15 @@
 ## 📖 Table of Contents
 
 1. [Architecture Overview](#architecture-overview)
+
 2. [Model Serving](#model-serving)
+
 3. [Feature Serving](#feature-serving)
+
 4. [Caching Strategy](#caching-strategy)
+
 5. [Load Balancing](#load-balancing)
+
 6. [Fault Tolerance](#fault-tolerance)
 
 ---
@@ -334,9 +339,13 @@ Automatic rollback if:
 ## Key Takeaways
 
 1. **Batching**: 10x throughput with dynamic batching
+
 2. **Multi-level cache**: L1 memory, L2 Redis, L3 database
+
 3. **Parallel fetching**: Max latency instead of sum
+
 4. **Circuit breakers**: Prevent cascade failures
+
 5. **Canary deployments**: Gradual rollout with auto-rollback
 
 ---

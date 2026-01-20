@@ -538,13 +538,19 @@ Model accuracy has dropped below 70%, indicating severe degradation.
 ## Resolution Steps
 
 ### If data quality issue:
+
 1. Identify problematic features
+
 2. Trigger feature pipeline refresh
+
 3. Monitor accuracy recovery
 
 ### If model issue:
+
 1. Rollback to previous model version
+
 2. Investigate root cause
+
 3. Plan retraining if needed
 
 ## Escalation
@@ -568,9 +574,13 @@ Model accuracy has dropped below 70%, indicating severe degradation.
 ## 🔑 Key Takeaways
 
 1. **Every alert must be actionable** - If no action needed, don't alert
+
 2. **Severity matters** - Route correctly to avoid fatigue
+
 3. **Context is king** - Include everything needed to diagnose
+
 4. **Runbooks are essential** - Document the "what to do"
+
 5. **Deduplicate and aggregate** - Reduce noise, increase signal
 
 ---

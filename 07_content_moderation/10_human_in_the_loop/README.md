@@ -633,10 +633,15 @@ class WellbeingManager:
 Human-in-the-loop content moderation requires:
 
 1. **Smart Routing**: Direct uncertain cases to humans
+
 2. **Priority Queues**: Handle critical content first
+
 3. **Efficient UI**: Keyboard shortcuts, clear guidance
+
 4. **Quality Control**: Golden sets, audits, calibration
+
 5. **Feedback Loops**: Improve models from human decisions
+
 6. **Well-being**: Protect moderators from harm
 
 ---

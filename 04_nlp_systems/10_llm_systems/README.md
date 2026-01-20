@@ -482,7 +482,9 @@ Summary:"""
 ## 📚 References
 
 1. [LLaMA Paper](https://arxiv.org/abs/2302.13971)
+
 2. [vLLM](https://github.com/vllm-project/vllm)
+
 3. [LoRA Paper](https://arxiv.org/abs/2106.09685)
 
 ---

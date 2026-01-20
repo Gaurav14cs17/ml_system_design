@@ -595,10 +595,15 @@ class PrivateMessagingModeration:
 ### Common Pitfalls
 
 1. **Over-relying on keywords** - Easy to evade
+
 2. **Ignoring context** - Same content, different meaning
+
 3. **Under-investing in human review** - Edge cases need humans
+
 4. **Neglecting moderator well-being** - Burnout is real
+
 5. **Not planning for adversaries** - Bad actors adapt
+
 6. **Ignoring false positives** - Users lose trust
 
 ---
@@ -608,9 +613,13 @@ class PrivateMessagingModeration:
 These case studies demonstrate:
 
 1. **Scale requires automation** - ML handles 95%+ of decisions
+
 2. **Speed varies by use case** - Live streams need real-time, posts can wait
+
 3. **Multi-modal is essential** - Text + image + behavior
+
 4. **Privacy can coexist with safety** - On-device processing, metadata analysis
+
 5. **Context-specific tuning** - Gaming vs professional vs kids
 
 ---

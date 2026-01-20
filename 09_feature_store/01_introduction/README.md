@@ -27,12 +27,19 @@
 ## 📚 Table of Contents
 
 1. [The Feature Problem in ML](#the-feature-problem-in-ml)
+
 2. [What is a Feature Store?](#what-is-a-feature-store)
+
 3. [Brief History](#brief-history)
+
 4. [Core Value Propositions](#core-value-propositions)
+
 5. [Feature Store vs Traditional Approaches](#feature-store-vs-traditional-approaches)
+
 6. [Industry Use Cases](#industry-use-cases)
+
 7. [When to Use a Feature Store](#when-to-use-a-feature-store)
+
 8. [Common Misconceptions](#common-misconceptions)
 
 ---
@@ -130,8 +137,11 @@ features = fs.get_features(
 A **Feature Store** is a centralized data system that:
 
 1. **Stores** feature values (both historical and current)
+
 2. **Manages** feature definitions, metadata, and lineage
+
 3. **Serves** features for both training and inference
+
 4. **Ensures** consistency between training and serving
 
 ### Conceptual Architecture
@@ -478,8 +488,11 @@ In the next chapter, we'll dive deep into **Core Concepts**:
 ## 📚 Further Reading
 
 1. [Uber Michelangelo Paper](https://eng.uber.com/michelangelo-machine-learning-platform/)
+
 2. [Feast Documentation](https://docs.feast.dev/)
+
 3. [Feature Stores for ML (O'Reilly)](https://www.oreilly.com/library/view/feature-stores-for/9781098143732/)
+
 4. [MLOps Community Feature Store Resources](https://mlops.community/learn/feature-store/)
 
 ---

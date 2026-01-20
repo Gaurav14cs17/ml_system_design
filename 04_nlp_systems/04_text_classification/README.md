@@ -706,9 +706,13 @@ async def health():
 ## 🎯 Best Practices
 
 1. **Start with baselines** - TF-IDF + Logistic Regression first
+
 2. **Handle class imbalance** - Weighted loss, oversampling, SMOTE
+
 3. **Proper evaluation** - Stratified splits, cross-validation
+
 4. **Monitor confidence** - Don't just look at predictions
+
 5. **Version your models** - Track data, code, and model versions
 
 ---
@@ -726,7 +730,9 @@ async def health():
 ## 📚 References
 
 1. [BERT for Text Classification](https://arxiv.org/abs/1810.04805)
+
 2. [ULMFiT](https://arxiv.org/abs/1801.06146) - Universal Language Model Fine-tuning
+
 3. [scikit-learn Text Classification](https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html)
 
 ---

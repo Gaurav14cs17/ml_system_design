@@ -1,11 +1,17 @@
 # Evaluation Metrics: Measuring Search Quality
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Offline Metrics](#offline-metrics)
+
 3. [Online Metrics](#online-metrics)
+
 4. [A/B Testing](#ab-testing)
+
 5. [Interleaving Experiments](#interleaving-experiments)
+
 6. [Metric Trade-offs](#metric-trade-offs)
 
 ---
@@ -589,9 +595,13 @@ class InterleavingExperiment:
 ## Key Takeaways
 
 1. **Multi-Metric Approach**: Use both offline (NDCG, MAP) and online (CTR, conversions) metrics
+
 2. **Guardrail Metrics**: Always monitor for regressions in key metrics
+
 3. **Statistical Rigor**: Use proper sample sizes and significance tests
+
 4. **Interleaving**: More sensitive than A/B tests for ranking changes
+
 5. **Balance Trade-offs**: Consider short-term vs long-term, relevance vs revenue
 
 ---

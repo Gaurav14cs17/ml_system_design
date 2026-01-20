@@ -1,12 +1,19 @@
 # Search Ranking: Problem Definition & Requirements
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [What is Search Ranking?](#what-is-search-ranking)
+
 3. [Business Requirements](#business-requirements)
+
 4. [Technical Requirements](#technical-requirements)
+
 5. [System Constraints](#system-constraints)
+
 6. [Success Metrics](#success-metrics)
+
 7. [Real-World Case Studies](#real-world-case-studies)
 
 ---
@@ -37,8 +44,11 @@ User Query: "best running shoes for marathon"
 Search System
     ↓
 Ranked Results:
+
 1. Nike Vaporfly Next% 2 (Most Relevant)
+
 2. Adidas Adizero Pro
+
 3. Saucony Endorphin Pro 3
 4. ...
 
@@ -321,9 +331,13 @@ solution_approach:
 ## Key Takeaways
 
 1. **Two-Stage Architecture**: Retrieval (fast, approximate) → Ranking (slow, precise)
+
 2. **Balance Trade-offs**: Relevance vs. Revenue, Latency vs. Quality
+
 3. **Metrics Matter**: Choose metrics that align with business goals
+
 4. **Scale Planning**: Design for 10x current scale from day one
+
 5. **Constraints Drive Design**: Latency, cost, and data constraints shape the system
 
 ---

@@ -451,10 +451,15 @@ onnx.save(optimized, "model_optimized.onnx")
 ### Optimization Checklist
 
 1. ✅ Convert to ONNX first (universal intermediate)
+
 2. ✅ Apply graph optimizations (fusion, folding)
+
 3. ✅ Use FP16 when accuracy permits (2x speedup)
+
 4. ✅ Consider INT8 for edge (4x speedup, needs calibration)
+
 5. ✅ Profile before and after optimization
+
 6. ✅ Validate accuracy degradation < 1%
 
 ---

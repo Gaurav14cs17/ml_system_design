@@ -13,13 +13,21 @@
 ## 📖 Table of Contents
 
 1. [Introduction](#introduction)
+
 2. [Neural Collaborative Filtering](#neural-collaborative-filtering)
+
 3. [Deep Matrix Factorization](#deep-learning-foundations)
+
 4. [Sequence Models](#sequence-models)
+
 5. [Attention Mechanisms](#attention-mechanisms)
+
 6. [Two-Tower Architecture](#two-tower-architecture)
+
 7. [Graph Neural Networks](#graph-neural-networks)
+
 8. [Transformer-Based Models](#transformer-based-models)
+
 9. [Implementation Examples](#implementation-tutorials)
 
 ---

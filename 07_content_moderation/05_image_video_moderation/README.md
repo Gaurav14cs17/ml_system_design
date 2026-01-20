@@ -965,9 +965,13 @@ Categories:
 - SAFE: No violations
 
 For each image, provide:
+
 1. Primary category
+
 2. Confidence (0-1)
+
 3. Specific elements that led to your decision
+
 4. Any context that might change interpretation
 
 Respond in JSON format."""
@@ -1111,10 +1115,15 @@ async def moderate_image(file: UploadFile = File(...)):
 Visual content moderation requires:
 
 1. **Multi-model ensemble**: CNN + CLIP + specialized detectors
+
 2. **Hash matching**: Fast rejection of known bad content
+
 3. **Object detection**: For specific policy-relevant objects
+
 4. **OCR integration**: Text in images needs moderation too
+
 5. **Video handling**: Keyframe extraction + temporal analysis
+
 6. **Multimodal understanding**: Image + text context matters
 
 Key challenges:

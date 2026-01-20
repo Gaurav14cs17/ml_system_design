@@ -332,10 +332,15 @@ mapping character sequences to token sequences.
 **Byte Pair Encoding (BPE)** learns a vocabulary by iteratively merging frequent character pairs.
 
 **Algorithm**:
+
 1. Initialize vocabulary $\mathcal{V}\_0$ with all characters
+
 2. Count all adjacent symbol pairs
+
 3. Merge most frequent pair $(a, b) \rightarrow ab$
+
 4. Add merged symbol to vocabulary
+
 5. Repeat until $|\mathcal{V}| = $ target size
 
 **Why BPE works**: Balances vocabulary size vs. sequence length:
@@ -542,8 +547,11 @@ where $n$ = text length, $p$ = pattern length, $|\mathcal{V}|$ = vocabulary size
 ## 📚 References
 
 1. Sennrich, R., Haddow, B., & Birch, A. (2016). [Neural Machine Translation of Rare Words with Subword Units](https://arxiv.org/abs/1508.07909)
+
 2. Wu, Y., et al. (2016). [Google's Neural Machine Translation System](https://arxiv.org/abs/1609.08144)
+
 3. Kudo, T., & Richardson, J. (2018). [SentencePiece](https://arxiv.org/abs/1808.06226)
+
 4. [Hugging Face Tokenizers Documentation](https://huggingface.co/docs/tokenizers/)
 
 ---

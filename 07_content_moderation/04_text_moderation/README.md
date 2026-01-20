@@ -574,20 +574,33 @@ class LLMModerator:
         return """You are a content moderation expert. Analyze the given content and classify it according to our policy categories.
 
 Policy Categories:
+
 1. VIOLENCE: Threats, graphic violence, incitement
+
 2. HATE_SPEECH: Attacks on protected groups, slurs, dehumanization
+
 3. HARASSMENT: Bullying, targeted attacks, stalking
+
 4. ADULT: Sexual content, nudity
+
 5. SELF_HARM: Suicide, self-injury promotion
+
 6. SPAM: Unsolicited ads, scams
+
 7. MISINFORMATION: False claims about health, elections
+
 8. SAFE: Content that doesn't violate policies
 
 For each analysis, provide:
+
 1. Primary category
+
 2. Confidence (0-1)
+
 3. Severity (low/medium/high/critical)
+
 4. Brief reasoning
+
 5. Any context that would change the decision
 
 Respond in JSON format."""
@@ -650,9 +663,13 @@ class ModerationPromptTemplates:
     """
 
     HATE_SPEECH_PROMPT = """Analyze the following text for hate speech. Consider:
+
 1. Is there an attack on a protected group (race, religion, gender, etc.)?
+
 2. Are slurs or derogatory terms used?
+
 3. Is there dehumanization (comparing people to animals/objects)?
+
 4. Is there incitement to violence or discrimination?
 
 Also consider context:
@@ -680,10 +697,15 @@ Respond with:
     SELF_HARM_PROMPT = """Analyze the following text for self-harm content. This is a sensitive task.
 
 Categories:
+
 1. CRISIS: Active expression of suicidal ideation requiring immediate intervention
+
 2. CONCERNING: Discussion of self-harm that may need support resources
+
 3. RECOVERY: Sharing recovery journey or seeking help (generally allowed)
+
 4. EDUCATIONAL: Discussion in mental health context (generally allowed)
+
 5. SAFE: No self-harm content
 
 Important: We want to support people in crisis, not silence them. Focus on:
@@ -710,9 +732,13 @@ Respond with:
     MISINFORMATION_PROMPT = """Analyze the following claim for potential misinformation.
 
 Consider:
+
 1. Is this a factual claim or an opinion?
+
 2. Does it contradict established scientific consensus?
+
 3. Could it cause real-world harm if believed?
+
 4. Is the source cited or verifiable?
 
 Claim: "{text}"
@@ -742,11 +768,17 @@ Respond with:
 
 ```
 1. Homoglyph substitution: "h@te" instead of "hate"
+
 2. Character insertion: "ha.te" or "h a t e"
+
 3. Unicode tricks: "hate" with zero-width characters
+
 4. Leetspeak: "h4t3"
+
 5. Phonetic spelling: "hayt"
+
 6. Deliberate misspelling: "haet"
+
 7. Encoded content: base64, rot13
 8. Language mixing: "I h8 你们"
 
@@ -1157,10 +1189,15 @@ class TextModerationPipeline:
 Text moderation requires a multi-layered approach:
 
 1. **Preprocessing**: Normalize adversarial text variations
+
 2. **Fast Layer**: Keywords and simple ML for obvious cases
+
 3. **Accurate Layer**: BERT/transformers for nuanced detection
+
 4. **LLM Layer**: Reasoning for edge cases requiring context
+
 5. **Multilingual**: XLM-RoBERTa or similar for global coverage
+
 6. **Adversarial Defense**: Continuous adaptation to evasion attempts
 
 ---

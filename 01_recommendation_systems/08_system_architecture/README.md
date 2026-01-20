@@ -13,13 +13,21 @@
 ## 📖 Table of Contents
 
 1. [System Overview](#system-overview)
+
 2. [Data Pipeline](#data-pipeline)
+
 3. [Feature Store](#feature-store)
+
 4. [Model Serving](#model-serving)
+
 5. [Candidate Generation](#candidate-generation)
+
 6. [Ranking Layer](#ranking-layer)
+
 7. [Caching Strategies](#caching-strategies)
+
 8. [Monitoring & Observability](#monitoring-observability)
+
 9. [Scaling Considerations](#scaling-considerations)
 
 ---
@@ -399,9 +407,13 @@ Building production recommendation systems requires careful attention to archite
 ### Key Takeaways
 
 1. **Multi-stage pipeline** - Candidate generation → Ranking → Re-ranking
+
 2. **Feature stores** - Online + Offline for different use cases
+
 3. **Caching** - Multiple layers with appropriate TTLs
+
 4. **Monitoring** - System + Business + Model metrics
+
 5. **Scalability** - Design for horizontal scaling from the start
 
 ---

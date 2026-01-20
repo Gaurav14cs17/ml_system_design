@@ -27,13 +27,21 @@
 ## 📚 Table of Contents
 
 1. [Features](#features)
+
 2. [Entities](#entities)
+
 3. [Feature Groups](#feature-groups)
+
 4. [Feature Views](#feature-views)
+
 5. [Feature Services](#feature-services)
+
 6. [Data Types and Schemas](#data-types-and-schemas)
+
 7. [Versioning](#versioning)
+
 8. [Time Concepts](#time-concepts)
+
 9. [Point-in-Time Joins](#point-in-time-joins)
 
 ---
@@ -703,9 +711,13 @@ training_df = store.get_historical_features(
 ### Design Principles
 
 1. **Entity-first design**: Start with entities, then define features
+
 2. **Group related features**: Same source, same update schedule
+
 3. **Version everything**: Features, views, and services
+
 4. **Define freshness SLAs**: Know how stale is acceptable
+
 5. **Use point-in-time joins**: Always for training data
 
 ---

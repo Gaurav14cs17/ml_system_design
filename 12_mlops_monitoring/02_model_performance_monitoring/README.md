@@ -25,11 +25,17 @@
 ## 📖 Table of Contents
 
 1. [Why Model Performance Monitoring?](#why-model-performance-monitoring)
+
 2. [Metrics by Task Type](#metrics-by-task-type)
+
 3. [Real-time vs Batch Monitoring](#real-time-vs-batch-monitoring)
+
 4. [Ground Truth Collection](#ground-truth-collection)
+
 5. [Performance Degradation Detection](#performance-degradation-detection)
+
 6. [Latency Monitoring](#latency-monitoring)
+
 7. [Code Examples](#usage-example)
 
 ---
@@ -597,9 +603,13 @@ def predict_with_monitoring(model, features):
 ## 🔑 Key Takeaways
 
 1. **Choose metrics appropriate to your task** - Classification, regression, and ranking need different metrics
+
 2. **Combine real-time and batch monitoring** - Real-time for operations, batch for accuracy
+
 3. **Ground truth collection is critical** - Design it into your system from day one
+
 4. **Monitor latency alongside accuracy** - Fast wrong answers are still wrong
+
 5. **Set thresholds based on business impact** - Not all metric drops are equal
 
 ---

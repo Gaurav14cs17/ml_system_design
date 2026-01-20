@@ -25,10 +25,15 @@
 ## 📚 Table of Contents
 
 1. [Offline Serving Overview](#offline-serving-overview)
+
 2. [Point-in-Time Joins](#point-in-time-joins)
+
 3. [Training Data Generation](#training-data-generation)
+
 4. [Offline Store Technologies](#offline-store-technologies)
+
 5. [Query Optimization](#query-optimization)
+
 6. [Data Formats](#data-formats)
 
 ---
@@ -354,9 +359,13 @@ def write_features_parquet(df, path):
 ### Offline Serving Best Practices
 
 1. **Always use point-in-time joins** - Prevent data leakage
+
 2. **Partition by time** - Enable efficient queries
+
 3. **Use columnar formats** - Parquet/Delta for analytics
+
 4. **Validate training data** - Check for nulls, leakage
+
 5. **Version training datasets** - Reproducibility
 
 ### Key Takeaways

@@ -520,9 +520,13 @@ class ObservableMLService:
 ## 🔑 Key Takeaways
 
 1. **Logs, metrics, and traces serve different purposes** - Use all three
+
 2. **Structured logging is essential** - JSON logs are searchable and parseable
+
 3. **Add request IDs everywhere** - Enables correlation across systems
+
 4. **Instrument at service boundaries** - Know where time is spent
+
 5. **Design dashboards for operators** - What do they need to know at 3 AM?
 
 ---

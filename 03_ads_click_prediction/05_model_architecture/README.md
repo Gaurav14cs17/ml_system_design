@@ -15,10 +15,15 @@
 ## 📖 Table of Contents
 
 1. [Model Evolution](#model-evolution)
+
 2. [Deep Learning Architectures](#deep-learning-architectures)
+
 3. [Loss Functions](#loss-functions)
+
 4. [Optimization](#optimization)
+
 5. [Calibration](#calibration)
+
 6. [Model Compression](#model-compression)
 
 ---
@@ -392,10 +397,15 @@ $T$ = temperature (higher = softer distributions)
 ## Key Takeaways
 
 1. **Wide & Deep**: Memorization (wide) + Generalization (deep)
+
 2. **DCN**: Explicit polynomial feature crossing
+
 3. **DLRM**: Efficient embedding-based architecture
+
 4. **Focal Loss**: Handle extreme class imbalance
+
 5. **Calibration**: Critical for bidding systems
+
 6. **Compression**: Quantization for 4x speedup
 
 ---

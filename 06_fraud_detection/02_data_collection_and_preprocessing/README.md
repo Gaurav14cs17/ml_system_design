@@ -14,14 +14,23 @@
 ## 📖 Table of Contents
 
 1. [Data Sources Overview](#data-sources-overview)
+
 2. [Transaction Data](#transaction-data)
+
 3. [User Behavioral Data](#user-behavioral-data)
+
 4. [Device and Session Data](#device-and-session-data)
+
 5. [External Data Sources](#external-data-sources)
+
 6. [Data Pipeline Architecture](#data-pipeline-architecture)
+
 7. [Data Quality and Validation](#data-quality-and-validation)
+
 8. [Preprocessing Techniques](#preprocessing-techniques)
+
 9. [Handling Missing Data](#handling-missing-data)
+
 10. [Data Privacy and Compliance](#data-privacy-and-compliance)
 
 ---
@@ -882,9 +891,13 @@ class DataAccessAudit:
 Effective data collection and preprocessing for fraud detection requires:
 
 1. **Comprehensive data sources**: Transaction, behavioral, device, and external data
+
 2. **Real-time and batch pipelines**: Handle both immediate scoring and historical analysis
+
 3. **Data quality**: Validate, monitor, and handle anomalies
+
 4. **Smart preprocessing**: Transform features appropriately for ML models
+
 5. **Privacy compliance**: Anonymize, audit, and protect sensitive data
 
 ---

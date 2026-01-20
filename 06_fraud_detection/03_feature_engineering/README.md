@@ -14,15 +14,25 @@
 ## 📖 Table of Contents
 
 1. [Feature Engineering Philosophy](#feature-engineering-philosophy)
+
 2. [Mathematical Foundation](#mathematical-foundation)
+
 3. [Transaction-Level Features](#transaction-level-features)
+
 4. [Velocity and Aggregation Features](#velocity-and-aggregation-features)
+
 5. [Behavioral Features](#behavioral-features)
+
 6. [Device and Session Features](#device-and-session-features)
+
 7. [Network and Graph Features](#network-and-graph-features)
+
 8. [Embedding Features](#embedding-features)
+
 9. [Feature Selection](#feature-selection)
+
 10. [Real-Time Feature Computation](#real-time-feature-computation)
+
 11. [Feature Store Integration](#feature-store-integration)
 
 ---
@@ -1386,9 +1396,13 @@ def get_features_for_scoring(user_id: str, merchant_id: str) -> dict:
 Effective feature engineering for fraud detection requires:
 
 1. **Multi-level features**: Transaction, velocity, behavioral, device, and network
+
 2. **Time-aware aggregations**: Multiple time windows for pattern detection
+
 3. **Behavioral baselines**: Compare against user's normal behavior
+
 4. **Graph features**: Detect fraud rings and connected entities
+
 5. **Real-time computation**: Low-latency feature serving for production
 
 ---

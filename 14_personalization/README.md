@@ -233,19 +233,29 @@ Common approaches:
 ## 🎓 Learning Path
 
 ### Week 1-2: Foundations
+
 1. **[User Modeling & Embeddings](./01_user_modeling_embeddings)** — Understanding representation learning
+
 2. **[Collaborative Filtering](./02_collaborative_filtering)** — Matrix factorization and neighborhood methods
+
 3. **[Content-Based Filtering](./03_content_based_filtering)** — Feature extraction and similarity
 
 ### Week 3-4: Advanced Methods
+
 4. **[Hybrid Systems](./04_hybrid_recommender_systems)** — Combining approaches
+
 5. **[Cold Start Problem](./06_cold_start_problem)** — Handling new users/items
+
 6. **[Evaluation Metrics](./07_evaluation_metrics)** — Measuring success
 
 ### Week 5-6: Production Systems
+
 7. **[Real-Time Personalization](./05_real_time_personalization)** — Online learning
+
 8. **[Model Serving](./09_model_serving_infrastructure)** — Deployment at scale
+
 9. **[A/B Testing](./11_ab_testing_experimentation)** — Experimentation
+
 10. **[Deep Learning](./12_deep_learning_recommenders)** — Neural approaches
 
 ---
@@ -257,6 +267,7 @@ Common approaches:
 1. **Koren et al. (2009)** — *Matrix Factorization Techniques for Recommender Systems*
    - The Netflix Prize winning approach
    
+
 2. **Rendle et al. (2009)** — *BPR: Bayesian Personalized Ranking from Implicit Feedback*
    - Pairwise learning for implicit data
 
@@ -305,9 +316,13 @@ Common approaches:
 ## 🔑 Key Takeaways
 
 1. **Mathematics First**: Understanding the underlying optimization objectives is crucial
+
 2. **Trade-offs Everywhere**: Accuracy vs latency, exploration vs exploitation, diversity vs relevance
+
 3. **Hybrid Wins**: Production systems combine multiple approaches
+
 4. **Evaluation is Hard**: Offline metrics don't always correlate with online success
+
 5. **Scale Changes Everything**: Algorithms that work at 1M items may fail at 1B
 
 ---

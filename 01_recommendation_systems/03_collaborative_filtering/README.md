@@ -13,14 +13,23 @@
 ## 📖 Table of Contents
 
 1. [Introduction](#introduction)
+
 2. [Types of Collaborative Filtering](#types-of-collaborative-filtering)
+
 3. [User-Based Collaborative Filtering](#user-based-collaborative-filtering)
+
 4. [Item-Based Collaborative Filtering](#item-based-collaborative-filtering)
+
 5. [Matrix Factorization](#matrix-factorization)
+
 6. [Similarity Measures](#similarity-measures)
+
 7. [Implementation Guide](#implementation)
+
 8. [Handling Challenges](#handling-challenges)
+
 9. [Production Considerations](#production-considerations)
+
 10. [Best Practices](#best-practices)
 
 ---
@@ -457,9 +466,13 @@ Optimization approach for matrix factorization:
 Objective: minimize Σ(rᵤᵢ - pᵤ·qᵢ)² + λ(||pᵤ||² + ||qᵢ||²)
 
 Algorithm:
+
 1. Initialize P and Q randomly
+
 2. Fix Q, solve for optimal P (least squares)
+
 3. Fix P, solve for optimal Q (least squares)
+
 4. Repeat until convergence
 
 ```
@@ -740,10 +753,15 @@ Collaborative Filtering is the workhorse of recommendation systems. From simple 
 ### Key Takeaways
 
 1. **User-Based CF**: Intuitive but doesn't scale well
+
 2. **Item-Based CF**: More stable and production-ready
+
 3. **Matrix Factorization**: Handles sparsity, reveals latent factors
+
 4. **Cold Start**: Major challenge—use hybrid approaches
+
 5. **Scalability**: ANN and approximate methods are essential
+
 6. **Evaluation**: Use time-based splits and multiple metrics
 
 ---

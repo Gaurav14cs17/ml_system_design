@@ -3,15 +3,25 @@
 ![Hybrid Approaches](./images/hybrid_approaches.svg)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Hybridization Strategies](#hybridization-strategies)
+
 3. [Weighted Hybrid Systems](#weighted-hybrid-systems)
+
 4. [Switching Hybrid Systems](#switching-hybrid-systems)
+
 5. [Feature Combination Hybrid](#feature-combination-hybrid)
+
 6. [Cascade Hybrid Systems](#cascade-hybrid-systems)
+
 7. [Meta-Level Hybrid](#meta-level-hybrid)
+
 8. [Deep Learning Hybrid Models](#deep-learning-hybrid-models)
+
 9. [Production Implementation](#production-implementation)
+
 10. [Interview Questions](#interview-questions)
 
 ---
@@ -974,6 +984,7 @@ class ProductionHybridRecommender:
 ### Q1: Design a hybrid recommender for an e-commerce platform
 
 **Key Points**:
+
 1. **Candidate Generation**:
    - Collaborative filtering for personalization
    - Content-based for new products
@@ -992,9 +1003,13 @@ class ProductionHybridRecommender:
 ### Q2: How do you handle conflicting recommendations from different models?
 
 **Solutions**:
+
 1. **Learned Weights**: Train combination weights on held-out data
+
 2. **Contextual Selection**: Different models for different scenarios
+
 3. **User-Specific**: Learn per-user model preferences
+
 4. **Uncertainty-Based**: Trust models with higher confidence
 
 ### Q3: Trade-offs between hybrid strategies?
@@ -1013,9 +1028,13 @@ class ProductionHybridRecommender:
 Hybrid systems are the standard in production because no single approach dominates. Key principles:
 
 1. **Start simple**: Weighted/switching hybrids before complex fusion
+
 2. **Match technique to data regime**: CF for rich data, content for sparse
+
 3. **Multi-stage pipeline**: Generate broadly, rank precisely
+
 4. **Measure component contribution**: A/B test individual pieces
+
 5. **Handle failures gracefully**: Fallback strategies are essential
 
 ---

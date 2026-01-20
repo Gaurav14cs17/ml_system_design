@@ -849,12 +849,19 @@ class AnnotatorWellbeingManager:
 Effective data collection and labeling requires:
 
 1. **Diverse sampling** from multiple sources
+
 2. **Clear taxonomy** with hierarchical categories
+
 3. **Detailed guidelines** with decision trees
+
 4. **Multi-stage review** for quality
+
 5. **Continuous QA** with golden sets
+
 6. **Balance strategies** for rare classes
+
 7. **Privacy protection** throughout pipeline
+
 8. **Annotator well-being** consideration
 
 ---

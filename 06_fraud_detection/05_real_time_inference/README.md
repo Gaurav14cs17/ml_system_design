@@ -14,14 +14,23 @@
 ## 📖 Table of Contents
 
 1. [Real-Time Requirements](#real-time-requirements)
+
 2. [Inference Architecture](#inference-architecture)
+
 3. [Feature Retrieval Optimization](#feature-retrieval-optimization)
+
 4. [Model Serving Strategies](#model-serving-strategies)
+
 5. [Latency Optimization](#latency-optimization)
+
 6. [Scaling for High Throughput](#scaling-for-high-throughput)
+
 7. [Caching Strategies](#caching-strategies)
+
 8. [Fallback and Degradation](#fallback-and-degradation)
+
 9. [Monitoring Inference](#monitoring-inference)
+
 10. [Case Study: Building a 10ms Scoring System](#case-study-building-a-10ms-scoring-system)
 
 ---
@@ -1154,9 +1163,13 @@ class Ultra10msScoringService:
 Key principles for real-time fraud inference:
 
 1. **Parallel everything**: Feature retrieval, model inference, logging
+
 2. **Cache aggressively**: Multi-tier caching for features and predictions
+
 3. **Optimize models**: Quantization, ONNX, model pruning
+
 4. **Graceful degradation**: Circuit breakers, fallback models
+
 5. **Monitor continuously**: Latency percentiles, error rates, score distributions
 
 ---

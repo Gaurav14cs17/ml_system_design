@@ -778,9 +778,13 @@ class OptimizedInference:
 Effective model serving for content moderation requires:
 
 1. **Low Latency**: Dynamic batching, GPU optimization, caching
+
 2. **High Throughput**: Horizontal scaling, batch processing
+
 3. **Reliability**: Health checks, circuit breakers, fallbacks
+
 4. **Model Management**: Versioning, A/B testing, rollback
+
 5. **Cost Efficiency**: Caching, quantization, right-sizing
 
 ---

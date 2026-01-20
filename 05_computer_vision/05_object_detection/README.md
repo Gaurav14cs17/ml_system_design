@@ -11,11 +11,17 @@
 ## 📑 Table of Contents
 
 1. [Object Detection Overview](#object-detection-overview)
+
 2. [Two-Stage Detectors](#two-stage-detectors)
+
 3. [One-Stage Detectors](#one-stage-detectors)
+
 4. [YOLO Family](#yolo-family)
+
 5. [Anchor-Free Detectors](#anchor-free-detectors)
+
 6. [Evaluation Metrics](#evaluation-metrics)
+
 7. [Implementation Guide](#yolov8-implementation)
 
 ---
@@ -592,10 +598,15 @@ def nms(boxes, scores, iou_threshold=0.5):
 ## 📚 Key Takeaways
 
 1. **Two-stage** (Faster R-CNN) for accuracy, **one-stage** (YOLO) for speed
+
 2. **YOLO** is the go-to for real-time detection
+
 3. **Focal loss** addresses class imbalance in one-stage detectors
+
 4. **Anchor-free** methods are simpler and often competitive
+
 5. **mAP@0.5:0.95** is the standard metric (COCO)
+
 6. **NMS** is essential post-processing step
 
 ---

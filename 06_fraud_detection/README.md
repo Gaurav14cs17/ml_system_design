@@ -77,9 +77,13 @@ With fraud rates $\eta \approx 0.1\% - 1\%$, standard metrics fail:
 ## 🚀 Key Design Principles
 
 1. **Low Latency**: Sub-100ms inference for real-time decisions
+
 2. **High Availability**: 99.99% uptime for critical financial systems
+
 3. **Scalability**: Handle millions of transactions per second
+
 4. **Explainability**: Clear reasoning for regulatory compliance
+
 5. **Adaptability**: Quick response to new fraud patterns
 
 ## 📊 Key Metrics

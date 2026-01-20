@@ -424,9 +424,13 @@ print(f"All passed: {report.all_passed}")
 ## 🔑 Key Takeaways
 
 1. **Start simple** - Prometheus + Grafana covers 80% of needs
+
 2. **Open source first** - Validate needs before buying
+
 3. **Integrate, don't replace** - Tools work better together
+
 4. **Consider total cost** - Including engineering time
+
 5. **Plan for scale** - Choose tools that grow with you
 
 ---

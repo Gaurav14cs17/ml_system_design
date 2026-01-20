@@ -21,12 +21,19 @@
 ## 📚 Table of Contents
 
 1. [Design Best Practices](#design-best-practices)
+
 2. [Naming Conventions](#naming-conventions)
+
 3. [Performance Optimization](#performance-optimization)
+
 4. [Security & Compliance](#security-compliance)
+
 5. [Operational Excellence](#operational-excellence)
+
 6. [Testing Strategies](#testing-strategies)
+
 7. [Common Pitfalls](#common-pitfalls)
+
 8. [Checklist for Production](#checklist-for-production)
 
 ---
@@ -311,20 +318,24 @@ class FeatureAuditLogger:
 - Features not updated for >2x expected interval
 
 ## Diagnosis Steps
+
 1. Check pipeline status
    ```
    airflow dags list-runs -d feature_pipeline
    ```
 2. Check data source availability
+
 3. Check compute resources (Spark cluster, etc.)
 
 ## Resolution Steps
+
 1. If pipeline failed:
    - Check logs for root cause
    - Fix and re-run: `airflow dags trigger feature_pipeline`
 2. If data source unavailable:
    - Contact data team
    - Consider fallback to cached values
+
 3. If resource issue:
    - Scale up compute
    - Optimize job
@@ -565,9 +576,13 @@ DEPLOYMENT
 ### Golden Rules
 
 1. **Feature store for both training and serving** - Consistency is key
+
 2. **Always use point-in-time joins** - Prevent data leakage
+
 3. **Monitor everything** - Can't fix what you can't see
+
 4. **Document thoroughly** - Future you will thank you
+
 5. **Start simple, iterate** - Don't over-engineer upfront
 
 ---

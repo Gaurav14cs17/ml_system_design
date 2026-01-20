@@ -675,9 +675,13 @@ class SentenceEmbedding:
 ## 📚 References
 
 1. Mikolov, T., et al. (2013). [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/abs/1301.3781)
+
 2. Pennington, J., Socher, R., & Manning, C. (2014). [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/pubs/glove.pdf)
+
 3. Bojanowski, P., et al. (2017). [Enriching Word Vectors with Subword Information](https://arxiv.org/abs/1607.04606)
+
 4. Devlin, J., et al. (2018). [BERT: Pre-training of Deep Bidirectional Transformers](https://arxiv.org/abs/1810.04805)
+
 5. Reimers, N., & Gurevych, I. (2019). [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/abs/1908.10084)
 
 ---

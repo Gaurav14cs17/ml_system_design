@@ -1,14 +1,23 @@
 # Feature Engineering for Search Ranking
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Feature Categories](#feature-categories)
+
 3. [Query Features](#query-features)
+
 4. [Document Features](#document-features)
+
 5. [Query-Document Interaction Features](#query-document-interaction-features)
+
 6. [User & Context Features](#user-context-features)
+
 7. [Behavioral Features](#behavioral-features)
+
 8. [Feature Store Architecture](#feature-store-architecture)
+
 9. [Feature Engineering Best Practices](#feature-engineering-best-practices)
 
 ---

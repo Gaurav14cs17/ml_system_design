@@ -13,11 +13,17 @@
 ## 📖 Table of Contents
 
 1. [Netflix](#netflix)
+
 2. [YouTube](#youtube)
+
 3. [Amazon](#amazon)
+
 4. [Spotify](#spotify)
+
 5. [TikTok](#tiktok)
+
 6. [Pinterest](#pinterest)
+
 7. [Key Lessons](#key-lessons)
 
 ---
@@ -190,8 +196,11 @@ class AudioFeatureExtractor:
 ### Key Design Decisions
 
 1. **Content-First**: New users get recommendations immediately based on content, not social graph
+
 2. **Rapid Adaptation**: Algorithm adjusts within minutes based on user behavior
+
 3. **Creator Diversity**: Prevents monopolization by big creators
+
 4. **Fresh Content Bias**: Strongly favors new content
 
 ---
@@ -230,9 +239,13 @@ Real-world recommendation systems share common patterns but are tailored to spec
 ### Key Takeaways
 
 1. **Start simple** - Item-to-item CF still works great
+
 2. **Add complexity incrementally** - Deep learning isn't always needed
+
 3. **Measure what matters** - Clicks ≠ satisfaction
+
 4. **Invest in infrastructure** - Fast serving enables experimentation
+
 5. **Never stop iterating** - A/B testing is continuous
 
 ---
@@ -290,13 +303,21 @@ Congratulations on completing this comprehensive guide to Recommendation Systems
 ### Review the Modules
 
 1. [Introduction](../01_introduction/README.md)
+
 2. [Content-Based Filtering](../02_content_based_filtering/README.md)
+
 3. [Collaborative Filtering](../03_collaborative_filtering/README.md)
+
 4. [Hybrid Systems](../04_hybrid_systems/README.md)
+
 5. [Feature Engineering](../05_feature_engineering/README.md)
+
 6. [Model Training & Evaluation](../06_model_training_evaluation/README.md)
+
 7. [Deep Learning](../07_deep_learning/README.md)
+
 8. [System Architecture](../08_system_architecture/README.md)
+
 9. [Case Studies](../09_case_studies/README.md) (You are here!)
 
 ---

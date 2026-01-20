@@ -14,15 +14,25 @@
 ## 📖 Table of Contents
 
 1. [Training Pipeline Overview](#training-pipeline-overview)
+
 2. [Mathematical Foundations](#mathematical-foundations)
+
 3. [Handling Class Imbalance](#handling-class-imbalance)
+
 4. [Training Data Preparation](#training-data-preparation)
+
 5. [Cross-Validation Strategies](#cross-validation-strategies)
+
 6. [Hyperparameter Tuning](#hyperparameter-tuning)
+
 7. [Evaluation Metrics](#evaluation-metrics)
+
 8. [Threshold Selection](#threshold-selection)
+
 9. [Model Validation](#model-validation)
+
 10. [A/B Testing](#ab-testing)
+
 11. [Continuous Training](#continuous-training)
 
 ---
@@ -1409,9 +1419,13 @@ class ContinuousTrainingPipeline:
 Key training and evaluation practices for fraud detection:
 
 1. **Handle imbalance carefully**: Use SMOTE, class weights, or cost-sensitive learning
+
 2. **Temporal validation**: Always use time-based splits, never random
+
 3. **Right metrics**: Focus on PR-AUC and precision at recall, not accuracy
+
 4. **Business metrics**: Tie model performance to dollar value
+
 5. **Continuous improvement**: Automated retraining with drift detection
 
 ---

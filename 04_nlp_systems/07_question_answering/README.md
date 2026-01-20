@@ -420,7 +420,9 @@ def compute_f1(prediction: str, ground_truth: str) -> float:
 ## 📚 References
 
 1. [SQuAD Dataset](https://rajpurkar.github.io/SQuAD-explorer/)
+
 2. [BERT for QA](https://arxiv.org/abs/1810.04805)
+
 3. [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906)
 
 ---

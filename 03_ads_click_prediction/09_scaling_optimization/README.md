@@ -15,9 +15,13 @@
 ## 📖 Table of Contents
 
 1. [Scaling Strategies](#scaling-strategies)
+
 2. [Latency Optimization](#latency-optimization)
+
 3. [Throughput Optimization](#throughput-optimization)
+
 4. [Cost Optimization](#cost-optimization)
+
 5. [Model Optimization](#model-optimization)
 
 ---
@@ -427,10 +431,15 @@ Find breaking point:
 ## Key Takeaways
 
 1. **Horizontal scaling**: Near-infinite capacity, but manage complexity
+
 2. **Latency**: Parallel fetching, caching, connection pooling
+
 3. **Throughput**: Batching, GPU utilization, sharding
+
 4. **Cost**: Spot instances, reserved capacity, right-sizing
+
 5. **Model**: Quantization (4x), pruning, distillation
+
 6. **Capacity**: 30-50% headroom, forecast growth
 
 ---

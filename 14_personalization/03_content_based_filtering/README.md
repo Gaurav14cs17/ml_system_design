@@ -11,12 +11,19 @@
 ---
 
 ## Table of Contents
+
 1. [Mathematical Foundation](#mathematical-foundation)
+
 2. [Feature Extraction](#feature-extraction)
+
 3. [User Profile Construction](#user-profile-construction)
+
 4. [Similarity Methods](#similarity-methods)
+
 5. [Deep Learning Approaches](#deep-learning-approaches)
+
 6. [Advantages and Limitations](#advantages-and-limitations)
+
 7. [Interview Questions](#interview-questions)
 
 ---
@@ -255,8 +262,11 @@ Useful for binary features like genre tags.
 ![Diagram 2](images/diagram_02.svg)
 
 **Architecture:**
+
 1. Feature-specific encoders (text, image, categorical)
+
 2. Fusion layer
+
 3. Final projection to embedding space
 
 **Forward Pass:**
@@ -381,9 +391,13 @@ Recommendations reinforce existing preferences → narrowing exposure.
 ### Q2: How do you handle the filter bubble problem?
 
 **Strategies:**
+
 1. **Exploration bonus:** \(s'(u,i) = s(u,i) + \epsilon \cdot \text{novelty}(i)\)
+
 2. **Diversity constraint:** MMR (Maximal Marginal Relevance)
+
 3. **Randomization:** Inject random items periodically
+
 4. **Multi-armed bandits:** Systematic exploration
 
 ### Q3: Compare TF-IDF vs neural embeddings for text features.
@@ -401,8 +415,11 @@ Recommendations reinforce existing preferences → narrowing exposure.
 ## Further Reading
 
 1. **Lops et al. (2011)** — Content-based Recommender Systems: State of the Art
+
 2. **Pazzani & Billsus (2007)** — Content-Based Recommendation Systems
+
 3. **Devlin et al. (2019)** — BERT: Pre-training of Deep Bidirectional Transformers
+
 4. **Radford et al. (2021)** — CLIP: Learning Transferable Visual Models
 
 ---

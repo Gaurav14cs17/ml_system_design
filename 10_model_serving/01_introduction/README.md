@@ -99,8 +99,11 @@ graph TB
 ### Impact Areas
 
 1. **User Experience**: Fast, reliable predictions improve product quality
+
 2. **Business Metrics**: Enable real-time personalization, fraud detection, recommendations
+
 3. **Operational Efficiency**: Automate decisions at scale
+
 4. **Competitive Advantage**: Faster time-to-market for ML features
 
 ---
@@ -734,9 +737,13 @@ curl -X POST "http://localhost:8000/predict" \
 Model serving transforms ML experiments into production value. Key takeaways:
 
 1. **Serving ≠ Training**: Different goals, constraints, and optimization targets
+
 2. **Choose the Right Paradigm**: Online for real-time, batch for throughput, streaming for events
+
 3. **Design for Failure**: Everything fails eventually; build resilience
+
 4. **Measure Everything**: You can't improve what you don't measure
+
 5. **Start Simple**: Begin with FastAPI, scale to specialized frameworks when needed
 
 ---

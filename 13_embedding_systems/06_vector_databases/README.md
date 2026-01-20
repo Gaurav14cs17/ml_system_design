@@ -16,14 +16,23 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Why Vector Databases?](#why-vector-databases)
+
 3. [Key Concepts](#key-concepts)
+
 4. [Popular Vector Databases](#popular-vector-databases)
+
 5. [Indexing Strategies](#indexing-strategies)
+
 6. [Comparison of Solutions](#comparison-of-solutions)
+
 7. [Practical Implementation](#practical-implementation)
+
 8. [Production Considerations](#production-considerations)
+
 9. [Summary](#summary)
 
 ---
@@ -81,9 +90,13 @@ print(f"Brute force: {time.time() - start:.2f}s")
 ### Vector DB Benefits
 
 1. **Sub-millisecond queries** on billion-scale data
+
 2. **Approximate nearest neighbor** (ANN) algorithms
+
 3. **Hybrid search**: vectors + metadata filters
+
 4. **Distributed**: horizontal scaling
+
 5. **Persistence**: durability and recovery
 
 ---
@@ -579,9 +592,13 @@ metrics = {
 ### Key Takeaways
 
 1. **Vector DBs are essential** for embedding search at scale
+
 2. **HNSW** provides best recall-speed tradeoff
+
 3. **Choose based on scale**: ChromaDB → Qdrant → Milvus
+
 4. **Metadata filtering** enables hybrid search
+
 5. **Monitor performance** and tune index parameters
 
 ### Quick Selection Guide

@@ -214,8 +214,11 @@ This repository is your **comprehensive guide** to designing, building, and depl
 
 ```bash
 # Start with the most common interview topics
+
 1. 01_recommendation_systems/  → Netflix, Spotify, Amazon
+
 2. 02_search_ranking/          → Google, Elasticsearch
+
 3. 03_ads_click_prediction/    → Meta, Google Ads
 
 ```
@@ -224,8 +227,11 @@ This repository is your **comprehensive guide** to designing, building, and depl
 
 ```bash
 # Start with infrastructure fundamentals
+
 1. 09_feature_store/           → Feast, Tecton patterns
+
 2. 10_model_serving/           → TensorFlow Serving, Triton
+
 3. 12_mlops_monitoring/        → MLflow, Kubeflow
 
 ```

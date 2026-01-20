@@ -13,14 +13,23 @@
 ## 📖 Table of Contents
 
 1. [Introduction](#introduction)
+
 2. [Types of Features](#types-of-features)
+
 3. [User Features](#user-features)
+
 4. [Item Features](#item-features)
+
 5. [Interaction Features](#interaction-features)
+
 6. [Contextual Features](#contextual-features)
+
 7. [Feature Encoding Techniques](#feature-encoding-techniques)
+
 8. [Embeddings](#embeddings)
+
 9. [Feature Selection](#feature-selection)
+
 10. [Best Practices](#best-practices)
 
 ---
@@ -619,9 +628,13 @@ Feature engineering is crucial for recommendation systems. The right features ca
 ### Key Takeaways
 
 1. **Diverse feature sources** - Use user, item, interaction, and context
+
 2. **Time-aware features** - Recency and trends matter
+
 3. **Smart encoding** - Match technique to cardinality
+
 4. **Embeddings** - Capture complex relationships
+
 5. **Validate carefully** - Avoid data leakage
 
 ---

@@ -7,9 +7,13 @@
 ## 📑 Table of Contents
 
 1. [Generative Models Overview](#generative-models-overview)
+
 2. [GANs (Generative Adversarial Networks)](#gans)
+
 4. [Diffusion Models](#diffusion-models)
+
 5. [Applications](#applications)
+
 6. [Implementation Guide](#gan-implementation)
 
 ---
@@ -292,9 +296,13 @@ images = generator.generate(
 ## 📚 Key Takeaways
 
 1. **GANs** are fast but hard to train (mode collapse)
+
 2. **VAEs** have smooth latent space but blurry outputs
+
 3. **Diffusion models** are SOTA but slow (many steps)
+
 4. **Classifier-free guidance** improves quality significantly
+
 5. **ControlNet** adds precise control to diffusion
 
 ---

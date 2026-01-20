@@ -21,10 +21,15 @@
 ## 📚 Table of Contents
 
 1. [Data Source Types](#data-source-types)
+
 2. [Batch Ingestion](#batch-ingestion)
+
 3. [Streaming Ingestion](#streaming-ingestion)
+
 4. [Change Data Capture](#change-data-capture)
+
 5. [Data Connectors](#data-connectors)
+
 6. [Data Quality](#data-quality)
 
 ---
@@ -496,8 +501,11 @@ def ingest_with_validation(df, feature_name: str):
 ### Key Takeaways
 
 1. **Choose the right pattern** - Batch vs streaming vs CDC
+
 2. **Validate early** - Data quality at ingestion
+
 3. **Handle failures gracefully** - Retries, dead letter queues
+
 4. **Monitor everything** - Latency, throughput, errors
 
 ---

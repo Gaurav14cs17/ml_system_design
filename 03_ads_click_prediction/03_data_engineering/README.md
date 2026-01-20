@@ -15,10 +15,15 @@
 ## 📖 Table of Contents
 
 1. [Data Sources](#data-sources)
+
 2. [Data Schema](#data-schema)
+
 3. [Pipeline Architecture](#pipeline-architecture)
+
 4. [Label Collection](#label-collection)
+
 5. [Data Quality](#data-quality)
+
 6. [Storage Strategy](#storage-strategy)
 
 ---
@@ -276,9 +281,13 @@ w_{\text{negative}} = \frac{1}{\text{Sample Rate}}
 ## Key Takeaways
 
 1. **Lambda architecture**: Combine streaming + batch for different latency needs
+
 2. **Delayed feedback**: Wait before labeling negatives; use confidence scores
+
 3. **Position bias**: Apply IPW correction for unbiased training
+
 4. **Data quality**: Monitor PSI for distribution drift
+
 5. **Negative sampling**: Downsample but correct with weights
 
 ---

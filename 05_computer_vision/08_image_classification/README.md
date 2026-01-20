@@ -7,10 +7,15 @@
 ## 📑 Table of Contents
 
 1. [Classification Fundamentals](#classification-fundamentals)
+
 2. [Transfer Learning](#transfer-learning)
+
 3. [Fine-Tuning Strategies](#fine-tuning-strategies)
+
 4. [Data Augmentation](#data-augmentation)
+
 5. [Training Best Practices](#training-best-practices)
+
 6. [Production Considerations](#production-considerations)
 
 ---
@@ -409,10 +414,15 @@ class ProductionClassifier:
 ## 📚 Key Takeaways
 
 1. **Transfer learning** almost always beats training from scratch
+
 2. **Gradual unfreezing** and **discriminative LR** improve fine-tuning
+
 3. **Strong augmentation** (mixup, cutmix) helps generalization
+
 4. **Label smoothing** prevents overconfidence
+
 5. **Mixed precision** speeds up training with no accuracy loss
+
 6. **ONNX/TorchScript** for production inference
 
 ---

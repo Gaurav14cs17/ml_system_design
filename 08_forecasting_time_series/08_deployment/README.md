@@ -732,10 +732,15 @@ spec:
 ## Summary
 
 Production forecasting systems require:
+
 1. **Robust data pipelines** with validation
+
 2. **Flexible serving** (batch + online)
+
 3. **Comprehensive monitoring**
+
 4. **Automated retraining**
+
 5. **Scalable infrastructure**
 
 ### Next Steps

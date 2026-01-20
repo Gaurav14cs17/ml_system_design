@@ -25,10 +25,15 @@
 ## 📖 Table of Contents
 
 1. [Why A/B Test ML Models?](#why-ab-test-ml-models)
+
 2. [Statistical Foundations](#statistical-foundations)
+
 3. [Sample Size Calculation](#sample-size-calculation)
+
 4. [Sequential Testing](#sequential-testing)
+
 5. [Implementation Guide](#implementation-guide)
+
 6. [Common Pitfalls](#common-pitfalls)
 
 ---
@@ -317,7 +322,9 @@ Where \( m \) is the number of tests. Conservative but simple.
 ### Benjamini-Hochberg (FDR Control)
 
 1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
+
 2. Find largest \( k \) where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
+
 3. Reject all \( H_{(1)}, ..., H_{(k)} \)
 
 Less conservative, controls **False Discovery Rate**.
@@ -451,10 +458,15 @@ def analyze_experiment(control: np.ndarray, treatment: np.ndarray,
 ## 🔑 Key Takeaways
 
 1. **Statistical rigor is non-negotiable** — Understand the math behind decisions
+
 2. **Pre-register your experiment** — Define metrics, sample size, duration upfront
+
 3. **Don't peek** — Or use sequential testing if you must
+
 4. **Effect size matters** — Statistical significance ≠ practical importance
+
 5. **Correct for multiple testing** — When examining many metrics
+
 6. **Document everything** — Learnings compound over time
 
 ---

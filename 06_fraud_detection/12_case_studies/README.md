@@ -14,11 +14,17 @@
 ## 📖 Table of Contents
 
 1. [Case Study 1: E-Commerce Payment Fraud](#case-study-1-e-commerce-payment-fraud)
+
 2. [Case Study 2: Account Takeover Prevention](#case-study-2-account-takeover-prevention)
+
 3. [Case Study 3: Real-Time Card Fraud at Scale](#case-study-3-real-time-card-fraud-at-scale)
+
 4. [Case Study 4: Insurance Fraud Detection](#case-study-4-insurance-fraud-detection)
+
 5. [Lessons Learned](#lessons-learned)
+
 6. [Common Pitfalls](#common-pitfalls)
+
 7. [Industry Best Practices](#industry-best-practices)
 
 ---
@@ -111,8 +117,11 @@ class EcommerceF raudScorer:
 ### Lessons Learned
 
 1. **Session behavior was gold**: Legitimate users browse; fraudsters don't
+
 2. **Device signals crucial**: Device fingerprinting caught 40% of fraud
+
 3. **Velocity windows matter**: 1-hour windows caught rapid-fire fraud
+
 4. **Rule-ML hybrid essential**: Rules for instant protection, ML for patterns
 
 ---
@@ -666,6 +675,7 @@ class InsuranceFraudNetwork:
 ### Technical Lessons
 
 ```yaml
+
 1. Start Simple, Add Complexity:
    - Begin with logistic regression baseline
    - Add features incrementally, measuring impact
@@ -696,6 +706,7 @@ class InsuranceFraudNetwork:
 ### Organizational Lessons
 
 ```yaml
+
 1. Cross-Functional Teams:
    - ML engineers + fraud analysts + ops
    - Domain expertise irreplaceable
@@ -842,9 +853,13 @@ Annually:
 Key takeaways from real-world implementations:
 
 1. **Context matters**: E-commerce, ATO, payments, insurance all different
+
 2. **Scale requires optimization**: Every millisecond counts
+
 3. **Hybrid approaches work best**: ML + rules + humans
+
 4. **Continuous improvement essential**: Fraudsters never stop
+
 5. **Business alignment critical**: Technical success ≠ business success
 
 ---

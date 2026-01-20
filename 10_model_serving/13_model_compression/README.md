@@ -527,8 +527,11 @@ where:
 \]
 
 This gradient:
+
 1. Is non-zero for all classes (not just the correct one)
+
 2. Contains inter-class relationship information
+
 3. Has lower variance than hard labels
 
 #### Feature-based Distillation
@@ -696,7 +699,9 @@ Typically \( \tau = 0.99 \) preserves most information with significant compress
 For convolutional layers with kernel \( \mathcal{K} \in \mathbb{R}^{C_{out} \times C_{in} \times H \times W} \):
 
 1. **Reshape** to 2D: \( W \in \mathbb{R}^{C_{out} \times (C_{in} \cdot H \cdot W)} \)
+
 2. **Apply SVD**: \( W \approx AB \)
+
 3. **Replace** original conv with two convs: 1×1 conv (B) followed by 1×1 conv (A)
 
 ### Matrix Decomposition

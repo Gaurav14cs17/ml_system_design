@@ -286,9 +286,13 @@ Day 11-14: Design your own system
 ### YouTube Playlists to Subscribe
 
 1. **Stanford CS229 Machine Learning** - Full course
+
 2. **Stanford CS231n Computer Vision** - CNN foundations
+
 3. **Stanford CS224W Graph ML** - GNN for RecSys
+
 4. **Stanford CS224N NLP** - Transformers, attention
+
 5. **Fast.ai Practical Deep Learning** - Hands-on tutorials
 
 ### Webinar Series

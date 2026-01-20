@@ -3,15 +3,25 @@
 ![A/B Testing Flow](./images/ab_testing_flow.svg)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Experimentation Framework](#experimentation-framework)
+
 3. [Statistical Foundations](#statistical-foundations)
+
 4. [Multi-Armed Bandits](#multi-armed-bandits)
+
 5. [Interleaving Experiments](#interleaving-experiments)
+
 6. [Metrics & Guardrails](#metrics-guardrails)
+
 7. [Common Pitfalls](#common-pitfalls)
+
 8. [Advanced Topics](#advanced-topics)
+
 9. [Production Systems](#production-systems)
+
 10. [Interview Questions](#interview-questions)
 
 ---
@@ -1003,18 +1013,27 @@ experiment_config = {
 **Problem**: Users influence each other (social networks)
 
 **Solutions**:
+
 1. **Cluster randomization**: Randomize at network cluster level
+
 2. **Geo-based experiments**: Different regions get different treatments
+
 3. **Time-based switching**: Alternate treatments over time
+
 4. **Ego-network randomization**: Randomize user + their connections
 
 ### Q3: What do you do if guardrails are violated?
 
 **Steps**:
+
 1. Stop or reduce experiment traffic
+
 2. Investigate root cause
+
 3. Check for bugs vs real effect
+
 4. Consider trade-offs with leadership
+
 5. Document decision and learnings
 
 ---
@@ -1024,9 +1043,13 @@ experiment_config = {
 Effective experimentation requires:
 
 1. **Proper design**: Power analysis, randomization, metrics
+
 2. **Statistical rigor**: Correct tests, multiple comparison correction
+
 3. **Guardrails**: Protect against regressions
+
 4. **Automation**: Scale experimentation infrastructure
+
 5. **Culture**: Learn from all experiments, including failures
 
 ---

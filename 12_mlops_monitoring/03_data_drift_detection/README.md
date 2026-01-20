@@ -25,10 +25,15 @@
 ## 📖 Table of Contents
 
 1. [What is Data Drift?](#what-is-data-drift)
+
 2. [Mathematical Framework](#mathematical-framework)
+
 3. [Statistical Tests for Drift Detection](#statistical-tests-for-drift-detection)
+
 4. [Categorical Feature Drift](#categorical-feature-drift)
+
 5. [Practical Implementation](#practical-implementation)
+
 6. [Automated Monitoring Pipeline](#automated-monitoring-pipeline)
 
 ---
@@ -270,7 +275,9 @@ Where \( \epsilon \) is the minimum detectable proportional change per bin.
 Using bootstrap methods, construct confidence intervals:
 
 1. Resample with replacement \( B \) times
+
 2. Compute \( PSI_b \) for each bootstrap sample
+
 3. Use percentile method: \( CI = [PSI_{(\alpha/2)}, PSI_{(1-\alpha/2)}] \)
 
 ---
@@ -377,8 +384,11 @@ When monitoring many features, apply **multiple testing correction**:
 Where \( m \) is the number of features tested.
 
 **Benjamini-Hochberg (FDR Control):**
+
 1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
+
 2. Find largest \( k \) where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
+
 3. Reject hypotheses \( H_{(1)}, ..., H_{(k)} \)
 
 ---
@@ -386,10 +396,15 @@ Where \( m \) is the number of features tested.
 ## 🔑 Key Takeaways
 
 1. **PSI is the industry standard** — Simple, interpretable, and effective for production monitoring
+
 2. **Mathematical foundation matters** — Understanding the theory helps choose appropriate methods
+
 3. **Combine multiple methods** — PSI + statistical tests provide confidence
+
 4. **Monitor all features** — Drift can occur in any feature independently
+
 5. **Account for multiple testing** — Apply corrections when monitoring many features
+
 6. **Set appropriate thresholds** — PSI > 0.2 is generally concerning, but context matters
 
 ---

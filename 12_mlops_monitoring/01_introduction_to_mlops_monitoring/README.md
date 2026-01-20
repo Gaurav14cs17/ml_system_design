@@ -23,10 +23,15 @@ By the end of this chapter, you will understand:
 ## 📖 Table of Contents
 
 1. [What is MLOps Monitoring?](#what-is-mlops-monitoring)
+
 2. [Why Traditional Monitoring Isn't Enough](#why-traditional-monitoring-isnt-enough)
+
 3. [The ML Monitoring Lifecycle](#the-ml-monitoring-lifecycle)
+
 4. [Key Monitoring Components](#key-monitoring-components)
+
 5. [Common ML System Failures](#common-ml-system-failures)
+
 6. [Building a Monitoring Strategy](#building-a-monitoring-strategy)
 
 ---
@@ -283,16 +288,23 @@ Understanding failure modes helps design better monitoring:
 Like the testing pyramid, monitoring should be layered:
 
 1. **Foundation (Operational)**: Most coverage, cheapest
+
 2. **Data Quality**: Catch issues before they affect models
+
 3. **Model Performance**: Core ML metrics
+
 4. **Business Impact**: Ultimate measure of success
 
 ### Strategy Design Principles
 
 1. **Start simple** — Basic metrics first, add complexity as needed
+
 2. **Automate early** — Manual monitoring doesn't scale
+
 3. **Set meaningful thresholds** — Based on business impact, not arbitrary values
+
 4. **Create runbooks** — Document response procedures
+
 5. **Test your alerts** — Fire drills for monitoring systems
 
 ### Threshold Setting Guidelines
@@ -323,9 +335,13 @@ For implementation details, see the accompanying code examples in the `examples/
 ## 🔑 Key Takeaways
 
 1. **ML systems fail differently** than traditional software—silently and gradually
+
 2. **Traditional APM is necessary but not sufficient** for ML systems
+
 3. **Monitoring must be continuous** and cover data, model, operations, and business
+
 4. **Establish baselines** before deployment to detect degradation
+
 5. **Design for observability** from day one, not as an afterthought
 
 ---

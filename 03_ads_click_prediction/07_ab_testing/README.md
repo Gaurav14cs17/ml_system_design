@@ -15,9 +15,13 @@
 ## 📖 Table of Contents
 
 1. [Experimentation Framework](#experimentation-framework)
+
 2. [Experiment Design](#experiment-design)
+
 3. [Statistical Analysis](#statistical-analysis)
+
 4. [Common Pitfalls](#common-pitfalls)
+
 5. [Advanced Methods](#advanced-methods)
 
 ---
@@ -341,10 +345,15 @@ Use when:
 ## Key Takeaways
 
 1. **Sample size**: Calculate before running; don't peek
+
 2. **Consistency**: Same user always sees same variant
+
 3. **Duration**: Run full weeks to capture patterns
+
 4. **Guardrails**: Monitor metrics that must not degrade
+
 5. **Variance reduction**: CUPED can halve required sample size
+
 6. **Multiple testing**: Adjust for many comparisons
 
 ---

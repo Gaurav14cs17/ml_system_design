@@ -185,23 +185,35 @@ print(moderate("Hello world!"))
 ## Learning Path
 
 ### Beginner (Week 1-2)
+
 1. Read [Introduction](./01_introduction/README.md)
+
 2. Understand [System Architecture](./02_system_requirements_architecture/README.md)
+
 3. Learn [Text Moderation](./04_text_moderation/README.md) basics
 
 ### Intermediate (Week 3-4)
+
 1. Deep dive into [Image/Video Moderation](./05_image_video_moderation/README.md)
+
 2. Explore [Model Training](./06_model_training_selection/README.md)
+
 3. Understand [Evaluation Metrics](./09_evaluation_metrics/README.md)
 
 ### Advanced (Week 5-6)
+
 1. Study [Model Serving](./08_model_serving_inference/README.md)
+
 2. Learn [Scalability](./11_scalability_performance/README.md)
+
 3. Review [Case Studies](./15_case_studies/README.md)
 
 ### Expert (Week 7-8)
+
 1. Master [Edge Cases](./13_edge_cases_adversarial/README.md)
+
 2. Understand [Legal/Ethics](./14_legal_ethical_considerations/README.md)
+
 3. Implement end-to-end system
 
 ---

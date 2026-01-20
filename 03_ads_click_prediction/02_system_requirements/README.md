@@ -15,10 +15,15 @@
 ## 📖 Table of Contents
 
 1. [Functional Requirements](#functional-requirements)
+
 2. [Non-Functional Requirements](#non-functional-requirements)
+
 3. [Scale Estimation](#scale-estimation)
+
 4. [Latency Budget](#latency-budget)
+
 5. [SLA Definitions](#sla-definitions)
+
 6. [API Specifications](#api-specifications)
 
 ---
@@ -334,9 +339,13 @@ If burn rate > 1, SLO will be violated.
 ## Key Takeaways
 
 1. **Latency budget is tight**: 10ms total, 3ms for inference
+
 2. **Scale is massive**: 1M+ QPS, 99.99% availability
+
 3. **Error budgets**: 4.32 minutes/month downtime allowed
+
 4. **Capacity planning**: Design for 3-5x growth
+
 5. **SLIs drive SLOs**: Measure what matters
 
 ---

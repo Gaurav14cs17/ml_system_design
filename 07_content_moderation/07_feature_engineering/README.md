@@ -603,10 +603,15 @@ class FeatureSelector:
 Feature engineering for content moderation includes:
 
 1. **Text Features**: Linguistic patterns, sentiment, toxicity signals
+
 2. **User Features**: Account age, history, trust signals
+
 3. **Contextual Features**: Thread context, timing, platform location
+
 4. **Graph Features**: Social network structure, community patterns
+
 5. **Feature Stores**: Low-latency serving of precomputed features
+
 6. **Feature Selection**: Identify most predictive features
 
 ---

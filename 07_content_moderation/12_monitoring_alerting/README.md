@@ -452,18 +452,21 @@ class AlertManager:
 ## Resolution Steps
 
 ### If GPU overloaded:
+
 1. Scale up inference pods
    ```bash
    kubectl scale deployment inference-service --replicas=20
    ```
 
 ### If model issue:
+
 1. Rollback to previous model version
    ```bash
    kubectl set image deployment/inference-service model=model:v1.4.0
    ```
 
 ### If queue backlog:
+
 1. Enable burst capacity
    ```bash
    kubectl apply -f burst-config.yaml
@@ -550,10 +553,15 @@ class DriftDetector:
 Effective monitoring for content moderation includes:
 
 1. **Multi-layer metrics**: Infrastructure, application, model, business
+
 2. **Real-time alerting**: PagerDuty, Slack for different severities
+
 3. **Comprehensive dashboards**: Grafana for visualization
+
 4. **Drift detection**: Monitor prediction and feature drift
+
 5. **Incident runbooks**: Clear response procedures
+
 6. **Proactive monitoring**: Catch issues before they impact users
 
 ---

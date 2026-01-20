@@ -18,17 +18,29 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [The Challenge of Compositionality](#the-challenge-of-compositionality)
+
 3. [Simple Aggregation Methods](#simple-aggregation-methods)
+
 4. [Doc2Vec: Paragraph Vectors](#doc2vec-paragraph-vectors)
+
 5. [Recurrent Neural Networks](#recurrent-neural-networks)
+
 6. [Transformer-Based Embeddings](#transformer-based-embeddings)
+
 7. [Sentence-BERT and Bi-Encoders](#sentence-bert-and-bi-encoders)
+
 8. [Contrastive Learning Approaches](#contrastive-learning-approaches)
+
 9. [Specialized Domain Embeddings](#specialized-domain-embeddings)
+
 10. [Practical Implementation](#practical-implementation)
+
 11. [Evaluation and Benchmarks](#evaluation-and-benchmarks)
+
 12. [Summary](#summary)
 
 ---
@@ -80,9 +92,13 @@ Same words, completely different meanings! Simple averaging loses:
 ### Desiderata for Good Sentence Embeddings
 
 1. **Semantic similarity**: Similar sentences → similar vectors
+
 2. **Order sensitivity**: Capture syntactic structure
+
 3. **Compositionality**: Build meaning from parts
+
 4. **Efficiency**: Fast to compute at scale
+
 5. **Domain transfer**: Work across different domains
 
 ---
@@ -1063,9 +1079,13 @@ def evaluate_retrieval(encoder, queries, documents, relevance_labels, k=10):
 ## References
 
 1. Le, Q., & Mikolov, T. (2014). "Distributed Representations of Sentences and Documents"
+
 2. Reimers, N., & Gurevych, I. (2019). "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks"
+
 3. Gao, T., et al. (2021). "SimCSE: Simple Contrastive Learning of Sentence Embeddings"
+
 4. Wang, L., et al. (2022). "Text Embeddings by Weakly-Supervised Contrastive Pre-training" (E5)
+
 5. Xiao, S., et al. (2023). "C-Pack: Packaged Resources To Advance General Chinese Embedding" (BGE)
 
 ---

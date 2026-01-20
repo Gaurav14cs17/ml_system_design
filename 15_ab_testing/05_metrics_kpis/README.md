@@ -1,12 +1,19 @@
 # Metrics and KPIs for A/B Testing
 
 ## Table of Contents
+
 1. [Metric Taxonomy](#metric-taxonomy)
+
 2. [Choosing the Right Metrics](#choosing-the-right-metrics)
+
 3. [Metric Properties](#metric-properties)
+
 4. [Common Metrics by Domain](#common-metrics-by-domain)
+
 5. [Composite Metrics (OEC)](#composite-metrics-oec)
+
 6. [Metric Computation](#metric-computation)
+
 7. [Metric Validation](#metric-validation)
 
 ---
@@ -633,10 +640,15 @@ class MetricComputation:
 Effective metric design is crucial for trustworthy experimentation:
 
 1. **Use a metric hierarchy** - Primary, Secondary, Guardrails, Debug
+
 2. **Validate metric properties** - Sensitivity, directionality, stability
+
 3. **Choose metrics aligned with goals** - Use frameworks like AARRR
+
 4. **Consider composite metrics (OEC)** for multi-objective decisions
+
 5. **Handle edge cases** in computation
+
 6. **Document metric definitions** thoroughly
 
 ---

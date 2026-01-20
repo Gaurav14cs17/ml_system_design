@@ -1,12 +1,19 @@
 # Training Pipeline: From Data to Models
 
 ## 📋 Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Training Data Collection](#training-data-collection)
+
 3. [Label Generation](#label-generation)
+
 4. [Data Processing Pipeline](#data-processing-pipeline)
+
 5. [Training Infrastructure](#training-infrastructure)
+
 6. [Experiment Management](#experiment-management)
+
 7. [Model Validation](#model-validation)
 
 ---
@@ -661,8 +668,11 @@ class OfflineEvaluator:
 ## Key Takeaways
 
 1. **Data Quality > Quantity**: Clean, well-labeled data matters more than volume
+
 2. **Handle Position Bias**: Use IPW or randomization to debias
+
 3. **Experiment Tracking**: Always track experiments systematically
+
 4. **Validate Thoroughly**: Offline metrics + human evaluation + online A/B tests
 
 ---

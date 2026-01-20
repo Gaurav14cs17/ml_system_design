@@ -14,13 +14,21 @@
 ## 📖 Table of Contents
 
 1. [Deployment Architecture](#deployment-architecture)
+
 2. [Containerization](#containerization)
+
 3. [Kubernetes Deployment](#kubernetes-deployment)
+
 4. [Scaling Strategies](#scaling-strategies)
+
 5. [Blue-Green and Canary Deployments](#blue-green-and-canary-deployments)
+
 6. [CI/CD Pipeline](#cicd-pipeline)
+
 7. [Model Registry and Versioning](#model-registry-and-versioning)
+
 8. [Multi-Region Deployment](#multi-region-deployment)
+
 9. [Cost Optimization](#cost-optimization)
 
 ---
@@ -938,9 +946,13 @@ spec:
 Key deployment and scaling principles:
 
 1. **Containerize everything**: Docker for consistency
+
 2. **Kubernetes for orchestration**: Auto-scaling, health checks
+
 3. **Progressive rollouts**: Canary deployments with automated analysis
+
 4. **Multi-region**: Global availability and low latency
+
 5. **Cost optimization**: Right-size resources, use spot instances
 
 ---

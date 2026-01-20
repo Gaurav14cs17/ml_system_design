@@ -18,14 +18,23 @@
 ---
 
 ## Table of Contents
+
 1. [Semantic Search](#semantic-search)
+
 2. [Recommendation Systems](#recommendation-systems)
+
 3. [RAG (Retrieval-Augmented Generation)](#rag-retrieval-augmented-generation)
+
 4. [Duplicate Detection](#duplicate-detection)
+
 5. [Clustering and Topic Modeling](#clustering-and-topic-modeling)
+
 6. [Anomaly Detection](#anomaly-detection)
+
 7. [Multi-Modal Applications](#multi-modal-applications)
+
 8. [E-commerce Applications](#e-commerce-applications)
+
 9. [Summary](#summary)
 
 ---
@@ -670,8 +679,11 @@ class EcommerceSearchSystem:
 ### Key Patterns
 
 1. **Encode once, search many**: Pre-compute embeddings
+
 2. **Two-stage retrieval**: Bi-encoder → Cross-encoder
+
 3. **Hybrid approaches**: Combine keyword + semantic
+
 4. **Filtering**: Apply metadata filters post-retrieval
 
 ---

@@ -18,15 +18,25 @@
 ---
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [CNN-Based Embeddings](#cnn-based-embeddings)
+
 3. [Vision Transformers (ViT)](#vision-transformers-vit)
+
 4. [Contrastive Learning: CLIP & Beyond](#contrastive-learning-clip-beyond)
+
 5. [Self-Supervised Methods](#self-supervised-methods)
+
 6. [Multi-Modal Embeddings](#multi-modal-embeddings)
+
 7. [Fine-Tuning Image Embeddings](#fine-tuning-image-embeddings)
+
 8. [Practical Implementation](#practical-implementation)
+
 9. [Applications](#applications)
+
 10. [Summary](#summary)
 
 ---
@@ -319,8 +329,11 @@ similarity = np.dot(img_embedding, text_embedding)
 ### Applications
 
 1. **Text-to-Image Search**: Find images matching text query
+
 2. **Image-to-Text Search**: Find captions/descriptions for images
+
 3. **Zero-Shot Classification**: Classify without training examples
+
 4. **Visual Question Answering**: Combine with LLMs
 
 ---
@@ -489,10 +502,15 @@ results = engine.search_by_text("sunset over mountains", k=5)
 ## Applications
 
 1. **E-commerce Visual Search**: Find products by photo
+
 2. **Content Moderation**: Detect similar harmful content
+
 3. **Reverse Image Search**: Find image origins
+
 4. **Face Recognition**: Verify/identify faces
+
 5. **Medical Imaging**: Find similar cases
+
 6. **Creative Tools**: Style transfer, image generation
 
 ---
@@ -502,9 +520,13 @@ results = engine.search_by_text("sunset over mountains", k=5)
 ### Key Takeaways
 
 1. **CNNs to Transformers**: ViT now dominates, especially for large-scale
+
 2. **CLIP revolutionized multimodal**: Aligned image-text space
+
 3. **Self-supervised works**: DINOv2, MAE don't need labels
+
 4. **Fine-tuning helps**: Domain-specific adaptation improves results
+
 5. **Efficient search**: FAISS enables billion-scale similarity
 
 ### Model Selection Guide

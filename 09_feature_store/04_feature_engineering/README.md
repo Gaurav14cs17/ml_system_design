@@ -21,12 +21,19 @@
 ## 📚 Table of Contents
 
 1. [Feature Engineering Overview](#feature-engineering-overview)
+
 2. [Feature Types and Patterns](#feature-types-and-patterns)
+
 3. [Aggregation Patterns](#aggregation-patterns)
+
 4. [Time Windows](#time-windows)
+
 5. [Batch Feature Engineering](#batch-feature-engineering)
+
 6. [Streaming Feature Engineering](#streaming-feature-engineering)
+
 7. [On-Demand Features](#on-demand-features)
+
 8. [Feature Pipelines](#feature-pipelines)
 
 ---

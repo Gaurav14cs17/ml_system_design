@@ -11,11 +11,17 @@
 ## 📑 Table of Contents
 
 1. [What is Semantic Segmentation?](#what-is-semantic-segmentation)
+
 2. [Architecture Evolution](#architecture-evolution)
+
 3. [FCN (Fully Convolutional Networks)](#fcn)
+
 4. [U-Net](#u-net)
+
 5. [DeepLab Family](#deeplab-family)
+
 6. [Loss Functions](#loss-functions)
+
 7. [Implementation Guide](#implementation-guide)
 
 ---
@@ -530,9 +536,13 @@ class SegmentationTrainer:
 ## 📚 Key Takeaways
 
 1. **U-Net** is great for medical imaging with skip connections
+
 2. **DeepLab** with dilated convolutions captures multi-scale context
+
 3. **Dice loss** helps with class imbalance
+
 4. **mIoU** is the standard evaluation metric
+
 5. **Pretrained encoders** significantly improve results
 
 ---

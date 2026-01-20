@@ -3,15 +3,25 @@
 ![Feature Categories](./images/feature_categories.svg)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [User Features](#user-features)
+
 3. [Item Features](#item-features)
+
 4. [Interaction Features](#interaction-features)
+
 5. [Contextual Features](#contextual-features)
+
 6. [Feature Transformations](#feature-transformations)
+
 7. [Feature Store Architecture](#feature-store-architecture)
+
 8. [Real-Time vs Batch Features](#real-time-vs-batch-features)
+
 9. [Best Practices](#best-practices)
+
 10. [Interview Questions](#interview-questions)
 
 ---
@@ -1191,10 +1201,15 @@ registry.register(
 ### Q2: How do you handle missing features?
 
 **Strategies**:
+
 1. **Default values**: Use global mean/median
+
 2. **Indicator features**: Add `is_missing` flag
+
 3. **Model-based imputation**: Predict missing values
+
 4. **Category for missing**: Treat as separate category
+
 5. **Zero imputation**: For count-based features
 
 ### Q3: How do you detect and handle feature drift?
@@ -1222,9 +1237,13 @@ registry.register(
 Effective feature engineering requires:
 
 1. **Domain knowledge**: Understand what signals matter
+
 2. **Temporal awareness**: Features change over time
+
 3. **Scale considerations**: Real-time vs batch trade-offs
+
 4. **Documentation**: Features must be discoverable
+
 5. **Monitoring**: Track feature health in production
 
 ---

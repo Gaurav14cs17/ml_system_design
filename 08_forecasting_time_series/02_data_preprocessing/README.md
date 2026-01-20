@@ -1359,9 +1359,13 @@ preprocessing:
 Time series preprocessing requires special attention to:
 
 1. **Temporal Integrity**: Maintain chronological order and handle time-specific issues
+
 2. **Missing Values**: Use interpolation methods that respect temporal patterns
+
 3. **Outliers**: Distinguish between noise and meaningful anomalies
+
 4. **Scaling**: Fit only on training data to prevent data leakage
+
 5. **Splitting**: Always use temporal splits, never random
 
 ### Preprocessing Checklist

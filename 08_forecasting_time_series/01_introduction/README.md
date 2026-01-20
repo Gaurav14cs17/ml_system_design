@@ -801,9 +801,13 @@ class ForecastMonitor:
 Time series forecasting is a critical capability in ML systems, requiring understanding of:
 
 1. **Data Characteristics**: Temporal dependencies, stationarity, seasonality
+
 2. **Problem Types**: Forecasting, anomaly detection, classification
+
 3. **Components**: Trend, seasonality, cycles, residuals
+
 4. **Challenges**: Non-stationarity, missing data, concept drift
+
 5. **System Design**: End-to-end pipeline from ingestion to monitoring
 
 ### Next Steps
@@ -821,7 +825,9 @@ Continue your learning journey:
 ## References
 
 1. Hyndman, R.J., & Athanasopoulos, G. (2021). *Forecasting: Principles and Practice*, 3rd edition
+
 2. Box, G.E.P., Jenkins, G.M., Reinsel, G.C., & Ljung, G.M. (2015). *Time Series Analysis: Forecasting and Control*
+
 3. Hamilton, J.D. (1994). *Time Series Analysis*
 
 ---

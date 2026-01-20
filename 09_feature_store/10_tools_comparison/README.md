@@ -23,12 +23,19 @@
 ## 📚 Table of Contents
 
 1. [Tool Landscape](#tool-landscape)
+
 2. [Feast (Open Source)](#feast-open-source)
+
 3. [Tecton](#tecton)
+
 4. [Databricks Feature Store](#databricks-feature-store)
+
 5. [AWS SageMaker Feature Store](#aws-sagemaker-feature-store)
+
 6. [GCP Vertex AI Feature Store](#gcp-vertex-ai-feature-store)
+
 7. [Comparison Matrix](#comparison-matrix)
+
 8. [Decision Framework](#decision-framework)
 
 ---
@@ -358,9 +365,13 @@ user_entity.read(entity_ids=["user_123"])
 ### Key Takeaways
 
 1. **No one-size-fits-all** - Choose based on your context
+
 2. **Start simple** - You can migrate later
+
 3. **Consider total cost** - Including operational overhead
+
 4. **Evaluate streaming needs** - Big differentiator
+
 5. **Plan for growth** - Choose something that scales
 
 ---

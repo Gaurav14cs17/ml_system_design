@@ -14,14 +14,23 @@
 ## 📖 Table of Contents
 
 1. [Why Rules Still Matter](#why-rules-still-matter)
+
 2. [Types of Rules](#types-of-rules)
+
 3. [Rule Engine Architecture](#rule-engine-architecture)
+
 4. [Rule Definition Language](#rule-definition-language)
+
 5. [Rule Management System](#rule-management-system)
+
 6. [ML + Rules Integration](#ml-rules-integration)
+
 7. [Rule Performance Optimization](#rule-performance-optimization)
+
 8. [Rule Testing and Validation](#rule-testing-and-validation)
+
 9. [Rule Monitoring](#rule-monitoring)
+
 10. [Best Practices](#best-practices)
 
 ---
@@ -1338,9 +1347,13 @@ class TimeDecayRule:
 Effective rule engines for fraud detection:
 
 1. **Complement ML**: Rules handle what ML can't (compliance, instant response)
+
 2. **Layer defense**: Multiple rule types catch different fraud patterns
+
 3. **Easy management**: YAML definitions, hot reload, version control
+
 4. **Testable**: Backtest, unit test, shadow mode before production
+
 5. **Observable**: Track trigger rates, false positives, performance
 
 ---

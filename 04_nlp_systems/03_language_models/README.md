@@ -680,9 +680,13 @@ where $n$ = sequence length, $d$ = model dimension.
 ## 📚 References
 
 1. Vaswani, A., et al. (2017). [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+
 2. Devlin, J., et al. (2018). [BERT: Pre-training of Deep Bidirectional Transformers](https://arxiv.org/abs/1810.04805)
+
 3. Radford, A., et al. (2019). [Language Models are Unsupervised Multitask Learners](https://openai.com/research/better-language-models)
+
 4. Brown, T., et al. (2020). [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165)
+
 5. [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - Jay Alammar
 
 ---

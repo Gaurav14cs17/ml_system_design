@@ -563,9 +563,13 @@ class FairnessMonitor:
 ## 🔑 Key Takeaways
 
 1. **Document everything** - Model cards are not optional
+
 2. **Audit trails must be immutable** - Use cryptographic hashing
+
 3. **Fairness is measurable** - Monitor protected groups
+
 4. **Compliance is ongoing** - Not a one-time checkbox
+
 5. **Explainability enables trust** - Know why your model decides
 
 ---

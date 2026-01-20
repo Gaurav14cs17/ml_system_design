@@ -496,7 +496,9 @@ trainer.train(examples, epochs=30)
 ## 📚 References
 
 1. [spaCy NER Guide](https://spacy.io/usage/linguistic-features#named-entities)
+
 2. [BERT for NER](https://arxiv.org/abs/1810.04805)
+
 3. [CoNLL-2003 Dataset](https://www.clips.uantwerpen.be/conll2003/ner/)
 
 ---

@@ -3,15 +3,25 @@
 ![Serving Architecture](./images/serving_architecture.svg)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
+
 2. [Serving Architecture Patterns](#serving-architecture-patterns)
+
 3. [Low-Latency Inference](#low-latency-inference)
+
 4. [Candidate Generation & Ranking](#candidate-generation-ranking)
+
 5. [Caching Strategies](#caching-strategies)
+
 6. [Vector Search Systems](#vector-search-systems)
+
 7. [A/B Testing Infrastructure](#ab-testing-infrastructure)
+
 8. [Monitoring & Observability](#monitoring-observability)
+
 9. [Scaling Considerations](#scaling-considerations)
+
 10. [Interview Questions](#interview-questions)
 
 ---
@@ -1022,27 +1032,41 @@ class AutoScaler:
 ### Q1: Design a recommendation serving system for 1M RPS
 
 **Key Points**:
+
 1. **Horizontal scaling**: Stateless servers behind load balancer
+
 2. **Caching layers**: CDN → Application cache → Redis
+
 3. **Precomputation**: Pre-generate for top users
+
 4. **Async processing**: Non-blocking I/O
+
 5. **Efficient models**: ONNX, TensorRT optimization
 
 ### Q2: How do you handle model updates without downtime?
 
 **Strategies**:
+
 1. **Blue-green deployment**: Run two versions, switch traffic
+
 2. **Canary release**: Gradually shift traffic to new model
+
 3. **Shadow mode**: New model runs alongside, compare outputs
+
 4. **Feature flags**: Toggle between models per user
 
 ### Q3: How do you debug latency issues?
 
 **Approach**:
+
 1. **Distributed tracing**: Follow request through all services
+
 2. **Stage timing**: Break down latency by pipeline stage
+
 3. **Profiling**: CPU/memory profiling on hot paths
+
 4. **Cache analysis**: Check hit rates at each level
+
 5. **Model analysis**: Profile inference time
 
 ---
@@ -1052,9 +1076,13 @@ class AutoScaler:
 Production serving requires:
 
 1. **Multi-stage architecture**: Candidate generation → Ranking → Re-ranking
+
 2. **Optimization**: Model quantization, batching, caching
+
 3. **Resilience**: Fallbacks, circuit breakers, graceful degradation
+
 4. **Observability**: Metrics, logging, tracing at every stage
+
 5. **Experimentation**: A/B testing infrastructure built-in
 
 ---

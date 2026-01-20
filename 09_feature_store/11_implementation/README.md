@@ -23,10 +23,15 @@
 ## 📚 Table of Contents
 
 1. [Project Setup](#project-setup)
+
 2. [Fraud Detection Use Case](#fraud-detection-use-case)
+
 3. [Feature Definitions](#feature-definitions)
+
 4. [Batch Feature Pipeline](#batch-feature-pipeline)
+
 5. [Online Serving](#online-serving)
+
 6. [Training Pipeline](#training-pipeline)
 
 ---
