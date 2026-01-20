@@ -328,16 +328,7 @@ user_entity.read(entity_ids=["user_123"])
 |--------|-------|--------|------------|-----------|-----------|
 | **Setup Complexity** | Medium | Low | Low | Low | Low |
 | **Operational Burden** | High | Low | Low | Low | Low |
-| **Cost** | Low | $$
-$ |
-
-```math
- | 
-
-```
-
-|
-$$ |
+| **Cost** | Low | $$$ | $$ | $$ | $$ |
 | **Vendor Lock-in** | None | Medium | High | High | High |
 | **Support** | Community | Enterprise | Enterprise | Enterprise | Enterprise |
 

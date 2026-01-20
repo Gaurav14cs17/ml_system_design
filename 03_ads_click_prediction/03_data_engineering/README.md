@@ -205,10 +205,8 @@ where $A\_i$ = actual proportion in bin $i$, $E\_i$ = expected proportion.
 
 | Tier | Technology | Use Case | Latency | Cost |
 |------|------------|----------|---------|------|
-| **Hot** | Redis Cluster | Real-time features | < 1ms | $$
-$ |
-| **Warm** | Cassandra/DynamoDB | Recent features | < 10ms |
-$$ |
+| **Hot** | Redis Cluster | Real-time features | < 1ms | $$$ |
+| **Warm** | Cassandra/DynamoDB | Recent features | < 10ms | $$ |
 | **Cold** | S3/GCS + Parquet | Historical data | Seconds | $ |
 
 ### Partitioning Strategy
