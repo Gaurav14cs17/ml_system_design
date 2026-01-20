@@ -39,7 +39,7 @@ Understanding the statistical theory behind ML monitoring is crucial for effecti
 
 ### Distribution Shift Detection
 
-When monitoring ML systems, we're fundamentally comparing probability distributions. Let \( P_{train}(X) \) be the training distribution and \( P_{prod}(X) \) be the production distribution.
+When monitoring ML systems, we're fundamentally comparing probability distributions. Let $P_{train}(X)$ be the training distribution and $P_{prod}(X)$ be the production distribution.
 
 #### Population Stability Index (PSI)
 
@@ -77,7 +77,7 @@ Unlike KL divergence, **JS divergence** is symmetric and bounded:
 JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
 ```
 
-Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution and $D_{KL}$ is the Kullback-Leibler divergence:
+Where $M = \frac{1}{2}(P + Q)$ is the mixture distribution and $D_{KL}$ is the Kullback-Leibler divergence:
 
 ```math
 D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}
@@ -136,7 +136,7 @@ Monitoring response time requires understanding percentiles:
 P_k = x_{(\lceil k \cdot n / 100 \rceil)}
 ```
 
-Where \( x_{(i)} \) is the $i$-th order statistic.
+Where $x_{(i)}$ is the $i$-th order statistic.
 
 ---
 
@@ -163,7 +163,7 @@ n = \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot 2\sigma^2
 
 Where:
 - $z_{\alpha/2}$ = critical value for significance level
-- $z_{\beta}$ = critical value for power \( (1-\beta) \)
+- $z_{\beta}$ = critical value for power $(1-\beta)$
 - $\delta$ = minimum detectable effect size
 - $\sigma^2$ = variance estimate
 

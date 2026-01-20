@@ -220,7 +220,7 @@ For a feature $f$ computed over window $W$:
 | **Sum** | $\sum_{t \in W} x_t$ | Total value in window |
 | **Mean** | $\frac{1}{\|W\|} \sum_{t \in W} x_t$ | Average value |
 | **Count** | $\|W\|$ | Number of events |
-| **Variance** | \( \frac{1}{\|W\|} \sum_{t \in W} (x_t - \mu)^2 \) | Spread of values |
+| **Variance** | $\frac{1}{\|W\|} \sum_{t \in W} (x_t - \mu)^2$ | Spread of values |
 | **Max/Min** | $\max_{t \in W} x_t$ | Extreme values |
 
 ### Window Types

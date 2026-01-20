@@ -185,9 +185,9 @@ PSI_i = \sum_{k=1}^{bins} (A_k - E_k) \ln\left(\frac{A_k}{E_k}\right)
 
 | Drift Type | Definition | Detection Method |
 |------------|------------|------------------|
-| **Covariate** | \( P(X) \) changes | PSI, KS test |
-| **Concept** | \( P(Y\|X) \) changes | Performance degradation |
-| **Prior** | \( P(Y) \) changes | Label distribution shift |
+| **Covariate** | $P(X)$ changes | PSI, KS test |
+| **Concept** | $P(Y\|X)$ changes | Performance degradation |
+| **Prior** | $P(Y)$ changes | Label distribution shift |
 | **Prediction** | Model output distribution changes | Prediction PSI |
 
 ### 4. Operational Monitoring
@@ -304,10 +304,10 @@ For implementation details, see the accompanying code examples in the `examples/
 
 | Concept | Formula | Purpose |
 |---------|---------|---------|
-| **PSI** | \( \sum(A-E)\ln(A/E) \) | Distribution stability |
+| **PSI** | $\sum(A-E)\ln(A/E)$ | Distribution stability |
 | **Rolling Mean** | $\frac{1}{w}\sum_{i=t-w+1}^{t}y_i$ | Trend detection |
 | **Alert Threshold** | $\mu + k\sigma$ | Anomaly detection |
-| **Percentile** | \( P_k = x_{(\lceil kn/100 \rceil)} \) | Latency analysis |
+| **Percentile** | $P_k = x_{(\lceil kn/100 \rceil)}$ | Latency analysis |
 
 ---
 

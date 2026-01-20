@@ -53,8 +53,8 @@ Mathematically, if users $u$ and $v$ have similar rating patterns:
 
 | Approach | Key Idea | Computation |
 |----------|----------|-------------|
-| **Memory-Based** | Directly use $\mathbf{R}$ | \(O(mn)\) at query time |
-| **Model-Based** | Learn compressed representation | \(O(k)\) at query time |
+| **Memory-Based** | Directly use $\mathbf{R}$ | $O(mn)$ at query time |
+| **Model-Based** | Learn compressed representation | $O(k)$ at query time |
 
 ---
 
@@ -72,8 +72,8 @@ Mathematically, if users $u$ and $v$ have similar rating patterns:
 
 Where:
 - $\bar{r}_u$: Mean rating of user $u$
-- \(\mathcal{N}_k(u)\): $k$ most similar users to $u$ who rated item $i$
-- \(\text{sim}(u, v)\): Similarity between users $u$ and $v$
+- $\mathcal{N}_k(u)$: $k$ most similar users to $u$ who rated item $i$
+- $\text{sim}(u, v)$: Similarity between users $u$ and $v$
 
 **Similarity Metrics:**
 
@@ -110,7 +110,7 @@ Where:
 | Aspect | User-Based | Item-Based |
 |--------|------------|------------|
 | **Stability** | Users change frequently | Items are static |
-| **Scalability** | \(O(m^2)\) user similarities | \(O(n^2)\) item similarities |
+| **Scalability** | $O(m^2)$ user similarities | $O(n^2)$ item similarities |
 | **Cold start** | New users problematic | New items problematic |
 | **Explanation** | "Users like you..." | "Because you liked X..." |
 | **Typical use** | Small user bases | E-commerce (Amazon) |
@@ -145,7 +145,7 @@ Approximate $\mathbf{R}$ as the product of two low-rank matrices:
 Where:
 - $\mathbf{P} \in \mathbb{R}^{m \times k}$: User latent factor matrix
 - $\mathbf{Q} \in \mathbb{R}^{n \times k}$: Item latent factor matrix
-- \(k \ll \min(m, n)\): Latent dimension (rank)
+- $k \ll \min(m, n)$: Latent dimension (rank)
 
 **Prediction:**
 
@@ -186,7 +186,7 @@ Where:
 
 **Stochastic Gradient Descent (SGD):**
 
-For each observed \((u, i, r_{ui})\):
+For each observed $(u, i, r_{ui})$:
 
 ```math
 e_{ui} = r_{ui} - \hat{r}_{ui}
@@ -255,7 +255,7 @@ Where $\alpha$ controls confidence scaling.
 
 **Pairwise learning:** Optimize the order of items, not absolute values.
 
-For triplet \((u, i, j)\) where user $u$ prefers $i$ over $j$:
+For triplet $(u, i, j)$ where user $u$ prefers $i$ over $j$:
 
 ```math
 \hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj} = \mathbf{p}_u^\top (\mathbf{q}_i - \mathbf{q}_j)
@@ -267,7 +267,7 @@ For triplet \((u, i, j)\) where user $u$ prefers $i$ over $j$:
 \text{BPR-OPT} = \sum_{(u,i,j) \in D_S} \ln \sigma(\hat{x}_{uij}) - \lambda_\Theta \|\Theta\|^2
 ```
 
-Where \(\sigma(x) = \frac{1}{1 + e^{-x}}\) is the sigmoid function.
+Where $\sigma(x) = \frac{1}{1 + e^{-x}}$ is the sigmoid function.
 
 **Sampling Strategy:**
 - $i$: Item user interacted with (positive)
@@ -281,9 +281,9 @@ Where \(\sigma(x) = \frac{1}{1 + e^{-x}}\) is the sigmoid function.
 
 | Operation | Memory-Based | Matrix Factorization |
 |-----------|--------------|---------------------|
-| **Training** | \(O(1)\) (no training) | \(O(|\mathcal{O}| \cdot k \cdot T)\) |
-| **Prediction** | \(O(m \cdot \bar{n})\) | \(O(k)\) |
-| **Storage** | \(O(|\mathcal{O}|)\) | \(O((m + n) \cdot k)\) |
+| **Training** | $O(1)$ (no training) | $O(|\mathcal{O}| \cdot k \cdot T)$ |
+| **Prediction** | $O(m \cdot \bar{n})$ | $O(k)$ |
+| **Storage** | $O(|\mathcal{O}|)$ | $O((m + n) \cdot k)$ |
 
 Where $\bar{n}$ is average items per user, $T$ is iterations.
 
@@ -298,7 +298,7 @@ ALS is **embarrassingly parallel**:
 \mathbf{p}_u = \left(\mathbf{Q}^\top \mathbf{C}_u \mathbf{Q} + \lambda \mathbf{I}\right)^{-1} \mathbf{Q}^\top \mathbf{C}_u \mathbf{p}_u
 ```
 
-Where \(\mathbf{C}_u = \text{diag}(c_{u1}, \ldots, c_{un})\).
+Where $\mathbf{C}_u = \text{diag}(c_{u1}, \ldots, c_{un})$.
 
 ### Approximate Methods
 
@@ -306,7 +306,7 @@ Where \(\mathbf{C}_u = \text{diag}(c_{u1}, \ldots, c_{un})\).
 Instead of all neighbors, sample $k$ neighbors weighted by similarity.
 
 **Locality-Sensitive Hashing (LSH):**
-Approximate nearest neighbor search in \(O(\log n)\) instead of \(O(n)\).
+Approximate nearest neighbor search in $O(\log n)$ instead of $O(n)$.
 
 **Factorization with Sampling:**
 Train on sampled negative examples instead of all $m \times n$ pairs.
@@ -363,7 +363,7 @@ Train on sampled negative examples instead of all $m \times n$ pairs.
 **Strategies:**
 
 1. **Uniform sampling**: Random unobserved items
-2. **Popularity sampling**: \(P(j) \propto |U_j|^{0.75}\)
+2. **Popularity sampling**: $P(j) \propto |U_j|^{0.75}$
 3. **Hard negatives**: Items similar to positives
 4. **In-batch negatives**: Use other users' positives
 

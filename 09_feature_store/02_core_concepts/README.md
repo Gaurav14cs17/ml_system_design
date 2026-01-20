@@ -573,8 +573,8 @@ When creating training data, we need feature values **as they were at the time o
 Point-in-time joins ensure temporal consistency in training data construction. Formally:
 
 Given:
-- Entity events \( E = \{(e_i, t_i, y_i)\} \) where $e_i$ is entity ID, $t_i$ is event timestamp, $y_i$ is label
-- Feature table \( F = \{(e_j, \tau_j, f_j)\} \) where $\tau_j$ is feature computation timestamp
+- Entity events $E = \{(e_i, t_i, y_i)\}$ where $e_i$ is entity ID, $t_i$ is event timestamp, $y_i$ is label
+- Feature table $F = \{(e_j, \tau_j, f_j)\}$ where $\tau_j$ is feature computation timestamp
 
 The point-in-time join produces:
 
@@ -588,8 +588,8 @@ This ensures we only use features computed **before** the event time, preventing
 
 | Approach | Formula | Risk |
 |----------|---------|------|
-| **Wrong**: Latest features | \( f(e_i) = F(e_i, \tau_{max}) \) | Future information leaks into training |
-| **Correct**: Point-in-time | \( f(e_i, t_i) = F(e_i, \tau_{max} \leq t_i) \) | Only past information used |
+| **Wrong**: Latest features | $f(e_i) = F(e_i, \tau_{max})$ | Future information leaks into training |
+| **Correct**: Point-in-time | $f(e_i, t_i) = F(e_i, \tau_{max} \leq t_i)$ | Only past information used |
 
 ![Diagram 11](images/diagram_11.svg)
 

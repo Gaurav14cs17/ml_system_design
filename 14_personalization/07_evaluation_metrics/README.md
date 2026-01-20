@@ -154,7 +154,7 @@ Where $\text{rank}_u$ is the position of the first relevant item for user $u$.
 \text{AP} = \frac{1}{|\text{Rel}|} \sum_{k=1}^{n} \text{Precision@k} \cdot \text{rel}(k)
 ```
 
-Where \(\text{rel}(k) = 1\) if item at rank $k$ is relevant.
+Where $\text{rel}(k) = 1$ if item at rank $k$ is relevant.
 
 **Mean Average Precision (MAP):**
 
@@ -198,11 +198,11 @@ Where $rel_i^*$ is the $i$-th highest relevance score.
 
 | Position | Relevance | Gain | Discount | DCG contribution |
 |----------|-----------|------|----------|------------------|
-| 1 | 3 | $2^3-1=7$ | \(\log_2(2)=1\) | 7.00 |
-| 2 | 1 | $2^1-1=1$ | \(\log_2(3)=1.58\) | 0.63 |
-| 3 | 2 | $2^2-1=3$ | \(\log_2(4)=2\) | 1.50 |
-| 4 | 0 | $2^0-1=0$ | \(\log_2(5)=2.32\) | 0.00 |
-| 5 | 2 | $2^2-1=3$ | \(\log_2(6)=2.58\) | 1.16 |
+| 1 | 3 | $2^3-1=7$ | $\log_2(2)=1$ | 7.00 |
+| 2 | 1 | $2^1-1=1$ | $\log_2(3)=1.58$ | 0.63 |
+| 3 | 2 | $2^2-1=3$ | $\log_2(4)=2$ | 1.50 |
+| 4 | 0 | $2^0-1=0$ | $\log_2(5)=2.32$ | 0.00 |
+| 5 | 2 | $2^2-1=3$ | $\log_2(6)=2.58$ | 1.16 |
 
 DCG@5 = 7.00 + 0.63 + 1.50 + 0.00 + 1.16 = **10.29**
 
@@ -239,7 +239,7 @@ Average dissimilarity among recommended items.
 \text{Novelty} = \frac{1}{|L|} \sum_{i \in L} -\log_2 P(i)
 ```
 
-Where \(P(i)\) is the popularity of item $i$. Recommending rare items → higher novelty.
+Where $P(i)$ is the popularity of item $i$. Recommending rare items → higher novelty.
 
 ### Serendipity
 
@@ -257,7 +257,7 @@ Does the recommendation distribution match user preferences?
 \text{KL}(p \| q) = \sum_c p(c) \log \frac{p(c)}{q(c)}
 ```
 
-Where \(p(c)\) is user's historical genre distribution and \(q(c)\) is recommendation genre distribution.
+Where $p(c)$ is user's historical genre distribution and $q(c)$ is recommendation genre distribution.
 
 ---
 
@@ -350,7 +350,7 @@ Where $m$ is number of tests.
 \alpha_{\text{adj}}^{(i)} = \frac{i \cdot \alpha}{m}
 ```
 
-For ordered p-values \(p_{(1)} \leq p_{(2)} \leq \ldots \leq p_{(m)}\).
+For ordered p-values $p_{(1)} \leq p_{(2)} \leq \ldots \leq p_{(m)}$.
 
 ### Bootstrap Confidence Intervals
 
@@ -404,7 +404,7 @@ Optimizing pure accuracy leads to:
 
 | Metric | Formula | Best For |
 |--------|---------|----------|
-| **RMSE** | \(\sqrt{\frac{1}{n}\sum(r - \hat{r})^2}\) | Rating prediction |
+| **RMSE** | $\sqrt{\frac{1}{n}\sum(r - \hat{r})^2}$ | Rating prediction |
 | **Precision@K** | $\frac{\text{Hits@K}}{K}$ | Top-K relevance |
 | **Recall@K** | $\frac{\text{Hits@K}}{\text{Total Rel}}$ | Coverage of relevant |
 | **NDCG@K** | $\frac{\text{DCG}}{\text{IDCG}}$ | Ranked relevance |

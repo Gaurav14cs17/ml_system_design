@@ -65,7 +65,7 @@ For batch size $B$ and single-sample latency $l$:
 \text{Throughput} = \frac{B}{L(B)}
 \]
 
-where \( L(B) \) is the batch latency. Due to parallelism:
+where $L(B)$ is the batch latency. Due to parallelism:
 
 \[
 L(B) \approx l + c \cdot \log(B) \quad \text{(not } B \times l \text{)}

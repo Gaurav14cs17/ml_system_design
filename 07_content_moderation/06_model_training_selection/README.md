@@ -292,7 +292,7 @@ Where:
 - $\gamma$ is the focusing parameter (typically 2)
 - $\alpha_t$ is the class weight
 
-**Effect**: When a sample is misclassified and $p_t$ is small, the loss is unaffected. But when $p_t \to 1$, the factor \((1 - p_t)^\gamma\) goes to zero, reducing the loss for well-classified examples.
+**Effect**: When a sample is misclassified and $p_t$ is small, the loss is unaffected. But when $p_t \to 1$, the factor $(1 - p_t)^\gamma$ goes to zero, reducing the loss for well-classified examples.
 
 ### Asymmetric Loss
 
@@ -305,7 +305,7 @@ Different treatment for positive and negative samples:
 \end{cases}
 ```
 
-Where \(p_m = \max(p - m, 0)\) with margin $m$ for hard threshold on negatives.
+Where $p_m = \max(p - m, 0)$ with margin $m$ for hard threshold on negatives.
 
 ### Weighted Cross-Entropy for Class Imbalance
 

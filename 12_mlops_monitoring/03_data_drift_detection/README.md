@@ -39,10 +39,10 @@
 
 | Type | Mathematical Definition | Example |
 |------|------------------------|---------|
-| **Covariate Shift** | \( P_{train}(X) \neq P_{prod}(X) \), but \( P(Y\|X) \) same | Customer demographics change |
-| **Prior Shift** | \( P_{train}(Y) \neq P_{prod}(Y) \) | Fraud rate increases seasonally |
-| **Concept Drift** | \( P_{train}(Y\|X) \neq P_{prod}(Y\|X) \) | What defines "spam" evolves |
-| **Feature Drift** | Individual \( P(X_i) \) changes | Age distribution shifts |
+| **Covariate Shift** | $P_{train}(X) \neq P_{prod}(X)$, but $P(Y\|X)$ same | Customer demographics change |
+| **Prior Shift** | $P_{train}(Y) \neq P_{prod}(Y)$ | Fraud rate increases seasonally |
+| **Concept Drift** | $P_{train}(Y\|X) \neq P_{prod}(Y\|X)$ | What defines "spam" evolves |
+| **Feature Drift** | Individual $P(X_i)$ changes | Age distribution shifts |
 
 ---
 
@@ -72,10 +72,10 @@ D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\fr
 ```
 
 **Properties:**
-- Non-negative: \( D_{KL}(P \| Q) \geq 0 \)
+- Non-negative: $D_{KL}(P \| Q) \geq 0$
 - Zero iff $P = Q$
-- **Not symmetric**: \( D_{KL}(P \| Q) \neq D_{KL}(Q \| P) \)
-- Unbounded: Can be infinite if \( Q(i) = 0 \) where \( P(i) > 0 \)
+- **Not symmetric**: $D_{KL}(P \| Q) \neq D_{KL}(Q \| P)$
+- Unbounded: Can be infinite if $Q(i) = 0$ where $P(i) > 0$
 
 #### Jensen-Shannon Divergence
 
@@ -85,12 +85,12 @@ The **JS divergence** is a symmetric, bounded version:
 JS(P \| Q) = \frac{1}{2}D_{KL}(P \| M) + \frac{1}{2}D_{KL}(Q \| M)
 ```
 
-Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution.
+Where $M = \frac{1}{2}(P + Q)$ is the mixture distribution.
 
 **Properties:**
-- Symmetric: \( JS(P \| Q) = JS(Q \| P) \)
-- Bounded: \( 0 \leq JS(P \| Q) \leq \log(2) \) (or 1 if using log base 2)
-- \( \sqrt{JS(P \| Q)} \) is a proper metric
+- Symmetric: $JS(P \| Q) = JS(Q \| P)$
+- Bounded: $0 \leq JS(P \| Q) \leq \log(2)$ (or 1 if using log base 2)
+- $\sqrt{JS(P \| Q)}$ is a proper metric
 
 ---
 
@@ -148,8 +148,8 @@ D_n = \sup_x |F_n(x) - G_m(x)|
 ```
 
 Where:
-- \( F_n(x) = \frac{1}{n}\sum_{i=1}^{n}\mathbf{1}_{X_i \leq x} \) is the ECDF of sample 1
-- \( G_m(x) = \frac{1}{m}\sum_{j=1}^{m}\mathbf{1}_{Y_j \leq x} \) is the ECDF of sample 2
+- $F_n(x) = \frac{1}{n}\sum_{i=1}^{n}\mathbf{1}_{X_i \leq x}$ is the ECDF of sample 1
+- $G_m(x) = \frac{1}{m}\sum_{j=1}^{m}\mathbf{1}_{Y_j \leq x}$ is the ECDF of sample 2
 
 #### Asymptotic Distribution
 
@@ -236,7 +236,7 @@ Using bootstrap methods, construct confidence intervals:
 
 1. Resample with replacement $B$ times
 2. Compute $PSI_b$ for each bootstrap sample
-3. Use percentile method: \( CI = [PSI_{(\alpha/2)}, PSI_{(1-\alpha/2)}] \)
+3. Use percentile method: $CI = [PSI_{(\alpha/2)}, PSI_{(1-\alpha/2)}]$
 
 ---
 
@@ -338,9 +338,9 @@ When monitoring many features, apply **multiple testing correction**:
 Where $m$ is the number of features tested.
 
 **Benjamini-Hochberg (FDR Control):**
-1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
-2. Find largest $k$ where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
-3. Reject hypotheses \( H_{(1)}, ..., H_{(k)} \)
+1. Order p-values: $p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)}$
+2. Find largest $k$ where $p_{(k)} \leq \frac{k}{m} \cdot \alpha$
+3. Reject hypotheses $H_{(1)}, ..., H_{(k)}$
 
 ---
 
@@ -359,11 +359,11 @@ Where $m$ is the number of features tested.
 
 | Measure | Formula | Range | Properties |
 |---------|---------|-------|------------|
-| **PSI** | \( \sum(A-E)\ln(A/E) \) | \( [0, \infty) \) | Symmetric, industry standard |
-| **KL Divergence** | \( \sum P\log(P/Q) \) | \( [0, \infty) \) | Not symmetric |
-| **JS Divergence** | \( \frac{1}{2}KL(P\|M) + \frac{1}{2}KL(Q\|M) \) | $[0, \log 2]$ | Symmetric, bounded |
+| **PSI** | $\sum(A-E)\ln(A/E)$ | $[0, \infty)$ | Symmetric, industry standard |
+| **KL Divergence** | $\sum P\log(P/Q)$ | $[0, \infty)$ | Not symmetric |
+| **JS Divergence** | $\frac{1}{2}KL(P\|M) + \frac{1}{2}KL(Q\|M)$ | $[0, \log 2]$ | Symmetric, bounded |
 | **KS Statistic** | $\sup|F-G|$ | $[0, 1]$ | Distribution-free |
-| **Wasserstein** | $\int|F-G|dx$ | \( [0, \infty) \) | True metric |
+| **Wasserstein** | $\int|F-G|dx$ | $[0, \infty)$ | True metric |
 
 ---
 

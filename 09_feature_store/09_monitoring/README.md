@@ -194,13 +194,13 @@ Data drift occurs when the statistical properties of input features change over 
 
 #### Drift Types
 
-Let \( P_{ref}(X) \) be the reference (training) distribution and \( P_{cur}(X) \) be the current (production) distribution:
+Let $P_{ref}(X)$ be the reference (training) distribution and $P_{cur}(X)$ be the current (production) distribution:
 
 | Drift Type | Mathematical Definition | Description |
 |------------|------------------------|-------------|
-| **Covariate Drift** | \( P_{ref}(X) \neq P_{cur}(X) \), but \( P(Y\|X) \) unchanged | Feature distributions shift |
-| **Concept Drift** | \( P_{ref}(Y\|X) \neq P_{cur}(Y\|X) \) | The relationship between X and Y changes |
-| **Label Drift** | \( P_{ref}(Y) \neq P_{cur}(Y) \) | Target variable distribution shifts |
+| **Covariate Drift** | $P_{ref}(X) \neq P_{cur}(X)$, but $P(Y\|X)$ unchanged | Feature distributions shift |
+| **Concept Drift** | $P_{ref}(Y\|X) \neq P_{cur}(Y\|X)$ | The relationship between X and Y changes |
+| **Label Drift** | $P_{ref}(Y) \neq P_{cur}(Y)$ | Target variable distribution shifts |
 
 ### Types of Drift
 
@@ -217,8 +217,8 @@ D = \sup_x |F_{ref}(x) - F_{cur}(x)|
 ```
 
 Where:
-- \( F_{ref}(x) \) = CDF of reference distribution
-- \( F_{cur}(x) \) = CDF of current distribution
+- $F_{ref}(x)$ = CDF of reference distribution
+- $F_{cur}(x)$ = CDF of current distribution
 - $\sup$ = supremum (maximum) over all x
 
 **Interpretation**: Reject null hypothesis (no drift) if p-value < α (typically 0.05)
@@ -252,7 +252,7 @@ An alternative symmetric measure based on KL divergence:
 JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
 ```
 
-Where \( M = \frac{1}{2}(P + Q) \) and $D_{KL}$ is the Kullback-Leibler divergence.
+Where $M = \frac{1}{2}(P + Q)$ and $D_{KL}$ is the Kullback-Leibler divergence.
 
 ### Drift Detection Implementation
 

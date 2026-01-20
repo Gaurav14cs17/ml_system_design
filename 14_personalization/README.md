@@ -31,9 +31,9 @@ Where $f$ is our model parameterized by $\Theta$. The goal is to learn $\Theta$ 
 | Paradigm | Mathematical Formulation | Key Insight |
 |----------|--------------------------|-------------|
 | **Matrix Factorization** | $\mathbf{R} \approx \mathbf{P}\mathbf{Q}^\top$ | Users and items exist in shared latent space |
-| **Similarity-Based** | \(\hat{r}_{ui} = \sum_{j \in \mathcal{N}_k(i)} w_{ij} \cdot r_{uj}\) | Similar items receive similar ratings |
-| **Deep Learning** | \(\hat{r}_{ui} = \sigma(\mathbf{h}^\top \cdot [\mathbf{p}_u \oplus \mathbf{q}_i])\) | Non-linear feature interactions matter |
-| **Probabilistic** | \(p(r_{ui} \mid \Theta) = \mathcal{N}(\mu_{ui}, \sigma^2)\) | Uncertainty quantification |
+| **Similarity-Based** | $\hat{r}_{ui} = \sum_{j \in \mathcal{N}_k(i)} w_{ij} \cdot r_{uj}$ | Similar items receive similar ratings |
+| **Deep Learning** | $\hat{r}_{ui} = \sigma(\mathbf{h}^\top \cdot [\mathbf{p}_u \oplus \mathbf{q}_i])$ | Non-linear feature interactions matter |
+| **Probabilistic** | $p(r_{ui} \mid \Theta) = \mathcal{N}(\mu_{ui}, \sigma^2)$ | Uncertainty quantification |
 
 ---
 
@@ -177,9 +177,9 @@ Modern recommendation systems follow a **candidate generation → ranking → re
 
 | Stage | Complexity | Items | Latency |
 |-------|------------|-------|---------|
-| **Candidate Generation** | \(O(\log n)\) with ANN | 1000+ → 100-500 | < 50ms |
-| **Ranking** | \(O(k \cdot d)\) per item | 100-500 → 50-100 | < 30ms |
-| **Re-ranking** | \(O(k^2)\) for diversity | 50-100 → 10-20 | < 10ms |
+| **Candidate Generation** | $O(\log n)$ with ANN | 1000+ → 100-500 | < 50ms |
+| **Ranking** | $O(k \cdot d)$ per item | 100-500 → 50-100 | < 30ms |
+| **Re-ranking** | $O(k^2)$ for diversity | 50-100 → 10-20 | < 10ms |
 
 ### Approximate Nearest Neighbor (ANN)
 
@@ -190,7 +190,7 @@ For large-scale retrieval, exact nearest neighbor search is infeasible. ANN algo
 ```
 
 Common approaches:
-- **HNSW** (Hierarchical Navigable Small World): \(O(\log n)\) search
+- **HNSW** (Hierarchical Navigable Small World): $O(\log n)$ search
 - **IVF** (Inverted File Index): Cluster-based partitioning
 - **PQ** (Product Quantization): Compressed representations
 
@@ -200,11 +200,11 @@ Common approaches:
 
 | Algorithm | Pros | Cons | Complexity | Best For |
 |-----------|------|------|------------|----------|
-| **User-kNN** | Explainable, simple | \(O(mn)\) at query | \(O(m^2n)\) build | Small user bases |
-| **Item-kNN** | Stable, cacheable | Cold start for items | \(O(n^2m)\) build | E-commerce |
-| **SVD/ALS** | Handles sparsity | Cold start | \(O(mn k^2)\) | Netflix-style |
-| **Neural CF** | Captures non-linearity | Data hungry | \(O(\text{epochs} \cdot mn)\) | Large datasets |
-| **GNN** | Graph structure | Memory intensive | \(O(|E| \cdot k)\) | Social networks |
+| **User-kNN** | Explainable, simple | $O(mn)$ at query | $O(m^2n)$ build | Small user bases |
+| **Item-kNN** | Stable, cacheable | Cold start for items | $O(n^2m)$ build | E-commerce |
+| **SVD/ALS** | Handles sparsity | Cold start | $O(mn k^2)$ | Netflix-style |
+| **Neural CF** | Captures non-linearity | Data hungry | $O(\text{epochs} \cdot mn)$ | Large datasets |
+| **GNN** | Graph structure | Memory intensive | $O(|E| \cdot k)$ | Social networks |
 
 ---
 

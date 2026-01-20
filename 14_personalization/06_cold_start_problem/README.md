@@ -33,8 +33,8 @@ Collaborative filtering requires historical interactions:
 \hat{r}_{ui} = f(\{(u', i', r_{u'i'}) : (u', i') \in \mathcal{O}\})
 ```
 
-For **new users**: No \((u, \cdot)\) pairs in $\mathcal{O}$  
-For **new items**: No \((\cdot, i)\) pairs in $\mathcal{O}$
+For **new users**: No $(u, \cdot)$ pairs in $\mathcal{O}$  
+For **new items**: No $(\cdot, i)$ pairs in $\mathcal{O}$
 
 ### Types of Cold Start
 
@@ -216,7 +216,7 @@ Where:
 
 Maintain posterior over reward parameters:
 
-1. Sample \(\theta_i \sim P(\theta_i \mid \mathcal{D})\) for each item
+1. Sample $\theta_i \sim P(\theta_i \mid \mathcal{D})$ for each item
 2. Select $a_t = \arg\max_i \mathbb{E}[r \mid \theta_i]$
 3. Update posterior with observed reward
 
@@ -259,7 +259,7 @@ Learn to learn from few examples:
 \phi^* = \arg\min_\phi \mathbb{E}_{\mathcal{T} \sim p(\mathcal{T})} \left[\mathcal{L}(\mathcal{D}_{\mathcal{T}}^{\text{test}}; f_{\theta_\mathcal{T}^*})\right]
 ```
 
-Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text{train}})\)
+Where $\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text{train}})$
 
 ### MAML for Recommendations
 

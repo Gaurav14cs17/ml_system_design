@@ -117,7 +117,7 @@ df = \frac{\left(\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}\right)^2}{\frac{(s_T^2/n_
 
 ### Confidence Interval for Difference
 
-The \( (1-\alpha) \) confidence interval for $\mu_T - \mu_C$:
+The $(1-\alpha)$ confidence interval for $\mu_T - \mu_C$:
 
 ```math
 (\bar{X}_T - \bar{X}_C) \pm t_{\alpha/2, df} \cdot \sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}
@@ -149,7 +149,7 @@ Standardized measure of effect magnitude:
 d = \frac{\mu_T - \mu_C}{\sigma_{pooled}}
 ```
 
-Where \( \sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 2}} \)
+Where $\sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 2}}$
 
 | Effect Size | Interpretation |
 |-------------|----------------|
@@ -173,7 +173,7 @@ Where $\delta$ is the effect size in standard deviation units.
 
 - Baseline conversion: $p_C = 0.05$
 - Expected effect: $p_T - p_C = 0.001$
-- Variance: \( \sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475 \)
+- Variance: $\sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475$
 
 ```math
 n = 2 \cdot \frac{(1.96 + 0.84)^2 \cdot 0.0475}{0.001^2} \approx 746,000 \text{ per group}
@@ -279,9 +279,9 @@ Where $m$ is the number of tests. Conservative but simple.
 
 ### Benjamini-Hochberg (FDR Control)
 
-1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
-2. Find largest $k$ where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
-3. Reject all \( H_{(1)}, ..., H_{(k)} \)
+1. Order p-values: $p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)}$
+2. Find largest $k$ where $p_{(k)} \leq \frac{k}{m} \cdot \alpha$
+3. Reject all $H_{(1)}, ..., H_{(k)}$
 
 Less conservative, controls **False Discovery Rate**.
 
@@ -299,7 +299,7 @@ P(\mu_T > \mu_C | \text{data})
 
 ### Beta-Binomial Model (for conversions)
 
-Prior: \( \theta \sim \text{Beta}(\alpha_0, \beta_0) \)
+Prior: $\theta \sim \text{Beta}(\alpha_0, \beta_0)$
 
 Posterior after observing $k$ successes in $n$ trials:
 
@@ -423,10 +423,10 @@ def analyze_experiment(control: np.ndarray, treatment: np.ndarray,
 | Concept | Formula |
 |---------|---------|
 | **t-statistic** | $t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{s_T^2/n_T + s_C^2/n_C}}$ |
-| **Sample size** | \( n = 2(z_{\alpha/2} + z_\beta)^2 \sigma^2 / \delta^2 \) |
-| **Cohen's d** | \( d = (\mu_T - \mu_C) / \sigma_{pooled} \) |
+| **Sample size** | $n = 2(z_{\alpha/2} + z_\beta)^2 \sigma^2 / \delta^2$ |
+| **Cohen's d** | $d = (\mu_T - \mu_C) / \sigma_{pooled}$ |
 | **Confidence interval** | $\bar{X}_T - \bar{X}_C \pm t_{\alpha/2} \cdot SE$ |
-| **Power** | \( 1 - \beta = P(\text{reject } H_0 | H_1 \text{ true}) \) |
+| **Power** | $1 - \beta = P(\text{reject } H_0 | H_1 \text{ true})$ |
 
 ---
 

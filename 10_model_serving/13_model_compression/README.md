@@ -22,7 +22,7 @@ Model compression reduces model size and inference cost while maintaining accura
 
 ### The Compression Problem
 
-Given a neural network \( f_\theta(x) \) with parameters $\theta \in \mathbb{R}^n$, the goal of compression is to find a smaller representation $\hat{\theta}$ such that:
+Given a neural network $f_\theta(x)$ with parameters $\theta \in \mathbb{R}^n$, the goal of compression is to find a smaller representation $\hat{\theta}$ such that:
 
 \[
 \min_{\hat{\theta}} \mathcal{L}(f_{\hat{\theta}}) \quad \text{subject to} \quad |\hat{\theta}| \ll |\theta|
@@ -43,9 +43,9 @@ R(D) = \min_{p(\hat{W}|W): \mathbb{E}[d(W,\hat{W})] \leq D} I(W; \hat{W})
 \]
 
 where:
-- \( R(D) \) is the minimum bits needed to achieve distortion $D$
-- \( I(W; \hat{W}) \) is the mutual information
-- \( d(W, \hat{W}) \) is a distortion measure (e.g., MSE)
+- $R(D)$ is the minimum bits needed to achieve distortion $D$
+- $I(W; \hat{W})$ is the mutual information
+- $d(W, \hat{W})$ is a distortion measure (e.g., MSE)
 
 ### Compression Ratio
 
@@ -484,8 +484,8 @@ The total loss combines hard and soft targets:
 \]
 
 where:
-- \( p^{(T)} \) = teacher's soft probabilities
-- \( p^{(S)} \) = student's soft probabilities
+- $p^{(T)}$ = teacher's soft probabilities
+- $p^{(S)}$ = student's soft probabilities
 - The $T^2$ factor compensates for the gradient magnitude reduction at high temperatures
 
 #### Why Does Distillation Work?
@@ -509,7 +509,7 @@ Beyond logits, intermediate features can be matched:
 \mathcal{L}_{\text{hint}} = \|f_l^{(S)}(x) - r(f_l^{(T)}(x))\|_2^2
 \]
 
-where \( r(\cdot) \) is a regressor to match dimensions.
+where $r(\cdot)$ is a regressor to match dimensions.
 
 ### Distillation Framework
 
@@ -619,7 +619,7 @@ where:
 - $U \in \mathbb{R}^{m \times m}$ = left singular vectors (orthonormal)
 - $\Sigma \in \mathbb{R}^{m \times n}$ = diagonal matrix of singular values $\sigma_1 \geq \sigma_2 \geq \cdots \geq 0$
 - $V \in \mathbb{R}^{n \times n}$ = right singular vectors (orthonormal)
-- \( r = \text{rank}(W) \)
+- $r = \text{rank}(W)$
 
 #### Truncated SVD Approximation
 
@@ -662,7 +662,7 @@ Typically $\tau = 0.99$ preserves most information with significant compression.
 
 For convolutional layers with kernel $\mathcal{K} \in \mathbb{R}^{C_{out} \times C_{in} \times H \times W}$:
 
-1. **Reshape** to 2D: \( W \in \mathbb{R}^{C_{out} \times (C_{in} \cdot H \cdot W)} \)
+1. **Reshape** to 2D: $W \in \mathbb{R}^{C_{out} \times (C_{in} \cdot H \cdot W)}$
 2. **Apply SVD**: $W \approx AB$
 3. **Replace** original conv with two convs: 1×1 conv (B) followed by 1×1 conv (A)
 

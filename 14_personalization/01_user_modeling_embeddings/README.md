@@ -28,7 +28,7 @@ User modeling creates a mathematical representation $\mathbf{u} \in \mathbb{R}^d
 
 **The Core Challenge:**
 
-Given user interactions \(\mathcal{H}_u = \{(i_1, t_1), (i_2, t_2), \ldots, (i_n, t_n)\}\), learn a function:
+Given user interactions $\mathcal{H}_u = \{(i_1, t_1), (i_2, t_2), \ldots, (i_n, t_n)\}$, learn a function:
 
 ```math
 f: \mathcal{H}_u \rightarrow \mathbf{u} \in \mathbb{R}^d
@@ -325,7 +325,7 @@ For users with $|\mathcal{H}_u| < \tau$ interactions:
 \mathbf{u} = \alpha \cdot \mathbf{u}_{\text{learned}} + (1-\alpha) \cdot \mathbf{u}_{\text{content}}
 ```
 
-   Where \(\alpha = \min(1, |\mathcal{H}_u| / \tau)\)
+   Where $\alpha = \min(1, |\mathcal{H}_u| / \tau)$
 
 3. **Meta-learning**: Learn to adapt quickly from few interactions
 
@@ -336,10 +336,10 @@ For users with $|\mathcal{H}_u| < \tau$ interactions:
 | Concept | Mathematical Form | Purpose |
 |---------|-------------------|---------|
 | **User Embedding** | $\mathbf{u} \in \mathbb{R}^d$ | Compact preference representation |
-| **Similarity** | \(\text{sim}(\mathbf{u}, \mathbf{v})\) | Measure user/item affinity |
+| **Similarity** | $\text{sim}(\mathbf{u}, \mathbf{v})$ | Measure user/item affinity |
 | **Matrix Factorization** | $\mathbf{R} \approx \mathbf{P}\mathbf{Q}^\top$ | Learn latent factors |
 | **Contrastive Loss** | $-\log \frac{e^{s^+}}{e^{s^+} + \sum e^{s^-}}$ | Push negatives apart |
-| **Multi-head Attention** | \(\text{softmax}(\mathbf{QK}^\top/\sqrt{d})\mathbf{V}\) | Capture sequential patterns |
+| **Multi-head Attention** | $\text{softmax}(\mathbf{QK}^\top/\sqrt{d})\mathbf{V}$ | Capture sequential patterns |
 
 ---
 

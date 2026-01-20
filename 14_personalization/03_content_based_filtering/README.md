@@ -164,7 +164,7 @@ Given user $u$'s interacted items $\mathcal{H}_u = \{i_1, i_2, \ldots, i_n\}$:
 \mathbf{u} = \frac{\sum_{i \in \mathcal{H}_u} \lambda^{t_{\max} - t_i} \cdot \mathbf{x}_i}{\sum_{i \in \mathcal{H}_u} \lambda^{t_{\max} - t_i}}
 ```
 
-Where \(\lambda \in (0, 1)\) is decay factor and $t_i$ is interaction time.
+Where $\lambda \in (0, 1)$ is decay factor and $t_i$ is interaction time.
 
 ### Positive vs Negative Feedback
 
@@ -275,7 +275,7 @@ For items with multiple modalities (text + image):
 | Advantage | Mathematical Reason |
 |-----------|---------------------|
 | **No cold-start for items** | $\mathbf{x}_i$ available immediately from features |
-| **Transparency** | \(s(u,i) = \mathbf{u}^\top \mathbf{x}_i\) interpretable |
+| **Transparency** | $s(u,i) = \mathbf{u}^\top \mathbf{x}_i$ interpretable |
 | **User independence** | No cross-user data needed |
 | **Domain transfer** | Features transfer across platforms |
 
@@ -286,7 +286,7 @@ For items with multiple modalities (text + image):
 | **Over-specialization** | Recommendations too similar to history |
 | **Cold-start for users** | Need $\mathcal{H}_u$ to build $\mathbf{u}$ |
 | **Feature engineering** | Quality depends on $\mathbf{x}_i$ design |
-| **Serendipity** | Won't discover items outside \(\text{span}(\mathcal{H}_u)\) |
+| **Serendipity** | Won't discover items outside $\text{span}(\mathcal{H}_u)$ |
 
 ### The Filter Bubble Problem
 
@@ -314,7 +314,7 @@ Recommendations reinforce existing preferences → narrowing exposure.
 | **Cold-start items** | ✓ Works | ✗ Fails |
 | **Cold-start users** | Needs history | Also needs history |
 | **Serendipity** | Low | High |
-| **Scalability** | \(O(nd)\) features | \(O(mn)\) interactions |
+| **Scalability** | $O(nd)$ features | $O(mn)$ interactions |
 | **Explainability** | "Similar content" | "Users like you" |
 
 **Best Practice:** Combine both in hybrid systems.
@@ -339,7 +339,7 @@ Recommendations reinforce existing preferences → narrowing exposure.
 ### Q2: How do you handle the filter bubble problem?
 
 **Strategies:**
-1. **Exploration bonus:** \(s'(u,i) = s(u,i) + \epsilon \cdot \text{novelty}(i)\)
+1. **Exploration bonus:** $s'(u,i) = s(u,i) + \epsilon \cdot \text{novelty}(i)$
 2. **Diversity constraint:** MMR (Maximal Marginal Relevance)
 3. **Randomization:** Inject random items periodically
 4. **Multi-armed bandits:** Systematic exploration

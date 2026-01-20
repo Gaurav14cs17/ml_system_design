@@ -137,7 +137,7 @@ y_{\text{DNN}} = \text{DNN}(\mathbf{x})
 
 ### The Sequential Prediction Task
 
-Given user interaction sequence \(\mathcal{S} = (s_1, s_2, \ldots, s_t)\), predict next item:
+Given user interaction sequence $\mathcal{S} = (s_1, s_2, \ldots, s_t)$, predict next item:
 
 ```math
 P(s_{t+1} \mid s_1, \ldots, s_t)
@@ -364,8 +364,8 @@ Learns task weights automatically.
 
 | Strategy | Formula | Effect |
 |----------|---------|--------|
-| **Uniform** | \(P(j) = 1/|\mathcal{I}|\) | Simple baseline |
-| **Popularity** | \(P(j) \propto |U_j|^{0.75}\) | Focuses on hard negatives |
+| **Uniform** | $P(j) = 1/|\mathcal{I}|$ | Simple baseline |
+| **Popularity** | $P(j) \propto |U_j|^{0.75}$ | Focuses on hard negatives |
 | **In-batch** | Other users' positives | Efficient, diverse |
 | **Hard** | High-scoring negatives | Better discrimination |
 

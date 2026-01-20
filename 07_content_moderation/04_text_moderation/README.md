@@ -46,8 +46,8 @@ Converts text to numerical vectors by weighting term importance:
 ```
 
 Where:
-- \(\text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}\) (normalized term frequency)
-- \(\text{IDF}(t, D) = \log \frac{|D|}{|\{d \in D : t \in d\}|}\) (inverse document frequency)
+- $\text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}$ (normalized term frequency)
+- $\text{IDF}(t, D) = \log \frac{|D|}{|\{d \in D : t \in d\}|}$ (inverse document frequency)
 
 #### Word Embeddings
 
