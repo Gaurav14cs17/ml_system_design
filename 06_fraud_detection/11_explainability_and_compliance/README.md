@@ -113,6 +113,7 @@ class ExplainabilityFramework:
             'prediction': self.model.predict_proba(x.reshape(1, -1))[0, 1],
             'feature_contributions': sorted_contributions
         }
+
 ```
 
 ---
@@ -234,6 +235,7 @@ class SHAPExplainer:
             fig.savefig(output_path, bbox_inches='tight', dpi=150)
 
         return fig
+
 ```
 
 ### Real-Time SHAP Explanations
@@ -290,6 +292,7 @@ class RealTimeSHAPService:
             ],
             'expected_value': float(self.explainer.expected_value)
         }
+
 ```
 
 ---
@@ -341,6 +344,7 @@ class LIMEExplainer:
                 for feat, weight in feature_weights
             ]
         }
+
 ```
 
 ---
@@ -425,6 +429,7 @@ class HybridExplainer:
             lines.append(f"• {factor['feature']}: {direction}")
 
         return "\n".join(lines)
+
 ```
 
 ---
@@ -462,6 +467,7 @@ GDPR (General Data Protection Regulation):
 State Privacy Laws:
   CCPA: Right to know, delete, opt-out
   State-specific: Varying requirements
+
 ```
 
 ### Adverse Action Notice Generator
@@ -536,6 +542,7 @@ To exercise these rights, contact us at: support@example.com
                 reasons.append(template)
 
         return reasons[:4]  # Maximum 4 reasons
+
 ```
 
 ---
@@ -654,6 +661,7 @@ class AuditLogger:
                 raise AuditIntegrityError(f"Tampered record: {record['record_id']}")
 
         return records
+
 ```
 
 ---
@@ -752,6 +760,7 @@ class FairnessAnalyzer:
             return "Consider calibrating model separately for each group"
         else:
             return "No significant fairness violations detected"
+
 ```
 
 ---
@@ -811,6 +820,7 @@ class FairnessAnalyzer:
 - Score distribution monitored hourly
 - Feature drift monitored daily
 - Full retraining monthly
+
 ```
 
 ---

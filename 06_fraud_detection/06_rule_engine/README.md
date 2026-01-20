@@ -108,6 +108,7 @@ class BlacklistRules:
             )
 
         return results
+
 ```
 
 ### 2. Velocity Rules
@@ -179,6 +180,7 @@ class VelocityRules:
             ))
 
         return results
+
 ```
 
 ### 3. Amount and Pattern Rules
@@ -240,6 +242,7 @@ class AmountPatternRules:
             ))
 
         return results
+
 ```
 
 ### 4. Geographic Rules
@@ -323,6 +326,7 @@ class GeographicRules:
             return float('inf')
 
         return distance / time_diff
+
 ```
 
 ### 5. Device and Session Rules
@@ -391,6 +395,7 @@ class DeviceSessionRules:
                 ))
 
         return results
+
 ```
 
 ---
@@ -545,6 +550,7 @@ class RuleEngine:
 
         # Higher severity = higher confidence in fraud
         return min(0.5 + (max_severity * 0.15), 1.0)
+
 ```
 
 ---
@@ -594,6 +600,7 @@ rules:
     action: BLOCK
     severity: HIGH
     message: "Rapid-fire transactions detected: {velocity.txn_count_1m} in 1 minute"
+
 ```
 
 ### Rule Parser and Executor
@@ -700,6 +707,7 @@ class RuleLoader:
         """Hot reload rules"""
         self.rules.clear()
         return self.load_all()
+
 ```
 
 ---
@@ -806,6 +814,7 @@ async def enable_rule(rule_id: str, current_user: str = Depends(get_current_user
 @app.put("/rules/{rule_id}/disable")
 async def disable_rule(rule_id: str, reason: str, current_user: str = Depends(get_current_user)):
     return await rule_admin.disable_rule(rule_id, current_user, reason)
+
 ```
 
 ---
@@ -878,6 +887,7 @@ class HybridDecisionEngine:
             return {'action': Action.APPROVE, 'reason': 'moderate_risk_no_rules'}
 
         return {'action': Action.REVIEW, 'reason': 'uncertain'}
+
 ```
 
 ### ML Score-Based Rules
@@ -920,6 +930,7 @@ rules:
     action: REVIEW
     severity: MEDIUM
     message: "Elevated ML score with high amount transaction"
+
 ```
 
 ---
@@ -1009,6 +1020,7 @@ class RuleCache:
     def set(self, rule_id: str, context: dict, result: RuleResult):
         key = self.get_cache_key(rule_id, context)
         self.cache[key] = result
+
 ```
 
 ---
@@ -1074,6 +1086,7 @@ class RuleBacktester:
             recall=results['true_positives'] / max(results['true_positives'] + results['false_negatives'], 1),
             false_positive_rate=results['false_positives'] / max(results['true_negatives'] + results['false_positives'], 1)
         )
+
 ```
 
 ### Unit Testing Rules
@@ -1134,6 +1147,7 @@ class TestVelocityRules:
         results = velocity_rules.check(context)
 
         assert len(results) == 0
+
 ```
 
 ---
@@ -1202,6 +1216,7 @@ class RuleMonitor:
             'false_positive_count': false_positives,
             'false_positive_rate': false_positives / max(len(triggers), 1)
         }
+
 ```
 
 ---
@@ -1243,6 +1258,7 @@ Rule Design Best Practices:
    - Document business reason
    - Include expected trigger rate
    - Reference related rules
+
 ```
 
 ### Common Rule Patterns
@@ -1312,6 +1328,7 @@ class TimeDecayRule:
                 reason=f"Transaction within {days_since_fraud} days of previous fraud",
                 severity=Severity.HIGH
             )
+
 ```
 
 ---

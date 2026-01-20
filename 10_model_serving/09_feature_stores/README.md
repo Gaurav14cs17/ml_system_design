@@ -55,6 +55,7 @@ flowchart TB
     style Registry fill:#e8f5e9
     style Stores fill:#f3e5f5
     style Consumers fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -77,6 +78,7 @@ sequenceDiagram
     R-->>S: Feature Schema
     S->>N: Get Online Features
     N-->>S: Real-time Features (<10ms)
+
 ```
 
 ---
@@ -122,6 +124,7 @@ online_store:
 offline_store:
   type: bigquery
 entity_key_serialization_version: 2
+
 ```
 
 ### Entity and Feature Definitions
@@ -189,6 +192,7 @@ item_features = FeatureView(
     source=item_features_source,
     tags={"team": "recommendation"}
 )
+
 ```
 
 ### Training Data Retrieval
@@ -225,6 +229,7 @@ training_df = store.get_historical_features(
 ).to_df()
 
 print(training_df.head())
+
 ```
 
 ### Online Serving
@@ -268,6 +273,7 @@ async def predict(user_id: int, item_id: int):
 
 # Materialize features to online store
 # feast materialize-incremental $(date +%Y-%m-%dT%H:%M:%S)
+
 ```
 
 ---
@@ -332,6 +338,7 @@ windowed_features.writeStream \
     .foreachBatch(write_to_redis) \
     .outputMode("update") \
     .start()
+
 ```
 
 ### Batch Feature Pipeline
@@ -375,6 +382,7 @@ def compute_user_features(date: datetime) -> pd.DataFrame:
 for date in pd.date_range(start="2023-01-01", end="2024-01-01"):
     features = compute_user_features(date)
     features.to_parquet(f"gs://data/user_features/date={date.date()}/data.parquet")
+
 ```
 
 ---
@@ -411,6 +419,7 @@ stats = offline_store.get_statistics(
     feature_view="user_features",
     features=["purchase_count_7d", "avg_order_value"]
 )
+
 ```
 
 ---

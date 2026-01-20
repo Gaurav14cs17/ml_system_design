@@ -53,6 +53,7 @@ scripted_model.save("scripted_model.pt")
 
 # Loading TorchScript (no architecture needed)
 loaded = torch.jit.load("scripted_model.pt")
+
 ```
 
 ### TensorFlow Formats
@@ -78,6 +79,7 @@ def serve(x):
     return model(x)
 
 tf.saved_model.save(model, "optimized/", signatures={"serving_default": serve})
+
 ```
 
 ---
@@ -122,6 +124,7 @@ import onnx
 onnx_model = onnx.load("model.onnx")
 onnx.checker.check_model(onnx_model)
 print("ONNX model is valid!")
+
 ```
 
 ### ONNX Runtime Inference
@@ -159,6 +162,7 @@ output_name = session.get_outputs()[0].name
 input_data = np.random.randn(1, 3, 224, 224).astype(np.float32)
 result = session.run([output_name], {input_name: input_data})
 print(f"Output shape: {result[0].shape}")
+
 ```
 
 ---
@@ -215,6 +219,7 @@ def build_engine(onnx_path, engine_path, fp16=True, int8=False):
 
 # Build FP16 engine
 build_engine("model.onnx", "model_fp16.plan", fp16=True)
+
 ```
 
 ### TensorRT Inference
@@ -271,6 +276,7 @@ class TRTInference:
 # Usage
 trt_engine = TRTInference("model_fp16.plan")
 result = trt_engine.infer(input_data)
+
 ```
 
 ---
@@ -310,6 +316,7 @@ output_layer = compiled_model.output(0)
 import numpy as np
 input_data = np.random.randn(1, 3, 224, 224).astype(np.float32)
 result = compiled_model([input_data])[output_layer]
+
 ```
 
 ---
@@ -365,6 +372,7 @@ if __name__ == "__main__":
         convert_onnx_to_tensorrt(args.input, args.output)
     elif args.target == "openvino":
         convert_onnx_to_openvino(args.input, args.output)
+
 ```
 
 ---
@@ -390,6 +398,7 @@ optimized = optimizer.optimize_model(
 )
 
 optimized.save_model_to_file("model_optimized.onnx")
+
 ```
 
 ### 2. Constant Folding
@@ -413,6 +422,7 @@ passes = [
 
 optimized = optimizer.optimize(model, passes)
 onnx.save(optimized, "model_optimized.onnx")
+
 ```
 
 ---

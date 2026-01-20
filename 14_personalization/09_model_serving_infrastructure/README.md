@@ -187,6 +187,7 @@ class RecommendationServer:
         ]
 
         return result
+
 ```
 
 ---
@@ -284,6 +285,7 @@ def export_to_onnx(pytorch_model, sample_input, output_path):
             'output': {0: 'batch_size'}
         }
     )
+
 ```
 
 ### Batching Strategies
@@ -377,6 +379,7 @@ class DynamicBatcher:
         except Exception as e:
             for request in batch:
                 request['future'].set_exception(e)
+
 ```
 
 ---
@@ -477,6 +480,7 @@ class ANNIndex:
 
     def load(self, path: str):
         self.index = faiss.read_index(path)
+
 ```
 
 ### Multi-Model Ensemble
@@ -529,6 +533,7 @@ class EnsembleRanker:
             ensemble_predictions.append(weighted)
 
         return ensemble_predictions
+
 ```
 
 ---
@@ -663,6 +668,7 @@ class EmbeddingCache:
                 embeddings[entity_id] = np.frombuffer(result, dtype=np.float32)
 
         return embeddings
+
 ```
 
 ---
@@ -739,6 +745,7 @@ class ProductionVectorStore:
 
         for item_id, embedding in all_items:
             self.add(item_id, embedding)
+
 ```
 
 ---
@@ -846,6 +853,7 @@ class ModelRouter:
         response['_variant'] = variant
 
         return response
+
 ```
 
 ---
@@ -953,6 +961,7 @@ class AlertManager:
     def send_alert(self, severity: str, title: str, message: str):
         for channel in self.alert_channels:
             channel.send(severity=severity, title=title, message=message)
+
 ```
 
 ---
@@ -1003,6 +1012,7 @@ class AutoScaler:
         elif desired < self.current_replicas:
             return desired < self.current_replicas * 0.9
         return False
+
 ```
 
 ---

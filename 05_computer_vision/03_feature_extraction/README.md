@@ -52,6 +52,7 @@ flowchart LR
 
     style B fill:#fff3e0
     style D fill:#e8f5e9
+
 ```
 
 ```mermaid
@@ -75,6 +76,7 @@ graph TB
 
     style D2 fill:#c8e6c9
     style DESC3 fill:#c8e6c9
+
 ```
 
 ### Properties of Good Features
@@ -103,24 +105,28 @@ Consider shifting a window by $(u, v)$. The sum of squared differences:
 
 ```math
 E(u, v) = \sum_{(x,y) \in W} [I(x+u, y+v) - I(x, y)]^2
+
 ```
 
 Using Taylor expansion for small shifts:
 
 ```math
 E(u, v) \approx \begin{bmatrix} u & v \end{bmatrix} \mathbf{M} \begin{bmatrix} u \\ v \end{bmatrix}
+
 ```
 
 where $\mathbf{M}$ is the **structure tensor**:
 
 ```math
 \mathbf{M} = \sum_{(x,y) \in W} \begin{bmatrix} I_x^2 & I_x I_y \\ I_x I_y & I_y^2 \end{bmatrix}
+
 ```
 
 **Harris Corner Response:**
 
 ```math
 R = \det(\mathbf{M}) - k \cdot \text{trace}(\mathbf{M})^2 = \lambda_1 \lambda_2 - k(\lambda_1 + \lambda_2)^2
+
 ```
 
 where $\lambda\_1, \lambda\_2$ are eigenvalues of $\mathbf{M}$ and $k \approx 0.04-0.06$.
@@ -154,6 +160,7 @@ def detect_harris_corners(image, block_size=2, ksize=3, k=0.04, threshold=0.01):
     corner_coords = np.argwhere(corners)
 
     return corner_coords, harris_response
+
 ```
 
 ### FAST (Features from Accelerated Segment Test)
@@ -182,6 +189,7 @@ Build a **Gaussian scale-space**:
 
 ```math
 L(x, y, \sigma) = G(x, y, \sigma) * I(x, y)
+
 ```
 
 where $G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}$
@@ -190,12 +198,14 @@ where $G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}$
 
 ```math
 D(x, y, \sigma) = L(x, y, k\sigma) - L(x, y, \sigma)
+
 ```
 
 DoG approximates the Laplacian of Gaussian (LoG), which is scale-normalized:
 
 ```math
 \sigma^2 \nabla^2 G \approx \frac{G(x, y, k\sigma) - G(x, y, \sigma)}{k - 1}
+
 ```
 
 #### 2. Keypoint Localization
@@ -206,6 +216,7 @@ Find extrema in DoG space (compare with 26 neighbors: 8 spatial + 9 above + 9 be
 
 ```math
 D(\mathbf{x}) \approx D + \frac{\partial D^T}{\partial \mathbf{x}}\mathbf{x} + \frac{1}{2}\mathbf{x}^T \frac{\partial^2 D}{\partial \mathbf{x}^2}\mathbf{x}
+
 ```
 
 Optimal offset: $\hat{\mathbf{x}} = -\frac{\partial^2 D^{-1}}{\partial \mathbf{x}^2}\frac{\partial D}{\partial \mathbf{x}}$
@@ -217,6 +228,7 @@ Compute gradient magnitude and orientation:
 ```math
 m(x, y) = \sqrt{(L(x+1, y) - L(x-1, y))^2 + (L(x, y+1) - L(x, y-1))^2}
 \theta(x, y) = \arctan\left(\frac{L(x, y+1) - L(x, y-1)}{L(x+1, y) - L(x-1, y)}\right)
+
 ```
 
 Build orientation histogram (36 bins, 10° each). Peak = dominant orientation.
@@ -270,6 +282,7 @@ class SIFTExtractor:
             'response': kp.response,  # Strength of keypoint
             'octave': kp.octave    # Pyramid octave
         } for kp in keypoints]
+
 ```
 
 ---
@@ -294,6 +307,7 @@ def extract_surf_features(image, hessian_threshold=400):
     keypoints, descriptors = surf.detectAndCompute(gray, None)
 
     return keypoints, descriptors
+
 ```
 
 ---
@@ -347,6 +361,7 @@ class ORBExtractor:
         # Convert to similarity (256 bits total)
         similarity = 1.0 - hamming / 256.0
         return similarity
+
 ```
 
 ---
@@ -370,18 +385,21 @@ For each pixel, compute gradient:
 ```math
 G_x(x, y) = I(x+1, y) - I(x-1, y)
 G_y(x, y) = I(x, y+1) - I(x, y-1)
+
 ```
 
 **Magnitude:**
 
 ```math
 m(x, y) = \sqrt{G_x^2 + G_y^2}
+
 ```
 
 **Orientation:**
 
 ```math
 \theta(x, y) = \arctan\left(\frac{G_y}{G_x}\right)
+
 ```
 
 For unsigned gradients: $\theta \in [0°, 180°)$
@@ -397,6 +415,7 @@ For each cell, build orientation histogram:
 
 ```math
 H_k = \sum_{(x,y) \in \text{cell}} m(x,y) \cdot w_k(\theta(x,y))
+
 ```
 
 where $w\_k$ is the interpolation weight for bin $k$.
@@ -411,6 +430,7 @@ Concatenate histograms and normalize:
 
 ```math
 \mathbf{v} \leftarrow \frac{\mathbf{v}}{\sqrt{\|\mathbf{v}\|_2^2 + \epsilon^2}}
+
 ```
 
 Then clip: $v\_i \leftarrow \min(v\_i, 0.2)$
@@ -489,6 +509,7 @@ class HOGExtractor:
     def extract_batch(self, images):
         """Extract HOG features from batch of images."""
         return np.array([self.extract(img) for img in images])
+
 ```
 
 ---
@@ -612,6 +633,7 @@ class FeatureMatcher:
         H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, reproj_thresh)
 
         return H, mask
+
 ```
 
 ---
@@ -651,6 +673,7 @@ def choose_feature_detector(requirements):
 
     else:
         return 'ORB'  # Default choice
+
 ```
 
 ---

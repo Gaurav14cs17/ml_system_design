@@ -108,6 +108,7 @@ results = retriever.search("What is AI?", top_k=2)
 
 for doc, score in results:
     print(f"Score: {score:.3f} | {doc}")
+
 ```
 
 ---
@@ -209,6 +210,7 @@ class FAISSVectorStore:
 vector_store = FAISSVectorStore(index_type="flat")
 vector_store.add(documents)
 results = vector_store.search("What is machine learning?")
+
 ```
 
 ### Using Pinecone
@@ -297,6 +299,7 @@ class PineconeVectorStore:
             }
             for match in results.matches
         ]
+
 ```
 
 ---
@@ -380,6 +383,7 @@ class HybridSearch:
 hybrid = HybridSearch(alpha=0.7)  # 70% dense, 30% BM25
 hybrid.index(documents)
 results = hybrid.search("machine learning algorithms")
+
 ```
 
 ---
@@ -442,6 +446,7 @@ class TwoStageRetriever:
         reranked = self.reranker.rerank(query, docs, top_k=rerank_k)
 
         return reranked
+
 ```
 
 ---

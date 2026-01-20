@@ -138,6 +138,7 @@ intellectuals. It is 330 meters tall.
 question = "How tall is the Eiffel Tower?"
 answers = qa.answer(question, context)
 print(f"Answer: {answers[0]['text']}")  # "330 meters"
+
 ```
 
 ---
@@ -204,6 +205,7 @@ answer = qa.answer(
     context="France is a country in Europe. Its capital is Paris."
 )
 print(answer)
+
 ```
 
 ---
@@ -320,6 +322,7 @@ qa.index_documents(documents)
 # Answer questions
 answer = qa.answer("How tall is the Eiffel Tower?")
 print(f"Answer: {answer[0]['answer']}")
+
 ```
 
 ---
@@ -365,6 +368,7 @@ answer = gen_qa.answer(
     question="Explain how photosynthesis works",
     context="Photosynthesis is the process by which plants convert sunlight into energy..."
 )
+
 ```
 
 ---
@@ -398,6 +402,7 @@ def compute_f1(prediction: str, ground_truth: str) -> float:
         return 0.0
 
     return 2 * precision * recall / (precision + recall)
+
 ```
 
 ---

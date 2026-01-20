@@ -38,6 +38,7 @@ The **backshift operator** $B$ (or lag operator $L$) is fundamental to time seri
 ```math
 B Y_t = Y_{t-1}
 B^k Y_t = Y_{t-k}
+
 ```
 
 The **difference operator** $\nabla$ is defined as:
@@ -45,6 +46,7 @@ The **difference operator** $\nabla$ is defined as:
 ```math
 \nabla Y_t = Y_t - Y_{t-1} = (1 - B)Y_t
 \nabla^d Y_t = (1 - B)^d Y_t
+
 ```
 
 ### White Noise Process
@@ -53,6 +55,7 @@ A **white noise** process $\{\varepsilon\_t\}$ satisfies:
 
 ```math
 \mathbb{E}[\varepsilon_t] = 0, \quad \text{Var}(\varepsilon_t) = \sigma^2, \quad \text{Cov}(\varepsilon_t, \varepsilon_s) = 0 \text{ for } t \neq s
+
 ```
 
 Often denoted as $\varepsilon\_t \sim \text{WN}(0, \sigma^2)$ or $\varepsilon\_t \overset{iid}{\sim} \mathcal{N}(0, \sigma^2)$ for Gaussian white noise.
@@ -63,6 +66,7 @@ Any stationary process $\{Y\_t\}$ can be represented as:
 
 ```math
 Y_t = \mu + \sum_{j=0}^{\infty} \psi_j \varepsilon_{t-j} = \mu + \psi(B)\varepsilon_t
+
 ```
 
 where $\psi(B) = \sum\_{j=0}^{\infty} \psi\_j B^j$ and $\sum\_{j=0}^{\infty} \psi\_j^2 < \infty$.
@@ -97,6 +101,7 @@ def simple_moving_average_forecast(series, window, horizon):
 
 # Usage
 forecast = simple_moving_average_forecast(df['value'], window=7, horizon=14)
+
 ```
 
 ### Weighted Moving Average
@@ -125,6 +130,7 @@ def weighted_moving_average_forecast(series, weights, horizon):
 # Weights: more recent = higher weight
 weights = [1, 2, 3, 4, 5, 6, 7]  # Last day has weight 7
 forecast = weighted_moving_average_forecast(df['value'], weights, horizon=14)
+
 ```
 
 ---
@@ -153,6 +159,7 @@ def ses_forecast(series, horizon, alpha=None):
     print(f"Optimal alpha: {fitted.params['smoothing_level']:.4f}")
 
     return forecast, fitted
+
 ```
 
 ### Holt's Linear Trend Method
@@ -174,6 +181,7 @@ def holt_forecast(series, horizon, damped=False):
     print(f"Beta (trend): {fitted.params['smoothing_trend']:.4f}")
 
     return forecast, fitted
+
 ```
 
 ### Holt-Winters Method
@@ -220,6 +228,7 @@ forecast, model = holt_winters_forecast(
     trend='add',
     seasonal='mul'  # Multiplicative if seasonal amplitude grows with level
 )
+
 ```
 
 ### Choosing Additive vs Multiplicative
@@ -240,12 +249,14 @@ An **AR(p)** process models the current value as a linear combination of past va
 
 ```math
 Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \cdots + \phi_p Y_{t-p} + \varepsilon_t
+
 ```
 
 Using the backshift operator:
 
 ```math
 \phi(B)Y_t = c + \varepsilon_t \quad \text{where} \quad \phi(B) = 1 - \phi_1 B - \phi_2 B^2 - \cdots - \phi_p B^p
+
 ```
 
 **Stationarity condition:** All roots of $\phi(z) = 0$ lie outside the unit circle.
@@ -256,12 +267,14 @@ An **MA(q)** process models the current value as a linear combination of past er
 
 ```math
 Y_t = \mu + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \cdots + \theta_q \varepsilon_{t-q}
+
 ```
 
 Using the backshift operator:
 
 ```math
 Y_t = \mu + \theta(B)\varepsilon_t \quad \text{where} \quad \theta(B) = 1 + \theta_1 B + \theta_2 B^2 + \cdots + \theta_q B^q
+
 ```
 
 **Invertibility condition:** All roots of $\theta(z) = 0$ lie outside the unit circle.
@@ -272,18 +285,21 @@ Differencing removes non-stationarity:
 
 ```math
 \nabla^d Y_t = (1-B)^d Y_t
+
 ```
 
 ### Complete ARIMA(p,d,q) Model
 
 ```math
 \phi(B)(1-B)^d Y_t = c + \theta(B)\varepsilon_t
+
 ```
 
 Or equivalently, if $W\_t = \nabla^d Y\_t$:
 
 ```math
 \phi(B)W_t = c + \theta(B)\varepsilon_t
+
 ```
 
 <p align="center">
@@ -342,6 +358,7 @@ def fit_arima(series, order, horizon):
 # Example
 d = find_differencing_order(df['value'])
 forecast, conf_int, model = fit_arima(df['value'], order=(2, d, 2), horizon=30)
+
 ```
 
 ### Auto ARIMA
@@ -387,6 +404,7 @@ forecast, conf_int, model = auto_arima_forecast(df['value'], horizon=30)
 forecast, conf_int, model = auto_arima_forecast(
     monthly_data, horizon=12, seasonal=True, m=12
 )
+
 ```
 
 ---
@@ -401,12 +419,14 @@ forecast, conf_int, model = auto_arima_forecast(
 
 ```math
 B^m Y_t = Y_{t-m}
+
 ```
 
 #### Complete SARIMA Model
 
 ```math
 \Phi_P(B^m) \phi_p(B) (1-B)^d (1-B^m)^D Y_t = c + \Theta_Q(B^m) \theta_q(B) \varepsilon_t
+
 ```
 
 Where:
@@ -421,6 +441,7 @@ For monthly data with yearly seasonality:
 
 ```math
 (1 - \Phi_1 B^{12})(1 - \phi_1 B)(1-B)(1-B^{12}) Y_t = (1 + \Theta_1 B^{12})(1 + \theta_1 B) \varepsilon_t
+
 ```
 
 | Parameter | Interpretation |
@@ -471,6 +492,7 @@ forecast, conf_int, model = fit_sarima(
     seasonal_order=(1, 1, 1, 12),
     horizon=12
 )
+
 ```
 
 ### SARIMA with Exogenous Variables (SARIMAX)
@@ -508,6 +530,7 @@ forecast, conf_int, model = fit_sarimax(
     horizon=30,
     exog_forecast=exog_future
 )
+
 ```
 
 ---
@@ -523,6 +546,7 @@ Facebook Prophet is designed for business time series with:
   ✓ Missing data
   ✓ Trend changes
   ✓ Outliers
+
 ```
 
 ### Basic Prophet Usage
@@ -574,6 +598,7 @@ forecast, model = fit_prophet(df, 'value', horizon_days=30)
 # Plot
 fig1 = model.plot(forecast)
 fig2 = model.plot_components(forecast)
+
 ```
 
 ### Prophet with Holidays
@@ -604,6 +629,7 @@ def fit_prophet_with_holidays(df, target_col, horizon_days, country='US'):
     forecast = model.predict(future)
 
     return forecast, model
+
 ```
 
 ### Prophet with Regressors
@@ -632,6 +658,7 @@ def fit_prophet_with_regressors(df, target_col, regressor_cols, horizon_days, fu
     forecast = model.predict(future)
 
     return forecast, model
+
 ```
 
 ---
@@ -682,6 +709,7 @@ def diagnose_residuals(fitted_model, series):
     print(lb_test)
 
     return fig
+
 ```
 
 ### Information Criteria
@@ -725,6 +753,7 @@ models = {
 }
 
 compare_models(monthly_data, models)
+
 ```
 
 ---
@@ -784,6 +813,7 @@ class StatisticalForecaster:
 forecaster = StatisticalForecaster(method='auto_arima')
 forecaster.fit(train_series, seasonal=True, m=12)
 predictions = forecaster.predict(horizon=30)
+
 ```
 
 ---

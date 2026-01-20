@@ -28,6 +28,7 @@ The fundamental relationship in queueing systems:
 
 ```math
 L = \lambda \cdot W
+
 ```
 
 where:
@@ -45,18 +46,21 @@ For arrival rate $\lambda$ and service rate $\mu$:
 
 ```math
 \rho = \frac{\lambda}{\mu}
+
 ```
 
 **Average time in system:**
 
 ```math
 W = \frac{1}{\mu - \lambda} = \frac{1}{\mu(1-\rho)}
+
 ```
 
 **Average queue length:**
 
 ```math
 L_q = \frac{\rho^2}{1-\rho}
+
 ```
 
 **Key insight:** As $\rho \to 1$, latency $\to \infty$. Keep utilization below 70-80% for stable systems.
@@ -69,12 +73,14 @@ L_q = \frac{\rho^2}{1-\rho}
 
 ```math
 W_k = [k \cdot w, (k+1) \cdot w), \quad k \in \mathbb{Z}
+
 ```
 
 **Sliding Window** (overlapping):
 
 ```math
 W_k = [k \cdot s, k \cdot s + w), \quad k \in \mathbb{Z}
+
 ```
 
 where $w$ = window size, $s$ = slide interval.
@@ -83,6 +89,7 @@ where $w$ = window size, $s$ = slide interval.
 
 ```math
 W_{session} = \{e_1, ..., e_n\} : \forall i, t_{i+1} - t_i < g
+
 ```
 
 where $g$ = gap duration.
@@ -93,6 +100,7 @@ A **watermark** $W(t\_p)$ at processing time $t\_p$ is a heuristic bound:
 
 ```math
 W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\}
+
 ```
 
 **Completeness guarantee:** For window $[a, b)$, we can close it when $W(t\_p) \geq b$.
@@ -105,12 +113,14 @@ W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\
 
 ```math
 f(f(x)) = f(x)
+
 ```
 
 **Transactional boundaries** with offset commits:
 
 ```math
 \text{commit}(\text{offset}_i) \Rightarrow \text{processed}(e_1, ..., e_i)
+
 ```
 
 Recovery: Resume from $\text{offset}\_{last\_committed}$.
@@ -125,6 +135,7 @@ For batch size $B$ and per-item processing cost $c$:
 
 ```math
 \Theta = \frac{B}{c_{setup} + B \cdot c_{item}}
+
 ```
 
 As $B \to \infty$: $\Theta \to \frac{1}{c\_{item}}$ (asymptotic maximum)
@@ -133,6 +144,7 @@ As $B \to \infty$: $\Theta \to \frac{1}{c\_{item}}$ (asymptotic maximum)
 
 ```math
 L = c_{setup} + B \cdot c_{item} + \frac{B-1}{2\lambda}
+
 ```
 
 The last term accounts for waiting time to fill the batch.
@@ -145,6 +157,7 @@ Spark Streaming uses micro-batches with interval $\Delta$:
 
 ```math
 \text{latency} \geq \Delta + \text{processing\_time}
+
 ```
 
 Minimum achievable latency bounded by batch interval.
@@ -159,6 +172,7 @@ For exponential decay:
 
 ```math
 I(t) = I_0 \cdot e^{-\lambda t}
+
 ```
 
 where $\lambda$ = decay rate, $t$ = data age.
@@ -167,6 +181,7 @@ where $\lambda$ = decay rate, $t$ = data age.
 
 ```math
 \max_f \left[ I(1/f) - C(f) \right]
+
 ```
 
 where $f$ = update frequency, $C(f)$ = cost function.
@@ -177,6 +192,7 @@ For event types with probabilities $p\_1, ..., p\_n$:
 
 ```math
 H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
+
 ```
 
 **Implications:**
@@ -203,12 +219,14 @@ For update propagation time $T$ and update rate $\lambda$:
 
 ```math
 P(\text{stale}) = 1 - e^{-\lambda T}
+
 ```
 
 **Expected staleness duration:**
 
 ```math
 E[\text{staleness}] = T/2
+
 ```
 
 ---
@@ -369,6 +387,7 @@ pipeline.compute_product_features("2024-01-15")
 
 # Generate training data
 training_data = pipeline.create_training_dataset("2024-01-01", "2024-01-15")
+
 ```
 
 ---
@@ -450,6 +469,7 @@ t_env.execute_sql("""
         user_id,
         TUMBLE(event_time, INTERVAL '5' MINUTE)
 """)
+
 ```
 
 ### Kafka Streams Example (Python with Faust)
@@ -558,6 +578,7 @@ async def get_features(web, request, user_id: str):
 
 if __name__ == '__main__':
     app.main()
+
 ```
 
 ---
@@ -637,6 +658,7 @@ class LambdaArchitecture:
         current['last_activity'] = event['timestamp']
 
         self.speed_store.set(user_id, current)
+
 ```
 
 ---
@@ -724,6 +746,7 @@ class KappaReprocessor:
             if msg is None:
                 break
             processor_func(msg.value())
+
 ```
 
 ---

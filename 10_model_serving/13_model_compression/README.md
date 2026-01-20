@@ -82,6 +82,7 @@ flowchart LR
     style Original fill:#ffcdd2
     style Techniques fill:#fff9c4
     style Result fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -91,6 +92,7 @@ pie showData
     "Pruning (2x)" : 30
     "Distillation (5x)" : 20
     "Other" : 10
+
 ```
 
 ```mermaid
@@ -99,6 +101,7 @@ xychart-beta
     x-axis [1x, 2x, 4x, 8x, 16x]
     y-axis "Accuracy %" 85 --> 100
     line [99, 98, 97, 94, 88]
+
 ```
 
 ---
@@ -239,6 +242,7 @@ for epoch in range(num_epochs):
 
 # Convert to fully quantized
 model_quantized = torch.quantization.convert(model_qat.eval())
+
 ```
 
 ### INT8 Calibration
@@ -287,6 +291,7 @@ class PercentileCalibrator:
         zero_point = int(-min_val / scale)
 
         return scale, zero_point
+
 ```
 
 ---
@@ -433,6 +438,7 @@ def iterative_pruning(model, train_fn, final_sparsity=0.9, steps=10):
         print(f"Step {step+1}: Sparsity = {get_sparsity(model):.2%}")
 
     return model
+
 ```
 
 ---
@@ -590,6 +596,7 @@ def train_distillation(
         print(f"Epoch {epoch+1}: Loss = {total_loss / len(train_loader):.4f}")
 
     return student
+
 ```
 
 ---
@@ -723,6 +730,7 @@ def estimate_rank(layer: nn.Linear, threshold: float = 0.99) -> int:
 
     rank = (cumulative < threshold).sum().item() + 1
     return rank
+
 ```
 
 ---
@@ -786,6 +794,7 @@ def get_model_size_mb(model: nn.Module) -> float:
     param_size = sum(p.numel() * p.element_size() for p in model.parameters())
     buffer_size = sum(b.numel() * b.element_size() for b in model.buffers())
     return (param_size + buffer_size) / 1024 / 1024
+
 ```
 
 ---

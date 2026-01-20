@@ -35,12 +35,14 @@ The quality of ML models depends critically on data quality. Key metrics include
 
 ```math
 C(D) = 1 - \frac{\sum_{i=1}^{n} \mathbb{1}[\text{null}(d_i)]}{n}
+
 ```
 
 **Consistency** — measures adherence to domain constraints:
 
 ```math
 \text{Cons}(D) = \frac{|\{d \in D : \phi(d) = \text{true}\}|}{|D|}
+
 ```
 
 where $\phi(d)$ represents constraint predicates (e.g., $\text{age} \geq 0$).
@@ -49,6 +51,7 @@ where $\phi(d)$ represents constraint predicates (e.g., $\text{age} \geq 0$).
 
 ```math
 F(D) = e^{-\lambda \cdot \Delta t}
+
 ```
 
 where $\Delta t$ is time since last update and $\lambda$ is a decay parameter.
@@ -61,12 +64,14 @@ Feature transformations can be viewed through information theory:
 
 ```math
 I(X; Y) = \sum_{x,y} p(x,y) \log \frac{p(x,y)}{p(x)p(y)}
+
 ```
 
 **Entropy** — measures information content:
 
 ```math
 H(X) = -\sum_{x} p(x) \log p(x)
+
 ```
 
 Good features maximize $I(X; Y)$ while minimizing redundancy between features.
@@ -79,18 +84,21 @@ For time-windowed aggregations in stream processing:
 
 ```math
 W_k = [k \cdot w, (k+1) \cdot w)
+
 ```
 
 **Sliding Window** (overlapping):
 
 ```math
 W_t = [t - w, t)
+
 ```
 
 **Exponential Moving Average**:
 
 ```math
 \text{EMA}_t = \alpha \cdot x_t + (1-\alpha) \cdot \text{EMA}_{t-1}
+
 ```
 
 where $\alpha = \frac{2}{w+1}$ for window size $w$.
@@ -103,6 +111,7 @@ For scalable data processing, probabilistic structures offer space-time tradeoff
 
 ```math
 P(\text{FP}) \approx \left(1 - e^{-kn/m}\right)^k
+
 ```
 
 where $k$ = hash functions, $n$ = elements, $m$ = bits.
@@ -111,6 +120,7 @@ where $k$ = hash functions, $n$ = elements, $m$ = bits.
 
 ```math
 \sigma \approx \frac{1.04}{\sqrt{m}}
+
 ```
 
 ---
@@ -134,6 +144,7 @@ where $k$ = hash functions, $n$ = elements, $m$ = bits.
 ## 🛠️ Technologies Covered
 
 ### Processing Engines
+
 | Technology | Use Case |
 |------------|----------|
 | Apache Spark | Batch processing at scale |
@@ -142,6 +153,7 @@ where $k$ = hash functions, $n$ = elements, $m$ = bits.
 | Apache Beam | Unified batch/stream |
 
 ### Orchestration
+
 | Tool | Highlights |
 |------|------------|
 | Apache Airflow | Industry standard, DAG-based |
@@ -150,6 +162,7 @@ where $k$ = hash functions, $n$ = elements, $m$ = bits.
 | dbt | SQL transformations |
 
 ### Storage & Formats
+
 | Solution | Best For |
 |----------|----------|
 | Apache Parquet | Columnar analytics |
@@ -158,6 +171,7 @@ where $k$ = hash functions, $n$ = elements, $m$ = bits.
 | Apache Kafka | Event streaming |
 
 ### Feature Stores
+
 | Platform | Type |
 |----------|------|
 | Feast | Open source |
@@ -247,6 +261,7 @@ ls -la
 
 # Start with the introduction
 cat 01_introduction_to_data_pipelines/README.md
+
 ```
 
 ---

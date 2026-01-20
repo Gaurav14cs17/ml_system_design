@@ -52,6 +52,7 @@ Platform revenue is directly tied to CTR prediction quality:
 
 ```math
 \text{Revenue} = \sum_{i=1}^{N} \text{pCTR}_i \times \text{Bid}_i \times \mathbb{1}[\text{impression}_i]
+
 ```
 
 **Business Impact**: A 1% improvement in CTR prediction accuracy can translate to:
@@ -74,6 +75,7 @@ Given:
 
 ```math
 \hat{y} = f(\mathbf{x}_u, \mathbf{x}_a, \mathbf{x}_c; \theta) = P(\text{click} = 1 \mid u, a, c)
+
 ```
 
 where $\theta$ are learnable parameters.
@@ -84,6 +86,7 @@ Minimize the **Binary Cross-Entropy Loss**:
 
 ```math
 \mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 where:
@@ -132,6 +135,7 @@ Measures ranking quality — probability that a random positive is ranked higher
 
 ```math
 \text{AUC} = P(\hat{y}_{\text{pos}} > \hat{y}_{\text{neg}})
+
 ```
 
 **Target**: AUC > 0.75
@@ -142,6 +146,7 @@ Measures calibration — how well predicted probabilities match true probabiliti
 
 ```math
 \text{LogLoss} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 **Target**: LogLoss < 0.4
@@ -152,6 +157,7 @@ Relative improvement over baseline (predicting average CTR):
 
 ```math
 \text{NCE} = \frac{\text{LogLoss}_{\text{model}}}{\text{LogLoss}_{\text{baseline}}} = \frac{\text{LogLoss}_{\text{model}}}{-[p \log p + (1-p) \log(1-p)]}
+
 ```
 
 where $p = \frac{1}{N} \sum\_i y\_i$ is the base CTR.
@@ -164,6 +170,7 @@ Expected difference between predicted and actual probabilities:
 
 ```math
 \text{ECE} = \sum_{b=1}^{B} \frac{n_b}{N} \left| \text{acc}(b) - \text{conf}(b) \right|
+
 ```
 
 **Target**: ECE < 0.02

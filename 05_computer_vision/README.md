@@ -66,6 +66,7 @@ flowchart LR
 
     style A fill:#e1f5fe
     style O fill:#c8e6c9
+
 ```
 
 ### Week-by-Week Timeline
@@ -94,6 +95,7 @@ gantt
     OCR                    :e1, after d3, 7d
     3D Vision              :e2, after e1, 7d
     Deployment             :e3, after e2, 7d
+
 ```
 
 ---
@@ -139,6 +141,7 @@ graph TB
 
     style BACKBONE fill:#fff3e0
     style API fill:#e8f5e9
+
 ```
 
 ---
@@ -214,6 +217,7 @@ pip install -r requirements.txt
 # Start with fundamentals
 cd 01_fundamentals
 python examples/basic_image_ops.py
+
 ```
 
 ---

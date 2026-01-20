@@ -71,6 +71,7 @@ def evaluate_word_similarity(embeddings, similarity_dataset):
         'p_value': p_value,
         'coverage': len(model_scores) / len(similarity_dataset)
     }
+
 ```
 
 ### Word Analogies
@@ -110,6 +111,7 @@ def evaluate_analogies(embeddings, analogy_dataset, topk=1):
         'accuracy': correct / total if total > 0 else 0,
         'total': total
     }
+
 ```
 
 ---
@@ -148,6 +150,7 @@ def evaluate_recall(queries, retrieved_results, ground_truth, k_values=[1, 5, 10
             recalls[k].append(r)
 
     return {f'recall@{k}': np.mean(recalls[k]) for k in k_values}
+
 ```
 
 ### Precision@K
@@ -164,6 +167,7 @@ def precision_at_k(retrieved, relevant, k):
         return 0.0
 
     return len(retrieved_k & relevant_set) / k
+
 ```
 
 ### Mean Reciprocal Rank (MRR)
@@ -193,6 +197,7 @@ def mean_reciprocal_rank(all_retrieved, all_relevant):
         rrs.append(reciprocal_rank(retrieved, relevant))
 
     return np.mean(rrs)
+
 ```
 
 ### Mean Average Precision (MAP)
@@ -233,6 +238,7 @@ def mean_average_precision(all_retrieved, all_relevant):
         aps.append(average_precision(retrieved, relevant))
 
     return np.mean(aps)
+
 ```
 
 ---
@@ -295,6 +301,7 @@ def evaluate_ndcg(queries, predictions, relevance_grades, k_values=[5, 10, 20]):
         results[f'ndcg@{k}'] = np.mean(ndcgs)
 
     return results
+
 ```
 
 ---
@@ -327,6 +334,7 @@ def evaluate_clustering(embeddings, labels, n_clusters=None):
         'adjusted_rand_index': ari,
         'normalized_mutual_info': nmi
     }
+
 ```
 
 ### V-Measure
@@ -343,6 +351,7 @@ def v_measure_evaluation(true_labels, predicted_labels):
         'homogeneity': homogeneity_score(true_labels, predicted_labels),
         'completeness': completeness_score(true_labels, predicted_labels)
     }
+
 ```
 
 ---
@@ -380,6 +389,7 @@ def evaluate_sts(model, sts_dataset):
         'pearson': pearson,
         'spearman': spearman
     }
+
 ```
 
 ### Sentence Embedding Benchmarks
@@ -428,6 +438,7 @@ class SentenceEmbeddingEvaluator:
                 ))
 
         return results
+
 ```
 
 ---
@@ -486,6 +497,7 @@ def evaluate_ann_quality(index, queries, ground_truth, k=10,
         })
 
     return results
+
 ```
 
 ### Build Time and Memory
@@ -523,6 +535,7 @@ def evaluate_index_efficiency(index_builder, vectors, queries, ground_truth):
         'query_latency_ms': query_time,
         'vectors_count': len(vectors)
     }
+
 ```
 
 ---
@@ -691,6 +704,7 @@ benchmarks = {
 
 results = evaluator.full_evaluation(benchmarks)
 report = evaluator.generate_report(results, 'evaluation_report.json')
+
 ```
 
 ---

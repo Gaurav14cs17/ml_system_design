@@ -105,6 +105,7 @@ class PointwiseTrainer:
             total_loss += loss.item()
 
         return total_loss / len(dataloader)
+
 ```
 
 ---
@@ -176,6 +177,7 @@ class RankNetLoss(nn.Module):
         loss = -labels * torch.log(p_ij + 1e-10) - (1 - labels) * torch.log(1 - p_ij + 1e-10)
 
         return loss.mean()
+
 ```
 
 ### LambdaRank
@@ -295,6 +297,7 @@ class LambdaRank(nn.Module):
         delta = torch.abs(gain_i - gain_j) * torch.abs(disc_i - disc_j) / idcg
 
         return delta
+
 ```
 
 ---
@@ -366,6 +369,7 @@ class ListNetLoss(nn.Module):
         loss = -torch.sum(p_true * torch.log(p_pred + 1e-10))
 
         return loss
+
 ```
 
 ---
@@ -518,6 +522,7 @@ def train_lambdamart_example():
         print(f"  {feature}: {importance:.4f}")
 
     return model
+
 ```
 
 ---
@@ -602,6 +607,7 @@ class DSSM(nn.Module):
         similarity = (query_norm * doc_norm).sum(dim=-1)
 
         return similarity
+
 ```
 
 ### Interaction-Based Neural Ranker
@@ -658,6 +664,7 @@ class InteractionRanker(nn.Module):
         score = self.fc(features)
 
         return score.squeeze(-1)
+
 ```
 
 ---
@@ -746,6 +753,7 @@ class BERTRankerTrainer:
         self.optimizer.step()
 
         return loss.item()
+
 ```
 
 ### ColBERT (Contextualized Late Interaction)
@@ -824,6 +832,7 @@ class ColBERT(nn.Module):
         score = max_sim.sum(dim=-1)
 
         return score
+
 ```
 
 ---

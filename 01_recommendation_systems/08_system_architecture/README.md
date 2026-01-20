@@ -66,6 +66,7 @@ producer = KafkaProducer(
 
 def log_event(event: UserEvent):
     producer.send('user-events', value=event.__dict__)
+
 ```
 
 ---
@@ -123,6 +124,7 @@ class FeatureStore:
             ids[i]: {k.decode(): json.loads(v) for k, v in r.items()}
             for i, r in enumerate(results)
         }
+
 ```
 
 ---
@@ -188,6 +190,7 @@ async def get_recommendations(request: RecommendationRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 ```
 
 ---
@@ -256,6 +259,7 @@ class ANNCandidateGenerator:
         ]
 
         return results
+
 ```
 
 ---
@@ -324,6 +328,7 @@ class RankingPipeline:
             }
             for c in candidates
         ]
+
 ```
 
 ---
@@ -373,6 +378,7 @@ groups:
     annotations:
       summary: Model not updated in 24 hours
 """
+
 ```
 
 ---

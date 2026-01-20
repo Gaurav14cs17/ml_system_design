@@ -41,6 +41,7 @@ graph TB
     style G fill:#ffecb3
     style L fill:#e1bee7
     style DN fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -57,6 +58,7 @@ quadrantChart
     StyleGAN3: [0.7, 0.9]
     VAE: [0.8, 0.5]
     Basic-GAN: [0.75, 0.6]
+
 ```
 
 | Aspect | GANs | VAEs | Diffusion |
@@ -195,6 +197,7 @@ class GANTrainer:
         self.opt_G.step()
 
         return {'loss_D': loss_D.item(), 'loss_G': loss_G.item()}
+
 ```
 
 ---
@@ -275,6 +278,7 @@ images = generator.generate(
     negative_prompt="blurry, low quality, distorted",
     num_images=4
 )
+
 ```
 
 ---

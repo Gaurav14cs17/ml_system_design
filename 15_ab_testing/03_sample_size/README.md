@@ -58,6 +58,7 @@ def sample_size_relationships():
 
     for effect, n in effects.items():
         print(f"{effect}: {n:,.0f} samples needed")
+
 ```
 
 ---
@@ -147,6 +148,7 @@ result = sample_size_proportions(
 print(f"Control size: {result['control_size']:,}")
 print(f"Treatment size: {result['treatment_size']:,}")
 print(f"Total size: {result['total_size']:,}")
+
 ```
 
 ### For Continuous Metrics (Revenue, Time)
@@ -212,6 +214,7 @@ result = sample_size_continuous(
 
 print(f"Sample size needed: {result['total_size']:,}")
 print(f"Cohen's d: {result['cohens_d']:.3f}")
+
 ```
 
 ### Quick Reference Table
@@ -314,6 +317,7 @@ duration = calc.estimate_duration(
     traffic_split=1.0  # 100% of traffic
 )
 print(f"Duration: {duration['days_needed']} days ({duration['weeks_needed']} weeks)")
+
 ```
 
 ---
@@ -390,6 +394,7 @@ def generate_warnings(duration_days, baseline_rate, mde):
         warnings.append("⚠️ Very small MDE - ensure it's practically meaningful")
 
     return warnings
+
 ```
 
 ---
@@ -479,6 +484,7 @@ reduction = cuped.variance_reduction(data)
 print(f"Variance reduced by {reduction['variance_reduction']:.1%}")
 # Typical reduction: 20-50%
 """
+
 ```
 
 ### Stratified Sampling
@@ -512,6 +518,7 @@ def stratified_sample_size(strata_proportions, strata_variances,
         'stratified_sample_size': int(np.ceil(n_stratified)),
         'variance_reduction': 1 - (within_strata_variance / overall_variance)
     }
+
 ```
 
 ### Variance Reduction Summary
@@ -535,6 +542,7 @@ baseline_std = np.std(baseline_rates)    # Account for uncertainty
 
 # Even better: Use lower bound to be conservative
 baseline_rate_conservative = np.percentile(baseline_rates, 25)
+
 ```
 
 ### Mistake 2: Ignoring Metric Variance
@@ -561,6 +569,7 @@ def compare_metric_requirements():
 # Output:
 # Conversion (10% baseline): ~126,000
 # Revenue ($50 baseline, $100 std): ~250,000
+
 ```
 
 ### Mistake 3: Not Accounting for Multiple Variants
@@ -593,6 +602,7 @@ multiple = sample_size_multiple_variants(0.10, 0.05, num_variants=3)
 print(f"Single variant: {single['total_size']:,}")
 print(f"3 variants (Bonferroni): {multiple['total_size']:,}")
 # Approximately 30-50% more samples needed
+
 ```
 
 ### Mistake 4: Forgetting About Novelty Effects
@@ -616,6 +626,7 @@ Sample Size Planning Checklist:
 □ Add buffer for novelty effects
 □ Plan for minimum duration (1-2 weeks)
 □ Document assumptions and decisions
+
 ```
 
 ---

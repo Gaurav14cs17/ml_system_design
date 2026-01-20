@@ -43,6 +43,7 @@ Before word embeddings, NLP systems treated words as discrete symbols with no in
 "dog" → one-hot: [0, 0, 1, 0, 0, 0, ..., 0]  (vocabulary position 3)
 
 Problem: cat and dog appear equally different as cat and democracy
+
 ```
 
 Word embeddings changed this by learning:
@@ -51,6 +52,7 @@ Word embeddings changed this by learning:
 "cat" → [0.2, -0.1, 0.8, 0.3, ...]
 "dog" → [0.25, -0.15, 0.75, 0.28, ...]  ← Nearby in vector space!
 "democracy" → [-0.5, 0.9, -0.1, 0.6, ...]  ← Far from animals
+
 ```
 
 ---
@@ -71,6 +73,7 @@ one_hot = {
     "on":  [0, 0, 0, 1, 0],
     "mat": [0, 0, 0, 0, 1]
 }
+
 ```
 
 **Problems**:
@@ -83,6 +86,7 @@ one_hot = {
 **Principle**: "You shall know a word by the company it keeps" - J.R. Firth
 
 **Co-occurrence Matrices**:
+
 ```
 Count how often words appear together in a context window
 
@@ -92,6 +96,7 @@ Count how often words appear together in a context window
      sat   3    10   0    6    3
      on    8    2    6    0    5
      mat   2    4    3    5    0
+
 ```
 
 **TF-IDF Vectors**: Weight by term frequency × inverse document frequency
@@ -129,18 +134,22 @@ Context: "The cat ___ on the mat"
 Target: "sat"
 
 Input: [the, cat, on, the, mat] → Predict: sat
+
 ```
 
 **Architecture**:
+
 ```
 Context Words → Average Embeddings → Hidden Layer → Softmax → Target Word
      [w₁, w₂, w₄, w₅]        ↓              ↓           ↓
           ↓              mean(E[wᵢ])      Wₒᵤₜ       P(w₃)
       Embedding             ↓              ↓           ↓
       Matrix E         h ∈ ℝᵈ         scores      argmax
+
 ```
 
 **CBOW Implementation**:
+
 ```python
 import torch
 import torch.nn as nn
@@ -157,6 +166,7 @@ class CBOW(nn.Module):
         avg_embed = embeds.mean(dim=1)  # [batch, embed_dim]
         logits = self.linear(avg_embed)  # [batch, vocab_size]
         return logits
+
 ```
 
 ### Architecture 2: Skip-gram
@@ -168,15 +178,18 @@ Target: "sat"
 Predict: ["the", "cat", "on", "the", "mat"]
 
 Input: sat → Predict: context words
+
 ```
 
 **Architecture**:
+
 ```
 Target Word → Embedding → Hidden Layer → Softmax → Context Words
     w₃           ↓           ↓            ↓
     ↓          E[w₃]        Wₒᵤₜ      P(w₁), P(w₂), P(w₄), P(w₅)
 Embedding        ↓           ↓            ↓
 Matrix E     h ∈ ℝᵈ       scores      for each context position
+
 ```
 
 **Skip-gram typically works better for rare words** since each word gets more training signal.
@@ -187,6 +200,7 @@ Computing softmax over entire vocabulary is computationally prohibitive:
 
 ```math
 P(w_o | w_i) = \frac{\exp(\mathbf{v}_{w_o}^\top \mathbf{v}_{w_i})}{\sum_{j=1}^{|V|} \exp(\mathbf{v}_{w_j}^\top \mathbf{v}_{w_i})}
+
 ```
 
 The denominator requires summing over **all words** in vocabulary $|V|$ (often 100,000+).
@@ -197,6 +211,7 @@ Replace the softmax with a **binary classification task**:
 
 ```math
 \mathcal{L}_{\text{NEG}} = \log \sigma(\mathbf{v}_{w_o}^\top \mathbf{v}_{w_i}) + \sum_{k=1}^{K} \mathbb{E}_{w_k \sim P_n(w)} \left[ \log \sigma(-\mathbf{v}_{w_k}^\top \mathbf{v}_{w_i}) \right]
+
 ```
 
 where:
@@ -218,6 +233,7 @@ def negative_sampling_loss(target_embed, context_embed, negative_embeds):
     neg_loss = -torch.sum(torch.log(neg_scores))
 
     return pos_loss + neg_loss
+
 ```
 
 ### Word2Vec Hyperparameters
@@ -285,6 +301,7 @@ def build_cooccurrence_matrix(corpus, window_size=10, vocab_size=10000):
                     cooc[word_i][word_j] += weight
 
     return cooc
+
 ```
 
 ### GloVe Objective Function
@@ -293,6 +310,7 @@ GloVe minimizes a **weighted least-squares regression** on the co-occurrence mat
 
 ```math
 \mathcal{J} = \sum_{i,j=1}^{|V|} f(X_{ij}) \left( \mathbf{w}_i^\top \tilde{\mathbf{w}}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2
+
 ```
 
 where:
@@ -305,11 +323,13 @@ where:
 
 ```math
 f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{otherwise} \end{cases}
+
 ```
 
 where typically $x\_{\max} = 100$ and $\alpha = 0.75$.
 
 **Weighting Function**:
+
 ```python
 def weighting_function(x, x_max=100, alpha=0.75):
     """
@@ -318,6 +338,7 @@ def weighting_function(x, x_max=100, alpha=0.75):
     if x < x_max:
         return (x / x_max) ** alpha
     return 1.0
+
 ```
 
 ### GloVe Implementation
@@ -376,6 +397,7 @@ class GloVe(nn.Module):
     def get_embedding(self, word_idx):
         """Final embedding = w + c (sum of both)"""
         return self.w_embeddings.weight[word_idx] + self.c_embeddings.weight[word_idx]
+
 ```
 
 ### GloVe vs Word2Vec
@@ -397,9 +419,11 @@ FastText, developed by Facebook AI Research in 2016, extends Word2Vec by represe
 ### The Key Insight
 
 Words are not atomic units. They have internal structure:
+
 ```
 "unhappiness" = "un" + "happi" + "ness"
 "running" = "run" + "ning"
+
 ```
 
 ### Subword Representation
@@ -424,6 +448,7 @@ def get_subwords(word, min_n=3, max_n=6):
 get_subwords("where")
 # Output: ['<wh', 'whe', 'her', 'ere', 're>', '<whe', 'wher', 'here', 'ere>',
 #          '<wher', 'where', 'here>', '<where', 'where>']
+
 ```
 
 ### Word Vector Computation
@@ -446,24 +471,29 @@ def get_word_vector(word, subword_embeddings, word_embedding=None):
             vector += subword_embeddings[sw]
 
     return vector / (len(subwords) + 1)  # Average
+
 ```
 
 ### Benefits of Subword Embeddings
 
 #### 1. Out-of-Vocabulary (OOV) Handling
+
 ```python
 # Word2Vec/GloVe: Unknown word → No embedding
 embed("unfriendliness")  # ??? (if not in vocabulary)
 
 # FastText: Can still compute embedding from subwords
 embed("unfriendliness") = embed("<un") + embed("unf") + ... + embed("ess>")
+
 ```
 
 #### 2. Morphological Awareness
+
 ```python
 # Similar words share subwords
 embed("running") ≈ embed("runner")  # Share "run", "unn"
 embed("unhappy") ≈ embed("unhelpful")  # Share "<un", "unh"
+
 ```
 
 #### 3. Better for Morphologically Rich Languages
@@ -493,6 +523,7 @@ class FastText(nn.Module):
         # Predict context (skip-gram style)
         logits = self.output(center_embed)
         return logits
+
 ```
 
 ### FastText Hyperparameters
@@ -587,6 +618,7 @@ def generate_skipgram_pairs(corpus, window_size=5):
                 if i != j:
                     pairs.append((center, sentence[j]))
     return pairs
+
 ```
 
 ### Training Loop
@@ -621,6 +653,7 @@ def train_word2vec(model, pairs, vocab_size, epochs=5,
             total_loss += loss.item()
 
         print(f"Epoch {epoch+1}, Loss: {total_loss/len(pairs):.4f}")
+
 ```
 
 ### Using Pre-trained Models
@@ -642,6 +675,7 @@ fasttext = api.load("fasttext-wiki-news-subwords-300")
 vector = word2vec["king"]
 similar = word2vec.most_similar("king", topn=5)
 analogy = word2vec.most_similar(positive=["king", "woman"], negative=["man"])
+
 ```
 
 ---
@@ -674,6 +708,7 @@ def evaluate_similarity(embeddings, similarity_dataset):
 
     correlation, p_value = spearmanr(human_scores, model_scores)
     return correlation
+
 ```
 
 #### 2. Word Analogies
@@ -712,6 +747,7 @@ syntactic_analogies = [
     ("good", "better", "bad", "worse"),
     ("walk", "walking", "swim", "swimming"),
 ]
+
 ```
 
 ### Extrinsic Evaluation
@@ -734,6 +770,7 @@ def evaluate_sentiment(embeddings, sentiment_dataset):
 # Named Entity Recognition
 # Part-of-Speech Tagging
 # Text Classification
+
 ```
 
 ---
@@ -855,6 +892,7 @@ def train_word2vec_full(texts, embed_dim=100, window_size=5,
     embeddings = {word: model.get_embedding(idx) for word, idx in vocab.items()}
 
     return embeddings, vocab, model
+
 ```
 
 ### Saving and Loading Embeddings
@@ -880,6 +918,7 @@ def load_embeddings(filepath):
             vector = np.array([float(x) for x in parts[1:]])
             embeddings[word] = vector
     return embeddings
+
 ```
 
 ---
@@ -893,6 +932,7 @@ Static embeddings give one vector per word, but words have multiple meanings:
 ```
 "bank" → river bank? financial bank?
 "bat" → animal? sports equipment?
+
 ```
 
 **Solution**: Contextual embeddings (ELMo, BERT) generate different vectors based on context.
@@ -904,6 +944,7 @@ Map words from different languages to the same space:
 ```python
 # Align English and French embeddings
 # "dog" (en) ≈ "chien" (fr) in shared space
+
 ```
 
 Methods:
@@ -918,6 +959,7 @@ Inject knowledge graph information into embeddings:
 # Original: embedding("dog")
 # Knowledge graph: dog IS-A mammal, dog HAS fur
 # Retrofitted: embedding("dog") pushed closer to mammal, fur
+
 ```
 
 ### 4. Debiasing
@@ -937,6 +979,7 @@ def debias_embeddings(embeddings, gender_pairs):
         embeddings[word] = remove_component(embeddings[word], gender_direction)
 
     return embeddings
+
 ```
 
 ---

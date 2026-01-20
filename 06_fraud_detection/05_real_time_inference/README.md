@@ -128,6 +128,7 @@ async def score_transaction(request: TransactionRequest):
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "model_version": scoring_service.model_service.version}
+
 ```
 
 ---
@@ -230,6 +231,7 @@ class FeatureRetrievalService:
             idx += 2
 
         return features
+
 ```
 
 ### Feature Caching Strategy
@@ -283,6 +285,7 @@ class TieredFeatureCache:
 
     def _is_expired(self, entry: Dict) -> bool:
         return time.time() - entry['ts'] > self.l1_ttl
+
 ```
 
 ---
@@ -330,6 +333,7 @@ class TritonModelServer:
     def check_health(self) -> bool:
         """Check if model server is healthy"""
         return self.client.is_server_live() and self.client.is_model_ready(self.model_name)
+
 ```
 
 ### TensorFlow Serving
@@ -362,6 +366,7 @@ class TFServingClient:
         response = self.stub.Predict(request, timeout=0.050)  # 50ms timeout
 
         return tf.make_ndarray(response.outputs['predictions'])
+
 ```
 
 ### Multi-Model Serving
@@ -438,6 +443,7 @@ class MultiModelServingService:
             return 0.5  # Neutral score
 
         return weighted_sum / total_weight
+
 ```
 
 ---
@@ -511,6 +517,7 @@ class ModelOptimizer:
                 prune.remove(module, 'weight')
 
         return model
+
 ```
 
 ### Batching for Throughput
@@ -584,6 +591,7 @@ class BatchingInferenceServer:
             except Exception as e:
                 for future in batch_futures:
                     future.set_exception(e)
+
 ```
 
 ---
@@ -663,6 +671,7 @@ spec:
       target:
         type: AverageValue
         averageValue: "1000"
+
 ```
 
 ### Load Balancing
@@ -727,6 +736,7 @@ class LoadBalancedModelService:
                     self.health_status[server.server_url] = False
 
             await asyncio.sleep(5)  # Check every 5 seconds
+
 ```
 
 ---
@@ -788,6 +798,7 @@ class PredictionCache:
         await self.cache_prediction(request, score)
 
         return score
+
 ```
 
 ### Feature Cache with Invalidation
@@ -829,6 +840,7 @@ class FeatureCacheWithInvalidation:
         if cache_key in self.cache:
             del self.cache[cache_key]
             logger.info(f"Invalidated cache for {cache_key}")
+
 ```
 
 ---
@@ -932,6 +944,7 @@ class CircuitBreaker:
 
         if self.failures >= self.failure_threshold:
             self.state = 'OPEN'
+
 ```
 
 ---
@@ -1013,6 +1026,7 @@ class InstrumentedScoringService:
 
         finally:
             ACTIVE_REQUESTS.dec()
+
 ```
 
 ### Latency Tracking Dashboard
@@ -1051,6 +1065,7 @@ dashboard:
       type: heatmap
       query: |
         sum(rate(fraud_score_distribution_bucket[5m])) by (le)
+
 ```
 
 ---
@@ -1129,6 +1144,7 @@ class Ultra10msScoringService:
             None,
             {'input': features.astype(np.float32)}
         )[0][0])
+
 ```
 
 ---

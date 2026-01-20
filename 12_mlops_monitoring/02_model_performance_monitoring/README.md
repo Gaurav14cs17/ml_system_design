@@ -100,6 +100,7 @@ class ClassificationMetrics:
                 'f1': f1_score(y_true, y_pred)
             }
         return results
+
 ```
 
 ### Regression Metrics
@@ -137,6 +138,7 @@ class RegressionMetrics:
                 y_true[mask], y_pred[mask]
             )
         return results
+
 ```
 
 ### Ranking Metrics
@@ -181,6 +183,7 @@ class RankingMetrics:
             if item in y_true:
                 return 1.0 / (i + 1)
         return 0.0
+
 ```
 
 ---
@@ -234,6 +237,7 @@ class RealTimeMonitor:
 
         LATENCY.labels(model_name=self.model_name).observe(latency_seconds)
         CONFIDENCE.labels(model_name=self.model_name).observe(confidence)
+
 ```
 
 ### Batch Monitoring Implementation
@@ -293,6 +297,7 @@ class BatchMonitor:
                 daily_metrics.append(result)
 
         return pd.DataFrame(daily_metrics)
+
 ```
 
 ---
@@ -369,6 +374,7 @@ class GroundTruthCollector:
             ]
 
         return labeled
+
 ```
 
 ---
@@ -468,6 +474,7 @@ class PerformanceDegradationDetector:
             'p_value': p_value,
             'significant': p_value < 0.05
         }
+
 ```
 
 ---
@@ -558,6 +565,7 @@ def predict_with_monitoring(model, features):
     with latency_monitor.measure():
         prediction = model.predict(features)
     return prediction
+
 ```
 
 ---

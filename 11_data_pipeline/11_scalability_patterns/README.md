@@ -113,6 +113,7 @@ jan_data = pipeline.read_partition_range(
     "2024-01-01",
     "2024-01-31"
 )
+
 ```
 
 ### Hash Partitioning for Distributed Processing
@@ -171,6 +172,7 @@ result = partitioner.process_partitions_parallel(
     compute_user_features,
     partition_key='user_id'
 )
+
 ```
 
 ---
@@ -276,6 +278,7 @@ pipeline.compute_features_at_scale(
     "s3://datalake/features/user_features/",
     "2024-01-15"
 )
+
 ```
 
 ### Dask for Larger-than-Memory Processing
@@ -365,6 +368,7 @@ features = pipeline.compute_features_parallel(
 
 # Materialize results
 result = features.compute()
+
 ```
 
 ---
@@ -534,6 +538,7 @@ cache_manager.bulk_precompute(
     entity_ids=active_users,
     feature_set="user_features_v2"
 )
+
 ```
 
 ---
@@ -677,6 +682,7 @@ async def main():
     return result
 
 asyncio.run(main())
+
 ```
 
 ---
@@ -753,6 +759,7 @@ class ShardedFeatureStore:
 
         for entity_id, features in all_data.items():
             self.set_features(entity_id, features)
+
 ```
 
 ---

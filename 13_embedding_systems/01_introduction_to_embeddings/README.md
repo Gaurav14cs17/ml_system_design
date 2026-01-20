@@ -50,6 +50,7 @@ Embedding Representation:
 "cat"    → [0.2, -0.4, 0.7, 0.1, ...]  (128-1024 dimensions)
 "dog"    → [0.25, -0.3, 0.65, 0.15, ...]  (similar to cat!)
 "feline" → [0.19, -0.41, 0.72, 0.09, ...]  (very similar to cat!)
+
 ```
 
 ### Formal Definition
@@ -58,6 +59,7 @@ An **embedding function** is a learned mapping:
 
 ```math
 f_\theta: \mathcal{X} \rightarrow \mathbb{R}^d
+
 ```
 
 where:
@@ -89,12 +91,14 @@ One-hot encodings treat all items as equally different:
 
 ```math
 d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{dog}}) = d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{physics}}) = \sqrt{2}
+
 ```
 
 Embeddings capture meaningful relationships:
 
 ```math
 d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{dog}}) \ll d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{physics}})
+
 ```
 
 This enables machines to understand that "cat" and "dog" share semantic properties (animals, pets) that "quantum physics" does not.
@@ -109,6 +113,7 @@ Pre-trained embeddings encode general knowledge that transfers across tasks:
 ### 4. Enabling Similarity Search
 
 With embeddings, finding similar items becomes a geometric problem:
+
 ```python
 # Find products similar to a query
 similar_products = find_nearest_neighbors(
@@ -116,6 +121,7 @@ similar_products = find_nearest_neighbors(
     product_embeddings,
     k=10
 )
+
 ```
 
 ### 5. Feature Engineering Automation
@@ -125,6 +131,7 @@ Traditional ML required manual feature engineering. Embeddings learn features au
 ```
 Traditional: Define features like word_length, contains_vowels, is_noun...
 Embeddings: Neural network learns relevant features from data
+
 ```
 
 ---
@@ -139,6 +146,7 @@ An **embedding** is a learned function that maps elements from a discrete or hig
 
 ```math
 f: \mathcal{X} \rightarrow \mathbb{R}^d
+
 ```
 
 where $\mathcal{X}$ is the input domain and $d \ll |\mathcal{X}|$ is the embedding dimension.
@@ -159,6 +167,7 @@ Embeddings live in a **metric space** equipped with:
 
 ```math
 \cos(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{and} \quad d_{\text{euclidean}}^2 = 2(1 - \cos(\mathbf{a}, \mathbf{b}))
+
 ```
 
 #### 2. Vector Arithmetic (Analogical Reasoning)
@@ -167,6 +176,7 @@ A remarkable property of well-trained embeddings is that semantic relationships 
 
 ```math
 \vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}
+
 ```
 
 This can be understood as:
@@ -177,6 +187,7 @@ More generally, for analogies $a:b :: c:d$:
 
 ```math
 \vec{v}_b - \vec{v}_a + \vec{v}_c \approx \vec{v}_d
+
 ```
 
 ### The Embedding Matrix
@@ -185,6 +196,7 @@ For discrete vocabularies $V$, embeddings are stored as a **lookup table**:
 
 ```math
 \mathbf{E} \in \mathbb{R}^{|V| \times d}
+
 ```
 
 Where:
@@ -195,6 +207,7 @@ Where:
 
 ```math
 \text{embed}(i) = \mathbf{E}_{i,:} = \mathbf{e}_i \in \mathbb{R}^d
+
 ```
 
 This is mathematically equivalent to multiplying by a one-hot vector: $\mathbf{e}\_i = \mathbf{E}^\top \mathbf{x}\_{\text{one-hot}}$
@@ -207,6 +220,7 @@ Embedding models are trained to satisfy the **similarity preservation** constrai
 
 ```math
 \mathcal{L}_{\text{InfoNCE}} = -\mathbb{E}\left[\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(f(x), f(x_j^-))/\tau)}\right]
+
 ```
 
 where $\tau$ is a temperature hyperparameter and $x^+$ are positive pairs.
@@ -215,6 +229,7 @@ where $\tau$ is a temperature hyperparameter and $x^+$ are positive pairs.
 
 ```math
 \mathcal{L}_{\text{triplet}} = \max(0, d(f(a), f(p)) - d(f(a), f(n)) + \alpha)
+
 ```
 
 where $(a, p, n)$ is an anchor-positive-negative triplet and $\alpha$ is the margin.
@@ -223,6 +238,7 @@ where $(a, p, n)$ is an anchor-positive-negative triplet and $\alpha$ is the mar
 
 ```math
 \mathcal{L}_{\text{MNRL}} = -\frac{1}{B}\sum_{i=1}^{B} \log \frac{\exp(s(q_i, d_i^+))}{\sum_{j=1}^{B} \exp(s(q_i, d_j))}
+
 ```
 
 where $B$ is the batch size and in-batch negatives are used.
@@ -233,19 +249,23 @@ where $B$ is the batch size and in-batch negatives are used.
 
 ### 1. Semantic Coherence
 Similar concepts should have similar embeddings:
+
 ```python
 cosine_similarity(embed("happy"), embed("joyful")) > 0.8
 cosine_similarity(embed("happy"), embed("sad")) < 0.3
+
 ```
 
 ### 2. Geometric Structure
 Relationships should be preserved geometrically:
+
 ```python
 # Analogies work
 embed("paris") - embed("france") ≈ embed("tokyo") - embed("japan")
 
 # Clustering makes sense
 cluster(embed("sports words")) ≠ cluster(embed("food words"))
+
 ```
 
 ### 3. Appropriate Dimensionality
@@ -255,17 +275,21 @@ cluster(embed("sports words")) ≠ cluster(embed("food words"))
 
 ### 4. Normalization
 Many applications benefit from unit-normalized embeddings:
+
 ```python
 embedding = embedding / np.linalg.norm(embedding)
 # Now: ||embedding|| = 1
 # Benefit: dot product = cosine similarity
+
 ```
 
 ### 5. Stability
 Small changes in input should cause small changes in embedding:
+
 ```python
 # Typo robustness
 embed("machine learning") ≈ embed("machin learning")
+
 ```
 
 ---
@@ -333,6 +357,7 @@ Lower Dimensions:
   ✓ Less storage
   ✓ Better generalization
   ✗ May lose important information
+
 ```
 
 ### Empirical Rule
@@ -367,6 +392,7 @@ class EmbeddingModel(nn.Module):
 # During training, gradients update the embedding weights
 loss.backward()
 optimizer.step()
+
 ```
 
 ### 2. Matrix Factorization
@@ -380,6 +406,7 @@ Where:
 - R = user-item interaction matrix (sparse)
 - U = user embeddings
 - V = item embeddings
+
 ```
 
 ### 3. Contrastive Learning
@@ -397,6 +424,7 @@ def contrastive_loss(anchor, positive, negatives, temperature=0.1):
     # InfoNCE loss
     loss = -pos_sim + log(sum(exp(neg_sims)))
     return loss
+
 ```
 
 ### 4. Triplet Learning
@@ -408,6 +436,7 @@ def triplet_loss(anchor, positive, negative, margin=0.2):
     pos_dist = distance(anchor, positive)
     neg_dist = distance(anchor, negative)
     return max(0, pos_dist - neg_dist + margin)
+
 ```
 
 ---
@@ -423,8 +452,10 @@ def triplet_loss(anchor, positive, negative, margin=0.2):
 - Code search
 
 ### 2. Recommendation Systems
+
 ```
 User Embedding × Item Embedding = Relevance Score
+
 ```
 - Netflix: movie recommendations
 - Spotify: music discovery
@@ -443,9 +474,11 @@ User Embedding × Item Embedding = Relevance Score
 - Visual similarity
 
 ### 5. Anomaly Detection
+
 ```
 if distance(new_item_embedding, normal_cluster) > threshold:
     flag_as_anomaly()
+
 ```
 
 ### 6. Clustering and Organization
@@ -469,9 +502,11 @@ Real-world distributions change over time:
 
 ### 3. Bias and Fairness
 Embeddings can encode societal biases from training data:
+
 ```python
 # Problematic: Historical bias encoded
 embed("doctor") closer to embed("man") than embed("woman")
+
 ```
 - **Solutions**: Debiasing techniques, careful data curation
 

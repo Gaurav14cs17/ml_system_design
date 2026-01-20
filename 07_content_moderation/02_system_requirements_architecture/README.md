@@ -17,6 +17,7 @@
 ### Core Features
 
 #### 1. Content Ingestion
+
 ```
 FR-001: System must accept content from multiple sources
         - API endpoints (REST, GraphQL)
@@ -31,9 +32,11 @@ FR-002: System must support multiple content types
         - Audio (MP3, WAV, real-time)
         - Documents (PDF, DOCX)
         - Metadata (user info, context)
+
 ```
 
 #### 2. Content Analysis
+
 ```
 FR-003: System must classify content into policy categories
         - Violence/Gore
@@ -58,9 +61,11 @@ FR-005: System must extract relevant signals
         - Face detection (optional, privacy-aware)
         - Audio transcription
         - OCR for text in images
+
 ```
 
 #### 3. Decision & Action
+
 ```
 FR-006: System must support multiple action types
         - Allow (no action)
@@ -75,9 +80,11 @@ FR-007: System must support configurable policies
         - Threshold adjustments
         - A/B testing of policies
         - Geo-specific rules
+
 ```
 
 #### 4. Human Review Integration
+
 ```
 FR-008: System must route uncertain cases to human reviewers
         - Priority queuing
@@ -89,9 +96,11 @@ FR-009: System must capture human decisions for model improvement
         - Decision logging
         - Disagreement tracking
         - Quality audits
+
 ```
 
 #### 5. User-Facing Features
+
 ```
 FR-010: System must support user appeals
         - Appeal submission
@@ -102,6 +111,7 @@ FR-011: System must provide transparency
         - Removal reasons
         - Policy citations
         - Educational content
+
 ```
 
 ---
@@ -130,6 +140,7 @@ NFR-002: Data Scalability
          - Support 1B+ content items/day
          - Retain decisions for 7+ years (legal)
          - Handle 100TB+ model artifacts
+
 ```
 
 ### Reliability Requirements
@@ -145,6 +156,7 @@ NFR-004: Data Integrity
          - No content loss
          - Audit trail for all decisions
          - Consistent decision logging
+
 ```
 
 ### Security Requirements
@@ -160,6 +172,7 @@ NFR-006: Data Protection
          - PII handling compliance
          - Data retention policies
          - Right to deletion support
+
 ```
 
 ---
@@ -177,6 +190,7 @@ NFR-006: Data Protection
 ### 1. Ingestion Layer
 
 #### API Gateway
+
 ```python
 # Example: FastAPI ingestion endpoint
 from fastapi import FastAPI, BackgroundTasks
@@ -224,9 +238,11 @@ async def moderate_content(
         request_id=request_id,
         status="pending"
     )
+
 ```
 
 #### Message Queue Consumer
+
 ```python
 # Kafka consumer for high-throughput ingestion
 from kafka import KafkaConsumer
@@ -267,11 +283,13 @@ class ContentConsumer:
 
         # Action
         self.execute_action(content, decision)
+
 ```
 
 ### 2. Preprocessing Layer
 
 #### Text Normalization
+
 ```python
 import re
 from typing import Dict, Any
@@ -329,9 +347,11 @@ class TextPreprocessor:
         text = re.sub(r'(.)\1{2,}', r'\1\1', text)
 
         return text
+
 ```
 
 #### Media Processing
+
 ```python
 import cv2
 import numpy as np
@@ -428,11 +448,13 @@ class MediaPreprocessor:
 
         # Convert to hex string
         return ''.join(format(byte, '02x') for byte in np.packbits(diff.flatten()))
+
 ```
 
 ### 3. Analysis Layer
 
 #### Model Inference Service
+
 ```python
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
@@ -516,11 +538,13 @@ class ModerationInferenceService:
             })
 
         return results
+
 ```
 
 ### 4. Decision Layer
 
 #### Policy Engine
+
 ```python
 from dataclasses import dataclass
 from typing import List, Dict, Optional
@@ -640,6 +664,7 @@ DEFAULT_POLICIES = [
         priority=60
     ),
 ]
+
 ```
 
 ---
@@ -684,6 +709,7 @@ DEFAULT_POLICIES = [
 ## Deployment Strategies
 
 ### Blue-Green Deployment
+
 ```yaml
 # Kubernetes deployment strategy
 apiVersion: apps/v1
@@ -718,9 +744,11 @@ spec:
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5
+
 ```
 
 ### Canary Deployment for ML Models
+
 ```yaml
 # Istio virtual service for canary
 apiVersion: networking.istio.io/v1beta1
@@ -748,6 +776,7 @@ spec:
         host: moderation-inference
         subset: canary
       weight: 5
+
 ```
 
 ---
@@ -807,6 +836,7 @@ class TieredModerationPipeline:
 
         # Tier 3: LLM for complex cases
         return self.tier3_model.analyze(content)
+
 ```
 
 ---

@@ -42,6 +42,7 @@ flowchart LR
 
     style E fill:#4caf50,color:#fff
     style Pipeline fill:#e3f2fd
+
 ```
 
 ```mermaid
@@ -54,6 +55,7 @@ graph TB
     end
 
     style Serving fill:#e8f5e9
+
 ```
 
 ### The Serving Layer Responsibilities
@@ -135,6 +137,7 @@ for epoch in range(100):
 model.eval()
 with torch.no_grad():
     prediction = model(input_tensor)
+
 ```
 
 ### 2. Latency Breakdown
@@ -211,6 +214,7 @@ torch.onnx.export(model, dummy_input, "model.onnx")
 
 # Pickle - Simple but risky (security issues)
 pickle.dump(model, open("model.pkl", "wb"))
+
 ```
 
 ---
@@ -242,6 +246,7 @@ flowchart TB
     style Online fill:#c8e6c9
     style Batch fill:#bbdefb
     style Stream fill:#fff9c4
+
 ```
 
 ### 1. Online Serving (Real-time)
@@ -257,6 +262,7 @@ sequenceDiagram
     A->>M: Inference (< 50ms)
     M->>R: Prediction
     R->>U: Response (< 100ms total)
+
 ```
 
 **Use Cases:**
@@ -284,6 +290,7 @@ flowchart LR
 
     style A fill:#e3f2fd
     style E fill:#c8e6c9
+
 ```
 
 **Use Cases:**
@@ -310,6 +317,7 @@ flowchart LR
 
     style B fill:#fff9c4
     style E fill:#fff9c4
+
 ```
 
 **Use Cases:**
@@ -384,6 +392,7 @@ flowchart TB
     style Serving fill:#fff9c4
     style Data fill:#f8bbd9
     style Observability fill:#d1c4e9
+
 ```
 
 ### Request Flow
@@ -413,6 +422,7 @@ sequenceDiagram
         S->>Ca: Store Result
     end
     S-->>C: Response
+
 ```
 
 ### Component Deep Dive
@@ -446,6 +456,7 @@ class ModelServer:
     def health_check(self):
         """Liveness/readiness probes"""
         pass
+
 ```
 
 #### 2. Model Registry
@@ -470,6 +481,7 @@ features = store.get_online_features(
     ],
     entity_rows=[{"user_id": 12345, "item_id": 67890}]
 ).to_dict()
+
 ```
 
 ---
@@ -506,6 +518,7 @@ class ModelServerWithWarmup:
     def readiness_check(self):
         """Kubernetes readiness probe"""
         return {"ready": self.is_ready}
+
 ```
 
 ### 3. Memory Management
@@ -531,6 +544,7 @@ FROM python:3.9-slim
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY model/ /app/model/
+
 ```
 
 ---
@@ -622,6 +636,7 @@ async def health():
     return {"status": "healthy"}
 
 # Run with: uvicorn simple_server:app --host 0.0.0.0 --port 8000
+
 ```
 
 ### Docker Deployment
@@ -649,6 +664,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 # Run server
 CMD ["uvicorn", "simple_server:app", "--host", "0.0.0.0", "--port", "8000"]
+
 ```
 
 ### Testing Your Server
@@ -665,6 +681,7 @@ curl -X POST "http://localhost:8000/predict" \
 
 # Response
 # {"prediction": 1, "confidence": 0.89}
+
 ```
 
 ---

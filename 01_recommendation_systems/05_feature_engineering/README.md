@@ -71,6 +71,7 @@ class UserFeatureExtractor:
         elif age < 45: return '35-44'
         elif age < 55: return '45-54'
         else: return '55+'
+
 ```
 
 ### Behavioral User Features
@@ -109,6 +110,7 @@ def get_behavioral_features(self, user_id, window_days=30):
         'preferred_hour': self._most_common_hour(interactions),
         'weekend_ratio': self._weekend_ratio(interactions),
     }
+
 ```
 
 ### User Preference Features
@@ -149,6 +151,7 @@ def get_preference_features(self, user_id):
     }
 
     return {**category_prefs, **price_features, **brand_features}
+
 ```
 
 ---
@@ -206,6 +209,7 @@ class ItemFeatureExtractor:
             'sentiment_neu': sentiment['neu'],
             'num_entities': len(entities),
         }
+
 ```
 
 ### Popularity Features
@@ -235,6 +239,7 @@ def get_popularity_features(self, item_id, time_windows=[1, 7, 30]):
     features['is_trending'] = int(features['view_trend'] > 1.5)
 
     return features
+
 ```
 
 ---
@@ -298,6 +303,7 @@ def get_similar_item_features(self, user_id, item_id):
         'similar_items_ratio': similar_viewed / len(similar_items),
         'avg_rating_similar': np.mean(similar_ratings) if similar_ratings else 0,
     }
+
 ```
 
 ---
@@ -335,6 +341,7 @@ def get_temporal_features(self, timestamp):
         'dow_sin': np.sin(2 * np.pi * dt.weekday() / 7),
         'dow_cos': np.cos(2 * np.pi * dt.weekday() / 7),
     }
+
 ```
 
 ### Device and Platform Features
@@ -355,6 +362,7 @@ def get_device_features(self, request_context):
         'is_app': int(request_context.platform == 'app'),
         'connection_type': request_context.connection,  # wifi/cellular
     }
+
 ```
 
 ### Session Features
@@ -381,6 +389,7 @@ def get_session_features(self, session_id):
         'page_depth': session.page_depth,
         'referrer_type': session.referrer_type,  # search/direct/social
     }
+
 ```
 
 ---
@@ -418,6 +427,7 @@ class NumericalEncoder:
             self.encoders[col] = encoder
 
         return pd.DataFrame(result)
+
 ```
 
 ### Categorical Features
@@ -461,6 +471,7 @@ class CategoricalEncoder:
                 self.encoders[col] = le
 
         return pd.DataFrame(result)
+
 ```
 
 ### Target Encoding
@@ -483,6 +494,7 @@ def target_encode(df, categorical_col, target_col, smoothing=10):
     )
 
     return df[categorical_col].map(smoothed_mean).fillna(global_mean)
+
 ```
 
 ---
@@ -521,6 +533,7 @@ class EmbeddingModel(nn.Module):
 
     def get_item_embedding(self, item_id):
         return self.item_embedding.weight[item_id].detach().numpy()
+
 ```
 
 ### Pre-trained Text Embeddings
@@ -551,6 +564,7 @@ class TextEmbedder:
         )
 
         return embeddings
+
 ```
 
 ---
@@ -585,6 +599,7 @@ def select_features_by_importance(X, y, n_features=50):
     shap_values = explainer.shap_values(X)
 
     return selected, importances, shap_values
+
 ```
 
 ---

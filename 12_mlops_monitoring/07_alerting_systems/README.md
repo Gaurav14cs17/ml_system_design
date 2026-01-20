@@ -175,6 +175,7 @@ class MLAlertManager:
             self.active_alerts[rule_name].state = AlertState.ACKNOWLEDGED
             self.active_alerts[rule_name].annotations['acknowledged_by'] = by
             self.active_alerts[rule_name].annotations['acknowledged_at'] = datetime.utcnow().isoformat()
+
 ```
 
 ---
@@ -296,6 +297,7 @@ class PagerDutyChannel(NotificationChannel):
         }
 
         requests.post(self.api_url, json=payload)
+
 ```
 
 ---
@@ -377,6 +379,7 @@ def create_ml_alert_rules() -> List[AlertRule]:
             runbook_url="https://wiki/runbooks/ml-throughput"
         )
     ]
+
 ```
 
 ---
@@ -473,6 +476,7 @@ class AlertAggregator:
         self.last_summary_sent = datetime.utcnow()
 
         return summary
+
 ```
 
 ---
@@ -541,6 +545,7 @@ Model accuracy has dropped below 70%, indicating severe degradation.
 ## Related Dashboards
 - [Model Performance](http://grafana/d/model-perf)
 - [Data Quality](http://grafana/d/data-quality)
+
 ```
 
 ---

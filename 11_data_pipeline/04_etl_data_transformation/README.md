@@ -145,6 +145,7 @@ df = cleaner.handle_missing_values(df, {
     'email': 'drop'
 })
 df = cleaner.standardize_text(df, ['name', 'city'], ['lower', 'strip'])
+
 ```
 
 ### 2. Data Normalization & Encoding
@@ -283,6 +284,7 @@ df = transformer.bin_numeric(df, 'age',
     bins=[0, 18, 35, 50, 65, 100],
     labels=['teen', 'young_adult', 'adult', 'middle_age', 'senior']
 )
+
 ```
 
 ### 3. SQL-Based Transformations (dbt Style)
@@ -330,6 +332,7 @@ cleaned AS (
 )
 
 SELECT * FROM cleaned
+
 ```
 
 ```sql
@@ -385,6 +388,7 @@ SELECT
     total_revenue / GREATEST(DATEDIFF(CURRENT_DATE, first_order_date) / 365.0, 0.1) AS annual_value
 
 FROM customer_metrics
+
 ```
 
 ### 4. PySpark Transformations
@@ -536,6 +540,7 @@ features = transformer.join_with_broadcast(
 
 # Save feature table
 features.write.mode("overwrite").parquet("s3://bucket/features/customer_features/")
+
 ```
 
 ---
@@ -655,6 +660,7 @@ aggregation_sql = """
     GROUP BY customer_id
 """
 pipeline.aggregate_to_gold("orders", aggregation_sql)
+
 ```
 
 ---
@@ -739,6 +745,7 @@ class IncrementalTransformer:
         self.update_watermark(pipeline_name, str(new_watermark))
 
         print(f"Processed {new_records.count()} records, watermark updated to {new_watermark}")
+
 ```
 
 ---

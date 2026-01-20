@@ -131,6 +131,7 @@ text = generator.generate(
     top_p=0.92
 )
 print(text[0])
+
 ```
 
 ---
@@ -261,6 +262,7 @@ sectors including healthcare, education, and customer service.
 
 summary = summarizer.summarize(article)
 print(f"Summary: {summary}")
+
 ```
 
 ---
@@ -331,6 +333,7 @@ formal = style_transfer.transfer(
     "Hey, what's up? This thing is pretty cool!",
     target_style="formal and professional"
 )
+
 ```
 
 ---
@@ -392,6 +395,7 @@ references = ["A cat was sitting on the mat."]
 
 rouge = metrics.calculate_rouge(predictions, references)
 print(f"ROUGE-L: {rouge['rougeL']:.4f}")
+
 ```
 
 ---

@@ -104,6 +104,7 @@ class ComplianceChecker:
             'sla': req.removal_sla_hours,
             'margin': req.removal_sla_hours - time_to_action_hours
         }
+
 ```
 
 ---
@@ -163,6 +164,7 @@ class Section230Analyzer:
             })
 
         return result
+
 ```
 
 ### DSA Compliance (EU)
@@ -230,6 +232,7 @@ class DSAComplianceManager:
                 'appeal_url': '/appeals'
             }
         }
+
 ```
 
 ---
@@ -295,6 +298,7 @@ class FreeSpeechBalancer:
         """Check if content matches a speech category."""
         # Would implement detailed detection logic
         return False
+
 ```
 
 ### Proportionality Assessment
@@ -352,6 +356,7 @@ class ProportionalityAssessment:
             result['recommended_action'] = 'warning'
 
         return result
+
 ```
 
 ---
@@ -418,6 +423,7 @@ class TransparencyReportGenerator:
                 'authorities': self._count_authority_complaints_de(period)
             }
         }
+
 ```
 
 ---
@@ -501,6 +507,7 @@ class FairnessAuditor:
                 })
 
         return recommendations
+
 ```
 
 ---
@@ -584,6 +591,7 @@ class AppealSystem:
             'reasoning': appeal.get('reasoning'),
             'resolved_at': appeal.get('resolved_at')
         }
+
 ```
 
 ---
@@ -645,6 +653,7 @@ class EthicalDecisionFramework:
         evaluation['overall_ethical'] = len(evaluation['concerns']) == 0
 
         return evaluation
+
 ```
 
 ---

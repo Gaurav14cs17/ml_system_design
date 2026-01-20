@@ -69,6 +69,7 @@ class BottleneckAnalyzer:
             ]
         }
         return recommendations.get(bottleneck, [])
+
 ```
 
 ---
@@ -134,6 +135,7 @@ spec:
       target:
         type: AverageValue
         averageValue: "1000"
+
 ```
 
 ### GPU Cluster for Inference
@@ -166,6 +168,7 @@ spec:
           value: "64"
         - name: MAX_WAIT_MS
           value: "10"
+
 ```
 
 ---
@@ -267,6 +270,7 @@ class ContentHashCache:
     def _hash(self, content: str) -> str:
         """Create content hash."""
         return hashlib.sha256(content.encode()).hexdigest()[:16]
+
 ```
 
 ---
@@ -313,6 +317,7 @@ class DatabaseShardRouter:
         # Batch insert per shard
         for shard_idx, group in shard_groups.items():
             self.shards[shard_idx].insert_many(group)
+
 ```
 
 ### Time-Series Partitioning
@@ -359,6 +364,7 @@ BEGIN
     );
 END;
 $$ LANGUAGE plpgsql;
+
 ```
 
 ---
@@ -484,6 +490,7 @@ class ModerationWorker:
             )
 
         self.producer.flush()
+
 ```
 
 ---
@@ -559,6 +566,7 @@ def convert_to_onnx(pytorch_model, sample_input, output_path: str):
         hidden_size=768
     )
     optimized.save_model_to_file(output_path.replace('.onnx', '_optimized.onnx'))
+
 ```
 
 ---
@@ -640,6 +648,7 @@ class CostAnalyzer:
             })
 
         return recommendations
+
 ```
 
 ---

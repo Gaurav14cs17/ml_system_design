@@ -69,6 +69,7 @@ query_intents = {
         "action": "Show comparisons and reviews"
     }
 }
+
 ```
 
 ### Intent Classification Model
@@ -111,6 +112,7 @@ training_examples = [
     {"query": "buy airpods pro", "intent": "transactional"},
     {"query": "best wireless headphones 2024", "intent": "commercial"},
 ]
+
 ```
 
 ### Multi-Label Intent Classification
@@ -144,6 +146,7 @@ class MultiIntentClassifier(nn.Module):
 #   "location_based": 0.91,
 #   "brand_specific": 0.85
 # }
+
 ```
 
 ---
@@ -160,6 +163,7 @@ Document:   "affordable smartphones"
 
 Without expansion → NO MATCH
 With expansion → MATCH (cheap ≈ affordable, phones ≈ smartphones)
+
 ```
 
 ### Query Expansion Techniques
@@ -235,6 +239,7 @@ expansions = {
     "behavioral": expander.expand_behavioral(query),
     # ["best budget laptops 2024", "laptops under 500"]
 }
+
 ```
 
 ### Query Rewriting with Transformers
@@ -269,6 +274,7 @@ class QueryRewriter:
         rewritten = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
         return rewritten
+
 ```
 
 ---
@@ -354,6 +360,7 @@ result = corrector.correct("runnign shoees nikee")
 #   "confidence": 0.85,
 #   "was_corrected": True
 # }
+
 ```
 
 ### Neural Spell Correction
@@ -401,6 +408,7 @@ class NeuralSpellCorrector(nn.Module):
         logits = self.output_layer(outputs)
 
         return logits
+
 ```
 
 ---
@@ -434,6 +442,7 @@ entity_types = {
     "INTENT": ["buy", "review", "compare", "how to"],
     "FILTER": ["free shipping", "sale", "in stock"]
 }
+
 ```
 
 ### NER Model Architecture
@@ -539,6 +548,7 @@ entities = ner.extract_entities("red nike air max size 10 under $150")
 #   "size": ["size 10"],
 #   "price": ["under $150"]
 # }
+
 ```
 
 ---
@@ -591,6 +601,7 @@ class QueryEmbedder:
         top_indices = np.argsort(similarities)[-top_k:][::-1]
 
         return top_indices, similarities[top_indices]
+
 ```
 
 ### Semantic Query Understanding with LLMs
@@ -660,6 +671,7 @@ analysis = qlu.understand_query(
 #     },
 #     "query_reformulation": "affordable comfortable nursing shoes with arch support"
 # }
+
 ```
 
 ---
@@ -790,6 +802,7 @@ class QueryUnderstandingService:
             filters["price_range"] = self._parse_price(entities["price"][0])
 
         return filters
+
 ```
 
 ---
@@ -822,6 +835,7 @@ def disambiguate(query: str, user_context: dict) -> str:
 
         # Default to most common interpretation
         return "apple_company"
+
 ```
 
 ### Challenge 2: Long-Tail Queries
@@ -838,6 +852,7 @@ Solution: Compositional understanding
 - Break into components
 - Understand each component
 - Combine understanding
+
 ```
 
 ### Challenge 3: Multilingual Queries
@@ -875,6 +890,7 @@ class MultilingualQueryUnderstanding:
             return result
 
         return self._process_english(query)
+
 ```
 
 ---

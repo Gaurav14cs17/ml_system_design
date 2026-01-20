@@ -44,6 +44,7 @@ mindmap
       💻 Limited Compute
       📦 Size Constraints
       🔋 Battery Limits
+
 ```
 
 ```mermaid
@@ -65,6 +66,7 @@ flowchart LR
 
     style Cloud fill:#e3f2fd
     style Edge fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -74,6 +76,7 @@ pie showData
     "Compute Power (Cloud)" : 30
     "Privacy (Edge)" : 20
     "Model Size (Cloud)" : 10
+
 ```
 
 ---
@@ -139,6 +142,7 @@ with open("model_quantized.tflite", "wb") as f:
 
 print(f"Original size: {len(tflite_model) / 1024 / 1024:.2f} MB")
 print(f"Quantized size: {len(quantized_model) / 1024 / 1024:.2f} MB")
+
 ```
 
 ---
@@ -196,6 +200,7 @@ class ImageClassifier(context: Context) {
         return buffer
     }
 }
+
 ```
 
 ### iOS with Core ML
@@ -241,6 +246,7 @@ struct Classification {
     let label: String
     let confidence: Float
 }
+
 ```
 
 ---
@@ -308,6 +314,7 @@ await classifier.loadModel();
 const image = document.getElementById('input-image');
 const results = await classifier.classify(image);
 console.log('Top predictions:', results);
+
 ```
 
 ### WebGL/WebGPU Acceleration
@@ -349,6 +356,7 @@ async function benchmark(model, input, iterations = 100) {
 
     console.log(`Average inference: ${elapsed / iterations}ms`);
 }
+
 ```
 
 ---
@@ -418,6 +426,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -469,6 +478,7 @@ for round_num in range(10):
     state, metrics = iterative_process.next(state, sampled_clients)
 
     print(f'Round {round_num}: {metrics}')
+
 ```
 
 ---

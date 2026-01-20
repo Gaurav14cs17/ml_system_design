@@ -40,6 +40,7 @@
 
 ```math
 S = \frac{1}{(1-p) + \frac{p}{n}}
+
 ```
 
 where:
@@ -50,12 +51,14 @@ where:
 
 ```math
 S = \frac{1}{0.1 + \frac{0.9}{10}} = \frac{1}{0.19} = 5.26\times
+
 ```
 
 **Universal Scalability Law**:
 
 ```math
 C(N) = \frac{N}{1 + \alpha(N-1) + \beta N(N-1)}
+
 ```
 
 where:
@@ -70,12 +73,14 @@ where:
 
 ```math
 \text{Desired Replicas} = \lceil \text{Current Replicas} \times \frac{\text{Current Metric}}{\text{Target Metric}} \rceil
+
 ```
 
 **Example**: Current CPU = 80%, Target = 60%, Current replicas = 10:
 
 ```math
 \text{Desired} = \lceil 10 \times \frac{80}{60} \rceil = \lceil 13.3 \rceil = 14
+
 ```
 
 **Scaling cooldown**: Wait 5-10 minutes between scaling events.
@@ -103,18 +108,21 @@ Sequential vs parallel:
 ```math
 T_{\text{sequential}} = \sum_{i} T_i
 T_{\text{parallel}} = \max_i(T_i)
+
 ```
 
 **Speedup**:
 
 ```math
 \text{Speedup} = \frac{\sum_i T_i}{\max_i T_i}
+
 ```
 
 ### Caching Impact
 
 ```math
 T_{\text{avg}} = p_{\text{hit}} \cdot T_{\text{cache}} + (1 - p_{\text{hit}}) \cdot T_{\text{origin}}
+
 ```
 
 | Hit Rate | Avg Latency |
@@ -132,12 +140,14 @@ T_{\text{avg}} = p_{\text{hit}} \cdot T_{\text{cache}} + (1 - p_{\text{hit}}) \c
 
 ```math
 \text{Pool Size} = \text{Throughput} \times \text{Avg Latency}
+
 ```
 
 **Example**: 10K QPS, 5ms latency:
 
 ```math
 \text{Pool Size} = 10000 \times 0.005 = 50 \text{ connections}
+
 ```
 
 With 2x buffer: 100 connections.
@@ -152,12 +162,14 @@ With 2x buffer: 100 connections.
 
 ```math
 \text{Throughput}(B) = \frac{B}{T_{\text{setup}} + B \times T_{\text{marginal}}}
+
 ```
 
 **Optimal batch size**:
 
 ```math
 B^* = \sqrt{\frac{T_{\text{setup}}}{T_{\text{marginal}}}}
+
 ```
 
 | Batch Size | Latency | Throughput |
@@ -171,6 +183,7 @@ B^* = \sqrt{\frac{T_{\text{setup}}}{T_{\text{marginal}}}}
 
 ```math
 \text{Utilization} = \frac{\text{Compute Time}}{\text{Compute Time} + \text{Memory Time} + \text{Idle Time}}
+
 ```
 
 **Optimization strategies**:
@@ -184,12 +197,14 @@ B^* = \sqrt{\frac{T_{\text{setup}}}{T_{\text{marginal}}}}
 
 ```math
 \text{Shards} = \lceil \frac{\text{Total Load}}{\text{Shard Capacity}} \rceil
+
 ```
 
 **Consistent hashing**:
 
 ```math
 \text{shard} = \text{hash}(\text{key}) \mod N
+
 ```
 
 Minimizes rebalancing when adding/removing nodes.
@@ -204,12 +219,14 @@ Minimizes rebalancing when adding/removing nodes.
 
 ```math
 \text{Monthly Cost} = \text{Compute} + \text{Storage} + \text{Network} + \text{Licenses}
+
 ```
 
 ### Cost per Request
 
 ```math
 \text{Cost per Request} = \frac{\text{Monthly Cost}}{\text{Monthly Requests}}
+
 ```
 
 **Target**: < $0.00001 per request
@@ -226,6 +243,7 @@ Minimizes rebalancing when adding/removing nodes.
 
 ```math
 \text{GPU Cost Effective if: } \frac{\text{QPS}_{\text{GPU}}}{\text{QPS}_{\text{CPU}}} > \frac{\text{Cost}_{\text{GPU}}}{\text{Cost}_{\text{CPU}}}
+
 ```
 
 ### Spot Instances
@@ -234,6 +252,7 @@ Minimizes rebalancing when adding/removing nodes.
 
 ```math
 \text{Savings} = 1 - \frac{\text{Spot Price}}{\text{On-Demand Price}} \approx 60-90\%
+
 ```
 
 **Risk**: Interruption, mitigate with:
@@ -247,6 +266,7 @@ Minimizes rebalancing when adding/removing nodes.
 
 ```math
 \text{Break-even Utilization} = \frac{\text{Reserved Cost}}{\text{On-Demand Cost}}
+
 ```
 
 | Commitment | Discount | Break-even Utilization |
@@ -264,6 +284,7 @@ Minimizes rebalancing when adding/removing nodes.
 
 ```math
 x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero\_point}
+
 ```
 
 | Precision | Model Size | Latency | Accuracy Loss |
@@ -278,6 +299,7 @@ Remove small weights:
 
 ```math
 \text{Sparsity} = \frac{\text{Zero Weights}}{\text{Total Weights}}
+
 ```
 
 | Sparsity | Model Size | Speedup | Accuracy Loss |
@@ -292,12 +314,14 @@ Train small student from large teacher:
 
 ```math
 \mathcal{L} = \alpha \mathcal{L}_{\text{hard}} + (1-\alpha) T^2 \mathcal{L}_{\text{soft}}
+
 ```
 
 where:
 
 ```math
 \mathcal{L}_{\text{soft}} = \text{KL}\left(\sigma\left(\frac{\mathbf{z}_T}{T}\right) \| \sigma\left(\frac{\mathbf{z}_S}{T}\right)\right)
+
 ```
 
 | Model | Parameters | AUC | Latency |
@@ -311,6 +335,7 @@ where:
 
 ```math
 \text{embedding}(x) = \sum_{i=1}^{k} \text{sign}_i(x) \cdot E[\text{hash}_i(x)]
+
 ```
 
 Reduces vocabulary from millions to thousands.
@@ -319,6 +344,7 @@ Reduces vocabulary from millions to thousands.
 
 ```math
 \mathbf{e}(x) = f(\mathbf{e}_1(x_1), \mathbf{e}_2(x_2), \ldots)
+
 ```
 
 Decompose high-cardinality features.
@@ -335,12 +361,14 @@ Decompose high-cardinality features.
 
 ```math
 \hat{L}_{t+h} = f(L_t, L_{t-1}, \ldots, \text{seasonality}, \text{trend})
+
 ```
 
 ### Headroom Planning
 
 ```math
 \text{Required Capacity} = \text{Peak Load} \times (1 + \text{Headroom})
+
 ```
 
 Typical headroom: 30-50%
@@ -349,6 +377,7 @@ Typical headroom: 30-50%
 
 ```math
 \text{Optimize: } \min_{\theta} \text{Cost}(\theta) \text{ subject to } \text{Latency}(\theta) \leq T_{\text{SLO}}
+
 ```
 
 ![Capacity](./images/diagram_05.svg)
@@ -362,6 +391,7 @@ Typical headroom: 30-50%
 ```math
 \text{Throughput} = \frac{\text{Successful Requests}}{\text{Duration}}
 \text{Saturation Point} = \text{Load where } \text{Latency} > 2 \times \text{Baseline}
+
 ```
 
 ### Stress Testing
@@ -370,6 +400,7 @@ Find breaking point:
 
 ```math
 \text{Breaking Point} = \text{Load where } \text{Error Rate} > 1\%
+
 ```
 
 ### Performance Targets

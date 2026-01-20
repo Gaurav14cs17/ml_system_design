@@ -76,6 +76,7 @@ COMMON_PRIVACY_RISKS = [
         mitigation="k-anonymity, data minimization"
     )
 ]
+
 ```
 
 ### Privacy Threat Model
@@ -138,6 +139,7 @@ class PrivacyThreatAnalyzer:
             })
 
         return risks
+
 ```
 
 ---
@@ -208,6 +210,7 @@ class DataMinimizer:
         ]
 
         return anonymized
+
 ```
 
 ### Secure Aggregation
@@ -269,6 +272,7 @@ class SecureAggregator:
         masks.append(-np.sum(masks, axis=0))
 
         return masks
+
 ```
 
 ---
@@ -427,6 +431,7 @@ class DPEmbeddings:
         noise = np.random.laplace(0, sensitivity / epsilon, avg_embedding.shape)
 
         return avg_embedding + noise
+
 ```
 
 ---
@@ -571,6 +576,7 @@ class SecureFederatedAggregator:
                 update = update * clip_norm / norm
             clipped.append(update)
         return clipped
+
 ```
 
 ---
@@ -718,6 +724,7 @@ class FairnessConstrainedRecommender:
         reranked.sort(key=lambda x: x[1], reverse=True)
 
         return reranked
+
 ```
 
 ---
@@ -859,6 +866,7 @@ class BiasAwareMitigation:
             calibrated.extend(cat_items)
 
         return calibrated[:n_items]
+
 ```
 
 ---
@@ -994,6 +1002,7 @@ class UserDataPortal:
             self.store.delete_preferences(user_id)
 
         return {'deleted': data_types, 'user_id': user_id}
+
 ```
 
 ---
@@ -1070,6 +1079,7 @@ class GDPRCompliance:
             'deleted': deleted_data,
             'timestamp': datetime.now().isoformat()
         }
+
 ```
 
 ---

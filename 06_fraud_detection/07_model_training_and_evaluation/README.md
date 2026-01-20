@@ -43,6 +43,7 @@ Training seeks to minimize the **empirical risk** over the training set:
 
 ```math
 \hat{\theta} = \arg\min_\theta \frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(y_i, f(\mathbf{x}_i; \theta)) + \lambda \cdot R(\theta)
+
 ```
 
 Where:
@@ -56,6 +57,7 @@ The **generalization error** is bounded by:
 
 ```math
 \mathbb{E}[\mathcal{L}_{\text{test}}] \leq \mathcal{L}_{\text{train}} + O\left(\sqrt{\frac{\text{VC}(f)}{N}}\right)
+
 ```
 
 Where $\text{VC}(f)$ is the VC dimension (model complexity). More training data reduces the gap.
@@ -68,12 +70,14 @@ In production, the fraud rate may differ from training:
 
 ```math
 P_{\text{prod}}(\text{fraud}) \neq P_{\text{train}}(\text{fraud})
+
 ```
 
 To correct predictions:
 
 ```math
 \hat{y}_{\text{corrected}} = \frac{\hat{y} \cdot \pi_{\text{prod}} / \pi_{\text{train}}}{\hat{y} \cdot \pi_{\text{prod}} / \pi_{\text{train}} + (1 - \hat{y}) \cdot (1 - \pi_{\text{prod}}) / (1 - \pi_{\text{train}})}
+
 ```
 
 #### SMOTE: Synthetic Minority Oversampling
@@ -82,6 +86,7 @@ For each minority sample $\mathbf{x}\_i$, find $k$ nearest neighbors and create 
 
 ```math
 \mathbf{x}_{\text{new}} = \mathbf{x}_i + \lambda \cdot (\mathbf{x}_{nn} - \mathbf{x}_i)
+
 ```
 
 Where $\lambda \sim \text{Uniform}(0, 1)$ and $\mathbf{x}\_{nn}$ is a random neighbor.
@@ -95,6 +100,7 @@ At each threshold $\tau$, compute:
 ```math
 \text{Precision}(\tau) = \frac{\sum_i \mathbb{1}[\hat{y}_i \geq \tau] \cdot \mathbb{1}[y_i = 1]}{\sum_i \mathbb{1}[\hat{y}_i \geq \tau]}
 \text{Recall}(\tau) = \frac{\sum_i \mathbb{1}[\hat{y}_i \geq \tau] \cdot \mathbb{1}[y_i = 1]}{\sum_i \mathbb{1}[y_i = 1]}
+
 ```
 
 #### Area Under PR Curve (AUPRC)
@@ -103,12 +109,14 @@ Using the trapezoidal rule:
 
 ```math
 \text{AUPRC} \approx \sum_{k=1}^{K-1} \frac{(P_k + P_{k+1})}{2} \cdot (R_k - R_{k+1})
+
 ```
 
 #### Average Precision (AP)
 
 ```math
 \text{AP} = \sum_k (R_k - R_{k-1}) \cdot P_k
+
 ```
 
 This is the precision-weighted average over recall levels.
@@ -121,6 +129,7 @@ The threshold maximizing $F\_\beta$ score:
 
 ```math
 \tau^* = \arg\max_\tau \frac{(1 + \beta^2) \cdot P(\tau) \cdot R(\tau)}{\beta^2 \cdot P(\tau) + R(\tau)}
+
 ```
 
 #### Cost-Optimal Threshold
@@ -129,6 +138,7 @@ Given costs $C\_{FP}$ (false positive) and $C\_{FN}$ (false negative):
 
 ```math
 \tau^* = \arg\min_\tau \left[ C_{FP} \cdot FP(\tau) + C_{FN} \cdot FN(\tau) \right]
+
 ```
 
 Equivalently, set $\tau^* = \frac{C\_{FP}}{C\_{FP} + C\_{FN}}$ when the model is well-calibrated.
@@ -138,6 +148,7 @@ Equivalently, set $\tau^* = \frac{C\_{FP}}{C\_{FP} + C\_{FN}}$ when the model is
 ```math
 J = \text{Sensitivity} + \text{Specificity} - 1 = TPR - FPR
 \tau^* = \arg\max_\tau \left[ TPR(\tau) - FPR(\tau) \right]
+
 ```
 
 ### Calibration Theory
@@ -146,12 +157,14 @@ A model is **calibrated** if:
 
 ```math
 P(y = 1 | \hat{y} = p) = p \quad \forall p \in [0, 1]
+
 ```
 
 #### Expected Calibration Error (ECE)
 
 ```math
 \text{ECE} = \sum_{b=1}^{B} \frac{|B_b|}{N} \cdot |\text{acc}(B_b) - \text{conf}(B_b)|
+
 ```
 
 Where predictions are binned into $B$ buckets, $\text{acc}$ is accuracy, and $\text{conf}$ is average confidence.
@@ -162,6 +175,7 @@ Post-hoc calibration using logistic regression:
 
 ```math
 \hat{y}_{\text{calibrated}} = \sigma(A \cdot \hat{y}_{\text{raw}} + B)
+
 ```
 
 Where $A, B$ are learned on a held-out calibration set.
@@ -183,6 +197,7 @@ To preserve temporal ordering within folds:
 
 ```math
 \text{CV}_{\text{blocked}} = \frac{1}{K} \sum_{k=1}^{K} \mathcal{L}(\theta_{-k}; D_k)
+
 ```
 
 Where $D\_k$ is a contiguous time block, and $\theta\_{-k}$ is trained on all other blocks.
@@ -195,12 +210,14 @@ Model the objective $f(\mathbf{h})$ with a Gaussian Process:
 
 ```math
 f(\mathbf{h}) \sim \mathcal{GP}(m(\mathbf{h}), k(\mathbf{h}, \mathbf{h}'))
+
 ```
 
 Acquisition function (Expected Improvement):
 
 ```math
 \text{EI}(\mathbf{h}) = \mathbb{E}[\max(f(\mathbf{h}) - f(\mathbf{h}^+), 0)]
+
 ```
 
 Where $\mathbf{h}^+$ is the current best. Next point: $\mathbf{h}\_{\text{next}} = \arg\max\_\mathbf{h} \text{EI}(\mathbf{h})$.
@@ -213,6 +230,7 @@ Given two models' predictions on the same test set:
 
 ```math
 \chi^2 = \frac{(b - c)^2}{b + c}
+
 ```
 
 Where $b$ = samples correctly classified by model 1 only, $c$ = by model 2 only.
@@ -225,6 +243,7 @@ For metric $M$, compute bootstrap distribution:
 
 ```math
 M^{(b)} = M(\mathcal{D}^{(b)}), \quad b = 1, \ldots, B
+
 ```
 
 Where $\mathcal{D}^{(b)}$ is a bootstrap resample. The 95% CI is $[M\_{2.5\%}, M\_{97.5\%}]$.
@@ -334,6 +353,7 @@ class FraudModelTrainingPipeline:
         print(f"Train fraud rate: {train_data['is_fraud'].mean():.4f}")
 
         return train_data, val_data, test_data
+
 ```
 
 ---
@@ -421,6 +441,7 @@ class ClassWeightHandler:
 
         class_weights = self.calculate_weights(y)
         return np.array([class_weights[label] for label in y])
+
 ```
 
 ### Cost-Sensitive Learning
@@ -482,6 +503,7 @@ def train_xgboost_imbalanced(X_train, y_train, X_val, y_val):
     )
 
     return model
+
 ```
 
 ---
@@ -567,6 +589,7 @@ class LabelMaturityHandler:
         print(f"Excluded {len(data) - len(mature_data)} recent transactions")
 
         return mature_data
+
 ```
 
 ### Feature-Label Alignment
@@ -616,6 +639,7 @@ class TrainingDataBuilder:
         for col in data.columns:
             if any(leak in col.lower() for leak in leakage_features):
                 raise ValueError(f"Potential data leakage: {col}")
+
 ```
 
 ---
@@ -696,6 +720,7 @@ class TemporalCrossValidator:
             }
             for metric, values in metrics.items()
         }
+
 ```
 
 ### Group-Aware Cross-Validation
@@ -728,6 +753,7 @@ class GroupAwareCrossValidator:
             val_idx = data[data[group_col].isin(val_groups)].index
 
             yield train_idx, val_idx
+
 ```
 
 ---
@@ -836,6 +862,7 @@ class HyperparameterTuner:
         study.optimize(objective, n_trials=self.n_trials)
 
         return study.best_params
+
 ```
 
 ---
@@ -943,6 +970,7 @@ class FraudMetrics:
             'false_decline_cost': false_decline_cost,
             'review_cost': review_cost
         }
+
 ```
 
 ### Visualization
@@ -1018,6 +1046,7 @@ class MetricsVisualizer:
         ax.set_yticklabels(['Legitimate', 'Fraud'])
 
         return fig
+
 ```
 
 ---
@@ -1099,6 +1128,7 @@ class ThresholdOptimizer:
 
         # Return lowest threshold (highest recall) that achieves precision
         return thresholds[valid_idx[0]]
+
 ```
 
 ---
@@ -1171,6 +1201,7 @@ class ShadowModeValidator:
         }
 
         return comparison
+
 ```
 
 ---
@@ -1270,6 +1301,7 @@ class FraudModelExperiment:
             'p_value': p_value,
             'is_significant': p_value < 0.05
         }
+
 ```
 
 ---
@@ -1363,6 +1395,7 @@ class ContinuousTrainingPipeline:
             'new_metrics': new_metrics,
             'reason': 'Insufficient improvement' if not should_deploy else None
         }
+
 ```
 
 ---

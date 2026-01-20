@@ -97,6 +97,7 @@ user_purchase_count = FeatureDefinition(
     deprecated=False,
     version="1.0.0"
 )
+
 ```
 
 ### Feature Categories by Computation
@@ -153,6 +154,7 @@ entities = {
         ]
     }
 }
+
 ```
 
 ### Entity Hierarchy
@@ -186,6 +188,7 @@ geo_time = Entity(
     join_keys=["latitude_bucket", "longitude_bucket", "hour_of_day"],
     description="Geographic-temporal bucketed entity"
 )
+
 ```
 
 ---
@@ -228,6 +231,7 @@ user_transaction_features = FeatureView(
     source=transactions_source,
     tags={"team": "data-platform", "domain": "transactions"}
 )
+
 ```
 
 ### Feature Group Organization Patterns
@@ -277,6 +281,7 @@ def user_transaction_stats(transactions):
         avg_amount=("amount", "mean"),
         transaction_count=("amount", "count"),
     )
+
 ```
 
 ### Feature View Types
@@ -318,6 +323,7 @@ features = store.get_online_features(
         {"user_id": "user_123", "merchant_id": "merchant_456"}
     ]
 ).to_dict()
+
 ```
 
 ### Feature Service Benefits
@@ -351,6 +357,7 @@ TYPE_MAPPING = {
     "Array(Int64)": ("List[int]","list<int>", "json",       "L"),
     "Array(Float)": ("List[flt]","list<dbl>", "json/blob",  "L"),
 }
+
 ```
 
 ### Embedding/Vector Features
@@ -405,6 +412,7 @@ EMBEDDING_STORAGE = """
 |                                                                             |
 +---------------------------------------------------------------------------+
 """
+
 ```
 
 ### Schema Validation
@@ -433,6 +441,7 @@ def compute_user_features(raw_data: pd.DataFrame) -> pa.typing.DataFrame[UserFea
     """Compute and validate user features."""
     features = transform(raw_data)
     return features  # Automatically validated against schema
+
 ```
 
 ---
@@ -475,6 +484,7 @@ def migrate_consumers(old_feature: str, new_feature: str):
             consumer.owner,
             f"Feature {old_feature} deprecated. Migrate to {new_feature}"
         )
+
 ```
 
 ---
@@ -519,6 +529,7 @@ user_features = FeatureView(
 |                                                                             |
 +---------------------------------------------------------------------------+
 """
+
 ```
 
 ### Feature Freshness
@@ -553,6 +564,7 @@ FRESHNESS_SLAS = {
     "daily_features": timedelta(hours=25),  # Buffer for delays
     "weekly_features": timedelta(days=8),
 }
+
 ```
 
 ---
@@ -575,6 +587,7 @@ The point-in-time join produces:
 
 ```math
 \text{Training}(e_i, t_i) = \arg\max_{\tau_j \leq t_i} F(e_j = e_i, \tau_j)
+
 ```
 
 This ensures we only use features computed **before** the event time, preventing **data leakage**.
@@ -650,6 +663,7 @@ training_df = store.get_historical_features(
         "merchant_features:fraud_rate",
     ],
 ).to_df()
+
 ```
 
 ### Visualization of Point-in-Time Join

@@ -69,6 +69,7 @@ features['video_age_at_impression'] = impression_time - upload_time
 # 3. Negative sampling from impressions
 # Use unclicked videos as negatives
 negatives = [v for v in impressed_videos if not clicked(v)]
+
 ```
 
 ---
@@ -123,6 +124,7 @@ class AmazonItemToItem:
                     scores[similar_item] += score
 
         return sorted(scores.items(), key=lambda x: x[1], reverse=True)[:n]
+
 ```
 
 ---
@@ -171,6 +173,7 @@ class AudioFeatureExtractor:
         features = self.model(mel_tensor)
 
         return features.detach().numpy()
+
 ```
 
 ---

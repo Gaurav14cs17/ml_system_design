@@ -138,6 +138,7 @@ An embedding is a **learned mapping** from a discrete or high-dimensional space 
 
 ```math
 f: \mathcal{X} \rightarrow \mathbb{R}^d
+
 ```
 
 where:
@@ -153,6 +154,7 @@ Mathematically, for items $x\_i$ and $x\_j$:
 
 ```math
 \text{sim}(x_i, x_j) \approx \text{sim}(f(x_i), f(x_j))
+
 ```
 
 ### Key Distance and Similarity Metrics
@@ -170,6 +172,7 @@ For discrete inputs (vocabulary $V$), embeddings are stored as a lookup table:
 
 ```math
 \mathbf{E} \in \mathbb{R}^{|V| \times d}
+
 ```
 
 The embedding for item $i$ is simply row $i$ of the matrix: $\mathbf{e}\_i = \mathbf{E}[i, :]$
@@ -182,12 +185,14 @@ Most embedding methods optimize variations of:
 
 ```math
 \mathcal{L} = -\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{x^- \in \mathcal{N}} \exp(\text{sim}(f(x), f(x^-))/\tau)}
+
 ```
 
 **Triplet Loss:**
 
 ```math
 \mathcal{L} = \max(0, d(a, p) - d(a, n) + \text{margin})
+
 ```
 
 where $a$ is anchor, $p$ is positive, $n$ is negative, and $\tau$ is temperature.
@@ -211,6 +216,7 @@ For **normalized embeddings** (‖e‖ = 1), cosine similarity equals dot produc
 
 ```math
 \text{cos}(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{when } \|\mathbf{a}\| = \|\mathbf{b}\| = 1
+
 ```
 
 This enables efficient batch similarity computation via matrix multiplication.
@@ -241,11 +247,13 @@ This enables efficient batch similarity computation via matrix multiplication.
 - (Optional) GPU for training models
 
 ### Recommended Libraries
+
 ```bash
 pip install sentence-transformers transformers faiss-cpu
 pip install torch torchvision
 pip install chromadb qdrant-client
 pip install numpy pandas scikit-learn
+
 ```
 
 ---

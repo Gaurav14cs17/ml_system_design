@@ -132,6 +132,7 @@ async def moderate_content(request: ModerationRequest):
 async def moderate_batch(requests: List[ModerationRequest]):
     tasks = [service.moderate(req) for req in requests]
     return await asyncio.gather(*tasks)
+
 ```
 
 ---
@@ -211,6 +212,7 @@ class ModerationHandler(BaseHandler):
             results.append(scores)
 
         return results
+
 ```
 
 ### Dynamic Batching
@@ -289,6 +291,7 @@ class DynamicBatcher:
         except Exception as e:
             for future in futures:
                 future.set_exception(e)
+
 ```
 
 ---
@@ -371,6 +374,7 @@ class BatchModerationPipeline:
         elif max(scores.values()) > 0.5:
             return 'review'
         return 'allow'
+
 ```
 
 ---
@@ -452,6 +456,7 @@ class ModelRegistry:
 
         # Promote specified version
         self.promote_to_production(model_name, to_version)
+
 ```
 
 ---
@@ -556,6 +561,7 @@ class ABTestAnalyzer:
         t_stat, p_value = stats.ttest_ind(group_a, group_b)
 
         return p_value < (1 - confidence)
+
 ```
 
 ---
@@ -622,6 +628,7 @@ class ModerationCache:
             del self.local_cache[oldest]
 
         self.local_cache[key] = value
+
 ```
 
 ### Semantic Caching
@@ -680,6 +687,7 @@ class SemanticCache:
                 n_neighbors=1,
                 metric='cosine'
             ).fit(self.embeddings)
+
 ```
 
 ---
@@ -753,6 +761,7 @@ class OptimizedInference:
             'p50_ms': np.percentile(latencies, 50),
             'p99_ms': np.percentile(latencies, 99)
         }
+
 ```
 
 ---

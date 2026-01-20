@@ -71,6 +71,7 @@ class NetflixFeaturePipeline:
             "genres_explored": self.unique_genres(session_events),
             "scroll_depth": self.avg_scroll_depth(session_events),
         }
+
 ```
 
 ### Key Takeaways
@@ -144,6 +145,7 @@ class SpotifyAudioFeatures:
             "acoustic_preference": weighted_features['acousticness_avg'],
             "mood_preference": weighted_features['valence_avg'],
         }
+
 ```
 
 ### Key Takeaways
@@ -300,6 +302,7 @@ class UberFeatureStore:
             entity_keys=entity_keys,
             features=features
         ).to_dict()
+
 ```
 
 ### Key Takeaways
@@ -388,6 +391,7 @@ class DoorDashFeatures:
                 restaurant, order['delivery_address']
             ),
         }
+
 ```
 
 ### Key Takeaways
@@ -414,6 +418,7 @@ class FeatureStore:
     def get_online_features(self, entity_keys, features): ...
     def get_historical_features(self, entity_df, features): ...
     def materialize(self, start_date, end_date): ...
+
 ```
 
 ### 2. Hybrid Batch + Streaming

@@ -242,6 +242,7 @@ class AdaptiveWeightedHybrid(WeightedHybridRecommender):
             'predictions': predictions,
             'confidences': confidences
         }
+
 ```
 
 ### Weight Selection Strategies
@@ -372,6 +373,7 @@ class GradualSwitchingHybrid:
             score += cb_weight * self.cb.predict(user_id, item_id)
 
         return score
+
 ```
 
 ---
@@ -521,6 +523,7 @@ class DeepHybridNetwork(nn.Module):
         # Predict
         output = self.prediction_mlp(combined)
         return output.squeeze()
+
 ```
 
 ---
@@ -652,6 +655,7 @@ class DiversityReranker:
         return np.dot(feat1, feat2) / (
             np.linalg.norm(feat1) * np.linalg.norm(feat2) + 1e-8
         )
+
 ```
 
 ---
@@ -794,6 +798,7 @@ class RichMetaLearner:
             )
 
         return np.array(features)
+
 ```
 
 ---
@@ -970,6 +975,7 @@ class ProductionHybridRecommender:
         }
 
         return explanations
+
 ```
 
 ---

@@ -254,6 +254,7 @@ with DAG(
 
     # Define dependencies
     wait_for_raw_data >> validation_group >> compute_group >> sync_group >> quality_checks >> notify
+
 ```
 
 ### Airflow Best Practices
@@ -308,6 +309,7 @@ from airflow.utils.task_group import TaskGroup
 
 with TaskGroup(group_id='etl_group') as etl:
     extract >> transform >> load
+
 ```
 
 ---
@@ -467,6 +469,7 @@ if __name__ == "__main__":
         tags=["ml", "features", "production"],
     )
     deployment.apply()
+
 ```
 
 ---
@@ -647,6 +650,7 @@ defs = Definitions(
     jobs=[feature_job],
     schedules=[daily_schedule],
 )
+
 ```
 
 ---
@@ -683,6 +687,7 @@ def backfill_features(start_date: date, end_date: date):
     while current <= end_date:
         feature_pipeline(str(current))
         current += timedelta(days=1)
+
 ```
 
 ### Pattern 2: Cross-DAG Dependencies
@@ -700,6 +705,7 @@ wait_for_upstream = ExternalTaskSensor(
     execution_date_fn=lambda dt: dt,  # Same execution date
     timeout=3600,
 )
+
 ```
 
 ### Pattern 3: Dynamic Task Generation
@@ -732,6 +738,7 @@ def dynamic_feature_pipeline():
     combine_results(features)
 
 dynamic_feature_pipeline()
+
 ```
 
 ---

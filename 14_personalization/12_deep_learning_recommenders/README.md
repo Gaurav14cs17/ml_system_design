@@ -30,12 +30,14 @@ Traditional methods (matrix factorization) model linear interactions:
 
 ```math
 \hat{r}_{ui} = \mathbf{p}_u^\top \mathbf{q}_i
+
 ```
 
 Deep learning captures **non-linear patterns**:
 
 ```math
 \hat{r}_{ui} = f_\theta(\mathbf{p}_u, \mathbf{q}_i)
+
 ```
 
 Where \(f_\theta\) is a neural network.
@@ -64,6 +66,7 @@ Combines linear (GMF) and non-linear (MLP) pathways:
 
 ```math
 \mathbf{h}_{\text{GMF}} = \mathbf{p}_u \odot \mathbf{q}_i
+
 ```
 
 Element-wise product preserves the MF formulation.
@@ -72,6 +75,7 @@ Element-wise product preserves the MF formulation.
 
 ```math
 \mathbf{h}_{\text{MLP}} = \text{MLP}([\mathbf{p}_u \oplus \mathbf{q}_i])
+
 ```
 
 Learns arbitrary non-linear interactions.
@@ -80,6 +84,7 @@ Learns arbitrary non-linear interactions.
 
 ```math
 \hat{r}_{ui} = \sigma\left(\mathbf{w}^\top [\mathbf{h}_{\text{GMF}} \oplus \mathbf{h}_{\text{MLP}}]\right)
+
 ```
 
 ### Two-Tower Architecture
@@ -90,18 +95,21 @@ Industry-standard for large-scale retrieval:
 
 ```math
 \mathbf{e}_u = f_\theta(\mathbf{x}_u) \in \mathbb{R}^d
+
 ```
 
 **Item Tower:**
 
 ```math
 \mathbf{e}_i = g_\phi(\mathbf{y}_i) \in \mathbb{R}^d
+
 ```
 
 **Similarity:**
 
 ```math
 s(u, i) = \mathbf{e}_u^\top \mathbf{e}_i
+
 ```
 
 **Advantages:**
@@ -117,18 +125,21 @@ Captures low-order (FM) and high-order (DNN) feature interactions:
 
 ```math
 y_{\text{FM}} = w_0 + \sum_i w_i x_i + \sum_i \sum_{j>i} \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j
+
 ```
 
 **Deep Component:**
 
 ```math
 y_{\text{DNN}} = \text{DNN}(\mathbf{x})
+
 ```
 
 **Final:**
 
 ```math
 \hat{y} = \sigma(y_{\text{FM}} + y_{\text{DNN}})
+
 ```
 
 ---
@@ -141,6 +152,7 @@ Given user interaction sequence \(\mathcal{S} = (s_1, s_2, \ldots, s_t)\), predi
 
 ```math
 P(s_{t+1} \mid s_1, \ldots, s_t)
+
 ```
 
 ### Self-Attention (SASRec)
@@ -149,6 +161,7 @@ P(s_{t+1} \mid s_1, \ldots, s_t)
 
 ```math
 \mathbf{E} = [\mathbf{e}_{s_1}, \mathbf{e}_{s_2}, \ldots, \mathbf{e}_{s_t}] + \mathbf{PE}
+
 ```
 
 Where \(\mathbf{PE}\) is positional encoding.
@@ -157,18 +170,21 @@ Where \(\mathbf{PE}\) is positional encoding.
 
 ```math
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{QK}^\top}{\sqrt{d_k}}\right)\mathbf{V}
+
 ```
 
 **Causal Mask:** Prevent attending to future positions
 
 ```math
 M_{ij} = \begin{cases} 0 & \text{if } i \geq j \\ -\infty & \text{if } i < j \end{cases}
+
 ```
 
 **Output:** User embedding is the last position's output
 
 ```math
 \mathbf{u} = \text{Output}[:, -1, :]
+
 ```
 
 ### BERT4Rec
@@ -179,12 +195,14 @@ Uses **bidirectional** attention with masked item prediction:
 
 ```math
 \mathcal{L} = -\sum_{m \in \mathcal{M}} \log P(s_m \mid \mathbf{s}_{\setminus m})
+
 ```
 
 **Inference:** Append [MASK] token, predict next item
 
 ```math
 P(s_{t+1}) = \text{softmax}(\mathbf{h}_{[\text{MASK}]} \mathbf{E}^\top)
+
 ```
 
 ### Key Differences
@@ -204,6 +222,7 @@ Users and items as nodes, interactions as edges:
 
 ```math
 \mathcal{G} = (\mathcal{V}, \mathcal{E}), \quad \mathcal{V} = \mathcal{U} \cup \mathcal{I}
+
 ```
 
 ### Message Passing
@@ -212,6 +231,7 @@ Users and items as nodes, interactions as edges:
 
 ```math
 \mathbf{h}_u^{(l+1)} = \text{AGG}\left(\left\{\mathbf{h}_i^{(l)} : i \in \mathcal{N}(u)\right\}\right)
+
 ```
 
 ### LightGCN
@@ -222,18 +242,21 @@ Simplified GCN without feature transformation and non-linearity:
 
 ```math
 \mathbf{e}_u^{(l+1)} = \sum_{i \in \mathcal{N}(u)} \frac{1}{\sqrt{|\mathcal{N}(u)|}\sqrt{|\mathcal{N}(i)|}} \mathbf{e}_i^{(l)}
+
 ```
 
 **Final Embedding (Layer Aggregation):**
 
 ```math
 \mathbf{e}_u = \frac{1}{L+1} \sum_{l=0}^{L} \mathbf{e}_u^{(l)}
+
 ```
 
 **Prediction:**
 
 ```math
 \hat{y}_{ui} = \mathbf{e}_u^\top \mathbf{e}_i
+
 ```
 
 ### Why Remove Non-linearity?
@@ -263,12 +286,14 @@ For candidate-aware user modeling:
 
 ```math
 \alpha_j = \frac{\exp(f(\mathbf{e}_j, \mathbf{e}_{\text{target}}))}{\sum_k \exp(f(\mathbf{e}_k, \mathbf{e}_{\text{target}}))}
+
 ```
 
 **User Representation:**
 
 ```math
 \mathbf{u} = \sum_j \alpha_j \mathbf{e}_j
+
 ```
 
 Different target items → different user representations.
@@ -277,12 +302,14 @@ Different target items → different user representations.
 
 ```math
 \text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = [\text{head}_1 \oplus \ldots \oplus \text{head}_h]\mathbf{W}^O
+
 ```
 
 Where:
 
 ```math
 \text{head}_i = \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W}_i^K, \mathbf{V}\mathbf{W}_i^V)
+
 ```
 
 **Benefit:** Captures different relationship types in parallel.
@@ -304,6 +331,7 @@ Multiple objectives in recommendations:
 ```math
 \mathbf{h}_{\text{shared}} = f_{\text{shared}}(\mathbf{x})
 \hat{y}_k = f_k(\mathbf{h}_{\text{shared}})
+
 ```
 
 **Problem:** Negative transfer when tasks conflict.
@@ -314,18 +342,21 @@ Multiple objectives in recommendations:
 
 ```math
 \mathbf{h}_i = f_i(\mathbf{x}), \quad i = 1, \ldots, K
+
 ```
 
 **Task-Specific Gating:**
 
 ```math
 \mathbf{g}^{(t)} = \text{softmax}(\mathbf{W}_g^{(t)} \mathbf{x})
+
 ```
 
 **Task Output:**
 
 ```math
 \mathbf{h}^{(t)} = \sum_i g_i^{(t)} \mathbf{h}_i
+
 ```
 
 **Benefit:** Each task learns its own combination of experts.
@@ -336,12 +367,14 @@ Multiple objectives in recommendations:
 
 ```math
 \mathcal{L} = \sum_t \lambda_t \mathcal{L}_t
+
 ```
 
 **Uncertainty Weighting:**
 
 ```math
 \mathcal{L} = \sum_t \frac{1}{2\sigma_t^2} \mathcal{L}_t + \log \sigma_t
+
 ```
 
 Learns task weights automatically.
@@ -358,6 +391,7 @@ Learns task weights automatically.
 
 ```math
 \mathcal{L} = -\log \frac{\exp(s(u, i^+))}{\exp(s(u, i^+)) + \sum_{j \in \mathcal{N}} \exp(s(u, j))}
+
 ```
 
 **Sampling Strategies:**
@@ -382,6 +416,7 @@ Use FP16 for forward/backward, FP32 for updates:
 
 ```math
 \mathbf{e} \approx [\mathbf{c}_1^{k_1}, \mathbf{c}_2^{k_2}, \ldots, \mathbf{c}_M^{k_M}]
+
 ```
 
 Split embedding into subspaces, quantize each.
@@ -390,6 +425,7 @@ Split embedding into subspaces, quantize each.
 
 ```math
 \text{Embed}(x) = \sum_{h} \mathbf{E}_h[h(x)]
+
 ```
 
 Multiple hash functions with smaller tables.

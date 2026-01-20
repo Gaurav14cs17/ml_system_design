@@ -133,6 +133,7 @@ class JsonFormatter(logging.Formatter):
 
     def format(self, record: logging.LogRecord) -> str:
         return record.getMessage()
+
 ```
 
 ---
@@ -247,6 +248,7 @@ def track_prediction(metrics: PrometheusMLMetrics):
                 raise
         return wrapper
     return decorator
+
 ```
 
 ---
@@ -344,6 +346,7 @@ def predict_with_tracing(request_id: str, features: dict, model):
         span.set_attribute("prediction.confidence", result['confidence'])
 
         return result
+
 ```
 
 ---
@@ -460,6 +463,7 @@ class ObservableMLService:
                     issue='null_value',
                     value=value
                 )
+
 ```
 
 ---
@@ -504,6 +508,7 @@ class ObservableMLService:
     }
   ]
 }
+
 ```
 
 ---

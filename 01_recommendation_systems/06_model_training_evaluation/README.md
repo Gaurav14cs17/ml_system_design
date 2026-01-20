@@ -40,6 +40,7 @@ class PointwiseTrainer:
         predictions = self.model(user_ids, item_ids)
         loss = nn.MSELoss()(predictions, ratings)
         return loss
+
 ```
 
 ### Pairwise Training (BPR)
@@ -57,6 +58,7 @@ class BPRTrainer:
         # BPR loss: maximize pos_score - neg_score
         loss = -torch.log(torch.sigmoid(pos_scores - neg_scores)).mean()
         return loss
+
 ```
 
 ### Listwise Training
@@ -73,6 +75,7 @@ class ListwiseTrainer:
         # ListMLE or ListNet loss
         loss = self.listwise_loss(scores, relevance)
         return loss
+
 ```
 
 ---
@@ -98,6 +101,7 @@ def huber_loss(predictions, targets, delta=1.0):
         0.5 * diff ** 2,
         delta * diff - 0.5 * delta ** 2
     ).mean()
+
 ```
 
 ### Ranking Losses
@@ -120,6 +124,7 @@ def sampled_softmax_loss(user_embed, pos_item_embed, neg_item_embeds):
     labels = torch.zeros(logits.size(0), dtype=torch.long)
 
     return nn.CrossEntropyLoss()(logits, labels)
+
 ```
 
 ---
@@ -174,6 +179,7 @@ def calculate_metrics(predictions, ground_truth, k=10):
     metrics['mrr'] = mrr(predictions, ground_truth)
 
     return metrics
+
 ```
 
 ### Beyond Accuracy Metrics
@@ -218,6 +224,7 @@ def calculate_beyond_accuracy_metrics(recommendations, all_items, user_histories
         'novelty': novelty,
         'serendipity': serendipity
     }
+
 ```
 
 ---
@@ -259,6 +266,7 @@ class OnlineMetrics:
             'avg_order_value': np.mean([t.amount for t in transactions]),
             'items_per_order': np.mean([len(t.items) for t in transactions]),
         }
+
 ```
 
 ---
@@ -302,6 +310,7 @@ def rolling_window_cv(interactions_df, n_folds=5, gap_days=1):
         ]
 
         yield train, test
+
 ```
 
 ### Leave-One-Out (For Implicit Feedback)
@@ -317,6 +326,7 @@ def leave_one_out_split(interactions_df):
     train = interactions_df.drop(test.index)
 
     return train, test
+
 ```
 
 ---
@@ -358,6 +368,7 @@ study.optimize(objective, n_trials=100)
 
 print(f"Best params: {study.best_params}")
 print(f"Best NDCG@10: {study.best_value:.4f}")
+
 ```
 
 ---
@@ -382,6 +393,7 @@ print(f"Best NDCG@10: {study.best_value:.4f}")
    ❌ Computing popularity on full data
 
 SOLUTION: Always use train data only for features
+
 ```
 
 ### Negative Sampling Bias
@@ -399,6 +411,7 @@ def better_negative_sampling(user_id, positive_items, item_popularity, n=5):
     weights = np.array(weights) / sum(weights)
     negatives = np.random.choice(candidates, n, p=weights, replace=False)
     return negatives
+
 ```
 
 ### Popularity Bias in Evaluation
@@ -426,6 +439,7 @@ def stratified_evaluation(model, test_data, item_popularity):
         'tail': tail_metrics,
         'overall': evaluate_on_items(model, test_data, head_items | tail_items)
     }
+
 ```
 
 ---

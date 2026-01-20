@@ -54,6 +54,7 @@
 ### Recommendation Systems Specific
 
 #### Stanford CS246 - Mining Massive Datasets
+
 ```
 🎓 Stanford Online
 📺 https://www.youtube.com/playlist?list=PLLssT5z_DsK9JDLcT8T62VtzwyW-LNepV
@@ -63,9 +64,11 @@ Topics:
 - Lecture 10: Dimensionality Reduction (SVD)
 - Lecture 11: Clustering
 - Lecture 14: Mining Social Networks
+
 ```
 
 #### Recommender Systems Course (Andrew Ng)
+
 ```
 🎓 Coursera / DeepLearning.AI
 📺 Available on Coursera
@@ -75,9 +78,11 @@ Topics:
 - Collaborative Filtering
 - Deep Learning for RecSys
 - Evaluation Metrics
+
 ```
 
 #### RecSys Conference Talks
+
 ```
 🎓 ACM RecSys
 📺 https://www.youtube.com/@acmrecsys
@@ -87,11 +92,13 @@ Topics:
 - Research paper presentations
 - Tutorial sessions
 - Best paper awards
+
 ```
 
 ### Deep Learning Foundations
 
 #### Neural Networks: Zero to Hero (Andrej Karpathy)
+
 ```
 🎓 Andrej Karpathy
 📺 https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
@@ -100,9 +107,11 @@ Topics:
 - Building neural networks from scratch
 - Backpropagation
 - Language models (relevant for sequence RecSys)
+
 ```
 
 #### Deep Learning Specialization
+
 ```
 🎓 DeepLearning.AI
 📺 Available on Coursera
@@ -111,11 +120,13 @@ Topics:
 - Neural Networks basics
 - Sequence Models (for session-based recs)
 - Attention mechanisms
+
 ```
 
 ### System Design
 
 #### System Design for ML
+
 ```
 🎓 Made With ML
 📺 https://madewithml.com/
@@ -125,6 +136,7 @@ Topics:
 - Feature stores
 - Model serving
 - Monitoring
+
 ```
 
 ---
@@ -215,28 +227,34 @@ Topics:
 ## 📅 Learning Path with Videos
 
 ### Week 1-2: Foundations
+
 ```
 Day 1-2: Watch 3Blue1Brown Linear Algebra series
 Day 3-4: StatQuest ML basics playlist
 Day 5-7: Stanford CS246 Lecture 9-10 (RecSys basics)
 Day 8-10: Andrew Ng's RecSys course (Coursera)
 Day 11-14: Practice with tutorials (Sentdex, etc.)
+
 ```
 
 ### Week 3-4: Deep Learning
+
 ```
 Day 1-3: Andrej Karpathy's Neural Networks series
 Day 4-6: Deep Learning Specialization (relevant parts)
 Day 7-10: NCF, Two-Tower, Sequence model papers
 Day 11-14: Implement from tutorials
+
 ```
 
 ### Week 5-6: Production & System Design
+
 ```
 Day 1-3: System Design Interview - RecSys videos
 Day 4-6: ByteByteGo system design content
 Day 7-10: Industry talks (Netflix, Spotify, Pinterest)
 Day 11-14: Design your own system
+
 ```
 
 ---

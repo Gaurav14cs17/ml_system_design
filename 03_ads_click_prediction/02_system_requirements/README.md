@@ -68,12 +68,14 @@ Required capacity based on traffic:
 
 ```math
 \text{QPS}_{\text{required}} = \text{DAU} \times \text{PageViews/User} \times \text{Ads/Page} \times \text{Candidates/Slot}
+
 ```
 
 **Example calculation**:
 
 ```math
 \text{QPS} = \frac{500M \times 20 \times 5 \times 3}{86400} \approx 1.7M \text{ QPS}
+
 ```
 
 #### Availability Target
@@ -87,6 +89,7 @@ Required capacity based on traffic:
 
 ```math
 \text{Availability} = \frac{\text{Total Time} - \text{Downtime}}{\text{Total Time}} = \frac{\text{Successful Requests}}{\text{Total Requests}}
+
 ```
 
 ### Reliability Requirements
@@ -125,6 +128,7 @@ Required capacity based on traffic:
 
 ```math
 \text{Daily Storage} = \text{Impressions} \times \text{Size/Record} = 100B \times 500B = 50\text{TB/day}
+
 ```
 
 With 10x compression: **5 TB/day**
@@ -133,12 +137,14 @@ With 10x compression: **5 TB/day**
 
 ```math
 \text{Training Storage} = 5\text{TB} \times 30 = 150\text{TB}
+
 ```
 
 **Feature store**:
 
 ```math
 \text{User Features} = 1B \times 1000 \times 4B = 4\text{TB}
+
 ```
 
 ### Compute Estimation
@@ -147,12 +153,14 @@ With 10x compression: **5 TB/day**
 
 ```math
 \text{Servers} = \frac{\text{QPS} \times \text{Inference Time}}{\text{Cores/Server} \times \text{Utilization} \times 1000}
+
 ```
 
 **Example**:
 
 ```math
 \text{Servers} = \frac{2M \times 2\text{ms}}{32 \times 0.7 \times 1000} \approx 180 \text{ servers}
+
 ```
 
 With 2x redundancy: **360 servers**
@@ -186,6 +194,7 @@ For p99 < 15ms with p50 = 5ms, assuming log-normal distribution:
 ```math
 \text{Latency} \sim \text{LogNormal}(\mu, \sigma)
 \sigma = \frac{\ln(p99) - \ln(p50)}{z_{0.99} - z_{0.50}} = \frac{\ln(15) - \ln(5)}{2.33 - 0} \approx 0.47
+
 ```
 
 ![Latency Distribution](./images/diagram_04.svg)
@@ -209,6 +218,7 @@ For p99 < 15ms with p50 = 5ms, assuming log-normal distribution:
 
 ```math
 \text{Availability} = \frac{\text{Successful Requests}}{\text{Total Requests}}
+
 ```
 
 where successful = (status < 500) AND (latency < timeout)
@@ -217,6 +227,7 @@ where successful = (status < 500) AND (latency < timeout)
 
 ```math
 \text{Latency}_{p99} = \text{percentile}_{99}(\text{request\_duration})
+
 ```
 
 ### Error Budget
@@ -225,12 +236,14 @@ Monthly error budget for 99.99% availability:
 
 ```math
 \text{Error Budget} = (1 - 0.9999) \times 30 \times 24 \times 60 = 4.32 \text{ minutes}
+
 ```
 
 **Error budget consumption rate**:
 
 ```math
 \text{Burn Rate} = \frac{\text{Errors in Window}}{\text{Budget for Window}}
+
 ```
 
 If burn rate > 1, SLO will be violated.
@@ -286,6 +299,7 @@ If burn rate > 1, SLO will be violated.
 
 ```math
 \text{Tokens} = \min(\text{Bucket Size}, \text{Tokens} + \text{Rate} \times \Delta t)
+
 ```
 
 ---
@@ -304,6 +318,7 @@ If burn rate > 1, SLO will be violated.
 
 ```math
 \text{Resources}_{t+1} = \text{Resources}_t \times (1 + \text{Growth Rate})
+
 ```
 
 ![Capacity Planning](./images/diagram_06.svg)

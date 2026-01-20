@@ -52,6 +52,7 @@ flowchart LR
     style Stage fill:#e8f5e9
     style Test fill:#f3e5f5
     style Prod fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -65,6 +66,7 @@ gitGraph
     commit id: "v1.1.0-prod" tag: "production"
     branch feature
     commit id: "v2.0.0-dev"
+
 ```
 
 ---
@@ -124,6 +126,7 @@ model_v1 = ModelVersion(
     tags=["recommendation", "production-ready"],
     stage="staging"
 )
+
 ```
 
 ---
@@ -186,6 +189,7 @@ def compare_models(model_name: str, v1: int, v2: int):
         "v1": {"version": v1, "metrics": v1_run.data.metrics},
         "v2": {"version": v2, "metrics": v2_run.data.metrics}
     }
+
 ```
 
 ---
@@ -227,6 +231,7 @@ flowchart TB
     style Canary fill:#fff9c4
     style Shadow fill:#e1bee7
     style ABTest fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -234,6 +239,7 @@ pie showData
     title Canary Traffic Split
     "Stable Version" : 95
     "Canary Version" : 5
+
 ```
 
 ---
@@ -342,6 +348,7 @@ def log_experiment_event(experiment: str, user_id: str, variant: str, prediction
     }
     # Send to analytics pipeline (Kafka, BigQuery, etc.)
     print(f"Logged: {event}")
+
 ```
 
 ### Statistical Analysis
@@ -415,6 +422,7 @@ results = analyze_experiment(
 print(f"Uplift: {results['relative_uplift']:.1f}%")
 print(f"P-value: {results['p_value']:.4f}")
 print(f"Significant: {results['significant']}")
+
 ```
 
 ---
@@ -479,6 +487,7 @@ spec:
           image: model-server:v2.0.0
           ports:
             - containerPort: 8080
+
 ```
 
 ### Progressive Rollout
@@ -537,6 +546,7 @@ def rollback(namespace: str, stable: str, canary: str, total: int):
     """Rollback to stable version"""
     scale_deployment(namespace, canary, 0)
     scale_deployment(namespace, stable, total)
+
 ```
 
 ---
@@ -601,6 +611,7 @@ async def health_check_loop(model_version: str, check_interval: int = 60):
             manager.execute_rollback(model_version, "previous_stable")
             break
         await asyncio.sleep(check_interval)
+
 ```
 
 ---

@@ -106,6 +106,7 @@ async def get_features(user_id: str, item_id: str) -> List[float]:
         float(item_features.get("price", 0)),
         float(item_features.get("category_id", 0))
     ]
+
 ```
 
 ### Real-time Best Practices
@@ -178,6 +179,7 @@ predictions.write \
     .parquet("s3://data/predictions/")
 
 print(f"Processed {predictions.count()} records")
+
 ```
 
 ### Batch with GPU (Ray)
@@ -222,6 +224,7 @@ predictions = ds.map_batches(
 
 # Save results
 predictions.write_parquet("s3://data/predictions/")
+
 ```
 
 ---
@@ -300,6 +303,7 @@ async def compute_stats(events):
 
 if __name__ == '__main__':
     app.main()
+
 ```
 
 ---
@@ -408,6 +412,7 @@ async def predict(request: PredictionRequest):
     input_tensor = torch.tensor([request.features], dtype=torch.float32)
     result = await batcher.predict(input_tensor)
     return {"prediction": result[0].tolist()}
+
 ```
 
 ---
@@ -474,6 +479,7 @@ async def predict(request: PredictionRequest):
     input_tensor = torch.tensor([request.features], dtype=torch.float32)
     result = await ensemble.predict_parallel(input_tensor)
     return {"prediction": result[0].tolist()}
+
 ```
 
 ---

@@ -49,6 +49,7 @@ Image embeddings transform visual data into dense vector representations, enabli
 2020: Vision Transformers (ViT)
 2021: CLIP (multi-modal)
 2023: DINOv2, EVA-CLIP
+
 ```
 
 ---
@@ -96,6 +97,7 @@ class ResNetEmbedder:
 # Usage
 embedder = ResNetEmbedder()
 embedding = embedder.embed("cat.jpg")  # [2048] dimensions
+
 ```
 
 ### Popular CNN Architectures
@@ -127,6 +129,7 @@ Linear projection to embeddings
 Transformer Encoder (12 layers)
       ↓
 [CLS] token embedding → Final representation
+
 ```
 
 ### ViT Implementation
@@ -159,6 +162,7 @@ class ViTEmbedder:
 # Usage
 embedder = ViTEmbedder()
 embedding = embedder.embed("cat.jpg")  # [768] dimensions
+
 ```
 
 ---
@@ -229,6 +233,7 @@ text_emb = clip.embed_text("a photo of a cat")
 labels = ["a cat", "a dog", "a car", "a building"]
 probs = clip.similarity("mystery.jpg", labels)
 print(dict(zip(labels, probs)))
+
 ```
 
 ### CLIP Variants
@@ -269,6 +274,7 @@ class DINOv2Embedder:
 # DINOv2 excels at dense visual tasks (segmentation, depth)
 embedder = DINOv2Embedder()
 embedding = embedder.embed("scene.jpg")
+
 ```
 
 ### MAE (Masked Autoencoders)
@@ -279,6 +285,7 @@ from transformers import ViTMAEModel, ViTImageProcessor
 # MAE learns by reconstructing masked patches
 model = ViTMAEModel.from_pretrained('facebook/vit-mae-base')
 processor = ViTImageProcessor.from_pretrained('facebook/vit-mae-base')
+
 ```
 
 ---
@@ -302,6 +309,7 @@ text_embedding = model.encode("a cute cat sitting")
 
 # Same embedding space - can compare directly!
 similarity = np.dot(img_embedding, text_embedding)
+
 ```
 
 ### Applications
@@ -363,6 +371,7 @@ def contrastive_loss(embeddings, labels, temperature=0.07):
     loss = -(mask * log_prob).sum() / mask.sum()
 
     return loss
+
 ```
 
 ---
@@ -468,6 +477,7 @@ results = engine.search_by_image("query.jpg", k=5)
 
 # Search by text
 results = engine.search_by_text("sunset over mountains", k=5)
+
 ```
 
 ---

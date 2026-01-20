@@ -37,6 +37,7 @@ flowchart LR
     style T1 fill:#e3f2fd
     style T2 fill:#fff3e0
     style T3 fill:#e8f5e9
+
 ```
 
 ```mermaid
@@ -54,6 +55,7 @@ sequenceDiagram
         T->>T: Update Kalman Filter
         T->>O: Track IDs + Boxes
     end
+
 ```
 
 | Task | Output | Applications |
@@ -248,6 +250,7 @@ class DeepSORT:
                 unmatched_dets.remove(d_idx)
 
         return matched, unmatched_tracks, unmatched_dets
+
 ```
 
 ---
@@ -327,6 +330,7 @@ class VideoClassifier:
             {'class_id': idx.item(), 'confidence': prob.item()}
             for idx, prob in zip(top_indices[0], top_probs[0])
         ]
+
 ```
 
 ---

@@ -167,6 +167,7 @@ class TextFeatureExtractor:
         """Load regex patterns for known slurs (simplified)."""
         # In production, load from secure, encrypted storage
         return []
+
 ```
 
 ### N-gram Features
@@ -213,6 +214,7 @@ class NgramFeatureExtractor:
         char_features = self.char_vectorizer.transform(texts)
 
         return hstack([word_features, char_features])
+
 ```
 
 ---
@@ -313,6 +315,7 @@ class UserFeatureExtractor:
             intervals.append(delta.total_seconds() / 60)
 
         return np.mean(intervals)
+
 ```
 
 ---
@@ -381,6 +384,7 @@ class ContextualFeatureExtractor:
             'community_size': platform_context.get('community_size', 0),
             'is_moderated_community': 1 if platform_context.get('has_moderators') else 0,
         }
+
 ```
 
 ---
@@ -457,6 +461,7 @@ class GraphFeatureExtractor:
         """Get users with previous violations."""
         return {n for n, d in self.graph.nodes(data=True)
                 if d.get('flagged', False)}
+
 ```
 
 ---
@@ -520,6 +525,7 @@ class FeatureStore:
                 result[eid] = json.loads(val)
 
         return result
+
 ```
 
 ---
@@ -580,6 +586,7 @@ class FeatureSelector:
         to_drop = [col for col in upper.columns if any(upper[col] > threshold)]
 
         return [col for col in X.columns if col not in to_drop]
+
 ```
 
 ---

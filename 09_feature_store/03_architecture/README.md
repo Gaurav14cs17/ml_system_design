@@ -77,6 +77,7 @@ class FeatureRegistry:
     def get_consumers(self, feature_name: str) -> List[Consumer]:
         """Find all models/services using this feature."""
         pass
+
 ```
 
 ![Diagram 3](images/diagram_03.svg)

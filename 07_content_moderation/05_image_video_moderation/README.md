@@ -86,6 +86,7 @@ class ModerationCNN(nn.Module):
     def extract_features(self, x):
         """Extract features for hash-like comparison."""
         return self.backbone(x)
+
 ```
 
 ### Training Pipeline
@@ -198,6 +199,7 @@ class ImageModerationTrainer:
                 all_labels.extend(labels.numpy())
 
         return np.array(all_preds), np.array(all_labels)
+
 ```
 
 ---
@@ -274,6 +276,7 @@ class ModerationObjectDetector:
                 result_image[y1:y2, x1:x2] = blurred
 
         return result_image
+
 ```
 
 ### Nudity Detection with Body Part Segmentation
@@ -341,6 +344,7 @@ class NudityDetector:
                 }
 
         return exposure
+
 ```
 
 ---
@@ -425,6 +429,7 @@ class VideoKeyframeExtractor:
 
         cap.release()
         return keyframes
+
 ```
 
 ### Video Classification with 3D CNN
@@ -557,6 +562,7 @@ class VideoModerator:
 
         scored_frames.sort(reverse=True)
         return scored_frames[:top_k]
+
 ```
 
 ---
@@ -639,6 +645,7 @@ class HashDatabase:
             'matches': matches,
             'computed_hashes': hashes
         }
+
 ```
 
 ### PhotoDNA-like Implementation
@@ -699,6 +706,7 @@ class RobustImageHash:
     def compare(self, hash1: np.ndarray, hash2: np.ndarray) -> float:
         """Compare two hashes (0 = identical, 1 = completely different)."""
         return np.linalg.norm(hash1 - hash2) / np.sqrt(self.feature_dim)
+
 ```
 
 ---
@@ -768,6 +776,7 @@ class ImageTextExtractor:
             'text_regions': ocr_result['regions'],
             'text_moderation': text_result
         }
+
 ```
 
 ### Meme Understanding
@@ -827,6 +836,7 @@ class MemeAnalyzer:
         Categories: hate_speech, violence, safe, needs_context"""
 
         return self.multimodal_model.analyze(image, prompt)
+
 ```
 
 ---
@@ -916,6 +926,7 @@ class CLIPModerator:
             'raw_scores': scores,
             'predicted_category': max(scores, key=scores.get)
         }
+
 ```
 
 ### Vision-Language Model Integration
@@ -974,6 +985,7 @@ Respond in JSON format."""
         )
 
         return self._parse_response(response.choices[0].message.content)
+
 ```
 
 ---
@@ -1076,6 +1088,7 @@ async def moderate_image(file: UploadFile = File(...)):
     contents = await file.read()
     result = await service.moderate(contents)
     return result
+
 ```
 
 ---

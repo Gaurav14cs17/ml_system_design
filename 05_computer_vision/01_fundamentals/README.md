@@ -31,6 +31,7 @@ At its core, computer vision treats images as **mathematical functions**. A gray
 
 ```math
 I: \mathbb{R}^2 \rightarrow \mathbb{R}
+
 ```
 
 where $I(x, y)$ gives the intensity at spatial coordinates $(x, y)$.
@@ -39,12 +40,14 @@ For digital images, we discretize this into a matrix:
 
 ```math
 I \in \mathbb{R}^{H \times W}
+
 ```
 
 For color images with $C$ channels (e.g., RGB where $C=3$):
 
 ```math
 I \in \mathbb{R}^{H \times W \times C}
+
 ```
 
 ### The Vision Pipeline
@@ -97,6 +100,7 @@ flowchart LR
     style A fill:#e3f2fd
     style H fill:#fff3e0
     style L fill:#e8f5e9
+
 ```
 
 ```mermaid
@@ -107,6 +111,7 @@ pie title Computer Vision Applications by Industry
     "Manufacturing" : 15
     "Security & Surveillance" : 12
     "Agriculture" : 10
+
 ```
 
 ### Applications in Production
@@ -135,6 +140,7 @@ A digital image $I$ is formally defined as a mapping from a discrete spatial dom
 
 ```math
 I: \{0, 1, ..., H-1\} \times \{0, 1, ..., W-1\} \rightarrow \mathcal{V}
+
 ```
 
 where:
@@ -146,12 +152,14 @@ where:
 
 ```math
 \mathcal{V} = \{0, 1, 2, ..., 255\}
+
 ```
 
 **For RGB color images**:
 
 ```math
 \mathcal{V} = \{0, ..., 255\}^3
+
 ```
 
 Each pixel $I(i, j)$ can be accessed using matrix indexing where $i \in [0, H-1]$ is the row and $j \in [0, W-1]$ is the column.
@@ -162,6 +170,7 @@ The **bit depth** $b$ determines the number of discrete intensity levels:
 
 ```math
 L = 2^b
+
 ```
 
 | Bit Depth | Levels | Common Use |
@@ -174,6 +183,7 @@ L = 2^b
 ### Image Types
 
 #### 1. Binary Images (1-bit)
+
 ```
 Pixel values: {0, 1} or {Black, White}
 Memory: W × H bits
@@ -182,9 +192,11 @@ Use cases:
 • Document scanning
 • Mask generation
 • QR code reading
+
 ```
 
 #### 2. Grayscale Images (8-bit)
+
 ```
 Pixel values: 0-255 (256 intensity levels)
 Memory: W × H bytes
@@ -193,12 +205,14 @@ Use cases:
 • Medical imaging (X-rays, CT)
 • Document processing
 • Edge detection preprocessing
+
 ```
 
 #### 3. Color Images (24-bit RGB)
 ![Diagram 2](assets/diagram_02.svg)
 
 #### 4. Images with Alpha Channel (32-bit RGBA)
+
 ```
 Pixel values: 4 channels × 8 bits = 32 bits per pixel
 Memory: W × H × 4 bytes
@@ -209,6 +223,7 @@ Use cases:
 • Overlays and compositing
 • UI elements
 • Watermarks
+
 ```
 
 ### Memory Calculations
@@ -237,6 +252,7 @@ print(f"1080p Grayscale: {calculate_memory(1920, 1080, 1):,} bytes")  # ~2 MB
 print(f"1080p RGB: {calculate_memory(1920, 1080, 3):,} bytes")        # ~6 MB
 print(f"4K RGB: {calculate_memory(3840, 2160, 3):,} bytes")           # ~24 MB
 print(f"8K RGB: {calculate_memory(7680, 4320, 3):,} bytes")           # ~99 MB
+
 ```
 
 ---
@@ -261,6 +277,7 @@ An RGB color is a 3-tuple $(R, G, B)$ where each component $\in [0, 255]$ for 8-
 
 ```math
 \text{Color} = R \cdot \mathbf{e}_R + G \cdot \mathbf{e}_G + B \cdot \mathbf{e}_B
+
 ```
 
 The RGB cube occupies a 3D space where:
@@ -272,6 +289,7 @@ The RGB cube occupies a 3D space where:
 
 ```math
 Y = 0.299R + 0.587G + 0.114B
+
 ```
 
 This weighted average reflects human eye sensitivity (most sensitive to green, least to blue).
@@ -300,18 +318,21 @@ Given normalized RGB values $R', G', B' \in [0, 1]$:
 C_{max} = \max(R', G', B')
 C_{min} = \min(R', G', B')
 \Delta = C_{max} - C_{min}
+
 ```
 
 **Value (Brightness):**
 
 ```math
 V = C_{max}
+
 ```
 
 **Saturation:**
 
 ```math
 S = \begin{cases} 0 & \text{if } C_{max} = 0 \\ \frac{\Delta}{C_{max}} & \text{otherwise} \end{cases}
+
 ```
 
 **Hue (in degrees):**
@@ -323,6 +344,7 @@ H = \begin{cases}
 60° \times \left(\frac{B' - R'}{\Delta} + 2\right) & \text{if } C_{max} = G' \\
 60° \times \left(\frac{R' - G'}{\Delta} + 4\right) & \text{if } C_{max} = B'
 \end{cases}
+
 ```
 
 **Interpretation:**
@@ -363,6 +385,7 @@ def detect_color_objects(image, lower_hsv, upper_hsv):
 # Example: Detect red objects
 lower_red = np.array([0, 100, 100])
 upper_red = np.array([10, 255, 255])
+
 ```
 
 ### LAB (Lightness, A, B)
@@ -377,6 +400,7 @@ The LAB color space is derived from XYZ (CIE 1931) through a nonlinear transform
 
 ```math
 \begin{bmatrix} X \\ Y \\ Z \end{bmatrix} = \mathbf{M} \begin{bmatrix} R \\ G \\ B \end{bmatrix}
+
 ```
 
 where $\mathbf{M}$ is the RGB-to-XYZ transformation matrix (depends on RGB color space, e.g., sRGB).
@@ -387,18 +411,21 @@ where $\mathbf{M}$ is the RGB-to-XYZ transformation matrix (depends on RGB color
 L^* = 116 \cdot f\left(\frac{Y}{Y_n}\right) - 16
 a^* = 500 \cdot \left[f\left(\frac{X}{X_n}\right) - f\left(\frac{Y}{Y_n}\right)\right]
 b^* = 200 \cdot \left[f\left(\frac{Y}{Y_n}\right) - f\left(\frac{Z}{Z_n}\right)\right]
+
 ```
 
 where $(X\_n, Y\_n, Z\_n)$ is the reference white point and:
 
 ```math
 f(t) = \begin{cases} t^{1/3} & \text{if } t > \left(\frac{6}{29}\right)^3 \\ \frac{1}{3}\left(\frac{29}{6}\right)^2 t + \frac{4}{29} & \text{otherwise} \end{cases}
+
 ```
 
 **Perceptual Color Difference (ΔE):**
 
 ```math
 \Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}
+
 ```
 
 | $\Delta E$ | Perception |
@@ -454,6 +481,7 @@ graph LR
     style BGR fill:#e3f2fd
     style HSV fill:#fff9c4
     style LAB fill:#f3e5f5
+
 ```
 
 ```python
@@ -480,6 +508,7 @@ bgr_from_lab = cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
 # BGR ↔ YCrCb
 ycrcb = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2YCrCb)
 bgr_from_ycrcb = cv2.cvtColor(ycrcb, cv2.COLOR_YCrCb2BGR)
+
 ```
 
 ---
@@ -523,6 +552,7 @@ def save_jpeg_with_quality(image, path, quality=85):
 # Compare file sizes at different qualities
 for quality in [95, 80, 60, 40]:
     save_jpeg_with_quality(image, f'output_q{quality}.jpg', quality)
+
 ```
 
 ### PNG Compression
@@ -538,6 +568,7 @@ import cv2
 
 # PNG compression level (0-9, higher = more compression, slower)
 cv2.imwrite('output.png', image, [cv2.IMWRITE_PNG_COMPRESSION, 9])
+
 ```
 
 ---
@@ -563,6 +594,7 @@ All 2D geometric transformations can be expressed using **homogeneous coordinate
 
 ```math
 \mathbf{p}' = \mathbf{T} \cdot \mathbf{p}
+
 ```
 
 where $\mathbf{p} = \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$ (homogeneous form)
@@ -576,6 +608,7 @@ Shift by $(t\_x, t\_y)$:
 ```math
 \mathbf{T}_{trans} = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \begin{bmatrix} x + t_x \\ y + t_y \\ 1 \end{bmatrix}
+
 ```
 
 #### 2. Rotation
@@ -586,12 +619,14 @@ Rotate by angle $\theta$ (counter-clockwise about origin):
 
 ```math
 \mathbf{T}_{rot} = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}
+
 ```
 
 **Rotation about point $(c\_x, c\_y)$:**
 
 ```math
 \mathbf{T} = \mathbf{T}_{trans}(c_x, c_y) \cdot \mathbf{T}_{rot}(\theta) \cdot \mathbf{T}_{trans}(-c_x, -c_y)
+
 ```
 
 #### 3. Scaling
@@ -602,6 +637,7 @@ Scale by factors $(s\_x, s\_y)$:
 
 ```math
 \mathbf{T}_{scale} = \begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}
+
 ```
 
 When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
@@ -614,6 +650,7 @@ When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
 
 ```math
 \mathbf{T}_{affine} = \begin{bmatrix} a_{11} & a_{12} & t_x \\ a_{21} & a_{22} & t_y \\ 0 & 0 & 1 \end{bmatrix}
+
 ```
 
 - Preserves: parallel lines, ratios of distances along lines
@@ -623,6 +660,7 @@ When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
 
 ```math
 \mathbf{T}_{perspective} = \begin{bmatrix} h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23} \\ h_{31} & h_{32} & 1 \end{bmatrix}
+
 ```
 
 With **projective division**:
@@ -630,6 +668,7 @@ With **projective division**:
 ```math
 x' = \frac{h_{11}x + h_{12}y + h_{13}}{h_{31}x + h_{32}y + 1}
 y' = \frac{h_{21}x + h_{22}y + h_{23}}{h_{31}x + h_{32}y + 1}
+
 ```
 
 | Transformation | DOF | Preserves | Use Case |
@@ -672,6 +711,7 @@ def apply_perspective_transform(image, src_points, dst_points):
 src = np.float32([[100, 50], [400, 80], [380, 450], [80, 420]])
 dst = np.float32([[0, 0], [300, 0], [300, 400], [0, 400]])
 corrected = apply_perspective_transform(document_image, src, dst)
+
 ```
 
 ---
@@ -690,12 +730,14 @@ For a grayscale image with $L$ intensity levels (e.g., $L=256$), the histogram $
 
 ```math
 h(k) = \sum_{i=0}^{H-1} \sum_{j=0}^{W-1} \mathbf{1}[I(i,j) = k], \quad k \in \{0, 1, ..., L-1\}
+
 ```
 
 **Normalized Histogram (Probability Distribution):**
 
 ```math
 p(k) = \frac{h(k)}{H \times W}
+
 ```
 
 where $\sum\_{k=0}^{L-1} p(k) = 1$
@@ -714,12 +756,14 @@ The goal is to find a transformation $T(r)$ that maps input intensity $r$ to out
 
 ```math
 \text{CDF}(k) = \sum_{j=0}^{k} p(j)
+
 ```
 
 **Equalization Transform:**
 
 ```math
 s = T(r) = (L - 1) \cdot \text{CDF}(r)
+
 ```
 
 This maps the CDF to a straight line, effectively flattening the histogram.
@@ -740,6 +784,7 @@ Standard histogram equalization is global. CLAHE applies equalization locally:
 
 ```math
 \text{clip}(h(k)) = \min(h(k), \text{clip\_limit})
+
 ```
 
 ```python
@@ -780,6 +825,7 @@ def apply_clahe(image, clip_limit=2.0, tile_size=(8, 8)):
         lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
         lab[:, :, 0] = clahe.apply(lab[:, :, 0])
         return cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+
 ```
 
 ### Image Statistics
@@ -807,6 +853,7 @@ def compute_image_statistics(image):
             stats[f'{channel}_std'] = np.std(image[:, :, i])
 
     return stats
+
 ```
 
 ---
@@ -858,6 +905,7 @@ flowchart TB
     style NGINX fill:#ffecb3
     style REDIS fill:#ffcdd2
     style S3 fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -884,6 +932,7 @@ sequenceDiagram
     C->>API: Get Results
     API->>S: Fetch Results
     API-->>C: Return Results
+
 ```
 
 ### Key Design Decisions
@@ -938,6 +987,7 @@ def resize_image_smart(image, max_size, maintain_aspect=True):
         interpolation = cv2.INTER_LANCZOS4
 
     return cv2.resize(image, (new_w, new_h), interpolation=interpolation)
+
 ```
 
 #### 3. Batch Processing Patterns
@@ -980,6 +1030,7 @@ class ImageBatchProcessor:
         with ThreadPoolExecutor(max_workers=self.num_workers) as executor:
             results = list(executor.map(process_fn, image_paths))
         return results
+
 ```
 
 ---
@@ -1163,6 +1214,7 @@ if __name__ == "__main__":
     paths = ["img1.jpg", "img2.jpg", "img3.jpg"]
     batch, metadata_list = loader.load_batch(paths)
     print(f"Batch shape: {batch.shape}")  # (3, 224, 224, 3)
+
 ```
 
 ---

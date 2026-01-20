@@ -43,6 +43,7 @@ Converts text to numerical vectors by weighting term importance:
 
 ```math
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
+
 ```
 
 Where:
@@ -55,12 +56,14 @@ Dense vector representations learned from large corpora:
 
 ```math
 \mathbf{v}_w \in \mathbb{R}^d \quad \text{where } d \in \{100, 300, 768, ...\}
+
 ```
 
 **Word2Vec Skip-gram objective**:
 
 ```math
 \mathcal{L} = \sum_{(w, c) \in D} \log \sigma(\mathbf{v}_w \cdot \mathbf{v}_c) + \sum_{(w, c') \in D'} \log \sigma(-\mathbf{v}_w \cdot \mathbf{v}_{c'})
+
 ```
 
 ### Attention Mechanism
@@ -69,6 +72,7 @@ The self-attention operation in transformers:
 
 ```math
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+
 ```
 
 Where:
@@ -81,12 +85,14 @@ Where:
 
 ```math
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O
+
 ```
 
 Where each head is:
 
 ```math
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+
 ```
 
 ### Toxicity Score Calibration
@@ -95,12 +101,14 @@ Converting raw model outputs to calibrated probabilities using **Platt Scaling**
 
 ```math
 P(y=1 | f(x)) = \frac{1}{1 + \exp(Af(x) + B)}
+
 ```
 
 Where \(A\) and \(B\) are parameters fit on a validation set to minimize:
 
 ```math
 \mathcal{L} = -\sum_{i} y_i \log(p_i) + (1-y_i) \log(1-p_i)
+
 ```
 
 ### Threshold Optimization
@@ -109,12 +117,14 @@ Finding the optimal decision threshold \(\tau\) by maximizing F1:
 
 ```math
 \tau^* = \arg\max_{\tau} F_1(\tau) = \arg\max_{\tau} \frac{2 \cdot \text{Precision}(\tau) \cdot \text{Recall}(\tau)}{\text{Precision}(\tau) + \text{Recall}(\tau)}
+
 ```
 
 Or with a cost-sensitive approach:
 
 ```math
 \tau^* = \arg\min_{\tau} \left[ C_{FP} \cdot \text{FPR}(\tau) + C_{FN} \cdot \text{FNR}(\tau) \right]
+
 ```
 
 Where \(C_{FP}\) and \(C_{FN}\) are the costs of false positives and negatives.
@@ -158,6 +168,7 @@ def select_approach(requirements):
             return 'llm'  # Best reasoning
         else:
             return 'ensemble'  # Best accuracy
+
 ```
 
 ---
@@ -214,6 +225,7 @@ class TextFeatureExtractor:
             text.count('...'),                           # Ellipsis count
             sum(1 for c in text if not c.isalnum() and c != ' ') / max(len(text), 1),
         ]
+
 ```
 
 ### Classifier Implementation
@@ -283,6 +295,7 @@ class TraditionalModerationModel:
         model.feature_extractor = data['feature_extractor']
         model.classifier = data['classifier']
         return model
+
 ```
 
 ---
@@ -356,6 +369,7 @@ class TextCNN(nn.Module):
         output = self.fc(dropped)
 
         return output
+
 ```
 
 ### LSTM with Attention
@@ -425,6 +439,7 @@ class AttentionLSTM(nn.Module):
         output = self.fc(dropped)
 
         return output, attention_weights
+
 ```
 
 ### BERT-based Classification
@@ -519,6 +534,7 @@ class BertModerationModel:
                 all_preds.extend(probs.cpu().numpy())
 
         return np.array(all_preds)
+
 ```
 
 ---
@@ -608,6 +624,7 @@ result = moderator.moderate(
     "context_modifiers": "If users are friends and this is during gameplay, reduce severity to low"
 }
 """
+
 ```
 
 ### Prompt Engineering for Moderation
@@ -681,6 +698,7 @@ Respond with:
 - fact_check_needed: true/false
 - reasoning: brief explanation
 """
+
 ```
 
 ---
@@ -698,6 +716,7 @@ Respond with:
 6. Deliberate misspelling: "haet"
 7. Encoded content: base64, rot13
 8. Language mixing: "I h8 你们"
+
 ```
 
 ### Adversarial Text Normalizer
@@ -816,6 +835,7 @@ class AdversarialTextNormalizer:
         if original == normalized:
             return []
         return ['normalized']  # Simplified
+
 ```
 
 ### Ensemble Detection
@@ -876,6 +896,7 @@ class AdversarialDetector:
                 combined[category].append(score)
 
         return {k: max(v) for k, v in combined.items()}  # Max pooling
+
 ```
 
 ---
@@ -934,6 +955,7 @@ class MultilingualModerator:
             })
 
         return results
+
 ```
 
 ### Language-Specific Considerations
@@ -988,6 +1010,7 @@ class LanguageSpecificRules:
             'ja': {'adult': 0.8},  # Japanese manga context
             'de': {'hate': 1.2},   # Stricter in Germany (NetzDG)
         }
+
 ```
 
 ---
@@ -1091,6 +1114,7 @@ class TextModerationPipeline:
             'tier': tier,
             'timestamp': datetime.utcnow().isoformat()
         }
+
 ```
 
 ---

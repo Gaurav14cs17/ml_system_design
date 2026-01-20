@@ -121,6 +121,7 @@ class ReviewQueue:
             stats['avg_wait_time'] = sum(wait_times) / len(wait_times)
 
         return stats
+
 ```
 
 ### Load Balancing
@@ -190,6 +191,7 @@ class ReviewerLoadBalancer:
             score += severe_factor * 0.3
 
         return score
+
 ```
 
 ---
@@ -294,6 +296,7 @@ class ReviewInterface:
                 })
 
         return hints
+
 ```
 
 ### Keyboard Shortcuts
@@ -311,6 +314,7 @@ KEYBOARD_SHORTCUTS = {
     'n': 'Add Note',
     'esc': 'Cancel Current Action',
 }
+
 ```
 
 ---
@@ -401,6 +405,7 @@ class QualityControl:
             'avg_time_per_review': sum(d['time_spent'] for d in decisions) / max(len(decisions), 1),
             'escalation_rate': sum(1 for d in decisions if d['decision'] == 'escalate') / len(decisions),
         }
+
 ```
 
 ### Calibration Sessions
@@ -449,6 +454,7 @@ class CalibrationSession:
             }
 
         return results
+
 ```
 
 ---
@@ -524,6 +530,7 @@ class ActiveLearningPipeline:
         # Deploy if improved
         if metrics['f1'] > self.trainer.current_model_f1:
             self.trainer.deploy_new_model()
+
 ```
 
 ---
@@ -610,6 +617,7 @@ class WellbeingManager:
             {'type': 'meditation', 'name': 'Calm App Access', 'url': 'https://calm.com'},
             {'type': 'training', 'name': 'Resilience Training', 'next_session': 'Friday'},
         ]
+
 ```
 
 ---

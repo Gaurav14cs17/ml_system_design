@@ -59,6 +59,7 @@ class ContentSampler:
             # Random sample for distribution matching
             if random.random() < self.random_sample_rate:
                 yield ('random', content)
+
 ```
 
 **Sources:**
@@ -116,6 +117,7 @@ class AdversarialGenerator:
                 word = ' '.join(word)
             result.append(word)
         return ' '.join(result)
+
 ```
 
 ### 3. External Datasets
@@ -200,6 +202,7 @@ content_categories:
         description: "Fraudulent schemes"
     - bot_content:
         description: "Automated spam"
+
 ```
 
 ### Multi-Label Schema
@@ -237,6 +240,7 @@ example_label = ContentLabel(
     target_groups=["race"],
     notes="Clear case of racial slur with dehumanizing comparison"
 )
+
 ```
 
 ---
@@ -266,6 +270,7 @@ example_label = ContentLabel(
 - In medical education context → Allow with warning
 - Posted to shock/disturb → Violation (gore)
 - News reporting on accident → Allow with warning
+
 ```
 
 ### Annotator Decision Framework
@@ -323,6 +328,7 @@ class AnnotationDecisionFramework:
             context_score += 0.1
 
         return context_score
+
 ```
 
 ---
@@ -410,6 +416,7 @@ class AnnotationPlatform:
             LIMIT 1
         """
         return self.db.query(query, [annotator_id])
+
 ```
 
 ---
@@ -484,6 +491,7 @@ class QualityAssurance:
                     'recommendation': 'retraining'
                 })
         return flagged
+
 ```
 
 ### Inter-Annotator Agreement Metrics
@@ -558,6 +566,7 @@ def compute_fleiss_kappa(annotations):
     kappa = (P_bar - P_e) / (1 - P_e)
 
     return kappa
+
 ```
 
 ---
@@ -626,6 +635,7 @@ class BalancedDataLoader:
         classes = np.unique(y)
         weights = compute_class_weight('balanced', classes=classes, y=y)
         return dict(zip(classes, weights))
+
 ```
 
 ### Hard Example Mining
@@ -684,6 +694,7 @@ class HardExampleMiner:
         uncertain_indices = np.argsort(entropy)[-top_k:]
 
         return uncertain_indices
+
 ```
 
 ---
@@ -758,6 +769,7 @@ class DataRetentionPolicy:
 
         deleted = data_store.delete_before(data_type, cutoff)
         return deleted
+
 ```
 
 ### Annotator Well-being
@@ -805,6 +817,7 @@ class AnnotatorWellbeingManager:
         """Check if annotator needs a wellness break."""
         # Implement break logic after heavy exposure
         pass
+
 ```
 
 ---

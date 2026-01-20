@@ -94,6 +94,7 @@ class ClickLogCollector:
         )
 
         return len(events)
+
 ```
 
 ### Handling Position Bias
@@ -154,6 +155,7 @@ class PositionBiasHandler:
             return new_results, True  # Mark as exploration
 
         return results, False
+
 ```
 
 ---
@@ -289,6 +291,7 @@ class HumanLabelCollection:
                 })
 
         return aggregated
+
 ```
 
 ---
@@ -415,6 +418,7 @@ class TrainingDataPipeline:
             "label",
             "sample_weight"
         )
+
 ```
 
 ---
@@ -522,6 +526,7 @@ class DistributedTrainer:
             'optimizer_state_dict': self.optimizer.state_dict(),
         }
         torch.save(checkpoint, f"checkpoint_epoch_{epoch}.pt")
+
 ```
 
 ---
@@ -580,6 +585,7 @@ class ExperimentManager:
             return mlflow.pytorch.load_model(model_uri)
 
         return None
+
 ```
 
 ---
@@ -647,6 +653,7 @@ class OfflineEvaluator:
         )
 
         return dcg / idcg if idcg > 0 else 0.0
+
 ```
 
 ---

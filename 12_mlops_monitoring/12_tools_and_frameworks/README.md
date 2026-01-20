@@ -89,6 +89,7 @@ test_suite.run(
 # Get results programmatically
 results = test_suite.as_dict()
 print(f"Tests passed: {results['summary']['all_passed']}")
+
 ```
 
 ### Great Expectations
@@ -157,6 +158,7 @@ results = validator.validate()
 if not results.success:
     failed = [r for r in results.results if not r.success]
     print(f"Validation failed: {len(failed)} expectations failed")
+
 ```
 
 ### Prometheus + Grafana
@@ -244,6 +246,7 @@ GRAFANA_DASHBOARD = {
 
 # Start metrics server
 start_http_server(8000, registry=registry)
+
 ```
 
 ### MLflow
@@ -306,6 +309,7 @@ client.transition_model_version_stage(
 
 # Load production model
 model = mlflow.sklearn.load_model("models:/fraud_detection/Production")
+
 ```
 
 ### WhyLabs (SaaS)
@@ -348,6 +352,7 @@ constraints = Constraints(
 # Check constraints
 report = constraints.generate_constraints_report(profile.view())
 print(f"All passed: {report.all_passed}")
+
 ```
 
 ---
@@ -392,6 +397,7 @@ print(f"All passed: {report.all_passed}")
 - [ ] Create model cards
 - [ ] Add fairness monitoring
 - [ ] Document all processes
+
 ```
 
 ---

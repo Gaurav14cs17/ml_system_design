@@ -96,6 +96,7 @@ response = client.with_system_prompt(
     user_message="Explain quantum computing in simple terms",
     system_prompt="You are a physics teacher explaining to high school students."
 )
+
 ```
 
 ---
@@ -198,6 +199,7 @@ llm = LocalLLM(
 response = llm.chat([
     {"role": "user", "content": "What is machine learning?"}
 ])
+
 ```
 
 ---
@@ -262,6 +264,7 @@ server = VLLMServer(
 
 prompts = ["Explain AI:", "What is Python?", "How does the internet work?"]
 responses = server.generate(prompts)
+
 ```
 
 ---
@@ -373,6 +376,7 @@ training_data = [
 
 dataset = fine_tuner.prepare_dataset(training_data)
 fine_tuner.train(dataset)
+
 ```
 
 ---
@@ -448,6 +452,7 @@ prompt_manager.register_template(
 
 Summary:"""
 )
+
 ```
 
 ---

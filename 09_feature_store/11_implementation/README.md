@@ -50,6 +50,7 @@ offline_store:
     type: file
 
 entity_key_serialization_version: 2
+
 ```
 
 ### Requirements
@@ -63,6 +64,7 @@ scikit-learn>=1.2.0
 redis>=4.5.0
 pyarrow>=11.0.0
 great-expectations>=0.15.0
+
 ```
 
 ### Initialize Project
@@ -82,6 +84,7 @@ pip install -r requirements.txt
 # Initialize Feast project
 cd feature_repo
 feast init
+
 ```
 
 ---
@@ -115,6 +118,7 @@ merchant = Entity(
     join_keys=["merchant_id"],
     description="A merchant/business"
 )
+
 ```
 
 ### Data Sources
@@ -148,6 +152,7 @@ merchant_features_source = FileSource(
     timestamp_field="event_timestamp",
     description="Merchant aggregated features"
 )
+
 ```
 
 ### Feature Views
@@ -208,6 +213,7 @@ merchant_features = FeatureView(
     source=merchant_features_source,
     tags={"team": "fraud", "domain": "merchant"},
 )
+
 ```
 
 ### On-Demand Features
@@ -266,6 +272,7 @@ def transaction_context_features(inputs: pd.DataFrame) -> pd.DataFrame:
     ).astype(int)
 
     return df
+
 ```
 
 ### Feature Services
@@ -306,6 +313,7 @@ fraud_detection_v2 = FeatureService(
     ],
     tags={"model": "fraud_v2"},
 )
+
 ```
 
 ---
@@ -431,6 +439,7 @@ if __name__ == "__main__":
         transactions_path="data/raw/transactions/",
         output_path="feature_repo/data/"
     )
+
 ```
 
 ### Apply and Materialize
@@ -442,6 +451,7 @@ feast apply
 
 # Materialize features to online store
 feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
+
 ```
 
 ---
@@ -549,6 +559,7 @@ async def predict_fraud(request: TransactionRequest):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 ```
 
 ---
@@ -666,6 +677,7 @@ if __name__ == "__main__":
         labels_path="data/labels/fraud_labels.parquet",
         model_output_path="models/fraud_model_v2.joblib"
     )
+
 ```
 
 ---
@@ -687,6 +699,7 @@ if __name__ == "__main__":
 □ Training pipeline working
 □ Online serving functional
 □ API endpoint created
+
 ```
 
 ### Key Files

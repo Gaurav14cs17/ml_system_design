@@ -75,6 +75,7 @@ Search and Ranking systems power the core functionality of modern tech products�
 |  +----------+                                                               |
 |                                                                              |
 +-----------------------------------------------------------------------------+
+
 ```
 
 ### Recommended Timeline
@@ -127,6 +128,7 @@ source search_ranking_env/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
 ```
 
 ---
@@ -145,6 +147,7 @@ pip install torch transformers faiss-cpu numpy pandas scikit-learn
 
 # Verify installation
 python -c "import torch; print(f'PyTorch: {torch.__version__}')"
+
 ```
 
 ### Your First Ranker
@@ -221,6 +224,7 @@ print("🔍 Query:", query)
 print("📊 Results:")
 for idx, score in results:
     print(f"  Doc {idx}: {corpus[idx]} (score: {score:.4f})")
+
 ```
 
 ---
@@ -290,6 +294,7 @@ for idx, score in results:
 +-- 09_advanced_topics/                # Module 9: Advanced Topics
     +-- README.md
     +-- images/
+
 ```
 
 ---

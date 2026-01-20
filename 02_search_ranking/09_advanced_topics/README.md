@@ -128,6 +128,7 @@ class UserEmbedder:
         engagement_weight = engagement_weights.get(interaction['type'], 1.0)
 
         return recency_weight * engagement_weight
+
 ```
 
 ### Session-Based Personalization
@@ -191,6 +192,7 @@ class SessionPersonalizer:
                 preferences['price_range'].append(click.price)
 
         return preferences
+
 ```
 
 ---
@@ -314,6 +316,7 @@ class DiversityReranker:
         return np.dot(doc1.embedding, doc2.embedding) / (
             np.linalg.norm(doc1.embedding) * np.linalg.norm(doc2.embedding)
         )
+
 ```
 
 ---
@@ -439,6 +442,7 @@ class NewItemHandler:
         }
 
         return aggregated
+
 ```
 
 ---
@@ -544,6 +548,7 @@ class FairnessConstraint:
                         break
 
         return result[:k]
+
 ```
 
 ---
@@ -634,6 +639,7 @@ class BanditRanker:
         n = self.counts[arm_idx]
         old_value = self.values[arm_idx]
         self.values[arm_idx] = old_value + (reward - old_value) / n
+
 ```
 
 ---
@@ -717,6 +723,7 @@ class FederatedSearchOrchestrator:
         diverse = self._ensure_source_diversity(reranked)
 
         return diverse
+
 ```
 
 ---
@@ -822,6 +829,7 @@ class QueryRewriter:
         rewritten = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
         return rewritten
+
 ```
 
 ---

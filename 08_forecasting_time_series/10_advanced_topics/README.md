@@ -65,6 +65,7 @@ class QuantileLoss(nn.Module):
                 torch.max(q * errors, (q - 1) * errors)
             )
         return torch.mean(torch.stack(losses))
+
 ```
 
 ### Deep Ensembles
@@ -104,6 +105,7 @@ class DeepEnsembleForecaster:
         upper = np.percentile(predictions, (1 - alpha/2) * 100, axis=0)
 
         return lower, upper
+
 ```
 
 ---
@@ -184,6 +186,7 @@ Store1     1    1    0   1   0   0
 Store2     1    1    0   0   1   0
 Store3     1    0    1   0   0   1
 """
+
 ```
 
 ---
@@ -271,6 +274,7 @@ class DomainAdaptation:
             # Backward and update
             adaptation_loss.backward()
             # ... optimizer step
+
 ```
 
 ---
@@ -348,6 +352,7 @@ class AdaptiveEnsemble:
         # Softmax weighting
         inv_errors = 1 / (mean_errors + 1e-8)
         self.weights = inv_errors / inv_errors.sum()
+
 ```
 
 ---
@@ -415,6 +420,7 @@ class AdaptiveConformalForecaster:
             self.threshold *= (1 - self.gamma * (1 - self.alpha))
         else:
             self.threshold *= (1 + self.gamma * self.alpha)
+
 ```
 
 ---
@@ -506,6 +512,7 @@ class CounterfactualForecaster:
                 X_intervened[affected_var] += effect
 
         return self.forecast_model.predict(X_intervened)
+
 ```
 
 ---
@@ -626,6 +633,7 @@ from neuralprophet import NeuralProphet
 model = NeuralProphet(auto_select_best=True)
 model.fit(df)
 """
+
 ```
 
 ---

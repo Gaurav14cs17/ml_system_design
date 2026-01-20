@@ -53,6 +53,7 @@ flowchart TB
     style Model fill:#fff3e0
     style Data fill:#e8f5e9
     style Infra fill:#fce4ec
+
 ```
 
 ```mermaid
@@ -75,6 +76,7 @@ mindmap
       Prediction Drift
       Data Quality
       Feature Distribution
+
 ```
 
 ---
@@ -150,6 +152,7 @@ MODEL_MEMORY_BYTES = Gauge(
     'Model memory usage in bytes',
     ['model_name']
 )
+
 ```
 
 ### Instrumented Prediction Endpoint
@@ -212,6 +215,7 @@ async def predict(request: PredictionRequest):
 @app.get("/metrics")
 async def metrics():
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
 ```
 
 ---
@@ -246,6 +250,7 @@ scrape_configs:
         action: replace
         target_label: __metrics_path__
         regex: (.+)
+
 ```
 
 ### Alert Rules
@@ -297,6 +302,7 @@ groups:
           severity: warning
         annotations:
           summary: "GPU memory usage high"
+
 ```
 
 ---
@@ -359,6 +365,7 @@ async def predict(request: PredictionRequest):
         span.set_attribute("prediction.confidence", result["confidence"])
 
         return result
+
 ```
 
 ---
@@ -470,6 +477,7 @@ drift_reports = detector.detect_drift(production_data, method="psi")
 for report in drift_reports:
     if report.is_drifted:
         print(f"⚠️ Drift detected in {report.feature_name}: {report.drift_score:.3f}")
+
 ```
 
 ### Prediction Drift
@@ -519,6 +527,7 @@ class PredictionDriftMonitor:
             "recent_mean": recent_mean,
             "mean_shift_percent": mean_shift
         }
+
 ```
 
 ---

@@ -26,6 +26,7 @@ This guide covers the complete lifecycle of building production-grade content mo
 ## Table of Contents
 
 ### Part 1: Foundations
+
 | Chapter | Topic | Description |
 |---------|-------|-------------|
 | 01 | [Introduction](./01_introduction/README.md) | What is content moderation, why it matters |
@@ -33,6 +34,7 @@ This guide covers the complete lifecycle of building production-grade content mo
 | 03 | [Data Collection & Labeling](./03_data_collection_labeling/README.md) | Training data strategies, annotation workflows |
 
 ### Part 2: ML Components
+
 | Chapter | Topic | Description |
 |---------|-------|-------------|
 | 04 | [Text Moderation](./04_text_moderation/README.md) | NLP for toxic text, hate speech, spam detection |
@@ -41,6 +43,7 @@ This guide covers the complete lifecycle of building production-grade content mo
 | 07 | [Feature Engineering](./07_feature_engineering/README.md) | Text, user, contextual, and graph features |
 
 ### Part 3: System Components
+
 | Chapter | Topic | Description |
 |---------|-------|-------------|
 | 08 | [Model Serving & Inference](./08_model_serving_inference/README.md) | Low-latency serving, batching, caching |
@@ -50,6 +53,7 @@ This guide covers the complete lifecycle of building production-grade content mo
 | 12 | [Monitoring & Alerting](./12_monitoring_alerting/README.md) | Metrics, dashboards, incident response |
 
 ### Part 4: Advanced Topics
+
 | Chapter | Topic | Description |
 |---------|-------|-------------|
 | 13 | [Edge Cases & Adversarial](./13_edge_cases_adversarial/README.md) | Handling ambiguity, defeating evasion |
@@ -127,6 +131,7 @@ pip install pillow opencv-python
 pip install redis kafka-python
 pip install prometheus-client
 pip install scikit-learn pandas numpy
+
 ```
 
 ### Quick Start Example
@@ -154,6 +159,7 @@ def moderate(text, threshold=0.5):
 
 print(moderate("Hello world!"))
 # {'decision': 'allow', 'score': 0.002}
+
 ```
 
 ---

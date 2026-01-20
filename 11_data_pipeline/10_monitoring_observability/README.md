@@ -179,6 +179,7 @@ def load_data(data):
 if __name__ == "__main__":
     start_http_server(8000)
     # Run pipeline
+
 ```
 
 ---
@@ -390,6 +391,7 @@ all_passed = all(m.passed for m in metrics)
 if not all_passed:
     failed = [m for m in metrics if not m.passed]
     send_alert(f"Quality check failed: {failed}")
+
 ```
 
 ---
@@ -572,6 +574,7 @@ rules.add_rule(
     severity=AlertSeverity.WARNING,
     message_template="Feature {feature_name} has drifted (p-value: {drift_p_value:.4f})"
 )
+
 ```
 
 ---
@@ -646,6 +649,7 @@ dashboard:
         - type: table
           title: "Drifted Features"
           query: 'feature_drift_score > 0.1'
+
 ```
 
 ---
@@ -748,6 +752,7 @@ class TracedPipeline:
     def load(self, df: pd.DataFrame):
         # Loading logic
         df.to_parquet("s3://bucket/features/")
+
 ```
 
 ---

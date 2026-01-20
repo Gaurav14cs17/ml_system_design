@@ -187,6 +187,7 @@ class CostAttributor:
             ))
 
         return records
+
 ```
 
 ---
@@ -399,6 +400,7 @@ class CostBudgetManager:
                 )
 
         return results
+
 ```
 
 ---
@@ -450,6 +452,7 @@ COST_QUERIES = {
         GROUP BY model_name
     """
 }
+
 ```
 
 ---

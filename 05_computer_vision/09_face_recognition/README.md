@@ -55,6 +55,7 @@ flowchart LR
     style B fill:#fff3e0
     style F fill:#e8f5e9
     style I fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -76,6 +77,7 @@ graph TB
 
     style V fill:#e3f2fd
     style I fill:#fff3e0
+
 ```
 
 ---
@@ -174,6 +176,7 @@ class FaceDetector:
             'right_ear': (int(keypoints[4].x * w), int(keypoints[4].y * h)),
             'left_ear': (int(keypoints[5].x * w), int(keypoints[5].y * h)),
         }
+
 ```
 
 ---
@@ -256,6 +259,7 @@ class FaceAligner:
         aligned = cv2.warpAffine(image, M, (image.shape[1], image.shape[0]))
 
         return aligned
+
 ```
 
 ---
@@ -328,6 +332,7 @@ class FaceEmbedder:
     def compute_distance(self, emb1, emb2):
         """Compute Euclidean distance between embeddings."""
         return np.linalg.norm(emb1 - emb2)
+
 ```
 
 ---
@@ -435,6 +440,7 @@ class FaceRecognitionSystem:
             results.append(top_matches[0])
 
         return results
+
 ```
 
 ---

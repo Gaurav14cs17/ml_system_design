@@ -28,6 +28,7 @@ pie showData
     "Network" : 10
     "Monitoring" : 5
     "Other" : 5
+
 ```
 
 ```mermaid
@@ -50,6 +51,7 @@ flowchart TB
 
     style Costs fill:#ffcdd2
     style Savings fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -59,6 +61,7 @@ xychart-beta
     y-axis "Monthly Cost ($)" 0 --> 12000
     bar [10000, 6000, 2500, 1000]
     line [10000, 6000, 2500, 1000]
+
 ```
 
 ---
@@ -113,6 +116,7 @@ cpu_instance = InfrastructureCost(
 
 print(f"GPU cost: ${calculate_cost_per_million_predictions(gpu_instance):.2f}/M predictions")
 print(f"CPU cost: ${calculate_cost_per_million_predictions(cpu_instance):.2f}/M predictions")
+
 ```
 
 ### Monthly Cost Estimation
@@ -170,6 +174,7 @@ estimate = estimate_monthly_cost(
 )
 print(f"Monthly cost: ${estimate['monthly_cost']:,.2f}")
 print(f"Cost per million: ${estimate['cost_per_million']:.3f}")
+
 ```
 
 ---
@@ -268,6 +273,7 @@ def recommend_instance(profile: ResourceProfile) -> str:
         return "g4dn.2xlarge (T4 16GB)"
     else:
         return "g4dn.12xlarge (4x T4)"
+
 ```
 
 ---
@@ -323,6 +329,7 @@ spec:
   limits:
     resources:
       nvidia.com/gpu: 10  # Limited on-demand capacity
+
 ```
 
 ### Graceful Shutdown Handler
@@ -384,6 +391,7 @@ class SpotTerminationHandler:
             if self.check_spot_termination():
                 self.handle_termination(None, None)
             time.sleep(5)
+
 ```
 
 ---
@@ -489,6 +497,7 @@ class ScheduledScaler:
         # Find the most recent scheduled value
         applicable_hour = max(h for h in schedule.keys() if h <= hour)
         return schedule[applicable_hour]
+
 ```
 
 ---
@@ -538,6 +547,7 @@ optimized = calculate_efficiency_metrics(200, 500_000_000, 20, 0.94)
 print(f"Baseline: ${baseline['cost_per_million_predictions']:.2f}/M")
 print(f"Optimized: ${optimized['cost_per_million_predictions']:.2f}/M")
 print(f"Improvement: {baseline['cost_per_million_predictions'] / optimized['cost_per_million_predictions']:.1f}x")
+
 ```
 
 ---
@@ -596,6 +606,7 @@ class CostTracker:
             COST_PER_PREDICTION.labels(model=model_name).set(cost_per_pred)
 
         ESTIMATED_HOURLY_COST.labels(service=self.service_name).set(self.hourly_rate)
+
 ```
 
 ### Cost Alerts
@@ -634,6 +645,7 @@ groups:
         annotations:
           summary: "Low prediction efficiency"
           description: "Less than 100K predictions per dollar"
+
 ```
 
 ---
@@ -674,6 +686,7 @@ Subject to:
     Latency P99 < SLO
     Availability > 99.9%
     Accuracy > threshold
+
 ```
 
 ---

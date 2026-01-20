@@ -91,6 +91,7 @@ key = loader.encrypt_model(model, "model.encrypted")
 # Later, with key
 loader = EncryptedModelLoader(key)
 model = loader.load_model(MyModel, "model.encrypted")
+
 ```
 
 ### Model Signing
@@ -171,6 +172,7 @@ class ModelSigner:
             return True
         except:
             return False
+
 ```
 
 ---
@@ -236,6 +238,7 @@ async def rate_limit_middleware(request: Request, call_next):
 
     response = await call_next(request)
     return response
+
 ```
 
 ### Input Validation
@@ -284,6 +287,7 @@ class AdversarialDetector:
         diff = (original_pred - perturbed_pred).abs().mean()
 
         return diff > self.threshold
+
 ```
 
 ---
@@ -337,6 +341,7 @@ class DataAnonymizer:
                     return f"{ranges[i]}-{ranges[i+1]}"
 
         return "[REDACTED]"
+
 ```
 
 ### K-Anonymity
@@ -372,6 +377,7 @@ def enforce_k_anonymity(
                 break
 
     return result
+
 ```
 
 ---
@@ -427,6 +433,7 @@ def train_with_differential_privacy(
         print(f"Epoch {epoch}: ε = {epsilon:.2f}")
 
     return model
+
 ```
 
 ### Private Inference
@@ -466,6 +473,7 @@ class PrivatePredictor:
         probabilities = exp_scores / exp_scores.sum()
 
         return np.random.choice(len(probabilities), p=probabilities)
+
 ```
 
 ---
@@ -538,6 +546,7 @@ class MLAuditLogger:
             "fields": fields_accessed
         }
         self.logger.info(json.dumps(event))
+
 ```
 
 ---

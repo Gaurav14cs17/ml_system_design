@@ -91,6 +91,7 @@ features = store.get_online_features(
     features=fraud_features,
     entity_rows=entity_rows
 )
+
 ```
 
 ---
@@ -127,6 +128,7 @@ class DirectLookupServer:
             return dict(zip(feature_names, values))
         else:
             return self.redis.hgetall(key)
+
 ```
 
 ### Pattern 2: Feature Service Aggregation
@@ -170,6 +172,7 @@ class FeatureServiceServer:
             results.append(row_features)
 
         return results
+
 ```
 
 ### Pattern 3: With On-Demand Computation
@@ -231,6 +234,7 @@ class HybridFeatureServer:
             results.append(on_demand_features)
 
         return results
+
 ```
 
 ---
@@ -294,6 +298,7 @@ class CachedFeatureStore:
             'data': data,
             'expires_at': datetime.now() + self.local_cache_ttl
         }
+
 ```
 
 ---
@@ -329,6 +334,7 @@ METRICS = {
     # Staleness metrics
     "feature_age_seconds": "Age of returned features",
 }
+
 ```
 
 ---
@@ -346,6 +352,7 @@ METRICS = {
 □ Monitoring dashboards set up
 □ Auto-scaling configured
 □ Failover strategy in place
+
 ```
 
 ### Key Takeaways

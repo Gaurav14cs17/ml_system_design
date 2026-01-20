@@ -16,6 +16,7 @@ A data pipeline can be formally defined as a **directed acyclic graph (DAG)** of
 
 ```math
 \mathcal{P} = (V, E, T)
+
 ```
 
 where:
@@ -31,6 +32,7 @@ Pipelines compose through function composition. For transformations $f$ and $g$:
 
 ```math
 (g \circ f)(D) = g(f(D))
+
 ```
 
 This composition must satisfy the **closure property** — output schema of $f$ must match input schema of $g$.
@@ -43,24 +45,28 @@ The flow of data through a pipeline follows algebraic rules:
 
 ```math
 D_{combined} = D_1 \cup D_2
+
 ```
 
 **Filter** (selection):
 
 ```math
 D_{filtered} = \sigma_{\phi}(D) = \{d \in D : \phi(d) = \text{true}\}
+
 ```
 
 **Projection** (column selection):
 
 ```math
 D_{projected} = \pi_{A_1, A_2, ..., A_k}(D)
+
 ```
 
 **Join** (combining on keys):
 
 ```math
 D_1 \bowtie_{key} D_2 = \{(d_1, d_2) : d_1.key = d_2.key\}
+
 ```
 
 ### Latency and Throughput Model
@@ -71,6 +77,7 @@ Pipeline performance is characterized by:
 
 ```math
 L_{total} = \sum_{i=1}^{n} L_i + \sum_{j=1}^{m} Q_j
+
 ```
 
 where $L\_i$ is processing latency at stage $i$ and $Q\_j$ is queueing delay.
@@ -79,6 +86,7 @@ where $L\_i$ is processing latency at stage $i$ and $Q\_j$ is queueing delay.
 
 ```math
 \Theta = \min_{i} \frac{P_i}{S_i}
+
 ```
 
 where $P\_i$ is parallelism and $S\_i$ is processing time per record at stage $i$.
@@ -87,6 +95,7 @@ where $P\_i$ is parallelism and $S\_i$ is processing time per record at stage $i
 
 ```math
 L = \lambda \cdot W
+
 ```
 
 where $L$ = items in system, $\lambda$ = arrival rate, $W$ = wait time.
@@ -138,6 +147,7 @@ class MLDataPipeline:
         for stage in self.stages:
             data = self.execute_stage(stage, data)
         return data
+
 ```
 
 ### 1. Data Sources Layer
@@ -171,6 +181,7 @@ class DataIngestionLayer:
         consumer = KafkaConsumer(stream_config.topic)
         for message in consumer:
             yield self.process_message(message)
+
 ```
 
 ### 3. Storage Layer
@@ -206,6 +217,7 @@ class DataProcessor:
         df['user_engagement'] = df['clicks'] / df['impressions']
         df['recency_score'] = self.compute_recency(df['last_activity'])
         return df
+
 ```
 
 ## 📊 Types of Data Pipelines
@@ -231,24 +243,28 @@ Two critical time concepts in data processing:
 
 ```math
 t_e = \text{timestamp embedded in event}
+
 ```
 
 **Processing Time** $t\_p$: When the system processes the event
 
 ```math
 t_p = \text{current system time}
+
 ```
 
 **Skew**: The difference between them
 
 ```math
 \Delta t = t_p - t_e
+
 ```
 
 Event time processing requires **watermarks** — markers indicating "all events up to time $W$ have arrived":
 
 ```math
 W(t_p) = \max(t_e) - \text{allowed\_lateness}
+
 ```
 
 ### Batch Pipelines
@@ -263,12 +279,14 @@ For a batch window $[t\_1, t\_2]$:
 
 ```math
 D_{batch} = \{d \in D : t_1 \leq t_e(d) < t_2\}
+
 ```
 
 Processing applies a function $f$ to the entire batch:
 
 ```math
 R = f(D_{batch})
+
 ```
 
 **Complexity**: $O(|D\_{batch}|)$ time, requires $O(|D\_{batch}|)$ memory for full-batch aggregations.
@@ -293,6 +311,7 @@ For **Poisson arrivals** (common model):
 
 ```math
 P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}
+
 ```
 
 where $\lambda$ is the arrival rate.
@@ -303,18 +322,21 @@ where $\lambda$ is the arrival rate.
 
 ```math
 W_k = \{d : k \cdot w \leq t_e(d) < (k+1) \cdot w\}
+
 ```
 
 *Sliding window* with size $w$ and slide $s$:
 
 ```math
 W_{k} = \{d : k \cdot s \leq t_e(d) < k \cdot s + w\}
+
 ```
 
 *Session window* with gap $g$:
 
 ```math
 W_{session} = \{d_1, ..., d_n\} \text{ where } t_e(d_{i+1}) - t_e(d_i) < g
+
 ```
 
 ![Diagram 1](images/diagram_01.svg)
@@ -346,12 +368,14 @@ A function $f$ is **idempotent** if:
 
 ```math
 f(f(x)) = f(x)
+
 ```
 
 For pipeline operations, this extends to:
 
 ```math
 \text{apply}(D, op, n) = \text{apply}(D, op, 1) \quad \forall n \geq 1
+
 ```
 
 **Why It Matters:**
@@ -375,6 +399,7 @@ def process_partition(date, data):
 # Bad: Non-idempotent (appends cause duplicates)
 def process_data(data):
     append_to_table(data)  # Running twice = duplicate data!
+
 ```
 
 ### 2. Fault Tolerance
@@ -404,6 +429,7 @@ def fetch_data_from_api(endpoint):
     response = requests.get(endpoint)
     response.raise_for_status()
     return response.json()
+
 ```
 
 ### 3. Scalability
@@ -420,6 +446,7 @@ class ScalablePipeline:
             results = executor.map(self.process_partition, partitions)
 
         return self.combine_results(results)
+
 ```
 
 ### 4. Observability
@@ -443,11 +470,13 @@ class ObservablePipeline:
             except Exception as e:
                 logging.error(f"Pipeline failed: {str(e)}")
                 raise
+
 ```
 
 ## 🛠️ Common Tools & Technologies
 
 ### Orchestration
+
 | Tool | Best For | Learning Curve |
 |------|----------|----------------|
 | Apache Airflow | Complex DAGs, mature ecosystem | Medium |
@@ -456,6 +485,7 @@ class ObservablePipeline:
 | Luigi | Simple dependencies | Low |
 
 ### Processing Engines
+
 | Engine | Type | Scale |
 |--------|------|-------|
 | Apache Spark | Batch + Streaming | Massive |
@@ -464,6 +494,7 @@ class ObservablePipeline:
 | Pandas | Single-node | Small |
 
 ### Storage
+
 | Solution | Type | Use Case |
 |----------|------|----------|
 | Delta Lake | Lakehouse | ACID on data lakes |
@@ -495,6 +526,7 @@ def serving_preprocessing(value):
 # CORRECT: Use saved statistics from training
 def serving_preprocessing_correct(value, saved_stats):
     return (value - saved_stats['mean']) / saved_stats['std']
+
 ```
 
 ## 📈 Maturity Levels of Data Pipelines

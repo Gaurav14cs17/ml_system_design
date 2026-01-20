@@ -84,6 +84,7 @@ class HypothesisTest:
             'p_value': p_value,
             'reject_null': p_value < alpha
         }
+
 ```
 
 ---
@@ -146,6 +147,7 @@ control = np.random.normal(0.10, 0.05, 1000)  # 10% conversion rate
 treatment = np.random.normal(0.11, 0.05, 1000)  # 11% conversion rate
 
 result = calculate_p_value_from_scratch(control, treatment)
+
 ```
 
 ### Common P-Value Misconceptions
@@ -217,6 +219,7 @@ print(f"Absolute Difference: {result['absolute_difference']:.4f}")
 print(f"95% CI: [{result['absolute_ci'][0]:.4f}, {result['absolute_ci'][1]:.4f}]")
 print(f"Relative Lift: {result['relative_lift']*100:.2f}%")
 print(f"95% CI: [{result['relative_ci'][0]*100:.2f}%, {result['relative_ci'][1]*100:.2f}%]")
+
 ```
 
 ### Interpreting Confidence Intervals for Decisions
@@ -270,6 +273,7 @@ class ABTestErrors:
 
     Probability: β (depends on power, typically 20%)
     """
+
 ```
 
 ### Controlling Error Rates
@@ -350,6 +354,7 @@ power = calculate_power(
     alpha=0.05
 )
 print(f"Power: {power:.1%}")  # Output: Power: 47.6%
+
 ```
 
 ### Factors Affecting Power
@@ -411,6 +416,7 @@ Effect Size Impact (baseline=10%, N=20,000):
 |   20%      |  99.9%  |  Very easy
 +------------+---------+
 """
+
 ```
 
 ---
@@ -487,6 +493,7 @@ print("Effect Size Examples:")
 print(f"Absolute: {EffectSize.absolute_difference(0.10, 0.11):.3f}")  # 0.010
 print(f"Relative: {EffectSize.relative_lift(0.10, 0.11):.1%}")        # 10.0%
 print(f"Cohen's h: {EffectSize.cohens_h(0.10, 0.11):.3f}")            # 0.033
+
 ```
 
 ### Practical vs Statistical Significance
@@ -682,6 +689,7 @@ class ABTestStatistics:
             'confidence_interval': (ci_lower, ci_upper),
             'significant': p_value < alpha
         }
+
 ```
 
 ---
@@ -829,6 +837,7 @@ results = bayesian.full_analysis(
 
 print(f"P(Treatment > Control): {results['prob_treatment_better']:.1%}")
 print(f"Expected Loss (choosing Treatment): {results['expected_loss']['expected_loss_choose_b']:.4f}")
+
 ```
 
 ### When to Use Each Approach
@@ -869,6 +878,7 @@ Power:
 
 Cohen's h:
 h = 2 × [arcsin(√p₂) - arcsin(√p₁)]
+
 ```
 
 ---

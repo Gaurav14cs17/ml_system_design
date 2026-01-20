@@ -41,6 +41,7 @@ Semantic Search: "apple phone" → understands intent, finds iPhone results
 Query: "how to fix slow computer"
 Keyword: Matches "fix", "slow", "computer"
 Semantic: Understands "performance optimization", "speed up PC"
+
 ```
 
 ### Implementation
@@ -93,6 +94,7 @@ engine.index_documents([
 ])
 
 results = engine.search("teach me about AI")
+
 ```
 
 ### Hybrid Search (BM25 + Semantic)
@@ -146,6 +148,7 @@ class HybridSearchEngine:
             {'document': self.documents[i], 'score': float(combined[i])}
             for i in top_indices
         ]
+
 ```
 
 ---
@@ -208,6 +211,7 @@ def train_step(model, user_batch, pos_items, neg_items, temperature=0.1):
     ).mean()
 
     return loss
+
 ```
 
 ### Content-Based Recommendations
@@ -256,6 +260,7 @@ class ContentRecommender:
             {'item': self.items[i], 'score': float(similarities[i])}
             for i in top_indices
         ]
+
 ```
 
 ---
@@ -307,6 +312,7 @@ Answer:"""
             'answer': response.choices[0].message.content,
             'sources': retrieved
         }
+
 ```
 
 ### Advanced RAG with Reranking
@@ -339,6 +345,7 @@ class AdvancedRAG:
         )
 
         return [doc for doc, _ in ranked[:k]]
+
 ```
 
 ---
@@ -397,6 +404,7 @@ class DuplicateDetector:
                 kept_indices.append(i)
 
         return [texts[i] for i in kept_indices]
+
 ```
 
 ---
@@ -445,6 +453,7 @@ class TopicClusterer:
             ][:top_k]
 
         return keywords
+
 ```
 
 ---
@@ -496,6 +505,7 @@ class EmbeddingAnomalyDetector:
         predictions = distances > self.threshold
 
         return predictions, distances
+
 ```
 
 ---
@@ -567,6 +577,7 @@ class MultiModalSearch:
             {'image': self.images[i], 'score': float(similarities[i])}
             for i in top_indices
         ]
+
 ```
 
 ---
@@ -636,6 +647,7 @@ class EcommerceSearchSystem:
             if product['price'] > filters['max_price']:
                 return False
         return True
+
 ```
 
 ---

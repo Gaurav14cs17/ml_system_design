@@ -49,6 +49,7 @@ The probability that a flagged item is actually a violation:
 
 ```math
 \text{Precision} = \frac{TP}{TP + FP}
+
 ```
 
 - **High precision** → Few wrongful content removals
@@ -60,6 +61,7 @@ The probability of catching an actual violation:
 
 ```math
 \text{Recall} = \frac{TP}{TP + FN}
+
 ```
 
 - **High recall** → Catch most harmful content
@@ -71,6 +73,7 @@ Balances precision and recall into a single metric:
 
 ```math
 F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2 \cdot TP}{2 \cdot TP + FP + FN}
+
 ```
 
 **F-beta Score (Weighted Harmonic Mean)**
@@ -79,6 +82,7 @@ Allows weighting recall vs. precision:
 
 ```math
 F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{(\beta^2 \cdot \text{Precision}) + \text{Recall}}
+
 ```
 
 - β > 1: Emphasize recall (prefer catching violations)
@@ -91,12 +95,14 @@ F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{(\beta
 
 ```math
 \text{FPR} = \frac{FP}{FP + TN} = 1 - \text{Specificity}
+
 ```
 
 **False Negative Rate (Type II Error)**
 
 ```math
 \text{FNR} = \frac{FN}{FN + TP} = 1 - \text{Recall}
+
 ```
 
 ### ROC and AUC
@@ -105,6 +111,7 @@ The **Receiver Operating Characteristic (ROC) curve** plots TPR vs. FPR at vario
 
 ```math
 \text{AUC-ROC} = \int_0^1 TPR(FPR^{-1}(x)) \, dx
+
 ```
 
 - AUC = 0.5 → Random classifier
@@ -117,6 +124,7 @@ For imbalanced datasets (common in moderation where violations are rare):
 
 ```math
 \text{AUC-PR} = \int_0^1 P(R^{-1}(x)) \, dx
+
 ```
 
 More informative than ROC-AUC when negative class dominates.
@@ -129,18 +137,21 @@ For multiple violation categories:
 
 ```math
 \text{Precision}_{\text{macro}} = \frac{1}{K} \sum_{k=1}^{K} \text{Precision}_k
+
 ```
 
 **Micro-Average**: Global TP, FP, FN counts
 
 ```math
 \text{Precision}_{\text{micro}} = \frac{\sum_{k=1}^{K} TP_k}{\sum_{k=1}^{K} (TP_k + FP_k)}
+
 ```
 
 **Weighted-Average**: Weighted by class support
 
 ```math
 \text{Precision}_{\text{weighted}} = \frac{\sum_{k=1}^{K} n_k \cdot \text{Precision}_k}{\sum_{k=1}^{K} n_k}
+
 ```
 
 ---
@@ -258,6 +269,7 @@ class ModerationMetrics:
             aucs.append(auc(recall, precision))
 
         return np.mean(aucs)
+
 ```
 
 ### Threshold Analysis
@@ -335,6 +347,7 @@ class ThresholdAnalyzer:
             'recall': recall.tolist(),
             'thresholds': thresholds.tolist()
         }
+
 ```
 
 ---
@@ -402,6 +415,7 @@ class RankingMetrics:
         """
         from sklearn.metrics import average_precision_score
         return average_precision_score(y_true, y_scores)
+
 ```
 
 ---
@@ -472,6 +486,7 @@ class OperationalMetricsCollector:
             queue_depth=self._get_queue_depth(),
             processing_backlog_minutes=self._get_backlog()
         )
+
 ```
 
 ### SLA Monitoring
@@ -523,6 +538,7 @@ class SLAMonitor:
             return 25  # 25% credit
         else:
             return 50  # 50% credit
+
 ```
 
 ---
@@ -539,6 +555,7 @@ Predictions should be independent of the sensitive attribute:
 
 ```math
 P(\hat{Y} = 1 | A = a) = P(\hat{Y} = 1 | A = b) \quad \forall a, b
+
 ```
 
 **Equalized Odds**
@@ -547,6 +564,7 @@ True positive and false positive rates should be equal across groups:
 
 ```math
 P(\hat{Y} = 1 | Y = y, A = a) = P(\hat{Y} = 1 | Y = y, A = b) \quad \forall y \in \{0, 1\}
+
 ```
 
 **Equal Opportunity**
@@ -555,6 +573,7 @@ A relaxation focusing only on true positive rates:
 
 ```math
 P(\hat{Y} = 1 | Y = 1, A = a) = P(\hat{Y} = 1 | Y = 1, A = b)
+
 ```
 
 **Disparate Impact Ratio**
@@ -563,6 +582,7 @@ The "80% rule" from employment law:
 
 ```math
 \text{DI} = \frac{P(\hat{Y} = 1 | A = \text{minority})}{P(\hat{Y} = 1 | A = \text{majority})} \geq 0.8
+
 ```
 
 **False Positive Rate Parity**
@@ -571,6 +591,7 @@ Critical for content moderation—ensures equal wrongful removal rates:
 
 ```math
 P(\hat{Y} = 1 | Y = 0, A = a) = P(\hat{Y} = 1 | Y = 0, A = b)
+
 ```
 
 **Calibration**
@@ -579,6 +600,7 @@ Predicted probabilities should reflect true probabilities across groups:
 
 ```math
 P(Y = 1 | \hat{P} = p, A = a) = P(Y = 1 | \hat{P} = p, A = b) = p
+
 ```
 
 ### Impossibility Theorem
@@ -695,6 +717,7 @@ class FairnessMetrics:
             'max_difference': max_fpr - min_fpr,
             'is_fair': (max_fpr - min_fpr) < 0.05  # 5% difference threshold
         }
+
 ```
 
 ---
@@ -767,6 +790,7 @@ class HumanReviewMetrics:
                 for r in reviews if r.ground_truth
             ])
         }
+
 ```
 
 ---
@@ -837,6 +861,7 @@ class BusinessImpactMetrics:
         violations = self.moderation.count_removals(time_range)
         views = self.analytics.total_views(time_range)
         return (violations / views) * 1_000_000
+
 ```
 
 ---

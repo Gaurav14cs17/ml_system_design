@@ -54,23 +54,29 @@
 ### Mathematical Formulation
 
 **Item Representation:**
+
 ```
 Item i = [f₁, f₂, f₃, ..., fₙ]
 Where fⱼ represents the j-th feature value
+
 ```
 
 **User Profile Construction:**
+
 ```
 User Profile(u) = Σᵢ (ratingᵤᵢ × Item_Vectorᵢ) / Σᵢ ratingᵤᵢ
 
 Or using TF-IDF weights:
 User Profile(u) = Σᵢ (tfidf_weightᵢ × Item_Vectorᵢ)
+
 ```
 
 **Prediction/Scoring:**
+
 ```
 score(u, i) = similarity(User_Profile(u), Item_Vector(i))
             = cos(θ) = (u · i) / (||u|| × ||i||)
+
 ```
 
 ---
@@ -93,12 +99,15 @@ movie_features = {
         "budget": 160000000
     }
 }
+
 ```
 
 **One-Hot Encoding for Categorical Features:**
+
 ```
 Genres: [Action, Comedy, Drama, Horror, Sci-Fi, Thriller]
 Inception: [1, 0, 0, 0, 1, 1]  # Action=1, Sci-Fi=1, Thriller=1
+
 ```
 
 ### 2. Text-Based Features
@@ -111,6 +120,7 @@ TF(t, d) = (Number of times t appears in d) / (Total terms in d)
 IDF(t) = log(Total documents / Documents containing t)
 
 TF-IDF(t, d) = TF(t, d) × IDF(t)
+
 ```
 
 **Visual Example:**
@@ -133,6 +143,7 @@ def get_document_embedding(text, model, dim=300):
     if vectors:
         return np.mean(vectors, axis=0)
     return np.zeros(dim)
+
 ```
 
 ### 3. Image-Based Features
@@ -159,6 +170,7 @@ audio_features = {
     "valence": 0.624,           # 0.0 to 1.0 (positivity)
     "tempo": 98.002,            # BPM
 }
+
 ```
 
 ---
@@ -172,6 +184,7 @@ cos(θ) = (A · B) / (||A|| × ||B||)
        = Σ(Aᵢ × Bᵢ) / (√Σ(Aᵢ²) × √Σ(Bᵢ²))
 
 Range: [-1, 1] (typically [0, 1] for positive vectors)
+
 ```
 
 **Visual Intuition:**
@@ -185,6 +198,7 @@ d(A, B) = √Σ(Aᵢ - Bᵢ)²
 
 To convert to similarity:
 similarity = 1 / (1 + distance)
+
 ```
 
 ### 3. Jaccard Similarity (for Sets)
@@ -198,6 +212,7 @@ Movie B genres: {Action, Horror, Thriller}
 
 J = |{Action, Thriller}| / |{Action, Sci-Fi, Thriller, Horror}|
   = 2 / 4 = 0.5
+
 ```
 
 ### 4. Pearson Correlation
@@ -207,6 +222,7 @@ r = Σ((Aᵢ - Ā)(Bᵢ - B̄)) / (√Σ(Aᵢ - Ā)² × √Σ(Bᵢ - B̄)²)
 
 Range: [-1, 1]
 Useful when dealing with rating data
+
 ```
 
 ### Comparison Table
@@ -240,6 +256,7 @@ def build_user_profile_weighted(user_id, ratings, item_features):
         total_weight += rating
 
     return profile / total_weight if total_weight > 0 else profile
+
 ```
 
 #### Method 2: TF-IDF Weighted
@@ -252,6 +269,7 @@ def build_user_profile_tfidf(user_id, liked_items, tfidf_matrix):
     liked_indices = [item_to_idx[item] for item in liked_items]
     user_profile = tfidf_matrix[liked_indices].mean(axis=0)
     return np.asarray(user_profile).flatten()
+
 ```
 
 #### Method 3: Exponential Time Decay
@@ -273,6 +291,7 @@ def build_user_profile_decay(user_id, interactions, item_features,
         total_weight += weight
 
     return profile / total_weight if total_weight > 0 else profile
+
 ```
 
 ### Profile Update Strategies
@@ -527,6 +546,7 @@ if __name__ == "__main__":
     print("\nItems similar to Inception:")
     for item in similar:
         print(f"  {item['item_id']}: {item['score']:.4f}")
+
 ```
 
 ---
@@ -570,6 +590,7 @@ class HybridContentRecommender:
         ])
 
         return combined
+
 ```
 
 ### 2. Deep Content Features
@@ -604,6 +625,7 @@ def get_semantic_embeddings(texts):
     model = SentenceTransformer('all-MiniLM-L6-v2')
     embeddings = model.encode(texts, show_progress_bar=True)
     return embeddings
+
 ```
 
 ### 3. Knowledge Graph Enhanced
@@ -677,6 +699,7 @@ features = combine([
 
 # DON'T: Use raw text without preprocessing
 # DON'T: Ignore domain-specific features
+
 ```
 
 ### 2. Profile Updates
@@ -690,6 +713,7 @@ if rating < 3:
     profile -= β * item_features  # Negative signal
 
 # DON'T: Only update on positive interactions
+
 ```
 
 ### 3. Evaluation
@@ -704,6 +728,7 @@ metrics = {
 }
 
 # DON'T: Only optimize for accuracy (may hurt diversity)
+
 ```
 
 ### 4. System Design

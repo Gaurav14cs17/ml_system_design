@@ -167,6 +167,7 @@ class AdaptiveWeightedHybrid:
         # Renormalize
         total = sum(self.weights.values())
         self.weights = {k: v / total for k, v in self.weights.items()}
+
 ```
 
 ### Score Normalization
@@ -206,6 +207,7 @@ class ScoreNormalizer:
         n = len(scores)
         ranked = np.argsort(np.argsort(scores))
         return [r / (n - 1) if n > 1 else 0.5 for r in ranked]
+
 ```
 
 ---
@@ -304,6 +306,7 @@ class ColdStartSwitchingHybrid:
 
         blended.sort(key=lambda x: x[1], reverse=True)
         return blended
+
 ```
 
 ---
@@ -442,6 +445,7 @@ class DeepHybridRecommender(nn.Module):
         prediction = self.predictor(combined)
 
         return prediction.squeeze(), attention_weights
+
 ```
 
 ---
@@ -575,6 +579,7 @@ class DiversityReranker:
         vec2 = self.item_features[item2]
 
         return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2) + 1e-8)
+
 ```
 
 ---
@@ -682,6 +687,7 @@ class StackingHybridRecommender:
 
         scores.sort(key=lambda x: x[1], reverse=True)
         return scores[:n_items]
+
 ```
 
 ---
@@ -754,6 +760,7 @@ class WideAndDeepHybrid(nn.Module):
         output = wide_out + deep_out + self.output_bias
 
         return torch.sigmoid(output).squeeze()
+
 ```
 
 ### DeepFM
@@ -841,6 +848,7 @@ class DeepFM(nn.Module):
         output = self.bias + linear_out + fm_interaction + dnn_out
 
         return torch.sigmoid(output).squeeze()
+
 ```
 
 ---
@@ -956,6 +964,7 @@ class ProductionHybridRecommender:
         diverse = self.reranker.rerank(filtered, n_items * 2)
 
         return diverse[:n_items]
+
 ```
 
 ---

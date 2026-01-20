@@ -41,6 +41,7 @@ mindmap
     Framework-Agnostic
       BentoML
       Ray Serve
+
 ```
 
 ```mermaid
@@ -70,6 +71,7 @@ flowchart TB
     style MLNative fill:#fff3e0
     style K8s fill:#e8f5e9
     style Agnostic fill:#fce4ec
+
 ```
 
 ---
@@ -163,6 +165,7 @@ def health():
 if __name__ == "__main__":
     # Don't use in production - use gunicorn instead
     app.run(host="0.0.0.0", port=5000)
+
 ```
 
 ### Production Deployment with Gunicorn
@@ -189,11 +192,13 @@ loglevel = "info"
 keepalive = 5
 max_requests = 1000
 max_requests_jitter = 50
+
 ```
 
 ```bash
 # Run with gunicorn
 gunicorn -c gunicorn_config.py flask_server:app
+
 ```
 
 ### Flask Limitations for ML
@@ -411,6 +416,7 @@ async def metrics():
     }
 
 # Run with: uvicorn fastapi_server:app --host 0.0.0.0 --port 8000 --workers 4
+
 ```
 
 ### Async Batching for Higher Throughput
@@ -516,6 +522,7 @@ async def setup_batcher():
 async def predict_with_batching(request: PredictionRequest):
     result = await batcher.predict(request.features)
     return result
+
 ```
 
 ---
@@ -562,6 +569,7 @@ print(f"Model saved to: {export_path}")
 #     +-- variables/
 #         +-- variables.data-00000-of-00001
 #         +-- variables.index
+
 ```
 
 ### Running TensorFlow Serving
@@ -581,6 +589,7 @@ docker run -p 8501:8501 \
   tensorflow/serving:latest \
   --enable_batching=true \
   --batching_parameters_file=/config/batching.config
+
 ```
 
 ### Batching Configuration
@@ -592,6 +601,7 @@ batch_timeout_micros { value: 10000 }
 max_enqueued_batches { value: 100 }
 num_batch_threads { value: 4 }
 pad_variable_length_inputs: true
+
 ```
 
 ### Client Code
@@ -640,6 +650,7 @@ def predict_grpc(data, model_name="my_model"):
 
     response = stub.Predict(request)
     return tf.make_ndarray(response.outputs["output_1"])
+
 ```
 
 ### Model Versioning with TF Serving
@@ -673,6 +684,7 @@ model_config_list {
 # Request specific version
 # /v1/models/my_model/versions/2:predict
 # /v1/models/my_model/labels/canary:predict
+
 ```
 
 ---
@@ -759,6 +771,7 @@ class MyModelHandler(BaseHandler):
             })
 
         return results
+
 ```
 
 ### Packaging the Model
@@ -777,6 +790,7 @@ torch-model-archiver \
     --export-path model_store/
 
 # Output: model_store/my_model.mar
+
 ```
 
 ### TorchServe Configuration
@@ -800,6 +814,7 @@ default_response_timeout=120
 # Batching
 batch_size=8
 max_batch_delay=100
+
 ```
 
 ### Running TorchServe
@@ -816,6 +831,7 @@ docker run -p 8080:8080 -p 8081:8081 -p 8082:8082 \
     -v $(pwd)/model_store:/home/model-server/model-store \
     pytorch/torchserve:latest \
     torchserve --start --model-store model-store --models my_model=my_model.mar
+
 ```
 
 ### Management API
@@ -835,6 +851,7 @@ curl -X DELETE "http://localhost:8081/models/my_model"
 
 # Get model status
 curl http://localhost:8081/models/my_model
+
 ```
 
 ---
@@ -893,6 +910,7 @@ dynamic_batching {
 
 # Version policy
 version_policy: { latest { num_versions: 2 }}
+
 ```
 
 ### TensorRT Optimization
@@ -921,6 +939,7 @@ optimization {
     busy_wait_events: true
   }
 }
+
 ```
 
 ### Python Backend for Custom Logic
@@ -980,6 +999,7 @@ class TritonPythonModel:
     def finalize(self):
         """Called when model is unloaded"""
         pass
+
 ```
 
 ### Running Triton
@@ -995,6 +1015,7 @@ docker run --gpus all -p 8000:8000 -p 8001:8001 -p 8002:8002 \
 # 8000 - HTTP
 # 8001 - gRPC
 # 8002 - Metrics
+
 ```
 
 ### Triton Client
@@ -1034,6 +1055,7 @@ result = client.infer(
 # Get output
 output_data = result.as_numpy("OUTPUT__0")
 print(f"Predictions shape: {output_data.shape}")
+
 ```
 
 ---
@@ -1080,6 +1102,7 @@ spec:
     traffic: 100
     labels:
       version: v1
+
 ```
 
 ### Custom Python Model
@@ -1123,6 +1146,7 @@ class MyModel:
     def tags(self):
         """Return metadata tags"""
         return {"model_version": "1.0", "author": "data-team"}
+
 ```
 
 ### A/B Testing with Seldon
@@ -1154,6 +1178,7 @@ spec:
       modelUri: gs://models/model-b
     labels:
       version: b
+
 ```
 
 ---
@@ -1202,6 +1227,7 @@ bentoml.xgboost.save_model("xgb_classifier", xgb_model)
 
 # List saved models
 print(bentoml.models.list())
+
 ```
 
 ### Building a Service
@@ -1266,6 +1292,7 @@ def preprocess_text(text: str) -> np.ndarray:
     """Convert text to features"""
     # Tokenization, embedding, etc.
     return np.random.randn(1, 512).astype(np.float32)
+
 ```
 
 ### Build and Deploy
@@ -1296,6 +1323,7 @@ docker:
   cuda_version: "11.8"
   system_packages:
     - libgomp1
+
 ```
 
 ```bash
@@ -1313,6 +1341,7 @@ bentoml containerize multi_model_service:latest
 
 # Run container
 docker run -p 3000:3000 multi_model_service:latest
+
 ```
 
 ---
@@ -1373,6 +1402,7 @@ async def ready():
     if model is None:
         raise HTTPException(503, "Model not loaded")
     return {"status": "ready"}
+
 ```
 
 ### 2. Use Async for I/O Operations
@@ -1387,6 +1417,7 @@ async def get_features(user_id: str):
 # Bad: Blocking the event loop
 def get_features(user_id: str):
     return requests.get(f"{FEATURE_STORE_URL}/{user_id}").json()
+
 ```
 
 ### 3. Warm Up Models on Startup
@@ -1398,6 +1429,7 @@ async def warmup():
     for _ in range(10):
         _ = model.predict(dummy_input)
     logger.info("Model warmed up")
+
 ```
 
 ### 4. Implement Graceful Shutdown
@@ -1414,6 +1446,7 @@ def graceful_shutdown(signum, frame):
     sys.exit(0)
 
 signal.signal(signal.SIGTERM, graceful_shutdown)
+
 ```
 
 ### 5. Profile and Monitor
@@ -1438,6 +1471,7 @@ async def predict(request: Request):
 @app.get("/metrics")
 async def metrics():
     return Response(generate_latest(), media_type="text/plain")
+
 ```
 
 ---

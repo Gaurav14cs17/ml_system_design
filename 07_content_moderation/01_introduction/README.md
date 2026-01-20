@@ -140,6 +140,7 @@ human_review_posts = daily_posts * 0.01  # 1% needs human review
 moderators_with_ml = (human_review_posts * avg_review_time_seconds / 3600) / working_hours_per_day
 print(f"Moderators with ML: {moderators_with_ml:,.0f}")
 # Output: Moderators with ML: 5,208
+
 ```
 
 ---
@@ -337,6 +338,7 @@ pip install pillow opencv-python
 pip install pandas numpy scikit-learn
 pip install fastapi uvicorn
 pip install redis kafka-python
+
 ```
 
 ---

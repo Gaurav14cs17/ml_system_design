@@ -68,6 +68,7 @@ class MetricDefinition:
     owner: str = ""
     data_source: str = ""
     computation_query: str = ""
+
 ```
 
 ---
@@ -134,6 +135,7 @@ def choose_primary_metric(experiment_type: str, business_goal: str) -> dict:
         'primary': 'needs_custom_definition',
         'rationale': 'Custom metric needed for this use case'
     })
+
 ```
 
 ---
@@ -209,6 +211,7 @@ class MetricValidator:
             'concern': ambiguous_metrics.get(metric_name.lower(), None),
             'recommendation': 'Define success clearly' if is_ambiguous else 'OK'
         }
+
 ```
 
 ---
@@ -271,6 +274,7 @@ ECOMMERCE_METRICS = {
         'use_case': 'Product quality guardrail'
     }
 }
+
 ```
 
 ### Content/Media Metrics
@@ -320,6 +324,7 @@ CONTENT_METRICS = {
         'use_case': 'Explicit satisfaction signal'
     }
 }
+
 ```
 
 ### Search/Discovery Metrics
@@ -377,6 +382,7 @@ SEARCH_METRICS = {
         'use_case': 'Performance guardrail'
     }
 }
+
 ```
 
 ---
@@ -489,6 +495,7 @@ result = oec.compute({
 
 print(f"OEC Value: {result['oec_value']:.2%}")
 # Shows weighted average of relative changes
+
 ```
 
 ---
@@ -541,6 +548,7 @@ METRIC_SQL_TEMPLATES = {
         GROUP BY variant
     """
 }
+
 ```
 
 ### Handling Edge Cases
@@ -615,6 +623,7 @@ class MetricComputation:
             'sample_size': len(values),
             'winsorization': {'lower': lower, 'upper': upper}
         }
+
 ```
 
 ---

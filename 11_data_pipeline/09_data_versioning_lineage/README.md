@@ -57,6 +57,7 @@ git commit -m "Add training data v1"
 
 # Create a version tag
 git tag -a "data-v1.0" -m "Initial training data"
+
 ```
 
 ### DVC Pipeline Definition
@@ -111,6 +112,7 @@ stages:
     metrics:
       - evaluation.json:
           cache: false
+
 ```
 
 ```yaml
@@ -126,6 +128,7 @@ featurize:
 train:
   n_estimators: 100
   learning_rate: 0.1
+
 ```
 
 ### Running DVC Pipelines
@@ -148,6 +151,7 @@ dvc params diff
 
 # Visualize pipeline
 dvc dag
+
 ```
 
 ### DVC Experiments
@@ -185,6 +189,7 @@ metrics = {
 }
 with open('metrics.json', 'w') as f:
     json.dump(metrics, f)
+
 ```
 
 ```bash
@@ -200,6 +205,7 @@ dvc exp apply exp-abc123
 
 # Clean up experiments
 dvc exp gc --workspace
+
 ```
 
 ---
@@ -246,6 +252,7 @@ delta_table.restoreToVersion(3)
 
 # Or restore to timestamp
 delta_table.restoreToTimestamp("2024-01-14 10:00:00")
+
 ```
 
 ### Delta Lake for ML Training Data
@@ -332,6 +339,7 @@ training_data = manager.get_training_data_by_version(
     "customer_churn",
     version=snapshot["version"]
 )
+
 ```
 
 ---
@@ -424,6 +432,7 @@ lakefs.commit(
 
 # After validation, merge to main
 lakefs.merge("experiment/new-features", "main")
+
 ```
 
 ---
@@ -576,6 +585,7 @@ try:
 except Exception as e:
     tracker.fail_job(run_id, "compute_user_features", str(e))
     raise
+
 ```
 
 ### Apache Atlas Integration
@@ -638,6 +648,7 @@ class AtlasLineageManager:
             direction=direction,
             depth=depth
         )
+
 ```
 
 ---
@@ -798,6 +809,7 @@ lineage = tracker.get_model_lineage(
     "customer_churn_predictor",
     model_version.version
 )
+
 ```
 
 ---

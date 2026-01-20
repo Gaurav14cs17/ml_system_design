@@ -44,6 +44,7 @@ flowchart LR
     Semantic --> Instance
 
     style Instance fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -66,6 +67,7 @@ graph TB
     style D fill:#e3f2fd
     style S fill:#fff3e0
     style I fill:#c8e6c9
+
 ```
 
 | Task | Output | Example |
@@ -194,6 +196,7 @@ class MaskRCNNDetector:
                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
         return image
+
 ```
 
 ---
@@ -324,6 +327,7 @@ if __name__ == "__main__":
     # train_loader = DataLoader(...)
     # for epoch in range(num_epochs):
     #     loss = trainer.train_one_epoch(train_loader, optimizer)
+
 ```
 
 ---

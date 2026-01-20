@@ -143,6 +143,7 @@ rag.add_documents(documents)
 # Query
 result = rag.query("What are the new features in Python 3.12?")
 print(result["answer"])
+
 ```
 
 ---
@@ -251,6 +252,7 @@ Answer with citations:"""
         """Load vector store from disk."""
         self.vectorstore = FAISS.load_local(path, self.embeddings)
         self._create_qa_chain()
+
 ```
 
 ---
@@ -343,6 +345,7 @@ class DocumentChunker:
             chunks.append(". ".join(window) + ".")
 
         return chunks
+
 ```
 
 ---
@@ -420,6 +423,7 @@ class MultiQueryRAG:
             "expanded_queries": queries,
             "sources": unique_docs[:top_k]
         }
+
 ```
 
 ---
@@ -492,6 +496,7 @@ relevant = ["doc2", "doc4"]
 
 precision = evaluator.retrieval_precision_at_k(retrieved, relevant, k=3)
 recall = evaluator.retrieval_recall_at_k(retrieved, relevant, k=5)
+
 ```
 
 ---

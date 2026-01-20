@@ -91,6 +91,7 @@ online_features = {
         'use_case': 'real-time scoring'
     }
 }
+
 ```
 
 ### Feature Classification
@@ -124,6 +125,7 @@ On-Demand (Computed at Request):
     - time_since_last_txn
     - is_new_merchant_for_user
     - distance_from_home
+
 ```
 
 ---
@@ -222,6 +224,7 @@ class BatchFeaturePipeline:
             .mode("overwrite") \
             .partitionBy("feature_timestamp") \
             .parquet(f"s3://feature-store/{feature_group}/")
+
 ```
 
 ### Streaming Feature Pipeline (Flink)
@@ -351,6 +354,7 @@ class RedisVelocityCounter:
             idx += 2
 
         return features
+
 ```
 
 ---
@@ -450,6 +454,7 @@ class PointInTimeFeatureStore:
                 features.update(self._get_default_features(entity_type))
 
         return features
+
 ```
 
 ---
@@ -529,6 +534,7 @@ online_features = store.get_online_features(
     ],
     entity_rows=[{"user_id": "user123"}]
 ).to_dict()
+
 ```
 
 ### Custom Feature Store
@@ -616,6 +622,7 @@ class CustomFeatureStore:
             pipe.expire(entity_key, view_config.ttl_seconds)
 
         pipe.execute()
+
 ```
 
 ---
@@ -721,6 +728,7 @@ class FeatureRegistry:
             'created_by': feature.owner,
             'dependencies': self._get_dependencies(feature_name)
         }
+
 ```
 
 ### Feature Versioning
@@ -761,6 +769,7 @@ class FeatureVersionManager:
             raise ValueError(f"Version {target_version} not found")
 
         self.registry.update_alias(feature_name, version_name)
+
 ```
 
 ---
@@ -906,6 +915,7 @@ class FeatureFreshnessMonitor:
             'stale_count': stale_count,
             'stale_rate': stale_rate
         }
+
 ```
 
 ---
@@ -933,6 +943,7 @@ Aggregations:
 Windows:
   - 1m, 5m, 1h, 24h, 7d, 30d, 90d
   - lifetime, all_time
+
 ```
 
 ### Feature Development Workflow

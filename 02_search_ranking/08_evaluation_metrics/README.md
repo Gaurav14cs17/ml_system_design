@@ -70,6 +70,7 @@ def ndcg(relevances: List[float], k: int = None) -> float:
 # Example
 relevances = [3, 2, 3, 0, 1, 2]  # Relevance scores for ranked results
 print(f"NDCG@5: {ndcg(relevances, k=5):.4f}")
+
 ```
 
 ### Mean Average Precision (MAP)
@@ -106,6 +107,7 @@ def mean_average_precision(all_relevances: List[List[int]]) -> float:
     """
     aps = [average_precision(rels) for rels in all_relevances]
     return np.mean(aps)
+
 ```
 
 ### Mean Reciprocal Rank (MRR)
@@ -129,6 +131,7 @@ def mean_reciprocal_rank(all_relevances: List[List[int]]) -> float:
     """
     rrs = [reciprocal_rank(rels) for rels in all_relevances]
     return np.mean(rrs)
+
 ```
 
 ---
@@ -189,6 +192,7 @@ class OnlineMetrics:
         """
         positions = [c['position'] for c in clicks]
         return np.mean(positions)
+
 ```
 
 ### Dwell Time Metrics
@@ -228,6 +232,7 @@ class DwellTimeMetrics:
         """
         pogo_sticks = sum(1 for s in sessions if s['is_pogo_stick'])
         return pogo_sticks / len(sessions)
+
 ```
 
 ### Business Metrics
@@ -256,6 +261,7 @@ class BusinessMetrics:
         """
         atc = sum(1 for s in sessions if s['added_to_cart'])
         return atc / len(sessions)
+
 ```
 
 ---
@@ -362,6 +368,7 @@ class ABExperiment:
         )
 
         return int(np.ceil(n))
+
 ```
 
 ### Results Analysis
@@ -454,6 +461,7 @@ class ExperimentAnalyzer:
             return "SHIP - Primary metrics improved"
         else:
             return "NEUTRAL - No significant change"
+
 ```
 
 ---
@@ -565,6 +573,7 @@ class InterleavingExperiment:
             'p_value': p_value,
             'significant': p_value < 0.05
         }
+
 ```
 
 ---

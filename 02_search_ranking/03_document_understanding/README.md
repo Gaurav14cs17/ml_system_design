@@ -173,6 +173,7 @@ class HTMLExtractor:
         # Remove special characters
         text = re.sub(r'[^\w\s.,!?-]', '', text)
         return text.strip()
+
 ```
 
 ### PDF Document Processing
@@ -267,6 +268,7 @@ class PDFExtractor:
         metadata = doc.metadata
         doc.close()
         return metadata
+
 ```
 
 ### E-commerce Product Data Processing
@@ -376,6 +378,7 @@ class ProductProcessor:
                 merged[key] = value
 
         return merged
+
 ```
 
 ---
@@ -467,6 +470,7 @@ class BM25Vectorizer:
         text = text.lower()
         tokens = re.findall(r'\b\w+\b', text)
         return tokens
+
 ```
 
 ### Dense Representation (Neural Embeddings)
@@ -605,6 +609,7 @@ class LongDocumentEmbedder:
                 chunks.append(chunk)
 
         return chunks
+
 ```
 
 ### Hybrid Representation
@@ -682,6 +687,7 @@ class HybridDocumentProcessor:
         freshness = 0.5 ** (age_days / half_life)
 
         return freshness
+
 ```
 
 ---
@@ -855,6 +861,7 @@ class InvertedIndex:
         field_boost = sum(field_weights.values()) / max(len(field_weights), 1)
 
         return base_score * field_boost
+
 ```
 
 ### Index Compression
@@ -928,6 +935,7 @@ class CompressedPostingList:
             n |= byte << shift
             shift += 7
         return n, offset
+
 ```
 
 ---
@@ -1052,6 +1060,7 @@ class VectorIndex:
         self.index = faiss.read_index(f"{path}.faiss")
         self.doc_ids = np.load(f"{path}_ids.npy").tolist()
         self.is_trained = True
+
 ```
 
 ### Index Type Comparison
@@ -1189,6 +1198,7 @@ class RealTimeIndexer:
         # Sort and return top_k
         ranked = sorted(all_results.items(), key=lambda x: x[1], reverse=True)
         return ranked[:top_k]
+
 ```
 
 ---
@@ -1253,6 +1263,7 @@ class DistributedIndex:
         # Global re-ranking
         all_results.sort(key=lambda x: x[1], reverse=True)
         return all_results[:top_k]
+
 ```
 
 ---

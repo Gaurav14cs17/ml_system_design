@@ -132,6 +132,7 @@ class FeatureServiceDefinition:
 
     created_at: datetime
     version: str
+
 ```
 
 ### Database Schema
@@ -208,6 +209,7 @@ CREATE TABLE feature_lineage (
 CREATE INDEX idx_features_tags ON features USING GIN (tags);
 CREATE INDEX idx_feature_views_owner ON feature_views(owner);
 CREATE INDEX idx_features_status ON features(status);
+
 ```
 
 ---
@@ -316,6 +318,7 @@ for feature in results:
     +-- Tags: {', '.join(feature.tags)}
     +-- Description: {feature.description}
     """)
+
 ```
 
 ---
@@ -424,6 +427,7 @@ impact = lineage.impact_analysis("table", "orders")
 print(f"Changing orders table will affect:")
 print(f"  - {len(impact['affected_features'])} features")
 print(f"  - {len(impact['affected_models'])} models")
+
 ```
 
 ---
@@ -488,6 +492,7 @@ ACCESS_POLICIES = {
         "admin": ["data-platform"]
     }
 }
+
 ```
 
 ### Data Classification
@@ -518,6 +523,7 @@ CLASSIFICATION_LEVELS = {
         "encryption": "required"
     }
 }
+
 ```
 
 ---
@@ -553,6 +559,7 @@ spec:
     type: bigquery
     table: project.dataset.user_features
     timestamp_field: feature_timestamp
+
 ```
 
 ### Registry API
@@ -602,6 +609,7 @@ def deprecate_feature(feature_name: str):
 
     registry.update_status(feature_name, "deprecated")
     return {"status": "deprecated"}
+
 ```
 
 ---

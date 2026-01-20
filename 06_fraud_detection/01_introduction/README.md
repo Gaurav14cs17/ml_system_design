@@ -41,6 +41,7 @@ At its core, fraud detection is a **binary classification problem** where we est
 
 ```math
 P(\text{fraud} | \mathbf{x}) = \frac{P(\mathbf{x} | \text{fraud}) \cdot P(\text{fraud})}{P(\mathbf{x})}
+
 ```
 
 Where:
@@ -55,6 +56,7 @@ The optimal decision boundary is not simply $P(\text{fraud} | \mathbf{x}) = 0.5$
 
 ```math
 \text{Expected Cost} = C_{FP} \cdot P(\text{false positive}) + C_{FN} \cdot P(\text{false negative})
+
 ```
 
 Where typically $C\_{FN} \gg C\_{FP}$ because missing fraud is far more costly than incorrectly blocking a legitimate transaction.
@@ -63,12 +65,14 @@ The **optimal decision threshold** $\tau^*$ is:
 
 ```math
 \tau^* = \frac{C_{FP}}{C_{FP} + C_{FN}}
+
 ```
 
 For example, if missing fraud costs \$500 and blocking a legitimate transaction costs \$10:
 
 ```math
 \tau^* = \frac{10}{10 + 500} = 0.0196 \approx 2\%
+
 ```
 
 This means we should block any transaction with $P(\text{fraud}) > 2\%$.
@@ -79,6 +83,7 @@ In fraud detection, the class distribution is highly skewed:
 
 ```math
 \eta = \frac{N_{\text{fraud}}}{N_{\text{total}}} \approx 0.001 - 0.01
+
 ```
 
 This creates several mathematical issues:
@@ -93,12 +98,14 @@ The **information gain** from observing feature $\mathbf{x}$ about fraud is:
 
 ```math
 I(\text{fraud}; \mathbf{x}) = H(\text{fraud}) - H(\text{fraud} | \mathbf{x})
+
 ```
 
 Where $H(\cdot)$ is Shannon entropy:
 
 ```math
 H(\text{fraud}) = -\sum_{y \in \{0,1\}} P(y) \log_2 P(y)
+
 ```
 
 Good features maximize this mutual information, reducing uncertainty about whether a transaction is fraudulent.
@@ -159,6 +166,7 @@ transaction_fraud_types = {
         "difficulty": "High - inside job"
     }
 }
+
 ```
 
 ### 4. Application Fraud
@@ -228,6 +236,7 @@ def check_fraud_rules(transaction):
         return "BLOCK"
     else:
         return "APPROVE"
+
 ```
 
 **Pros:**
@@ -272,6 +281,7 @@ class FraudDetectionModel:
             "decision": "BLOCK" if fraud_probability > self.threshold else "APPROVE",
             "top_factors": self.explain_prediction(features)
         }
+
 ```
 
 **Pros:**
@@ -322,6 +332,7 @@ API Integration:
   - Streaming API for high-throughput
   - Batch API for bulk processing
   - Webhook for async notifications
+
 ```
 
 ### Non-Functional Requirements
@@ -375,6 +386,7 @@ fraud_evolution = {
         "adaptation": "AI-generated documents"
     }
 }
+
 ```
 
 ### 3. Real-Time Constraints
@@ -406,6 +418,7 @@ Given a confusion matrix with True Positives (TP), False Positives (FP), True Ne
 
 ```math
 \text{Precision} = \frac{TP}{TP + FP}
+
 ```
 
 **Interpretation**: Of all transactions we flag as fraud, what fraction are actually fraud?
@@ -414,6 +427,7 @@ Given a confusion matrix with True Positives (TP), False Positives (FP), True Ne
 
 ```math
 \text{Recall} = \frac{TP}{TP + FN}
+
 ```
 
 **Interpretation**: Of all actual fraud, what fraction do we catch?
@@ -422,6 +436,7 @@ Given a confusion matrix with True Positives (TP), False Positives (FP), True Ne
 
 ```math
 F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2 \cdot TP}{2 \cdot TP + FP + FN}
+
 ```
 
 #### Generalized F-beta Score
@@ -430,6 +445,7 @@ When recall is more important than precision (fraud detection), use $\beta > 1$:
 
 ```math
 F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{\beta^2 \cdot \text{Precision} + \text{Recall}}
+
 ```
 
 For fraud detection, $F\_2$ (weighing recall twice as much as precision) is often appropriate.
@@ -438,6 +454,7 @@ For fraud detection, $F\_2$ (weighing recall twice as much as precision) is ofte
 
 ```math
 \text{AUPRC} = \int_0^1 P(r) \, dr
+
 ```
 
 Where $P(r)$ is precision as a function of recall. **AUPRC is the preferred metric for imbalanced classification** because it focuses on the minority class performance.
@@ -448,6 +465,7 @@ For highly imbalanced datasets, AUROC can be misleadingly high. The relationship
 
 ```math
 \text{AUROC} = P(\hat{y}_+ > \hat{y}_-)
+
 ```
 
 This measures how often a randomly chosen positive example ranks higher than a negative. But with 99%+ negatives, even poor models achieve high AUROC.
@@ -456,6 +474,7 @@ This measures how often a randomly chosen positive example ranks higher than a n
 
 ```math
 \text{AUPRC}_{\text{random}} = \pi = \frac{N_+}{N_+ + N_-}
+
 ```
 
 So for 0.1% fraud rate, random baseline AUPRC = 0.001, making improvements clearly visible.

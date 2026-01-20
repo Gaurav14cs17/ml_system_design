@@ -90,6 +90,7 @@ class UserFeatureExtractor:
             return 'middle_age'
         else:
             return 'senior'
+
 ```
 
 ### Behavioral User Features
@@ -193,6 +194,7 @@ class BehavioralFeatureExtractor:
             features['avg_completion'] = np.mean(completion_rates)
 
         return features
+
 ```
 
 ### User Embedding Features
@@ -259,6 +261,7 @@ class UserEmbeddingFeatures:
 
         # Diversity = 1 - avg similarity
         return 1 - np.mean(similarities) if similarities else 0.0
+
 ```
 
 ---
@@ -390,6 +393,7 @@ class ItemPopularityFeatures:
             features['is_trending'] = recent_count > 0
 
         return features
+
 ```
 
 ### Item Quality Features
@@ -442,6 +446,7 @@ class ItemQualityFeatures:
             features['sentiment_std'] = np.std(sentiments)
 
         return features
+
 ```
 
 ---
@@ -529,6 +534,7 @@ class CrossFeatureExtractor:
             features['days_since_last_view'] = -1  # Never seen
 
         return features
+
 ```
 
 ### Sequence Features
@@ -614,6 +620,7 @@ class SequenceFeatureExtractor:
         )
 
         return features
+
 ```
 
 ---
@@ -706,6 +713,7 @@ class ContextFeatureExtractor:
             features['timezone_offset'] = location_info.get('timezone_offset', 0)
 
         return features
+
 ```
 
 ---
@@ -825,6 +833,7 @@ class FeatureNormalizer:
                 ).flatten()
 
         return result
+
 ```
 
 ---
@@ -958,6 +967,7 @@ class HybridFeatureStore:
         """
         realtime_prefixes = ['session_', 'current_', 'last_', 'today_']
         return not any(feature_name.startswith(p) for p in realtime_prefixes)
+
 ```
 
 ---
@@ -1037,6 +1047,7 @@ pipeline.define_realtime_feature(
     lambda user_id, ctx, deps: ctx.get('session_total', 0) > deps.get('user_avg_order_value', 0),
     dependencies=['user_avg_order_value']
 )
+
 ```
 
 ---
@@ -1084,6 +1095,7 @@ def validate_feature_name(name: str) -> bool:
     has_valid_window = any(w in parts for w in valid_windows)
 
     return has_valid_window
+
 ```
 
 ### Feature Documentation
@@ -1135,6 +1147,7 @@ registry.register(
     dependencies=['user_events'],
     owner='recommendations-team'
 )
+
 ```
 
 ---

@@ -90,6 +90,7 @@ class EcommerceF raudScorer:
             return [0.4, 0.3, 0.2, 0.1]  # More weight on amount
         else:
             return [0.25, 0.25, 0.25, 0.25]  # Balanced
+
 ```
 
 ### Key Features That Worked
@@ -195,6 +196,7 @@ class ATODefenseSystem:
             return 'TOTP'
         else:
             return 'SECURITY_QUESTIONS'
+
 ```
 
 ### Behavioral Biometrics Features
@@ -254,6 +256,7 @@ class BehaviorBiometrics:
             'click_precision': self._calculate_click_precision(mouse_events),
             'movement_entropy': self._calculate_entropy(angles)
         }
+
 ```
 
 ### Results
@@ -275,6 +278,7 @@ Key Metrics:
   - 97% reduction in successful ATOs
   - 94% reduction in false lockouts
   - Customer satisfaction improved 15%
+
 ```
 
 ---
@@ -362,6 +366,7 @@ class LatencyOptimizedScorer:
         models['neural'] = ort_session
 
         return models
+
 ```
 
 ### Feature Store at Scale
@@ -433,6 +438,7 @@ class HighScaleFeatureStore:
             'user_amount_24h': results[5] or 0,
             'card_txn_count_24h': results[6]
         }
+
 ```
 
 ---
@@ -463,6 +469,7 @@ Fraud Types:
   - Fake claims (20%)
   - Provider fraud (15%)
   - Other (5%)
+
 ```
 
 ### Solution: Investigation Prioritization
@@ -528,6 +535,7 @@ class InsuranceFraudScorer:
             return 'MEDIUM'
         else:
             return 'LOW'
+
 ```
 
 ### Network Analysis for Fraud Rings
@@ -633,6 +641,7 @@ class InsuranceFraudNetwork:
             'total_amount': sum(subgraph.nodes[c].get('amount', 0) for c in claims),
             'patterns': self._identify_patterns(claims)
         }
+
 ```
 
 ---
@@ -666,6 +675,7 @@ class InsuranceFraudNetwork:
    - ML augments, doesn't replace investigators
    - Feedback loops crucial for improvement
    - Edge cases need human judgment
+
 ```
 
 ### Organizational Lessons
@@ -690,6 +700,7 @@ class InsuranceFraudNetwork:
    - Fraudsters evolve quickly
    - Monthly model updates minimum
    - Weekly rule adjustments
+
 ```
 
 ---
@@ -713,6 +724,7 @@ def extract_features_right(transaction):
         before=cutoff_time
     )
     return {'chargeback_count': len(user_chargebacks)}
+
 ```
 
 ### 2. Ignoring Class Imbalance
@@ -727,6 +739,7 @@ train_end = '2024-01-01'
 X_train = X[X['timestamp'] < train_end]
 X_test = X[X['timestamp'] >= train_end]
 # Evaluates on future data, like production
+
 ```
 
 ### 3. Overfitting to Known Patterns
@@ -746,6 +759,7 @@ class HybridFraudDetector:
 
         # Combine both signals
         return max(supervised_score, anomaly_score * 0.7)
+
 ```
 
 ---
@@ -776,6 +790,7 @@ class FraudConsortium:
 
         hashed = [self._secure_hash(h) for h in entity_hashes]
         return self.consortium_api.query(hashed)
+
 ```
 
 ### Continuous Model Improvement
@@ -802,6 +817,7 @@ Annually:
   - Full system review
   - Technology stack assessment
   - Competitive analysis
+
 ```
 
 ---

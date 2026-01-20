@@ -56,6 +56,7 @@ class MetricsCollector:
 
     def update_queue_depth(self, priority: str, depth: int):
         QUEUE_DEPTH.labels(priority=priority).set(depth)
+
 ```
 
 ---
@@ -93,6 +94,7 @@ MODEL_METRICS = {
     # Category distribution
     'predictions_by_category': 'sum by (category) (rate(moderation_predictions_total[1h]))',
 }
+
 ```
 
 ### Model Quality Metrics
@@ -164,6 +166,7 @@ class ModelMonitor:
             })
 
         return anomalies
+
 ```
 
 ---
@@ -256,6 +259,7 @@ groups:
           severity: warning
         annotations:
           summary: "High appeals backlog"
+
 ```
 
 ### PagerDuty Integration
@@ -316,6 +320,7 @@ class AlertManager:
         }
 
         requests.post(self.slack_webhook, json=payload)
+
 ```
 
 ---
@@ -390,6 +395,7 @@ class AlertManager:
     ]
   }
 }
+
 ```
 
 ---
@@ -455,6 +461,7 @@ class AlertManager:
 ## Escalation
 - After 15 min unresolved: Page ML team lead
 - After 30 min unresolved: Page VP Engineering
+
 ```
 
 ---
@@ -520,6 +527,7 @@ class DriftDetector:
         result['removal_rate_change'] = curr_removal - ref_removal
 
         return result
+
 ```
 
 ---

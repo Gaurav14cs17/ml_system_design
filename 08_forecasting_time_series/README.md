@@ -28,12 +28,14 @@ A time series is **weakly stationary** if:
 ```math
 \mu_t = \mu \quad \forall t \quad \text{(constant mean)}
 \gamma(t, t+h) = \gamma(h) \quad \forall t \quad \text{(covariance depends only on lag } h\text{)}
+
 ```
 
 ### Decomposition Model
 
 ```math
 Y_t = T_t + S_t + C_t + \varepsilon_t
+
 ```
 
 Where:
@@ -113,6 +115,7 @@ flowchart TB
     style MODEL fill:#E8F5E9,stroke:#388E3C,stroke-width:2px
     style SERVE fill:#FFF3E0,stroke:#F57C00,stroke-width:2px
     style MONITOR fill:#FCE4EC,stroke:#C2185B,stroke-width:2px
+
 ```
 
 <p align="center">
@@ -232,6 +235,7 @@ flowchart TD
     style D1 fill:#BA68C8
     style D2 fill:#BA68C8
     style D3 fill:#BA68C8
+
 ```
 
 <p align="center">
@@ -355,6 +359,7 @@ pip install torch darts neuralforecast pytorch-forecasting
 
 # Production tools
 pip install fastapi uvicorn mlflow feast
+
 ```
 
 ---
@@ -436,6 +441,7 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 mape = np.mean(np.abs((y_test - predictions) / y_test)) * 100
 print(f"MAPE: {mape:.2f}%")
+
 ```
 
 ---

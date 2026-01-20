@@ -37,6 +37,7 @@ flowchart LR
 
     style Vertical fill:#ffcdd2
     style Horizontal fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -53,6 +54,7 @@ graph TB
 
     style Traffic fill:#e3f2fd
     style AutoScale fill:#fff9c4
+
 ```
 
 ---
@@ -157,6 +159,7 @@ class StatelessServer:
         result = self.model(request.data)
         self.redis.setex(f"pred:{request.key}", 300, result)
         return result
+
 ```
 
 ---
@@ -227,6 +230,7 @@ scaler.fit(historical_traffic_data)
 future = datetime.now() + timedelta(hours=2)
 recommended = scaler.get_recommended_replicas(future)
 print(f"Recommended replicas for {future}: {recommended}")
+
 ```
 
 ---
@@ -318,6 +322,7 @@ class LoadBalancer:
                         server.is_healthy = response.status == 200
                 except:
                     server.is_healthy = False
+
 ```
 
 ---
@@ -376,6 +381,7 @@ spec:
           value: 4
           periodSeconds: 15
       selectPolicy: Max
+
 ```
 
 ### KEDA for Custom Metrics
@@ -404,6 +410,7 @@ spec:
         metricName: model_latency_p99
         query: histogram_quantile(0.99, rate(model_latency_bucket[1m]))
         threshold: "0.1"  # 100ms
+
 ```
 
 ---
@@ -435,6 +442,7 @@ instance_group [
     gpus: [ 1 ]
   }
 ]
+
 ```
 
 ---
@@ -492,6 +500,7 @@ capacity = calculate_capacity(
 )
 print(f"Required replicas: {capacity['total_replicas']}")
 print(f"Monthly cost: ${capacity['monthly_cost_usd']:.2f}")
+
 ```
 
 ---

@@ -60,6 +60,7 @@ feature_taxonomy = {
         "contextual": ["time_of_day", "device", "location"]
     }
 }
+
 ```
 
 ---
@@ -154,6 +155,7 @@ class QueryFeatureExtractor:
             informational_score=intent_scores.get('informational', 0),
             transactional_score=intent_scores.get('transactional', 0)
         )
+
 ```
 
 ### Query Popularity Features
@@ -230,6 +232,7 @@ class QueryPopularityFeatures:
             return 1.0
 
         return current_count / avg_count
+
 ```
 
 ---
@@ -343,6 +346,7 @@ class DocumentFeatureExtractor:
         """
         half_life = 30  # days
         return 0.5 ** (age_days / half_life)
+
 ```
 
 ### E-commerce Product Features
@@ -454,6 +458,7 @@ class ProductFeatureExtractor:
         recent_rating = product.get('rating_last_30d', product.get('rating', 0))
         historical_rating = product.get('rating', 0)
         return recent_rating - historical_rating
+
 ```
 
 ---
@@ -566,6 +571,7 @@ class LexicalMatchingFeatures:
             return 0.0
 
         return np.dot(query_vec, doc_vec) / (np.linalg.norm(query_vec) * np.linalg.norm(doc_vec))
+
 ```
 
 ### Semantic Similarity Features
@@ -643,6 +649,7 @@ class SemanticSimilarityFeatures:
             return 0.0
 
         return dot_product / (norm1 * norm2)
+
 ```
 
 ---
@@ -779,6 +786,7 @@ class UserFeatureExtractor:
 
         # Normalize to 0-1 (assuming ratings are 1-5)
         return (avg_rating - 1) / 4
+
 ```
 
 ### Contextual Features
@@ -860,6 +868,7 @@ class ContextFeatureExtractor:
             clicks_in_session=session.get('click_count', 0),
             is_first_query=session.get('query_count', 0) == 0
         )
+
 ```
 
 ---
@@ -974,6 +983,7 @@ class BehavioralFeatures:
             return 0.5  # Default
 
         return recent_clicks / total_clicks
+
 ```
 
 ---
@@ -1180,6 +1190,7 @@ class FeatureStore:
             pipe.hmset(f"{feature_group}:{entity_id}", features)
 
         pipe.execute()
+
 ```
 
 ---
@@ -1257,6 +1268,7 @@ class FeatureNormalizer:
     def _is_bounded(self, values: np.ndarray) -> bool:
         """Check if values are bounded (e.g., percentages, ratios)"""
         return np.min(values) >= 0 and np.max(values) <= 1
+
 ```
 
 ### Feature Selection
@@ -1358,6 +1370,7 @@ class FeatureSelector:
 
         self.selected_features = selected
         return selected
+
 ```
 
 ---

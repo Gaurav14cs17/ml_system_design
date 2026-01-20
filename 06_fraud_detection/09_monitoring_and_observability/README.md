@@ -160,6 +160,7 @@ class ModelPerformanceMonitor:
             'anomalies': anomalies,
             'current_stats': current_stats
         }
+
 ```
 
 ### Delayed Label Monitoring
@@ -225,6 +226,7 @@ class DelayedLabelMonitor:
             metrics_over_time.append(metrics)
 
         return pd.DataFrame(metrics_over_time)
+
 ```
 
 ---
@@ -388,6 +390,7 @@ class FeatureDriftDetector:
         """Calculate Jensen-Shannon divergence"""
         m = 0.5 * (p + q)
         return 0.5 * (stats.entropy(p, m) + stats.entropy(q, m))
+
 ```
 
 ### Concept Drift Detection
@@ -452,6 +455,7 @@ class ConceptDriftDetector:
             'recent_error': np.mean(recent),
             'error_increase': np.mean(recent) - np.mean(reference)
         }
+
 ```
 
 ---
@@ -527,6 +531,7 @@ class LatencyTracker:
             'total_latency_ms': total_latency * 1000,
             'breakdown': {k: v * 1000 for k, v in self.traces.items()}
         }
+
 ```
 
 ### Health Checks
@@ -621,6 +626,7 @@ async def readiness_check():
     if result['status'] == 'healthy':
         return {"ready": True}
     return Response(content=json.dumps({"ready": False}), status_code=503)
+
 ```
 
 ---
@@ -728,6 +734,7 @@ alert_manager.register_rule(AlertRule(
     severity=Severity.CRITICAL,
     cooldown_minutes=5
 ))
+
 ```
 
 ### Alert Routing
@@ -773,6 +780,7 @@ receivers:
   - name: 'ml-team-slack'
     slack_configs:
       - channel: '#ml-platform'
+
 ```
 
 ---
@@ -814,6 +822,7 @@ Fraud Detection Dashboards:
    - Resource utilization
    - Dependency latencies
    - Queue depths
+
 ```
 
 ### Grafana Dashboard JSON
@@ -872,6 +881,7 @@ Fraud Detection Dashboards:
     ]
   }
 }
+
 ```
 
 ---
@@ -954,6 +964,7 @@ class FraudScoringLogger:
             error_message=error_message,
             fallback_used=fallback_used
         )
+
 ```
 
 ---
@@ -1011,6 +1022,7 @@ Fraud Detection Incident Response:
    - Post-mortem document
    - Update runbooks
    - Improve monitoring
+
 ```
 
 ---

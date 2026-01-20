@@ -120,6 +120,7 @@ class FeatureFreshnessMonitor:
             status for status in all_status.values()
             if status.is_stale
         ]
+
 ```
 
 ---
@@ -288,6 +289,7 @@ validator.register_schema(FeatureSchema(
         )
     ]
 ))
+
 ```
 
 ---
@@ -363,6 +365,7 @@ class TrainingServingSkewDetector:
                 'psi_threshold': 0.2
             }
         }
+
 ```
 
 ---
@@ -461,6 +464,7 @@ tracker.register_feature(FeatureNode(
     created_at=datetime.utcnow(),
     version='1.0'
 ))
+
 ```
 
 ---

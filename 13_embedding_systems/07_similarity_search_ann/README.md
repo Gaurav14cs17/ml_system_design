@@ -40,6 +40,7 @@ Dataset: 1 billion vectors
 
 Exact search: O(n × d) = 1B × 768 comparisons ≈ hours
 ANN search: O(log n × d) ≈ milliseconds
+
 ```
 
 ---
@@ -64,6 +65,7 @@ def exact_search(query, database, k=10):
     return indices, distances[indices]
 
 # For 1M vectors: ~500ms per query
+
 ```
 
 ### Approximate Search
@@ -75,6 +77,7 @@ Trade perfect accuracy for speed:
 
 ```
 Target: 95-99% recall with 10-100x speedup
+
 ```
 
 ---
@@ -91,6 +94,7 @@ def euclidean_distance(a, b):
 # - Measures absolute difference
 # - Affected by vector magnitude
 # - Use for: spatial data, unnormalized embeddings
+
 ```
 
 ### Cosine Similarity
@@ -106,6 +110,7 @@ def cosine_distance(a, b):
 # - Measures angular difference
 # - Ignores magnitude (direction only)
 # - Use for: text embeddings, normalized vectors
+
 ```
 
 ### Inner Product (Dot Product)
@@ -118,6 +123,7 @@ def inner_product(a, b):
 # - For normalized vectors: equivalent to cosine
 # - Faster to compute (no normalization)
 # - Use for: normalized embeddings, MIPS problems
+
 ```
 
 ### Converting Between Metrics
@@ -130,6 +136,7 @@ def inner_product(a, b):
 def normalize_vectors(vectors):
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
     return vectors / norms
+
 ```
 
 ---
@@ -150,6 +157,7 @@ distances, indices = tree.query(query.reshape(1, -1), k=10)
 # Limitations:
 # - Curse of dimensionality (poor for d > 20)
 # - Not suitable for high-dimensional embeddings
+
 ```
 
 ### 2. Locality Sensitive Hashing (LSH)
@@ -200,6 +208,7 @@ class RandomProjectionLSH:
 
         sorted_indices = np.argsort(distances)
         return [candidate_list[i] for i in sorted_indices]
+
 ```
 
 ### 3. IVF (Inverted File Index)
@@ -244,6 +253,7 @@ index = IVFIndex(dim=768, nlist=100)
 index.train(training_vectors)
 index.add(all_vectors)
 indices, distances = index.search(query, k=10, nprobe=20)
+
 ```
 
 ### 4. HNSW (Hierarchical Navigable Small World)
@@ -304,6 +314,7 @@ class HNSWIndex:
 # M=32: Better recall, ~128 bytes/vector overhead
 # ef_construction: 2-10x final ef value
 # ef (query): Start at 2*k, increase for better recall
+
 ```
 
 ### HNSW Memory Estimation
@@ -331,6 +342,7 @@ def estimate_hnsw_memory(num_vectors, dim, M=16):
 
 # Example: 10M vectors, 768 dim, M=16
 # Vectors: 30.7 GB, Graph: 1.0 GB, Total: ~32 GB
+
 ```
 
 ---
@@ -351,6 +363,7 @@ Quantize each to:       c1    c2    c3    c4    c5    c6    c7    c8
 Store as codes:        [8 bytes total] → 32x compression!
 
 Reconstruction: Look up centroid for each code, concatenate
+
 ```
 
 ### FAISS PQ Implementation
@@ -389,6 +402,7 @@ class PQIndex:
 # Original: 768 * 4 = 3072 bytes/vector
 # PQ (m=8): 8 bytes/vector
 # Compression: 384x
+
 ```
 
 ### IVF + PQ (Best of Both)
@@ -411,6 +425,7 @@ index.add(all_data)
 
 index.nprobe = 50  # Clusters to search
 distances, indices = index.search(query, k=10)
+
 ```
 
 ---
@@ -445,6 +460,7 @@ def benchmark_index(index, queries, ground_truth, k=10):
         'recall@k': np.mean(recalls),
         'qps': 1000 / latency
     }
+
 ```
 
 ### Recall-Latency Tradeoff
@@ -471,6 +487,7 @@ def tune_hnsw(index, queries, ground_truth, k=10):
 # ef=16:  recall=0.85, latency=0.5ms
 # ef=64:  recall=0.95, latency=1.5ms
 # ef=256: recall=0.99, latency=5.0ms
+
 ```
 
 ---
@@ -588,6 +605,7 @@ for doc_id, score in results:
     print(f"{doc_id}: {score:.3f}")
 
 index.save("my_index.faiss")
+
 ```
 
 ---

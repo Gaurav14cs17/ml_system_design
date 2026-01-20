@@ -138,6 +138,7 @@ class MetricsCollector:
                 f'sum(rate(feature_errors_total{{service="{feature_service}"}}[5m]))'
             )
         }
+
 ```
 
 ### Prometheus Metrics Definition
@@ -182,6 +183,7 @@ def get_features(feature_service: str, entities: list):
         except Exception as e:
             FEATURE_REQUESTS.labels(feature_service=feature_service, status='error').inc()
             raise
+
 ```
 
 ---
@@ -214,6 +216,7 @@ The KS test measures the maximum difference between two cumulative distribution 
 
 ```math
 D = \sup_x |F_{ref}(x) - F_{cur}(x)|
+
 ```
 
 Where:
@@ -229,6 +232,7 @@ PSI quantifies the shift between two distributions by comparing bin populations:
 
 ```math
 PSI = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)
+
 ```
 
 Where:
@@ -250,6 +254,7 @@ An alternative symmetric measure based on KL divergence:
 
 ```math
 JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
+
 ```
 
 Where \( M = \frac{1}{2}(P + Q) \) and \( D_{KL} \) is the Kullback-Leibler divergence.
@@ -364,6 +369,7 @@ drift_results = detector.detect_drift(current_distributions)
 for feature, result in drift_results.items():
     if result.get("is_drift"):
         alert(f"Drift detected in {feature}: {result}")
+
 ```
 
 ---
@@ -448,6 +454,7 @@ EXPECTATIONS = {
 
 monitor = FeatureQualityMonitor(EXPECTATIONS)
 results = monitor.check_quality("user_features", current_data)
+
 ```
 
 ---
@@ -499,6 +506,7 @@ groups:
           severity: warning
         annotations:
           summary: "Drift detected in {{ $labels.feature_name }}"
+
 ```
 
 ### Alert Manager
@@ -546,6 +554,7 @@ class AlertManager:
         }
 
         requests.post(self.slack_webhook, json=payload)
+
 ```
 
 ---
@@ -607,6 +616,7 @@ class AlertManager:
     ]
   }
 }
+
 ```
 
 ---
@@ -623,6 +633,7 @@ class AlertManager:
 □ Alert rules configured
 □ Dashboards created
 □ On-call runbooks documented
+
 ```
 
 ### Key Takeaways

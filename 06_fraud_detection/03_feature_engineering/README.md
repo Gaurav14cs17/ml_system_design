@@ -43,12 +43,14 @@ The goal of feature engineering is to create features $\mathbf{x}$ that maximize
 
 ```math
 I(y; \mathbf{x}) = H(y) - H(y | \mathbf{x})
+
 ```
 
 Where entropy is:
 
 ```math
 H(y) = -\sum_{c \in \{0,1\}} P(y=c) \log P(y=c)
+
 ```
 
 ### Statistical Anomaly Detection
@@ -59,6 +61,7 @@ For any feature $x$, the **z-score** measures deviations from expected behavior:
 
 ```math
 z = \frac{x - \mu}{\sigma}
+
 ```
 
 Where $\mu$ is the mean and $\sigma$ is the standard deviation of the reference distribution.
@@ -67,6 +70,7 @@ Where $\mu$ is the mean and $\sigma$ is the standard deviation of the reference 
 
 ```math
 z_{\text{user}} = \frac{x_{\text{current}} - \mu_{\text{user}}}{\sigma_{\text{user}}}
+
 ```
 
 A transaction with $|z| > 3$ is considered anomalous (outside 99.7% of normal behavior).
@@ -77,6 +81,7 @@ For features with outliers, use **Median Absolute Deviation (MAD)**:
 
 ```math
 z_{\text{MAD}} = \frac{x - \tilde{x}}{1.4826 \cdot \text{MAD}}
+
 ```
 
 Where:
@@ -91,12 +96,14 @@ Velocity features capture transaction patterns over time windows. For a time win
 ```math
 \text{count}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} \mathbb{1}[\text{user}_i = u]
 \text{sum}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} v_i \cdot \mathbb{1}[\text{user}_i = u]
+
 ```
 
 **Velocity ratio** (detecting acceleration):
 
 ```math
 r_{\text{velocity}} = \frac{\text{count}_{1h}}{\text{count}_{24h} / 24 + \epsilon}
+
 ```
 
 Values $r > 3$ suggest unusual short-term activity bursts.
@@ -109,6 +116,7 @@ For discrete features, compute:
 
 ```math
 I(X; Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P(x, y) \log \frac{P(x, y)}{P(x)P(y)}
+
 ```
 
 Features with high $I(X; Y)$ are most predictive of fraud.
@@ -119,6 +127,7 @@ The **Shannon entropy** of a categorical feature over a time window:
 
 ```math
 H(X) = -\sum_{i=1}^{k} p_i \log_2 p_i
+
 ```
 
 Where $p\_i$ is the proportion of category $i$.
@@ -137,6 +146,7 @@ The PageRank score $\pi\_i$ for node $i$ satisfies:
 
 ```math
 \pi_i = \frac{1 - d}{N} + d \sum_{j \in \text{in}(i)} \frac{\pi_j}{|\text{out}(j)|}
+
 ```
 
 Where $d \approx 0.85$ is the damping factor. High PageRank for fraud nodes propagates risk through the network.
@@ -147,6 +157,7 @@ Use **Louvain modularity** to detect fraud rings:
 
 ```math
 Q = \frac{1}{2m} \sum_{ij} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)
+
 ```
 
 Where $A\_{ij}$ is the adjacency matrix, $k\_i$ is node degree, and $\delta$ tests community membership.
@@ -231,6 +242,7 @@ class TransactionFeatures:
             is_recurring=txn.get('is_recurring', False),
             is_international=txn.get('country') != enrichment.get('home_country')
         )
+
 ```
 
 ### Amount Anomaly Features
@@ -274,6 +286,7 @@ class AmountAnomalyFeatures:
         if not history:
             return 0.5
         return sum(1 for x in history if x <= value) / len(history)
+
 ```
 
 ---
@@ -355,6 +368,7 @@ class VelocityFeatureComputer:
                 ratios[f'{metric}_anomaly_{short}_to_{long}'] = actual_ratio / (expected_ratio + 1e-6)
 
         return ratios
+
 ```
 
 ### Cross-Entity Velocity
@@ -397,6 +411,7 @@ class CrossEntityVelocity:
         features[f'{entity_type}_fraud_rate'] = fraud_count / max(len(entity_history), 1)
 
         return features
+
 ```
 
 ### Merchant-Level Aggregations
@@ -436,6 +451,7 @@ SELECT
 FROM transactions
 WHERE timestamp > CURRENT_DATE - INTERVAL '90 days'
 GROUP BY merchant_id, merchant_category_code;
+
 ```
 
 ---
@@ -516,6 +532,7 @@ class UserBehavioralProfile:
         features['is_unusually_short_session'] = current_duration < typical_session_duration * 0.1
 
         return features
+
 ```
 
 ### Sequence-Based Features
@@ -596,6 +613,7 @@ class TransactionSequenceFeatures:
         counts = Counter(values)
         probs = [c / len(values) for c in counts.values()]
         return -sum(p * np.log2(p) for p in probs if p > 0)
+
 ```
 
 ---
@@ -665,6 +683,7 @@ class DeviceFeatures:
         risk_score = risk_score * (1.5 - reputation)
 
         return min(risk_score, 1.0)
+
 ```
 
 ### IP and Network Features
@@ -709,6 +728,7 @@ class IPFeatures:
         features['asn_fraud_rate'] = ip_history.get('asn_fraud_rate', 0.001)
 
         return features
+
 ```
 
 ---
@@ -807,6 +827,7 @@ class GraphFeatures:
             features['max_sharing_weight'] = 0
 
         return features
+
 ```
 
 ### Fraud Ring Detection Features
@@ -871,6 +892,7 @@ class FraudRingFeatures:
         coordination_score = (len(shared_device_txns) + len(shared_ip_txns)) / max(len(nearby_txns), 1)
 
         return coordination_score
+
 ```
 
 ---
@@ -945,6 +967,7 @@ class TransactionEmbeddingModel(nn.Module):
         combined = torch.cat([user_emb, merchant_emb, card_emb, mcc_emb, numerical_emb], dim=1)
 
         return self.combined_encoder(combined)
+
 ```
 
 ### Sequence Embeddings with Transformers
@@ -995,6 +1018,7 @@ class TransactionSequenceEncoder(nn.Module):
         sequence_repr = transformer_output[-1]
 
         return self.output_projection(sequence_repr)
+
 ```
 
 ---
@@ -1086,6 +1110,7 @@ class FeatureSelector:
         elif method == 'threshold':
             threshold = np.mean(list(importance_scores.values()))
             return [f for f, s in sorted_features if s > threshold]
+
 ```
 
 ### Feature Correlation Analysis
@@ -1127,6 +1152,7 @@ class FeatureCorrelationAnalyzer:
                 to_remove.add(feat2)
 
         return X.drop(columns=list(to_remove))
+
 ```
 
 ---
@@ -1219,6 +1245,7 @@ class RealTimeFeatureService:
                 features.update(group_features)
 
         return features
+
 ```
 
 ### Low-Latency Optimization
@@ -1274,6 +1301,7 @@ class OptimizedFeatureComputer:
         dynamic_features = self._compute_dynamic_features(transaction)
 
         return {**user_features, **dynamic_features}
+
 ```
 
 ---
@@ -1343,6 +1371,7 @@ def get_features_for_scoring(user_id: str, merchant_id: str) -> dict:
     )
 
     return feature_vector.to_dict()
+
 ```
 
 ---

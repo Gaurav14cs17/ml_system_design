@@ -88,6 +88,7 @@ training_df = store.get_historical_features(
 
 # Result includes features as they were at each event_timestamp
 print(training_df)
+
 ```
 
 ### SQL-Based Point-in-Time Join
@@ -118,6 +119,7 @@ LEFT JOIN ranked_features rf
     ON l.user_id = rf.user_id
     AND l.event_timestamp = rf.event_timestamp
     AND rf.rn = 1  -- Most recent feature before event
+
 ```
 
 ---
@@ -218,6 +220,7 @@ training_df = generator.generate_training_data(
     end_date=datetime(2024, 6, 30),
     output_path="s3://ml-data/training/churn_model_v2/"
 )
+
 ```
 
 ---
@@ -260,6 +263,7 @@ features_df.write.format("delta").mode("append").partitionBy(
 historical_features = spark.read.format("delta").option(
     "timestampAsOf", "2024-01-15 00:00:00"
 ).load("s3://feature-store/user_features/")
+
 ```
 
 ---
@@ -291,6 +295,7 @@ features = spark.read.parquet("s3://feature-store/user_features/").filter(
     (F.col("date") >= "2024-01-15") &
     (F.col("date") <= "2024-01-15")
 )
+
 ```
 
 ### Predicate Pushdown
@@ -303,6 +308,7 @@ df = spark.read.parquet(path).filter(F.col("user_id") == "user_123")
 # Bad: Filter applied after full scan
 df = spark.read.parquet(path)
 df = df[df["user_id"] == "user_123"]  # Full data loaded first!
+
 ```
 
 ---
@@ -323,6 +329,7 @@ def write_features_parquet(df, path):
     ).mode("append").partitionBy(
         "date"
     ).save(path)
+
 ```
 
 ### Format Comparison

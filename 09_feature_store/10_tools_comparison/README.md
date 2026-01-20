@@ -93,6 +93,7 @@ user_features = FeatureView(
     ],
     source=source,
 )
+
 ```
 
 ---
@@ -150,6 +151,7 @@ def user_transaction_features(transactions):
 )
 def user_realtime_features(transactions):
     return transactions
+
 ```
 
 ---
@@ -200,6 +202,7 @@ training_set = fs.create_training_set(
 )
 
 training_df = training_set.load_df()
+
 ```
 
 ---
@@ -248,6 +251,7 @@ response = featurestore_runtime.get_record(
     FeatureGroupName="user-transaction-features",
     RecordIdentifierValueAsString="user_123"
 )
+
 ```
 
 ---
@@ -295,6 +299,7 @@ user_entity.ingest_from_bq(
 
 # Online serving
 user_entity.read(entity_ids=["user_123"])
+
 ```
 
 ---
@@ -325,6 +330,7 @@ $ |
 
 ```math
  | 
+
 ```
 
 |

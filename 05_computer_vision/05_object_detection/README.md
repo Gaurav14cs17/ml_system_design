@@ -39,12 +39,14 @@ Given an image $I$, predict for each object $i$:
 
 ```math
 \mathcal{L} = \lambda_{cls} \mathcal{L}_{cls} + \lambda_{box} \mathcal{L}_{box} + \lambda_{obj} \mathcal{L}_{obj}
+
 ```
 
 **Classification Loss (Cross-Entropy):**
 
 ```math
 \mathcal{L}_{cls} = -\sum_{c=1}^{C} y_c \log(\hat{p}_c)
+
 ```
 
 **Bounding Box Regression Loss:**
@@ -53,6 +55,7 @@ Given an image $I$, predict for each object $i$:
 
 ```math
 \mathcal{L}_{box} = \sum_{i \in \{x, y, w, h\}} \text{smooth}_{L1}(t_i - \hat{t}_i)
+
 ```
 
 where $\text{smooth}\_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x| - 0.5 & \text{otherwise} \end{cases}$
@@ -61,12 +64,14 @@ where $\text{smooth}\_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x|
 
 ```math
 \mathcal{L}_{IoU} = 1 - \text{IoU}
+
 ```
 
 **CIoU Loss (Complete IoU):**
 
 ```math
 \mathcal{L}_{CIoU} = 1 - \text{IoU} + \frac{\rho^2(\mathbf{b}, \mathbf{b}^{gt})}{c^2} + \alpha v
+
 ```
 
 where:
@@ -95,6 +100,7 @@ flowchart TB
 
     style T2 fill:#fff3e0
     style O2 fill:#e8f5e9
+
 ```
 
 ```mermaid
@@ -118,6 +124,7 @@ graph LR
 
     style TS3 fill:#4caf50,color:#fff
     style OS1 fill:#2196f3,color:#fff
+
 ```
 
 | Aspect | Two-Stage | One-Stage |
@@ -203,6 +210,7 @@ class FasterRCNNDetector:
             })
 
         return filtered
+
 ```
 
 ---
@@ -229,18 +237,21 @@ In one-stage detectors, most anchors are negative (background). This imbalance:
 
 ```math
 \text{CE}(p, y) = -y \log(p) - (1-y)\log(1-p)
+
 ```
 
 For binary case with $p\_t = \begin{cases} p & \text{if } y = 1 \\ 1-p & \text{otherwise} \end{cases}$:
 
 ```math
 \text{CE}(p_t) = -\log(p_t)
+
 ```
 
 **Focal Loss:**
 
 ```math
 \text{FL}(p_t) = -\alpha_t (1 - p_t)^\gamma \log(p_t)
+
 ```
 
 where:
@@ -288,6 +299,7 @@ timeline
     2023 : YOLOv8
          : Anchor-free design
          : SOTA speed & accuracy
+
 ```
 
 ```mermaid
@@ -297,6 +309,7 @@ xychart-beta
     y-axis "mAP / FPS" 0 --> 200
     bar [63, 77, 58, 66, 64, 67]
     line [45, 67, 30, 62, 140, 180]
+
 ```
 
 | Version | mAP (COCO) | FPS (GPU) | Key Innovation |
@@ -402,6 +415,7 @@ if __name__ == "__main__":
         label = f"{det['class_name']}: {det['confidence']:.2f}"
         cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
         cv2.putText(image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 2)
+
 ```
 
 ---
@@ -426,6 +440,7 @@ For two bounding boxes $A$ (predicted) and $B$ (ground truth):
 
 ```math
 \text{IoU}(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
+
 ```
 
 **For axis-aligned boxes:**
@@ -435,6 +450,7 @@ Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_
 ```math
 \text{Intersection width} = \max(0, \min(x_2^A, x_2^B) - \max(x_1^A, x_1^B))
 \text{Intersection height} = \max(0, \min(y_2^A, y_2^B) - \max(y_1^A, y_1^B))
+
 ```
 
 **IoU Properties:**
@@ -447,6 +463,7 @@ Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_
 
 ```math
 \text{GIoU} = \text{IoU} - \frac{|C \setminus (A \cup B)|}{|C|}
+
 ```
 
 where $C$ is the smallest enclosing box. GIoU $\in [-1, 1]$ and handles non-overlapping boxes better.
@@ -460,6 +477,7 @@ where $C$ is the smallest enclosing box. GIoU $\in [-1, 1]$ and handles non-over
 ```math
 \text{Precision} = \frac{TP}{TP + FP}
 \text{Recall} = \frac{TP}{TP + FN}
+
 ```
 
 where:
@@ -473,12 +491,14 @@ For each class, compute precision at each recall level:
 
 ```math
 \text{AP} = \int_0^1 p(r) \, dr
+
 ```
 
 In practice, discretized as:
 
 ```math
 \text{AP} = \sum_{i=1}^{n} (r_i - r_{i-1}) \cdot p_{interp}(r_i)
+
 ```
 
 where $p\_{interp}(r) = \max\_{r' \geq r} p(r')$ (interpolated precision)
@@ -487,6 +507,7 @@ where $p\_{interp}(r) = \max\_{r' \geq r} p(r')$ (interpolated precision)
 
 ```math
 \text{mAP} = \frac{1}{|C|} \sum_{c \in C} \text{AP}_c
+
 ```
 
 **COCO mAP (mAP@[.5:.95]):**
@@ -495,6 +516,7 @@ Average AP across IoU thresholds from 0.5 to 0.95 (step 0.05):
 
 ```math
 \text{mAP}_{COCO} = \frac{1}{10} \sum_{t \in \{.5, .55, ..., .95\}} \text{mAP}@t
+
 ```
 
 ### NMS (Non-Maximum Suppression)
@@ -545,6 +567,7 @@ def nms(boxes, scores, iou_threshold=0.5):
         order = order[inds + 1]
 
     return np.array(keep)
+
 ```
 
 ---

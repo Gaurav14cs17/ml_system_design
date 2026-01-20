@@ -99,6 +99,7 @@ class TransferLearningClassifier:
             {'params': backbone_params, 'lr': lr_backbone},
             {'params': head_params, 'lr': lr_head}
         ]
+
 ```
 
 ---
@@ -150,6 +151,7 @@ def get_val_transforms(img_size=224):
         A.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ToTensorV2()
     ])
+
 ```
 
 ### Advanced Augmentation
@@ -197,6 +199,7 @@ def cutmix(images, labels, alpha=1.0):
     lam = 1 - ((x2 - x1) * (y2 - y1) / (H * W))
 
     return mixed_images, labels, labels[index], lam
+
 ```
 
 ---
@@ -317,6 +320,7 @@ class ImageClassificationTrainer:
                 print(f"  New best model saved!")
 
         return best_acc
+
 ```
 
 ---
@@ -397,6 +401,7 @@ class ProductionClassifier:
             {'class_id': int(idx), 'confidence': float(probs[idx])}
             for idx in top_indices
         ]
+
 ```
 
 ---

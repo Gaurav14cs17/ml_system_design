@@ -55,6 +55,7 @@ mindmap
       Weather
       Events
       Economic Data
+
 ```
 
 <p align="center">
@@ -147,6 +148,7 @@ def create_datetime_features(df):
     df['is_year_end'] = idx.is_year_end.astype(int)
 
     return df
+
 ```
 
 ### Cyclical Encoding
@@ -166,6 +168,7 @@ df = cyclical_encoding(df, 'hour', 24)      # Hours: 0-23
 df = cyclical_encoding(df, 'dayofweek', 7)  # Days: 0-6
 df = cyclical_encoding(df, 'month', 12)     # Months: 1-12
 df = cyclical_encoding(df, 'dayofyear', 365)
+
 ```
 
 ### Holiday Features
@@ -198,6 +201,7 @@ def add_holiday_features(df, country='US'):
     df['days_since_holiday'] = df.index.map(days_since_holiday)
 
     return df
+
 ```
 
 ---
@@ -210,18 +214,21 @@ Lag features are rooted in the **autoregressive (AR)** assumption that future va
 
 ```math
 Y_t = f(Y_{t-1}, Y_{t-2}, \ldots, Y_{t-p}) + \varepsilon_t
+
 ```
 
 The **Autocorrelation Function (ACF)** helps identify which lags are most informative:
 
 ```math
 \rho_k = \frac{\text{Cov}(Y_t, Y_{t-k})}{\text{Var}(Y_t)} = \frac{\gamma_k}{\gamma_0}
+
 ```
 
 The **Partial Autocorrelation Function (PACF)** measures direct correlation at lag $k$, controlling for intermediate lags:
 
 ```math
 \phi_{kk} = \text{Corr}(Y_t, Y_{t-k} | Y_{t-1}, \ldots, Y_{t-k+1})
+
 ```
 
 | Pattern | ACF Behavior | PACF Behavior | Model Suggestion |
@@ -255,6 +262,7 @@ daily_lags = [1, 2, 3, 7, 14, 21, 28, 365]  # Days and weeks back
 monthly_lags = [1, 2, 3, 6, 12]  # Months back
 
 df = create_lag_features(df, 'value', daily_lags)
+
 ```
 
 ### Difference Features
@@ -276,6 +284,7 @@ def create_difference_features(df, target_col, periods):
     return df
 
 df = create_difference_features(df, 'value', [1, 7, 28])
+
 ```
 
 ### Lag Selection Strategy
@@ -326,6 +335,7 @@ def create_rolling_features(df, target_col, windows):
 
 windows = [7, 14, 28, 90]
 df = create_rolling_features(df, 'value', windows)
+
 ```
 
 ### Advanced Rolling Features
@@ -371,6 +381,7 @@ def create_advanced_rolling_features(df, target_col, window):
     )
 
     return df
+
 ```
 
 ### Exponentially Weighted Features
@@ -394,6 +405,7 @@ def create_ewm_features(df, target_col, spans):
 
 spans = [7, 14, 28]
 df = create_ewm_features(df, 'value', spans)
+
 ```
 
 ---
@@ -427,6 +439,7 @@ def create_expanding_features(df, target_col, min_periods=30):
     )
 
     return df
+
 ```
 
 ---
@@ -439,6 +452,7 @@ Any periodic function can be decomposed into a sum of sinusoids using **Fourier 
 
 ```math
 f(t) = \frac{a_0}{2} + \sum_{k=1}^{K} \left[ a_k \cos\left(\frac{2\pi kt}{m}\right) + b_k \sin\left(\frac{2\pi kt}{m}\right) \right]
+
 ```
 
 For time series with period $m$, we use Fourier terms as features:
@@ -499,6 +513,7 @@ df = create_fourier_features(df, period=365.25, n_harmonics=5)
 # For hourly data with daily and weekly seasonality
 df = create_fourier_features(df, period=24, n_harmonics=3)    # Daily
 df = create_fourier_features(df, period=168, n_harmonics=3)   # Weekly
+
 ```
 
 ### Same-Period Features
@@ -536,6 +551,7 @@ def create_same_period_features(df, target_col):
             )
 
     return df
+
 ```
 
 ### Seasonal Decomposition Features
@@ -564,6 +580,7 @@ def create_stl_features(df, target_col, period=7):
     df[f'{target_col}_seasonal_strength'] = max(0, 1 - var_resid / var_seasonal_resid)
 
     return df
+
 ```
 
 ---
@@ -605,6 +622,7 @@ def create_trend_features(df, target_col, windows=[7, 14, 28]):
         )
 
     return df
+
 ```
 
 ---
@@ -637,6 +655,7 @@ def create_weather_features(df, weather_df):
         df['is_high_humidity'] = (df['humidity'] > 80).astype(int)
 
     return df
+
 ```
 
 ### Event Features
@@ -662,6 +681,7 @@ def create_event_features(df, events_df):
         )
 
     return df
+
 ```
 
 ---
@@ -681,6 +701,7 @@ def select_features_by_correlation(df, target_col, threshold=0.05):
     selected = correlations[correlations.abs() > threshold]
 
     return selected.sort_values(key=abs, ascending=False)
+
 ```
 
 ### Importance-Based Selection
@@ -708,6 +729,7 @@ def select_features_by_importance(df, target_col, n_top=20):
     importance = pd.Series(rf.feature_importances_, index=feature_cols)
 
     return importance.nlargest(n_top)
+
 ```
 
 ---
@@ -770,6 +792,7 @@ config = {
 engineer = TimeSeriesFeatureEngineer('value', config)
 train_features = engineer.fit_transform(train_df)
 test_features = engineer.transform(test_df)
+
 ```
 
 ---

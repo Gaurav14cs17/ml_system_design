@@ -71,6 +71,7 @@ class ClassificationEmbedder(nn.Module):
 # Training
 criterion = nn.CrossEntropyLoss()
 loss = criterion(model(x), labels)
+
 ```
 
 ### 2. Metric Learning
@@ -95,6 +96,7 @@ def contrastive_loss(embed1, embed2, label, margin=1.0):
     dist = torch.pairwise_distance(embed1, embed2)
     loss = label * dist.pow(2) + (1 - label) * torch.clamp(margin - dist, min=0).pow(2)
     return loss.mean()
+
 ```
 
 ### 3. Self-Supervised
@@ -129,6 +131,7 @@ def simclr_loss(z1, z2, temperature=0.5):
     ]).to(z.device)
 
     return F.cross_entropy(sim, labels)
+
 ```
 
 ---
@@ -192,6 +195,7 @@ def prepare_retrieval_data(query_doc_pairs):
         ))
 
     return examples
+
 ```
 
 ### Image Embedding Data
@@ -228,6 +232,7 @@ class ContrastiveImageDataset(Dataset):
         if self.labels is not None:
             return view1, view2, self.labels[idx]
         return view1, view2
+
 ```
 
 ---
@@ -270,6 +275,7 @@ def info_nce_loss(query, positive, negatives, temperature=0.07):
     labels = torch.zeros(batch_size, dtype=torch.long, device=query.device)
 
     return F.cross_entropy(logits, labels)
+
 ```
 
 ### In-Batch Negatives
@@ -297,6 +303,7 @@ def in_batch_negatives_loss(query_embeds, doc_embeds, temperature=0.05):
     loss_d2q = F.cross_entropy(similarity.T, labels)
 
     return (loss_q2d + loss_d2q) / 2
+
 ```
 
 ### Multiple Negatives Ranking Loss
@@ -317,6 +324,7 @@ class MultipleNegativesRankingLoss(nn.Module):
         scores = torch.mm(anchor_embeds, positive_embeds.T) * self.scale
         labels = torch.arange(len(anchor_embeds), device=scores.device)
         return self.cross_entropy(scores, labels)
+
 ```
 
 ---
@@ -331,6 +339,7 @@ Easy negatives: Random documents (very different from query)
 
 Hard negatives: Similar but incorrect documents
   → Forces model to learn fine-grained distinctions
+
 ```
 
 ### Mining Strategies
@@ -381,6 +390,7 @@ class HardNegativeMiner:
         hardest_idx = sims.argmax(dim=1)
 
         return positive_embeds[hardest_idx]
+
 ```
 
 ### Cross-Encoder Negatives
@@ -411,6 +421,7 @@ def mine_with_cross_encoder(queries, candidates, cross_encoder,
         hard_negatives.append(negatives)
 
     return hard_negatives
+
 ```
 
 ---
@@ -467,6 +478,7 @@ class MultiTaskTrainer:
         optimizer.step()
 
         return total_loss.item()
+
 ```
 
 ### Instruction-Following Embeddings
@@ -505,6 +517,7 @@ class InstructionEmbedder:
         # Mean pooling
         embeddings = self.mean_pooling(outputs, inputs['attention_mask'])
         return F.normalize(embeddings, dim=1)
+
 ```
 
 ---
@@ -551,6 +564,7 @@ class DistillationTrainer:
         optimizer.step()
 
         return loss.item()
+
 ```
 
 ### Dimensionality Reduction
@@ -594,6 +608,7 @@ class MatryoshkaEmbedding(nn.Module):
 # Usage: Query with smaller dimension for speed
 fast_embed = model(text, dim=128)  # Fast, lower quality
 full_embed = model(text, dim=768)  # Slower, higher quality
+
 ```
 
 ---
@@ -724,6 +739,7 @@ for epoch in range(10):
     print(f"Epoch {epoch}: Loss={train_loss:.4f}, R@1={metrics['recall@1']:.3f}")
 
 trainer.save("./my_embedding_model")
+
 ```
 
 ---

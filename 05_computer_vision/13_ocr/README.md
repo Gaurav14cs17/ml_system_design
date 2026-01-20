@@ -47,6 +47,7 @@ flowchart LR
     style B fill:#fff3e0
     style G fill:#e8f5e9
     style I fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -73,6 +74,7 @@ graph TB
 
     style D2 fill:#c8e6c9
     style R3 fill:#e1bee7
+
 ```
 
 ```mermaid
@@ -91,6 +93,7 @@ sequenceDiagram
         R->>R: Decode (CTC)
     end
     R->>O: Text + Confidence
+
 ```
 
 ---
@@ -208,6 +211,7 @@ for r in results:
 # Visualize
 image = ocr.visualize('document.jpg', results)
 cv2.imwrite('output.jpg', image)
+
 ```
 
 ### Document Understanding
@@ -261,6 +265,7 @@ class DocumentAnalyzer:
             results.append(region)
 
         return results
+
 ```
 
 ---

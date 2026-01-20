@@ -189,6 +189,7 @@ class AuditTrailManager:
                 for e in events
             ]
         }
+
 ```
 
 ---
@@ -314,6 +315,7 @@ class ModelCard:
 ## Technical Specifications
 
 ### Input Features
+
 | Feature | Type | Description |
 |---------|------|-------------|
 {self._format_features()}
@@ -369,6 +371,7 @@ class ModelCard:
             desc = feature.get('description', '')
             lines.append(f"| {name} | {dtype} | {desc} |")
         return '\n'.join(lines)
+
 ```
 
 ---
@@ -533,6 +536,7 @@ class FairnessMonitor:
             }
 
         return report
+
 ```
 
 ---

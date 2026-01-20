@@ -59,6 +59,7 @@ We want to test whether both samples come from the same distribution:
 ```math
 H_0: P_{ref}(X) = P_{curr}(X)
 H_1: P_{ref}(X) \neq P_{curr}(X)
+
 ```
 
 ### Information-Theoretic Measures
@@ -69,6 +70,7 @@ The **KL divergence** measures how one probability distribution diverges from an
 
 ```math
 D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\frac{P(X)}{Q(X)}\right]
+
 ```
 
 **Properties:**
@@ -83,6 +85,7 @@ The **JS divergence** is a symmetric, bounded version:
 
 ```math
 JS(P \| Q) = \frac{1}{2}D_{KL}(P \| M) + \frac{1}{2}D_{KL}(Q \| M)
+
 ```
 
 Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution.
@@ -102,6 +105,7 @@ The **PSI** is the most widely used metric in production ML systems:
 
 ```math
 PSI = \sum_{i=1}^{k} (A_i - E_i) \cdot \ln\left(\frac{A_i}{E_i}\right)
+
 ```
 
 Where:
@@ -115,6 +119,7 @@ PSI is essentially a symmetric version of KL divergence:
 
 ```math
 PSI = D_{KL}(A \| E) + D_{KL}(E \| A)
+
 ```
 
 This can be verified by expanding:
@@ -122,12 +127,14 @@ This can be verified by expanding:
 ```math
 D_{KL}(A \| E) = \sum_i A_i \log\frac{A_i}{E_i}
 D_{KL}(E \| A) = \sum_i E_i \log\frac{E_i}{A_i} = -\sum_i E_i \log\frac{A_i}{E_i}
+
 ```
 
 Adding these:
 
 ```math
 D_{KL}(A \| E) + D_{KL}(E \| A) = \sum_i (A_i - E_i) \log\frac{A_i}{E_i} = PSI
+
 ```
 
 #### Interpretation Guidelines
@@ -145,6 +152,7 @@ The **KS test** compares the empirical cumulative distribution functions (ECDFs)
 
 ```math
 D_n = \sup_x |F_n(x) - G_m(x)|
+
 ```
 
 Where:
@@ -157,6 +165,7 @@ Under \( H_0 \), the test statistic converges:
 
 ```math
 \sqrt{\frac{nm}{n+m}} D_n \xrightarrow{d} K
+
 ```
 
 Where \( K \) follows the **Kolmogorov distribution**.
@@ -177,12 +186,14 @@ The **Wasserstein distance** measures the minimum "work" to transform one distri
 
 ```math
 W_p(P, Q) = \left(\inf_{\gamma \in \Gamma(P,Q)} \int |x - y|^p d\gamma(x,y)\right)^{1/p}
+
 ```
 
 For 1D distributions with CDFs \( F \) and \( G \):
 
 ```math
 W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx
+
 ```
 
 **Advantages:**
@@ -196,6 +207,7 @@ For categorical features, use the chi-square test:
 
 ```math
 \chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}
+
 ```
 
 Where:
@@ -226,6 +238,7 @@ The power of drift detection depends on sample size. For PSI with \( k \) bins:
 
 ```math
 n_{min} \approx \frac{k \cdot z_{\alpha/2}^2}{4 \cdot \epsilon^2}
+
 ```
 
 Where \( \epsilon \) is the minimum detectable proportional change per bin.
@@ -266,6 +279,7 @@ def calculate_psi(reference: np.ndarray, current: np.ndarray,
     psi = np.sum((curr_pct - ref_pct) * np.log(curr_pct / ref_pct))
     
     return psi
+
 ```
 
 ### KS Test Implementation
@@ -288,6 +302,7 @@ def ks_drift_test(reference: np.ndarray, current: np.ndarray,
         'p_value': p_value,
         'drift_detected': p_value < alpha
     }
+
 ```
 
 ---
@@ -322,6 +337,7 @@ Reference Data (Training)
     |  Threshold  |----------------▶ Alert!
     |  Check      |
     +-------------+
+
 ```
 
 ### Multi-Feature Monitoring
@@ -332,6 +348,7 @@ When monitoring many features, apply **multiple testing correction**:
 
 ```math
 \alpha_{adjusted} = \frac{\alpha}{m}
+
 ```
 
 Where \( m \) is the number of features tested.

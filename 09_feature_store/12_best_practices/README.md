@@ -61,6 +61,7 @@ bad_entity = Entity(
     name="entity",  # Too generic
     join_keys=["id"],  # Unclear what "id" refers to
 )
+
 ```
 
 ### Feature View Organization
@@ -97,6 +98,7 @@ BAD_NAMES = [
 # CASING: Use snake_case consistently
 # LENGTH: Keep under 60 characters
 # PREFIXES: Always include entity name
+
 ```
 
 ### Feature View and Service Naming
@@ -125,6 +127,7 @@ STANDARD_TAGS = {
     "pii": ["true", "false"],
     "freshness": ["realtime", "hourly", "daily", "weekly"],
 }
+
 ```
 
 ---
@@ -173,6 +176,7 @@ def get_cached_features(user_id: str):
         features=["user_features:static_features"],
         entity_rows=[{"user_id": user_id}]
     ).to_dict()
+
 ```
 
 ### Offline Store Optimization
@@ -196,6 +200,7 @@ features = spark.read.parquet(path).filter(
     (F.col("date") >= start_date) &
     (F.col("date") <= end_date)
 )
+
 ```
 
 ---
@@ -231,6 +236,7 @@ def check_access(user: str, resource: str, action: str) -> bool:
     allowed_roles = policy.get(action, [])
     user_roles = get_user_roles(user)
     return any(role in allowed_roles for role in user_roles)
+
 ```
 
 ### PII Handling
@@ -278,6 +284,7 @@ class FeatureAuditLogger:
             "feature_view": feature_view,
             "row_count": row_count,
         })
+
 ```
 
 ---
@@ -319,6 +326,7 @@ class FeatureAuditLogger:
 ## Escalation
 - P1: Page on-call after 15 min
 - P2: Slack #feature-store-alerts
+
 ```
 
 ### Disaster Recovery
@@ -352,6 +360,7 @@ def recover_from_backup(component: str, point_in_time: datetime):
     elif component == "online_store":
         restore_redis_from_snapshot(point_in_time)
         rematerialize_from_offline()
+
 ```
 
 ---
@@ -417,6 +426,7 @@ class TestOnDemandFeatures:
 
         # Should not raise, should handle gracefully
         assert result["amount_vs_avg_ratio"].iloc[0] > 0
+
 ```
 
 ### Integration Tests
@@ -461,6 +471,7 @@ class TestFeatureRetrieval:
 
         assert len(training_df) == 2
         assert "account_age_days" in training_df.columns
+
 ```
 
 ---
@@ -525,6 +536,7 @@ DEPLOYMENT
 □ Staging environment tested
 □ Rollback procedure documented
 □ Feature flags for new features
+
 ```
 
 ---

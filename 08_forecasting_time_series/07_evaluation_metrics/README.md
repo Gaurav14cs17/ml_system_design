@@ -48,6 +48,7 @@ graph TB
     style B fill:#4CAF50,color:white
     style C fill:#FF9800,color:white
     style D fill:#9C27B0,color:white
+
 ```
 
 <p align="center">
@@ -148,6 +149,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 ```math
 \text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
+
 ```
 
 **Properties:**
@@ -160,6 +162,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 ```math
 \text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
 \text{RMSE} = \sqrt{\text{MSE}} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
+
 ```
 
 **Properties:**
@@ -171,6 +174,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 ```math
 \text{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right|
+
 ```
 
 **Properties:**
@@ -182,6 +186,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 ```math
 \text{SMAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\frac{2|y_i - \hat{y}_i|}{|y_i| + |\hat{y}_i|}
+
 ```
 
 **Properties:**
@@ -193,6 +198,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 ```math
 \text{MASE} = \frac{\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|}{\frac{1}{T-m}\sum_{t=m+1}^{T}|y_t - y_{t-m}|}
+
 ```
 
 **Properties:**
@@ -319,6 +325,7 @@ print(f"MAE: {metrics.mae(actual, predicted):.4f}")
 print(f"RMSE: {metrics.rmse(actual, predicted):.4f}")
 print(f"MAPE: {metrics.mape(actual, predicted):.2f}%")
 print(f"SMAPE: {metrics.smape(actual, predicted):.2f}%")
+
 ```
 
 ### Metrics Comparison
@@ -451,6 +458,7 @@ q_losses = prob_metrics.quantile_loss(actual, quantile_preds)
 # Coverage and width
 coverage = prob_metrics.prediction_interval_coverage(actual, lower_90, upper_90)
 print(f"90% PI Coverage: {coverage:.1f}%")  # Should be ~90%
+
 ```
 
 ---
@@ -520,6 +528,7 @@ relative = RelativeMetrics()
 
 skill = relative.skill_score(actual, predicted, baseline)
 print(f"Skill Score: {skill:.4f}")
+
 ```
 
 ---
@@ -621,6 +630,7 @@ asym_error = biz_metrics.asymmetric_error(
 # Check for systematic bias
 bias = biz_metrics.bias(actual, predicted)
 print(f"Forecast Bias: {bias:.2f} (positive = over-forecasting)")
+
 ```
 
 ---
@@ -745,6 +755,7 @@ class ForecastVisualizer:
 viz = ForecastVisualizer()
 fig1 = viz.plot_forecast_vs_actual(actual, predicted, lower, upper)
 fig2 = viz.plot_residuals(actual, predicted)
+
 ```
 
 ---
@@ -839,6 +850,7 @@ backtester = ForecastBacktester(
 results = backtester.expanding_window(data, step=7)
 summary = backtester.summarize()
 print(f"MAE: {summary['mae_mean']:.4f} ± {summary['mae_std']:.4f}")
+
 ```
 
 ---

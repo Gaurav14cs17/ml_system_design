@@ -87,6 +87,7 @@ embedding_features = {
     "user_embedding": [0.1, 0.2, ..., 0.9],  # 128-dim
     "product_embedding": [0.3, 0.4, ..., 0.1],  # 256-dim
 }
+
 ```
 
 ### Feature Pattern Decision Tree
@@ -139,6 +140,7 @@ percentile_aggs = {
     "p90": F.percentile_approx("amount", 0.90),
     "p99": F.percentile_approx("amount", 0.99),
 }
+
 ```
 
 ### Multi-Level Aggregations
@@ -181,6 +183,7 @@ Level 3: Merchant Features (aggregate by merchant)
 |    m2      |     75        |      1         |
 +------------+---------------+----------------+
 """
+
 ```
 
 ---
@@ -196,6 +199,7 @@ Non-overlapping, fixed-size windows:
 
 ```math
 W_i = [t_0 + i \cdot \Delta, t_0 + (i+1) \cdot \Delta)
+
 ```
 
 Where \( \Delta \) is the window size.
@@ -205,6 +209,7 @@ Overlapping windows with configurable slide interval:
 
 ```math
 W_i = [t_0 + i \cdot \delta, t_0 + i \cdot \delta + \Delta)
+
 ```
 
 Where \( \delta \) is the slide interval and \( \Delta \) is window size.
@@ -269,6 +274,7 @@ def compute_rolling_features(df):
     )
 
     return df_with_rolling
+
 ```
 
 ---
@@ -361,6 +367,7 @@ class BatchFeatureEngine:
         features.write.format("delta").mode("append").partitionBy(
             "feature_date"
         ).save(output_path)
+
 ```
 
 ### dbt for Feature Engineering
@@ -423,6 +430,7 @@ SELECT
     lifetime_transaction_count / NULLIF(DATE_DIFF(CURRENT_DATE, first_transaction_date, DAY), 0)
         AS transaction_frequency
 FROM user_aggs
+
 ```
 
 ---
@@ -521,6 +529,7 @@ class StreamingFeatureEngine:
             JOIN user_features_1h f1h
             ON f5.user_id = f1h.user_id
         """)
+
 ```
 
 ---
@@ -584,6 +593,7 @@ features = store.get_online_features(
         "request_timestamp": datetime.now(),
     }]
 )
+
 ```
 
 ---
@@ -667,6 +677,7 @@ with DAG(
 
     # Define dependencies
     compute_user_features >> validate_features_task >> materialize_task
+
 ```
 
 ---
@@ -693,6 +704,7 @@ with DAG(
 □ Test for training-serving consistency
 □ Set up monitoring for drift
 □ Document assumptions and edge cases
+
 ```
 
 ---

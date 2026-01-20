@@ -143,6 +143,7 @@ class IntermittentDemandForecaster:
 
         # Expected demand = P(demand > 0) × E[demand | demand > 0]
         return prob * demand
+
 ```
 
 ### Results
@@ -269,6 +270,7 @@ class EnergyLoadForecaster:
 
         meta_features = pd.DataFrame(base_predictions)
         return self.meta_model.predict(meta_features)
+
 ```
 
 ### Results
@@ -362,6 +364,7 @@ class VolatilityForecaster:
 
         # Ensemble
         return 0.6 * garch_vol + 0.4 * ml_vol
+
 ```
 
 ---
@@ -456,6 +459,7 @@ class TrafficForecaster:
                 return out.reshape(batch, nodes, -1)
 
         return STGCN(num_nodes, input_shape[-1], 64, 12)
+
 ```
 
 ---

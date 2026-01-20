@@ -65,6 +65,7 @@ class MultiModalEmbedder:
         image_emb = image_emb / image_emb.norm(dim=-1, keepdim=True)
 
         return text_emb @ image_emb.T
+
 ```
 
 ### Training Multi-Modal Models
@@ -107,6 +108,7 @@ class CLIPStyleTraining(nn.Module):
         loss_t2i = F.cross_entropy(logits_per_text, labels)
 
         return (loss_i2t + loss_t2i) / 2
+
 ```
 
 ### Beyond Vision-Language
@@ -132,6 +134,7 @@ class ModalityAgnosticEncoder:
         features = self.encoders[modality](data)
         projected = self.projectors[modality](features)
         return F.normalize(projected, dim=-1)
+
 ```
 
 ---
@@ -174,6 +177,7 @@ embedder = ContextualEmbedder()
 emb1 = embedder.get_word_embedding("I went to the bank to deposit money", "bank")
 emb2 = embedder.get_word_embedding("I sat by the river bank", "bank")
 # emb1 ≠ emb2 (different meanings)
+
 ```
 
 ### Time-Aware Embeddings
@@ -200,6 +204,7 @@ class TemporalEmbedding(nn.Module):
         base_emb = self.base(item_ids)
         time_offset = self.time_encoder(timestamps.unsqueeze(-1))
         return base_emb + time_offset
+
 ```
 
 ---
@@ -242,6 +247,7 @@ def product_quantize(embeddings, m=8, nbits=8):
 
     codes = pq.compute_codes(embeddings.astype('float32'))
     return codes, pq
+
 ```
 
 ### Dimensionality Reduction
@@ -290,6 +296,7 @@ fast_emb = model.encode(texts, target_dim=64)
 
 # Quality search
 full_emb = model.encode(texts, target_dim=768)
+
 ```
 
 ### Binary Embeddings
@@ -324,6 +331,7 @@ class BinaryEmbedding:
 
 # 768d float32 → 256 bits = 32 bytes
 # 96x memory reduction!
+
 ```
 
 ---
@@ -359,6 +367,7 @@ class CrossLingualAligner:
     def align(self, embeddings, W):
         """Apply alignment transformation"""
         return embeddings @ W
+
 ```
 
 ### Domain Adaptation
@@ -399,6 +408,7 @@ class DomainAdaptation:
         """
         # Train with domain positive/negative pairs
         pass
+
 ```
 
 ---
@@ -452,6 +462,7 @@ class BiasDetector:
 # target_words_2 = ["nurse", "teacher", "librarian"]
 # attribute_words_1 = ["man", "male", "he"]
 # attribute_words_2 = ["woman", "female", "she"]
+
 ```
 
 ### Debiasing Techniques
@@ -496,6 +507,7 @@ class EmbeddingDebiaser:
             debiased[word] = emb - projection
 
         return debiased
+
 ```
 
 ---
@@ -552,6 +564,7 @@ class EWCEmbeddingUpdater:
                         (param - self.optimal_params[name]) ** 2).sum()
 
         return self.importance_weight * loss
+
 ```
 
 ### Incremental Index Updates
@@ -604,6 +617,7 @@ class IncrementalVectorIndex:
             return [all_ids[i] for i in top_k], all_scores[top_k]
 
         return base_ids[0].tolist(), base_scores[0]
+
 ```
 
 ---
@@ -645,6 +659,7 @@ class DPEmbeddingTrainer:
             if param.grad is not None:
                 noise = torch.randn_like(param.grad) * noise_scale
                 param.grad.add_(noise)
+
 ```
 
 ### Embedding Anonymization
@@ -669,6 +684,7 @@ class AnonymizedEmbeddings:
             embeddings = embeddings / np.linalg.norm(embeddings, axis=-1, keepdims=True)
 
         return embeddings
+
 ```
 
 ---
@@ -710,6 +726,7 @@ class ContinuallyLearningEmbedder:
         """Fine-tune on collected feedback"""
         # Contrastive learning on feedback
         pass
+
 ```
 
 ---

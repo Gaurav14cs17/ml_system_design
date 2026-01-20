@@ -113,6 +113,7 @@ class PerformanceBasedDetector:
                 't_statistic': t_stat
             }
         )
+
 ```
 
 ### Method 2: Page-Hinkley Test
@@ -170,6 +171,7 @@ class PageHinkleyDetector:
         self.mean = 0
         self.count = 0
         self.min_sum = float('inf')
+
 ```
 
 ### Method 3: ADWIN (Adaptive Windowing)
@@ -256,6 +258,7 @@ class ADWINDetector:
         epsilon = np.sqrt((1 / (2 * m)) * np.log(4 / self.delta))
 
         return abs(mean_left - mean_right) >= epsilon
+
 ```
 
 ### Method 4: DDM (Drift Detection Method)
@@ -329,6 +332,7 @@ class DDMDetector:
         self.s = 0
         self.p_min = float('inf')
         self.s_min = float('inf')
+
 ```
 
 ---
@@ -422,6 +426,7 @@ class ConceptDriftResponseSystem:
         )
 
         self.last_retrain = datetime.utcnow()
+
 ```
 
 ---

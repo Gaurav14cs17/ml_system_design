@@ -80,6 +80,7 @@ class ExperimentDesign:
             'guardrails': guardrails,     # Do-no-harm metrics
             'debug': []                   # Technical health metrics
         }
+
 ```
 
 ---
@@ -145,6 +146,7 @@ hypothesis = create_hypothesis(
         "Model inference latency p99 must stay under 50ms"
     ]
 )
+
 ```
 
 ---
@@ -232,6 +234,7 @@ exp.add_treatment(
 )
 
 print(exp.validate_design())
+
 ```
 
 ---
@@ -305,6 +308,7 @@ class TrafficRampUp:
 
         can_proceed = len(violations) == 0
         return can_proceed, violations, warnings
+
 ```
 
 ---
@@ -391,6 +395,7 @@ class ClusterRandomizedExperiment:
             self.assignments[cluster] = 'treatment' if i < n_treatment else 'control'
 
         return self.assignments
+
 ```
 
 ---
@@ -479,6 +484,7 @@ class GuardrailConfig:
             'violated': violated,
             'severity': config['severity']
         }
+
 ```
 
 ### Automatic Stopping Rules
@@ -534,6 +540,7 @@ class AutomaticStopping:
             issues.append("Logging pipeline unhealthy")
 
         return issues
+
 ```
 
 ---
@@ -571,6 +578,7 @@ EXPERIMENT_SPEC_TEMPLATE = """
 - **Estimated daily traffic**: {daily_traffic}
 
 ### Variants
+
 | Variant | Description | Traffic % |
 |---------|-------------|-----------|
 {variant_table}
@@ -617,6 +625,7 @@ EXPERIMENT_SPEC_TEMPLATE = """
 def generate_experiment_spec(config: dict) -> str:
     """Generate formatted experiment specification"""
     return EXPERIMENT_SPEC_TEMPLATE.format(**config)
+
 ```
 
 ---

@@ -136,6 +136,7 @@ class EdgeCaseDetector:
                 recommended_action='allow_with_context'
             )
         return None
+
 ```
 
 ---
@@ -168,6 +169,7 @@ class EdgeCaseDetector:
    - Steganography (hidden content)
    - Exploiting model blind spots
    - Rate limiting evasion
+
 ```
 
 ### Attack Detection
@@ -319,6 +321,7 @@ class AdversarialDetector:
             '¥': 'y',
             '2': 'z',
         }
+
 ```
 
 ---
@@ -396,6 +399,7 @@ class DefenseLayer:
             cat: max(scores1.get(cat, 0), scores2.get(cat, 0))
             for cat in set(scores1.keys()) | set(scores2.keys())
         }
+
 ```
 
 ### Continuous Adaptation
@@ -469,6 +473,7 @@ class AdaptiveDefense:
         variants.append(self._apply_zero_width(text))
 
         return variants
+
 ```
 
 ---
@@ -566,6 +571,7 @@ class ContextAnalyzer:
             modifier += 0.15
 
         return modifier
+
 ```
 
 ---
@@ -648,6 +654,7 @@ class AmbiguityResolver:
             resolution['needs_review'] = True
 
         return resolution
+
 ```
 
 ---

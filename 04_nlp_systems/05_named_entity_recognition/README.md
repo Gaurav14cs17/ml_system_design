@@ -131,6 +131,7 @@ entities = ner.extract_entities(text)
 
 for ent in entities:
     print(f"{ent['text']:20} | {ent['label']:10} | {ent['description']}")
+
 ```
 
 ---
@@ -380,6 +381,7 @@ train_labels = [
 # Train and predict
 ner.train(train_texts, train_labels, epochs=3)
 entities = ner.predict("Tim Cook announced new products at Apple headquarters")
+
 ```
 
 ---
@@ -464,6 +466,7 @@ annotations = [
 
 examples = trainer.prepare_training_data(texts, annotations)
 trainer.train(examples, epochs=30)
+
 ```
 
 ---

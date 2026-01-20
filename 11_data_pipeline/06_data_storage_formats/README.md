@@ -82,6 +82,7 @@ partitioned = pd.read_parquet(
     'data/partitioned/',
     filters=[('date', '>=', '2024-01-01'), ('date', '<', '2024-02-01')]
 )
+
 ```
 
 ### 2. Delta Lake
@@ -139,6 +140,7 @@ delta_table.optimize().executeZOrderBy("user_id", "date")
 
 # Vacuum old versions (be careful - removes time travel capability)
 delta_table.vacuum(retentionHours=168)  # Keep 7 days
+
 ```
 
 ### 3. Apache Iceberg
@@ -185,6 +187,7 @@ spark.sql("""
 # Table maintenance
 spark.sql("CALL iceberg.system.rewrite_data_files('iceberg.db.events')")
 spark.sql("CALL iceberg.system.expire_snapshots('iceberg.db.events')")
+
 ```
 
 ### 4. Format Selection Guide
@@ -270,6 +273,7 @@ features = pd.read_parquet(
         ('category', '==', 'premium')
     ]
 )
+
 ```
 
 ### 2. Data Warehouse
@@ -340,6 +344,7 @@ query = """
 """
 
 training_data = WarehouseConnector.bigquery_query(query, "my-project")
+
 ```
 
 ### 3. Feature Store Storage
@@ -468,6 +473,7 @@ training_features = store.get_historical_features(
     entity_col="user_id",
     timestamp_col="event_timestamp"
 )
+
 ```
 
 ---
@@ -498,6 +504,7 @@ training_data = pd.read_parquet(
         ('date', '<', '2024-01-15')
     ]
 )
+
 ```
 
 ### Multi-Level Partitioning
@@ -520,6 +527,7 @@ user_features = pd.read_parquet(
         ('region', 'in', ['US', 'EU'])
     ]
 )
+
 ```
 
 ---

@@ -78,6 +78,7 @@ D = np.diag(np.array(A.sum(axis=1)).flatten())
 
 # Laplacian: L = D - A
 L = D - A
+
 ```
 
 ### What Makes a Good Graph Embedding?
@@ -151,6 +152,7 @@ def deepwalk(graph, embed_dim=128, walk_length=80,
 # Usage
 embeddings = deepwalk(G)
 print(embeddings['A'].shape)  # [128]
+
 ```
 
 ### Node2Vec
@@ -201,6 +203,7 @@ def node2vec_walk(graph, start, walk_length, p=1.0, q=1.0):
 # p=1, q=1: DeepWalk (uniform)
 # p<1: Encourage backtracking (local exploration)
 # q<1: Encourage going outward (global exploration)
+
 ```
 
 ### Using node2vec Library
@@ -226,6 +229,7 @@ embedding = model.wv['A']
 
 # Find similar nodes
 similar_nodes = model.wv.most_similar('A', topn=5)
+
 ```
 
 ---
@@ -238,6 +242,7 @@ GNNs work by aggregating information from neighbors:
 
 ```
 h_v^(k+1) = UPDATE(h_v^(k), AGGREGATE({h_u^(k) : u ∈ N(v)}))
+
 ```
 
 ### Graph Convolutional Network (GCN)
@@ -294,6 +299,7 @@ def normalize_adjacency(adj):
     d_inv_sqrt[torch.isinf(d_inv_sqrt)] = 0
     d_mat = torch.diag(d_inv_sqrt)
     return d_mat @ adj @ d_mat
+
 ```
 
 ### GraphSAGE (Sampling and Aggregating)
@@ -320,6 +326,7 @@ class GraphSAGELayer(nn.Module):
         output = F.normalize(output, p=2, dim=1)
 
         return output
+
 ```
 
 ### Graph Attention Network (GAT)
@@ -365,6 +372,7 @@ class GATLayer(nn.Module):
         output = output.view(batch_size, -1)
 
         return output
+
 ```
 
 ---
@@ -409,6 +417,7 @@ class TransE(nn.Module):
         # Margin ranking loss
         loss = torch.clamp(margin - pos_score + neg_score, min=0)
         return loss.mean()
+
 ```
 
 ### Other KG Embedding Methods
@@ -457,6 +466,7 @@ def metapath_walk(graph, start_node, metapath, walk_length):
             break
 
     return walk
+
 ```
 
 ### Heterogeneous Graph Transformer (HGT)
@@ -487,6 +497,7 @@ class HGTLayer(nn.Module):
             str(t): nn.Parameter(torch.zeros(num_heads, self.d_k, self.d_k))
             for t in range(num_edge_types)
         })
+
 ```
 
 ---
@@ -535,6 +546,7 @@ data = Data(x=x, edge_index=edge_index)
 # Train model
 model = GNNEncoder(16, 32, 64, 'gcn')
 embeddings = model(data.x, data.edge_index)
+
 ```
 
 ### Link Prediction Example
@@ -567,6 +579,7 @@ def link_prediction_loss(pos_edge_index, node_embeddings):
     neg_loss = F.binary_cross_entropy_with_logits(neg_score, torch.zeros_like(neg_score))
 
     return pos_loss + neg_loss
+
 ```
 
 ---

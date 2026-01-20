@@ -207,6 +207,7 @@ class ExperimentAnalyzer:
             'sample_size_control': len(control_metric),
             'sample_size_treatment': len(treatment_metric)
         }
+
 ```
 
 ---
@@ -313,6 +314,7 @@ duration = power.experiment_duration(
     traffic_fraction=0.5
 )
 print(f"Estimated duration: {duration} days")
+
 ```
 
 ### Sequential Testing
@@ -385,6 +387,7 @@ class SequentialTesting:
             'current_look': current_look,
             'total_looks': n_looks
         }
+
 ```
 
 ---
@@ -537,6 +540,7 @@ class BanditExperiment:
                 for v in self.variants
             }
         }
+
 ```
 
 ---
@@ -642,6 +646,7 @@ class InterleavingExperiment:
             'winner': 'a' if win_rate_a > 0.5 and p_value < 0.05 else
                      ('b' if win_rate_a < 0.5 and p_value < 0.05 else 'no_winner')
         }
+
 ```
 
 ---
@@ -728,6 +733,7 @@ guardrails = [
     {'metric': 'user_satisfaction', 'threshold': 0.02, 'direction': 'no_decrease'},
     {'metric': 'revenue', 'threshold': 0.01, 'direction': 'no_decrease'}
 ]
+
 ```
 
 ---
@@ -838,6 +844,7 @@ class BiasDetector:
             'p_value': p_value,
             'passes_aa': p_value > 0.05  # Should NOT be significant
         }
+
 ```
 
 ---
@@ -906,6 +913,7 @@ class MultivariateTest:
             }
 
         return main_effects
+
 ```
 
 ---
@@ -961,6 +969,7 @@ experiment_config = {
         "n_looks": 4
     }
 }
+
 ```
 
 ---

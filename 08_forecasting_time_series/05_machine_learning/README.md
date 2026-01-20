@@ -38,6 +38,7 @@ Transform time series into input-output pairs:
 
 ```math
 \{Y_1, Y_2, \ldots, Y_T\} \rightarrow \{(X_t, Y_{t+h})\}_{t=p}^{T-h}
+
 ```
 
 Where:
@@ -60,6 +61,7 @@ For tree ensemble methods (XGBoost, LightGBM):
 
 ```math
 \mathcal{L}(\theta) = \sum_{i=1}^{n}l(y_i, \hat{y}_i) + \sum_{k=1}^{K}\Omega(f_k)
+
 ```
 
 Where:
@@ -146,6 +148,7 @@ class TimeSeriesTransformer:
 # Usage
 transformer = TimeSeriesTransformer(lookback=14, horizon=1)
 X, y = transformer.get_X_y(df)
+
 ```
 
 ---
@@ -195,6 +198,7 @@ predictions = rf_model.predict(X_test)
 
 # Feature importance
 print(rf_model.get_feature_importance(10))
+
 ```
 
 ### Decision Tree Feature Importance Visualization
@@ -217,6 +221,7 @@ def plot_feature_importance(model, feature_names, top_n=20):
     plt.title('Feature Importance')
     plt.tight_layout()
     return plt.gcf()
+
 ```
 
 ---
@@ -282,6 +287,7 @@ xgb_model = TimeSeriesXGBoost({
 
 xgb_model.fit(X_train, y_train, X_val, y_val)
 predictions = xgb_model.predict(X_test)
+
 ```
 
 ### LightGBM
@@ -333,6 +339,7 @@ class TimeSeriesLightGBM:
 lgb_model = TimeSeriesLightGBM()
 lgb_model.fit(X_train, y_train, X_val, y_val)
 predictions = lgb_model.predict(X_test)
+
 ```
 
 ### CatBoost
@@ -377,6 +384,7 @@ class TimeSeriesCatBoost:
 cat_features = ['dayofweek', 'month', 'holiday_type']
 catboost_model = TimeSeriesCatBoost(cat_features=cat_features)
 catboost_model.fit(X_train, y_train, X_val, y_val)
+
 ```
 
 ---
@@ -418,6 +426,7 @@ class TimeSeriesLinearModel:
             'feature': feature_names,
             'coefficient': self.model.coef_
         }).sort_values('coefficient', key=abs, ascending=False)
+
 ```
 
 ---
@@ -474,6 +483,7 @@ class SimpleAverageEnsemble:
     def predict(self, X):
         predictions = np.array([m.predict(X) for m in self.models])
         return np.average(predictions, axis=0, weights=self.weights)
+
 ```
 
 ---
@@ -547,6 +557,7 @@ class MultiStepForecaster:
         if 'lag_1' in updated.index:
             updated['lag_1'] = new_value
         return updated
+
 ```
 
 ---
@@ -600,6 +611,7 @@ def tune_xgboost_optuna(X, y, n_trials=100):
     print(f"Best params: {study.best_params}")
 
     return study.best_params
+
 ```
 
 ---
@@ -693,6 +705,7 @@ pipeline = MLForecastingPipeline(config)
 pipeline.train(train_df, val_df)
 metrics, predictions = pipeline.evaluate(test_df)
 print(f"Test RMSE: {metrics['rmse']:.4f}")
+
 ```
 
 ---

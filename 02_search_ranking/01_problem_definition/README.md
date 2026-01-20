@@ -41,6 +41,7 @@ Ranked Results:
 2. Adidas Adizero Pro
 3. Saucony Endorphin Pro 3
 4. ...
+
 ```
 
 ### The Two-Stage Architecture
@@ -74,6 +75,7 @@ business_requirements = {
     "retention": "Users returning to search again",
     "advertiser_satisfaction": "For ad-supported search"
 }
+
 ```
 
 ### 3. The Relevance vs. Revenue Trade-off
@@ -93,6 +95,7 @@ latency_requirements = {
     "p99": "< 500ms",   # 99th percentile
     "p99.9": "< 1000ms" # 99.9th percentile
 }
+
 ```
 
 **Why latency matters**:
@@ -112,6 +115,7 @@ availability_requirements = {
     "failover_time": "< 30 seconds",
     "data_consistency": "Eventually consistent (acceptable)"
 }
+
 ```
 
 ### Scalability Requirements
@@ -139,6 +143,7 @@ infrastructure:
   network:
     inter_datacenter_latency: 50ms
     intra_datacenter_latency: 1ms
+
 ```
 
 ### Cost Constraints
@@ -157,6 +162,7 @@ cost_model = {
     },
     "total_budget": "$225K/month"
 }
+
 ```
 
 ### Data Constraints
@@ -186,6 +192,7 @@ online_metrics = {
     "Revenue_per_Search": "Total revenue / Total searches",
     "GMV": "Gross Merchandise Value from search"
 }
+
 ```
 
 ### Offline Metrics (Evaluation)
@@ -201,6 +208,7 @@ offline_metrics = {
     "Precision@K": "Relevant docs in top K / K",
     "Recall@K": "Relevant docs in top K / Total relevant"
 }
+
 ```
 
 ### NDCG Deep Dive
@@ -219,6 +227,7 @@ Ranking: [3, 2, 3, 0, 1] (relevance scores)
 DCG@5 = 3/1 + 2/1.58 + 3/2 + 0/2.32 + 1/2.58 = 7.14
 IDCG@5 = 3/1 + 3/1.58 + 2/2 + 1/2.32 + 0/2.58 = 6.33
 NDCG@5 = 7.14 / 7.14 = 1.0 (if this was perfect)
+
 ```
 
 ---
@@ -249,6 +258,7 @@ solution_approach:
     - GBDT with 500+ features
     - Real-time personalization
     - Business rule integration (boosting featured products)
+
 ```
 
 ### Case Study 2: Web Search (Google-style)
@@ -275,6 +285,7 @@ solution_approach:
     - Deep learning (Transformer-based)
     - Real-time signals
     - Multi-objective optimization
+
 ```
 
 ### Case Study 3: Job Search (LinkedIn-style)
@@ -300,6 +311,7 @@ solution_approach:
   ranking:
     - XGBoost with personalization
     - Multi-task learning (apply + recruiter response)
+
 ```
 
 ---

@@ -88,6 +88,7 @@ class SocialMediaModerationPipeline:
 # - 0.01% false positive rate
 # - 15,000 human reviewers for ~1% of content
 # - Cost: $0.0001 per post (ML) + $0.10 per human review
+
 ```
 
 **Key Metrics:**
@@ -212,6 +213,7 @@ class LiveStreamModerator:
 # - 99.5% uptime
 # - <0.01% false stream terminations
 # - 50 human monitors for 10,000 streams
+
 ```
 
 ---
@@ -327,6 +329,7 @@ class ProductModerationPipeline:
 # - <0.1% false positive rate on legitimate sellers
 # - Counterfeit detection: 85% precision
 # - Processing: 5M listings/day with 100 GPU cluster
+
 ```
 
 ---
@@ -433,6 +436,7 @@ class GamingModerationSystem:
 # - 40% reduction in reported harassment
 # - 15% reduction in player churn due to toxicity
 # - Cost: $2M/month for 50M concurrent players
+
 ```
 
 ---
@@ -543,6 +547,7 @@ class PrivateMessagingModeration:
 # - 99% of CSAM blocked via hash matching
 # - 80% spam reduction via metadata analysis
 # - User trust maintained
+
 ```
 
 ---

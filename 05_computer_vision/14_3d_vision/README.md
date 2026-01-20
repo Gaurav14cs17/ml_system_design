@@ -42,6 +42,7 @@ flowchart TB
     style T1 fill:#e3f2fd
     style T3 fill:#e8f5e9
     style T5 fill:#fff3e0
+
 ```
 
 ```mermaid
@@ -67,6 +68,7 @@ graph LR
     style M3 fill:#c8e6c9
     style S3 fill:#c8e6c9
     style N3 fill:#c8e6c9
+
 ```
 
 | Method | Input | Output | Use Case |
@@ -190,6 +192,7 @@ class DepthEstimator:
         depth_colored = (depth_colored[:, :, :3] * 255).astype(np.uint8)
 
         return depth_colored
+
 ```
 
 ---
@@ -267,6 +270,7 @@ class StereoMatcher:
         depth = (focal_length * baseline) / disparity
 
         return depth
+
 ```
 
 ---
@@ -352,6 +356,7 @@ class PointCloudProcessor:
         )
 
         return reg.transformation, reg.fitness
+
 ```
 
 ---

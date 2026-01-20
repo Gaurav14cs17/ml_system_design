@@ -85,6 +85,7 @@ graph TB
     style C fill:#FF9800,color:white
     style D fill:#9C27B0,color:white
     style H fill:#00BCD4,color:white
+
 ```
 
 <p align="center">
@@ -222,6 +223,7 @@ y_train, y_test = y[:train_size], y[train_size:]
 # Create DataLoaders
 train_dataset = TimeSeriesDataset(X_train, lookback, horizon)
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+
 ```
 
 ### Multivariate Sequences
@@ -245,6 +247,7 @@ def create_multivariate_sequences(data, target_col, lookback, horizon):
         y.append(values[i + lookback:i + lookback + horizon, target_col])  # Only target
 
     return np.array(X), np.array(y)
+
 ```
 
 ---
@@ -326,6 +329,7 @@ z_t = \sigma(W_z \cdot [h_{t-1}, x_t]) \quad \text{(update gate)}
 r_t = \sigma(W_r \cdot [h_{t-1}, x_t]) \quad \text{(reset gate)}
 \tilde{h}_t = \tanh(W \cdot [r_t \odot h_{t-1}, x_t]) \quad \text{(candidate)}
 h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t \quad \text{(output)}
+
 ```
 
 ### PyTorch LSTM Implementation
@@ -377,6 +381,7 @@ model = LSTMForecaster(
     output_size=7,       # predict 7 steps
     dropout=0.2
 )
+
 ```
 
 ### GRU Model
@@ -404,6 +409,7 @@ class GRUForecaster(nn.Module):
         gru_out, h_n = self.gru(x)
         out = self.fc(gru_out[:, -1, :])
         return out
+
 ```
 
 ### Bidirectional LSTM
@@ -432,6 +438,7 @@ class BiLSTMForecaster(nn.Module):
         lstm_out, _ = self.lstm(x)
         out = self.fc(lstm_out[:, -1, :])
         return out
+
 ```
 
 ### Encoder-Decoder LSTM (Seq2Seq)
@@ -486,6 +493,7 @@ class Seq2SeqLSTM(nn.Module):
                 decoder_input = prediction
 
         return torch.cat(outputs, dim=1)
+
 ```
 
 ---
@@ -588,6 +596,7 @@ model = TCN(
     kernel_size=3,
     dropout=0.2
 )
+
 ```
 
 ### 1D CNN for Time Series
@@ -627,6 +636,7 @@ class CNN1DForecaster(nn.Module):
         x = self.conv_layers(x)
         x = x.squeeze(-1)
         return self.fc(x)
+
 ```
 
 ---
@@ -639,6 +649,7 @@ The **Scaled Dot-Product Attention** is the core of Transformers:
 
 ```math
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+
 ```
 
 Where:
@@ -654,6 +665,7 @@ Allows the model to attend to different representation subspaces:
 ```math
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O
 \text{where head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+
 ```
 
 ### Positional Encoding
@@ -663,6 +675,7 @@ Since Transformers lack recurrence, we add positional information:
 ```math
 PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
 PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
+
 ```
 
 <p align="center">
@@ -783,6 +796,7 @@ model = TransformerForecaster(
     output_size=7,
     dropout=0.1
 )
+
 ```
 
 ### Informer (Efficient Transformer)
@@ -825,6 +839,7 @@ class ProbSparseAttention(nn.Module):
         out = torch.einsum('bhls,bshd->blhd', attn, V)
 
         return self.out(out.reshape(B, L, -1))
+
 ```
 
 ---
@@ -870,6 +885,7 @@ class CNNLSTMForecaster(nn.Module):
         lstm_out, _ = self.lstm(x)
         out = self.fc(lstm_out[:, -1, :])
         return out
+
 ```
 
 ### Attention-Enhanced LSTM
@@ -909,6 +925,7 @@ class AttentionLSTM(nn.Module):
         context = torch.sum(attn_weights * lstm_out, dim=1)
 
         return self.fc(context)
+
 ```
 
 ---
@@ -987,6 +1004,7 @@ def train_model(model, train_loader, val_loader, epochs=100, lr=0.001):
     # Load best model
     model.load_state_dict(torch.load('best_model.pt'))
     return model
+
 ```
 
 ### Loss Functions
@@ -1017,6 +1035,7 @@ class QuantileLoss(nn.Module):
             self.quantile * errors,
             (self.quantile - 1) * errors
         ))
+
 ```
 
 ---
@@ -1077,6 +1096,7 @@ training = TimeSeriesDataSet(
 )
 
 tft = TemporalFusionTransformer.from_dataset(training)
+
 ```
 
 ---

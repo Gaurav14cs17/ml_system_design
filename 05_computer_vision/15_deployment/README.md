@@ -62,6 +62,7 @@ flowchart LR
     style T1 fill:#e3f2fd
     style O1 fill:#fff3e0
     style S1 fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -70,6 +71,7 @@ pie title Deployment Target Distribution
     "Edge/Mobile" : 30
     "On-Premise" : 20
     "Hybrid" : 10
+
 ```
 
 ```mermaid
@@ -85,6 +87,7 @@ graph TB
     style SERVER fill:#fff3e0
     style MOBILE fill:#c8e6c9
     style EDGE fill:#ffccbc
+
 ```
 
 ---
@@ -195,6 +198,7 @@ class ModelOptimizer:
             'avg_time_ms': (elapsed / num_iterations) * 1000,
             'throughput': num_iterations / elapsed
         }
+
 ```
 
 ---
@@ -291,6 +295,7 @@ class ModelExporter:
             f.write(engine.serialize())
 
         return output_path
+
 ```
 
 ---
@@ -370,6 +375,7 @@ async def predict(file: UploadFile = File(...)):
 async def health():
     """Health check endpoint."""
     return {"status": "healthy"}
+
 ```
 
 ### Triton Inference Server
@@ -431,6 +437,7 @@ class TritonClient:
         response = self.client.infer(self.model_name, inputs, outputs=outputs)
 
         return response.as_numpy("output")
+
 ```
 
 ---
@@ -483,6 +490,7 @@ class TFLiteInference:
         output = self.interpreter.get_tensor(self.output_details[0]['index'])
 
         return output
+
 ```
 
 ---
@@ -517,6 +525,7 @@ class MonitoredModel:
             raise
         finally:
             LATENCY.observe(time.time() - start_time)
+
 ```
 
 ---

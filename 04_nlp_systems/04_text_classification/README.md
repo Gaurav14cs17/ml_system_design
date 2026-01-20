@@ -164,6 +164,7 @@ classifier.train(texts, labels)
 new_texts = ["I loved every minute of it!"]
 predictions = classifier.predict(new_texts)
 print(f"Prediction: {'Positive' if predictions[0] == 1 else 'Negative'}")
+
 ```
 
 ---
@@ -449,6 +450,7 @@ history = classifier.train(
 # Predict
 predictions = classifier.predict(["This is amazing!"])
 probabilities = classifier.predict_proba(["This is amazing!"])
+
 ```
 
 ---
@@ -551,6 +553,7 @@ class MultiLabelTrainer:
             'precision': precision_score(all_labels, all_preds, average='micro'),
             'recall': recall_score(all_labels, all_preds, average='micro')
         }
+
 ```
 
 ---
@@ -682,6 +685,7 @@ async def classify(request: ClassificationRequest):
 @app.get("/health")
 async def health():
     return {"status": "healthy", "model_loaded": service.model is not None}
+
 ```
 
 ---

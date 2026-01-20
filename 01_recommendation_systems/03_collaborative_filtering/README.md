@@ -83,6 +83,7 @@ Where:
 - rᵤᵢ = rating of user u on item i
 - r̄ᵤ = mean rating of user u
 - i ∈ items rated by both u and v
+
 ```
 
 **Rating Prediction:**
@@ -93,6 +94,7 @@ pred(u, i) = r̄ᵤ + [Σᵥ sim(u,v) × (rᵥᵢ - r̄ᵥ)] / [Σᵥ |sim(u,v)|
 Where:
 - v ∈ neighbors of u who rated item i
 - sim(u,v) = similarity between users u and v
+
 ```
 
 ### Python Implementation
@@ -254,6 +256,7 @@ if __name__ == "__main__":
     print("\nTop 3 recommendations for User 0:")
     for item_id, score in recs:
         print(f"  Item {item_id}: {score:.2f}")
+
 ```
 
 ---
@@ -287,6 +290,7 @@ Algorithm: Item-to-Item Collaborative Filtering
    a. For each item i in user's history:
       b. Retrieve similar items
       c. Aggregate and rank by weighted sum
+
 ```
 
 ### Implementation
@@ -406,6 +410,7 @@ class ItemBasedCF:
         top_indices = np.argsort(similarities)[::-1][:n]
 
         return [(idx, similarities[idx]) for idx in top_indices]
+
 ```
 
 ---
@@ -433,6 +438,7 @@ Where:
 - V: Right singular vectors (item factors)
 
 For recommendations: keep top-k singular values
+
 ```
 
 ### ALS (Alternating Least Squares)
@@ -447,6 +453,7 @@ Algorithm:
 2. Fix Q, solve for optimal P (least squares)
 3. Fix P, solve for optimal Q (least squares)
 4. Repeat until convergence
+
 ```
 
 ### Implementation
@@ -596,6 +603,7 @@ recs = mf.recommend(0, n_recommendations=3, exclude_items={0, 1, 3})
 print("\nRecommendations for user 0:")
 for item, score in recs:
     print(f"  Item {item}: {score:.2f}")
+
 ```
 
 ---
@@ -669,6 +677,7 @@ class CFServingLayer:
     def invalidate_user(self, user_id):
         """Call when user behavior changes."""
         self.redis.delete(f"recs:{user_id}")
+
 ```
 
 ---
@@ -711,6 +720,7 @@ def evaluate(predictions, ground_truth):
         'coverage': calculate_coverage(predictions, all_items),
         'diversity': calculate_diversity(predictions)
     }
+
 ```
 
 ---

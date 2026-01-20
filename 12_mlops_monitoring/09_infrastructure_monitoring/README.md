@@ -123,6 +123,7 @@ class InfrastructureMonitor:
             'gpu': self.collect_gpu_metrics(),
             'timestamp': datetime.utcnow().isoformat()
         }
+
 ```
 
 ---
@@ -245,6 +246,7 @@ class KubernetesMLMonitor:
             },
             'total_restarts': restart_count
         }
+
 ```
 
 ---
@@ -360,6 +362,7 @@ class ModelServingMonitor:
         }
 
         return recommendation
+
 ```
 
 ---
@@ -417,6 +420,7 @@ groups:
           severity: high
         annotations:
           summary: "ML deployment has unavailable replicas"
+
 ```
 
 ---

@@ -67,6 +67,7 @@ system_config = {
         "alerting": ["pagerduty", "slack"]
     }
 }
+
 ```
 
 ---
@@ -162,6 +163,7 @@ forecast_task = PythonOperator(
     dag=dag
 )
 """
+
 ```
 
 ### Online Prediction Service
@@ -263,6 +265,7 @@ async def get_forecast(request: ForecastRequest):
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "model_loaded": forecast_service.model is not None}
+
 ```
 
 ### Serving Patterns Comparison
@@ -379,6 +382,7 @@ def materialize_features():
         end_date=datetime.now()
     )
 """
+
 ```
 
 ---
@@ -500,6 +504,7 @@ threshold_config = {
 }
 
 monitor = ForecastMonitor(threshold_config)
+
 ```
 
 ---
@@ -638,6 +643,7 @@ retrain_config = {
 }
 
 pipeline = RetrainingPipeline(retrain_config)
+
 ```
 
 ---
@@ -702,6 +708,7 @@ spec:
       target:
         type: Utilization
         averageUtilization: 70
+
 ```
 
 ---

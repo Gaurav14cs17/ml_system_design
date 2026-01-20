@@ -43,6 +43,7 @@ For fraud detection, we learn a function $f: \mathcal{X} \rightarrow [0, 1]$ tha
 
 ```math
 \hat{y} = f(\mathbf{x}; \theta) \approx P(y = 1 | \mathbf{x})
+
 ```
 
 ### Loss Functions for Imbalanced Classification
@@ -51,6 +52,7 @@ For fraud detection, we learn a function $f: \mathcal{X} \rightarrow [0, 1]$ tha
 
 ```math
 \mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 **Problem**: Treats all samples equally, causing the model to optimize for the majority class.
@@ -59,6 +61,7 @@ For fraud detection, we learn a function $f: \mathcal{X} \rightarrow [0, 1]$ tha
 
 ```math
 \mathcal{L}_{\text{WCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 Where $w\_+ = \frac{N}{2 \cdot N\_+}$ and $w\_- = \frac{N}{2 \cdot N\_-}$ balance the classes.
@@ -69,6 +72,7 @@ Focal loss down-weights easy examples, focusing training on hard negatives:
 
 ```math
 \mathcal{L}_{\text{focal}} = -\frac{1}{N} \sum_{i=1}^{N} \alpha_t (1 - p_t)^\gamma \log(p_t)
+
 ```
 
 Where:
@@ -84,6 +88,7 @@ For fraud detection where $C\_{FN} \gg C\_{FP}$:
 
 ```math
 \mathcal{L}_{\text{asym}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ \lambda \cdot y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 Where $\lambda = \frac{C\_{FN}}{C\_{FP}} \approx 10-100$ penalizes missed fraud heavily.
@@ -96,6 +101,7 @@ XGBoost minimizes:
 
 ```math
 \mathcal{L}^{(t)} = \sum_{i=1}^{N} l(y_i, \hat{y}_i^{(t-1)} + f_t(\mathbf{x}_i)) + \Omega(f_t)
+
 ```
 
 Where $\Omega(f) = \gamma T + \frac{1}{2}\lambda \sum\_{j=1}^{T} w\_j^2$ is the regularization term (T = number of leaves, $w\_j$ = leaf weights).
@@ -104,6 +110,7 @@ Using second-order Taylor expansion:
 
 ```math
 \mathcal{L}^{(t)} \approx \sum_{i=1}^{N} \left[ g_i f_t(\mathbf{x}_i) + \frac{1}{2} h_i f_t^2(\mathbf{x}_i) \right] + \Omega(f_t)
+
 ```
 
 Where $g\_i = \partial\_{\hat{y}} l(y\_i, \hat{y}^{(t-1)})$ and $h\_i = \partial^2\_{\hat{y}} l(y\_i, \hat{y}^{(t-1)})$.
@@ -112,6 +119,7 @@ For weighted binary cross-entropy with `scale_pos_weight`:
 
 ```math
 g_i = \hat{y}_i - y_i \cdot w_+, \quad h_i = \hat{y}_i(1 - \hat{y}_i)
+
 ```
 
 ### Deep Learning: Neural Network Formulation
@@ -120,6 +128,7 @@ g_i = \hat{y}_i - y_i \cdot w_+, \quad h_i = \hat{y}_i(1 - \hat{y}_i)
 
 ```math
 \hat{y} = \sigma\left( \mathbf{W}^{(L)} \cdot \text{ReLU}\left( \mathbf{W}^{(L-1)} \cdots \text{ReLU}\left( \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \right) \cdots \right) + \mathbf{b}^{(L)} \right)
+
 ```
 
 With dropout regularization: $\tilde{\mathbf{h}} = \mathbf{h} \odot \mathbf{m}$ where $m\_i \sim \text{Bernoulli}(1-p)$.
@@ -130,6 +139,7 @@ For categorical features (user, merchant, MCC), learn low-dimensional representa
 
 ```math
 \mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity\_id}] \in \mathbb{R}^d
+
 ```
 
 Where $\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}$ is the learned embedding matrix.
@@ -147,12 +157,14 @@ Where $\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}$ is the learned embedd
 \mathbf{o}_t &= \sigma(\mathbf{W}_o \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o) & \text{(output gate)} \\
 \mathbf{h}_t &= \mathbf{o}_t \odot \tanh(\mathbf{c}_t) & \text{(hidden state)}
 \end{align}
+
 ```
 
 #### Transformer Self-Attention
 
 ```math
 \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d_k}} \right) V
+
 ```
 
 For transaction sequences, this captures dependencies between any pair of transactions regardless of temporal distance.
@@ -165,6 +177,7 @@ For node $v$ with neighbors $\mathcal{N}(v)$:
 
 ```math
 \mathbf{h}_v^{(k+1)} = \phi\left( \mathbf{h}_v^{(k)}, \bigoplus_{u \in \mathcal{N}(v)} \psi(\mathbf{h}_u^{(k)}, \mathbf{h}_v^{(k)}, \mathbf{e}_{uv}) \right)
+
 ```
 
 Where $\bigoplus$ is a permutation-invariant aggregation (sum, mean, max).
@@ -175,6 +188,7 @@ Attention coefficients between nodes:
 
 ```math
 \alpha_{ij} = \frac{\exp\left( \text{LeakyReLU}(\mathbf{a}^T [\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_j]) \right)}{\sum_{k \in \mathcal{N}(i)} \exp\left( \text{LeakyReLU}(\mathbf{a}^T [\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_k]) \right)}
+
 ```
 
 Updated node embedding: $\mathbf{h}\_i' = \sigma\left( \sum\_{j \in \mathcal{N}(i)} \alpha\_{ij} \mathbf{W} \mathbf{h}\_j \right)$
@@ -185,6 +199,7 @@ Updated node embedding: $\mathbf{h}\_i' = \sigma\left( \sum\_{j \in \mathcal{N}(
 
 ```math
 \mathcal{L}_{\text{AE}} = \| \mathbf{x} - \text{Dec}(\text{Enc}(\mathbf{x})) \|_2^2
+
 ```
 
 Transactions with high reconstruction error are anomalous.
@@ -193,12 +208,14 @@ Transactions with high reconstruction error are anomalous.
 
 ```math
 \mathcal{L}_{\text{VAE}} = \mathbb{E}_{q_\phi(\mathbf{z}|\mathbf{x})}[\log p_\theta(\mathbf{x}|\mathbf{z})] - D_{KL}(q_\phi(\mathbf{z}|\mathbf{x}) \| p(\mathbf{z}))
+
 ```
 
 The KL divergence term regularizes the latent space:
 
 ```math
 D_{KL} = -\frac{1}{2} \sum_{j=1}^{J} \left( 1 + \log(\sigma_j^2) - \mu_j^2 - \sigma_j^2 \right)
+
 ```
 
 ### Ensemble Theory
@@ -209,12 +226,14 @@ For $M$ models with predictions $\hat{y}\_1, \ldots, \hat{y}\_M$:
 
 ```math
 \hat{y}_{\text{ens}} = \sum_{m=1}^{M} w_m \hat{y}_m, \quad \sum_{m=1}^{M} w_m = 1
+
 ```
 
 **Optimal Weights** (minimize ensemble variance):
 
 ```math
 w_m^* \propto \frac{1}{\sigma_m^2 (1 - \rho_m)}
+
 ```
 
 Where $\sigma\_m^2$ is model variance and $\rho\_m$ is correlation with other models. Diverse, accurate models get higher weight.
@@ -282,6 +301,7 @@ class FraudLogisticRegression:
             key=lambda x: abs(x[1]),
             reverse=True
         ))
+
 ```
 
 ### Random Forest
@@ -333,6 +353,7 @@ class FraudRandomForest:
             importances = self.model.feature_importances_
 
         return dict(zip(feature_names, importances))
+
 ```
 
 ---
@@ -426,6 +447,7 @@ class FraudXGBoost:
         )
 
         return cv_results
+
 ```
 
 ### LightGBM Implementation
@@ -500,6 +522,7 @@ class FraudLightGBM:
             self.model.feature_name(),
             self.model.feature_importance(importance_type=importance_type)
         ))
+
 ```
 
 ### CatBoost for Categorical Features
@@ -558,6 +581,7 @@ class FraudCatBoost:
             return True
         except:
             return False
+
 ```
 
 ---
@@ -645,6 +669,7 @@ class FraudDeepModel(nn.Module):
         combined = torch.cat([user_emb, merchant_emb, mcc_emb, numerical], dim=1)
 
         return torch.sigmoid(self.classifier(combined))
+
 ```
 
 ### Training Loop with Focal Loss
@@ -707,6 +732,7 @@ class FraudModelTrainer:
                 all_labels.extend(batch['label'].cpu().numpy())
 
         return np.array(all_preds), np.array(all_labels)
+
 ```
 
 ---
@@ -772,6 +798,7 @@ class TransactionLSTM(nn.Module):
         last_hidden = torch.cat([hidden[-2], hidden[-1]], dim=1)
 
         return torch.sigmoid(self.classifier(last_hidden))
+
 ```
 
 ### Transformer for Transaction Sequences
@@ -859,6 +886,7 @@ class PositionalEncoding(nn.Module):
 
     def forward(self, x):
         return x + self.pe[:, :x.size(1)]
+
 ```
 
 ---
@@ -966,6 +994,7 @@ class TransactionGraphBuilder:
         x = torch.tensor(node_features, dtype=torch.float)
 
         return Data(x=x, edge_index=edge_index)
+
 ```
 
 ### Heterogeneous Graph Network
@@ -1022,6 +1051,7 @@ class HeteroFraudGNN(nn.Module):
         # Classify transactions
         transaction_embeddings = x_dict['transaction']
         return torch.sigmoid(self.classifier(transaction_embeddings))
+
 ```
 
 ---
@@ -1059,6 +1089,7 @@ class FraudIsolationForest:
         if threshold is None:
             return self.model.predict(X) == -1  # Anomaly = True
         return scores > threshold
+
 ```
 
 ### Autoencoder for Anomaly Detection
@@ -1146,6 +1177,7 @@ class VariationalAutoencoder(nn.Module):
         kl_loss = -0.5 * (1 + logvar - mu.pow(2) - logvar.exp()).sum(dim=1)
 
         return recon_loss + kl_loss
+
 ```
 
 ---
@@ -1232,6 +1264,7 @@ class StackedEnsemble:
     def predict_proba(self, X):
         meta_features = self._generate_meta_features(X)
         return self.meta_model.predict_proba(meta_features)[:, 1]
+
 ```
 
 ---
@@ -1268,6 +1301,7 @@ Start:
   - Is interpretability critical?
     - Yes → Prefer tree models, add SHAP explanations
     - No → Can use deep learning / complex ensembles
+
 ```
 
 ---
@@ -1329,6 +1363,7 @@ class OptimizedModel:
             )[0]
         else:
             return self.optimized_model(torch.tensor(X)).numpy()
+
 ```
 
 ### Model Versioning
@@ -1374,6 +1409,7 @@ class ModelRegistry:
             raise ValueError("No production model set")
 
         return self._load_model(self.models['production']['path'])
+
 ```
 
 ---

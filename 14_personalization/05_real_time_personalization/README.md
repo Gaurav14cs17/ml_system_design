@@ -137,6 +137,7 @@ class LambdaPersonalizationSystem:
         # Sort and return top-N
         results.sort(key=lambda x: x['score'], reverse=True)
         return results[:n_items]
+
 ```
 
 ---
@@ -376,6 +377,7 @@ class SessionFeatureAggregator:
         avg_dwell = np.mean([e.get('dwell_time', 0) for e in events])
 
         return [view_to_click, avg_dwell / 60]
+
 ```
 
 ---
@@ -621,6 +623,7 @@ class RealTimeSessionRecommender:
                     break
 
         return results
+
 ```
 
 ---
@@ -799,6 +802,7 @@ class ThompsonSamplingRecommender:
             self.alpha[item_id] += 1
         else:
             self.beta[item_id] += 1
+
 ```
 
 ---
@@ -888,6 +892,7 @@ class StreamingPersonalizationPipeline:
         }
 
         self.producer.send(f'user-recommendations', value=message)
+
 ```
 
 ---
@@ -1010,6 +1015,7 @@ class LowLatencyModelServer:
             ])
 
         return results
+
 ```
 
 ---

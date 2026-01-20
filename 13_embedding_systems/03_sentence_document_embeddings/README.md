@@ -56,9 +56,11 @@ How do we combine word meanings into a meaningful sentence/document representati
 ### Why Can't We Just Average?
 
 Consider these sentences:
+
 ```
 Sentence A: "The dog bit the man"
 Sentence B: "The man bit the dog"
+
 ```
 
 Same words, completely different meanings! Simple averaging loses:
@@ -100,6 +102,7 @@ def mean_pooling(sentence, word_embeddings):
 # Example
 sentence = "the cat sat on the mat"
 embedding = mean_pooling(sentence.split(), word2vec)
+
 ```
 
 **Pros**: Simple, fast, works okay
@@ -131,6 +134,7 @@ def tfidf_weighted_embedding(sentence, word_embeddings, tfidf_weights):
     weights = weights / weights.sum()  # Normalize
 
     return np.average(vectors, axis=0, weights=weights)
+
 ```
 
 ### 3. Smooth Inverse Frequency (SIF)
@@ -175,6 +179,7 @@ def compute_sif_embeddings(sentences, word_embeddings, word_frequencies, a=1e-3)
     embeddings = embeddings - np.outer(embeddings @ pc, pc)
 
     return embeddings
+
 ```
 
 **Why it works**:
@@ -202,6 +207,7 @@ Input: doc_id → Predict: [word₁, word₂, word₃, ...]
 
 Architecture:
   Document ID → Doc Embedding → Hidden → Softmax → Words in Document
+
 ```
 
 ### Implementation
@@ -236,6 +242,7 @@ inferred_vector = model.infer_vector(new_doc)
 
 # Find similar documents
 similar = model.dv.most_similar("doc_0", topn=5)
+
 ```
 
 ### Limitations of Doc2Vec
@@ -286,6 +293,7 @@ class LSTMEncoder(nn.Module):
         hidden = torch.cat([hidden[-2], hidden[-1]], dim=1)
 
         return hidden  # [batch, 2*hidden_dim]
+
 ```
 
 ### Pooling Strategies
@@ -315,6 +323,7 @@ class LSTMEncoderWithPooling(nn.Module):
             # Max pooling (masked)
             outputs = outputs.masked_fill(~mask.unsqueeze(-1), float('-inf'))
             return outputs.max(dim=1)[0]
+
 ```
 
 ---
@@ -363,6 +372,7 @@ def get_bert_embedding(text, pooling='cls'):
 # Example
 embedding = get_bert_embedding("The quick brown fox jumps over the lazy dog")
 print(embedding.shape)  # [1, 768]
+
 ```
 
 ### The [CLS] Token Problem
@@ -376,6 +386,7 @@ sim = cosine_similarity(
     get_bert_embedding("This film is amazing", pooling='cls')
 )
 # Often lower than expected!
+
 ```
 
 **Issue**: BERT's native [CLS] embedding isn't optimized for sentence similarity tasks.
@@ -396,6 +407,7 @@ inputs = tokenizer(
     return_tensors='pt'
 )
 # Input: [CLS] sent1 [SEP] sent2 [SEP]
+
 ```
 
 **Problem**: For N sentences, comparing all pairs requires N² forward passes!
@@ -433,6 +445,7 @@ print(similarities)
 # [[1.0, 0.85, 0.12],
 #  [0.85, 1.0, 0.10],
 #  [0.12, 0.10, 1.0]]
+
 ```
 
 ### Training Sentence-BERT
@@ -461,6 +474,7 @@ class SBERTClassifier(nn.Module):
         ], dim=1)
 
         return self.classifier(combined)
+
 ```
 
 #### 2. Siamese Network with Contrastive Loss
@@ -476,6 +490,7 @@ def contrastive_loss(embed_a, embed_b, label, margin=0.5):
            (1 - label) * torch.clamp(margin - distance, min=0).pow(2)
 
     return loss.mean()
+
 ```
 
 #### 3. Triplet Loss
@@ -490,6 +505,7 @@ def triplet_loss(anchor, positive, negative, margin=0.3):
 
     loss = torch.clamp(pos_dist - neg_dist + margin, min=0)
     return loss.mean()
+
 ```
 
 ### Popular SBERT Models
@@ -534,6 +550,7 @@ def unsupervised_simcse_loss(model, sentences, temperature=0.05):
     loss = F.cross_entropy(sim_matrix, labels)
 
     return loss
+
 ```
 
 #### Supervised SimCSE
@@ -561,6 +578,7 @@ def supervised_simcse_loss(model, anchors, positives, negatives, temperature=0.0
     labels = torch.zeros(len(anchors), dtype=torch.long)
 
     return F.cross_entropy(logits, labels)
+
 ```
 
 ### E5: Embeddings from Bidirectional Encoders
@@ -582,6 +600,7 @@ query_embedding = model.encode("query: What is machine learning?")
 
 # For passages
 passage_embedding = model.encode("passage: Machine learning is a subset of AI...")
+
 ```
 
 ### BGE: BAAI General Embedding
@@ -599,6 +618,7 @@ query = instruction + "What is deep learning?"
 
 query_embedding = model.encode(query)
 passage_embedding = model.encode("Deep learning uses neural networks...")
+
 ```
 
 ---
@@ -622,6 +642,7 @@ paper_embedding = specter.encode(
     "BERT: Pre-training of Deep Bidirectional Transformers. "
     "We introduce BERT, which stands for Bidirectional Encoder..."
 )
+
 ```
 
 ### Legal Text: Legal-BERT
@@ -631,6 +652,7 @@ from transformers import AutoModel, AutoTokenizer
 
 model = AutoModel.from_pretrained('nlpaueb/legal-bert-base-uncased')
 tokenizer = AutoTokenizer.from_pretrained('nlpaueb/legal-bert-base-uncased')
+
 ```
 
 ### Medical Text: BioBERT & PubMedBERT
@@ -641,6 +663,7 @@ model = AutoModel.from_pretrained('dmis-lab/biobert-base-cased-v1.2')
 
 # PubMedBERT (trained from scratch on PubMed)
 model = AutoModel.from_pretrained('microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract')
+
 ```
 
 ### Code: CodeBERT & CodeT5
@@ -661,6 +684,7 @@ def fibonacci(n):
 
 inputs = tokenizer(code, return_tensors='pt')
 outputs = model(**inputs)
+
 ```
 
 ### Financial Text: FinBERT
@@ -671,6 +695,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 # FinBERT for financial sentiment
 tokenizer = BertTokenizer.from_pretrained('ProsusAI/finbert')
 model = BertForSequenceClassification.from_pretrained('ProsusAI/finbert')
+
 ```
 
 ---
@@ -783,6 +808,7 @@ similarities = encoder.similarity(sentences[:2], sentences)
 
 print(f"Embedding shape: {embeddings.shape}")
 print(f"Similarity matrix:\n{similarities}")
+
 ```
 
 ### Fine-tuning for Domain Adaptation
@@ -883,6 +909,7 @@ dataset = SentencePairDataset(pairs, labels, tokenizer)
 dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
 
 train_contrastive(model, dataloader)
+
 ```
 
 ---
@@ -915,6 +942,7 @@ def evaluate_sts(encoder, sts_dataset):
     correlation, _ = spearmanr(pred_scores, gold_scores)
 
     return correlation
+
 ```
 
 #### 2. MTEB: Massive Text Embedding Benchmark
@@ -929,6 +957,7 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 # Run evaluation
 evaluation = MTEB(tasks=["STSBenchmark", "ArguAna", "TREC-COVID"])
 results = evaluation.run(model)
+
 ```
 
 MTEB covers:
@@ -977,6 +1006,7 @@ def evaluate_retrieval(encoder, queries, documents, relevance_labels, k=10):
         'recall@k': recall_at_k / len(queries),
         'mrr': mrr / len(queries)
     }
+
 ```
 
 ---

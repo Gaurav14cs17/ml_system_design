@@ -97,6 +97,7 @@ class Transaction:
     customer_ip: Optional[str]
     device_id: Optional[str]
     session_id: Optional[str]
+
 ```
 
 ### Transaction Types
@@ -141,6 +142,7 @@ class UserBehavior:
     total_amount_lifetime: Decimal
     previous_fraud_cases: int
     previous_disputes: int
+
 ```
 
 ### Behavioral Aggregations
@@ -175,6 +177,7 @@ SELECT
 
 FROM transactions
 GROUP BY user_id;
+
 ```
 
 ---
@@ -232,6 +235,7 @@ class DeviceFingerprint:
     device_reputation_score: float
     first_seen: datetime
     times_seen: int
+
 ```
 
 ### Session Analytics
@@ -276,6 +280,7 @@ class SessionData:
     checkout_completed: bool
     payment_attempts: int
     errors_encountered: list[str]
+
 ```
 
 ---
@@ -320,6 +325,7 @@ class ExternalDataEnricher:
             email_first_seen=email_data.first_seen if not isinstance(email_data, Exception) else None,
             consortium_alerts=consortium_data.alerts if not isinstance(consortium_data, Exception) else []
         )
+
 ```
 
 ---
@@ -371,6 +377,7 @@ t_env.execute_sql("""
         user_id,
         TUMBLE(timestamp, INTERVAL '1' HOUR)
 """)
+
 ```
 
 ### Batch Pipeline
@@ -412,6 +419,7 @@ features = transactions.withColumn(
 
 # Save to feature store
 features.write.mode("overwrite").parquet("s3://feature-store/user_features/")
+
 ```
 
 ---
@@ -499,6 +507,7 @@ class FraudDataValidator:
                 })
 
         return anomalies
+
 ```
 
 ### Data Quality Metrics Dashboard
@@ -526,6 +535,7 @@ Data Quality Metrics:
   Validity:
     - schema_violations: 0
     - out_of_range_values: < 0.01%
+
 ```
 
 ---
@@ -578,6 +588,7 @@ class NumericalPreprocessor:
             'is_round_amount': float(amount % 100 == 0),
             'amount_digit_sum': sum(int(d) for d in str(int(amount)))
         }
+
 ```
 
 ### Categorical Features
@@ -624,6 +635,7 @@ class CategoricalPreprocessor:
             'country_risk_score': country_risk_scores.get(country, 0.5),
             'distance_from_home': self.calculate_distance(country, home_country)
         }
+
 ```
 
 ### Temporal Features
@@ -673,6 +685,7 @@ class TemporalPreprocessor:
             'is_same_hour': float(current_time.hour == last_transaction_time.hour),
             'is_unusual_gap': float(delta.total_seconds() > 30 * 24 * 3600)  # > 30 days
         }
+
 ```
 
 ---
@@ -738,6 +751,7 @@ class MissingDataHandler:
         imputed = df[column].fillna(group_means).fillna(global_mean)
 
         return imputed
+
 ```
 
 ### Missing Data Patterns in Fraud Detection
@@ -776,6 +790,7 @@ Data Privacy Framework:
     - GLBA (Financial)
     - HIPAA (Healthcare)
     - SOX (Public companies)
+
 ```
 
 ### Data Anonymization Techniques
@@ -816,6 +831,7 @@ class DataAnonymizer:
         valid_groups = group_sizes[group_sizes >= k].index
 
         return df[df.set_index(quasi_identifiers).index.isin(valid_groups)]
+
 ```
 
 ### Audit Trail
@@ -856,6 +872,7 @@ class DataAccessAudit:
             'third_party_sharing': self.get_sharing_log(customer_id),
             'retention_policy': self.get_retention_policy()
         }
+
 ```
 
 ---

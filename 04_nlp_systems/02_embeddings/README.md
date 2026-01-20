@@ -20,6 +20,7 @@ Embeddings are **learned mappings** from discrete symbols to continuous vector s
 
 ```math
 E: \mathcal{V} \rightarrow \mathbb{R}^d
+
 ```
 
 where $\mathcal{V}$ is the vocabulary and $d$ is the embedding dimension.
@@ -34,6 +35,7 @@ The celebrated property of word embeddings:
 
 ```math
 \vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}
+
 ```
 
 This works because embeddings encode **relational structure** through vector arithmetic.
@@ -50,18 +52,21 @@ An embedding space $\mathbb{R}^d$ supports:
 
 ```math
 d_{\text{euclidean}}(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\|_2 = \sqrt{\sum_{i=1}^{d}(u_i - v_i)^2}
+
 ```
 
 **Cosine similarity** (direction-based):
 
 ```math
 \cos(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|} = \frac{\sum_{i=1}^{d} u_i v_i}{\sqrt{\sum_{i=1}^{d} u_i^2} \sqrt{\sum_{i=1}^{d} v_i^2}}
+
 ```
 
 **Cosine distance**:
 
 ```math
 d_{\text{cosine}}(\mathbf{u}, \mathbf{v}) = 1 - \cos(\mathbf{u}, \mathbf{v})
+
 ```
 
 ### 2. The Distributional Hypothesis
@@ -72,6 +77,7 @@ Mathematically: Words with similar **context distributions** should have similar
 
 ```math
 P(c|w) \approx P(c|w') \implies \vec{w} \approx \vec{w'}
+
 ```
 
 where $c$ represents context words.
@@ -82,12 +88,14 @@ For vocabulary $\mathcal{V}$ with $|\mathcal{V}|$ words and embedding dimension 
 
 ```math
 \mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}
+
 ```
 
 Word $w\_i$ retrieves its embedding via one-hot indexing:
 
 ```math
 \vec{w}_i = \mathbf{E}^T \mathbf{e}_i
+
 ```
 
 where $\mathbf{e}\_i$ is a one-hot vector.
@@ -106,6 +114,7 @@ where $\mathbf{e}\_i$ is a one-hot vector.
 
 ```math
 \text{tf-idf}(t, d, D) = \text{tf}(t, d) \times \text{idf}(t, D)
+
 ```
 
 **Properties**:
@@ -141,6 +150,7 @@ class TfidfEmbedding:
     def similarity(self, vec1: np.ndarray, vec2: np.ndarray) -> float:
         """Cosine similarity between TF-IDF vectors."""
         return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+
 ```
 
 ---
@@ -161,6 +171,7 @@ Word2Vec learns embeddings by predicting context from words (or vice versa).
 
 ```math
 P(w_O | w_I) = \frac{\exp(\vec{v}'_{w_O} \cdot \vec{v}_{w_I})}{\sum_{w=1}^{|\mathcal{V}|} \exp(\vec{v}'_w \cdot \vec{v}_{w_I})}
+
 ```
 
 where:
@@ -171,6 +182,7 @@ where:
 
 ```math
 \mathcal{L} = -\frac{1}{T} \sum_{t=1}^{T} \sum_{\substack{-c \leq j \leq c \\ j \neq 0}} \log P(w_{t+j} | w_t)
+
 ```
 
 ### CBOW (Continuous Bag of Words)
@@ -179,6 +191,7 @@ where:
 
 ```math
 P(w_t | w_{t-c}, \ldots, w_{t+c}) = \frac{\exp(\vec{v}_{w_t} \cdot \bar{\mathbf{h}})}{\sum_{w=1}^{|\mathcal{V}|} \exp(\vec{v}_w \cdot \bar{\mathbf{h}})}
+
 ```
 
 where $\bar{\mathbf{h}} = \frac{1}{2c} \sum\_{j \neq 0} \vec{v}\_{w\_{t+j}}$ is the average context embedding.
@@ -191,6 +204,7 @@ Computing the full softmax is expensive: $O(|\mathcal{V}|)$ per update.
 
 ```math
 \mathcal{L}_{\text{NEG}} = \log \sigma(\vec{v}'_{w_O} \cdot \vec{v}_{w_I}) + \sum_{i=1}^{k} \mathbb{E}_{w_i \sim P_n(w)} [\log \sigma(-\vec{v}'_{w_i} \cdot \vec{v}_{w_I})]
+
 ```
 
 where:
@@ -279,6 +293,7 @@ class Word2VecModel:
     def most_similar(self, word: str, topn: int = 10) -> List[Tuple[str, float]]:
         """Find most similar words by cosine similarity."""
         return self.model.wv.most_similar(word, topn=topn)
+
 ```
 
 ---
@@ -291,18 +306,21 @@ GloVe learns embeddings by factorizing the **co-occurrence matrix**.
 
 ```math
 X_{ij} = \text{count of word } j \text{ appearing in context of word } i
+
 ```
 
 ### GloVe Objective
 
 ```math
 \mathcal{J} = \sum_{i,j=1}^{|\mathcal{V}|} f(X_{ij}) \left( \vec{w}_i^T \tilde{\vec{w}}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2
+
 ```
 
 where $f(x)$ is a weighting function:
 
 ```math
 f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{otherwise} \end{cases}
+
 ```
 
 with typically $\alpha = 0.75$ and $x\_{\max} = 100$.
@@ -311,6 +329,7 @@ with typically $\alpha = 0.75$ and $x\_{\max} = 100$.
 
 ```math
 \frac{P(k|ice)}{P(k|steam)} = \begin{cases} \text{large} & k = \text{solid} \\ \text{small} & k = \text{gas} \\ \approx 1 & k = \text{water, fashion} \end{cases}
+
 ```
 
 ![Diagram 4](diagrams/diagram_04.svg)
@@ -356,6 +375,7 @@ class GloVeEmbedding:
         if norm1 == 0 or norm2 == 0:
             return 0.0
         return np.dot(v1, v2) / (norm1 * norm2)
+
 ```
 
 ---
@@ -370,12 +390,14 @@ For word $w$, let $\mathcal{G}\_w$ be its character n-grams (typically $n \in [3
 
 ```math
 \vec{w} = \sum_{g \in \mathcal{G}_w} \vec{z}_g
+
 ```
 
 **Example**: "where" with $n=3$:
 
 ```math
 \mathcal{G}_{\text{where}} = \{\text{<wh}, \text{whe}, \text{her}, \text{ere}, \text{re>}\}
+
 ```
 
 ### Advantage: OOV Handling
@@ -384,6 +406,7 @@ For unknown word $w'$, compute from known subwords:
 
 ```math
 \vec{w'} = \sum_{g \in \mathcal{G}_{w'} \cap \mathcal{G}_{\text{known}}} \vec{z}_g
+
 ```
 
 This enables embeddings for **misspellings**, **morphological variants**, and **rare words**.
@@ -412,6 +435,7 @@ BERT produces token embeddings as:
 
 ```math
 \mathbf{H} = \text{Transformer}(\mathbf{X}) \in \mathbb{R}^{L \times d}
+
 ```
 
 where $L$ is sequence length and $d = 768$ (base) or $1024$ (large).
@@ -424,12 +448,14 @@ where $L$ is sequence length and $d = 768$ (base) or $1024$ (large).
 
 ```math
 \mathbf{h}_{\text{sentence}} = \frac{1}{L}\sum_{i=1}^{L} \mathbf{h}_i
+
 ```
 
 3. **Mean pooling with attention mask**:
 
 ```math
 \mathbf{h}_{\text{sentence}} = \frac{\sum_{i=1}^{L} m_i \mathbf{h}_i}{\sum_{i=1}^{L} m_i}
+
 ```
 
 ```python
@@ -500,6 +526,7 @@ class BertEmbedding:
         emb1 = self.encode(text1)
         emb2 = self.encode(text2)
         return np.dot(emb1, emb2) / (np.linalg.norm(emb1) * np.linalg.norm(emb2))
+
 ```
 
 ---
@@ -514,6 +541,7 @@ Two sentences processed through shared BERT:
 
 ```math
 \mathbf{u} = \text{pool}(\text{BERT}(s_1)), \quad \mathbf{v} = \text{pool}(\text{BERT}(s_2))
+
 ```
 
 ### Training Objectives
@@ -522,6 +550,7 @@ Two sentences processed through shared BERT:
 
 ```math
 \mathcal{L} = \frac{1}{2}(1-y) \cdot d^2 + \frac{1}{2}y \cdot \max(0, m - d)^2
+
 ```
 
 where $d = \|\mathbf{u} - \mathbf{v}\|$, $y \in \{0,1\}$, $m$ is margin.
@@ -530,6 +559,7 @@ where $d = \|\mathbf{u} - \mathbf{v}\|$, $y \in \{0,1\}$, $m$ is margin.
 
 ```math
 \mathcal{L} = -\log \frac{\exp(\text{sim}(a_i, p_i)/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(a_i, p_j)/\tau)}
+
 ```
 
 where $(a\_i, p\_i)$ are anchor-positive pairs and temperature $\tau$ controls sharpness.
@@ -593,6 +623,7 @@ class SentenceEmbedding:
         top_indices = np.argsort(similarities)[::-1][:top_k]
         
         return [(corpus[i], float(similarities[i])) for i in top_indices]
+
 ```
 
 ---

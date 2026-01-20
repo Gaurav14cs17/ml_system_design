@@ -70,6 +70,7 @@ flowchart LR
     style A fill:#e3f2fd
     style K fill:#c8e6c9
     style L fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -95,6 +96,7 @@ graph TB
     style P1 fill:#ffecb3
     style N1 fill:#c5cae9
     style G1 fill:#ffccbc
+
 ```
 
 ---
@@ -111,12 +113,14 @@ Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 
 ```math
 (I * K)(i, j) = \sum_{u=-m}^{m} \sum_{v=-n}^{n} K(u, v) \cdot I(i-u, j-v)
+
 ```
 
 > **Note:** The kernel is flipped in true convolution. In practice, most libraries use **cross-correlation** (no flip):
 
 ```math
 (I \star K)(i, j) = \sum_{u=-m}^{m} \sum_{v=-n}^{n} K(u, v) \cdot I(i+u, j+v)
+
 ```
 
 **Properties:**
@@ -137,30 +141,35 @@ Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 
 ```math
 K_{identity} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}
+
 ```
 
 **Box Blur (Mean Filter):**
 
 ```math
 K_{box} = \frac{1}{9}\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
+
 ```
 
 **Gaussian Blur (σ = 1):**
 
 ```math
 K_{gauss} = \frac{1}{16}\begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{bmatrix}
+
 ```
 
 **Sharpen:**
 
 ```math
 K_{sharp} = \begin{bmatrix} 0 & -1 & 0 \\ -1 & 5 & -1 \\ 0 & -1 & 0 \end{bmatrix}
+
 ```
 
 **Laplacian (Edge Detection):**
 
 ```math
 K_{laplacian} = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
+
 ```
 
 ### Border Handling
@@ -181,6 +190,7 @@ padded_constant = cv2.copyMakeBorder(image, 10, 10, 10, 10, cv2.BORDER_CONSTANT,
 padded_replicate = cv2.copyMakeBorder(image, 10, 10, 10, 10, cv2.BORDER_REPLICATE)
 padded_reflect = cv2.copyMakeBorder(image, 10, 10, 10, 10, cv2.BORDER_REFLECT)
 padded_wrap = cv2.copyMakeBorder(image, 10, 10, 10, 10, cv2.BORDER_WRAP)
+
 ```
 
 ---
@@ -213,6 +223,7 @@ The 2D Gaussian function:
 
 ```math
 G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} \exp\left(-\frac{x^2 + y^2}{2\sigma^2}\right)
+
 ```
 
 **Key Properties:**
@@ -238,6 +249,7 @@ Preserves edges while smoothing - uses both spatial AND intensity distance.
 
 ```math
 BF[I](p) = \frac{1}{W_p} \sum_{q \in \Omega} G_s(\|p - q\|) \cdot G_r(|I(p) - I(q)|) \cdot I(q)
+
 ```
 
 where:
@@ -251,6 +263,7 @@ where:
 ```math
 G_s(\|p - q\|) = \exp\left(-\frac{\|p - q\|^2}{2\sigma_s^2}\right)
 G_r(|I(p) - I(q)|) = \exp\left(-\frac{|I(p) - I(q)|^2}{2\sigma_r^2}\right)
+
 ```
 
 **Effect:**
@@ -291,6 +304,7 @@ def denoise_image(image, method='bilateral'):
             return cv2.fastNlMeansDenoisingColored(image, h=10, hColor=10)
 
     raise ValueError(f"Unknown method: {method}")
+
 ```
 
 ---
@@ -307,12 +321,14 @@ The gradient of an image $I$ at point $(x, y)$ is:
 
 ```math
 \nabla I = \begin{bmatrix} \frac{\partial I}{\partial x} \\ \frac{\partial I}{\partial y} \end{bmatrix} = \begin{bmatrix} G_x \\ G_y \end{bmatrix}
+
 ```
 
 **Gradient Magnitude (Edge Strength):**
 
 ```math
 |\nabla I| = \sqrt{G_x^2 + G_y^2}
+
 ```
 
 Approximation for speed: $|\nabla I| \approx |G\_x| + |G\_y|$
@@ -321,6 +337,7 @@ Approximation for speed: $|\nabla I| \approx |G\_x| + |G\_y|$
 
 ```math
 \theta = \arctan\left(\frac{G_y}{G_x}\right)
+
 ```
 
 The gradient direction is **perpendicular** to the edge.
@@ -335,6 +352,7 @@ The gradient direction is **perpendicular** to the edge.
 
 ```math
 G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix} * I \quad\quad G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix} * I
+
 ```
 
 These kernels combine:
@@ -345,6 +363,7 @@ These kernels combine:
 
 ```math
 G_x = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} \begin{bmatrix} -1 & 0 & 1 \end{bmatrix}
+
 ```
 
 ```python
@@ -381,6 +400,7 @@ def sobel_edges(image, ksize=3):
         'magnitude': magnitude,
         'direction': direction
     }
+
 ```
 
 ### Canny Edge Detector
@@ -417,6 +437,7 @@ flowchart LR
 
     style A fill:#e3f2fd
     style I fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -435,6 +456,7 @@ graph TB
     style H1 fill:#4caf50,color:#fff
     style H2 fill:#ffeb3b
     style H3 fill:#f44336,color:#fff
+
 ```
 
 ```python
@@ -487,6 +509,7 @@ def auto_canny(image, sigma=0.33):
     edges = cv2.Canny(blurred, low_threshold, high_threshold)
 
     return edges
+
 ```
 
 ---
@@ -501,6 +524,7 @@ Morphological operations use **set theory**. A binary image is treated as a set 
 
 ```math
 A = \{(x, y) : I(x, y) = 1\}
+
 ```
 
 The **structuring element** $B$ defines a neighborhood shape.
@@ -517,6 +541,7 @@ The **structuring element** $B$ defines a neighborhood shape.
 
 ```math
 A \ominus B = \{z : B_z \subseteq A\}
+
 ```
 
 Shrinks white regions. A pixel is white only if **all** structuring element pixels are white.
@@ -525,6 +550,7 @@ Shrinks white regions. A pixel is white only if **all** structuring element pixe
 
 ```math
 A \oplus B = \{z : (\hat{B})_z \cap A \neq \emptyset\}
+
 ```
 
 Expands white regions. A pixel is white if **any** structuring element pixel touches white.
@@ -533,6 +559,7 @@ Expands white regions. A pixel is white if **any** structuring element pixel tou
 
 ```math
 A \circ B = (A \ominus B) \oplus B
+
 ```
 
 Removes small white noise (erosion) then restores shape (dilation).
@@ -541,6 +568,7 @@ Removes small white noise (erosion) then restores shape (dilation).
 
 ```math
 A \bullet B = (A \oplus B) \ominus B
+
 ```
 
 Fills small holes (dilation) then restores shape (erosion).
@@ -549,6 +577,7 @@ Fills small holes (dilation) then restores shape (erosion).
 
 ```math
 \text{gradient}(A, B) = (A \oplus B) - (A \ominus B)
+
 ```
 
 Extracts edge boundaries.
@@ -627,6 +656,7 @@ class MorphologyProcessor:
                 break
 
         return skeleton
+
 ```
 
 ---
@@ -655,24 +685,28 @@ Given a threshold $t$, pixels are divided into two classes:
 
 ```math
 \omega_0(t) = \sum_{i=0}^{t} p(i) \quad\quad \omega_1(t) = \sum_{i=t+1}^{L-1} p(i) = 1 - \omega_0(t)
+
 ```
 
 **Class means:**
 
 ```math
 \mu_0(t) = \frac{\sum_{i=0}^{t} i \cdot p(i)}{\omega_0(t)} \quad\quad \mu_1(t) = \frac{\sum_{i=t+1}^{L-1} i \cdot p(i)}{\omega_1(t)}
+
 ```
 
 **Within-class variance:**
 
 ```math
 \sigma_w^2(t) = \omega_0(t)\sigma_0^2(t) + \omega_1(t)\sigma_1^2(t)
+
 ```
 
 **Between-class variance:**
 
 ```math
 \sigma_b^2(t) = \omega_0(t)\omega_1(t)[\mu_0(t) - \mu_1(t)]^2
+
 ```
 
 **Otsu's Criterion:**
@@ -681,12 +715,14 @@ Find threshold $t^*$ that maximizes between-class variance:
 
 ```math
 t^* = \arg\max_{t} \sigma_b^2(t)
+
 ```
 
 This is equivalent to minimizing within-class variance since:
 
 ```math
 \sigma^2_{total} = \sigma_w^2 + \sigma_b^2
+
 ```
 
 ```python
@@ -752,6 +788,7 @@ def multi_otsu(image, classes=3):
     regions = np.digitize(gray, bins=thresholds)
 
     return regions, thresholds
+
 ```
 
 ---
@@ -907,6 +944,7 @@ class GeometricTransformer:
         M = cv2.getPerspectiveTransform(src_points, dst_points)
 
         return cv2.warpPerspective(image, M, (width, height))
+
 ```
 
 ---
@@ -1024,6 +1062,7 @@ class ImageEnhancer:
             return cv2.fastNlMeansDenoisingColored(image, h=strength, hColor=strength)
         else:
             return cv2.GaussianBlur(image, (5, 5), 0)
+
 ```
 
 ---
@@ -1206,6 +1245,7 @@ if __name__ == "__main__":
     print(f"Input shape: {image.shape}")
     print(f"Output shape: {processed.shape}")
     print(f"Output range: [{processed.min():.2f}, {processed.max():.2f}]")
+
 ```
 
 ---

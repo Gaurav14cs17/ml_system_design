@@ -66,6 +66,7 @@ def select_model(requirements: Dict) -> ModelConfig:
 
     # Return highest accuracy among candidates
     return max(candidates, key=lambda m: m.accuracy)
+
 ```
 
 ---
@@ -252,6 +253,7 @@ class ModerationTrainingPipeline:
             'optimizer_state_dict': self.optimizer.state_dict(),
             'config': self.config
         }, filename)
+
 ```
 
 ---
@@ -271,6 +273,7 @@ The standard loss for binary classification:
 
 ```math
 \mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 Where:
@@ -283,6 +286,7 @@ Addresses class imbalance by down-weighting easy examples:
 
 ```math
 \mathcal{L}_{\text{Focal}} = -\alpha_t (1 - p_t)^\gamma \log(p_t)
+
 ```
 
 Where:
@@ -301,6 +305,7 @@ Different treatment for positive and negative samples:
 (1 - p)^{\gamma_+} \log(p) & \text{if } y = 1 \\
 (p_m)^{\gamma_-} \log(1 - p_m) & \text{if } y = 0
 \end{cases}
+
 ```
 
 Where \(p_m = \max(p - m, 0)\) with margin \(m\) for hard threshold on negatives.
@@ -311,6 +316,7 @@ When violations are rare, weight the positive class:
 
 ```math
 \mathcal{L}_{\text{weighted}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]
+
 ```
 
 Common weighting: \(w_+ = \frac{N}{2 \cdot N_+}\), \(w_- = \frac{N}{2 \cdot N_-}\)
@@ -321,6 +327,7 @@ Prevents overconfident predictions:
 
 ```math
 y_{\text{smooth}} = y \cdot (1 - \epsilon) + \frac{\epsilon}{K}
+
 ```
 
 Where \(\epsilon\) is the smoothing factor (typically 0.1) and \(K\) is the number of classes.
@@ -439,6 +446,7 @@ class HierarchicalLoss(nn.Module):
             hierarchy_loss += violation.mean()
 
         return base_loss.mean() + self.weight_parent * hierarchy_loss
+
 ```
 
 ---
@@ -468,6 +476,7 @@ class GradientAccumulationTrainer:
             self.optimizer.zero_grad()
 
         return loss.item() * self.accumulation_steps
+
 ```
 
 ### Mixed Precision Training
@@ -499,6 +508,7 @@ class MixedPrecisionTrainer:
         self.scaler.update()
 
         return loss.item()
+
 ```
 
 ---
@@ -542,6 +552,7 @@ class DistillationTrainer:
         loss = self.alpha * soft_loss + (1 - self.alpha) * hard_loss
 
         return loss
+
 ```
 
 ### Quantization
@@ -581,6 +592,7 @@ class ModelQuantizer:
         quant.convert(model, inplace=True)
 
         return model
+
 ```
 
 ---
@@ -622,6 +634,7 @@ study.optimize(objective, n_trials=50, timeout=3600)
 
 print(f"Best trial: {study.best_trial.params}")
 print(f"Best F1: {study.best_value}")
+
 ```
 
 ---
@@ -686,6 +699,7 @@ with tracker.start_run("bert_fine_tuning_v1"):
         }, step=epoch)
 
     tracker.log_model(model, "model")
+
 ```
 
 ---

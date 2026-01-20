@@ -76,6 +76,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 EXPOSE 8080
 
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", "4"]
+
 ```
 
 ### Model Server Dockerfile
@@ -98,6 +99,7 @@ COPY triton_config.pbtxt /models/fraud_model/config.pbtxt
 EXPOSE 8000 8001 8002
 
 CMD ["tritonserver", "--model-repository=/models", "--strict-model-config=false"]
+
 ```
 
 ---
@@ -223,6 +225,7 @@ spec:
     targetPort: 8080
     protocol: TCP
   type: ClusterIP
+
 ```
 
 ### Horizontal Pod Autoscaler
@@ -283,6 +286,7 @@ spec:
       - type: Percent
         value: 10
         periodSeconds: 120
+
 ```
 
 ---
@@ -350,6 +354,7 @@ class CapacityPlanner:
             'max_peak_rps': max_peak * seasonal_multiplier,
             'recommended_capacity': max_peak * seasonal_multiplier * 1.5  # 50% buffer
         }
+
 ```
 
 ### Load Testing
@@ -396,6 +401,7 @@ class FraudScoringUser(HttpUser):
         }
 
 # Run: locust -f load_test.py --host=http://fraud-scoring:8080
+
 ```
 
 ---
@@ -447,6 +453,7 @@ spec:
   - name: canary
     labels:
       version: v1.2.0
+
 ```
 
 ### Progressive Rollout with Argo Rollouts
@@ -541,6 +548,7 @@ spec:
         address: http://prometheus:9090
         query: |
           fraud_score_psi{service="{{args.service-name}}"}
+
 ```
 
 ---
@@ -664,6 +672,7 @@ jobs:
         kubectl set image deployment/fraud-scoring \
           scoring-service=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
           -n fraud-detection-production
+
 ```
 
 ---
@@ -759,6 +768,7 @@ class ModelRegistry:
             target_version = archived[0].version
 
         self.promote_to_production(target_version)
+
 ```
 
 ---
@@ -801,6 +811,7 @@ Global:
 +-- Route53 Latency-based Routing
 +-- Global Accelerator
 +-- Cross-region Replication
+
 ```
 
 ### Traffic Routing
@@ -840,6 +851,7 @@ resource "aws_route53_record" "fraud_scoring_eu" {
     region = "eu-west-1"
   }
 }
+
 ```
 
 ---
@@ -914,6 +926,7 @@ spec:
       cpu: "500m"
       memory: "512Mi"
     type: Container
+
 ```
 
 ---

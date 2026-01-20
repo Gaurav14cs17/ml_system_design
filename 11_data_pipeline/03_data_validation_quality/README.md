@@ -29,12 +29,14 @@ Data quality can be rigorously measured using mathematical definitions:
 
 ```math
 C(D, A) = \frac{|\{d \in D : d.A \neq \text{NULL}\}|}{|D|}
+
 ```
 
 For multiple attributes $A\_1, ..., A\_k$ with weights $w\_i$:
 
 ```math
 C_{weighted}(D) = \sum_{i=1}^{k} w_i \cdot C(D, A_i), \quad \sum w_i = 1
+
 ```
 
 #### Accuracy
@@ -43,6 +45,7 @@ C_{weighted}(D) = \sum_{i=1}^{k} w_i \cdot C(D, A_i), \quad \sum w_i = 1
 
 ```math
 \text{Acc}(D, D^*) = \frac{|\{d \in D : d = d^*\}|}{|D|}
+
 ```
 
 where $D^*$ is the ground truth dataset.
@@ -51,6 +54,7 @@ When ground truth is unavailable, use **proxy accuracy** via cross-validation:
 
 ```math
 \hat{\text{Acc}} = 1 - \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
+
 ```
 
 #### Consistency
@@ -61,6 +65,7 @@ For constraint set $\Phi = \{\phi\_1, \phi\_2, ..., \phi\_m\}$:
 
 ```math
 \text{Cons}(D) = \frac{|\{d \in D : \forall \phi_i \in \Phi, \phi_i(d) = \text{true}\}|}{|D|}
+
 ```
 
 Common constraints:
@@ -76,12 +81,14 @@ Common constraints:
 
 ```math
 F(D) = 1 - \frac{\max(\text{now} - t_{latest}, 0)}{T_{max}}
+
 ```
 
 **Exponential decay model:**
 
 ```math
 F(D) = e^{-\lambda \cdot \Delta t}
+
 ```
 
 where $\lambda = \frac{\ln(2)}{\text{half\_life}}$ is the decay constant.
@@ -94,6 +101,7 @@ Measures the maximum distance between two cumulative distribution functions:
 
 ```math
 D_{KS} = \sup_x |F_{reference}(x) - F_{new}(x)|
+
 ```
 
 **Null hypothesis** $H\_0$: Both samples come from the same distribution.
@@ -106,6 +114,7 @@ For category distributions:
 
 ```math
 \chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}
+
 ```
 
 where $O\_i$ = observed count, $E\_i$ = expected count.
@@ -118,6 +127,7 @@ Measures shift between reference and current distributions:
 
 ```math
 \text{PSI} = \sum_{i=1}^{k} (p_i^{new} - p_i^{ref}) \cdot \ln\left(\frac{p_i^{new}}{p_i^{ref}}\right)
+
 ```
 
 | PSI Value | Interpretation |
@@ -134,6 +144,7 @@ For normally distributed data:
 
 ```math
 z_i = \frac{x_i - \mu}{\sigma}
+
 ```
 
 **Outlier threshold:** $|z\_i| > 3$ (captures 99.7% of normal data)
@@ -144,6 +155,7 @@ Robust to non-normal distributions:
 
 ```math
 \text{IQR} = Q_3 - Q_1
+
 ```
 
 **Lower bound:** $Q\_1 - 1.5 \times \text{IQR}$
@@ -155,6 +167,7 @@ For detecting outliers in multivariate data:
 
 ```math
 D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu})}
+
 ```
 
 where $\boldsymbol{\mu}$ is the mean vector and $\Sigma$ is the covariance matrix.
@@ -167,6 +180,7 @@ Under normality, $D\_M^2$ follows a $\chi^2\_p$ distribution (p = dimensions).
 
 ```math
 H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
+
 ```
 
 Low entropy → highly concentrated distribution
@@ -178,6 +192,7 @@ Between features $X$ and $Y$:
 
 ```math
 I(X; Y) = \sum_{x,y} p(x,y) \log_2 \frac{p(x,y)}{p(x)p(y)}
+
 ```
 
 High $I(X; Y)$ between features may indicate redundancy.
@@ -267,6 +282,7 @@ def validate_batch(records: List[dict]) -> tuple:
             })
 
     return valid, invalid
+
 ```
 
 ### 2. Great Expectations Framework
@@ -325,6 +341,7 @@ validator.save_expectation_suite(discard_failed_expectations=False)
 # Run validation
 results = context.run_checkpoint(checkpoint_name="training_data_checkpoint")
 print(f"Validation passed: {results.success}")
+
 ```
 
 ### 3. Statistical Validation
@@ -466,6 +483,7 @@ validator = StatisticalValidator(reference_stats)
 new_ages = np.random.normal(38, 15, 1000)  # Slightly drifted
 drift_result = validator.check_distribution_drift("age", new_ages)
 print(f"Age distribution drifted: {drift_result[0]}, p-value: {drift_result[1]:.4f}")
+
 ```
 
 ### 4. TensorFlow Data Validation (TFDV)
@@ -511,6 +529,7 @@ schema.default_environment.append('SERVING')
 
 # Some features only in training (like labels)
 tfdv.get_feature(schema, 'label').not_in_environment.append('SERVING')
+
 ```
 
 ---
@@ -650,6 +669,7 @@ engine.add_rule(QualityRule(
 # Run checks
 results = engine.run_checks(transactions_df)
 print(f"Quality check {'PASSED' if results['summary']['overall_pass'] else 'FAILED'}")
+
 ```
 
 ---
@@ -732,6 +752,7 @@ class RealTimeQualityMonitor:
         if drift_score > 0.1:
             # Alert on significant drift
             self.send_drift_alert(column, drift_score)
+
 ```
 
 ---
@@ -826,6 +847,7 @@ class SLOMonitor:
         }
 
         self.send_alert(alert)
+
 ```
 
 ---
@@ -850,6 +872,7 @@ class DataValidationPipeline:
 
         # Stage 3: Proceed with valid data
         return self.process(data)
+
 ```
 
 ### 2. Layer Your Validation
@@ -864,6 +887,7 @@ Layer 3: Statistical (distributions, outliers)
 Layer 4: Cross-Dataset (consistency, freshness)
     ↓
 Layer 5: ML-Specific (feature drift, training-serving skew)
+
 ```
 
 ### 3. Version Your Expectations
@@ -889,6 +913,7 @@ expectations_v2 = {
         "credit_score": {"min": 300, "max": 850}  # New column
     }
 }
+
 ```
 
 ---

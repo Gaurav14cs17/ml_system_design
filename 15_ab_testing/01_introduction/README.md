@@ -70,6 +70,7 @@ ab_test_results = {
         'revenue_per_user': 10.89     # -12.5% (worse!)
     }
 }
+
 ```
 
 ### 2. Understanding Causal Impact
@@ -126,6 +127,7 @@ class MLExperimentationCycle:
                 self.learnings.append(analysis.negative_insights)
 
             self.iteration += 1
+
 ```
 
 ---
@@ -163,6 +165,7 @@ experiment_config = {
     'duration_days': 14,
     'minimum_detectable_effect': 0.02  # 2% relative lift
 }
+
 ```
 
 #### Multi-Armed Bandits
@@ -180,6 +183,7 @@ mab_config = {
     'reward_metric': 'click_through_rate',
     'exploration_phase': 1000  # samples
 }
+
 ```
 
 #### Interleaving
@@ -197,6 +201,7 @@ interleaving_config = {
     'metric': 'preference_score',
     'clicks_needed': 10000
 }
+
 ```
 
 ---
@@ -255,6 +260,7 @@ class ABTestImplementation:
             'timestamp': datetime.now()
         }
         self.event_logger.log(conversion_event)
+
 ```
 
 ### Phase 3: Running (1-4 weeks)
@@ -302,6 +308,7 @@ def analyze_ab_test(control_data, treatment_data, alpha=0.05):
         'is_significant': p_value < alpha,
         'confidence_interval': (ci_lower, ci_upper)
     }
+
 ```
 
 ### Phase 5: Decision & Rollout
@@ -394,6 +401,7 @@ proxy_metric_mapping = {
     'subscription_renewal': 'feature_usage_frequency',
     'long_term_retention': 'day_7_retention'
 }
+
 ```
 
 ### Challenge 2: Network Effects
@@ -424,6 +432,7 @@ def bonferroni_correction(p_values, alpha=0.05):
 # Example: 20 metrics tested
 # Original α = 0.05
 # Adjusted α = 0.05/20 = 0.0025
+
 ```
 
 ### Challenge 4: Novelty and Primacy Effects

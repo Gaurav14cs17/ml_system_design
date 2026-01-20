@@ -186,6 +186,7 @@ User4     3      ?      ?      ?      ?   ...   ?
 UserM     ?      ?      2      ?      ?   ...   ?
 
 Typical sparsity: 99%+ empty cells
+
 ```
 
 ---

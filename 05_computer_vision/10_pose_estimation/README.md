@@ -41,6 +41,7 @@ flowchart LR
 
     style D fill:#fff3e0
     style F fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -66,6 +67,7 @@ graph TB
     end
 
     Keypoints --> Apps
+
 ```
 
 | Keypoint Set | Count | Details | Use Case |
@@ -220,6 +222,7 @@ class FitnessTracker:
 
         cap.release()
         return count
+
 ```
 
 ---
@@ -275,6 +278,7 @@ class MultiPersonPose:
             })
 
         return all_poses
+
 ```
 
 ---

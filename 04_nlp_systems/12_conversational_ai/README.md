@@ -122,6 +122,7 @@ print(response)
 
 response = bot.chat("What's the best time to visit?")
 print(response)
+
 ```
 
 ---
@@ -308,6 +309,7 @@ agent.register_tool(Tool(
 ))
 
 response = agent.chat("What's the weather in Tokyo and find me flights from NYC to Tokyo next week?")
+
 ```
 
 ---
@@ -432,6 +434,7 @@ state = state_tracker.update(intent["intent"], slots)
 print(f"Intent: {intent['intent']}")
 print(f"Slots: {slots}")
 print(f"State: {state}")
+
 ```
 
 ---
@@ -520,6 +523,7 @@ class ConversationManager:
     def reset(self):
         self.state = ConversationState.GREETING
         self.context = {}
+
 ```
 
 ---

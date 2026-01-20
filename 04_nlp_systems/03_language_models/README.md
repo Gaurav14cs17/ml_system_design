@@ -20,12 +20,14 @@ A **Language Model (LM)** defines a probability distribution over sequences of t
 
 ```math
 P(w_1, w_2, \ldots, w_n)
+
 ```
 
 Using the chain rule of probability:
 
 ```math
 P(w_1, w_2, \ldots, w_n) = \prod_{i=1}^{n} P(w_i | w_1, w_2, \ldots, w_{i-1})
+
 ```
 
 The core task: **estimate conditional probabilities** $P(w\_i | w\_{1:i-1})$.
@@ -49,6 +51,7 @@ For a vocabulary $\mathcal{V}$, a language model defines:
 
 ```math
 P: \mathcal{V}^* \rightarrow [0, 1]
+
 ```
 
 satisfying $\sum\_{w\_1, \ldots, w\_n \in \mathcal{V}^*} P(w\_1, \ldots, w\_n) = 1$
@@ -59,12 +62,14 @@ satisfying $\sum\_{w\_1, \ldots, w\_n \in \mathcal{V}^*} P(w\_1, \ldots, w\_n) =
 
 ```math
 \text{PPL}(W) = P(w_1, w_2, \ldots, w_N)^{-1/N}
+
 ```
 
 Equivalently using cross-entropy:
 
 ```math
 \text{PPL}(W) = \exp\left(-\frac{1}{N}\sum_{i=1}^{N} \log P(w_i | w_{1:i-1})\right) = \exp(H(W))
+
 ```
 
 **Interpretation**: Average branching factor - lower is better.
@@ -77,6 +82,7 @@ Training objective for language modeling:
 
 ```math
 \mathcal{L}_{CE} = -\frac{1}{N}\sum_{i=1}^{N} \log P_\theta(w_i | w_{1:i-1})
+
 ```
 
 This minimizes KL divergence from the true distribution.
@@ -95,6 +101,7 @@ The simplest approach: approximate with **Markov assumption** of order $n-1$:
 
 ```math
 P(w_i | w_1, \ldots, w_{i-1}) \approx P(w_i | w_{i-n+1}, \ldots, w_{i-1})
+
 ```
 
 ### N-gram Estimation
@@ -103,6 +110,7 @@ Using Maximum Likelihood Estimation (MLE):
 
 ```math
 P_{\text{MLE}}(w_n | w_1, \ldots, w_{n-1}) = \frac{C(w_1, \ldots, w_n)}{C(w_1, \ldots, w_{n-1})}
+
 ```
 
 where $C(\cdot)$ denotes count in training corpus.
@@ -115,12 +123,14 @@ where $C(\cdot)$ denotes count in training corpus.
 
 ```math
 P_{\text{Laplace}}(w_n | w_{1:n-1}) = \frac{C(w_{1:n}) + 1}{C(w_{1:n-1}) + |\mathcal{V}|}
+
 ```
 
 **Kneser-Ney Smoothing** (state-of-the-art for n-grams):
 
 ```math
 P_{KN}(w_i | w_{i-1}) = \frac{\max(C(w_{i-1}, w_i) - d, 0)}{C(w_{i-1})} + \lambda(w_{i-1}) P_{\text{cont}}(w_i)
+
 ```
 
 where $d$ is discount, $\lambda$ is interpolation weight, and $P\_{\text{cont}}$ is continuation probability.
@@ -233,6 +243,7 @@ class NgramLM:
             context = tuple(list(context[1:]) + [word])
         
         return generated
+
 ```
 
 ---
@@ -248,6 +259,7 @@ For input sequence $\mathbf{x}\_1, \mathbf{x}\_2, \ldots, \mathbf{x}\_T$:
 ```math
 \mathbf{h}_t = \tanh(\mathbf{W}_{hh}\mathbf{h}_{t-1} + \mathbf{W}_{xh}\mathbf{x}_t + \mathbf{b}_h)
 \mathbf{y}_t = \text{softmax}(\mathbf{W}_{hy}\mathbf{h}_t + \mathbf{b}_y)
+
 ```
 
 **Parameters**:
@@ -263,6 +275,7 @@ During backpropagation through time (BPTT):
 
 ```math
 \frac{\partial \mathcal{L}}{\partial \mathbf{h}_t} = \frac{\partial \mathcal{L}}{\partial \mathbf{h}_T} \prod_{k=t}^{T-1} \frac{\partial \mathbf{h}_{k+1}}{\partial \mathbf{h}_k}
+
 ```
 
 If $\|\frac{\partial \mathbf{h}\_{k+1}}{\partial \mathbf{h}\_k}\| < 1$ consistently, gradients vanish exponentially.
@@ -279,36 +292,42 @@ LSTMs introduce **gating mechanisms** to control information flow.
 
 ```math
 \mathbf{f}_t = \sigma(\mathbf{W}_f[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_f)
+
 ```
 
 **Input gate** (what new information to store):
 
 ```math
 \mathbf{i}_t = \sigma(\mathbf{W}_i[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_i)
+
 ```
 
 **Candidate cell state**:
 
 ```math
 \tilde{\mathbf{c}}_t = \tanh(\mathbf{W}_c[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_c)
+
 ```
 
 **Cell state update**:
 
 ```math
 \mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t
+
 ```
 
 **Output gate**:
 
 ```math
 \mathbf{o}_t = \sigma(\mathbf{W}_o[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o)
+
 ```
 
 **Hidden state**:
 
 ```math
 \mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{c}_t)
+
 ```
 
 where $\odot$ denotes element-wise multiplication and $\sigma$ is sigmoid.
@@ -321,6 +340,7 @@ The cell state $\mathbf{c}\_t$ provides a **gradient highway**:
 
 ```math
 \frac{\partial \mathbf{c}_T}{\partial \mathbf{c}_t} = \prod_{k=t}^{T-1} \mathbf{f}_{k+1}
+
 ```
 
 When forget gates are close to 1, gradients flow unchanged.
@@ -339,12 +359,14 @@ Given input embeddings $\mathbf{X} \in \mathbb{R}^{n \times d}$:
 
 ```math
 \mathbf{Q} = \mathbf{X}\mathbf{W}_Q, \quad \mathbf{K} = \mathbf{X}\mathbf{W}_K, \quad \mathbf{V} = \mathbf{X}\mathbf{W}_V
+
 ```
 
 **Scaled Dot-Product Attention**:
 
 ```math
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}
+
 ```
 
 **Why scale by $\sqrt{d\_k}$?**
@@ -359,6 +381,7 @@ Multiple attention heads capture different relationship types:
 
 ```math
 \text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)\mathbf{W}_O
+
 ```
 
 where $\text{head}\_i = \text{Attention}(\mathbf{Q}\mathbf{W}\_Q^i, \mathbf{K}\mathbf{W}\_K^i, \mathbf{V}\mathbf{W}\_V^i)$
@@ -379,6 +402,7 @@ Self-attention is **permutation equivariant** - we need to inject position infor
 ```math
 PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d}}\right)
 PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d}}\right)
+
 ```
 
 **Why sinusoids?**
@@ -479,6 +503,7 @@ class TransformerBlock(nn.Module):
         x = x + ffn_out
         
         return x
+
 ```
 
 ---
@@ -493,6 +518,7 @@ Randomly mask 15% of tokens, predict original tokens:
 
 ```math
 \mathcal{L}_{MLM} = -\mathbb{E}\left[\log P(w_i | w_{\setminus i})\right]
+
 ```
 
 for masked positions $i$.
@@ -512,6 +538,7 @@ Binary classification: Is sentence B the actual next sentence after A?
 
 ```math
 \mathcal{L}_{NSP} = -\mathbb{E}[\log P(\text{IsNext} | \text{[CLS]})]
+
 ```
 
 Note: Later work (RoBERTa) showed NSP may not be necessary.
@@ -526,6 +553,7 @@ GPT uses **causal (autoregressive) language modeling**.
 
 ```math
 \mathcal{L}_{CLM} = -\sum_{i=1}^{n} \log P(w_i | w_1, \ldots, w_{i-1})
+
 ```
 
 ### Causal Masking
@@ -534,6 +562,7 @@ Attention scores are masked to prevent attending to future positions:
 
 ```math
 \text{CausalAttention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}} + \mathbf{M}\right)\mathbf{V}
+
 ```
 
 where $\mathbf{M}\_{ij} = \begin{cases} 0 & \text{if } i \geq j \\ -\infty & \text{if } i < j \end{cases}$
@@ -546,12 +575,14 @@ where $\mathbf{M}\_{ij} = \begin{cases} 0 & \text{if } i \geq j \\ -\infty & \te
 
 ```math
 w_t = \arg\max_w P(w | w_{1:t-1})
+
 ```
 
 **Temperature sampling**:
 
 ```math
 P_\tau(w) = \frac{\exp(z_w / \tau)}{\sum_{w'} \exp(z_{w'} / \tau)}
+
 ```
 
 **Top-k sampling**: Sample from top $k$ most likely tokens.
@@ -589,6 +620,7 @@ def top_p_sampling(logits: torch.Tensor, p: float = 0.9, temperature: float = 1.
     # Sample
     probs = F.softmax(logits, dim=-1)
     return torch.multinomial(probs, num_samples=1)
+
 ```
 
 ---

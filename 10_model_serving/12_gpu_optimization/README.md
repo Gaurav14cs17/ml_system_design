@@ -103,6 +103,7 @@ flowchart LR
 
     style Naive fill:#ffcdd2
     style Optimized fill:#c8e6c9
+
 ```
 
 ```mermaid
@@ -124,6 +125,7 @@ mindmap
       Data Parallel
       Model Parallel
       MIG/MPS Sharing
+
 ```
 
 ```mermaid
@@ -132,6 +134,7 @@ xychart-beta
     x-axis ["1", "4", "8", "16", "32", "64"]
     y-axis "RPS" 0 --> 600
     bar [50, 150, 280, 400, 500, 520]
+
 ```
 
 ---
@@ -203,6 +206,7 @@ class StreamedInference:
 model = StreamedInference(my_model, num_streams=4)
 batches = [torch.randn(32, 3, 224, 224) for _ in range(4)]
 results = model.predict_batch_parallel(batches)
+
 ```
 
 ### Memory Pinning
@@ -235,6 +239,7 @@ class OptimizedDataLoader:
         self.gpu_buffer.copy_(self.input_buffer, non_blocking=True)
 
         return self.gpu_buffer
+
 ```
 
 ---
@@ -339,6 +344,7 @@ class DynamicBatcher:
             # Check if more requests arrived
             if self.queue:
                 asyncio.create_task(self._process_batch())
+
 ```
 
 ### Padding for Variable-Length Inputs
@@ -391,6 +397,7 @@ def bucket_by_length(
         buckets.append([sequences[idx] for idx in bucket_indices])
 
     return buckets
+
 ```
 
 ---
@@ -467,6 +474,7 @@ class MultiGPUServer:
 # Usage
 server = MultiGPUServer(model, gpu_ids=[0, 1, 2, 3])
 result = server.predict_parallel(large_batch)
+
 ```
 
 ---
@@ -522,6 +530,7 @@ torch.cuda.memory.set_per_process_memory_fraction(0.8)
 with torch.cuda.amp.autocast():  # Mixed precision
     with torch.inference_mode():  # Faster than no_grad()
         output = model(input_batch)
+
 ```
 
 ---
@@ -543,6 +552,7 @@ nvidia-smi mig -lgi
 # Assign to containers
 docker run --gpus '"device=0:0"' my-ml-server:v1  # First partition
 docker run --gpus '"device=0:1"' my-ml-server:v2  # Second partition
+
 ```
 
 ### CUDA MPS (Multi-Process Service)
@@ -560,6 +570,7 @@ echo "set_default_active_thread_percentage 33" | nvidia-cuda-mps-control
 CUDA_VISIBLE_DEVICES=0 python server1.py &
 CUDA_VISIBLE_DEVICES=0 python server2.py &
 CUDA_VISIBLE_DEVICES=0 python server3.py &
+
 ```
 
 ---
@@ -635,6 +646,7 @@ def benchmark_throughput(model, batch_size: int, num_batches: int = 100):
     print(f"Latency per batch: {latency_per_batch:.2f} ms")
 
     return throughput, latency_per_batch
+
 ```
 
 ---

@@ -176,6 +176,7 @@ class Seq2SeqMT(nn.Module):
             input = tgt[:, t] if teacher_force else output.argmax(1)
 
         return outputs
+
 ```
 
 ---
@@ -291,6 +292,7 @@ class TransformerMT(nn.Module):
                 break
 
         return tgt
+
 ```
 
 ---
@@ -334,6 +336,7 @@ class TranslationService:
 translator = TranslationService("en", "fr")
 result = translator.translate(["Hello, how are you?"])
 print(result)  # ["Bonjour, comment allez-vous?"]
+
 ```
 
 ---
@@ -355,6 +358,7 @@ def evaluate_translation(hypotheses: List[str], references: List[str]):
     """Evaluate translation quality."""
     bleu = corpus_bleu(hypotheses, [references])
     return {'bleu': bleu.score, 'signature': bleu.get_signature()}
+
 ```
 
 ---

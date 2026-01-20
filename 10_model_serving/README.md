@@ -141,6 +141,7 @@ flowchart TB
     style Serving fill:#fff9c4
     style Storage fill:#f8bbd9
     style Observability fill:#d1c4e9
+
 ```
 
 ---
@@ -173,6 +174,7 @@ sequenceDiagram
 
     S-->>G: Response
     G-->>C: JSON Response
+
 ```
 
 ---
@@ -207,6 +209,7 @@ flowchart LR
     style Development fill:#e3f2fd
     style Deployment fill:#f1f8e9
     style Operations fill:#fce4ec
+
 ```
 
 ---
@@ -229,6 +232,7 @@ quadrantChart
     Batch Jobs: [0.8, 0.2]
     Streaming: [0.6, 0.6]
     GPU Batched: [0.85, 0.75]
+
 ```
 
 ### Serving Patterns Comparison
@@ -259,6 +263,7 @@ flowchart LR
     style Online fill:#c8e6c9
     style Batch fill:#bbdefb
     style Stream fill:#fff9c4
+
 ```
 
 ---
@@ -294,6 +299,7 @@ mindmap
       Prometheus
       Grafana
       Evidently
+
 ```
 
 ---
@@ -308,6 +314,7 @@ pie showData
     "Network" : 10
     "Monitoring" : 5
     "Other" : 5
+
 ```
 
 | Metric | Target (Real-time) | Target (Batch) |
@@ -344,6 +351,7 @@ flowchart TB
     style BlueGreen fill:#bbdefb
     style Canary fill:#fff9c4
     style Shadow fill:#e1bee7
+
 ```
 
 ---
@@ -359,6 +367,7 @@ cat README.md
 
 # Run example code (where applicable)
 python examples/basic_server.py
+
 ```
 
 ---
@@ -378,6 +387,7 @@ flowchart LR
 
     style A fill:#e3f2fd
     style F fill:#c8e6c9
+
 ```
 
 1. **Sequential Learning**: Follow topics 1-15 in order for comprehensive understanding
@@ -428,6 +438,7 @@ graph TB
     style Data fill:#fff3e0
     style Special fill:#fce4ec
     style Ops fill:#f3e5f5
+
 ```
 
 ---

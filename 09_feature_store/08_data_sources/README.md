@@ -72,6 +72,7 @@ kafka_source = KafkaSource(
         }"""
     )
 )
+
 ```
 
 ---
@@ -170,6 +171,7 @@ def run_batch_ingestion(ds, **kwargs):
         features,
         path="s3://feature-store/user_features/"
     )
+
 ```
 
 ---
@@ -245,6 +247,7 @@ class StreamIngestionPipeline:
             SELECT user_id, click_count_5min, unique_pages_5min
             FROM user_click_features
         """)
+
 ```
 
 ---
@@ -279,6 +282,7 @@ class StreamIngestionPipeline:
     "transforms.route.replacement": "$3-cdc"
   }
 }
+
 ```
 
 ### Processing CDC Events
@@ -305,6 +309,7 @@ def process_cdc_event(event: dict) -> dict:
         "data": record,
         "timestamp": event.get("ts_ms")
     }
+
 ```
 
 ---
@@ -390,6 +395,7 @@ class KafkaConnector(DataConnector):
     def close(self):
         if self.consumer:
             self.consumer.close()
+
 ```
 
 ---
@@ -466,6 +472,7 @@ def ingest_with_validation(df, feature_name: str):
 
     # Proceed with ingestion
     write_to_feature_store(df)
+
 ```
 
 ---

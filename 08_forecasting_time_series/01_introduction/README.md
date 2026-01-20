@@ -41,6 +41,7 @@ graph LR
     style D fill:#4CAF50,color:white
     style E fill:#4CAF50,color:white
     style G fill:#2196F3,color:white
+
 ```
 
 ### Key Characteristics
@@ -94,6 +95,7 @@ multivariate_ts = pd.DataFrame({
     'humidity': [65, 70, 68, 72, 69],
     'pressure': [1013, 1012, 1015, 1010, 1014]
 }, index=pd.date_range('2024-01-01', periods=5, freq='D'))
+
 ```
 
 ---
@@ -126,6 +128,7 @@ flowchart TD
     style B fill:#388E3C,color:white
     style C fill:#F57C00,color:white
     style D fill:#7B1FA2,color:white
+
 ```
 
 <p align="center">
@@ -180,6 +183,7 @@ graph TB
     style C fill:#FF5722,color:white
     style D fill:#9C27B0,color:white
     style E fill:#FF9800,color:white
+
 ```
 
 ### 1. 📈 Forecasting (Prediction)
@@ -347,6 +351,7 @@ For a seasonal component with period $m$, we can express it as:
 
 ```math
 S_t = \sum_{k=1}^{K} \left[ a_k \cos\left(\frac{2\pi kt}{m}\right) + b_k \sin\left(\frac{2\pi kt}{m}\right) \right]
+
 ```
 
 Where $K \leq \lfloor m/2 \rfloor$ harmonics capture different frequency components of the seasonality.
@@ -441,6 +446,7 @@ residual = decomposition.resid
 fig = decomposition.plot()
 plt.tight_layout()
 plt.show()
+
 ```
 
 ### Additive vs Multiplicative Decomposition
@@ -468,6 +474,7 @@ A stochastic process $\{Y\_t\}$ is **weakly stationary** (or covariance stationa
 \mathbb{E}[Y_t] = \mu \quad \forall t \quad \text{(constant mean)}
 \text{Var}(Y_t) = \sigma^2 < \infty \quad \forall t \quad \text{(constant finite variance)}
 \text{Cov}(Y_t, Y_{t+h}) = \gamma(h) \quad \forall t \quad \text{(covariance depends only on lag } h\text{)}
+
 ```
 
 ### The Autocovariance Function
@@ -476,12 +483,14 @@ For a stationary process, the **autocovariance function** is:
 
 ```math
 \gamma(h) = \text{Cov}(Y_t, Y_{t+h}) = \mathbb{E}[(Y_t - \mu)(Y_{t+h} - \mu)]
+
 ```
 
 And the **autocorrelation function (ACF)** is:
 
 ```math
 \rho(h) = \frac{\gamma(h)}{\gamma(0)} = \frac{\text{Cov}(Y_t, Y_{t+h})}{\text{Var}(Y_t)}
+
 ```
 
 **Properties:**
@@ -523,6 +532,7 @@ def check_stationarity(series):
 
 # Usage
 is_stationary = check_stationarity(time_series)
+
 ```
 
 ### Making Series Stationary
@@ -568,6 +578,7 @@ mindmap
       Traffic Flow
       Ridership
       Delay Prediction
+
 ```
 
 <p align="center">
@@ -698,6 +709,7 @@ def handle_missing_data(series, method='linear'):
         return decomp.trend + decomp.seasonal
     else:
         raise ValueError(f"Unknown method: {method}")
+
 ```
 
 ---
@@ -726,6 +738,7 @@ Building production-ready time series forecasting systems requires careful consi
 - **Caching Strategy**: Cache forecasts with appropriate TTL
 
 #### 4. Monitoring & Maintenance
+
 ```python
 # Example: Forecast monitoring metrics
 class ForecastMonitor:
@@ -749,6 +762,7 @@ class ForecastMonitor:
     def trigger_alert(self, mape):
         # Send alert to monitoring system
         print(f"⚠️ ALERT: MAPE {mape:.2f}% exceeds threshold {self.threshold}%")
+
 ```
 
 ---

@@ -123,6 +123,7 @@ class SearchService:
 async def search_endpoint(request: SearchRequest):
     service = SearchService()
     return await service.search(request)
+
 ```
 
 ### Parallel Processing
@@ -191,6 +192,7 @@ class ParallelSearchService:
         )
 
         return ranked
+
 ```
 
 ---
@@ -292,6 +294,7 @@ class QueryResultCache:
             key_parts.append(hashlib.md5(filter_str.encode()).hexdigest())
 
         return ':'.join(key_parts)
+
 ```
 
 ---
@@ -360,6 +363,7 @@ class SearchLoadBalancer:
                     self.backend_health[backend] = False
 
             await asyncio.sleep(5)  # Check every 5 seconds
+
 ```
 
 ---
@@ -465,6 +469,7 @@ class RankingService:
         ranked.sort(key=lambda x: x.score, reverse=True)
 
         return ranked
+
 ```
 
 ---
@@ -538,6 +543,7 @@ class LatencyOptimizer:
             recent_latency * 1.5,
             default_timeout
         )
+
 ```
 
 ---
@@ -605,6 +611,7 @@ class MetricsMiddleware:
         search_latency.labels(endpoint=endpoint).observe(duration)
 
         return response
+
 ```
 
 ---

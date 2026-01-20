@@ -92,6 +92,7 @@ def lambda_handler(event, context):
             'statusCode': 500,
             'body': json.dumps({'error': str(e)})
         }
+
 ```
 
 ### Lambda Deployment with SAM
@@ -153,6 +154,7 @@ Outputs:
   ApiEndpoint:
     Description: "API Gateway endpoint URL"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/predict"
+
 ```
 
 ### Provisioned Concurrency
@@ -169,6 +171,7 @@ Resources:
       AutoPublishAlias: live
       DeploymentPreference:
         Type: Linear10PercentEvery1Minute
+
 ```
 
 ---
@@ -223,6 +226,7 @@ def predict(request):
 
     except Exception as e:
         return jsonify({'error': str(e), 'status': 'error'}), 500
+
 ```
 
 ### Deployment
@@ -238,6 +242,7 @@ gcloud functions deploy ml-inference \
     --min-instances 1 \
     --max-instances 100 \
     --set-env-vars MODEL_PATH=/workspace/model.onnx
+
 ```
 
 ---
@@ -289,6 +294,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps({'prediction': result[0].tolist()})
     }
+
 ```
 
 ### Keep-Warm Strategy
@@ -327,6 +333,7 @@ def lambda_handler(event, context):
         return {'status': 'warm'}
 
     # Normal inference logic...
+
 ```
 
 ---
@@ -348,6 +355,7 @@ COPY model.onnx ${LAMBDA_TASK_ROOT}/
 COPY app.py ${LAMBDA_TASK_ROOT}/
 
 CMD ["app.lambda_handler"]
+
 ```
 
 ### Google Cloud Run
@@ -371,6 +379,7 @@ EXPOSE 8080
 
 # Start server
 CMD ["gunicorn", "--bind", ":8080", "--workers", "1", "--threads", "8", "app:app"]
+
 ```
 
 ```python
@@ -401,6 +410,7 @@ if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
+
 ```
 
 ---

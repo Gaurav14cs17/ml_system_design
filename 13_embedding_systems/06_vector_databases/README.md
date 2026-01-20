@@ -42,6 +42,7 @@ Traditional Database:
 Vector Database:
   Query: Find 10 items most similar to vector [0.2, -0.4, 0.8, ...]
   Result: Approximate nearest neighbors ranked by similarity
+
 ```
 
 ---
@@ -54,6 +55,7 @@ Vector Database:
 1M documents × 768 dimensions × 4 bytes = 3 GB
 100M documents × 768 dimensions × 4 bytes = 300 GB
 1B documents × 768 dimensions × 4 bytes = 3 TB
+
 ```
 
 ### Brute Force Limitations
@@ -73,6 +75,7 @@ top_k = np.argsort(-similarities)[:10]
 print(f"Brute force: {time.time() - start:.2f}s")
 
 # Result: ~0.5-1s per query (too slow for production!)
+
 ```
 
 ### Vector DB Benefits
@@ -108,6 +111,7 @@ def dot_product(a, b):
 # - Cosine: Text embeddings (magnitude doesn't matter)
 # - Euclidean: Image embeddings, spatial data
 # - Dot Product: When vectors are normalized
+
 ```
 
 ### Index Types
@@ -155,6 +159,7 @@ results = index.query(
     include_metadata=True,
     filter={"category": {"$eq": "tech"}}
 )
+
 ```
 
 ### 2. Weaviate (Open Source)
@@ -190,6 +195,7 @@ results = collection.query.near_vector(
     limit=10,
     filters=weaviate.classes.query.Filter.by_property("category").equal("tech")
 )
+
 ```
 
 ### 3. Milvus (Open Source)
@@ -236,6 +242,7 @@ results = collection.search(
     limit=10,
     expr="category == 'tech'"
 )
+
 ```
 
 ### 4. Qdrant (Open Source)
@@ -274,6 +281,7 @@ results = client.search(
         must=[FieldCondition(key="category", match=MatchValue(value="tech"))]
     )
 )
+
 ```
 
 ### 5. ChromaDB (Lightweight)
@@ -305,6 +313,7 @@ results = collection.query(
     n_results=10,
     where={"category": "tech"}
 )
+
 ```
 
 ### 6. FAISS (Library)
@@ -337,6 +346,7 @@ distances, indices = index.search(query, k=10)
 # Save/Load
 faiss.write_index(index, "my_index.faiss")
 index = faiss.read_index("my_index.faiss")
+
 ```
 
 ---
@@ -357,6 +367,7 @@ index.hnsw.efSearch = 100  # Search quality
 # M: Connections per node (16-64, higher = better recall, more memory)
 # efConstruction: Build-time quality (100-500)
 # efSearch: Query-time quality (higher = better recall, slower)
+
 ```
 
 ### IVF (Inverted File Index)
@@ -372,6 +383,7 @@ index.nprobe = 50  # Clusters to search (higher = better recall)
 # Rule of thumb:
 # nlist ≈ sqrt(n_vectors)
 # nprobe ≈ nlist / 10 to nlist / 5
+
 ```
 
 ### Product Quantization (PQ)
@@ -386,6 +398,7 @@ index = faiss.IndexIVFPQ(quantizer, dimension, nlist, m, 8)
 
 # Memory reduction: ~32x (768*4 bytes → ~96 bytes per vector)
 # Trade-off: Lower recall
+
 ```
 
 ---
@@ -497,6 +510,7 @@ rag.add_documents(
 results = rag.search("What is deep learning?", n_results=3)
 for r in results:
     print(f"{r['distance']:.3f}: {r['document']}")
+
 ```
 
 ---
@@ -527,6 +541,7 @@ def reindex_collection(client, collection_name):
         documents=all_data["documents"],
         metadatas=all_data["metadatas"]
     )
+
 ```
 
 ### 2. Monitoring
@@ -539,6 +554,7 @@ metrics = {
     "index_size_gb": "monitor growth",
     "qps": "queries per second",
 }
+
 ```
 
 ### 3. Scaling Strategies

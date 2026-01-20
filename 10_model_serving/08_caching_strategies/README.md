@@ -86,6 +86,7 @@ async def predict(request: PredictionRequest):
     # This only runs on cache miss
     result = model.predict(request.features)
     return {"prediction": result}
+
 ```
 
 ### Semantic Caching
@@ -131,6 +132,7 @@ class SemanticCache:
             "result": json.dumps(result)
         })
         self.redis.expire(key, ttl)
+
 ```
 
 ---
@@ -224,6 +226,7 @@ class CachedFeatureService:
         self.cache.set_features(entity_id, result)
 
         return result
+
 ```
 
 ---
@@ -322,6 +325,7 @@ class CachedEmbeddingService:
             cached.update(computed)
 
         return cached
+
 ```
 
 ---
@@ -398,6 +402,7 @@ class VersionedCache:
 
     def set(self, key: str, value, ttl: int = 300):
         self.redis.setex(self._key(key), ttl, value)
+
 ```
 
 ---
@@ -458,6 +463,7 @@ nodes = [
     {"host": "redis-3", "port": 6379}
 ]
 cache = DistributedMLCache(nodes)
+
 ```
 
 ---
@@ -497,6 +503,7 @@ CACHE_SIZE = Gauge(
 
 # Calculate hit rate
 # hit_rate = cache_hits_total / (cache_hits_total + cache_misses_total)
+
 ```
 
 ### Performance Guidelines

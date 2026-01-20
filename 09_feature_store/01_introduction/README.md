@@ -50,6 +50,7 @@ features = {
     "device_fingerprint_age_days": 365,       # Complex derived feature
     "user_account_age_days": 730,             # Simple derived feature
 }
+
 ```
 
 ### The Challenge: Feature Engineering at Scale
@@ -93,6 +94,7 @@ def compute_user_features_serving(user_id, db_connection):
 # - Timezone issues
 # - Precision differences
 # - Data freshness differences
+
 ```
 
 ```python
@@ -111,6 +113,7 @@ features = fs.get_features(
 # Training uses historical point-in-time values
 # Serving uses latest values
 # BUT the computation logic is IDENTICAL
+
 ```
 
 ---
@@ -203,6 +206,7 @@ rec_features = fs.get_features(entity="user", features=["user_velocity_features"
 credit_features = fs.get_features(entity="user", features=["user_velocity_features"])
 
 # Total: 2 weeks of work, used by 3 teams
+
 ```
 
 ### 2. Training-Serving Consistency
@@ -230,6 +234,7 @@ training_data = fs.get_historical_features(
 )
 # Returns features as they were at each event_timestamp
 # No data leakage!
+
 ```
 
 ![Diagram 5](images/diagram_05.svg)
@@ -253,6 +258,7 @@ available_features = fs.search_features(
 # | user_engagement_score      | user        | 1h         | growth   |
 # | user_last_active_timestamp | user        | real-time  | growth   |
 # +----------------------------+-------------+------------+----------+
+
 ```
 
 ### 5. Governance & Lineage
@@ -352,6 +358,7 @@ available_features = fs.search_features(
 □ Feature duplication across teams
 □ Regulatory requirements for feature lineage
 □ Need to serve features at >1000 QPS
+
 ```
 
 ### ⚠️ Signs You Might Not Need One Yet
@@ -363,6 +370,7 @@ available_features = fs.search_features(
 □ Simple features (mostly raw columns)
 □ Early stage ML exploration
 □ Limited engineering resources
+
 ```
 
 ### Decision Framework

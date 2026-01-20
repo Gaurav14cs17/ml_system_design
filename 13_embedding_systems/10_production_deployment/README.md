@@ -52,6 +52,7 @@ Query → [Embedding Model] → Query Vector
                     [Re-ranker (Cross-Encoder)]
                                ↓
                     Final Results (10-50)
+
 ```
 
 ### Reference Architecture
@@ -128,6 +129,7 @@ class EmbeddingSearchSystem:
             self.cache.setex(cache_key, 3600, self._serialize(candidates))
 
         return candidates
+
 ```
 
 ---
@@ -204,6 +206,7 @@ async def embed(request: EmbeddingRequest):
 @app.get("/health")
 async def health():
     return {"status": "healthy"}
+
 ```
 
 ### Triton Inference Server
@@ -268,6 +271,7 @@ def export_to_onnx(model_name, output_path):
         },
         opset_version=14
     )
+
 ```
 
 ### Batching for Throughput
@@ -323,6 +327,7 @@ class BatchingEmbeddingService:
         # Return results
         for future, embedding in zip(futures, embeddings):
             future.set_result(embedding)
+
 ```
 
 ---
@@ -380,6 +385,7 @@ spec:
       target:
         type: Utilization
         averageUtilization: 70
+
 ```
 
 ### Index Sharding
@@ -418,6 +424,7 @@ class ShardedVectorIndex:
         # Sort by score and take top-k
         merged.sort(key=lambda x: x.score, reverse=True)
         return merged[:k]
+
 ```
 
 ---
@@ -485,6 +492,7 @@ def instrument_latency(histogram):
 @instrument_latency(embedding_latency)
 async def embed(texts):
     return model.encode(texts)
+
 ```
 
 ### Alerting Rules
@@ -517,6 +525,7 @@ groups:
       severity: warning
     annotations:
       summary: "Error rate above 1%"
+
 ```
 
 ### Logging
@@ -559,6 +568,7 @@ class ObservableEmbeddingService:
                 latency_ms=(time.time() - start) * 1000
             )
             raise
+
 ```
 
 ---
@@ -588,6 +598,7 @@ def quantize_model(model_name, output_path):
 # Comparison
 # FP32: ~400MB, ~10ms/batch
 # INT8: ~100MB, ~5ms/batch (on CPU)
+
 ```
 
 ### Dimensionality Reduction
@@ -616,6 +627,7 @@ class EfficientEmbedding:
         return embeddings
 
 # Storage savings: 768d → 256d = 66% reduction
+
 ```
 
 ### Caching Strategy
@@ -659,6 +671,7 @@ class EmbeddingCache:
                 uncached.append(text)
 
         return cached, uncached
+
 ```
 
 ---
@@ -722,6 +735,7 @@ class CircuitBreaker:
         except Exception as e:
             self.record_failure()
             raise
+
 ```
 
 ### Graceful Degradation
@@ -757,6 +771,7 @@ class ResilientSearchService:
         # Return empty results
         logger.error("All search backends failed")
         return []
+
 ```
 
 ---
@@ -805,6 +820,7 @@ services:
 
 volumes:
   qdrant_data:
+
 ```
 
 ---

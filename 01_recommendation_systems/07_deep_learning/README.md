@@ -102,6 +102,7 @@ class NeuralCF(nn.Module):
         prediction = self.output(combined)
 
         return prediction.squeeze()
+
 ```
 
 ---
@@ -149,6 +150,7 @@ class GRU4Rec(nn.Module):
         out = self.output(hidden[-1])  # (batch, n_items)
 
         return out
+
 ```
 
 ---
@@ -210,6 +212,7 @@ class SASRec(nn.Module):
         logits = self.output(x)
 
         return logits
+
 ```
 
 ---
@@ -278,6 +281,7 @@ class TwoTowerModel(nn.Module):
         # Contrastive loss
         loss = -torch.log(torch.sigmoid(pos_score - neg_score)).mean()
         return loss
+
 ```
 
 ---
@@ -358,6 +362,7 @@ class LightGCN(nn.Module):
         user_e = user_embeds[user_ids]
         item_e = item_embeds[item_ids]
         return (user_e * item_e).sum(dim=1)
+
 ```
 
 ---
@@ -415,6 +420,7 @@ class BERT4Rec(nn.Module):
         logits = self.output(x)
 
         return logits
+
 ```
 
 ---

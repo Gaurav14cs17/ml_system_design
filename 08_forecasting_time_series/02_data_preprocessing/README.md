@@ -36,12 +36,14 @@ A non-stationary series $\{Y\_t\}$ can be transformed to achieve stationarity:
 
 ```math
 \nabla Y_t = Y_t - Y_{t-1} = (1-B)Y_t
+
 ```
 
 For seasonal differencing with period $m$:
 
 ```math
 \nabla_m Y_t = Y_t - Y_{t-m} = (1-B^m)Y_t
+
 ```
 
 #### Log Transformation
@@ -50,6 +52,7 @@ For series with multiplicative seasonality or variance proportional to level:
 
 ```math
 Z_t = \log(Y_t)
+
 ```
 
 #### Box-Cox Transformation
@@ -58,6 +61,7 @@ A family of power transformations parametrized by $\lambda$:
 
 ```math
 Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \lambda \neq 0 \\ \log(Y_t) & \text{if } \lambda = 0 \end{cases}
+
 ```
 
 ### Normalization Methods
@@ -74,12 +78,14 @@ Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \la
 
 ```math
 \hat{Y}_t = Y_{t-k} + \frac{t - (t-k)}{(t+j) - (t-k)}(Y_{t+j} - Y_{t-k})
+
 ```
 
 #### Seasonal Decomposition Imputation
 
 ```math
 \hat{Y}_t = \hat{T}_t + \hat{S}_t
+
 ```
 
 Where $\hat{T}\_t$ and $\hat{S}\_t$ are estimated from non-missing values.
@@ -100,6 +106,7 @@ flowchart LR
     style D fill:#FCE4EC,stroke:#C2185B
     style E fill:#F3E5F5,stroke:#7B1FA2
     style F fill:#E0F7FA,stroke:#00838F
+
 ```
 
 <p align="center">
@@ -235,6 +242,7 @@ def load_from_api(base_url, params, date_field='timestamp'):
     df.set_index(date_field, inplace=True)
 
     return df.sort_index()
+
 ```
 
 ### Datetime Index Best Practices
@@ -269,6 +277,7 @@ def create_datetime_index(df, date_column, freq='D'):
 df = create_datetime_index(raw_df, 'timestamp', freq='H')
 print(f"Index frequency: {df.index.freq}")
 print(f"Date range: {df.index.min()} to {df.index.max()}")
+
 ```
 
 ---
@@ -395,6 +404,7 @@ class TimeSeriesQualityChecker:
 # Usage
 checker = TimeSeriesQualityChecker(df)
 print(checker.generate_summary())
+
 ```
 
 ### Visual Quality Assessment
@@ -446,6 +456,7 @@ def visualize_data_quality(df, target_col):
 
     plt.tight_layout()
     return fig
+
 ```
 
 ---
@@ -582,6 +593,7 @@ df_seasonal = imputer.seasonal_interpolation(period=7)
 
 # For complex patterns
 df_ml = imputer.ml_imputation()
+
 ```
 
 ### Choosing the Right Imputation Method
@@ -706,6 +718,7 @@ outliers_stl = detector.stl_residual_detection(period=7)
 consensus = (outliers_zscore.astype(int) +
              outliers_iqr.astype(int) +
              outliers_mad.astype(int)) >= 2
+
 ```
 
 ### Outlier Treatment Strategies
@@ -744,6 +757,7 @@ def treat_outliers(series, outlier_mask, method='clip'):
 # Example
 outliers = detector.mad_detection(threshold=3.5)
 df['value_cleaned'] = treat_outliers(df['value'], outliers, method='median')
+
 ```
 
 ---
@@ -843,6 +857,7 @@ hourly = resampler.upsample('H', method='linear')
 
 # Align irregular timestamps to regular calendar
 regular = resampler.align_to_calendar(freq='D')
+
 ```
 
 ### Multiple Series Alignment
@@ -882,6 +897,7 @@ def align_multiple_series(series_list, freq='D', method='outer'):
 
 # Usage
 aligned_df = align_multiple_series([series1, series2, series3], freq='H')
+
 ```
 
 ---
@@ -981,6 +997,7 @@ test_scaled = scaler.transform(test)
 
 # After prediction, inverse transform
 predictions_original_scale = scaler.inverse_transform(predictions_scaled)
+
 ```
 
 ### Log and Box-Cox Transformations
@@ -1026,6 +1043,7 @@ def inverse_transformations(series, method='log', lambda_=None):
         return inv_boxcox(series, lambda_)
     elif method == 'sqrt':
         return series ** 2 * np.sign(series)
+
 ```
 
 ---
@@ -1130,6 +1148,7 @@ cv_splits = splitter.expanding_window_cv(n_splits=5)
 
 # Sliding window: 365 days train, 30 days test
 sliding_splits = splitter.sliding_window_cv(train_size=365, test_size=30)
+
 ```
 
 ### Avoiding Data Leakage
@@ -1158,6 +1177,7 @@ def create_sequences_with_gap(data, lookback, horizon, gap=0):
 # Predict days 8-14 using days 1-7 (gap of 0)
 # Predict days 9-15 using days 1-7 (gap of 1) - useful when day 8 isn't available yet
 X, y = create_sequences_with_gap(data, lookback=7, horizon=7, gap=1)
+
 ```
 
 ---
@@ -1289,6 +1309,7 @@ test_processed = preprocessing_pipeline.transform(test_raw)
 scaler = TemporalScaler(method='standard')
 train_scaled = scaler.fit_transform(train_processed)
 test_scaled = scaler.transform(test_processed)
+
 ```
 
 ### Pipeline Configuration
@@ -1318,6 +1339,7 @@ preprocessing:
   resampling:
     target_frequency: D
     aggregation: mean
+
 ```
 
 ---
@@ -1344,6 +1366,7 @@ Time series preprocessing requires special attention to:
 □ Train/test split is temporal (no leakage)
 □ Scaler fit only on training data
 □ Pipeline documented and reproducible
+
 ```
 
 ### Next Steps
