@@ -44,7 +44,7 @@
 **Hash-based assignment** for consistency:
 
 ```math
-\text{bucket} = \text{hash}(\text{user\_id}, \text{experiment\_id}) \mod 1000
+\text{bucket} = \text{hash}(\text{user_id}, \text{experiment_id}) \mod 1000
 
 ```
 
@@ -69,9 +69,9 @@ where:
 
 - $\delta$ = minimum detectable effect (relative)
 
-- $z\_{\alpha/2}$ = z-score for significance level (1.96 for α=0.05)
+- $z_{\alpha/2}$ = z-score for significance level (1.96 for α=0.05)
 
-- $z\_\beta$ = z-score for power (0.84 for 80% power)
+- $z_\beta$ = z-score for power (0.84 for 80% power)
 
 **Example**: Detect 2% relative lift in 2% CTR:
 
@@ -113,9 +113,9 @@ n = \frac{2(1.96 + 0.84)^2 \cdot 0.02 \cdot 0.98}{(0.02 \cdot 0.02)^2} = \frac{2
 
 ### Hypothesis Testing
 
-**Null hypothesis**: $H\_0: \mu\_B = \mu\_A$ (no difference)
+**Null hypothesis**: $H_0: \mu_B = \mu_A$ (no difference)
 
-**Alternative**: $H\_1: \mu\_B \neq \mu\_A$ (two-sided)
+**Alternative**: $H_1: \mu_B \neq \mu_A$ (two-sided)
 
 ### Two-Proportion Z-Test (for CTR)
 
@@ -124,7 +124,7 @@ z = \frac{\hat{p}_B - \hat{p}_A}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_A} + \frac{
 
 ```
 
-where $\hat{p} = \frac{x\_A + x\_B}{n\_A + n\_B}$ is the pooled proportion.
+where $\hat{p} = \frac{x_A + x_B}{n_A + n_B}$ is the pooled proportion.
 
 **P-value** (two-sided):
 
@@ -135,7 +135,7 @@ p = 2 \cdot (1 - \Phi(|z|))
 
 ### Confidence Interval
 
-For difference $\hat{p}\_B - \hat{p}\_A$:
+For difference $\hat{p}_B - \hat{p}_A$:
 
 ```math
 CI = (\hat{p}_B - \hat{p}_A) \pm z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}_A(1-\hat{p}_A)}{n_A} + \frac{\hat{p}_B(1-\hat{p}_B)}{n_B}}
@@ -170,7 +170,7 @@ CI_{\text{lift}} = \frac{CI_{\text{diff}}}{\hat{p}_A}
 
 **Calculations**:
 
-- $\hat{p}\_A = 0.020$, $\hat{p}\_B = 0.021$
+- $\hat{p}_A = 0.020$, $\hat{p}_B = 0.021$
 
 - $\hat{p} = 0.0205$
 
@@ -291,7 +291,7 @@ Ensure balance across important segments:
 
 ```
 
-where $w\_s = \frac{n\_s}{n}$ is stratum weight.
+where $w_s = \frac{n_s}{n}$ is stratum weight.
 
 ### Bayesian A/B Testing
 

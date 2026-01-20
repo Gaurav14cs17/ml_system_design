@@ -281,7 +281,7 @@ Where \( c_k \) is the critical value from the spending function.
 Users must see consistent variants. Use hashing:
 
 ```math
-\text{bucket} = \text{hash}(\text{user\_id} + \text{experiment\_id}) \mod 100
+\text{bucket} = \text{hash}(\text{user_id} + \text{experiment_id}) \mod 100
 
 ```
 

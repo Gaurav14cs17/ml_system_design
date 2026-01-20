@@ -53,21 +53,21 @@ Transform time series into input-output pairs:
 
 Where:
 
-- $X\_t = f(Y\_{t-1}, Y\_{t-2}, \ldots, Y\_{t-p}, Z\_t)$ — Feature vector at time $t$
+- $X_t = f(Y_{t-1}, Y_{t-2}, \ldots, Y_{t-p}, Z_t)$ — Feature vector at time $t$
 
-- $Y\_{t+h}$ — Target value $h$ steps ahead
+- $Y_{t+h}$ — Target value $h$ steps ahead
 
 - $p$ — Lookback window size
 
-- $Z\_t$ — Exogenous features (calendar, external data)
+- $Z_t$ — Exogenous features (calendar, external data)
 
 ### Loss Functions
 
 | Model Type | Loss Function | Mathematical Form |
 |------------|---------------|-------------------|
-| **Regression** | MSE | $\mathcal{L} = \frac{1}{n}\sum\_{i=1}^{n}(y\_i - \hat{y}\_i)^2$ |
-| **Regression** | MAE | $\mathcal{L} = \frac{1}{n}\sum\_{i=1}^{n}\|y\_i - \hat{y}\_i\|$ |
-| **Quantile** | Pinball | $\mathcal{L}\_q = \sum\_{i}(y\_i - \hat{y}\_i)(q - \mathbb{1}\_{y\_i < \hat{y}\_i})$ |
+| **Regression** | MSE | $\mathcal{L} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$ |
+| **Regression** | MAE | $\mathcal{L} = \frac{1}{n}\sum_{i=1}^{n}\|y_i - \hat{y}_i\|$ |
+| **Quantile** | Pinball | $\mathcal{L}_q = \sum_{i}(y_i - \hat{y}_i)(q - \mathbb{1}_{y_i < \hat{y}_i})$ |
 
 ### Gradient Boosting Objective
 
@@ -80,9 +80,9 @@ For tree ensemble methods (XGBoost, LightGBM):
 
 Where:
 
-- $l(y\_i, \hat{y}\_i)$ — Differentiable loss function
+- $l(y_i, \hat{y}_i)$ — Differentiable loss function
 
-- $\Omega(f\_k) = \gamma T + \frac{1}{2}\lambda\|w\|^2$ — Regularization (tree complexity)
+- $\Omega(f_k) = \gamma T + \frac{1}{2}\lambda\|w\|^2$ — Regularization (tree complexity)
 
 - $T$ — Number of leaves in tree $k$
 

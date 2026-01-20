@@ -83,7 +83,7 @@ where:
 
 - $\theta$ are the learned parameters
 
-- The function preserves **semantic similarity**: $\text{sim}(x\_i, x\_j) \approx \text{sim}(f(x\_i), f(x\_j))$
+- The function preserves **semantic similarity**: $\text{sim}(x_i, x_j) \approx \text{sim}(f(x_i), f(x_j))$
 
 ---
 
@@ -182,9 +182,9 @@ Embeddings live in a **metric space** equipped with:
 
 | Metric | Definition | Properties |
 |--------|------------|------------|
-| **Euclidean (L2)** | $d(\mathbf{a}, \mathbf{b}) = \sqrt{\sum\_{i=1}^{d}(a\_i - b\_i)^2}$ | True metric, sensitive to magnitude |
+| **Euclidean (L2)** | $d(\mathbf{a}, \mathbf{b}) = \sqrt{\sum_{i=1}^{d}(a_i - b_i)^2}$ | True metric, sensitive to magnitude |
 | **Cosine Similarity** | $\cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \|\mathbf{b}\|}$ | Scale-invariant, range $[-1, 1]$ |
-| **Dot Product** | $\mathbf{a} \cdot \mathbf{b} = \sum\_{i=1}^{d} a\_i b\_i$ | Fast computation, magnitude-dependent |
+| **Dot Product** | $\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{d} a_i b_i$ | Fast computation, magnitude-dependent |
 
 **Important Relationship:** For unit-normalized vectors ($\|\mathbf{a}\| = \|\mathbf{b}\| = 1$):
 
@@ -204,9 +204,9 @@ A remarkable property of well-trained embeddings is that semantic relationships 
 
 This can be understood as:
 
-- The vector $(\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}})$ encodes the concept of "royalty"
+- The vector $(\vec{v}_{\text{king}} - \vec{v}_{\text{man}})$ encodes the concept of "royalty"
 
-- Adding this to $\vec{v}\_{\text{woman}}$ yields the female equivalent
+- Adding this to $\vec{v}_{\text{woman}}$ yields the female equivalent
 
 More generally, for analogies $a:b :: c:d$:
 
@@ -237,7 +237,7 @@ Where:
 
 ```
 
-This is mathematically equivalent to multiplying by a one-hot vector: $\mathbf{e}\_i = \mathbf{E}^\top \mathbf{x}\_{\text{one-hot}}$
+This is mathematically equivalent to multiplying by a one-hot vector: $\mathbf{e}_i = \mathbf{E}^\top \mathbf{x}_{\text{one-hot}}$
 
 ### Learning Objectives
 

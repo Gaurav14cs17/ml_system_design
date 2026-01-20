@@ -41,7 +41,7 @@ where:
 
 - $W$ = average time in system (seconds)
 
-**For pipeline design:** If you want $W < W\_{max}$, then system capacity must exceed $L/W\_{max}$.
+**For pipeline design:** If you want $W < W_{max}$, then system capacity must exceed $L/W_{max}$.
 
 #### M/M/1 Queue Analysis
 
@@ -101,16 +101,16 @@ where $g$ = gap duration.
 
 #### Watermarks and Completeness
 
-A **watermark** $W(t\_p)$ at processing time $t\_p$ is a heuristic bound:
+A **watermark** $W(t_p)$ at processing time $t_p$ is a heuristic bound:
 
 ```math
 W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\}
 
 ```
 
-**Completeness guarantee:** For window $[a, b)$, we can close it when $W(t\_p) \geq b$.
+**Completeness guarantee:** For window $[a, b)$, we can close it when $W(t_p) \geq b$.
 
-**Allowed lateness:** Events with $t\_e < W(t\_p) - \text{lateness}$ may be dropped.
+**Allowed lateness:** Events with $t_e < W(t_p) - \text{lateness}$ may be dropped.
 
 #### Exactly-Once Semantics
 
@@ -128,7 +128,7 @@ f(f(x)) = f(x)
 
 ```
 
-Recovery: Resume from $\text{offset}\_{last\_committed}$.
+Recovery: Resume from $\text{offset}_{last_committed}$.
 
 ### Throughput and Latency Trade-offs
 
@@ -143,7 +143,7 @@ For batch size $B$ and per-item processing cost $c$:
 
 ```
 
-As $B \to \infty$: $\Theta \to \frac{1}{c\_{item}}$ (asymptotic maximum)
+As $B \to \infty$: $\Theta \to \frac{1}{c_{item}}$ (asymptotic maximum)
 
 **Latency:**
 
@@ -161,7 +161,7 @@ The last term accounts for waiting time to fill the batch.
 Spark Streaming uses micro-batches with interval $\Delta$:
 
 ```math
-\text{latency} \geq \Delta + \text{processing\_time}
+\text{latency} \geq \Delta + \text{processing_time}
 
 ```
 
@@ -193,7 +193,7 @@ where $f$ = update frequency, $C(f)$ = cost function.
 
 #### Entropy of Event Streams
 
-For event types with probabilities $p\_1, ..., p\_n$:
+For event types with probabilities $p_1, ..., p_n$:
 
 ```math
 H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i

@@ -91,14 +91,14 @@ For vocabulary $\mathcal{V}$ with $|\mathcal{V}|$ words and embedding dimension 
 
 ```
 
-Word $w\_i$ retrieves its embedding via one-hot indexing:
+Word $w_i$ retrieves its embedding via one-hot indexing:
 
 ```math
 \vec{w}_i = \mathbf{E}^T \mathbf{e}_i
 
 ```
 
-where $\mathbf{e}\_i$ is a one-hot vector.
+where $\mathbf{e}_i$ is a one-hot vector.
 
 ---
 
@@ -168,7 +168,7 @@ Word2Vec learns embeddings by predicting context from words (or vice versa).
 
 ### Skip-gram Model
 
-**Objective**: Given center word $w\_t$, predict context words $w\_{t+j}$ for $j \in [-c, c] \setminus \{0\}$.
+**Objective**: Given center word $w_t$, predict context words $w_{t+j}$ for $j \in [-c, c] \setminus \{0\}$.
 
 **Probability model** using softmax:
 
@@ -179,9 +179,9 @@ P(w_O | w_I) = \frac{\exp(\vec{v}'_{w_O} \cdot \vec{v}_{w_I})}{\sum_{w=1}^{|\mat
 
 where:
 
-- $\vec{v}\_w$ = input (center) embedding of word $w$
+- $\vec{v}_w$ = input (center) embedding of word $w$
 
-- $\vec{v}'\_w$ = output (context) embedding of word $w$
+- $\vec{v}'_w$ = output (context) embedding of word $w$
 
 **Loss function** (negative log-likelihood):
 
@@ -199,7 +199,7 @@ P(w_t | w_{t-c}, \ldots, w_{t+c}) = \frac{\exp(\vec{v}_{w_t} \cdot \bar{\mathbf{
 
 ```
 
-where $\bar{\mathbf{h}} = \frac{1}{2c} \sum\_{j \neq 0} \vec{v}\_{w\_{t+j}}$ is the average context embedding.
+where $\bar{\mathbf{h}} = \frac{1}{2c} \sum_{j \neq 0} \vec{v}_{w_{t+j}}$ is the average context embedding.
 
 ### Negative Sampling
 
@@ -216,7 +216,7 @@ where:
 
 - $\sigma(x) = \frac{1}{1 + e^{-x}}$ (sigmoid function)
 
-- $P\_n(w) \propto f(w)^{3/4}$ (noise distribution, smoothed frequency)
+- $P_n(w) \propto f(w)^{3/4}$ (noise distribution, smoothed frequency)
 
 ### Implementation
 
@@ -330,7 +330,7 @@ f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{
 
 ```
 
-with typically $\alpha = 0.75$ and $x\_{\max} = 100$.
+with typically $\alpha = 0.75$ and $x_{\max} = 100$.
 
 **Key insight**: The ratio of co-occurrence probabilities encodes meaning:
 
@@ -393,7 +393,7 @@ FastText extends Word2Vec by representing words as **bags of character n-grams**
 
 ### Subword Representation
 
-For word $w$, let $\mathcal{G}\_w$ be its character n-grams (typically $n \in [3,6]$):
+For word $w$, let $\mathcal{G}_w$ be its character n-grams (typically $n \in [3,6]$):
 
 ```math
 \vec{w} = \sum_{g \in \mathcal{G}_w} \vec{z}_g
@@ -451,7 +451,7 @@ where $L$ is sequence length and $d = 768$ (base) or $1024$ (large).
 
 **Sentence embedding** via pooling:
 
-1. **[CLS] token**: $\mathbf{h}\_{\text{sentence}} = \mathbf{H}[0]$
+1. **[CLS] token**: $\mathbf{h}_{\text{sentence}} = \mathbf{H}[0]$
 
 2. **Mean pooling**: 
 
@@ -571,7 +571,7 @@ where $d = \|\mathbf{u} - \mathbf{v}\|$, $y \in \{0,1\}$, $m$ is margin.
 
 ```
 
-where $(a\_i, p\_i)$ are anchor-positive pairs and temperature $\tau$ controls sharpness.
+where $(a_i, p_i)$ are anchor-positive pairs and temperature $\tau$ controls sharpness.
 
 ```python
 from sentence_transformers import SentenceTransformer

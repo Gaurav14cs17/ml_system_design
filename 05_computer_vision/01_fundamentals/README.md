@@ -440,7 +440,7 @@ b^* = 200 \cdot \left[f\left(\frac{Y}{Y_n}\right) - f\left(\frac{Z}{Z_n}\right)\
 
 ```
 
-where $(X\_n, Y\_n, Z\_n)$ is the reference white point and:
+where $(X_n, Y_n, Z_n)$ is the reference white point and:
 
 ```math
 f(t) = \begin{cases} t^{1/3} & \text{if } t > \left(\frac{6}{29}\right)^3 \\ \frac{1}{3}\left(\frac{29}{6}\right)^2 t + \frac{4}{29} & \text{otherwise} \end{cases}
@@ -641,7 +641,7 @@ where $\mathbf{p} = \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$ (homogeneous form
 
 ![Diagram 11](assets/diagram_11.svg)
 
-Shift by $(t\_x, t\_y)$:
+Shift by $(t_x, t_y)$:
 
 ```math
 \mathbf{T}_{trans} = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}
@@ -660,7 +660,7 @@ Rotate by angle $\theta$ (counter-clockwise about origin):
 
 ```
 
-**Rotation about point $(c\_x, c\_y)$:**
+**Rotation about point $(c_x, c_y)$:**
 
 ```math
 \mathbf{T} = \mathbf{T}_{trans}(c_x, c_y) \cdot \mathbf{T}_{rot}(\theta) \cdot \mathbf{T}_{trans}(-c_x, -c_y)
@@ -671,14 +671,14 @@ Rotate by angle $\theta$ (counter-clockwise about origin):
 
 ![Diagram 13](assets/diagram_13.svg)
 
-Scale by factors $(s\_x, s\_y)$:
+Scale by factors $(s_x, s_y)$:
 
 ```math
 \mathbf{T}_{scale} = \begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}
 
 ```
 
-When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
+When $s_x = s_y$, this is **uniform scaling** (preserves aspect ratio).
 
 ### Affine vs Perspective Transformations
 
@@ -779,7 +779,7 @@ p(k) = \frac{h(k)}{H \times W}
 
 ```
 
-where $\sum\_{k=0}^{L-1} p(k) = 1$
+where $\sum_{k=0}^{L-1} p(k) = 1$
 
 ### Histogram Equalization
 
@@ -811,7 +811,7 @@ This maps the CDF to a straight line, effectively flattening the histogram.
 
 1. Compute histogram $h(k)$
 
-2. Compute normalized CDF: $\text{CDF}(k) = \frac{1}{HW}\sum\_{j=0}^{k} h(j)$
+2. Compute normalized CDF: $\text{CDF}(k) = \frac{1}{HW}\sum_{j=0}^{k} h(j)$
 
 3. Map each pixel: $I'(i,j) = \lfloor (L-1) \cdot \text{CDF}(I(i,j)) \rfloor$
 
@@ -828,7 +828,7 @@ Standard histogram equalization is global. CLAHE applies equalization locally:
 4. Bilinearly interpolate at tile boundaries
 
 ```math
-\text{clip}(h(k)) = \min(h(k), \text{clip\_limit})
+\text{clip}(h(k)) = \min(h(k), \text{clip_limit})
 
 ```
 

@@ -70,7 +70,7 @@ The optimal decision boundary is not simply $P(\text{fraud} | \mathbf{x}) = 0.5$
 
 ```
 
-Where typically $C\_{FN} \gg C\_{FP}$ because missing fraud is far more costly than incorrectly blocking a legitimate transaction.
+Where typically $C_{FN} \gg C_{FP}$ because missing fraud is far more costly than incorrectly blocking a legitimate transaction.
 
 The **optimal decision threshold** $\tau^*$ is:
 
@@ -491,7 +491,7 @@ F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{\beta^
 
 ```
 
-For fraud detection, $F\_2$ (weighing recall twice as much as precision) is often appropriate.
+For fraud detection, $F_2$ (weighing recall twice as much as precision) is often appropriate.
 
 #### Precision-Recall AUC (AUPRC)
 
@@ -526,10 +526,10 @@ So for 0.1% fraud rate, random baseline AUPRC = 0.001, making improvements clear
 
 | Metric | Definition | Formula | Target |
 |--------|------------|---------|--------|
-| Fraud Loss Rate | Fraud losses / Total value | $\frac{\sum\_{i \in FN} v\_i}{V\_{\text{total}}}$ | <0.05% |
+| Fraud Loss Rate | Fraud losses / Total value | $\frac{\sum_{i \in FN} v_i}{V_{\text{total}}}$ | <0.05% |
 | Decline Rate | Declined / Total transactions | $\frac{TP + FP}{N}$ | <2% |
-| Review Rate | Reviews / Total | $\frac{N\_{\text{review}}}{N}$ | <0.5% |
-| Investigation Efficiency | Confirmed / Reviewed | $\frac{TP\_{\text{review}}}{N\_{\text{review}}}$ | >20% |
+| Review Rate | Reviews / Total | $\frac{N_{\text{review}}}{N}$ | <0.5% |
+| Investigation Efficiency | Confirmed / Reviewed | $\frac{TP_{\text{review}}}{N_{\text{review}}}$ | >20% |
 
 ### Operational Metrics
 

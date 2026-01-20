@@ -393,13 +393,13 @@ class CostBudgetManager:
                 self.alerts.send_alert(
                     severity='critical',
                     title=f'Budget Exceeded: {model_name}',
-                    message=f'Spent ${current\_spend:.2f} of ${budget:.2f} budget ({usage_pct:.0f}%)'
+                    message=f'Spent ${current_spend:.2f} of ${budget:.2f} budget ({usage_pct:.0f}%)'
                 )
             elif usage_pct > 80 or projected_pct > 100:
                 self.alerts.send_alert(
                     severity='warning',
                     title=f'Budget Warning: {model_name}',
-                    message=f'At current rate, will spend ${projected\_spend:.2f} (budget: ${budget:.2f})'
+                    message=f'At current rate, will spend ${projected_spend:.2f} (budget: ${budget:.2f})'
                 )
 
         return results

@@ -74,7 +74,7 @@ For fraud detection, we learn a function $f: \mathcal{X} \rightarrow [0, 1]$ tha
 
 ```
 
-Where $w\_+ = \frac{N}{2 \cdot N\_+}$ and $w\_- = \frac{N}{2 \cdot N\_-}$ balance the classes.
+Where $w_+ = \frac{N}{2 \cdot N_+}$ and $w_- = \frac{N}{2 \cdot N_-}$ balance the classes.
 
 #### Focal Loss (Lin et al., 2017)
 
@@ -87,24 +87,24 @@ Focal loss down-weights easy examples, focusing training on hard negatives:
 
 Where:
 
-- $p\_t = \hat{y}\_i$ if $y\_i = 1$, else $1 - \hat{y}\_i$
+- $p_t = \hat{y}_i$ if $y_i = 1$, else $1 - \hat{y}_i$
 
 - $\gamma \geq 0$ is the focusing parameter (typically $\gamma = 2$)
 
-- $\alpha\_t$ is the class-balancing weight
+- $\alpha_t$ is the class-balancing weight
 
-**Intuition**: When $\gamma > 0$, well-classified examples ($p\_t \rightarrow 1$) contribute negligibly to the loss.
+**Intuition**: When $\gamma > 0$, well-classified examples ($p_t \rightarrow 1$) contribute negligibly to the loss.
 
 #### Asymmetric Loss
 
-For fraud detection where $C\_{FN} \gg C\_{FP}$:
+For fraud detection where $C_{FN} \gg C_{FP}$:
 
 ```math
 \mathcal{L}_{\text{asym}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ \lambda \cdot y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
 
 ```
 
-Where $\lambda = \frac{C\_{FN}}{C\_{FP}} \approx 10-100$ penalizes missed fraud heavily.
+Where $\lambda = \frac{C_{FN}}{C_{FP}} \approx 10-100$ penalizes missed fraud heavily.
 
 ### Gradient Boosting Mathematics
 
@@ -117,7 +117,7 @@ XGBoost minimizes:
 
 ```
 
-Where $\Omega(f) = \gamma T + \frac{1}{2}\lambda \sum\_{j=1}^{T} w\_j^2$ is the regularization term (T = number of leaves, $w\_j$ = leaf weights).
+Where $\Omega(f) = \gamma T + \frac{1}{2}\lambda \sum_{j=1}^{T} w_j^2$ is the regularization term (T = number of leaves, $w_j$ = leaf weights).
 
 Using second-order Taylor expansion:
 
@@ -126,7 +126,7 @@ Using second-order Taylor expansion:
 
 ```
 
-Where $g\_i = \partial\_{\hat{y}} l(y\_i, \hat{y}^{(t-1)})$ and $h\_i = \partial^2\_{\hat{y}} l(y\_i, \hat{y}^{(t-1)})$.
+Where $g_i = \partial_{\hat{y}} l(y_i, \hat{y}^{(t-1)})$ and $h_i = \partial^2_{\hat{y}} l(y_i, \hat{y}^{(t-1)})$.
 
 For weighted binary cross-entropy with `scale_pos_weight`:
 
@@ -144,14 +144,14 @@ g_i = \hat{y}_i - y_i \cdot w_+, \quad h_i = \hat{y}_i(1 - \hat{y}_i)
 
 ```
 
-With dropout regularization: $\tilde{\mathbf{h}} = \mathbf{h} \odot \mathbf{m}$ where $m\_i \sim \text{Bernoulli}(1-p)$.
+With dropout regularization: $\tilde{\mathbf{h}} = \mathbf{h} \odot \mathbf{m}$ where $m_i \sim \text{Bernoulli}(1-p)$.
 
 #### Entity Embeddings
 
 For categorical features (user, merchant, MCC), learn low-dimensional representations:
 
 ```math
-\mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity\_id}] \in \mathbb{R}^d
+\mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity_id}] \in \mathbb{R}^d
 
 ```
 
@@ -204,7 +204,7 @@ Attention coefficients between nodes:
 
 ```
 
-Updated node embedding: $\mathbf{h}\_i' = \sigma\left( \sum\_{j \in \mathcal{N}(i)} \alpha\_{ij} \mathbf{W} \mathbf{h}\_j \right)$
+Updated node embedding: $\mathbf{h}_i' = \sigma\left( \sum_{j \in \mathcal{N}(i)} \alpha_{ij} \mathbf{W} \mathbf{h}_j \right)$
 
 ### Anomaly Detection: Autoencoder Mathematics
 
@@ -233,7 +233,7 @@ D_{KL} = -\frac{1}{2} \sum_{j=1}^{J} \left( 1 + \log(\sigma_j^2) - \mu_j^2 - \si
 
 ### Ensemble Theory
 
-For $M$ models with predictions $\hat{y}\_1, \ldots, \hat{y}\_M$:
+For $M$ models with predictions $\hat{y}_1, \ldots, \hat{y}_M$:
 
 **Weighted Average:**
 
@@ -249,7 +249,7 @@ w_m^* \propto \frac{1}{\sigma_m^2 (1 - \rho_m)}
 
 ```
 
-Where $\sigma\_m^2$ is model variance and $\rho\_m$ is correlation with other models. Diverse, accurate models get higher weight.
+Where $\sigma_m^2$ is model variance and $\rho_m$ is correlation with other models. Diverse, accurate models get higher weight.
 
 ### When to Use Which Model
 

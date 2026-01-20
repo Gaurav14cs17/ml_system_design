@@ -98,7 +98,7 @@ Where:
 
 - $\tilde{x}$ is the median
 
-- $\text{MAD} = \text{median}(|x\_i - \tilde{x}|)$
+- $\text{MAD} = \text{median}(|x_i - \tilde{x}|)$
 
 - $1.4826$ is a scaling factor for normal distributions
 
@@ -143,7 +143,7 @@ H(X) = -\sum_{i=1}^{k} p_i \log_2 p_i
 
 ```
 
-Where $p\_i$ is the proportion of category $i$.
+Where $p_i$ is the proportion of category $i$.
 
 **Example**: Merchant category entropy over 30 days. High entropy = diverse spending; Low entropy = concentrated behavior.
 
@@ -157,7 +157,7 @@ For transaction networks, define:
 
 #### PageRank for Risk Propagation
 
-The PageRank score $\pi\_i$ for node $i$ satisfies:
+The PageRank score $\pi_i$ for node $i$ satisfies:
 
 ```math
 \pi_i = \frac{1 - d}{N} + d \sum_{j \in \text{in}(i)} \frac{\pi_j}{|\text{out}(j)|}
@@ -175,7 +175,7 @@ Q = \frac{1}{2m} \sum_{ij} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i
 
 ```
 
-Where $A\_{ij}$ is the adjacency matrix, $k\_i$ is node degree, and $\delta$ tests community membership.
+Where $A_{ij}$ is the adjacency matrix, $k_i$ is node degree, and $\delta$ tests community membership.
 
 ### Feature Categories Overview
 

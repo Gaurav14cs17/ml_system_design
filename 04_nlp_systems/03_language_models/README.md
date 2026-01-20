@@ -30,7 +30,7 @@ P(w_1, w_2, \ldots, w_n) = \prod_{i=1}^{n} P(w_i | w_1, w_2, \ldots, w_{i-1})
 
 ```
 
-The core task: **estimate conditional probabilities** $P(w\_i | w\_{1:i-1})$.
+The core task: **estimate conditional probabilities** $P(w_i | w_{1:i-1})$.
 
 ### Why Language Models Matter
 
@@ -38,7 +38,7 @@ The core task: **estimate conditional probabilities** $P(w\_i | w\_{1:i-1})$.
 
 Language models enable:
 
-- **Text generation**: Sample from $P(w\_{n+1} | w\_1, \ldots, w\_n)$
+- **Text generation**: Sample from $P(w_{n+1} | w_1, \ldots, w_n)$
 
 - **Scoring**: Compute $P(\text{sentence})$ for ranking
 
@@ -57,7 +57,7 @@ P: \mathcal{V}^* \rightarrow [0, 1]
 
 ```
 
-satisfying $\sum\_{w\_1, \ldots, w\_n \in \mathcal{V}^*} P(w\_1, \ldots, w\_n) = 1$
+satisfying $\sum_{w_1, \ldots, w_n \in \mathcal{V}^*} P(w_1, \ldots, w_n) = 1$
 
 ### Perplexity
 
@@ -138,7 +138,7 @@ P_{KN}(w_i | w_{i-1}) = \frac{\max(C(w_{i-1}, w_i) - d, 0)}{C(w_{i-1})} + \lambd
 
 ```
 
-where $d$ is discount, $\lambda$ is interpolation weight, and $P\_{\text{cont}}$ is continuation probability.
+where $d$ is discount, $\lambda$ is interpolation weight, and $P_{\text{cont}}$ is continuation probability.
 
 ![Diagram 3](diagrams/diagram_03.svg)
 
@@ -259,7 +259,7 @@ RNNs process sequences by maintaining a **hidden state** that evolves over time.
 
 ### RNN Equations
 
-For input sequence $\mathbf{x}\_1, \mathbf{x}\_2, \ldots, \mathbf{x}\_T$:
+For input sequence $\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_T$:
 
 ```math
 \mathbf{h}_t = \tanh(\mathbf{W}_{hh}\mathbf{h}_{t-1} + \mathbf{W}_{xh}\mathbf{x}_t + \mathbf{b}_h)
@@ -269,11 +269,11 @@ For input sequence $\mathbf{x}\_1, \mathbf{x}\_2, \ldots, \mathbf{x}\_T$:
 
 **Parameters**:
 
-- $\mathbf{W}\_{hh} \in \mathbb{R}^{h \times h}$: hidden-to-hidden weights
+- $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$: hidden-to-hidden weights
 
-- $\mathbf{W}\_{xh} \in \mathbb{R}^{h \times d}$: input-to-hidden weights  
+- $\mathbf{W}_{xh} \in \mathbb{R}^{h \times d}$: input-to-hidden weights  
 
-- $\mathbf{W}\_{hy} \in \mathbb{R}^{|\mathcal{V}| \times h}$: hidden-to-output weights
+- $\mathbf{W}_{hy} \in \mathbb{R}^{|\mathcal{V}| \times h}$: hidden-to-output weights
 
 ![Diagram 4](diagrams/diagram_04.svg)
 
@@ -286,7 +286,7 @@ During backpropagation through time (BPTT):
 
 ```
 
-If $\|\frac{\partial \mathbf{h}\_{k+1}}{\partial \mathbf{h}\_k}\| < 1$ consistently, gradients vanish exponentially.
+If $\|\frac{\partial \mathbf{h}_{k+1}}{\partial \mathbf{h}_k}\| < 1$ consistently, gradients vanish exponentially.
 
 ---
 
@@ -344,7 +344,7 @@ where $\odot$ denotes element-wise multiplication and $\sigma$ is sigmoid.
 
 ### Why LSTMs Work
 
-The cell state $\mathbf{c}\_t$ provides a **gradient highway**:
+The cell state $\mathbf{c}_t$ provides a **gradient highway**:
 
 ```math
 \frac{\partial \mathbf{c}_T}{\partial \mathbf{c}_t} = \prod_{k=t}^{T-1} \mathbf{f}_{k+1}
@@ -377,9 +377,9 @@ Given input embeddings $\mathbf{X} \in \mathbb{R}^{n \times d}$:
 
 ```
 
-**Why scale by $\sqrt{d\_k}$?**
+**Why scale by $\sqrt{d_k}$?**
 
-For random vectors with variance 1, dot products have variance $d\_k$. Scaling ensures softmax inputs have unit variance, preventing saturation.
+For random vectors with variance 1, dot products have variance $d_k$. Scaling ensures softmax inputs have unit variance, preventing saturation.
 
 ![Diagram 6](diagrams/diagram_06.svg)
 
@@ -392,15 +392,15 @@ Multiple attention heads capture different relationship types:
 
 ```
 
-where $\text{head}\_i = \text{Attention}(\mathbf{Q}\mathbf{W}\_Q^i, \mathbf{K}\mathbf{W}\_K^i, \mathbf{V}\mathbf{W}\_V^i)$
+where $\text{head}_i = \text{Attention}(\mathbf{Q}\mathbf{W}_Q^i, \mathbf{K}\mathbf{W}_K^i, \mathbf{V}\mathbf{W}_V^i)$
 
 **Parameters**: 
 
-- $\mathbf{W}\_Q^i, \mathbf{W}\_K^i \in \mathbb{R}^{d \times d\_k}$
+- $\mathbf{W}_Q^i, \mathbf{W}_K^i \in \mathbb{R}^{d \times d_k}$
 
-- $\mathbf{W}\_V^i \in \mathbb{R}^{d \times d\_v}$
+- $\mathbf{W}_V^i \in \mathbb{R}^{d \times d_v}$
 
-- $\mathbf{W}\_O \in \mathbb{R}^{hd\_v \times d}$
+- $\mathbf{W}_O \in \mathbb{R}^{hd_v \times d}$
 
 ![Diagram 7](diagrams/diagram_07.svg)
 
@@ -418,7 +418,7 @@ PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d}}\right)
 
 **Why sinusoids?**
 
-- $PE\_{pos+k}$ can be expressed as a linear function of $PE\_{pos}$
+- $PE_{pos+k}$ can be expressed as a linear function of $PE_{pos}$
 
 - Enables the model to learn relative positions
 
@@ -581,7 +581,7 @@ Attention scores are masked to prevent attending to future positions:
 
 ```
 
-where $\mathbf{M}\_{ij} = \begin{cases} 0 & \text{if } i \geq j \\ -\infty & \text{if } i < j \end{cases}$
+where $\mathbf{M}_{ij} = \begin{cases} 0 & \text{if } i \geq j \\ -\infty & \text{if } i < j \end{cases}$
 
 ![Diagram 9](diagrams/diagram_09.svg)
 

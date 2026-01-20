@@ -44,7 +44,7 @@ f: \mathcal{H}_u \rightarrow \mathbf{u} \in \mathbb{R}^d
 Such that similar users have similar representations:
 
 ```math
-\text{sim}(\mathbf{u}_a, \mathbf{u}_b) \propto \text{behavioral\_similarity}(a, b)
+\text{sim}(\mathbf{u}_a, \mathbf{u}_b) \propto \text{behavioral_similarity}(a, b)
 
 ```
 

@@ -285,7 +285,7 @@ Use parallel dilated convolutions with different rates to capture multi-scale fe
 
 ```
 
-where $y\_{i,j,k}$ is the one-hot encoded ground truth.
+where $y_{i,j,k}$ is the one-hot encoded ground truth.
 
 **Weighted Cross-Entropy (for class imbalance):**
 
@@ -294,7 +294,7 @@ where $y\_{i,j,k}$ is the one-hot encoded ground truth.
 
 ```
 
-where $w\_k = \frac{N}{K \cdot N\_k}$ and $N\_k$ is the number of pixels in class $k$.
+where $w_k = \frac{N}{K \cdot N_k}$ and $N_k$ is the number of pixels in class $k$.
 
 **Dice Loss:**
 
@@ -313,7 +313,7 @@ Based on the Sørensen–Dice coefficient:
 
 ```
 
-where $w\_k = \frac{1}{(\sum\_{i,j} g\_{i,j,k})^2}$ to weight smaller classes more.
+where $w_k = \frac{1}{(\sum_{i,j} g_{i,j,k})^2}$ to weight smaller classes more.
 
 **Tversky Loss:**
 

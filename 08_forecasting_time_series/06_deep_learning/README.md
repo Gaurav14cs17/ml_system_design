@@ -272,16 +272,16 @@ The **Long Short-Term Memory (LSTM)** network uses gating mechanisms to control 
 
 #### Gate Equations
 
-At each time step $t$, given input $x\_t$ and previous hidden state $h\_{t-1}$:
+At each time step $t$, given input $x_t$ and previous hidden state $h_{t-1}$:
 
 | Gate | Formula | Function |
 |------|---------|----------|
-| **Forget Gate** | $f\_t = \sigma(W\_f \cdot [h\_{t-1}, x\_t] + b\_f)$ | Decides what to discard from cell state |
-| **Input Gate** | $i\_t = \sigma(W\_i \cdot [h\_{t-1}, x\_t] + b\_i)$ | Decides what new information to store |
-| **Candidate Values** | $\tilde{C}\_t = \tanh(W\_C \cdot [h\_{t-1}, x\_t] + b\_C)$ | Creates candidate values to add |
-| **Cell State Update** | $C\_t = f\_t \odot C\_{t-1} + i\_t \odot \tilde{C}\_t$ | Updates the cell state |
-| **Output Gate** | $o\_t = \sigma(W\_o \cdot [h\_{t-1}, x\_t] + b\_o)$ | Decides what to output |
-| **Hidden State** | $h\_t = o\_t \odot \tanh(C\_t)$ | Outputs filtered cell state |
+| **Forget Gate** | $f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$ | Decides what to discard from cell state |
+| **Input Gate** | $i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$ | Decides what new information to store |
+| **Candidate Values** | $\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)$ | Creates candidate values to add |
+| **Cell State Update** | $C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t$ | Updates the cell state |
+| **Output Gate** | $o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)$ | Decides what to output |
+| **Hidden State** | $h_t = o_t \odot \tanh(C_t)$ | Outputs filtered cell state |
 
 Where:
 
@@ -665,13 +665,13 @@ The **Scaled Dot-Product Attention** is the core of Transformers:
 
 Where:
 
-- $Q \in \mathbb{R}^{n \times d\_k}$ — Query matrix
+- $Q \in \mathbb{R}^{n \times d_k}$ — Query matrix
 
-- $K \in \mathbb{R}^{m \times d\_k}$ — Key matrix
+- $K \in \mathbb{R}^{m \times d_k}$ — Key matrix
 
-- $V \in \mathbb{R}^{m \times d\_v}$ — Value matrix
+- $V \in \mathbb{R}^{m \times d_v}$ — Value matrix
 
-- $d\_k$ — Key dimension (scaling factor prevents vanishing gradients)
+- $d_k$ — Key dimension (scaling factor prevents vanishing gradients)
 
 ### Multi-Head Attention
 

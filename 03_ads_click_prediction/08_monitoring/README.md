@@ -152,7 +152,7 @@ Alert threshold: > 1% for critical features.
 ### Model Staleness
 
 ```math
-\text{Staleness} = t_{\text{now}} - t_{\text{model\_trained}}
+\text{Staleness} = t_{\text{now}} - t_{\text{model_trained}}
 
 ```
 

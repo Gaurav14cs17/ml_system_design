@@ -60,25 +60,25 @@ The **difference operator** $\nabla$ is defined as:
 
 ### White Noise Process
 
-A **white noise** process $\{\varepsilon\_t\}$ satisfies:
+A **white noise** process $\{\varepsilon_t\}$ satisfies:
 
 ```math
 \mathbb{E}[\varepsilon_t] = 0, \quad \text{Var}(\varepsilon_t) = \sigma^2, \quad \text{Cov}(\varepsilon_t, \varepsilon_s) = 0 \text{ for } t \neq s
 
 ```
 
-Often denoted as $\varepsilon\_t \sim \text{WN}(0, \sigma^2)$ or $\varepsilon\_t \overset{iid}{\sim} \mathcal{N}(0, \sigma^2)$ for Gaussian white noise.
+Often denoted as $\varepsilon_t \sim \text{WN}(0, \sigma^2)$ or $\varepsilon_t \overset{iid}{\sim} \mathcal{N}(0, \sigma^2)$ for Gaussian white noise.
 
 ### Wold's Decomposition Theorem
 
-Any stationary process $\{Y\_t\}$ can be represented as:
+Any stationary process $\{Y_t\}$ can be represented as:
 
 ```math
 Y_t = \mu + \sum_{j=0}^{\infty} \psi_j \varepsilon_{t-j} = \mu + \psi(B)\varepsilon_t
 
 ```
 
-where $\psi(B) = \sum\_{j=0}^{\infty} \psi\_j B^j$ and $\sum\_{j=0}^{\infty} \psi\_j^2 < \infty$.
+where $\psi(B) = \sum_{j=0}^{\infty} \psi_j B^j$ and $\sum_{j=0}^{\infty} \psi_j^2 < \infty$.
 
 ---
 
@@ -304,7 +304,7 @@ Differencing removes non-stationarity:
 
 ```
 
-Or equivalently, if $W\_t = \nabla^d Y\_t$:
+Or equivalently, if $W_t = \nabla^d Y_t$:
 
 ```math
 \phi(B)W_t = c + \theta(B)\varepsilon_t
@@ -440,13 +440,13 @@ B^m Y_t = Y_{t-m}
 
 Where:
 
-- $\phi\_p(B) = 1 - \phi\_1 B - \cdots - \phi\_p B^p$ — Non-seasonal AR polynomial
+- $\phi_p(B) = 1 - \phi_1 B - \cdots - \phi_p B^p$ — Non-seasonal AR polynomial
 
-- $\theta\_q(B) = 1 + \theta\_1 B + \cdots + \theta\_q B^q$ — Non-seasonal MA polynomial
+- $\theta_q(B) = 1 + \theta_1 B + \cdots + \theta_q B^q$ — Non-seasonal MA polynomial
 
-- $\Phi\_P(B^m) = 1 - \Phi\_1 B^m - \cdots - \Phi\_P B^{Pm}$ — Seasonal AR polynomial
+- $\Phi_P(B^m) = 1 - \Phi_1 B^m - \cdots - \Phi_P B^{Pm}$ — Seasonal AR polynomial
 
-- $\Theta\_Q(B^m) = 1 + \Theta\_1 B^m + \cdots + \Theta\_Q B^{Qm}$ — Seasonal MA polynomial
+- $\Theta_Q(B^m) = 1 + \Theta_1 B^m + \cdots + \Theta_Q B^{Qm}$ — Seasonal MA polynomial
 
 ### Example: SARIMA(1,1,1)(1,1,1)₁₂
 
@@ -459,10 +459,10 @@ For monthly data with yearly seasonality:
 
 | Parameter | Interpretation |
 |-----------|----------------|
-| $\phi\_1$ | Dependence on previous month |
-| $\Phi\_1$ | Dependence on same month last year |
-| $\theta\_1$ | Smoothing of recent errors |
-| $\Theta\_1$ | Smoothing of yearly seasonal errors |
+| $\phi_1$ | Dependence on previous month |
+| $\Phi_1$ | Dependence on same month last year |
+| $\theta_1$ | Smoothing of recent errors |
+| $\Theta_1$ | Smoothing of yearly seasonal errors |
 
 ### SARIMA Implementation
 

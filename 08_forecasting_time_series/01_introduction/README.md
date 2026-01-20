@@ -348,10 +348,10 @@ Understanding time series decomposition is fundamental to building effective for
 
 | Component | Symbol | Mathematical Form | Characteristics |
 |-----------|--------|-------------------|-----------------|
-| **Trend** | $T\_t$ | $T\_t = \beta\_0 + \beta\_1 t$ (linear) or $T\_t = \beta\_0 + \beta\_1 t + \beta\_2 t^2$ (quadratic) | Long-term direction |
-| **Seasonal** | $S\_t$ | $S\_t = \sum\_{k=1}^{K} [a\_k \cos(2\pi kt/m) + b\_k \sin(2\pi kt/m)]$ | Period $m$, Fourier harmonics |
-| **Cyclical** | $C\_t$ | Irregular fluctuations with variable period | Business cycles, typically 2-10 years |
-| **Residual** | $\varepsilon\_t$ | $\varepsilon\_t \sim \text{WN}(0, \sigma^2)$ (white noise) | $\mathbb{E}[\varepsilon\_t] = 0$, $\text{Cov}(\varepsilon\_t, \varepsilon\_s) = 0$ for $t \neq s$ |
+| **Trend** | $T_t$ | $T_t = \beta_0 + \beta_1 t$ (linear) or $T_t = \beta_0 + \beta_1 t + \beta_2 t^2$ (quadratic) | Long-term direction |
+| **Seasonal** | $S_t$ | $S_t = \sum_{k=1}^{K} [a_k \cos(2\pi kt/m) + b_k \sin(2\pi kt/m)]$ | Period $m$, Fourier harmonics |
+| **Cyclical** | $C_t$ | Irregular fluctuations with variable period | Business cycles, typically 2-10 years |
+| **Residual** | $\varepsilon_t$ | $\varepsilon_t \sim \text{WN}(0, \sigma^2)$ (white noise) | $\mathbb{E}[\varepsilon_t] = 0$, $\text{Cov}(\varepsilon_t, \varepsilon_s) = 0$ for $t \neq s$ |
 
 ### Seasonal Pattern with Fourier Series
 
@@ -476,7 +476,7 @@ A time series is **stationary** if its statistical properties remain constant ov
 
 ### Mathematical Definition
 
-A stochastic process $\{Y\_t\}$ is **weakly stationary** (or covariance stationary) if:
+A stochastic process $\{Y_t\}$ is **weakly stationary** (or covariance stationary) if:
 
 ```math
 \mathbb{E}[Y_t] = \mu \quad \forall t \quad \text{(constant mean)}
@@ -513,10 +513,10 @@ And the **autocorrelation function (ACF)** is:
 
 | Type | Definition | Mathematical Condition |
 |------|------------|----------------------|
-| **Strict Stationarity** | Joint distribution is time-invariant | $F(y\_{t\_1}, ..., y\_{t\_k}) = F(y\_{t\_1+h}, ..., y\_{t\_k+h})$ |
-| **Weak Stationarity** | First two moments are time-invariant | $\mathbb{E}[Y\_t] = \mu$, $\text{Cov}(Y\_t, Y\_{t+h}) = \gamma(h)$ |
-| **Trend Stationarity** | Stationary after removing deterministic trend | $Y\_t = f(t) + \varepsilon\_t$ where $\varepsilon\_t$ is stationary |
-| **Difference Stationarity** | Stationary after differencing | $\nabla Y\_t = Y\_t - Y\_{t-1}$ is stationary |
+| **Strict Stationarity** | Joint distribution is time-invariant | $F(y_{t_1}, ..., y_{t_k}) = F(y_{t_1+h}, ..., y_{t_k+h})$ |
+| **Weak Stationarity** | First two moments are time-invariant | $\mathbb{E}[Y_t] = \mu$, $\text{Cov}(Y_t, Y_{t+h}) = \gamma(h)$ |
+| **Trend Stationarity** | Stationary after removing deterministic trend | $Y_t = f(t) + \varepsilon_t$ where $\varepsilon_t$ is stationary |
+| **Difference Stationarity** | Stationary after differencing | $\nabla Y_t = Y_t - Y_{t-1}$ is stationary |
 
 ### Testing for Stationarity
 

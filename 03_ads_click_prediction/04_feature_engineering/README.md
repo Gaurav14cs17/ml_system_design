@@ -120,9 +120,9 @@ where $\Delta t$ = hours since last activity, $\lambda = \frac{\ln 2}{\text{half
 
 where:
 
-- $\mathbf{e}\_i$ = embedding of interacted item
+- $\mathbf{e}_i$ = embedding of interacted item
 
-- $w\_i = r\_i \cdot c\_i$ = weight (recency × click indicator)
+- $w_i = r_i \cdot c_i$ = weight (recency × click indicator)
 
 ---
 
@@ -146,7 +146,7 @@ Composite score combining multiple signals:
 
 ```
 
-where $\sum w\_i = 1$.
+where $\sum w_i = 1$.
 
 ### Freshness Features
 
@@ -302,7 +302,7 @@ where $M$ = number of hash buckets (typically 1M).
 
 ```
 
-where $\lambda = \frac{n\_c}{n\_c + m}$, $m$ = smoothing parameter.
+where $\lambda = \frac{n_c}{n_c + m}$, $m$ = smoothing parameter.
 
 ---
 

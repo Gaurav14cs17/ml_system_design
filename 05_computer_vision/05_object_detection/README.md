@@ -38,11 +38,11 @@ Object detection = Classification + Localization for multiple objects.
 
 Given an image $I$, predict for each object $i$:
 
-- **Bounding box:** $\mathbf{b}\_i = (x, y, w, h)$ or $(x\_1, y\_1, x\_2, y\_2)$
+- **Bounding box:** $\mathbf{b}_i = (x, y, w, h)$ or $(x_1, y_1, x_2, y_2)$
 
-- **Class probabilities:** $\mathbf{p}\_i = (p\_1, ..., p\_C)$
+- **Class probabilities:** $\mathbf{p}_i = (p_1, ..., p_C)$
 
-- **Confidence:** $c\_i$ (objectness score)
+- **Confidence:** $c_i$ (objectness score)
 
 **Multi-Task Loss:**
 
@@ -67,7 +67,7 @@ Given an image $I$, predict for each object $i$:
 
 ```
 
-where $\text{smooth}\_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x| - 0.5 & \text{otherwise} \end{cases}$
+where $\text{smooth}_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x| - 0.5 & \text{otherwise} \end{cases}$
 
 **IoU Loss:**
 
@@ -254,7 +254,7 @@ In one-stage detectors, most anchors are negative (background). This imbalance:
 
 ```
 
-For binary case with $p\_t = \begin{cases} p & \text{if } y = 1 \\ 1-p & \text{otherwise} \end{cases}$:
+For binary case with $p_t = \begin{cases} p & \text{if } y = 1 \\ 1-p & \text{otherwise} \end{cases}$:
 
 ```math
 \text{CE}(p_t) = -\log(p_t)
@@ -272,11 +272,11 @@ where:
 
 - $\gamma$ = focusing parameter (typically 2)
 
-- $\alpha\_t$ = class balancing weight
+- $\alpha_t$ = class balancing weight
 
-**Effect of $(1 - p\_t)^\gamma$:**
+**Effect of $(1 - p_t)^\gamma$:**
 
-| $p\_t$ (confidence) | $(1-p\_t)^\gamma$, $\gamma=2$ | Effect |
+| $p_t$ (confidence) | $(1-p_t)^\gamma$, $\gamma=2$ | Effect |
 |---|---|---|
 | 0.9 (easy) | 0.01 | 100× down-weighted |
 | 0.5 (moderate) | 0.25 | 4× down-weighted |
@@ -461,7 +461,7 @@ For two bounding boxes $A$ (predicted) and $B$ (ground truth):
 
 **For axis-aligned boxes:**
 
-Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_2^B)$:
+Given boxes $(x_1^A, y_1^A, x_2^A, y_2^A)$ and $(x_1^B, y_1^B, x_2^B, y_2^B)$:
 
 ```math
 \text{Intersection width} = \max(0, \min(x_2^A, x_2^B) - \max(x_1^A, x_1^B))
@@ -524,7 +524,7 @@ In practice, discretized as:
 
 ```
 
-where $p\_{interp}(r) = \max\_{r' \geq r} p(r')$ (interpolated precision)
+where $p_{interp}(r) = \max_{r' \geq r} p(r')$ (interpolated precision)
 
 **Mean Average Precision:**
 

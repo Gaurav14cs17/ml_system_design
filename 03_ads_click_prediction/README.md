@@ -105,9 +105,9 @@ The primary training objective:
 
 where:
 
-- $y\_i \in \{0, 1\}$ is the true label (click/no-click)
+- $y_i \in \{0, 1\}$ is the true label (click/no-click)
 
-- $\hat{y}\_i \in [0, 1]$ is the predicted probability
+- $\hat{y}_i \in [0, 1]$ is the predicted probability
 
 - $N$ is the batch size
 
@@ -118,7 +118,7 @@ where:
 
 ```
 
-Typical weights: $w\_+ = 10 \text{ to } 100$, $w\_- = 1$ (since CTR ~ 1-5%)
+Typical weights: $w_+ = 10 \text{ to } 100$, $w_- = 1$ (since CTR ~ 1-5%)
 
 ---
 
@@ -142,7 +142,7 @@ Also called **Relative Information Gain** or **Normalized Entropy**:
 
 ```
 
-where $p = \frac{1}{N} \sum\_{i=1}^{N} y\_i$ is the average CTR.
+where $p = \frac{1}{N} \sum_{i=1}^{N} y_i$ is the average CTR.
 
 **Interpretation**: NCE < 1 means model is better than baseline; lower is better.
 
@@ -153,7 +153,7 @@ where $p = \frac{1}{N} \sum\_{i=1}^{N} y\_i$ is the average CTR.
 
 ```
 
-where $B$ is number of bins, $n\_b$ is samples in bin $b$.
+where $B$ is number of bins, $n_b$ is samples in bin $b$.
 
 ---
 
@@ -175,7 +175,7 @@ Efficient pairwise interactions:
 
 ```
 
-where $\mathbf{v}\_i \in \mathbb{R}^k$ are latent vectors.
+where $\mathbf{v}_i \in \mathbb{R}^k$ are latent vectors.
 
 Efficient computation in $O(kd)$:
 
@@ -197,9 +197,9 @@ Efficient computation in $O(kd)$:
 
 where:
 
-- Wide: $\mathbf{w}\_{wide}^T [\mathbf{x}, \phi(\mathbf{x})]$ — memorization
+- Wide: $\mathbf{w}_{wide}^T [\mathbf{x}, \phi(\mathbf{x})]$ — memorization
 
-- Deep: $a^{(L)} = \text{DNN}(\mathbf{x}\_{dense})$ — generalization
+- Deep: $a^{(L)} = \text{DNN}(\mathbf{x}_{dense})$ — generalization
 
 #### Deep & Cross Network (DCN)
 

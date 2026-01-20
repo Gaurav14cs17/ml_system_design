@@ -136,15 +136,15 @@ R = \det(\mathbf{M}) - k \cdot \text{trace}(\mathbf{M})^2 = \lambda_1 \lambda_2 
 
 ```
 
-where $\lambda\_1, \lambda\_2$ are eigenvalues of $\mathbf{M}$ and $k \approx 0.04-0.06$.
+where $\lambda_1, \lambda_2$ are eigenvalues of $\mathbf{M}$ and $k \approx 0.04-0.06$.
 
 **Classification:**
 
-- **Flat region:** $\lambda\_1 \approx \lambda\_2 \approx 0$ → $R \approx 0$
+- **Flat region:** $\lambda_1 \approx \lambda_2 \approx 0$ → $R \approx 0$
 
-- **Edge:** $\lambda\_1 \gg \lambda\_2$ or $\lambda\_2 \gg \lambda\_1$ → $R < 0$
+- **Edge:** $\lambda_1 \gg \lambda_2$ or $\lambda_2 \gg \lambda_1$ → $R < 0$
 
-- **Corner:** $\lambda\_1 \approx \lambda\_2 \gg 0$ → $R > 0$ (large positive)
+- **Corner:** $\lambda_1 \approx \lambda_2 \gg 0$ → $R > 0$ (large positive)
 
 ```python
 import cv2
@@ -253,7 +253,7 @@ Build orientation histogram (36 bins, 10° each). Peak = dominant orientation.
 
 - **Result:** 4×4×8 = **128-dimensional** descriptor
 
-Normalization: $\mathbf{d} \leftarrow \mathbf{d} / \|\mathbf{d}\|\_2$
+Normalization: $\mathbf{d} \leftarrow \mathbf{d} / \|\mathbf{d}\|_2$
 
 ### SIFT Implementation
 
@@ -434,7 +434,7 @@ H_k = \sum_{(x,y) \in \text{cell}} m(x,y) \cdot w_k(\theta(x,y))
 
 ```
 
-where $w\_k$ is the interpolation weight for bin $k$.
+where $w_k$ is the interpolation weight for bin $k$.
 
 #### 3. Block Normalization
 
@@ -449,7 +449,7 @@ Concatenate histograms and normalize:
 
 ```
 
-Then clip: $v\_i \leftarrow \min(v\_i, 0.2)$
+Then clip: $v_i \leftarrow \min(v_i, 0.2)$
 
 Then renormalize.
 

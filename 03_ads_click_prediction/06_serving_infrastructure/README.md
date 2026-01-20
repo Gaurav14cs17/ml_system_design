@@ -71,7 +71,7 @@ Collect requests and process together:
 **Optimal batch size**:
 
 ```math
-B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per\_sample}}}
+B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per_sample}}}
 
 ```
 
@@ -88,7 +88,7 @@ Wait time vs batch efficiency:
 
 ```math
 \text{Total Latency} = T_{\text{wait}} + T_{\text{inference}}(B)
-T_{\text{wait}} = \min(T_{\text{timeout}}, T_{\text{batch\_full}})
+T_{\text{wait}} = \min(T_{\text{timeout}}, T_{\text{batch_full}})
 
 ```
 
@@ -128,7 +128,7 @@ T_{\text{avg}} = p_{\text{hit}} \cdot T_{\text{cache}} + (1 - p_{\text{hit}}) \c
 | 95% | 1.45ms | Good |
 | 99% | 1.09ms | Excellent |
 
-Assuming $T\_{\text{cache}} = 1\text{ms}$, $T\_{\text{origin}} = 10\text{ms}$.
+Assuming $T_{\text{cache}} = 1\text{ms}$, $T_{\text{origin}} = 10\text{ms}$.
 
 ---
 
@@ -141,7 +141,7 @@ Assuming $T\_{\text{cache}} = 1\text{ms}$, $T\_{\text{origin}} = 10\text{ms}$.
 ### Cache Key Design
 
 ```math
-\text{key} = \text{hash}(\text{entity\_type}, \text{entity\_id}, \text{feature\_version})
+\text{key} = \text{hash}(\text{entity_type}, \text{entity_id}, \text{feature_version})
 
 ```
 
@@ -200,7 +200,7 @@ P(\text{server}_i) = \frac{w_i}{\sum_j w_j}
 
 ```
 
-where $w\_i$ = server capacity weight.
+where $w_i$ = server capacity weight.
 
 ### Health Checks
 

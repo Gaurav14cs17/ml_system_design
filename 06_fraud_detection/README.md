@@ -50,7 +50,7 @@ The optimal decision minimizes **expected cost**:
 
 ```
 
-Where $C\_{FN}$ is the cost of missing fraud and $C\_{FP}$ is the cost of blocking legitimate transactions.
+Where $C_{FN}$ is the cost of missing fraud and $C_{FP}$ is the cost of blocking legitimate transactions.
 
 ### Key Mathematical Concepts
 
@@ -58,9 +58,9 @@ Where $C\_{FN}$ is the cost of missing fraud and $C\_{FP}$ is the cost of blocki
 |---------|---------|---------|
 | **Bayes' Theorem** | $P(y\|\mathbf{x}) = \frac{P(\mathbf{x}\|y) P(y)}{P(\mathbf{x})}$ | [Ch. 1](./01_introduction/) |
 | **Z-Score Anomaly** | $z = \frac{x - \mu}{\sigma}$ | [Ch. 3](./03_feature_engineering/) |
-| **Focal Loss** | $\mathcal{L} = -\alpha(1-p\_t)^\gamma \log(p\_t)$ | [Ch. 4](./04_model_architecture/) |
-| **PR-AUC** | $\int\_0^1 P(r) \, dr$ | [Ch. 7](./07_model_training_and_evaluation/) |
-| **F-beta Score** | $F\_\beta = (1+\beta^2) \frac{P \cdot R}{\beta^2 P + R}$ | [Ch. 7](./07_model_training_and_evaluation/) |
+| **Focal Loss** | $\mathcal{L} = -\alpha(1-p_t)^\gamma \log(p_t)$ | [Ch. 4](./04_model_architecture/) |
+| **PR-AUC** | $\int_0^1 P(r) \, dr$ | [Ch. 7](./07_model_training_and_evaluation/) |
+| **F-beta Score** | $F_\beta = (1+\beta^2) \frac{P \cdot R}{\beta^2 P + R}$ | [Ch. 7](./07_model_training_and_evaluation/) |
 
 ### Class Imbalance Challenge
 

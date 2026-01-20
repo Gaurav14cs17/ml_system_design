@@ -75,13 +75,13 @@ The **scaled dot-product attention** is the core of Transformer models:
 
 Where:
 
-- $Q$ = Query matrix of shape $(n, d\_k)$
+- $Q$ = Query matrix of shape $(n, d_k)$
 
-- $K$ = Key matrix of shape $(m, d\_k)$  
+- $K$ = Key matrix of shape $(m, d_k)$  
 
-- $V$ = Value matrix of shape $(m, d\_v)$
+- $V$ = Value matrix of shape $(m, d_v)$
 
-- $d\_k$ = dimensionality of keys (scaling factor)
+- $d_k$ = dimensionality of keys (scaling factor)
 
 ### Information Theory
 
@@ -132,10 +132,10 @@ Every production NLP system follows a similar high-level architecture:
 
 | Task | Primary Metrics | Mathematical Definition |
 |------|-----------------|------------------------|
-| Classification | F1, Accuracy | $F\_1 = 2 \cdot \frac{P \cdot R}{P + R}$ |
+| Classification | F1, Accuracy | $F_1 = 2 \cdot \frac{P \cdot R}{P + R}$ |
 | NER | Entity-level F1 | Span-exact match scoring |
-| Translation | BLEU | $\text{BLEU} = BP \cdot \exp\left(\sum\_{n=1}^{N} w\_n \log p\_n\right)$ |
-| QA | Exact Match, F1 | Token overlap $F\_1$ |
+| Translation | BLEU | $\text{BLEU} = BP \cdot \exp\left(\sum_{n=1}^{N} w_n \log p_n\right)$ |
+| QA | Exact Match, F1 | Token overlap $F_1$ |
 | Generation | ROUGE, BERTScore | N-gram overlap / embedding similarity |
 
 ### System Performance Metrics
@@ -192,29 +192,29 @@ Before diving into specific NLP topics, ensure familiarity with these concepts:
 
 - **Vectors and matrices**: Representations of text and transformations
 
-- **Matrix multiplication**: $C\_{ij} = \sum\_k A\_{ik} B\_{kj}$
+- **Matrix multiplication**: $C_{ij} = \sum_k A_{ik} B_{kj}$
 
 - **Eigendecomposition**: Used in dimensionality reduction (SVD, PCA)
 
 ### Calculus
 
-- **Gradients**: $\nabla\_\theta \mathcal{L}$ for optimization
+- **Gradients**: $\nabla_\theta \mathcal{L}$ for optimization
 
 - **Chain rule**: Essential for backpropagation
 
-- **Softmax derivative**: $\frac{\partial \text{softmax}\_i}{\partial z\_j} = \text{softmax}\_i (\delta\_{ij} - \text{softmax}\_j)$
+- **Softmax derivative**: $\frac{\partial \text{softmax}_i}{\partial z_j} = \text{softmax}_i (\delta_{ij} - \text{softmax}_j)$
 
 ### Probability Theory
 
 - **Bayes' theorem**: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 
-- **Maximum likelihood estimation**: $\hat{\theta} = \arg\max\_\theta P(D|\theta)$
+- **Maximum likelihood estimation**: $\hat{\theta} = \arg\max_\theta P(D|\theta)$
 
 - **Conditional independence**: Markov assumptions in sequence models
 
 ### Information Theory
 
-- **Entropy**: $H(X) = -\sum\_x P(x) \log P(x)$
+- **Entropy**: $H(X) = -\sum_x P(x) \log P(x)$
 
 - **Mutual information**: $I(X;Y) = H(X) - H(X|Y)$
 

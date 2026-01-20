@@ -95,14 +95,14 @@ To correct predictions:
 
 #### SMOTE: Synthetic Minority Oversampling
 
-For each minority sample $\mathbf{x}\_i$, find $k$ nearest neighbors and create synthetic samples:
+For each minority sample $\mathbf{x}_i$, find $k$ nearest neighbors and create synthetic samples:
 
 ```math
 \mathbf{x}_{\text{new}} = \mathbf{x}_i + \lambda \cdot (\mathbf{x}_{nn} - \mathbf{x}_i)
 
 ```
 
-Where $\lambda \sim \text{Uniform}(0, 1)$ and $\mathbf{x}\_{nn}$ is a random neighbor.
+Where $\lambda \sim \text{Uniform}(0, 1)$ and $\mathbf{x}_{nn}$ is a random neighbor.
 
 ### Evaluation Metrics: Mathematical Definitions
 
@@ -138,7 +138,7 @@ This is the precision-weighted average over recall levels.
 
 #### F-beta Optimal Threshold
 
-The threshold maximizing $F\_\beta$ score:
+The threshold maximizing $F_\beta$ score:
 
 ```math
 \tau^* = \arg\max_\tau \frac{(1 + \beta^2) \cdot P(\tau) \cdot R(\tau)}{\beta^2 \cdot P(\tau) + R(\tau)}
@@ -147,14 +147,14 @@ The threshold maximizing $F\_\beta$ score:
 
 #### Cost-Optimal Threshold
 
-Given costs $C\_{FP}$ (false positive) and $C\_{FN}$ (false negative):
+Given costs $C_{FP}$ (false positive) and $C_{FN}$ (false negative):
 
 ```math
 \tau^* = \arg\min_\tau \left[ C_{FP} \cdot FP(\tau) + C_{FN} \cdot FN(\tau) \right]
 
 ```
 
-Equivalently, set $\tau^* = \frac{C\_{FP}}{C\_{FP} + C\_{FN}}$ when the model is well-calibrated.
+Equivalently, set $\tau^* = \frac{C_{FP}}{C_{FP} + C_{FN}}$ when the model is well-calibrated.
 
 #### Youden's J Statistic
 
@@ -197,11 +197,11 @@ Where $A, B$ are learned on a held-out calibration set.
 
 #### Temporal Split (Walk-Forward)
 
-For data ordered by time $t\_1 < t\_2 < \cdots < t\_N$:
+For data ordered by time $t_1 < t_2 < \cdots < t_N$:
 
-- **Fold 1**: Train on $[t\_1, t\_k]$, validate on $[t\_k + \text{gap}, t\_{k+m}]$
+- **Fold 1**: Train on $[t_1, t_k]$, validate on $[t_k + \text{gap}, t_{k+m}]$
 
-- **Fold 2**: Train on $[t\_1, t\_{k+m}]$, validate on $[t\_{k+m+\text{gap}}, t\_{k+2m}]$
+- **Fold 2**: Train on $[t_1, t_{k+m}]$, validate on $[t_{k+m+\text{gap}}, t_{k+2m}]$
 
 The **gap** prevents label leakage from delayed fraud labels (typically 30-90 days).
 
@@ -214,7 +214,7 @@ To preserve temporal ordering within folds:
 
 ```
 
-Where $D\_k$ is a contiguous time block, and $\theta\_{-k}$ is trained on all other blocks.
+Where $D_k$ is a contiguous time block, and $\theta_{-k}$ is trained on all other blocks.
 
 ### Hyperparameter Optimization
 
@@ -234,7 +234,7 @@ Acquisition function (Expected Improvement):
 
 ```
 
-Where $\mathbf{h}^+$ is the current best. Next point: $\mathbf{h}\_{\text{next}} = \arg\max\_\mathbf{h} \text{EI}(\mathbf{h})$.
+Where $\mathbf{h}^+$ is the current best. Next point: $\mathbf{h}_{\text{next}} = \arg\max_\mathbf{h} \text{EI}(\mathbf{h})$.
 
 ### Statistical Significance Testing
 
@@ -249,7 +249,7 @@ Given two models' predictions on the same test set:
 
 Where $b$ = samples correctly classified by model 1 only, $c$ = by model 2 only.
 
-Reject $H\_0$ (models are equivalent) if $\chi^2 > 3.84$ (at $\alpha = 0.05$).
+Reject $H_0$ (models are equivalent) if $\chi^2 > 3.84$ (at $\alpha = 0.05$).
 
 #### Bootstrap Confidence Intervals
 
@@ -260,7 +260,7 @@ M^{(b)} = M(\mathcal{D}^{(b)}), \quad b = 1, \ldots, B
 
 ```
 
-Where $\mathcal{D}^{(b)}$ is a bootstrap resample. The 95% CI is $[M\_{2.5\%}, M\_{97.5\%}]$.
+Where $\mathcal{D}^{(b)}$ is a bootstrap resample. The 95% CI is $[M_{2.5\%}, M_{97.5\%}]$.
 
 ### Pipeline Implementation
 

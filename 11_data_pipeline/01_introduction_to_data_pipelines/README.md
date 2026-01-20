@@ -21,13 +21,13 @@ A data pipeline can be formally defined as a **directed acyclic graph (DAG)** of
 
 where:
 
-- $V = \{v\_1, v\_2, ..., v\_n\}$ is the set of **data nodes** (datasets)
+- $V = \{v_1, v_2, ..., v_n\}$ is the set of **data nodes** (datasets)
 
 - $E \subseteq V \times V$ is the set of **directed edges** representing data flow
 
-- $T = \{t\_1, t\_2, ..., t\_m\}$ is the set of **transformation functions**
+- $T = \{t_1, t_2, ..., t_m\}$ is the set of **transformation functions**
 
-Each transformation $t\_i: D\_{in} \rightarrow D\_{out}$ maps input data to output data.
+Each transformation $t_i: D_{in} \rightarrow D_{out}$ maps input data to output data.
 
 ### Pipeline Composition
 
@@ -83,7 +83,7 @@ L_{total} = \sum_{i=1}^{n} L_i + \sum_{j=1}^{m} Q_j
 
 ```
 
-where $L\_i$ is processing latency at stage $i$ and $Q\_j$ is queueing delay.
+where $L_i$ is processing latency at stage $i$ and $Q_j$ is queueing delay.
 
 **Throughput** — records per unit time:
 
@@ -92,7 +92,7 @@ where $L\_i$ is processing latency at stage $i$ and $Q\_j$ is queueing delay.
 
 ```
 
-where $P\_i$ is parallelism and $S\_i$ is processing time per record at stage $i$.
+where $P_i$ is parallelism and $S_i$ is processing time per record at stage $i$.
 
 **Little's Law** relates these:
 
@@ -241,9 +241,9 @@ Before diving into implementations, let's understand the theoretical models:
 
 #### Bounded vs Unbounded Data
 
-- **Bounded Data** $D\_B$: Finite dataset with known cardinality $|D\_B| < \infty$
+- **Bounded Data** $D_B$: Finite dataset with known cardinality $|D_B| < \infty$
 
-- **Unbounded Data** $D\_U$: Infinite stream where $|D\_U| \rightarrow \infty$ over time
+- **Unbounded Data** $D_U$: Infinite stream where $|D_U| \rightarrow \infty$ over time
 
 This distinction fundamentally shapes processing strategies.
 
@@ -251,14 +251,14 @@ This distinction fundamentally shapes processing strategies.
 
 Two critical time concepts in data processing:
 
-**Event Time** $t\_e$: When the event actually occurred
+**Event Time** $t_e$: When the event actually occurred
 
 ```math
 t_e = \text{timestamp embedded in event}
 
 ```
 
-**Processing Time** $t\_p$: When the system processes the event
+**Processing Time** $t_p$: When the system processes the event
 
 ```math
 t_p = \text{current system time}
@@ -275,7 +275,7 @@ t_p = \text{current system time}
 Event time processing requires **watermarks** — markers indicating "all events up to time $W$ have arrived":
 
 ```math
-W(t_p) = \max(t_e) - \text{allowed\_lateness}
+W(t_p) = \max(t_e) - \text{allowed_lateness}
 
 ```
 
@@ -290,7 +290,7 @@ W(t_p) = \max(t_e) - \text{allowed\_lateness}
 - Higher latency but simpler to implement
 
 **Mathematical Model:**
-For a batch window $[t\_1, t\_2]$:
+For a batch window $[t_1, t_2]$:
 
 ```math
 D_{batch} = \{d \in D : t_1 \leq t_e(d) < t_2\}
@@ -304,7 +304,7 @@ R = f(D_{batch})
 
 ```
 
-**Complexity**: $O(|D\_{batch}|)$ time, requires $O(|D\_{batch}|)$ memory for full-batch aggregations.
+**Complexity**: $O(|D_{batch}|)$ time, requires $O(|D_{batch}|)$ memory for full-batch aggregations.
 
 **Use Cases:**
 
@@ -327,7 +327,7 @@ R = f(D_{batch})
 - Lower latency, higher complexity
 
 **Mathematical Model:**
-Events arrive as a sequence $(e\_1, e\_2, e\_3, ...)$ with inter-arrival times following some distribution.
+Events arrive as a sequence $(e_1, e_2, e_3, ...)$ with inter-arrival times following some distribution.
 
 For **Poisson arrivals** (common model):
 

@@ -34,7 +34,7 @@ z = \frac{x - \mu}{\sigma}
 
 ```
 
-Maps data to have mean $\mu\_z = 0$ and variance $\sigma\_z^2 = 1$.
+Maps data to have mean $\mu_z = 0$ and variance $\sigma_z^2 = 1$.
 
 **Min-Max Scaling:**
 
@@ -134,7 +134,7 @@ This is equivalent to a **Bayesian shrinkage estimator** with a prior centered a
 
 #### One-Hot Encoding
 
-Maps categorical variable $c \in \{c\_1, ..., c\_k\}$ to $\mathbb{R}^{k-1}$ (or $\mathbb{R}^k$):
+Maps categorical variable $c \in \{c_1, ..., c_k\}$ to $\mathbb{R}^{k-1}$ (or $\mathbb{R}^k$):
 
 ```math
 \phi(c) = [\mathbb{1}_{c=c_1}, \mathbb{1}_{c=c_2}, ..., \mathbb{1}_{c=c_{k-1}}]
@@ -160,7 +160,7 @@ This maps cyclic values to a unit circle, preserving the property that hour 23 a
 
 #### Time-Windowed Aggregations
 
-For a time series $\{(t\_i, x\_i)\}$ and window size $w$:
+For a time series $\{(t_i, x_i)\}$ and window size $w$:
 
 **Rolling Mean:**
 
@@ -180,14 +180,14 @@ where $\alpha = \frac{2}{w+1}$.
 
 **Rolling Statistics:**
 
-- Variance: $\sigma\_t^{2(w)} = \frac{1}{w}\sum\_{i=0}^{w-1}(x\_{t-i} - \bar{x}\_t^{(w)})^2$
+- Variance: $\sigma_t^{2(w)} = \frac{1}{w}\sum_{i=0}^{w-1}(x_{t-i} - \bar{x}_t^{(w)})^2$
 
-- Min/Max: $\min\_{i \in [t-w, t]} x\_i$, $\max\_{i \in [t-w, t]} x\_i$
+- Min/Max: $\min_{i \in [t-w, t]} x_i$, $\max_{i \in [t-w, t]} x_i$
 
 ### Interaction Features
 
 **Polynomial Features:**
-For features $x\_1, x\_2$, degree 2:
+For features $x_1, x_2$, degree 2:
 
 ```math
 \phi(x_1, x_2) = [x_1, x_2, x_1^2, x_2^2, x_1 \cdot x_2]

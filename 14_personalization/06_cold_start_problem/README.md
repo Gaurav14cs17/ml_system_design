@@ -103,7 +103,7 @@ Where \(\mathbf{x}_u^{\text{demo}}\) includes age, gender, location, etc.
 For users with no signal, recommend popular items:
 
 ```math
-\text{score}(i) = \frac{|\mathcal{U}_i|}{\text{time\_since\_release}^\alpha}
+\text{score}(i) = \frac{|\mathcal{U}_i|}{\text{time_since_release}^\alpha}
 
 ```
 
@@ -258,7 +258,7 @@ Maintain posterior over reward parameters:
 For binary rewards (click/no-click):
 
 ```math
-\theta_i \sim \text{Beta}(\alpha_i + \text{clicks}_i, \beta_i + \text{no\_clicks}_i)
+\theta_i \sim \text{Beta}(\alpha_i + \text{clicks}_i, \beta_i + \text{no_clicks}_i)
 
 ```
 

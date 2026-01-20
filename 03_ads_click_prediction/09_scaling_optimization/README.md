@@ -140,7 +140,7 @@ T_{\text{avg}} = p_{\text{hit}} \cdot T_{\text{cache}} + (1 - p_{\text{hit}}) \c
 | 95% | 1.45ms |
 | 99% | 1.09ms |
 
-(Assuming $T\_{\text{cache}}=1\text{ms}$, $T\_{\text{origin}}=10\text{ms}$)
+(Assuming $T_{\text{cache}}=1\text{ms}$, $T_{\text{origin}}=10\text{ms}$)
 
 ### Connection Pooling
 
@@ -297,7 +297,7 @@ Minimizes rebalancing when adding/removing nodes.
 **INT8 quantization**:
 
 ```math
-x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero\_point}
+x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero_point}
 
 ```
 

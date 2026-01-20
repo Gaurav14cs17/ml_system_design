@@ -35,7 +35,7 @@ C(D, A) = \frac{|\{d \in D : d.A \neq \text{NULL}\}|}{|D|}
 
 ```
 
-For multiple attributes $A\_1, ..., A\_k$ with weights $w\_i$:
+For multiple attributes $A_1, ..., A_k$ with weights $w_i$:
 
 ```math
 C_{weighted}(D) = \sum_{i=1}^{k} w_i \cdot C(D, A_i), \quad \sum w_i = 1
@@ -64,7 +64,7 @@ When ground truth is unavailable, use **proxy accuracy** via cross-validation:
 
 **Definition:** Data satisfies all integrity constraints.
 
-For constraint set $\Phi = \{\phi\_1, \phi\_2, ..., \phi\_m\}$:
+For constraint set $\Phi = \{\phi_1, \phi_2, ..., \phi_m\}$:
 
 ```math
 \text{Cons}(D) = \frac{|\{d \in D : \forall \phi_i \in \Phi, \phi_i(d) = \text{true}\}|}{|D|}
@@ -73,11 +73,11 @@ For constraint set $\Phi = \{\phi\_1, \phi\_2, ..., \phi\_m\}$:
 
 Common constraints:
 
-- **Domain**: $\phi\_{domain}(d) = d.age \in [0, 150]$
+- **Domain**: $\phi_{domain}(d) = d.age \in [0, 150]$
 
-- **Referential**: $\phi\_{ref}(d) = d.user\_id \in \text{Users}$
+- **Referential**: $\phi_{ref}(d) = d.user_id \in \text{Users}$
 
-- **Functional dependency**: $d\_1.zip = d\_2.zip \Rightarrow d\_1.city = d\_2.city$
+- **Functional dependency**: $d_1.zip = d_2.zip \Rightarrow d_1.city = d_2.city$
 
 #### Timeliness/Freshness
 
@@ -97,7 +97,7 @@ F(D) = e^{-\lambda \cdot \Delta t}
 
 ```
 
-where $\lambda = \frac{\ln(2)}{\text{half\_life}}$ is the decay constant.
+where $\lambda = \frac{\ln(2)}{\text{half_life}}$ is the decay constant.
 
 ### Statistical Distribution Tests
 
@@ -110,9 +110,9 @@ D_{KS} = \sup_x |F_{reference}(x) - F_{new}(x)|
 
 ```
 
-**Null hypothesis** $H\_0$: Both samples come from the same distribution.
+**Null hypothesis** $H_0$: Both samples come from the same distribution.
 
-**Decision rule:** Reject $H\_0$ if $D\_{KS} > D\_{critical}(\alpha, n\_1, n\_2)$
+**Decision rule:** Reject $H_0$ if $D_{KS} > D_{critical}(\alpha, n_1, n_2)$
 
 #### Chi-Square Test (Categorical Variables)
 
@@ -123,7 +123,7 @@ For category distributions:
 
 ```
 
-where $O\_i$ = observed count, $E\_i$ = expected count.
+where $O_i$ = observed count, $E_i$ = expected count.
 
 **Degrees of freedom:** $df = k - 1$
 
@@ -153,7 +153,7 @@ z_i = \frac{x_i - \mu}{\sigma}
 
 ```
 
-**Outlier threshold:** $|z\_i| > 3$ (captures 99.7% of normal data)
+**Outlier threshold:** $|z_i| > 3$ (captures 99.7% of normal data)
 
 #### Interquartile Range (IQR) Method
 
@@ -164,8 +164,8 @@ Robust to non-normal distributions:
 
 ```
 
-**Lower bound:** $Q\_1 - 1.5 \times \text{IQR}$
-**Upper bound:** $Q\_3 + 1.5 \times \text{IQR}$
+**Lower bound:** $Q_1 - 1.5 \times \text{IQR}$
+**Upper bound:** $Q_3 + 1.5 \times \text{IQR}$
 
 #### Mahalanobis Distance (Multivariate)
 
@@ -178,7 +178,7 @@ D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x
 
 where $\boldsymbol{\mu}$ is the mean vector and $\Sigma$ is the covariance matrix.
 
-Under normality, $D\_M^2$ follows a $\chi^2\_p$ distribution (p = dimensions).
+Under normality, $D_M^2$ follows a $\chi^2_p$ distribution (p = dimensions).
 
 ### Information-Theoretic Quality Measures
 

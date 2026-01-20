@@ -134,13 +134,13 @@ Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 
 **Properties:**
 
-- **Linearity:** $(aI\_1 + bI\_2) * K = a(I\_1 * K) + b(I\_2 * K)$
+- **Linearity:** $(aI_1 + bI_2) * K = a(I_1 * K) + b(I_2 * K)$
 
 - **Commutativity:** $I * K = K * I$
 
-- **Associativity:** $(I * K\_1) * K\_2 = I * (K\_1 * K\_2)$
+- **Associativity:** $(I * K_1) * K_2 = I * (K_1 * K_2)$
 
-- **Separability:** If $K = K\_x \cdot K\_y^T$, then $I * K = (I * K\_x) * K\_y^T$ (much faster!)
+- **Separability:** If $K = K_x \cdot K_y^T$, then $I * K = (I * K_x) * K_y^T$ (much faster!)
 
 ### How Convolution Works
 
@@ -272,11 +272,11 @@ BF[I](p) = \frac{1}{W_p} \sum_{q \in \Omega} G_s(\|p - q\|) \cdot G_r(|I(p) - I(
 
 where:
 
-- $G\_s$ = spatial Gaussian (distance in pixels)
+- $G_s$ = spatial Gaussian (distance in pixels)
 
-- $G\_r$ = range Gaussian (difference in intensity)
+- $G_r$ = range Gaussian (difference in intensity)
 
-- $W\_p$ = normalization factor
+- $W_p$ = normalization factor
 
 - $\Omega$ = neighborhood window
 
@@ -356,7 +356,7 @@ The gradient of an image $I$ at point $(x, y)$ is:
 
 ```
 
-Approximation for speed: $|\nabla I| \approx |G\_x| + |G\_y|$
+Approximation for speed: $|\nabla I| \approx |G_x| + |G_y|$
 
 **Gradient Direction (Edge Orientation):**
 
@@ -706,9 +706,9 @@ Automatically finds optimal threshold by minimizing intra-class variance.
 
 Given a threshold $t$, pixels are divided into two classes:
 
-- $C\_0$: pixels with intensity $\leq t$ (background)
+- $C_0$: pixels with intensity $\leq t$ (background)
 
-- $C\_1$: pixels with intensity $> t$ (foreground)
+- $C_1$: pixels with intensity $> t$ (foreground)
 
 **Class probabilities:**
 

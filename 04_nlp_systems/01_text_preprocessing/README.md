@@ -32,9 +32,9 @@ Text preprocessing bridges the gap between **human language** and **mathematical
 
 A text document can be formalized as:
 
-- A **sequence** of tokens: $D = (t\_1, t\_2, \ldots, t\_n)$ where $t\_i \in \mathcal{V}$ (vocabulary)
+- A **sequence** of tokens: $D = (t_1, t_2, \ldots, t_n)$ where $t_i \in \mathcal{V}$ (vocabulary)
 
-- A **set** of tokens (bag-of-words): $D = \{t\_1, t\_2, \ldots, t\_k\}$ ignoring order
+- A **set** of tokens (bag-of-words): $D = \{t_1, t_2, \ldots, t_k\}$ ignoring order
 
 - A **function** mapping positions to tokens: $D: \{1,\ldots,n\} \rightarrow \mathcal{V}$
 
@@ -54,7 +54,7 @@ The vocabulary $\mathcal{V}$ is a finite set of all possible tokens:
 
 ```
 
-where $f\_{t,d}$ is the count of term $t$ in document $d$.
+where $f_{t,d}$ is the count of term $t$ in document $d$.
 
 **Normalized term frequency** prevents bias toward longer documents:
 
@@ -83,7 +83,7 @@ where:
 
 - $N$ = total number of documents
 
-- $n\_t$ = number of documents containing term $t$
+- $n_t$ = number of documents containing term $t$
 
 **Smoothed IDF** prevents division by zero and reduces impact of very rare terms:
 
@@ -323,7 +323,7 @@ mapping character sequences to token sequences.
 
 ### Word Tokenization
 
-**Whitespace tokenization**: $\tau\_{\text{ws}}(s) = \text{split}(s, \text{' '})$
+**Whitespace tokenization**: $\tau_{\text{ws}}(s) = \text{split}(s, \text{' '})$
 
 **Regex tokenization**: Handles punctuation and special cases.
 
@@ -333,7 +333,7 @@ mapping character sequences to token sequences.
 
 **Algorithm**:
 
-1. Initialize vocabulary $\mathcal{V}\_0$ with all characters
+1. Initialize vocabulary $\mathcal{V}_0$ with all characters
 
 2. Count all adjacent symbol pairs
 
@@ -460,7 +460,7 @@ This mask is used in attention computation:
 
 ```
 
-where $M\_{ij} = -\infty$ if position $j$ is padded.
+where $M_{ij} = -\infty$ if position $j$ is padded.
 
 ### Truncation
 

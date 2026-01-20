@@ -173,7 +173,7 @@ w_i = \frac{1}{P(\text{examine} \mid \text{pos}_i)}
 |-----------|--------|-----------|
 | **Completeness** | $1 - \frac{\text{nulls}}{\text{total}}$ | > 99% |
 | **Uniqueness** | $\frac{\text{distinct}}{\text{total}}$ | Context-dependent |
-| **Freshness** | $t\_{\text{now}} - t\_{\text{latest}}$ | < 24 hours |
+| **Freshness** | $t_{\text{now}} - t_{\text{latest}}$ | < 24 hours |
 | **Validity** | $\frac{\text{valid values}}{\text{total}}$ | > 99.9% |
 
 ### Distribution Monitoring
@@ -192,7 +192,7 @@ D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}
 
 ```
 
-where $A\_i$ = actual proportion in bin $i$, $E\_i$ = expected proportion.
+where $A_i$ = actual proportion in bin $i$, $E_i$ = expected proportion.
 
 | PSI Value | Interpretation |
 |-----------|----------------|
@@ -249,7 +249,7 @@ s3://data-lake/impressions/
 **Impression-Click Join**:
 
 ```math
-\text{TrainingData} = \text{Impressions} \underset{\text{impression\_id}}{\bowtie_{\text{left}}} \text{Clicks}
+\text{TrainingData} = \text{Impressions} \underset{\text{impression_id}}{\bowtie_{\text{left}}} \text{Clicks}
 
 ```
 

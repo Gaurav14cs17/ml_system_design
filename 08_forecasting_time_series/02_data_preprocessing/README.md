@@ -40,7 +40,7 @@ Data preprocessing is the foundation of any successful time series forecasting p
 
 ### Stationarity Transformations
 
-A non-stationary series $\{Y\_t\}$ can be transformed to achieve stationarity:
+A non-stationary series $\{Y_t\}$ can be transformed to achieve stationarity:
 
 #### Differencing
 
@@ -79,7 +79,7 @@ Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \la
 | Method | Formula | When to Use |
 |--------|---------|-------------|
 | **Z-score** | $z = \frac{x - \mu}{\sigma}$ | Gaussian-like distributions |
-| **Min-Max** | $x' = \frac{x - x\_{min}}{x\_{max} - x\_{min}}$ | Bounded range [0, 1] |
+| **Min-Max** | $x' = \frac{x - x_{min}}{x_{max} - x_{min}}$ | Bounded range [0, 1] |
 | **Robust** | $x' = \frac{x - \text{median}}{IQR}$ | Outlier-resistant |
 
 ### Missing Value Imputation
@@ -98,7 +98,7 @@ Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \la
 
 ```
 
-Where $\hat{T}\_t$ and $\hat{S}\_t$ are estimated from non-missing values.
+Where $\hat{T}_t$ and $\hat{S}_t$ are estimated from non-missing values.
 
 ### The Preprocessing Pipeline
 

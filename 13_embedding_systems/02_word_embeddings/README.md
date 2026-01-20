@@ -238,7 +238,7 @@ where:
 
 - $K$ is the number of negative samples (typically 5-15)
 
-- $P\_n(w) \propto f(w)^{3/4}$ is the noise distribution (unigram raised to 3/4 power)
+- $P_n(w) \propto f(w)^{3/4}$ is the noise distribution (unigram raised to 3/4 power)
 
 ```python
 def negative_sampling_loss(target_embed, context_embed, negative_embeds):
@@ -276,13 +276,13 @@ The learned embeddings exhibit remarkable linear structure:
 
 | Analogy | Vector Operation | Result |
 |---------|------------------|--------|
-| king : man :: queen : ? | $\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}} + \vec{v}\_{\text{woman}}$ | ≈ $\vec{v}\_{\text{queen}}$ |
-| Paris : France :: Rome : ? | $\vec{v}\_{\text{Paris}} - \vec{v}\_{\text{France}} + \vec{v}\_{\text{Italy}}$ | ≈ $\vec{v}\_{\text{Rome}}$ |
-| walking : walk :: swimming : ? | $\vec{v}\_{\text{walking}} - \vec{v}\_{\text{walk}} + \vec{v}\_{\text{swim}}$ | ≈ $\vec{v}\_{\text{swimming}}$ |
+| king : man :: queen : ? | $\vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}}$ | ≈ $\vec{v}_{\text{queen}}$ |
+| Paris : France :: Rome : ? | $\vec{v}_{\text{Paris}} - \vec{v}_{\text{France}} + \vec{v}_{\text{Italy}}$ | ≈ $\vec{v}_{\text{Rome}}$ |
+| walking : walk :: swimming : ? | $\vec{v}_{\text{walking}} - \vec{v}_{\text{walk}} + \vec{v}_{\text{swim}}$ | ≈ $\vec{v}_{\text{swimming}}$ |
 
 **Geometric Interpretation:**
 
-- The vector $(\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}})$ captures the "royalty" direction
+- The vector $(\vec{v}_{\text{king}} - \vec{v}_{\text{man}})$ captures the "royalty" direction
 
 - This direction is consistent across gender pairs
 
@@ -342,11 +342,11 @@ GloVe minimizes a **weighted least-squares regression** on the co-occurrence mat
 
 where:
 
-- $X\_{ij}$ is the co-occurrence count of words $i$ and $j$
+- $X_{ij}$ is the co-occurrence count of words $i$ and $j$
 
-- $\mathbf{w}\_i, \tilde{\mathbf{w}}\_j \in \mathbb{R}^d$ are word vectors (separate for target and context)
+- $\mathbf{w}_i, \tilde{\mathbf{w}}_j \in \mathbb{R}^d$ are word vectors (separate for target and context)
 
-- $b\_i, \tilde{b}\_j \in \mathbb{R}$ are bias terms
+- $b_i, \tilde{b}_j \in \mathbb{R}$ are bias terms
 
 - $f(x)$ is a weighting function to prevent frequent words from dominating
 
@@ -357,7 +357,7 @@ f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{
 
 ```
 
-where typically $x\_{\max} = 100$ and $\alpha = 0.75$.
+where typically $x_{\max} = 100$ and $\alpha = 0.75$.
 
 **Weighting Function**:
 

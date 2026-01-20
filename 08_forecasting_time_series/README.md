@@ -10,15 +10,15 @@
 
 ## 🧮 Mathematical Foundations
 
-Time series forecasting is grounded in rigorous mathematical theory. A time series $\{Y\_t\}\_{t=1}^{T}$ is a sequence of random variables indexed by time.
+Time series forecasting is grounded in rigorous mathematical theory. A time series $\{Y_t\}_{t=1}^{T}$ is a sequence of random variables indexed by time.
 
 ### Core Definitions
 
 | Concept | Mathematical Definition | Interpretation |
 |---------|------------------------|----------------|
-| **Expectation** | $\mu\_t = \mathbb{E}[Y\_t]$ | Mean value at time $t$ |
-| **Variance** | $\sigma\_t^2 = \text{Var}(Y\_t) = \mathbb{E}[(Y\_t - \mu\_t)^2]$ | Spread of values |
-| **Autocovariance** | $\gamma(s, t) = \text{Cov}(Y\_s, Y\_t) = \mathbb{E}[(Y\_s - \mu\_s)(Y\_t - \mu\_t)]$ | Temporal dependence |
+| **Expectation** | $\mu_t = \mathbb{E}[Y_t]$ | Mean value at time $t$ |
+| **Variance** | $\sigma_t^2 = \text{Var}(Y_t) = \mathbb{E}[(Y_t - \mu_t)^2]$ | Spread of values |
+| **Autocovariance** | $\gamma(s, t) = \text{Cov}(Y_s, Y_t) = \mathbb{E}[(Y_s - \mu_s)(Y_t - \mu_t)]$ | Temporal dependence |
 | **Autocorrelation** | $\rho(s, t) = \frac{\gamma(s, t)}{\sqrt{\gamma(s,s) \cdot \gamma(t,t)}}$ | Normalized dependence |
 
 ### Stationarity Conditions
@@ -40,13 +40,13 @@ Y_t = T_t + S_t + C_t + \varepsilon_t
 
 Where:
 
-- $T\_t$ — **Trend**: Long-term progression
+- $T_t$ — **Trend**: Long-term progression
 
-- $S\_t$ — **Seasonal**: Repeating patterns with fixed period $m$
+- $S_t$ — **Seasonal**: Repeating patterns with fixed period $m$
 
-- $C\_t$ — **Cyclical**: Fluctuations without fixed period
+- $C_t$ — **Cyclical**: Fluctuations without fixed period
 
-- $\varepsilon\_t$ — **Residual**: Random noise, $\varepsilon\_t \sim \mathcal{N}(0, \sigma^2)$
+- $\varepsilon_t$ — **Residual**: Random noise, $\varepsilon_t \sim \mathcal{N}(0, \sigma^2)$
 
 ---
 
@@ -374,20 +374,20 @@ pip install fastapi uvicorn mlflow feast
 
 | Metric | Mathematical Formula | Use Case |
 |--------|---------------------|----------|
-| **MAE** | $\text{MAE} = \frac{1}{n}\sum\_{i=1}^{n}\|y\_i - \hat{y}\_i\|$ | General purpose, same units as data |
-| **MSE** | $\text{MSE} = \frac{1}{n}\sum\_{i=1}^{n}(y\_i - \hat{y}\_i)^2$ | Penalizes large errors heavily |
-| **RMSE** | $\text{RMSE} = \sqrt{\frac{1}{n}\sum\_{i=1}^{n}(y\_i - \hat{y}\_i)^2}$ | Same units, penalizes outliers |
-| **MAPE** | $\text{MAPE} = \frac{100\%}{n}\sum\_{i=1}^{n}\left\|\frac{y\_i - \hat{y}\_i}{y\_i}\right\|$ | Percentage, scale-independent |
-| **SMAPE** | $\text{SMAPE} = \frac{100\%}{n}\sum\_{i=1}^{n}\frac{2\|y\_i - \hat{y}\_i\|}{\|y\_i\| + \|\hat{y}\_i\|}$ | Symmetric, bounded [0%, 200%] |
-| **MASE** | $\text{MASE} = \frac{\text{MAE}}{\frac{1}{n-m}\sum\_{i=m+1}^{n}\|y\_i - y\_{i-m}\|}$ | Scale-free, compares to naive |
+| **MAE** | $\text{MAE} = \frac{1}{n}\sum_{i=1}^{n}\|y_i - \hat{y}_i\|$ | General purpose, same units as data |
+| **MSE** | $\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$ | Penalizes large errors heavily |
+| **RMSE** | $\text{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}$ | Same units, penalizes outliers |
+| **MAPE** | $\text{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left\|\frac{y_i - \hat{y}_i}{y_i}\right\|$ | Percentage, scale-independent |
+| **SMAPE** | $\text{SMAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\frac{2\|y_i - \hat{y}_i\|}{\|y_i\| + \|\hat{y}_i\|}$ | Symmetric, bounded [0%, 200%] |
+| **MASE** | $\text{MASE} = \frac{\text{MAE}}{\frac{1}{n-m}\sum_{i=m+1}^{n}\|y_i - y_{i-m}\|}$ | Scale-free, compares to naive |
 
 ### Probabilistic Forecast Metrics
 
 | Metric | Formula | Purpose |
 |--------|---------|---------|
-| **Quantile Loss** | $L\_q(y, \hat{y}) = (y - \hat{y})(q - \mathbb{1}\_{y < \hat{y}})$ | Evaluates prediction intervals |
-| **CRPS** | $\text{CRPS} = \int\_{-\infty}^{\infty}(F(x) - \mathbb{1}\_{x \geq y})^2 dx$ | Probabilistic accuracy |
-| **Coverage** | $\frac{1}{n}\sum\_{i=1}^{n}\mathbb{1}\_{L\_i \leq y\_i \leq U\_i}$ | Interval calibration |
+| **Quantile Loss** | $L_q(y, \hat{y}) = (y - \hat{y})(q - \mathbb{1}_{y < \hat{y}})$ | Evaluates prediction intervals |
+| **CRPS** | $\text{CRPS} = \int_{-\infty}^{\infty}(F(x) - \mathbb{1}_{x \geq y})^2 dx$ | Probabilistic accuracy |
+| **Coverage** | $\frac{1}{n}\sum_{i=1}^{n}\mathbb{1}_{L_i \leq y_i \leq U_i}$ | Interval calibration |
 
 ---
 

@@ -76,11 +76,11 @@ Platform revenue is directly tied to CTR prediction quality:
 
 Given:
 
-- User $u \in \mathcal{U}$ with features $\mathbf{x}\_u$
+- User $u \in \mathcal{U}$ with features $\mathbf{x}_u$
 
-- Ad $a \in \mathcal{A}$ with features $\mathbf{x}\_a$
+- Ad $a \in \mathcal{A}$ with features $\mathbf{x}_a$
 
-- Context $c \in \mathcal{C}$ with features $\mathbf{x}\_c$
+- Context $c \in \mathcal{C}$ with features $\mathbf{x}_c$
 
 **Objective**: Learn a function $f: \mathcal{U} \times \mathcal{A} \times \mathcal{C} \rightarrow [0, 1]$
 
@@ -102,9 +102,9 @@ Minimize the **Binary Cross-Entropy Loss**:
 
 where:
 
-- $y\_i \in \{0, 1\}$ is the true label (clicked or not)
+- $y_i \in \{0, 1\}$ is the true label (clicked or not)
 
-- $\hat{y}\_i \in [0, 1]$ is the predicted probability
+- $\hat{y}_i \in [0, 1]$ is the predicted probability
 
 - $N$ is the number of training samples
 
@@ -174,7 +174,7 @@ Relative improvement over baseline (predicting average CTR):
 
 ```
 
-where $p = \frac{1}{N} \sum\_i y\_i$ is the base CTR.
+where $p = \frac{1}{N} \sum_i y_i$ is the base CTR.
 
 **Target**: NCE < 0.85 (lower is better)
 

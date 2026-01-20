@@ -134,7 +134,7 @@ W_{out} = \left\lfloor \frac{W_{in} + 2p - k}{s} \right\rfloor + 1
 
 ```
 
-**Parameter count:** $C\_{out} \times C\_{in} \times k^2 + C\_{out}$
+**Parameter count:** $C_{out} \times C_{in} \times k^2 + C_{out}$
 
 #### Activation Functions
 
@@ -146,9 +146,9 @@ W_{out} = \left\lfloor \frac{W_{in} + 2p - k}{s} \right\rfloor + 1
 
 #### Pooling (Max/Average)
 
-**Max Pooling:** $y^{(i,j)} = \max\_{(u,v) \in R\_{i,j}} x^{(u,v)}$
+**Max Pooling:** $y^{(i,j)} = \max_{(u,v) \in R_{i,j}} x^{(u,v)}$
 
-**Average Pooling:** $y^{(i,j)} = \frac{1}{|R|} \sum\_{(u,v) \in R\_{i,j}} x^{(u,v)}$
+**Average Pooling:** $y^{(i,j)} = \frac{1}{|R|} \sum_{(u,v) \in R_{i,j}} x^{(u,v)}$
 
 ### LeNet-5 (1998)
 
@@ -264,11 +264,11 @@ Each patch is flattened and linearly projected:
 
 where:
 
-- $\mathbf{x}\_p^i \in \mathbb{R}^{P^2 \cdot C}$ = flattened patch
+- $\mathbf{x}_p^i \in \mathbb{R}^{P^2 \cdot C}$ = flattened patch
 
 - $\mathbf{E} \in \mathbb{R}^{(P^2 \cdot C) \times D}$ = projection matrix
 
-- $\mathbf{e}\_{pos}^i \in \mathbb{R}^D$ = positional embedding
+- $\mathbf{e}_{pos}^i \in \mathbb{R}^D$ = positional embedding
 
 #### 2. Multi-Head Self-Attention
 

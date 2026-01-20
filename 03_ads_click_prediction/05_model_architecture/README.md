@@ -75,7 +75,7 @@ Model pairwise feature interactions efficiently:
 
 ```
 
-where $\mathbf{v}\_i \in \mathbb{R}^k$ is the latent vector for feature $i$.
+where $\mathbf{v}_i \in \mathbb{R}^k$ is the latent vector for feature $i$.
 
 **Efficient computation** in $O(kd)$ instead of $O(kd^2)$:
 
@@ -129,7 +129,7 @@ This explicitly models feature interactions of degree $l+1$ at layer $l$.
 
 ```
 
-where $\mathbf{W}\_l = \mathbf{U}\_l \mathbf{V}\_l^T$ is low-rank.
+where $\mathbf{W}_l = \mathbf{U}_l \mathbf{V}_l^T$ is low-rank.
 
 ---
 
@@ -205,7 +205,7 @@ For class imbalance:
 
 ```
 
-Typical weights: $w\_+ = 10-100$, $w\_- = 1$
+Typical weights: $w_+ = 10-100$, $w_- = 1$
 
 ### Focal Loss
 
@@ -218,11 +218,11 @@ Down-weight easy examples:
 
 where:
 
-- $p\_t = \hat{y}$ if $y=1$, else $1-\hat{y}$
+- $p_t = \hat{y}$ if $y=1$, else $1-\hat{y}$
 
 - $\gamma$ = focusing parameter (typically 2)
 
-- $\alpha\_t$ = class balancing weight
+- $\alpha_t$ = class balancing weight
 
 ### Calibration-Aware Loss
 
@@ -258,7 +258,7 @@ v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2
 
 ```
 
-Typical values: $\beta\_1 = 0.9$, $\beta\_2 = 0.999$, $\eta = 0.001$
+Typical values: $\beta_1 = 0.9$, $\beta_2 = 0.999$, $\eta = 0.001$
 
 ### Learning Rate Schedule
 
@@ -342,7 +342,7 @@ where $g$ is monotonic increasing, fit on validation set.
 Reduce precision from FP32 to INT8:
 
 ```math
-x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero\_point}
+x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero_point}
 
 ```
 

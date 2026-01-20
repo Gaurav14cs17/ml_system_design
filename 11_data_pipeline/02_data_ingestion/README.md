@@ -45,7 +45,7 @@ P(N(t_1, t_2) = k) = \frac{\Lambda(t_1, t_2)^k e^{-\Lambda(t_1, t_2)}}{k!}
 
 ```
 
-where $\Lambda(t\_1, t\_2) = \int\_{t\_1}^{t\_2} \lambda(t) dt$.
+where $\Lambda(t_1, t_2) = \int_{t_1}^{t_2} \lambda(t) dt$.
 
 **Application:** Model daily traffic patterns with peak hours.
 
@@ -58,7 +58,7 @@ For incremental loads, detect changes using:
 **Timestamp-based:**
 
 ```math
-\Delta D = \{d \in D : d.updated\_at > t_{last\_sync}\}
+\Delta D = \{d \in D : d.updated_at > t_{last_sync}\}
 
 ```
 
@@ -80,7 +80,7 @@ T' = (T \setminus T_K) \cup S
 
 ```
 
-where $T\_K = \{t \in T : t.K \in S.K\}$ (existing records with matching keys).
+where $T_K = \{t \in T : t.K \in S.K\}$ (existing records with matching keys).
 
 **MERGE SQL pattern:**
 
@@ -101,7 +101,7 @@ Database transaction logs record all changes as an ordered sequence:
 
 ```
 
-where $op\_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
+where $op_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
 
 **Serialization:** Log order preserves causality → eventual consistency guaranteed.
 
@@ -110,7 +110,7 @@ where $op\_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
 Each change event contains:
 
 ```math
-\Delta = (\text{op}, \text{before}, \text{after}, \text{timestamp}, \text{transaction\_id})
+\Delta = (\text{op}, \text{before}, \text{after}, \text{timestamp}, \text{transaction_id})
 
 ```
 
@@ -130,7 +130,7 @@ System throughput is limited by the slowest component.
 
 #### Backpressure Model
 
-When $\lambda\_{arrival} > \mu\_{processing}$:
+When $\lambda_{arrival} > \mu_{processing}$:
 
 **Queue growth rate:**
 

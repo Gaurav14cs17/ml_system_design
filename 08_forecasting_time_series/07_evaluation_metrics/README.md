@@ -151,7 +151,7 @@ graph TB
 
 ### Mathematical Definitions
 
-Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2, \ldots, \hat{y}\_n$ be the predictions.
+Let $y_1, y_2, \ldots, y_n$ be the actual values and $\hat{y}_1, \hat{y}_2, \ldots, \hat{y}_n$ be the predictions.
 
 #### Mean Absolute Error (MAE)
 
@@ -195,7 +195,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 - Scale-independent (percentage)
 
-- ⚠️ Undefined when $y\_i = 0$
+- ⚠️ Undefined when $y_i = 0$
 
 - ⚠️ Asymmetric: penalizes under-forecasts more than over-forecasts
 
@@ -212,7 +212,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 - More symmetric than MAPE
 
-- Still problematic when both $y\_i$ and $\hat{y}\_i$ are near zero
+- Still problematic when both $y_i$ and $\hat{y}_i$ are near zero
 
 #### Mean Absolute Scaled Error (MASE)
 

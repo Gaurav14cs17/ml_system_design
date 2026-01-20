@@ -181,7 +181,7 @@ where:
 
 > **Similar objects in the input space should map to nearby points in the embedding space.**
 
-Mathematically, for items $x\_i$ and $x\_j$:
+Mathematically, for items $x_i$ and $x_j$:
 
 ```math
 \text{sim}(x_i, x_j) \approx \text{sim}(f(x_i), f(x_j))
@@ -193,9 +193,9 @@ Mathematically, for items $x\_i$ and $x\_j$:
 | Metric | Formula | Use Case | Range |
 |--------|---------|----------|-------|
 | **Cosine Similarity** | $\displaystyle\frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \|\mathbf{b}\|}$ | Text, normalized vectors | $[-1, 1]$ |
-| **Euclidean Distance** | $\sqrt{\sum\_{i=1}^{d}(a\_i - b\_i)^2}$ | Images, clustering | $[0, \infty)$ |
-| **Dot Product** | $\sum\_{i=1}^{d} a\_i \cdot b\_i$ | Normalized embeddings | $(-\infty, \infty)$ |
-| **Manhattan Distance** | $\sum\_{i=1}^{d}\|a\_i - b\_i\|$ | Sparse features | $[0, \infty)$ |
+| **Euclidean Distance** | $\sqrt{\sum_{i=1}^{d}(a_i - b_i)^2}$ | Images, clustering | $[0, \infty)$ |
+| **Dot Product** | $\sum_{i=1}^{d} a_i \cdot b_i$ | Normalized embeddings | $(-\infty, \infty)$ |
+| **Manhattan Distance** | $\sum_{i=1}^{d}\|a_i - b_i\|$ | Sparse features | $[0, \infty)$ |
 
 ### The Embedding Matrix
 
@@ -206,7 +206,7 @@ For discrete inputs (vocabulary $V$), embeddings are stored as a lookup table:
 
 ```
 
-The embedding for item $i$ is simply row $i$ of the matrix: $\mathbf{e}\_i = \mathbf{E}[i, :]$
+The embedding for item $i$ is simply row $i$ of the matrix: $\mathbf{e}_i = \mathbf{E}[i, :]$
 
 ### Learning Objectives
 
