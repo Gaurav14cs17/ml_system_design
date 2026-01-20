@@ -48,10 +48,10 @@
 
 In A/B testing, we compare a **control** (existing model) against a **treatment** (new model):
 
-```math
+$$
 H_0: \mu_T = \mu_C \quad \text{(no difference)}
 H_1: \mu_T \neq \mu_C \quad \text{(there is a difference)}
-```
+$$
 
 Where $\mu_T$ and $\mu_C$ are the true mean outcomes for treatment and control.
 
@@ -61,9 +61,9 @@ Where $\mu_T$ and $\mu_C$ are the true mean outcomes for treatment and control.
 
 Rejecting $H_0$ when it's actually true:
 
-```math
+$$
 \alpha = P(\text{reject } H_0 | H_0 \text{ is true})
-```
+$$
 
 Typically set to $\alpha = 0.05$ (5% significance level).
 
@@ -71,17 +71,17 @@ Typically set to $\alpha = 0.05$ (5% significance level).
 
 Failing to reject $H_0$ when $H_1$ is true:
 
-```math
+$$
 \beta = P(\text{fail to reject } H_0 | H_1 \text{ is true})
-```
+$$
 
 #### Statistical Power
 
 The probability of correctly detecting a true effect:
 
-```math
+$$
 \text{Power} = 1 - \beta = P(\text{reject } H_0 | H_1 \text{ is true})
-```
+$$
 
 Typically target **80% power** (β = 0.20).
 
@@ -100,9 +100,9 @@ Typically target **80% power** (β = 0.20).
 
 For comparing means of two independent samples:
 
-```math
+$$
 t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}}
-```
+$$
 
 Where:
 - $\bar{X}_T, \bar{X}_C$ = sample means
@@ -111,17 +111,17 @@ Where:
 
 ### Welch's Approximation for Degrees of Freedom
 
-```math
+$$
 df = \frac{\left(\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}\right)^2}{\frac{(s_T^2/n_T)^2}{n_T-1} + \frac{(s_C^2/n_C)^2}{n_C-1}}
-```
+$$
 
 ### Confidence Interval for Difference
 
 The $(1-\alpha)$ confidence interval for $\mu_T - \mu_C$:
 
-```math
+$$
 (\bar{X}_T - \bar{X}_C) \pm t_{\alpha/2, df} \cdot \sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}
-```
+$$
 
 ---
 
@@ -131,9 +131,9 @@ The $(1-\alpha)$ confidence interval for $\mu_T - \mu_C$:
 
 Required sample size per group for a two-sided test:
 
-```math
+$$
 n = 2 \cdot \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot \sigma^2
-```
+$$
 
 Where:
 - $z_{\alpha/2}$ = z-score for significance level (1.96 for α=0.05)
@@ -145,9 +145,9 @@ Where:
 
 Standardized measure of effect magnitude:
 
-```math
+$$
 d = \frac{\mu_T - \mu_C}{\sigma_{pooled}}
-```
+$$
 
 Where $\sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 2}}$
 
@@ -161,9 +161,9 @@ Where $\sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 2}
 
 For equal groups with 80% power and α = 0.05:
 
-```math
+$$
 n \approx \frac{16}{\delta^2}
-```
+$$
 
 Where $\delta$ is the effect size in standard deviation units.
 
@@ -175,9 +175,9 @@ Where $\delta$ is the effect size in standard deviation units.
 - Expected effect: $p_T - p_C = 0.001$
 - Variance: $\sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475$
 
-```math
+$$
 n = 2 \cdot \frac{(1.96 + 0.84)^2 \cdot 0.0475}{0.001^2} \approx 746,000 \text{ per group}
-```
+$$
 
 ---
 
@@ -201,9 +201,9 @@ Repeatedly checking results inflates Type I error:
 
 #### O'Brien-Fleming Spending Function
 
-```math
+$$
 \alpha^*(t) = 2 - 2\Phi\left(\frac{z_{\alpha/2}}{\sqrt{t}}\right)
-```
+$$
 
 Where $t$ is the information fraction (proportion of max sample size).
 
@@ -218,17 +218,17 @@ Where $t$ is the information fraction (proportion of max sample size).
 
 Uses constant boundaries:
 
-```math
+$$
 \alpha^*(t) = \alpha \cdot \ln(1 + (e-1) \cdot t)
-```
+$$
 
 ### When to Stop Early
 
 Stop the experiment if:
 
-```math
+$$
 |Z_k| > c_k \quad \text{at interim analysis } k
-```
+$$
 
 Where $c_k$ is the critical value from the spending function.
 
@@ -244,17 +244,17 @@ Where $c_k$ is the critical value from the spending function.
 
 Users must see consistent variants. Use hashing:
 
-```math
+$$
 \text{bucket} = \text{hash}(\text{user\_id} + \text{experiment\_id}) \mod 100
-```
+$$
 
 ### Minimum Detectable Effect (MDE)
 
 The smallest effect your experiment can reliably detect:
 
-```math
+$$
 MDE = (z_{\alpha/2} + z_{\beta}) \cdot \sqrt{\frac{2\sigma^2}{n}}
-```
+$$
 
 ### Experiment Duration
 
@@ -271,9 +271,9 @@ When running multiple tests (e.g., many metrics), control the **Family-Wise Erro
 
 ### Bonferroni Correction
 
-```math
+$$
 \alpha_{adjusted} = \frac{\alpha}{m}
-```
+$$
 
 Where $m$ is the number of tests. Conservative but simple.
 
@@ -293,9 +293,9 @@ Less conservative, controls **False Discovery Rate**.
 
 Instead of p-values, compute the **probability that treatment is better**:
 
-```math
+$$
 P(\mu_T > \mu_C | \text{data})
-```
+$$
 
 ### Beta-Binomial Model (for conversions)
 
@@ -303,15 +303,15 @@ Prior: $\theta \sim \text{Beta}(\alpha_0, \beta_0)$
 
 Posterior after observing $k$ successes in $n$ trials:
 
-```math
+$$
 \theta | k, n \sim \text{Beta}(\alpha_0 + k, \beta_0 + n - k)
-```
+$$
 
 Probability treatment beats control:
 
-```math
+$$
 P(\theta_T > \theta_C) = \int_0^1 P(\theta_T > \theta_C | \theta_C) \cdot f(\theta_C) d\theta_C
-```
+$$
 
 ---
 

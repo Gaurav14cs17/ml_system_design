@@ -37,37 +37,37 @@ Given an image $I$, predict for each object $i$:
 
 **Multi-Task Loss:**
 
-```math
+$$
 \mathcal{L} = \lambda_{cls} \mathcal{L}_{cls} + \lambda_{box} \mathcal{L}_{box} + \lambda_{obj} \mathcal{L}_{obj}
-```
+$$
 
 **Classification Loss (Cross-Entropy):**
 
-```math
+$$
 \mathcal{L}_{cls} = -\sum_{c=1}^{C} y_c \log(\hat{p}_c)
-```
+$$
 
 **Bounding Box Regression Loss:**
 
 **Smooth L1 (Huber):**
 
-```math
+$$
 \mathcal{L}_{box} = \sum_{i \in \{x, y, w, h\}} \text{smooth}_{L1}(t_i - \hat{t}_i)
-```
+$$
 
 where $\text{smooth}\_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x| - 0.5 & \text{otherwise} \end{cases}$
 
 **IoU Loss:**
 
-```math
+$$
 \mathcal{L}_{IoU} = 1 - \text{IoU}
-```
+$$
 
 **CIoU Loss (Complete IoU):**
 
-```math
+$$
 \mathcal{L}_{CIoU} = 1 - \text{IoU} + \frac{\rho^2(\mathbf{b}, \mathbf{b}^{gt})}{c^2} + \alpha v
-```
+$$
 
 where:
 - $\rho$ = Euclidean distance between centers
@@ -228,21 +228,21 @@ In one-stage detectors, most anchors are negative (background). This imbalance:
 
 **Cross-Entropy Loss:**
 
-```math
+$$
 \text{CE}(p, y) = -y \log(p) - (1-y)\log(1-p)
-```
+$$
 
 For binary case with $p\_t = \begin{cases} p & \text{if } y = 1 \\ 1-p & \text{otherwise} \end{cases}$:
 
-```math
+$$
 \text{CE}(p_t) = -\log(p_t)
-```
+$$
 
 **Focal Loss:**
 
-```math
+$$
 \text{FL}(p_t) = -\alpha_t (1 - p_t)^\gamma \log(p_t)
-```
+$$
 
 where:
 - $\gamma$ = focusing parameter (typically 2)
@@ -426,18 +426,18 @@ if __name__ == "__main__":
 
 For two bounding boxes $A$ (predicted) and $B$ (ground truth):
 
-```math
+$$
 \text{IoU}(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
-```
+$$
 
 **For axis-aligned boxes:**
 
 Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_2^B)$:
 
-```math
+$$
 \text{Intersection width} = \max(0, \min(x_2^A, x_2^B) - \max(x_1^A, x_1^B))
 \text{Intersection height} = \max(0, \min(y_2^A, y_2^B) - \max(y_1^A, y_1^B))
-```
+$$
 
 **IoU Properties:**
 - $\text{IoU} \in [0, 1]$
@@ -447,9 +447,9 @@ Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_
 
 **Generalized IoU (GIoU):**
 
-```math
+$$
 \text{GIoU} = \text{IoU} - \frac{|C \setminus (A \cup B)|}{|C|}
-```
+$$
 
 where $C$ is the smallest enclosing box. GIoU $\in [-1, 1]$ and handles non-overlapping boxes better.
 
@@ -459,10 +459,10 @@ where $C$ is the smallest enclosing box. GIoU $\in [-1, 1]$ and handles non-over
 
 **Precision and Recall:**
 
-```math
+$$
 \text{Precision} = \frac{TP}{TP + FP}
 \text{Recall} = \frac{TP}{TP + FN}
-```
+$$
 
 where:
 - TP = True Positives (IoU ≥ threshold with GT)
@@ -473,31 +473,31 @@ where:
 
 For each class, compute precision at each recall level:
 
-```math
+$$
 \text{AP} = \int_0^1 p(r) \, dr
-```
+$$
 
 In practice, discretized as:
 
-```math
+$$
 \text{AP} = \sum_{i=1}^{n} (r_i - r_{i-1}) \cdot p_{interp}(r_i)
-```
+$$
 
 where $p\_{interp}(r) = \max\_{r' \geq r} p(r')$ (interpolated precision)
 
 **Mean Average Precision:**
 
-```math
+$$
 \text{mAP} = \frac{1}{|C|} \sum_{c \in C} \text{AP}_c
-```
+$$
 
 **COCO mAP (mAP@[.5:.95]):**
 
 Average AP across IoU thresholds from 0.5 to 0.95 (step 0.05):
 
-```math
+$$
 \text{mAP}_{COCO} = \frac{1}{10} \sum_{t \in \{.5, .55, ..., .95\}} \text{mAP}@t
-```
+$$
 
 ### NMS (Non-Maximum Suppression)
 

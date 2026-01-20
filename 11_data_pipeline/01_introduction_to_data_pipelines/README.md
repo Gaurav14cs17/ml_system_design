@@ -14,9 +14,9 @@ A **data pipeline** is an automated system that moves, transforms, and processes
 
 A data pipeline can be formally defined as a **directed acyclic graph (DAG)** of transformations:
 
-```math
+$$
 \mathcal{P} = (V, E, T)
-```
+$$
 
 where:
 - $V = \{v\_1, v\_2, ..., v\_n\}$ is the set of **data nodes** (datasets)
@@ -29,9 +29,9 @@ Each transformation $t\_i: D\_{in} \rightarrow D\_{out}$ maps input data to outp
 
 Pipelines compose through function composition. For transformations $f$ and $g$:
 
-```math
+$$
 (g \circ f)(D) = g(f(D))
-```
+$$
 
 This composition must satisfy the **closure property** — output schema of $f$ must match input schema of $g$.
 
@@ -41,27 +41,27 @@ The flow of data through a pipeline follows algebraic rules:
 
 **Union** (combining sources):
 
-```math
+$$
 D_{combined} = D_1 \cup D_2
-```
+$$
 
 **Filter** (selection):
 
-```math
+$$
 D_{filtered} = \sigma_{\phi}(D) = \{d \in D : \phi(d) = \text{true}\}
-```
+$$
 
 **Projection** (column selection):
 
-```math
+$$
 D_{projected} = \pi_{A_1, A_2, ..., A_k}(D)
-```
+$$
 
 **Join** (combining on keys):
 
-```math
+$$
 D_1 \bowtie_{key} D_2 = \{(d_1, d_2) : d_1.key = d_2.key\}
-```
+$$
 
 ### Latency and Throughput Model
 
@@ -69,25 +69,25 @@ Pipeline performance is characterized by:
 
 **End-to-End Latency** — time for a single record:
 
-```math
+$$
 L_{total} = \sum_{i=1}^{n} L_i + \sum_{j=1}^{m} Q_j
-```
+$$
 
 where $L\_i$ is processing latency at stage $i$ and $Q\_j$ is queueing delay.
 
 **Throughput** — records per unit time:
 
-```math
+$$
 \Theta = \min_{i} \frac{P_i}{S_i}
-```
+$$
 
 where $P\_i$ is parallelism and $S\_i$ is processing time per record at stage $i$.
 
 **Little's Law** relates these:
 
-```math
+$$
 L = \lambda \cdot W
-```
+$$
 
 where $L$ = items in system, $\lambda$ = arrival rate, $W$ = wait time.
 
@@ -232,27 +232,27 @@ Two critical time concepts in data processing:
 
 **Event Time** $t\_e$: When the event actually occurred
 
-```math
+$$
 t_e = \text{timestamp embedded in event}
-```
+$$
 
 **Processing Time** $t\_p$: When the system processes the event
 
-```math
+$$
 t_p = \text{current system time}
-```
+$$
 
 **Skew**: The difference between them
 
-```math
+$$
 \Delta t = t_p - t_e
-```
+$$
 
 Event time processing requires **watermarks** — markers indicating "all events up to time $W$ have arrived":
 
-```math
+$$
 W(t_p) = \max(t_e) - \text{allowed\_lateness}
-```
+$$
 
 ### Batch Pipelines
 
@@ -264,15 +264,15 @@ W(t_p) = \max(t_e) - \text{allowed\_lateness}
 **Mathematical Model:**
 For a batch window $[t\_1, t\_2]$:
 
-```math
+$$
 D_{batch} = \{d \in D : t_1 \leq t_e(d) < t_2\}
-```
+$$
 
 Processing applies a function $f$ to the entire batch:
 
-```math
+$$
 R = f(D_{batch})
-```
+$$
 
 **Complexity**: $O(|D\_{batch}|)$ time, requires $O(|D\_{batch}|)$ memory for full-batch aggregations.
 
@@ -294,9 +294,9 @@ Events arrive as a sequence $(e\_1, e\_2, e\_3, ...)$ with inter-arrival times f
 
 For **Poisson arrivals** (common model):
 
-```math
+$$
 P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}
-```
+$$
 
 where $\lambda$ is the arrival rate.
 
@@ -304,21 +304,21 @@ where $\lambda$ is the arrival rate.
 
 *Tumbling window* of size $w$:
 
-```math
+$$
 W_k = \{d : k \cdot w \leq t_e(d) < (k+1) \cdot w\}
-```
+$$
 
 *Sliding window* with size $w$ and slide $s$:
 
-```math
+$$
 W_{k} = \{d : k \cdot s \leq t_e(d) < k \cdot s + w\}
-```
+$$
 
 *Session window* with gap $g$:
 
-```math
+$$
 W_{session} = \{d_1, ..., d_n\} \text{ where } t_e(d_{i+1}) - t_e(d_i) < g
-```
+$$
 
 ![Diagram 1](images/diagram_01.svg)
 
@@ -347,15 +347,15 @@ The following principles are not just best practices — they have rigorous math
 **Formal Definition:**
 A function $f$ is **idempotent** if:
 
-```math
+$$
 f(f(x)) = f(x)
-```
+$$
 
 For pipeline operations, this extends to:
 
-```math
+$$
 \text{apply}(D, op, n) = \text{apply}(D, op, 1) \quad \forall n \geq 1
-```
+$$
 
 **Why It Matters:**
 In distributed systems with retries, an operation may execute multiple times. Without idempotency:

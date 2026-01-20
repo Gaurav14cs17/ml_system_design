@@ -29,23 +29,23 @@ Computer Vision (CV) is a field of artificial intelligence that enables computer
 
 At its core, computer vision treats images as **mathematical functions**. A grayscale image can be represented as a continuous function:
 
-```math
+$$
 I: \mathbb{R}^2 \rightarrow \mathbb{R}
-```
+$$
 
 where $I(x, y)$ gives the intensity at spatial coordinates $(x, y)$.
 
 For digital images, we discretize this into a matrix:
 
-```math
+$$
 I \in \mathbb{R}^{H \times W}
-```
+$$
 
 For color images with $C$ channels (e.g., RGB where $C=3$):
 
-```math
+$$
 I \in \mathbb{R}^{H \times W \times C}
-```
+$$
 
 ### The Vision Pipeline
 
@@ -133,9 +133,9 @@ A digital image is a 2D array (matrix) of discrete picture elements called **pix
 
 A digital image $I$ is formally defined as a mapping from a discrete spatial domain to an intensity/color space:
 
-```math
+$$
 I: \{0, 1, ..., H-1\} \times \{0, 1, ..., W-1\} \rightarrow \mathcal{V}
-```
+$$
 
 where:
 - $H$ = image height (rows)
@@ -144,15 +144,15 @@ where:
 
 **For grayscale images** (8-bit):
 
-```math
+$$
 \mathcal{V} = \{0, 1, 2, ..., 255\}
-```
+$$
 
 **For RGB color images**:
 
-```math
+$$
 \mathcal{V} = \{0, ..., 255\}^3
-```
+$$
 
 Each pixel $I(i, j)$ can be accessed using matrix indexing where $i \in [0, H-1]$ is the row and $j \in [0, W-1]$ is the column.
 
@@ -160,9 +160,9 @@ Each pixel $I(i, j)$ can be accessed using matrix indexing where $i \in [0, H-1]
 
 The **bit depth** $b$ determines the number of discrete intensity levels:
 
-```math
+$$
 L = 2^b
-```
+$$
 
 | Bit Depth | Levels | Common Use |
 |-----------|--------|------------|
@@ -260,9 +260,9 @@ The most common color space for display devices.
 
 An RGB color is a 3-tuple $(R, G, B)$ where each component $\in [0, 255]$ for 8-bit images:
 
-```math
+$$
 \text{Color} = R \cdot \mathbf{e}_R + G \cdot \mathbf{e}_G + B \cdot \mathbf{e}_B
-```
+$$
 
 The RGB cube occupies a 3D space where:
 - $(0, 0, 0)$ = Black
@@ -271,9 +271,9 @@ The RGB cube occupies a 3D space where:
 
 **Grayscale Conversion (Luminance):**
 
-```math
+$$
 Y = 0.299R + 0.587G + 0.114B
-```
+$$
 
 This weighted average reflects human eye sensitivity (most sensitive to green, least to blue).
 
@@ -297,34 +297,34 @@ Separates color information from brightness.
 
 Given normalized RGB values $R', G', B' \in [0, 1]$:
 
-```math
+$$
 C_{max} = \max(R', G', B')
 C_{min} = \min(R', G', B')
 \Delta = C_{max} - C_{min}
-```
+$$
 
 **Value (Brightness):**
 
-```math
+$$
 V = C_{max}
-```
+$$
 
 **Saturation:**
 
-```math
+$$
 S = \begin{cases} 0 & \text{if } C_{max} = 0 \\ \frac{\Delta}{C_{max}} & \text{otherwise} \end{cases}
-```
+$$
 
 **Hue (in degrees):**
 
-```math
+$$
 H = \begin{cases} 
 0° & \text{if } \Delta = 0 \\
 60° \times \left(\frac{G' - B'}{\Delta} \mod 6\right) & \text{if } C_{max} = R' \\
 60° \times \left(\frac{B' - R'}{\Delta} + 2\right) & \text{if } C_{max} = G' \\
 60° \times \left(\frac{R' - G'}{\Delta} + 4\right) & \text{if } C_{max} = B'
 \end{cases}
-```
+$$
 
 **Interpretation:**
 - **H** (0°-360°): Color type (red=0°, green=120°, blue=240°)
@@ -377,31 +377,31 @@ Perceptually uniform color space based on human vision.
 
 The LAB color space is derived from XYZ (CIE 1931) through a nonlinear transformation. First, convert RGB to XYZ using a matrix:
 
-```math
+$$
 \begin{bmatrix} X \\ Y \\ Z \end{bmatrix} = \mathbf{M} \begin{bmatrix} R \\ G \\ B \end{bmatrix}
-```
+$$
 
 where $\mathbf{M}$ is the RGB-to-XYZ transformation matrix (depends on RGB color space, e.g., sRGB).
 
 **XYZ to LAB Conversion:**
 
-```math
+$$
 L^* = 116 \cdot f\left(\frac{Y}{Y_n}\right) - 16
 a^* = 500 \cdot \left[f\left(\frac{X}{X_n}\right) - f\left(\frac{Y}{Y_n}\right)\right]
 b^* = 200 \cdot \left[f\left(\frac{Y}{Y_n}\right) - f\left(\frac{Z}{Z_n}\right)\right]
-```
+$$
 
 where $(X\_n, Y\_n, Z\_n)$ is the reference white point and:
 
-```math
+$$
 f(t) = \begin{cases} t^{1/3} & \text{if } t > \left(\frac{6}{29}\right)^3 \\ \frac{1}{3}\left(\frac{29}{6}\right)^2 t + \frac{4}{29} & \text{otherwise} \end{cases}
-```
+$$
 
 **Perceptual Color Difference (ΔE):**
 
-```math
+$$
 \Delta E = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}
-```
+$$
 
 | $\Delta E$ | Perception |
 |------------|------------|
@@ -563,9 +563,9 @@ This differs from standard Cartesian coordinates where $y$ points up.
 
 All 2D geometric transformations can be expressed using **homogeneous coordinates**:
 
-```math
+$$
 \mathbf{p}' = \mathbf{T} \cdot \mathbf{p}
-```
+$$
 
 where $\mathbf{p} = \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$ (homogeneous form)
 
@@ -575,10 +575,10 @@ where $\mathbf{p} = \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$ (homogeneous form
 
 Shift by $(t\_x, t\_y)$:
 
-```math
+$$
 \mathbf{T}_{trans} = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \begin{bmatrix} x + t_x \\ y + t_y \\ 1 \end{bmatrix}
-```
+$$
 
 #### 2. Rotation
 
@@ -586,15 +586,15 @@ Shift by $(t\_x, t\_y)$:
 
 Rotate by angle $\theta$ (counter-clockwise about origin):
 
-```math
+$$
 \mathbf{T}_{rot} = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}
-```
+$$
 
 **Rotation about point $(c\_x, c\_y)$:**
 
-```math
+$$
 \mathbf{T} = \mathbf{T}_{trans}(c_x, c_y) \cdot \mathbf{T}_{rot}(\theta) \cdot \mathbf{T}_{trans}(-c_x, -c_y)
-```
+$$
 
 #### 3. Scaling
 
@@ -602,9 +602,9 @@ Rotate by angle $\theta$ (counter-clockwise about origin):
 
 Scale by factors $(s\_x, s\_y)$:
 
-```math
+$$
 \mathbf{T}_{scale} = \begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}
-```
+$$
 
 When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
 
@@ -614,25 +614,25 @@ When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
 
 **Affine Transformation (6 DOF):**
 
-```math
+$$
 \mathbf{T}_{affine} = \begin{bmatrix} a_{11} & a_{12} & t_x \\ a_{21} & a_{22} & t_y \\ 0 & 0 & 1 \end{bmatrix}
-```
+$$
 
 - Preserves: parallel lines, ratios of distances along lines
 - Includes: translation, rotation, scaling, shearing
 
 **Perspective (Projective) Transformation (8 DOF):**
 
-```math
+$$
 \mathbf{T}_{perspective} = \begin{bmatrix} h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23} \\ h_{31} & h_{32} & 1 \end{bmatrix}
-```
+$$
 
 With **projective division**:
 
-```math
+$$
 x' = \frac{h_{11}x + h_{12}y + h_{13}}{h_{31}x + h_{32}y + 1}
 y' = \frac{h_{21}x + h_{22}y + h_{23}}{h_{31}x + h_{32}y + 1}
-```
+$$
 
 | Transformation | DOF | Preserves | Use Case |
 |---------------|-----|-----------|----------|
@@ -691,15 +691,15 @@ A histogram shows the distribution of pixel intensities in an image.
 
 For a grayscale image with $L$ intensity levels (e.g., $L=256$), the histogram $h(k)$ counts pixels at each intensity:
 
-```math
+$$
 h(k) = \sum_{i=0}^{H-1} \sum_{j=0}^{W-1} \mathbf{1}[I(i,j) = k], \quad k \in \{0, 1, ..., L-1\}
-```
+$$
 
 **Normalized Histogram (Probability Distribution):**
 
-```math
+$$
 p(k) = \frac{h(k)}{H \times W}
-```
+$$
 
 where $\sum\_{k=0}^{L-1} p(k) = 1$
 
@@ -715,15 +715,15 @@ The goal is to find a transformation $T(r)$ that maps input intensity $r$ to out
 
 **Cumulative Distribution Function (CDF):**
 
-```math
+$$
 \text{CDF}(k) = \sum_{j=0}^{k} p(j)
-```
+$$
 
 **Equalization Transform:**
 
-```math
+$$
 s = T(r) = (L - 1) \cdot \text{CDF}(r)
-```
+$$
 
 This maps the CDF to a straight line, effectively flattening the histogram.
 
@@ -741,9 +741,9 @@ Standard histogram equalization is global. CLAHE applies equalization locally:
 3. Apply contrast limiting to prevent noise amplification
 4. Bilinearly interpolate at tile boundaries
 
-```math
+$$
 \text{clip}(h(k)) = \min(h(k), \text{clip\_limit})
-```
+$$
 
 ```python
 import cv2

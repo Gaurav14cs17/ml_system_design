@@ -321,12 +321,12 @@ Where:
 
 **Gated Recurrent Unit** combines forget and input gates:
 
-```math
+$$
 z_t = \sigma(W_z \cdot [h_{t-1}, x_t]) \quad \text{(update gate)}
 r_t = \sigma(W_r \cdot [h_{t-1}, x_t]) \quad \text{(reset gate)}
 \tilde{h}_t = \tanh(W \cdot [r_t \odot h_{t-1}, x_t]) \quad \text{(candidate)}
 h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t \quad \text{(output)}
-```
+$$
 
 ### PyTorch LSTM Implementation
 
@@ -641,9 +641,9 @@ class CNN1DForecaster(nn.Module):
 
 The **Scaled Dot-Product Attention** is the core of Transformers:
 
-```math
+$$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-```
+$$
 
 Where:
 - $Q \in \mathbb{R}^{n \times d\_k}$ — Query matrix
@@ -655,19 +655,19 @@ Where:
 
 Allows the model to attend to different representation subspaces:
 
-```math
+$$
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O
 \text{where head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
-```
+$$
 
 ### Positional Encoding
 
 Since Transformers lack recurrence, we add positional information:
 
-```math
+$$
 PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
 PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
-```
+$$
 
 <p align="center">
 <svg width="700" height="150" xmlns="http://www.w3.org/2000/svg">

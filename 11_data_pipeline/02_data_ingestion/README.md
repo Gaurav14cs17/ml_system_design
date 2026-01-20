@@ -20,15 +20,15 @@ Data arrives according to stochastic processes. Understanding these helps design
 
 Events arrive independently at rate $\lambda$:
 
-```math
+$$
 P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}
-```
+$$
 
 **Inter-arrival times** are exponentially distributed:
 
-```math
+$$
 f(t) = \lambda e^{-\lambda t}, \quad E[T] = \frac{1}{\lambda}
-```
+$$
 
 **Memoryless property:** $P(T > s + t | T > s) = P(T > t)$
 
@@ -38,9 +38,9 @@ This means knowing an event hasn't occurred doesn't help predict when it will.
 
 When arrival rate varies with time $\lambda(t)$:
 
-```math
+$$
 P(N(t_1, t_2) = k) = \frac{\Lambda(t_1, t_2)^k e^{-\Lambda(t_1, t_2)}}{k!}
-```
+$$
 
 where $\Lambda(t\_1, t\_2) = \int\_{t\_1}^{t\_2} \lambda(t) dt$.
 
@@ -54,15 +54,15 @@ For incremental loads, detect changes using:
 
 **Timestamp-based:**
 
-```math
+$$
 \Delta D = \{d \in D : d.updated\_at > t_{last\_sync}\}
-```
+$$
 
 **Hash-based:**
 
-```math
+$$
 \Delta D = \{d \in D : h(d) \neq h_{stored}(d.id)\}
-```
+$$
 
 where $h$ is a hash function (e.g., MD5, SHA-256).
 
@@ -70,9 +70,9 @@ where $h$ is a hash function (e.g., MD5, SHA-256).
 
 For source $S$ and target $T$ with key $K$:
 
-```math
+$$
 T' = (T \setminus T_K) \cup S
-```
+$$
 
 where $T\_K = \{t \in T : t.K \in S.K\}$ (existing records with matching keys).
 
@@ -88,9 +88,9 @@ WHEN NOT MATCHED THEN INSERT
 
 Database transaction logs record all changes as an ordered sequence:
 
-```math
+$$
 \text{Log} = [(op_1, t_1), (op_2, t_2), ..., (op_n, t_n)]
-```
+$$
 
 where $op\_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
 
@@ -100,9 +100,9 @@ where $op\_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
 
 Each change event contains:
 
-```math
+$$
 \Delta = (\text{op}, \text{before}, \text{after}, \text{timestamp}, \text{transaction\_id})
-```
+$$
 
 **Before-image:** State before change (for UPDATE, DELETE)
 **After-image:** State after change (for INSERT, UPDATE)
@@ -111,9 +111,9 @@ Each change event contains:
 
 #### Ingestion Throughput
 
-```math
+$$
 \Theta_{ingest} = \min(\Theta_{source}, \Theta_{network}, \Theta_{sink})
-```
+$$
 
 System throughput is limited by the slowest component.
 
@@ -123,15 +123,15 @@ When $\lambda\_{arrival} > \mu\_{processing}$:
 
 **Queue growth rate:**
 
-```math
+$$
 \frac{dQ}{dt} = \lambda - \mu > 0
-```
+$$
 
 **Time to overflow:**
 
-```math
+$$
 t_{overflow} = \frac{Q_{max}}{\lambda - \mu}
-```
+$$
 
 **Backpressure strategies:**
 1. **Drop**: Discard excess events (lossy)
@@ -144,9 +144,9 @@ t_{overflow} = \frac{Q_{max}}{\lambda - \mu}
 
 For event stream with possible duplicates:
 
-```math
+$$
 D_{dedup} = \{d \in D : \nexists d' \in D, d'.id = d.id \land d' \prec d\}
-```
+$$
 
 Keep only first occurrence of each event ID.
 
@@ -154,9 +154,9 @@ Keep only first occurrence of each event ID.
 
 Space-efficient probabilistic deduplication:
 
-```math
+$$
 P(\text{false positive}) \approx \left(1 - e^{-kn/m}\right)^k
-```
+$$
 
 where $k$ = hash functions, $n$ = elements seen, $m$ = bits.
 
@@ -166,9 +166,9 @@ where $k$ = hash functions, $n$ = elements seen, $m$ = bits.
 
 Save progress to enable recovery:
 
-```math
+$$
 \text{checkpoint} = (\text{offset}, \text{state}, \text{timestamp})
-```
+$$
 
 **Recovery:** Resume from last checkpoint, reprocess $[checkpoint, current)$.
 
@@ -180,9 +180,9 @@ For API ingestion with rate limit $R$ (requests/second):
 
 **Token bucket algorithm:**
 
-```math
+$$
 \text{tokens}(t) = \min(B, \text{tokens}(t-\Delta t) + R \cdot \Delta t)
-```
+$$
 
 where $B$ = bucket capacity.
 

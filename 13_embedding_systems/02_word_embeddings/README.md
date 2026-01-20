@@ -186,9 +186,9 @@ Matrix E     h ∈ ℝᵈ       scores      for each context position
 
 Computing softmax over entire vocabulary is computationally prohibitive:
 
-```math
+$$
 P(w_o | w_i) = \frac{\exp(\mathbf{v}_{w_o}^\top \mathbf{v}_{w_i})}{\sum_{j=1}^{|V|} \exp(\mathbf{v}_{w_j}^\top \mathbf{v}_{w_i})}
-```
+$$
 
 The denominator requires summing over **all words** in vocabulary $|V|$ (often 100,000+).
 
@@ -196,9 +196,9 @@ The denominator requires summing over **all words** in vocabulary $|V|$ (often 1
 
 Replace the softmax with a **binary classification task**:
 
-```math
+$$
 \mathcal{L}_{\text{NEG}} = \log \sigma(\mathbf{v}_{w_o}^\top \mathbf{v}_{w_i}) + \sum_{k=1}^{K} \mathbb{E}_{w_k \sim P_n(w)} \left[ \log \sigma(-\mathbf{v}_{w_k}^\top \mathbf{v}_{w_i}) \right]
-```
+$$
 
 where:
 - $\sigma(x) = 1/(1 + e^{-x})$ is the sigmoid function
@@ -294,9 +294,9 @@ def build_cooccurrence_matrix(corpus, window_size=10, vocab_size=10000):
 
 GloVe minimizes a **weighted least-squares regression** on the co-occurrence matrix:
 
-```math
+$$
 \mathcal{J} = \sum_{i,j=1}^{|V|} f(X_{ij}) \left( \mathbf{w}_i^\top \tilde{\mathbf{w}}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2
-```
+$$
 
 where:
 - $X\_{ij}$ is the co-occurrence count of words $i$ and $j$
@@ -306,9 +306,9 @@ where:
 
 **Weighting Function:**
 
-```math
+$$
 f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{otherwise} \end{cases}
-```
+$$
 
 where typically $x\_{\max} = 100$ and $\alpha = 0.75$.
 

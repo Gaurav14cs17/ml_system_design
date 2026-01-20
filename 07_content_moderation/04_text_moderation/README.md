@@ -41,9 +41,9 @@ Text moderation is the foundation of content moderation systems. It involves det
 
 Converts text to numerical vectors by weighting term importance:
 
-```math
+$$
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
-```
+$$
 
 Where:
 - $\text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}$ (normalized term frequency)
@@ -53,23 +53,23 @@ Where:
 
 Dense vector representations learned from large corpora:
 
-```math
+$$
 \mathbf{v}_w \in \mathbb{R}^d \quad \text{where } d \in \{100, 300, 768, ...\}
-```
+$$
 
 **Word2Vec Skip-gram objective**:
 
-```math
+$$
 \mathcal{L} = \sum_{(w, c) \in D} \log \sigma(\mathbf{v}_w \cdot \mathbf{v}_c) + \sum_{(w, c') \in D'} \log \sigma(-\mathbf{v}_w \cdot \mathbf{v}_{c'})
-```
+$$
 
 ### Attention Mechanism
 
 The self-attention operation in transformers:
 
-```math
+$$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-```
+$$
 
 Where:
 - $Q = XW^Q$ (queries)
@@ -79,43 +79,43 @@ Where:
 
 **Multi-head attention**:
 
-```math
+$$
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O
-```
+$$
 
 Where each head is:
 
-```math
+$$
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
-```
+$$
 
 ### Toxicity Score Calibration
 
 Converting raw model outputs to calibrated probabilities using **Platt Scaling**:
 
-```math
+$$
 P(y=1 | f(x)) = \frac{1}{1 + \exp(Af(x) + B)}
-```
+$$
 
 Where $A$ and $B$ are parameters fit on a validation set to minimize:
 
-```math
+$$
 \mathcal{L} = -\sum_{i} y_i \log(p_i) + (1-y_i) \log(1-p_i)
-```
+$$
 
 ### Threshold Optimization
 
 Finding the optimal decision threshold $\tau$ by maximizing F1:
 
-```math
+$$
 \tau^* = \arg\max_{\tau} F_1(\tau) = \arg\max_{\tau} \frac{2 \cdot \text{Precision}(\tau) \cdot \text{Recall}(\tau)}{\text{Precision}(\tau) + \text{Recall}(\tau)}
-```
+$$
 
 Or with a cost-sensitive approach:
 
-```math
+$$
 \tau^* = \arg\min_{\tau} \left[ C_{FP} \cdot \text{FPR}(\tau) + C_{FN} \cdot \text{FNR}(\tau) \right]
-```
+$$
 
 Where $C_{FP}$ and $C_{FN}$ are the costs of false positives and negatives.
 

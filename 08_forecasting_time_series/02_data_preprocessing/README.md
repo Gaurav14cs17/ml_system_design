@@ -34,31 +34,31 @@ A non-stationary series $\{Y\_t\}$ can be transformed to achieve stationarity:
 
 #### Differencing
 
-```math
+$$
 \nabla Y_t = Y_t - Y_{t-1} = (1-B)Y_t
-```
+$$
 
 For seasonal differencing with period $m$:
 
-```math
+$$
 \nabla_m Y_t = Y_t - Y_{t-m} = (1-B^m)Y_t
-```
+$$
 
 #### Log Transformation
 
 For series with multiplicative seasonality or variance proportional to level:
 
-```math
+$$
 Z_t = \log(Y_t)
-```
+$$
 
 #### Box-Cox Transformation
 
 A family of power transformations parametrized by $\lambda$:
 
-```math
+$$
 Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \lambda \neq 0 \\ \log(Y_t) & \text{if } \lambda = 0 \end{cases}
-```
+$$
 
 ### Normalization Methods
 
@@ -72,15 +72,15 @@ Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \la
 
 #### Linear Interpolation
 
-```math
+$$
 \hat{Y}_t = Y_{t-k} + \frac{t - (t-k)}{(t+j) - (t-k)}(Y_{t+j} - Y_{t-k})
-```
+$$
 
 #### Seasonal Decomposition Imputation
 
-```math
+$$
 \hat{Y}_t = \hat{T}_t + \hat{S}_t
-```
+$$
 
 Where $\hat{T}\_t$ and $\hat{S}\_t$ are estimated from non-missing values.
 

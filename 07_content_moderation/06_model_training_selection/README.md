@@ -271,9 +271,9 @@ In content moderation, selecting the right loss function is critical due to:
 
 The standard loss for binary classification:
 
-```math
+$$
 \mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
-```
+$$
 
 Where:
 - $y_i \in \{0, 1\}$ is the true label
@@ -283,9 +283,9 @@ Where:
 
 Addresses class imbalance by down-weighting easy examples:
 
-```math
+$$
 \mathcal{L}_{\text{Focal}} = -\alpha_t (1 - p_t)^\gamma \log(p_t)
-```
+$$
 
 Where:
 - $p_t = \hat{y}$ if $y = 1$, else $1 - \hat{y}$
@@ -298,12 +298,12 @@ Where:
 
 Different treatment for positive and negative samples:
 
-```math
+$$
 \mathcal{L}_{\text{ASL}} = \begin{cases}
 (1 - p)^{\gamma_+} \log(p) & \text{if } y = 1 \\
 (p_m)^{\gamma_-} \log(1 - p_m) & \text{if } y = 0
 \end{cases}
-```
+$$
 
 Where $p_m = \max(p - m, 0)$ with margin $m$ for hard threshold on negatives.
 
@@ -311,9 +311,9 @@ Where $p_m = \max(p - m, 0)$ with margin $m$ for hard threshold on negatives.
 
 When violations are rare, weight the positive class:
 
-```math
+$$
 \mathcal{L}_{\text{weighted}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]
-```
+$$
 
 Common weighting: $w_+ = \frac{N}{2 \cdot N_+}$, $w_- = \frac{N}{2 \cdot N_-}$
 
@@ -321,9 +321,9 @@ Common weighting: $w_+ = \frac{N}{2 \cdot N_+}$, $w_- = \frac{N}{2 \cdot N_-}$
 
 Prevents overconfident predictions:
 
-```math
+$$
 y_{\text{smooth}} = y \cdot (1 - \epsilon) + \frac{\epsilon}{K}
-```
+$$
 
 Where $\epsilon$ is the smoothing factor (typically 0.1) and $K$ is the number of classes.
 

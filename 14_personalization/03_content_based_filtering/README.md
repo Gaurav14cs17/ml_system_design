@@ -37,9 +37,9 @@ Given:
 
 The relevance score is:
 
-```math
+$$
 s(u, i) = f(\mathbf{u}, \mathbf{x}_i)
-```
+$$
 
 Most commonly: $f = \text{cosine similarity}$ or $f = \text{dot product}$
 
@@ -60,21 +60,21 @@ Most commonly: $f = \text{cosine similarity}$ or $f = \text{dot product}$
 
 **Term Frequency:**
 
-```math
+$$
 \text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}
-```
+$$
 
 **Inverse Document Frequency:**
 
-```math
+$$
 \text{IDF}(t) = \log \frac{N}{|\{d : t \in d\}|}
-```
+$$
 
 **TF-IDF Score:**
 
-```math
+$$
 \text{TF-IDF}(t, d) = \text{TF}(t, d) \times \text{IDF}(t)
-```
+$$
 
 **Example:** Movie description "An exciting action thriller"
 
@@ -88,9 +88,9 @@ Most commonly: $f = \text{cosine similarity}$ or $f = \text{dot product}$
 
 Modern approach using pre-trained language models:
 
-```math
+$$
 \mathbf{x}_{\text{text}} = \text{Encoder}(\text{description}) \in \mathbb{R}^{768}
-```
+$$
 
 **Models:** BERT, Sentence-BERT, T5
 
@@ -100,25 +100,25 @@ Modern approach using pre-trained language models:
 
 **One-Hot Encoding:**
 
-```math
+$$
 \mathbf{x}_{\text{genre}} = [0, 1, 0, 0, 1, 0]^T
-```
+$$
 
 For genres: [Action, Comedy, Drama, Horror, Thriller, Romance]
 
 **Multi-Hot for Multiple Categories:**
 
-```math
+$$
 \mathbf{x}_{\text{tags}} = \sum_{t \in \text{tags}(i)} \mathbf{e}_t
-```
+$$
 
 ### Image Features
 
 Extract visual features using CNN:
 
-```math
+$$
 \mathbf{x}_{\text{image}} = \text{CNN}_{\text{pool}}(\text{image}) \in \mathbb{R}^{2048}
-```
+$$
 
 **Common models:** ResNet, VGG, EfficientNet
 
@@ -126,15 +126,15 @@ Extract visual features using CNN:
 
 **Concatenation:**
 
-```math
+$$
 \mathbf{x}_i = [\mathbf{x}_{\text{text}} \oplus \mathbf{x}_{\text{categorical}} \oplus \mathbf{x}_{\text{image}}]
-```
+$$
 
 **Weighted Combination:**
 
-```math
+$$
 \mathbf{x}_i = \alpha \cdot \mathbf{x}_{\text{text}} + \beta \cdot \mathbf{x}_{\text{categorical}} + \gamma \cdot \mathbf{x}_{\text{image}}
-```
+$$
 
 With learnable weights $\alpha, \beta, \gamma$
 
@@ -148,21 +148,21 @@ Given user $u$'s interacted items $\mathcal{H}_u = \{i_1, i_2, \ldots, i_n\}$:
 
 **Simple Mean:**
 
-```math
+$$
 \mathbf{u} = \frac{1}{|\mathcal{H}_u|} \sum_{i \in \mathcal{H}_u} \mathbf{x}_i
-```
+$$
 
 **Rating-Weighted Mean:**
 
-```math
+$$
 \mathbf{u} = \frac{\sum_{i \in \mathcal{H}_u} r_{ui} \cdot \mathbf{x}_i}{\sum_{i \in \mathcal{H}_u} r_{ui}}
-```
+$$
 
 **Recency-Weighted:**
 
-```math
+$$
 \mathbf{u} = \frac{\sum_{i \in \mathcal{H}_u} \lambda^{t_{\max} - t_i} \cdot \mathbf{x}_i}{\sum_{i \in \mathcal{H}_u} \lambda^{t_{\max} - t_i}}
-```
+$$
 
 Where $\lambda \in (0, 1)$ is decay factor and $t_i$ is interaction time.
 
@@ -170,9 +170,9 @@ Where $\lambda \in (0, 1)$ is decay factor and $t_i$ is interaction time.
 
 **Discriminative Profile:**
 
-```math
+$$
 \mathbf{u} = \frac{1}{|\mathcal{H}_u^+|} \sum_{i \in \mathcal{H}_u^+} \mathbf{x}_i - \frac{1}{|\mathcal{H}_u^-|} \sum_{j \in \mathcal{H}_u^-} \mathbf{x}_j
-```
+$$
 
 Subtracting disliked item features from liked ones.
 
@@ -182,9 +182,9 @@ Subtracting disliked item features from liked ones.
 
 ### Cosine Similarity
 
-```math
+$$
 \text{sim}(\mathbf{u}, \mathbf{x}_i) = \frac{\mathbf{u}^\top \mathbf{x}_i}{\|\mathbf{u}\| \|\mathbf{x}_i\|} = \cos(\theta)
-```
+$$
 
 **Properties:**
 - Range: $[-1, 1]$ (or $[0, 1]$ for non-negative features)
@@ -193,9 +193,9 @@ Subtracting disliked item features from liked ones.
 
 ### Euclidean Distance
 
-```math
+$$
 \text{sim}(\mathbf{u}, \mathbf{x}_i) = \frac{1}{1 + \|\mathbf{u} - \mathbf{x}_i\|_2}
-```
+$$
 
 **Properties:**
 - Magnitude-sensitive
@@ -203,9 +203,9 @@ Subtracting disliked item features from liked ones.
 
 ### Pearson Correlation
 
-```math
+$$
 \text{sim}(\mathbf{u}, \mathbf{x}_i) = \frac{\sum_j (u_j - \bar{u})(x_{ij} - \bar{x}_i)}{\sqrt{\sum_j (u_j - \bar{u})^2} \sqrt{\sum_j (x_{ij} - \bar{x}_i)^2}}
-```
+$$
 
 **Properties:**
 - Mean-centered: Adjusts for feature biases
@@ -213,9 +213,9 @@ Subtracting disliked item features from liked ones.
 
 ### Jaccard Similarity (Binary Features)
 
-```math
+$$
 \text{sim}(A, B) = \frac{|A \cap B|}{|A \cup B|}
-```
+$$
 
 Useful for binary features like genre tags.
 
@@ -234,12 +234,12 @@ Useful for binary features like genre tags.
 
 **Forward Pass:**
 
-```math
+$$
 \mathbf{z}_{\text{text}} = \text{TextEncoder}(\mathbf{x}_{\text{text}})
 \mathbf{z}_{\text{image}} = \text{ImageEncoder}(\mathbf{x}_{\text{image}})
 \mathbf{z}_{\text{cat}} = \text{CatEncoder}(\mathbf{x}_{\text{cat}})
 \mathbf{e}_i = \text{MLP}([\mathbf{z}_{\text{text}} \oplus \mathbf{z}_{\text{image}} \oplus \mathbf{z}_{\text{cat}}])
-```
+$$
 
 ### Contrastive Learning
 
@@ -247,9 +247,9 @@ Learn embeddings where similar items are close:
 
 **InfoNCE Loss:**
 
-```math
+$$
 \mathcal{L} = -\log \frac{\exp(\mathbf{e}_i^\top \mathbf{e}_{i^+} / \tau)}{\exp(\mathbf{e}_i^\top \mathbf{e}_{i^+} / \tau) + \sum_{j \in \mathcal{N}} \exp(\mathbf{e}_i^\top \mathbf{e}_j / \tau)}
-```
+$$
 
 Where:
 - $i^+$: Positive (similar) item
@@ -262,9 +262,9 @@ For items with multiple modalities (text + image):
 
 **CLIP-style:**
 
-```math
+$$
 \mathcal{L} = -\frac{1}{2}\left(\log \frac{\exp(\mathbf{z}_{\text{text}}^\top \mathbf{z}_{\text{image}} / \tau)}{\sum_j \exp(\mathbf{z}_{\text{text}}^\top \mathbf{z}_{\text{image},j} / \tau)} + \text{symmetric}\right)
-```
+$$
 
 ---
 
@@ -292,17 +292,17 @@ For items with multiple modalities (text + image):
 
 Content-based systems can trap users:
 
-```math
+$$
 \mathbf{u}_{t+1} = f(\mathbf{u}_t, \text{recs}(\mathbf{u}_t))
-```
+$$
 
 Recommendations reinforce existing preferences → narrowing exposure.
 
 **Solution: Diversity Injection**
 
-```math
+$$
 \text{recs} = \arg\max \left[\alpha \cdot \text{relevance} + (1-\alpha) \cdot \text{diversity}\right]
-```
+$$
 
 ---
 

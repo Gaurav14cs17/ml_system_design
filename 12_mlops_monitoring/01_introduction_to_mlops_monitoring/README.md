@@ -42,15 +42,15 @@ Consider this mathematical formulation:
 
 Let $f_\theta: \mathcal{X} \rightarrow \mathcal{Y}$ be our trained model. In traditional software:
 
-```math
+$$
 \text{Error} = \mathbf{1}[\text{exception thrown}]
-```
+$$
 
 In ML systems:
 
-```math
+$$
 \text{Error} = \mathbb{E}_{(x,y) \sim P_{prod}}[L(f_\theta(x), y)]
-```
+$$
 
 The error is a **statistical quantity** that requires monitoring the production distribution $P_{prod}$, which may differ from training.
 
@@ -90,15 +90,15 @@ But they **miss critical ML-specific concerns**:
 
 Traditional monitoring checks:
 
-```math
+$$
 \text{healthy} = (\text{latency} < \tau) \land (\text{errors} < \epsilon) \land (\text{availability} > \alpha)
-```
+$$
 
 ML monitoring additionally requires:
 
-```math
+$$
 \text{healthy} = \text{traditional} \land (PSI < 0.2) \land (\text{accuracy} > \text{baseline} - \delta) \land (P_{train}(X) \approx P_{prod}(X))
-```
+$$
 
 ---
 
@@ -120,17 +120,17 @@ Before deployment, establish reference metrics from your validation set:
 
 **Key Formula:** For drift detection, store the reference distribution:
 
-```math
+$$
 \hat{P}_{ref}(x) = \frac{1}{n}\sum_{i=1}^{n}\mathbf{1}[X_i \in \text{bin}(x)]
-```
+$$
 
 ### Phase 2: Production Monitoring
 
 Monitor continuously using rolling windows:
 
-```math
+$$
 \hat{\mu}_{rolling}(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} y_i
-```
+$$
 
 Where $w$ is the window size (e.g., 1000 predictions).
 
@@ -165,9 +165,9 @@ A comprehensive ML monitoring system has five key layers:
 
 For feature $X_i$, compute:
 
-```math
+$$
 PSI_i = \sum_{k=1}^{bins} (A_k - E_k) \ln\left(\frac{A_k}{E_k}\right)
-```
+$$
 
 ### 2. Model Performance Monitoring
 
@@ -194,9 +194,9 @@ PSI_i = \sum_{k=1}^{bins} (A_k - E_k) \ln\left(\frac{A_k}{E_k}\right)
 
 **Latency percentiles matter:**
 
-```math
+$$
 P_k = \text{value at } k\text{-th percentile}
-```
+$$
 
 - **P50**: Median experience
 - **P95**: Most users' experience
@@ -206,9 +206,9 @@ P_k = \text{value at } k\text{-th percentile}
 
 **Connect ML metrics to business outcomes:**
 
-```math
+$$
 \text{Revenue Impact} = \Delta\text{Conversion} \times \text{Traffic} \times \text{AOV}
-```
+$$
 
 ---
 
@@ -272,9 +272,9 @@ Like the testing pyramid, monitoring should be layered:
 
 Use historical data to set thresholds:
 
-```math
+$$
 \text{threshold} = \mu_{baseline} + k \cdot \sigma_{baseline}
-```
+$$
 
 Where $k$ depends on desired sensitivity:
 - $k = 2$: ~5% false positive rate

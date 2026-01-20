@@ -146,9 +146,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 #### Mean Absolute Error (MAE)
 
-```math
+$$
 \text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
-```
+$$
 
 **Properties:**
 - Same units as the target variable
@@ -157,10 +157,10 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 #### Mean Squared Error (MSE) and Root Mean Squared Error (RMSE)
 
-```math
+$$
 \text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
 \text{RMSE} = \sqrt{\text{MSE}} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
-```
+$$
 
 **Properties:**
 - MSE minimized by the **mean** of the predictive distribution
@@ -169,9 +169,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 #### Mean Absolute Percentage Error (MAPE)
 
-```math
+$$
 \text{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right|
-```
+$$
 
 **Properties:**
 - Scale-independent (percentage)
@@ -180,9 +180,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 #### Symmetric MAPE (SMAPE)
 
-```math
+$$
 \text{SMAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\frac{2|y_i - \hat{y}_i|}{|y_i| + |\hat{y}_i|}
-```
+$$
 
 **Properties:**
 - Bounded: $0\% \leq \text{SMAPE} \leq 200\%$
@@ -191,9 +191,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 #### Mean Absolute Scaled Error (MASE)
 
-```math
+$$
 \text{MASE} = \frac{\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|}{\frac{1}{T-m}\sum_{t=m+1}^{T}|y_t - y_{t-m}|}
-```
+$$
 
 **Properties:**
 - Scale-free: can compare across different series

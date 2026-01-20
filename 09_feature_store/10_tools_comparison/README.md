@@ -325,9 +325,9 @@ user_entity.read(entity_ids=["user_123"])
 | **Cost** | Low | $$
 $ |
 
-```math
+$$
 |
-```
+$$
 
 |
 $$ |

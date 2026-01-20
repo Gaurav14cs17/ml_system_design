@@ -136,9 +136,9 @@ Embeddings are the backbone of modern ML systems. This comprehensive guide cover
 
 An embedding is a **learned mapping** from a discrete or high-dimensional space to a continuous, dense vector space:
 
-```math
+$$
 f: \mathcal{X} \rightarrow \mathbb{R}^d
-```
+$$
 
 where:
 - $\mathcal{X}$ is the input space (words, images, graphs, etc.)
@@ -151,9 +151,9 @@ where:
 
 Mathematically, for items $x\_i$ and $x\_j$:
 
-```math
+$$
 \text{sim}(x_i, x_j) \approx \text{sim}(f(x_i), f(x_j))
-```
+$$
 
 ### Key Distance and Similarity Metrics
 
@@ -168,9 +168,9 @@ Mathematically, for items $x\_i$ and $x\_j$:
 
 For discrete inputs (vocabulary $V$), embeddings are stored as a lookup table:
 
-```math
+$$
 \mathbf{E} \in \mathbb{R}^{|V| \times d}
-```
+$$
 
 The embedding for item $i$ is simply row $i$ of the matrix: $\mathbf{e}\_i = \mathbf{E}[i, :]$
 
@@ -180,15 +180,15 @@ Most embedding methods optimize variations of:
 
 **Contrastive Loss (InfoNCE):**
 
-```math
+$$
 \mathcal{L} = -\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{x^- \in \mathcal{N}} \exp(\text{sim}(f(x), f(x^-))/\tau)}
-```
+$$
 
 **Triplet Loss:**
 
-```math
+$$
 \mathcal{L} = \max(0, d(a, p) - d(a, n) + \text{margin})
-```
+$$
 
 where $a$ is anchor, $p$ is positive, $n$ is negative, and $\tau$ is temperature.
 
@@ -209,9 +209,9 @@ where $a$ is anchor, $p$ is positive, $n$ is negative, and $\tau$ is temperature
 
 For **normalized embeddings** (‖e‖ = 1), cosine similarity equals dot product:
 
-```math
+$$
 \text{cos}(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{when } \|\mathbf{a}\| = \|\mathbf{b}\| = 1
-```
+$$
 
 This enables efficient batch similarity computation via matrix multiplication.
 
