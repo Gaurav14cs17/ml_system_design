@@ -109,6 +109,7 @@ Failure to moderate can result in:
 ### By Method
 
 #### 1. **Human Moderation**
+
 - Professional content reviewers
 
 - Community moderators
@@ -121,6 +122,7 @@ Failure to moderate can result in:
 **Cons**: Expensive, slow, psychological toll on moderators, inconsistent
 
 #### 2. **Automated Moderation (AI/ML)**
+
 - Text classification models
 
 - Image/video analysis

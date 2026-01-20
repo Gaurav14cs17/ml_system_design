@@ -149,6 +149,7 @@ graph TB
 ## 🏗️ System Design Focus Areas
 
 ### 1. **Scalability Patterns**
+
 - Batch processing pipelines
 
 - Real-time inference systems
@@ -156,6 +157,7 @@ graph TB
 - Distributed training architectures
 
 ### 2. **Production Considerations**
+
 - Model versioning and A/B testing
 
 - Monitoring and observability
@@ -163,6 +165,7 @@ graph TB
 - Graceful degradation strategies
 
 ### 3. **Performance Optimization**
+
 - GPU utilization techniques
 
 - Model quantization and pruning
@@ -170,6 +173,7 @@ graph TB
 - Hardware-specific optimizations
 
 ### 4. **MLOps Integration**
+
 - CI/CD for ML pipelines
 
 - Feature stores for vision
