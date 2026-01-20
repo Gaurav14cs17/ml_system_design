@@ -132,6 +132,7 @@ R = \det(\mathbf{M}) - k \cdot \text{trace}(\mathbf{M})^2 = \lambda_1 \lambda_2 
 where $\lambda\_1, \lambda\_2$ are eigenvalues of $\mathbf{M}$ and $k \approx 0.04-0.06$.
 
 **Classification:**
+
 - **Flat region:** $\lambda\_1 \approx \lambda\_2 \approx 0$ → $R \approx 0$
 
 - **Edge:** $\lambda\_1 \gg \lambda\_2$ or $\lambda\_2 \gg \lambda\_1$ → $R < 0$

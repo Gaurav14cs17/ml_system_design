@@ -42,7 +42,9 @@ This repository is your **comprehensive guide** to designing, building, and depl
 ### ✨ Key Features
 
 - 🔬 **Real-world case studies**
+
 - 💡 **Best practices & anti-patterns**
+
 - 🛠️ **Production-ready patterns**
 
 </td>

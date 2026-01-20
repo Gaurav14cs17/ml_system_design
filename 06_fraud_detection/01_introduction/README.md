@@ -255,6 +255,7 @@ def check_fraud_rules(transaction):
 ```
 
 **Pros:**
+
 - Easy to understand and explain
 
 - Quick to implement for known patterns
@@ -264,6 +265,7 @@ def check_fraud_rules(transaction):
 - Full control over logic
 
 **Cons:**
+
 - Doesn't adapt to new fraud patterns
 
 - High false positive rates
@@ -306,6 +308,7 @@ class FraudDetectionModel:
 ```
 
 **Pros:**
+
 - Learns complex patterns automatically
 
 - Adapts to new fraud patterns with retraining
@@ -315,6 +318,7 @@ class FraudDetectionModel:
 - Handles high-dimensional data
 
 **Cons:**
+
 - Requires quality training data
 
 - Less interpretable (black box)

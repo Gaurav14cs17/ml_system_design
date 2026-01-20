@@ -366,6 +366,7 @@ def write_features_parquet(df, path):
 - Point-in-time joins are **essential** for valid training data
 
 - Choose storage based on **scale and query patterns**
+
 - **Optimize partitioning** for your access patterns
 
 ---

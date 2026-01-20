@@ -80,6 +80,7 @@ D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\fr
 ```
 
 **Properties:**
+
 - Non-negative: \( D_{KL}(P \| Q) \geq 0 \)
 
 - Zero iff \( P = Q \)
@@ -100,6 +101,7 @@ JS(P \| Q) = \frac{1}{2}D_{KL}(P \| M) + \frac{1}{2}D_{KL}(Q \| M)
 Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution.
 
 **Properties:**
+
 - Symmetric: \( JS(P \| Q) = JS(Q \| P) \)
 
 - Bounded: \( 0 \leq JS(P \| Q) \leq \log(2) \) (or 1 if using log base 2)
@@ -212,6 +214,7 @@ W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx
 ```
 
 **Advantages:**
+
 - Provides intuitive measure of "distance" between distributions
 
 - Works even when distributions have non-overlapping support

@@ -161,6 +161,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 ```
 
 **Properties:**
+
 - Same units as the target variable
 
 - Robust to outliers (compared to MSE)
@@ -176,6 +177,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 ```
 
 **Properties:**
+
 - MSE minimized by the **mean** of the predictive distribution
 
 - Penalizes large errors quadratically
@@ -190,6 +192,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 ```
 
 **Properties:**
+
 - Scale-independent (percentage)
 
 - ⚠️ Undefined when $y\_i = 0$
@@ -204,6 +207,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 ```
 
 **Properties:**
+
 - Bounded: $0\% \leq \text{SMAPE} \leq 200\%$
 
 - More symmetric than MAPE
@@ -218,6 +222,7 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 ```
 
 **Properties:**
+
 - Scale-free: can compare across different series
 
 - $\text{MASE} < 1$: better than naive seasonal forecast

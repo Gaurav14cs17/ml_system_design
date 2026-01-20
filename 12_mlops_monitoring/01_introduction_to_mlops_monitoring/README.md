@@ -174,6 +174,7 @@ A comprehensive ML monitoring system has five key layers:
 ### 1. Data Monitoring
 
 **What to monitor:**
+
 - Input feature distributions (per feature PSI)
 
 - Schema violations (type changes, missing fields)

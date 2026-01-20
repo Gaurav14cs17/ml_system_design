@@ -282,6 +282,7 @@ W(t_p) = \max(t_e) - \text{allowed\_lateness}
 ### Batch Pipelines
 
 **Characteristics:**
+
 - Process data in scheduled intervals (hourly, daily, weekly)
 
 - Handle large volumes efficiently
@@ -306,6 +307,7 @@ R = f(D_{batch})
 **Complexity**: $O(|D\_{batch}|)$ time, requires $O(|D\_{batch}|)$ memory for full-batch aggregations.
 
 **Use Cases:**
+
 - Training data preparation
 
 - Historical analytics
@@ -317,6 +319,7 @@ R = f(D_{batch})
 ### Streaming Pipelines
 
 **Characteristics:**
+
 - Process data in real-time or near-real-time
 
 - Handle continuous data flows
@@ -361,6 +364,7 @@ W_{session} = \{d_1, ..., d_n\} \text{ where } t_e(d_{i+1}) - t_e(d_i) < g
 ![Diagram 1](images/diagram_01.svg)
 
 **Use Cases:**
+
 - Real-time recommendations
 
 - Fraud detection

@@ -502,6 +502,7 @@ And the **autocorrelation function (ACF)** is:
 ```
 
 **Properties:**
+
 - $\rho(0) = 1$
 
 - $|\rho(h)| \leq 1$

@@ -301,6 +301,7 @@ For triplet \((u, i, j)\) where user \(u\) prefers \(i\) over \(j\):
 Where \(\sigma(x) = \frac{1}{1 + e^{-x}}\) is the sigmoid function.
 
 **Sampling Strategy:**
+
 - \(i\): Item user interacted with (positive)
 
 - \(j\): Item user didn't interact with (negative, sampled)
@@ -363,6 +364,7 @@ Train on sampled negative examples instead of all \(m \times n\) pairs.
 ### Q1: When would you use User-Based vs Item-Based CF?
 
 **User-Based:**
+
 - Fewer users than items
 
 - User preferences relatively stable
@@ -370,6 +372,7 @@ Train on sampled negative examples instead of all \(m \times n\) pairs.
 - Need "users like you" explanations
 
 **Item-Based:**
+
 - Fewer items than users (typical for e-commerce)
 
 - Item similarities more stable over time

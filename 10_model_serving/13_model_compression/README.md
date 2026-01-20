@@ -483,6 +483,7 @@ p_i = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}
 where \( z_i \) are the logits (pre-softmax activations).
 
 **Temperature effects:**
+
 - \( T = 1 \): Standard softmax (sharp distribution)
 
 - \( T > 1 \): Softer distribution, reveals "dark knowledge"

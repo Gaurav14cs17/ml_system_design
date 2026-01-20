@@ -113,6 +113,7 @@ s(u, i) = \mathbf{e}_u^\top \mathbf{e}_i
 ```
 
 **Advantages:**
+
 - Item embeddings pre-computed offline
 
 - ANN index for sub-linear retrieval
@@ -489,6 +490,7 @@ Multiple hash functions with smaller tables.
 ### Q4: When would you use GNNs for recommendations?
 
 **Use GNNs when:**
+
 - Rich graph structure (social, knowledge)
 
 - Multi-hop relationships matter
@@ -498,6 +500,7 @@ Multiple hash functions with smaller tables.
 - Heterogeneous interactions
 
 **Avoid GNNs when:**
+
 - Simple user-item matrix
 
 - Latency constraints (GNN inference slow)

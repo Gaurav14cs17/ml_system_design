@@ -201,6 +201,7 @@ Where:
 **Goal:** Maximize cumulative reward while learning.
 
 **Trade-off:**
+
 - **Exploitation:** Recommend items with highest expected reward
 
 - **Exploration:** Try uncertain items to learn more
@@ -230,6 +231,7 @@ Where:
 - \(c\): Exploration constant
 
 **Properties:**
+
 - Explores uncertain items (high variance bonus)
 
 - Bonus decreases as item gets more impressions
@@ -252,6 +254,7 @@ For binary rewards (click/no-click):
 ```
 
 **Advantages:**
+
 - Principled uncertainty quantification
 
 - Often better empirical performance
@@ -310,6 +313,7 @@ Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text
 ```
 
 **Meta-testing (new user):**
+
 - Few interactions → one/few gradient steps
 
 - Quick adaptation from good initialization
@@ -383,6 +387,7 @@ Simulate cold start during training:
 ### Q3: When would meta-learning help cold start?
 
 **Use meta-learning when:**
+
 - Users have diverse preferences (no universal cold start solution)
 
 - A few interactions are available (1-5)
@@ -392,6 +397,7 @@ Simulate cold start during training:
 - Sufficient meta-training users exist
 
 **Avoid when:**
+
 - Zero-shot required (true cold start)
 
 - Computational constraints (meta-learning is expensive)
@@ -407,6 +413,7 @@ Simulate cold start during training:
 4. **Exploration efficiency:** Regret in bandit formulation
 
 **A/B Testing:**
+
 - Stratify by user tenure
 
 - Compare cold start strategies

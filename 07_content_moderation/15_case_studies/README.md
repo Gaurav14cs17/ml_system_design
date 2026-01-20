@@ -21,6 +21,7 @@
 ### Challenge: Scaling Text Moderation for 500M Daily Posts
 
 **Background:**
+
 - 500M+ posts per day across 50+ languages
 
 - Mix of text, images, and video
@@ -117,6 +118,7 @@ class SocialMediaModerationPipeline:
 ### Challenge: Real-time Video Stream Moderation
 
 **Background:**
+
 - 10,000+ concurrent live streams
 
 - Violations must be caught within 30 seconds
@@ -235,6 +237,7 @@ class LiveStreamModerator:
 ### Challenge: Product Listing Moderation
 
 **Background:**
+
 - 5M new listings per day
 
 - Prohibited items: weapons, drugs, counterfeit
@@ -354,6 +357,7 @@ class ProductModerationPipeline:
 ### Challenge: Real-time Voice and Chat Moderation
 
 **Background:**
+
 - 50M concurrent players
 
 - Voice chat: 10M active voice channels
@@ -464,6 +468,7 @@ class GamingModerationSystem:
 ### Challenge: E2E Encrypted Messaging Moderation
 
 **Background:**
+
 - End-to-end encryption prevents server-side inspection
 
 - Still need to prevent abuse (spam, CSAM, scams)

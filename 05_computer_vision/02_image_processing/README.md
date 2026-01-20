@@ -124,6 +124,7 @@ Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 ```
 
 **Properties:**
+
 - **Linearity:** $(aI\_1 + bI\_2) * K = a(I\_1 * K) + b(I\_2 * K)$
 
 - **Commutativity:** $I * K = K * I$
@@ -230,6 +231,7 @@ G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} \exp\left(-\frac{x^2 + y^2}{2\sigma^2}\
 ```
 
 **Key Properties:**
+
 - $\sigma$ controls the spread (blur amount)
 
 - Kernel size typically: $k = \lceil 6\sigma \rceil$ (captures 99.7% of distribution)
@@ -278,6 +280,7 @@ G_r(|I(p) - I(q)|) = \exp\left(-\frac{|I(p) - I(q)|^2}{2\sigma_r^2}\right)
 ```
 
 **Effect:**
+
 - Similar intensity pixels → full weight → smoothing
 
 - Different intensity (edges) → low weight → preservation

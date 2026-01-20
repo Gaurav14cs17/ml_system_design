@@ -38,6 +38,7 @@ Choosing the right storage solution and data format is crucial for ML systems. T
 ![Diagram 2](images/diagram_02.svg)
 
 **Why Parquet for ML:**
+
 - **Column Pruning**: Read only needed columns (critical for wide tables)
 
 - **Predicate Pushdown**: Filter at file level using statistics

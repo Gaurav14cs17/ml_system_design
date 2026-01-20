@@ -71,6 +71,7 @@ class ContentSampler:
 ```
 
 **Sources:**
+
 - Random samples (distribution matching)
 
 - User-reported content (high violation rate)

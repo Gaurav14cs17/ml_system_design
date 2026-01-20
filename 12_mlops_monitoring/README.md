@@ -160,6 +160,7 @@ When comparing distributions, we formulate:
 - **Alternative** \( H_1 \): Drift detected (distributions differ)
 
 **Decision Rules:**
+
 - If \( p < \alpha \): Reject \( H_0 \) (drift detected)
 
 - If \( p \geq \alpha \): Fail to reject \( H_0 \) (no significant drift)

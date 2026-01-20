@@ -270,6 +270,7 @@ The learned embeddings exhibit remarkable linear structure:
 | walking : walk :: swimming : ? | $\vec{v}\_{\text{walking}} - \vec{v}\_{\text{walk}} + \vec{v}\_{\text{swim}}$ | ≈ $\vec{v}\_{\text{swimming}}$ |
 
 **Geometric Interpretation:**
+
 - The vector $(\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}})$ captures the "royalty" direction
 
 - This direction is consistent across gender pairs
@@ -277,6 +278,7 @@ The learned embeddings exhibit remarkable linear structure:
 - Similar patterns exist for country-capital, verb tenses, comparatives, etc.
 
 **Clustering Properties:**
+
 - Countries cluster in geographic/cultural regions
 
 - Verbs cluster by tense (past, present, future)

@@ -201,6 +201,7 @@ H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
 ```
 
 **Implications:**
+
 - High entropy → events are unpredictable → need real-time processing
 
 - Low entropy → events are predictable → batch processing may suffice

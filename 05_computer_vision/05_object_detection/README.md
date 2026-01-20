@@ -464,6 +464,7 @@ Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_
 ```
 
 **IoU Properties:**
+
 - $\text{IoU} \in [0, 1]$
 
 - $\text{IoU} = 1$ → perfect overlap

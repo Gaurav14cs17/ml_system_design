@@ -301,6 +301,7 @@ Y = 0.299R + 0.587G + 0.114B
 This weighted average reflects human eye sensitivity (most sensitive to green, least to blue).
 
 **Pros:**
+
 - Native format for displays
 
 - Simple and intuitive
@@ -308,6 +309,7 @@ This weighted average reflects human eye sensitivity (most sensitive to green, l
 - Hardware accelerated
 
 **Cons:**
+
 - Mixes luminance and chrominance
 
 - Not perceptually uniform
@@ -358,6 +360,7 @@ H = \begin{cases}
 ```
 
 **Interpretation:**
+
 - **H** (0°-360°): Color type (red=0°, green=120°, blue=240°)
 
 - **S** (0-1): Color purity (0=gray, 1=vivid)
@@ -365,6 +368,7 @@ H = \begin{cases}
 - **V** (0-1): Brightness (0=black, 1=brightest)
 
 **Use Cases:**
+
 - Color-based object detection
 
 - Skin tone detection
@@ -451,6 +455,7 @@ f(t) = \begin{cases} t^{1/3} & \text{if } t > \left(\frac{6}{29}\right)^3 \\ \fr
 | > 10 | Obvious |
 
 **Advantages:**
+
 - Perceptually uniform (equal numerical changes = equal perceived changes)
 
 - Separates luminance from color
@@ -458,6 +463,7 @@ f(t) = \begin{cases} t^{1/3} & \text{if } t > \left(\frac{6}{29}\right)^3 \\ \fr
 - Better for color difference calculations
 
 **Use Cases:**
+
 - Color correction and matching
 
 - Image quality assessment
@@ -471,6 +477,7 @@ Used in video compression and broadcasting.
 ![Diagram 6](assets/diagram_06.svg)
 
 **Use Cases:**
+
 - JPEG compression
 
 - Video streaming (H.264, HEVC)

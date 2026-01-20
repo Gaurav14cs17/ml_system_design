@@ -168,6 +168,7 @@ T = \frac{W}{L} = W \times \frac{1000\text{ms}}{L_{\text{ms}}}
 \]
 
 **Example:**
+
 - \( W = 4 \) workers
 
 - \( L = 50 \) ms per inference
@@ -284,6 +285,7 @@ sequenceDiagram
 ```
 
 **Use Cases:**
+
 - ✅ Fraud detection at transaction time
 
 - ✅ Real-time recommendations
@@ -293,6 +295,7 @@ sequenceDiagram
 - ✅ Image/video analysis
 
 **Characteristics:**
+
 - Low latency (P99 < 100ms)
 
 - Single or small batch inference
@@ -318,6 +321,7 @@ flowchart LR
 ```
 
 **Use Cases:**
+
 - ✅ Nightly recommendation generation
 
 - ✅ Bulk scoring of customer segments
@@ -327,6 +331,7 @@ flowchart LR
 - ✅ Report generation
 
 **Characteristics:**
+
 - High throughput priority
 
 - Large batch sizes (1000s of samples)
@@ -351,6 +356,7 @@ flowchart LR
 ```
 
 **Use Cases:**
+
 - ✅ IoT sensor anomaly detection
 
 - ✅ Real-time content moderation
@@ -360,6 +366,7 @@ flowchart LR
 - ✅ Network intrusion detection
 
 **Characteristics:**
+
 - Continuous processing
 
 - Event-driven architecture

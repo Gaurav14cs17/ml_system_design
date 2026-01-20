@@ -205,7 +205,9 @@ Without a feature store, teams often create different code paths for training an
 ## 🔗 Quick Links
 
 - **[Start Learning →](./01_introduction/)**
+
 - **[Jump to Implementation →](./11_implementation/)**
+
 - **[Compare Tools →](./10_tools_comparison/)**
 
 ---

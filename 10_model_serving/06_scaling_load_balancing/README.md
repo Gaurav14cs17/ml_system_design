@@ -117,6 +117,7 @@ From Little's Law, we can derive the **required concurrency**:
 \]
 
 **Example calculation:**
+
 - Target: \( \lambda = 1000 \) RPS
 
 - Latency: \( W = 50 \) ms = 0.05 s

@@ -417,6 +417,7 @@ PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d}}\right)
 ```
 
 **Why sinusoids?**
+
 - $PE\_{pos+k}$ can be expressed as a linear function of $PE\_{pos}$
 
 - Enables the model to learn relative positions

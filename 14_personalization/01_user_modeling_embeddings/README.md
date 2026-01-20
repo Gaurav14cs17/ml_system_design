@@ -128,6 +128,7 @@ Given interaction matrix \(\mathbf{R} \in \mathbb{R}^{m \times n}\):
 Where:
 
 - \(\mathbf{U} \in \mathbb{R}^{m \times k}\): Left singular vectors → **User embeddings**
+
 - \(\boldsymbol{\Sigma} \in \mathbb{R}^{k \times k}\): Singular values (importance weights)
 
 - \(\mathbf{V} \in \mathbb{R}^{n \times k}\): Right singular vectors → **Item embeddings**
@@ -268,6 +269,7 @@ The industry-standard pattern for large-scale retrieval:
 ```
 
 **Key Properties:**
+
 - **Decoupled inference**: Item embeddings pre-computed offline
 
 - **Scalable retrieval**: ANN search over item embeddings
@@ -386,6 +388,7 @@ For users with \(|\mathcal{H}_u| < \tau\) interactions:
 ### Q1: How do you choose embedding dimension?
 
 **Answer Framework:**
+
 - Start with \(d = 128\) as baseline
 
 - Consider: vocabulary size, model capacity, inference constraints
@@ -416,6 +419,7 @@ For users with \(|\mathcal{H}_u| < \tau\) interactions:
 **Single Embedding:** Simpler, faster, works for focused users
 
 **Multi-Interest:**
+
 - Better for diverse preferences (e.g., listens to both jazz and metal)
 
 - Higher memory cost (\(K \times d\) per user)

@@ -283,6 +283,7 @@ Typical sparsity: 99%+ empty cells
 ### Recommended Resources
 
 **Books:**
+
 - "Recommender Systems Handbook" - Ricci et al.
 
 - "Practical Recommender Systems" - Kim Falk
@@ -290,6 +291,7 @@ Typical sparsity: 99%+ empty cells
 - "Deep Learning for Recommender Systems" - Zhang et al.
 
 **Courses:**
+
 - Stanford CS246: Mining Massive Data Sets
 
 - Coursera: Recommender Systems Specialization
@@ -297,6 +299,7 @@ Typical sparsity: 99%+ empty cells
 - Fast.ai: Practical Deep Learning
 
 **Papers:**
+
 - Amazon's Item-to-Item Collaborative Filtering
 
 - Matrix Factorization for Recommender Systems

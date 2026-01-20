@@ -1027,6 +1027,7 @@ class LowLatencyModelServer:
 **Key Features**:
 
 - Updates recommendations after **every scroll**
+
 - Dwell time measured to milliseconds
 
 - Model updates in real-time based on engagement

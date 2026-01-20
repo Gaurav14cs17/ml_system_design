@@ -7,6 +7,7 @@
 ![Diagram 1](images/diagram_01.svg)
 
 **Characteristics:**
+
 - Transform happens **before** loading to destination
 
 - Requires separate staging/processing infrastructure
@@ -18,6 +19,7 @@
 ![Diagram 2](images/diagram_02.svg)
 
 **Characteristics:**
+
 - Load raw data first, transform in-place
 
 - Leverages powerful warehouse compute (Snowflake, BigQuery, Databricks)

@@ -204,6 +204,7 @@ Subtracting disliked item features from liked ones.
 ```
 
 **Properties:**
+
 - Range: \([-1, 1]\) (or \([0, 1]\) for non-negative features)
 
 - Scale-invariant: Only direction matters
@@ -218,6 +219,7 @@ Subtracting disliked item features from liked ones.
 ```
 
 **Properties:**
+
 - Magnitude-sensitive
 
 - Bounded \((0, 1]\)
@@ -230,6 +232,7 @@ Subtracting disliked item features from liked ones.
 ```
 
 **Properties:**
+
 - Mean-centered: Adjusts for feature biases
 
 - Range: \([-1, 1]\)
@@ -358,6 +361,7 @@ Recommendations reinforce existing preferences → narrowing exposure.
 ### Q1: When would you use content-based over collaborative filtering?
 
 **Use Content-Based:**
+
 - New items with no interactions (cold start)
 
 - Privacy-sensitive (no cross-user data)
@@ -367,6 +371,7 @@ Recommendations reinforce existing preferences → narrowing exposure.
 - Rich item metadata available
 
 **Use Collaborative:**
+
 - Sufficient interaction history
 
 - Want serendipitous recommendations

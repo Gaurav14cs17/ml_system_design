@@ -70,6 +70,7 @@ For each user, hold out the last interaction for testing.
 ```
 
 **Properties:**
+
 - Linear penalty for errors
 
 - More robust to outliers than RMSE
@@ -84,6 +85,7 @@ For each user, hold out the last interaction for testing.
 ```
 
 **Properties:**
+
 - Quadratic penalty → large errors matter more
 
 - Same scale as ratings
@@ -159,6 +161,7 @@ Fraction of users who got at least one relevant item in top-K.
 Where \(\text{rank}_u\) is the position of the first relevant item for user \(u\).
 
 **Example:**
+
 - User A: First relevant at position 3 → RR = 1/3
 - User B: First relevant at position 1 → RR = 1
 - User C: First relevant at position 5 → RR = 1/5
@@ -210,6 +213,7 @@ Where \(rel_i^*\) is the \(i\)-th highest relevance score.
 ```
 
 **Properties:**
+
 - Range: \([0, 1]\), higher is better
 
 - Position-aware: earlier positions weighted more
@@ -318,6 +322,7 @@ Where \(p(c)\) is user's historical genre distribution and \(q(c)\) is recommend
 ### User Satisfaction
 
 **Explicit:**
+
 - Thumbs up/down ratios
 
 - Star ratings
@@ -325,6 +330,7 @@ Where \(p(c)\) is user's historical genre distribution and \(q(c)\) is recommend
 - Survey responses
 
 **Implicit:**
+
 - Completion rate (videos, articles)
 
 - Time-to-first-interaction
@@ -468,6 +474,7 @@ Optimizing pure accuracy leads to:
 ### Q1: NDCG vs MAP - when to use which?
 
 **NDCG:**
+
 - Handles graded relevance (ratings 1-5)
 
 - Better for explicit feedback systems
@@ -475,6 +482,7 @@ Optimizing pure accuracy leads to:
 - Most common in academic papers
 
 **MAP:**
+
 - Binary relevance only
 
 - Emphasizes all relevant items equally
@@ -511,6 +519,7 @@ Optimizing pure accuracy leads to:
 ### Q4: Design metrics for a music streaming service.
 
 **Short-term:**
+
 - Skip rate (lower is better)
 
 - Completion rate
@@ -518,6 +527,7 @@ Optimizing pure accuracy leads to:
 - Playlist add rate
 
 **Medium-term:**
+
 - Daily active users
 
 - Session duration
@@ -525,6 +535,7 @@ Optimizing pure accuracy leads to:
 - Artist discovery rate
 
 **Long-term:**
+
 - Subscription retention
 
 - User lifetime value

@@ -238,6 +238,7 @@ class FullLoadIngestion:
 ```
 
 **Pros:**
+
 - ✅ Simple to implement
 
 - ✅ Guarantees data consistency
@@ -245,6 +246,7 @@ class FullLoadIngestion:
 - ✅ No tracking of changes needed
 
 **Cons:**
+
 - ❌ Expensive for large datasets
 
 - ❌ High network/storage costs
@@ -252,6 +254,7 @@ class FullLoadIngestion:
 - ❌ Longer processing times
 
 **Use Cases:**
+
 - Small reference tables (countries, categories)
 
 - Initial data loads
@@ -377,6 +380,7 @@ class CDCIngestion:
 ![Diagram 2](images/diagram_02.svg)
 
 **Popular CDC Tools:**
+
 - **Debezium** - Open source, Kafka-based
 
 - **AWS DMS** - Managed migration service
