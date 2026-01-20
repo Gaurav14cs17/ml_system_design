@@ -113,6 +113,7 @@ This guide covers the complete lifecycle of building production-grade content mo
 ### Prerequisites
 
 ```bash
+
 # Python 3.9+
 python --version
 
@@ -143,6 +144,7 @@ classifier = pipeline(
 # Moderate content
 result = classifier("This is a test message")
 print(result)
+
 # [{'label': 'toxic', 'score': 0.002}]
 
 # Make decision
@@ -153,6 +155,7 @@ def moderate(text, threshold=0.5):
     return {'decision': 'allow', 'score': result['score']}
 
 print(moderate("Hello world!"))
+
 # {'decision': 'allow', 'score': 0.002}
 ```
 

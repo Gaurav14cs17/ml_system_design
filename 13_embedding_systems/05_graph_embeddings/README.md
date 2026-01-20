@@ -181,12 +181,15 @@ def node2vec_walk(graph, start, walk_length, p=1.0, q=1.0):
 
             for neighbor in neighbors:
                 if neighbor == prev:
+
                     # Return to previous node
                     probabilities.append(1.0 / p)
                 elif graph.has_edge(neighbor, prev):
+
                     # Neighbor of previous (BFS-like)
                     probabilities.append(1.0)
                 else:
+
                     # Far from previous (DFS-like)
                     probabilities.append(1.0 / q)
 
@@ -257,6 +260,7 @@ class GCNLayer(nn.Module):
         x: Node features [num_nodes, in_features]
         adj: Normalized adjacency matrix [num_nodes, num_nodes]
         """
+
         # Aggregate neighbor features
         support = self.linear(x)
         output = torch.matmul(adj, support)
@@ -306,6 +310,7 @@ class GraphSAGELayer(nn.Module):
         self.linear = nn.Linear(in_features * 2, out_features)
 
     def forward(self, x, adj):
+
         # Aggregate neighbor features
         if self.aggregator == 'mean':
             neighbor_agg = torch.matmul(adj, x) / (adj.sum(dim=1, keepdim=True) + 1e-10)
@@ -547,6 +552,7 @@ def link_prediction_loss(pos_edge_index, node_embeddings):
     """
     Train embeddings for link prediction
     """
+
     # Positive edges
     pos_src = pos_edge_index[0]
     pos_dst = pos_edge_index[1]

@@ -110,6 +110,7 @@ Pre-trained embeddings encode general knowledge that transfers across tasks:
 
 With embeddings, finding similar items becomes a geometric problem:
 ```python
+
 # Find products similar to a query
 similar_products = find_nearest_neighbors(
     query_embedding,
@@ -156,6 +157,7 @@ Embeddings live in a **metric space** equipped with:
 | **Dot Product** | $\mathbf{a} \cdot \mathbf{b} = \sum\_{i=1}^{d} a\_i b\_i$ | Fast computation, magnitude-dependent |
 
 **Important Relationship:** For unit-normalized vectors ($\|\mathbf{a}\| = \|\mathbf{b}\| = 1$):
+
 ```math
 \cos(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{and} \quad d_{\text{euclidean}}^2 = 2(1 - \cos(\mathbf{a}, \mathbf{b}))
 ```
@@ -173,6 +175,7 @@ This can be understood as:
 - Adding this to $\vec{v}\_{\text{woman}}$ yields the female equivalent
 
 More generally, for analogies $a:b :: c:d$:
+
 ```math
 \vec{v}_b - \vec{v}_a + \vec{v}_c \approx \vec{v}_d
 ```
@@ -190,6 +193,7 @@ Where:
 - $d$ = embedding dimension (e.g., 768)
 
 **Embedding Lookup:** For item with index $i$:
+
 ```math
 \text{embed}(i) = \mathbf{E}_{i,:} = \mathbf{e}_i \in \mathbb{R}^d
 ```
@@ -201,6 +205,7 @@ This is mathematically equivalent to multiplying by a one-hot vector: $\mathbf{e
 Embedding models are trained to satisfy the **similarity preservation** constraint. Common loss functions:
 
 #### Contrastive Loss (InfoNCE)
+
 ```math
 \mathcal{L}_{\text{InfoNCE}} = -\mathbb{E}\left[\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(f(x), f(x_j^-))/\tau)}\right]
 ```
@@ -208,6 +213,7 @@ Embedding models are trained to satisfy the **similarity preservation** constrai
 where $\tau$ is a temperature hyperparameter and $x^+$ are positive pairs.
 
 #### Triplet Loss
+
 ```math
 \mathcal{L}_{\text{triplet}} = \max(0, d(f(a), f(p)) - d(f(a), f(n)) + \alpha)
 ```
@@ -215,6 +221,7 @@ where $\tau$ is a temperature hyperparameter and $x^+$ are positive pairs.
 where $(a, p, n)$ is an anchor-positive-negative triplet and $\alpha$ is the margin.
 
 #### Multiple Negatives Ranking Loss
+
 ```math
 \mathcal{L}_{\text{MNRL}} = -\frac{1}{B}\sum_{i=1}^{B} \log \frac{\exp(s(q_i, d_i^+))}{\sum_{j=1}^{B} \exp(s(q_i, d_j))}
 ```
@@ -235,6 +242,7 @@ cosine_similarity(embed("happy"), embed("sad")) < 0.3
 ### 2. Geometric Structure
 Relationships should be preserved geometrically:
 ```python
+
 # Analogies work
 embed("paris") - embed("france") ≈ embed("tokyo") - embed("japan")
 
@@ -251,6 +259,7 @@ cluster(embed("sports words")) ≠ cluster(embed("food words"))
 Many applications benefit from unit-normalized embeddings:
 ```python
 embedding = embedding / np.linalg.norm(embedding)
+
 # Now: ||embedding|| = 1
 # Benefit: dot product = cosine similarity
 ```
@@ -258,6 +267,7 @@ embedding = embedding / np.linalg.norm(embedding)
 ### 5. Stability
 Small changes in input should cause small changes in embedding:
 ```python
+
 # Typo robustness
 embed("machine learning") ≈ embed("machin learning")
 ```
@@ -352,6 +362,7 @@ import torch.nn as nn
 class EmbeddingModel(nn.Module):
     def __init__(self, vocab_size, embed_dim):
         super().__init__()
+
         # This is the embedding matrix
         self.embeddings = nn.Embedding(vocab_size, embed_dim)
 
@@ -382,6 +393,7 @@ Learn by comparing positive and negative pairs:
 
 ```python
 def contrastive_loss(anchor, positive, negatives, temperature=0.1):
+
     # Positive pair similarity
     pos_sim = cosine_similarity(anchor, positive) / temperature
 
@@ -464,6 +476,7 @@ Real-world distributions change over time:
 ### 3. Bias and Fairness
 Embeddings can encode societal biases from training data:
 ```python
+
 # Problematic: Historical bias encoded
 embed("doctor") closer to embed("man") than embed("woman")
 ```

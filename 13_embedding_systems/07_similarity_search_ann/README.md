@@ -55,6 +55,7 @@ def exact_search(query, database, k=10):
     """
     O(n × d) complexity
     """
+
     # Compute all distances
     distances = np.linalg.norm(database - query, axis=1)
 
@@ -123,6 +124,7 @@ def inner_product(a, b):
 ### Converting Between Metrics
 
 ```python
+
 # If vectors are L2-normalized (||v|| = 1):
 # cosine_similarity(a, b) = dot(a, b)
 # euclidean_distance(a, b)² = 2 - 2 * dot(a, b)
@@ -313,6 +315,7 @@ def estimate_hnsw_memory(num_vectors, dim, M=16):
     """
     Estimate memory usage for HNSW index
     """
+
     # Vector data
     vector_bytes = num_vectors * dim * 4  # float32
 
@@ -427,6 +430,7 @@ def benchmark_index(index, queries, ground_truth, k=10):
     """
     Benchmark ANN index performance
     """
+
     # Latency
     start = time.time()
     results = [index.search(q, k=k) for q in queries]

@@ -160,6 +160,7 @@ partitioner = HashPartitioner(num_partitions=100)
 
 def compute_user_features(user_df: pd.DataFrame) -> pd.DataFrame:
     """Compute features for a group of users"""
+
     # This runs on each partition independently
     return user_df.groupby('user_id').agg({
         'amount': ['sum', 'mean'],
@@ -463,6 +464,7 @@ class FeatureCacheManager:
 
     def _compute_features(self, entity_id: str, feature_set: str) -> dict:
         """Compute features from source"""
+
         # Implement based on your feature logic
         pass
 
@@ -499,6 +501,7 @@ class MaterializedViewManager:
         """Refresh materialized view (full or incremental)"""
 
         if incremental_filter:
+
             # Incremental refresh
             new_data = self.spark.sql(f"{query} WHERE {incremental_filter}")
 
@@ -516,6 +519,7 @@ class MaterializedViewManager:
              .whenNotMatchedInsertAll() \
              .execute()
         else:
+
             # Full refresh
             self.create_materialized_view(name, query)
 
@@ -587,12 +591,14 @@ class AsyncPipelineExecutor:
             parallel = stage.get('parallel', False)
 
             if parallel and isinstance(current_input, list):
+
                 # Run in parallel on list inputs
                 current_input = await self.run_stage_async(
                     stage_func,
                     current_input
                 )
             else:
+
                 # Run sequentially
                 current_input = stage_func(current_input)
 
@@ -749,6 +755,7 @@ class ShardedFeatureStore:
 
         # Update shard count and write to new shards
         self.shard_count = new_shard_count
+
         # ... initialize new shard connections
 
         for entity_id, features in all_data.items():

@@ -77,6 +77,7 @@ graph LR
 | **Multivariate** | Multiple variables measured over time | Weather data (temp, humidity, pressure) |
 
 ```python
+
 # Example: Univariate Time Series
 import pandas as pd
 import numpy as np
@@ -507,6 +508,7 @@ def check_stationarity(series):
     """
     Perform ADF and KPSS tests for stationarity
     """
+
     # Augmented Dickey-Fuller Test
     adf_result = adfuller(series.dropna())
     print(f"ADF Statistic: {adf_result[0]:.4f}")
@@ -692,6 +694,7 @@ def handle_missing_data(series, method='linear'):
     elif method == 'bfill':
         return series.bfill()
     elif method == 'seasonal':
+
         # Use seasonal decomposition for imputation
         from statsmodels.tsa.seasonal import seasonal_decompose
         decomp = seasonal_decompose(series, period=12, extrapolate_trend='freq')
@@ -727,6 +730,7 @@ Building production-ready time series forecasting systems requires careful consi
 
 #### 4. Monitoring & Maintenance
 ```python
+
 # Example: Forecast monitoring metrics
 class ForecastMonitor:
     def __init__(self, threshold_mape=15):
@@ -747,6 +751,7 @@ class ForecastMonitor:
         return mape
 
     def trigger_alert(self, mape):
+
         # Send alert to monitoring system
         print(f"⚠️ ALERT: MAPE {mape:.2f}% exceeds threshold {self.threshold}%")
 ```

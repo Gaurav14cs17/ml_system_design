@@ -14,23 +14,23 @@
 
 ## 📐 Core Mathematical Framework
 
-At its heart, a recommendation system solves the **matrix completion problem**: given a sparse user-item interaction matrix \(R \in \mathbb{R}^{m \times n}\), predict the missing entries.
+At its heart, a recommendation system solves the **matrix completion problem**: given a sparse user-item interaction matrix $R \in \mathbb{R}^{m \times n}$, predict the missing entries.
 
 ### The Fundamental Prediction Task
 
-For user \(u\) and item \(i\), we seek to estimate:
+For user $u$ and item $i$, we seek to estimate:
 
 ```math
 \hat{r}_{ui} = f(u, i; \Theta)
 ```
 
-Where \(f\) is our model parameterized by \(\Theta\). The goal is to learn \(\Theta\) such that \(\hat{r}_{ui}\) accurately predicts user preferences.
+Where $f$ is our model parameterized by $\Theta$. The goal is to learn $\Theta$ such that $\hat{r}_{ui}$ accurately predicts user preferences.
 
 ### Key Mathematical Paradigms
 
 | Paradigm | Mathematical Formulation | Key Insight |
 |----------|--------------------------|-------------|
-| **Matrix Factorization** | \(\mathbf{R} \approx \mathbf{P}\mathbf{Q}^\top\) | Users and items exist in shared latent space |
+| **Matrix Factorization** | $\mathbf{R} \approx \mathbf{P}\mathbf{Q}^\top$ | Users and items exist in shared latent space |
 | **Similarity-Based** | \(\hat{r}_{ui} = \sum_{j \in \mathcal{N}_k(i)} w_{ij} \cdot r_{uj}\) | Similar items receive similar ratings |
 | **Deep Learning** | \(\hat{r}_{ui} = \sigma(\mathbf{h}^\top \cdot [\mathbf{p}_u \oplus \mathbf{q}_i])\) | Non-linear feature interactions matter |
 | **Probabilistic** | \(p(r_{ui} \mid \Theta) = \mathcal{N}(\mu_{ui}, \sigma^2)\) | Uncertainty quantification |
@@ -84,10 +84,10 @@ The classic approach decomposes the interaction matrix into latent factors:
 ```
 
 Where:
-- \(\mathbf{R} \in \mathbb{R}^{m \times n}\): User-item interaction matrix
-- \(\mathbf{P} \in \mathbb{R}^{m \times k}\): User latent factors
-- \(\mathbf{Q} \in \mathbb{R}^{n \times k}\): Item latent factors
-- \(k\): Embedding dimension (typically 32-256)
+- $\mathbf{R} \in \mathbb{R}^{m \times n}$: User-item interaction matrix
+- $\mathbf{P} \in \mathbb{R}^{m \times k}$: User latent factors
+- $\mathbf{Q} \in \mathbb{R}^{n \times k}$: Item latent factors
+- $k$: Embedding dimension (typically 32-256)
 
 **Optimization Objective:**
 
@@ -117,7 +117,7 @@ Bayesian Personalized Ranking optimizes pairwise preferences:
 \text{BPR-OPT} = \sum_{(u,i,j) \in D_S} \ln \sigma(\hat{x}_{uij}) - \lambda_\Theta \|\Theta\|^2
 ```
 
-Where \(\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj}\) represents the preference of item \(i\) over item \(j\) for user \(u\).
+Where $\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj}$ represents the preference of item $i$ over item $j$ for user $u$.
 
 ### 4. Deep Learning Formulations
 
@@ -128,9 +128,9 @@ Where \(\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj}\) represents the preference 
 ```
 
 Where:
-- \(f_\theta\): User encoder network
-- \(g_\phi\): Item encoder network
-- \(\text{sim}\): Dot product or cosine similarity
+- $f_\theta$: User encoder network
+- $g_\phi$: Item encoder network
+- $\text{sim}$: Dot product or cosine similarity
 
 **Attention Mechanism (Transformers):**
 

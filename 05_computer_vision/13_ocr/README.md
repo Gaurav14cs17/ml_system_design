@@ -220,6 +220,7 @@ class DocumentAnalyzer:
     """Document layout analysis + OCR."""
 
     def __init__(self):
+
         # Layout detection model
         self.layout_model = lp.Detectron2LayoutModel(
             'lp://PubLayNet/mask_rcnn_X_101_32x8d_FPN_3x/config',

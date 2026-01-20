@@ -42,12 +42,14 @@ class PersonalizedRanker:
         """
         Personalized ranking
         """
+
         # Get user embedding
         user_embedding = self.user_embedder.get_embedding(user_id)
 
         # Score each candidate with user context
         scored = []
         for doc in candidates:
+
             # Base relevance score
             relevance_score = self.ranker.score(query, doc)
 
@@ -99,6 +101,7 @@ class UserEmbedder:
             item_emb = self.item_embeddings.get(interaction['item_id'])
             if item_emb is not None:
                 embeddings.append(item_emb)
+
                 # Weight by recency and engagement
                 weight = self._compute_weight(interaction)
                 weights.append(weight)
@@ -114,6 +117,7 @@ class UserEmbedder:
 
     def _compute_weight(self, interaction: dict) -> float:
         """Compute interaction weight"""
+
         # Recency weight (exponential decay)
         days_ago = (datetime.now() - interaction['timestamp']).days
         recency_weight = 0.5 ** (days_ago / 7)
@@ -150,6 +154,7 @@ class SessionPersonalizer:
         """
         Adjust ranking based on session context
         """
+
         # Encode session
         session_context = self.session_encoder.encode(session)
 
@@ -227,6 +232,7 @@ class MultiObjectiveRanker:
         """
         Multi-objective ranking with weighted combination
         """
+
         # Score each objective
         scores = {}
         for obj in self.objectives:
@@ -285,6 +291,7 @@ class DiversityReranker:
             best_score = float('-inf')
 
             for idx in remaining:
+
                 # Relevance score
                 relevance = candidates[idx].score
 
@@ -343,18 +350,22 @@ class ColdStartHandler:
         """
         Adaptive ranking based on cold-start status
         """
+
         # Determine cold-start status
         user_status = self._get_user_status(user_id)
 
         if user_status == 'new_user':
+
             # Cold user: use popularity + content
             return self._rank_for_new_user(query, candidates)
 
         elif user_status == 'warm_user':
+
             # Some history: blend personalization with exploration
             return self._rank_for_warm_user(query, candidates, user_id)
 
         else:
+
             # Established user: full personalization
             return self._rank_for_established_user(query, candidates, user_id)
 
@@ -369,6 +380,7 @@ class ColdStartHandler:
         scored = []
 
         for doc in candidates:
+
             # Content-based relevance
             content_score = self.content_ranker.score(query, doc)
 
@@ -411,6 +423,7 @@ class NewItemHandler:
         """
         Estimate CTR for new item using content features
         """
+
         # Use content-based prediction
         content_features = self._extract_content_features(item)
         predicted_ctr = self.content_model.predict(content_features)
@@ -428,6 +441,7 @@ class NewItemHandler:
         """
         Bootstrap behavioral features from similar existing items
         """
+
         # Find similar items with history
         similar_items = self._find_similar(new_item, all_items, k=10)
 
@@ -456,6 +470,7 @@ class PositionBiasCorrector:
     """
 
     def __init__(self):
+
         # Learned position propensities
         self.position_propensity = {}
 
@@ -463,6 +478,7 @@ class PositionBiasCorrector:
         """
         Estimate position propensity using randomization data
         """
+
         # Use data from randomized experiments
         randomized = click_data[click_data['is_randomized'] == True]
 
@@ -518,6 +534,7 @@ class FairnessConstraint:
         """
         Ensure equal exposure across protected groups
         """
+
         # Group by protected attribute
         groups = {}
         for doc in candidates:
@@ -659,6 +676,7 @@ class FederatedSearchOrchestrator:
         """
         Federated search across all sources
         """
+
         # Query all sources in parallel
         tasks = [
             source.search(query, top_k=top_k * 2)
@@ -682,6 +700,7 @@ class FederatedSearchOrchestrator:
         """
         Merge results from multiple sources
         """
+
         # Normalize scores within each source
         normalized = []
 
@@ -710,6 +729,7 @@ class FederatedSearchOrchestrator:
         """
         Re-rank merged results
         """
+
         # Use cross-source re-ranker
         reranked = self.reranker.rerank(query, results)
 
@@ -744,6 +764,7 @@ class ConversationalSearchEngine:
         """
         Search with conversation context
         """
+
         # Track context
         context = self.context_tracker.update(utterance, conversation_history)
 
@@ -808,6 +829,7 @@ class QueryRewriter:
         """
         Rewrite utterance to standalone query
         """
+
         # Build prompt
         history = " | ".join([
             f"Q: {t.query} A: {t.response[:100]}"

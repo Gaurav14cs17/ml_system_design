@@ -143,11 +143,13 @@ where:
 - $\mathcal{V}$ = value space (intensity or color)
 
 **For grayscale images** (8-bit):
+
 ```math
 \mathcal{V} = \{0, 1, 2, ..., 255\}
 ```
 
 **For RGB color images**:
+
 ```math
 \mathcal{V} = \{0, ..., 255\}^3
 ```
@@ -212,6 +214,7 @@ Use cases:
 ### Memory Calculations
 
 ```python
+
 # Memory calculation for different image types
 def calculate_memory(width, height, channels, bit_depth=8):
     """
@@ -301,16 +304,19 @@ C_{min} = \min(R', G', B')
 ```
 
 **Value (Brightness):**
+
 ```math
 V = C_{max}
 ```
 
 **Saturation:**
+
 ```math
 S = \begin{cases} 0 & \text{if } C_{max} = 0 \\ \frac{\Delta}{C_{max}} & \text{otherwise} \end{cases}
 ```
 
 **Hue (in degrees):**
+
 ```math
 H = \begin{cases} 
 0° & \text{if } \Delta = 0 \\
@@ -347,6 +353,7 @@ def detect_color_objects(image, lower_hsv, upper_hsv):
     Returns:
         Binary mask of detected regions
     """
+
     # Convert BGR to HSV
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
@@ -651,6 +658,7 @@ def apply_perspective_transform(image, src_points, dst_points):
     Returns:
         Transformed image
     """
+
     # Compute perspective transformation matrix
     matrix = cv2.getPerspectiveTransform(src_points, dst_points)
 
@@ -748,9 +756,11 @@ def enhance_contrast(image):
     For color images, apply equalization to luminance channel only.
     """
     if len(image.shape) == 2:
+
         # Grayscale
         return cv2.equalizeHist(image)
     else:
+
         # Color image - equalize only the luminance
         ycrcb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
         ycrcb[:, :, 0] = cv2.equalizeHist(ycrcb[:, :, 0])
@@ -796,6 +806,7 @@ def compute_image_statistics(image):
     }
 
     if len(image.shape) == 3:
+
         # Per-channel statistics for color images
         for i, channel in enumerate(['blue', 'green', 'red']):
             stats[f'{channel}_mean'] = np.mean(image[:, :, i])
@@ -926,9 +937,11 @@ def resize_image_smart(image, max_size, maintain_aspect=True):
 
     # Use appropriate interpolation
     if scale < 1:
+
         # Downscaling - use AREA for best quality
         interpolation = cv2.INTER_AREA
     else:
+
         # Upscaling - use LANCZOS for best quality
         interpolation = cv2.INTER_LANCZOS4
 
@@ -1104,9 +1117,11 @@ class ImageLoader:
         # Determine interpolation method
         h, w = image.shape[:2]
         if target_h * target_w < h * w:
+
             # Downsampling
             interpolation = cv2.INTER_AREA
         else:
+
             # Upsampling
             interpolation = cv2.INTER_LINEAR
 

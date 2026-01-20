@@ -255,6 +255,7 @@ class TRTInference:
                 self.outputs.append({"host": host_mem, "device": device_mem})
 
     def infer(self, input_data):
+
         # Copy input to device
         np.copyto(self.inputs[0]["host"], input_data.ravel())
         cuda.memcpy_htod_async(self.inputs[0]["device"], self.inputs[0]["host"], self.stream)
@@ -319,6 +320,7 @@ result = compiled_model([input_data])[output_layer]
 ### Unified Conversion Script
 
 ```python
+
 # convert_model.py
 import argparse
 from pathlib import Path
@@ -340,6 +342,7 @@ def convert_pytorch_to_onnx(model_path, output_path, input_shape):
 
 def convert_onnx_to_tensorrt(onnx_path, output_path, fp16=True):
     import tensorrt as trt
+
     # ... TensorRT conversion code
     print(f"TensorRT engine saved to {output_path}")
 

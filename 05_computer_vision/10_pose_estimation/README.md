@@ -255,6 +255,7 @@ class MultiPersonPose:
 
     def estimate(self, image):
         """Estimate poses for all persons in image."""
+
         # Detect persons
         det_results = inference_detector(self.detector, image)
         person_boxes = det_results[0]  # Class 0 = person

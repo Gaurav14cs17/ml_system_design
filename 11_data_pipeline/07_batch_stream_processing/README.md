@@ -42,16 +42,19 @@ where:
 For arrival rate $\lambda$ and service rate $\mu$:
 
 **Utilization:**
+
 ```math
 \rho = \frac{\lambda}{\mu}
 ```
 
 **Average time in system:**
+
 ```math
 W = \frac{1}{\mu - \lambda} = \frac{1}{\mu(1-\rho)}
 ```
 
 **Average queue length:**
+
 ```math
 L_q = \frac{\rho^2}{1-\rho}
 ```
@@ -63,11 +66,13 @@ L_q = \frac{\rho^2}{1-\rho}
 #### Windowing Semantics
 
 **Tumbling Window** (non-overlapping):
+
 ```math
 W_k = [k \cdot w, (k+1) \cdot w), \quad k \in \mathbb{Z}
 ```
 
 **Sliding Window** (overlapping):
+
 ```math
 W_k = [k \cdot s, k \cdot s + w), \quad k \in \mathbb{Z}
 ```
@@ -75,6 +80,7 @@ W_k = [k \cdot s, k \cdot s + w), \quad k \in \mathbb{Z}
 where $w$ = window size, $s$ = slide interval.
 
 **Session Window** (activity-based):
+
 ```math
 W_{session} = \{e_1, ..., e_n\} : \forall i, t_{i+1} - t_i < g
 ```
@@ -96,11 +102,13 @@ W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\
 #### Exactly-Once Semantics
 
 **Idempotent processing** ensures:
+
 ```math
 f(f(x)) = f(x)
 ```
 
 **Transactional boundaries** with offset commits:
+
 ```math
 \text{commit}(\text{offset}_i) \Rightarrow \text{processed}(e_1, ..., e_i)
 ```
@@ -114,6 +122,7 @@ Recovery: Resume from $\text{offset}\_{last\_committed}$.
 For batch size $B$ and per-item processing cost $c$:
 
 **Throughput:**
+
 ```math
 \Theta = \frac{B}{c_{setup} + B \cdot c_{item}}
 ```
@@ -121,6 +130,7 @@ For batch size $B$ and per-item processing cost $c$:
 As $B \to \infty$: $\Theta \to \frac{1}{c\_{item}}$ (asymptotic maximum)
 
 **Latency:**
+
 ```math
 L = c_{setup} + B \cdot c_{item} + \frac{B-1}{2\lambda}
 ```
@@ -146,6 +156,7 @@ Minimum achievable latency bounded by batch interval.
 **Information decay:** Older data carries less information about current state.
 
 For exponential decay:
+
 ```math
 I(t) = I_0 \cdot e^{-\lambda t}
 ```
@@ -189,11 +200,13 @@ In distributed systems, choose 2 of 3:
 For update propagation time $T$ and update rate $\lambda$:
 
 **Staleness probability:**
+
 ```math
 P(\text{stale}) = 1 - e^{-\lambda T}
 ```
 
 **Expected staleness duration:**
+
 ```math
 E[\text{staleness}] = T/2
 ```
@@ -241,6 +254,7 @@ class BatchFeaturePipeline:
 
         # Compute aggregated features
         user_features = transactions.groupBy("user_id").agg(
+
             # Recency
             F.datediff(F.lit(date), F.max("transaction_date")).alias("days_since_last_transaction"),
 
@@ -518,6 +532,7 @@ async def compute_sliding_aggregates(events):
     """Compute features over sliding windows"""
 
     async for event in events.group_by(UserEvent.user_id):
+
         # Use Faust's windowing for sliding aggregates
         window = user_features_table[event.user_id]
 
@@ -680,6 +695,7 @@ class KappaReprocessor:
         while True:
             msg = consumer.poll(1.0)
             if msg is None:
+
                 # Caught up to end
                 break
             processor_func(msg.value(), version=new_version)

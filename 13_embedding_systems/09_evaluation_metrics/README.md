@@ -56,6 +56,7 @@ def evaluate_word_similarity(embeddings, similarity_dataset):
 
     for word1, word2, human_score in similarity_dataset:
         if word1 in embeddings and word2 in embeddings:
+
             # Model similarity (cosine)
             v1 = embeddings[word1]
             v2 = embeddings[word2]
@@ -86,6 +87,7 @@ def evaluate_analogies(embeddings, analogy_dataset, topk=1):
 
     for a, b, c, d in analogy_dataset:
         if all(w in embeddings for w in [a, b, c, d]):
+
             # Predicted vector
             predicted = embeddings[b] - embeddings[a] + embeddings[c]
 
@@ -453,6 +455,7 @@ def evaluate_ann_quality(index, queries, ground_truth, k=10,
     results = []
 
     for params in param_grid:
+
         # Set parameters
         for key, value in params.items():
             if hasattr(index, key):
@@ -564,6 +567,7 @@ class EmbeddingEvaluator:
 
         qrels: {query_id: [relevant_doc_ids]}
         """
+
         # Encode
         query_embeddings = self.encode_batch(queries['text'].tolist())
         corpus_embeddings = self.encode_batch(corpus['text'].tolist())

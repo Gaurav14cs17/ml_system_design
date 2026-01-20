@@ -219,7 +219,7 @@ D = \sup_x |F_{ref}(x) - F_{cur}(x)|
 Where:
 - \( F_{ref}(x) \) = CDF of reference distribution
 - \( F_{cur}(x) \) = CDF of current distribution
-- \( \sup \) = supremum (maximum) over all x
+- $\sup$ = supremum (maximum) over all x
 
 **Interpretation**: Reject null hypothesis (no drift) if p-value < α (typically 0.05)
 
@@ -232,9 +232,9 @@ PSI = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)
 ```
 
 Where:
-- \( A_i \) = Actual percentage in bin i (current data)
-- \( E_i \) = Expected percentage in bin i (reference data)
-- \( n \) = Number of bins
+- $A_i$ = Actual percentage in bin i (current data)
+- $E_i$ = Expected percentage in bin i (reference data)
+- $n$ = Number of bins
 
 **PSI Interpretation**:
 
@@ -252,7 +252,7 @@ An alternative symmetric measure based on KL divergence:
 JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
 ```
 
-Where \( M = \frac{1}{2}(P + Q) \) and \( D_{KL} \) is the Kullback-Leibler divergence.
+Where \( M = \frac{1}{2}(P + Q) \) and $D_{KL}$ is the Kullback-Leibler divergence.
 
 ### Drift Detection Implementation
 
@@ -320,6 +320,7 @@ class DriftDetector:
         threshold: float = 0.1
     ) -> dict:
         """Population Stability Index for drift."""
+
         # Bin the data
         bins = np.histogram_bin_edges(reference, bins=10)
 
@@ -457,10 +458,12 @@ results = monitor.check_quality("user_features", current_data)
 ### Alert Rules
 
 ```yaml
+
 # prometheus-rules.yaml
 groups:
   - name: feature_store_alerts
     rules:
+
       # Staleness alert
       - alert: FeatureStale
         expr: feature_staleness_seconds > 7200  # 2 hours

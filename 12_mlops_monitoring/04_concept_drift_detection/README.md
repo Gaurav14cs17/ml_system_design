@@ -70,6 +70,7 @@ class PerformanceBasedDetector:
 
     def update(self, y_true: np.ndarray, y_pred: np.ndarray) -> ConceptDriftResult:
         """Update with new batch and check for drift."""
+
         # Calculate batch accuracy
         accuracy = np.mean(y_true == y_pred)
         self.window.append(accuracy)
@@ -211,6 +212,7 @@ class ADWINDetector:
                 break
 
         if drift_detected and cut_point:
+
             # Remove old data up to cut point
             old_mean = np.mean(self.window[:cut_point])
             new_mean = np.mean(self.window[cut_point:])
@@ -385,6 +387,7 @@ class ConceptDriftResponseSystem:
 
         # Drift level - consider retraining
         if drift_result.drift_type == DriftType.DRIFT:
+
             # Check if we can retrain
             if self._can_retrain():
                 self._trigger_retraining(drift_result)

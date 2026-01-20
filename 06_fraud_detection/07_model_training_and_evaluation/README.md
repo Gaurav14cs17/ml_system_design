@@ -264,6 +264,7 @@ class FraudModelTrainingPipeline:
         mlflow.set_experiment(self.config.experiment_name)
 
         with mlflow.start_run():
+
             # Log configuration
             mlflow.log_params(self.config.__dict__)
 
@@ -644,6 +645,7 @@ class TemporalCrossValidator:
         fold_days = total_days // (self.n_splits + 1)
 
         for i in range(self.n_splits):
+
             # Training: all data up to split point
             train_end = data['timestamp'].min() + timedelta(days=(i + 1) * fold_days)
 
@@ -865,6 +867,7 @@ class FraudMetrics:
         tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
 
         metrics = {
+
             # Basic metrics
             'precision': precision_score(y_true, y_pred, zero_division=0),
             'recall': recall_score(y_true, y_pred, zero_division=0),
@@ -1321,6 +1324,7 @@ class ContinuousTrainingPipeline:
         comparison = await self._compare_with_production(result)
 
         if comparison['should_deploy']:
+
             # Deploy new model
             await self._deploy_model(result)
 

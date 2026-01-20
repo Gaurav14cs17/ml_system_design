@@ -294,6 +294,7 @@ class NudityDetector:
 
     def detect(self, image: np.ndarray) -> dict:
         """Full nudity detection pipeline."""
+
         # Step 1: Quick classification
         quick_score = self._quick_classify(image)
 
@@ -318,6 +319,7 @@ class NudityDetector:
 
     def _quick_classify(self, image):
         """Quick binary classification."""
+
         # Preprocess
         processed = self._preprocess(image)
         return float(self.classifier(processed)[0])
@@ -327,6 +329,7 @@ class NudityDetector:
         exposure = {}
         for part in self.sensitive_parts:
             if part in segments:
+
                 # Calculate what percentage is exposed vs covered
                 part_mask = segments[part]
                 covered_mask = segments.get('clothing', np.zeros_like(part_mask))
@@ -392,6 +395,7 @@ class VideoKeyframeExtractor:
             hist = cv2.normalize(hist, hist).flatten()
 
             if prev_hist is not None:
+
                 # Compare histograms
                 diff = cv2.compareHist(prev_hist, hist, cv2.HISTCMP_BHATTACHARYYA)
 
@@ -443,6 +447,7 @@ class Video3DCNN(nn.Module):
         super().__init__()
 
         self.features = nn.Sequential(
+
             # Conv block 1
             nn.Conv3d(3, 64, kernel_size=(3, 3, 3), padding=(1, 1, 1)),
             nn.BatchNorm3d(64),
@@ -484,6 +489,7 @@ class Video3DCNN(nn.Module):
         )
 
     def forward(self, x):
+
         # x: (batch, channels, frames, height, width)
         x = self.features(x)
         x = self.classifier(x)
@@ -502,6 +508,7 @@ class VideoModerator:
 
     def moderate(self, video_path: str) -> dict:
         """Full video moderation."""
+
         # Extract keyframes
         keyframes = self.keyframe_extractor.extract(video_path)
 
@@ -538,6 +545,7 @@ class VideoModerator:
 
     def _aggregate_frame_results(self, results):
         """Aggregate frame-level results."""
+
         # Max pooling across frames (worst case)
         max_scores = {}
         for result in results:
@@ -621,6 +629,7 @@ class HashDatabase:
 
         matches = []
         for hash_type, hash_value in hashes.items():
+
             # Exact match check
             key = f"bad_hash:{hash_type}:{hash_value}"
             if self.redis.exists(key):
@@ -662,6 +671,7 @@ class RobustImageHash:
         - Minor crops
         - Color adjustments
         """
+
         # Convert to grayscale
         gray = image.convert('L')
 
@@ -686,6 +696,7 @@ class RobustImageHash:
 
     def _extract_cell_features(self, cell: np.ndarray) -> list:
         """Extract robust features from cell."""
+
         # Mean and std
         mean = np.mean(cell)
         std = np.std(cell)
@@ -786,6 +797,7 @@ class MemeAnalyzer:
 
     def analyze(self, image: np.ndarray) -> Dict:
         """Full meme analysis pipeline."""
+
         # Step 1: Extract text from meme
         text_result = self.text_extractor.extract_text(image)
 
@@ -815,6 +827,7 @@ class MemeAnalyzer:
 
     def _multimodal_analysis(self, image, text):
         """Use multimodal model for context understanding."""
+
         # This would use a model like CLIP or GPT-4V
         # to understand the relationship between image and text
         prompt = f"""Analyze this meme image with text: "{text}"
@@ -885,6 +898,7 @@ class CLIPModerator:
             with torch.no_grad():
                 text_features = self.model.encode_text(text_tokens)
                 text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+
                 # Average embeddings for category
                 embeddings[category] = text_features.mean(dim=0)
 
@@ -892,6 +906,7 @@ class CLIPModerator:
 
     def moderate(self, image: Image.Image) -> Dict:
         """Zero-shot moderation using CLIP."""
+
         # Preprocess image
         image_input = self.preprocess(image).unsqueeze(0).to(self.device)
 
@@ -904,6 +919,7 @@ class CLIPModerator:
         scores = {}
         for category, text_embedding in self.category_embeddings.items():
             similarity = (image_features @ text_embedding.unsqueeze(0).T).item()
+
             # Convert to 0-1 score
             scores[category] = (similarity + 1) / 2
 

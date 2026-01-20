@@ -60,6 +60,7 @@
 ### Comparison
 
 ```python
+
 # Offline features - for training
 offline_features = {
     'user_txn_count_30d': {
@@ -155,6 +156,7 @@ class BatchFeaturePipeline:
         end_date = F.lit(as_of_date).cast("timestamp")
 
         user_features = transactions.groupBy("user_id").agg(
+
             # Lifetime aggregations
             F.count("*").alias("user_lifetime_txn_count"),
             F.sum("amount").alias("user_lifetime_amount"),
@@ -380,6 +382,7 @@ class PointInTimeFeatureStore:
         all_features = entity_df.copy()
 
         for feature_view in feature_views:
+
             # Get feature history
             feature_history = self.offline.read_feature_view(feature_view)
 
@@ -423,9 +426,11 @@ class PointInTimeFeatureStore:
             ]
 
             if len(entity_features) > 0:
+
                 # Get most recent feature row
                 latest_features = entity_features.iloc[-1].to_dict()
             else:
+
                 # No features available (cold start)
                 latest_features = {col: None for col in feature_df.columns}
 
@@ -446,6 +451,7 @@ class PointInTimeFeatureStore:
             if entity_features:
                 features.update(entity_features)
             else:
+
                 # Return defaults for missing entities
                 features.update(self._get_default_features(entity_type))
 
@@ -538,6 +544,7 @@ class CustomFeatureStore:
     """Custom feature store implementation"""
 
     def __init__(self, config: dict):
+
         # Offline store (S3 + Spark)
         self.offline_store = S3FeatureStore(config['s3_bucket'])
 

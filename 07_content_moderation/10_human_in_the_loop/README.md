@@ -54,9 +54,11 @@ class ReviewTask:
     assigned_to: Optional[str] = None
 
     def __lt__(self, other):
+
         # Higher priority (lower number) comes first
         if self.priority.value != other.priority.value:
             return self.priority.value < other.priority.value
+
         # Within same priority, older tasks first
         return self.created_at < other.created_at
 
@@ -81,6 +83,7 @@ class ReviewQueue:
 
     def get_next_task(self, reviewer_id: str, skills: list) -> Optional[ReviewTask]:
         """Get highest priority task matching reviewer skills."""
+
         # Filter by skills (e.g., language, content type)
         available_tasks = [
             t for t in self.queue
@@ -374,6 +377,7 @@ class QualityControl:
 
     def select_for_audit(self, decisions: List[ReviewDecision]) -> List[ReviewDecision]:
         """Select decisions for audit by senior reviewers."""
+
         # Random sample
         random_audit = random.sample(
             decisions,
@@ -470,6 +474,7 @@ class ActiveLearningPipeline:
     def collect_training_data(self, decisions: List[ReviewDecision]) -> None:
         """Collect high-quality human decisions for training."""
         for decision in decisions:
+
             # Only use high-confidence decisions
             if decision.confidence != 'certain':
                 continue
@@ -490,12 +495,14 @@ class ActiveLearningPipeline:
 
     def select_for_labeling(self, unlabeled_content: list, k: int) -> list:
         """Select most valuable items for human labeling."""
+
         # Get model predictions
         predictions = self.trainer.model.predict(unlabeled_content)
 
         # Calculate uncertainty
         uncertainties = []
         for pred in predictions:
+
             # Entropy-based uncertainty
             probs = list(pred.values())
             entropy = -sum(p * np.log(p + 1e-10) for p in probs)
@@ -508,6 +515,7 @@ class ActiveLearningPipeline:
 
     def trigger_retraining(self) -> None:
         """Trigger model retraining with new data."""
+
         # Get recent training data
         new_data = self.data_store.get_recent_training_data(days=7)
 

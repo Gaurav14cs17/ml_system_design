@@ -162,6 +162,7 @@ def prepare_nli_data(nli_dataset):
         label = item['label']
 
         if label == 'entailment':
+
             # Positive pair
             examples.append(TrainingExample(
                 anchor=premise,
@@ -179,6 +180,7 @@ def prepare_retrieval_data(query_doc_pairs):
     all_docs = [doc for _, doc in query_doc_pairs]
 
     for query, positive_doc in query_doc_pairs:
+
         # Random negatives
         negatives = random.sample(
             [d for d in all_docs if d != positive_doc],
@@ -256,10 +258,12 @@ def info_nce_loss(query, positive, negatives, temperature=0.07):
 
     # Negative similarities
     if negatives.dim() == 2:
+
         # Shared negatives
         negatives = F.normalize(negatives, dim=1)
         neg_sim = torch.mm(query, negatives.T)  # [batch, num_neg]
     else:
+
         # Per-sample negatives
         negatives = F.normalize(negatives, dim=2)
         neg_sim = torch.bmm(query.unsqueeze(1), negatives.transpose(1, 2))
@@ -313,6 +317,7 @@ class MultipleNegativesRankingLoss(nn.Module):
         self.cross_entropy = nn.CrossEntropyLoss()
 
     def forward(self, anchor_embeds, positive_embeds):
+
         # [batch, dim] each
         scores = torch.mm(anchor_embeds, positive_embeds.T) * self.scale
         labels = torch.arange(len(anchor_embeds), device=scores.device)
@@ -356,6 +361,7 @@ class HardNegativeMiner:
         _, all_indices = self.index.search(query_embeds, k)
 
         for i, (pos_id, retrieved) in enumerate(zip(positive_ids, all_indices)):
+
             # Filter out positive and top-n (might be duplicates)
             negatives = [
                 idx for j, idx in enumerate(retrieved)
@@ -370,6 +376,7 @@ class HardNegativeMiner:
         """
         Use hardest in-batch negatives
         """
+
         # Similarity matrix
         sims = torch.mm(anchor_embeds, positive_embeds.T)
 
@@ -395,6 +402,7 @@ def mine_with_cross_encoder(queries, candidates, cross_encoder,
     hard_negatives = []
 
     for query, pos_id in zip(queries, positive_ids):
+
         # Score all candidates
         pairs = [(query, cand) for cand in candidates]
         scores = cross_encoder.predict(pairs)
@@ -472,6 +480,7 @@ class MultiTaskTrainer:
 ### Instruction-Following Embeddings
 
 ```python
+
 # E5/BGE style: prepend task instruction
 task_instructions = {
     "retrieval": "Represent this document for retrieval: ",
@@ -530,6 +539,7 @@ class DistillationTrainer:
         return F.mse_loss(student_norm, teacher_norm)
 
     def train_step(self, batch, task_loss_fn, optimizer):
+
         # Get teacher embeddings
         with torch.no_grad():
             teacher_embeds = self.teacher.encode(batch['texts'])
@@ -657,6 +667,7 @@ class EmbeddingTrainer:
             positives = batch['positive']
 
             with autocast(enabled=self.use_amp):
+
                 # Encode
                 anchor_embeds = self.encode(anchors)
                 positive_embeds = self.encode(positives)

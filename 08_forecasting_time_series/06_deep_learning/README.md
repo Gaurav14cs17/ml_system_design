@@ -361,6 +361,7 @@ class LSTMForecaster(nn.Module):
         )
 
     def forward(self, x):
+
         # x shape: (batch, seq_len, input_size)
         lstm_out, (h_n, c_n) = self.lstm(x)
 
@@ -573,9 +574,11 @@ class TCN(nn.Module):
         self.fc = nn.Linear(num_channels[-1], output_size)
 
     def forward(self, x):
+
         # x: (batch, seq_len, features) -> (batch, features, seq_len)
         x = x.transpose(1, 2)
         out = self.network(x)
+
         # Take last time step
         out = self.fc(out[:, :, -1])
         return out
@@ -622,6 +625,7 @@ class CNN1DForecaster(nn.Module):
         )
 
     def forward(self, x):
+
         # x: (batch, seq_len, features) -> (batch, features, seq_len)
         x = x.transpose(1, 2)
         x = self.conv_layers(x)
@@ -756,6 +760,7 @@ class TransformerForecaster(nn.Module):
         self.fc = nn.Linear(d_model, output_size)
 
     def forward(self, x):
+
         # x: (batch, seq_len, input_size)
         x = self.input_projection(x)
         x = self.pos_encoder(x)
@@ -862,6 +867,7 @@ class CNNLSTMForecaster(nn.Module):
         self.fc = nn.Linear(hidden_size, output_size)
 
     def forward(self, x):
+
         # x: (batch, seq_len, features)
         x = x.transpose(1, 2)  # (batch, features, seq_len)
         x = self.cnn(x)
@@ -935,6 +941,7 @@ def train_model(model, train_loader, val_loader, epochs=100, lr=0.001):
     patience_counter = 0
 
     for epoch in range(epochs):
+
         # Training
         model.train()
         train_loss = 0
@@ -992,6 +999,7 @@ def train_model(model, train_loader, val_loader, epochs=100, lr=0.001):
 ### Loss Functions
 
 ```python
+
 # Common loss functions for time series
 
 class MAPELoss(nn.Module):
@@ -1026,6 +1034,7 @@ class QuantileLoss(nn.Module):
 ### Popular Libraries
 
 ```python
+
 # 1. Darts (Unified interface)
 from darts import TimeSeries
 from darts.models import TFTModel, NBEATSModel

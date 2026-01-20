@@ -50,6 +50,7 @@ Given an image $I$, predict for each object $i$:
 **Bounding Box Regression Loss:**
 
 **Smooth L1 (Huber):**
+
 ```math
 \mathcal{L}_{box} = \sum_{i \in \{x, y, w, h\}} \text{smooth}_{L1}(t_i - \hat{t}_i)
 ```
@@ -57,11 +58,13 @@ Given an image $I$, predict for each object $i$:
 where $\text{smooth}\_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x| - 0.5 & \text{otherwise} \end{cases}$
 
 **IoU Loss:**
+
 ```math
 \mathcal{L}_{IoU} = 1 - \text{IoU}
 ```
 
 **CIoU Loss (Complete IoU):**
+
 ```math
 \mathcal{L}_{CIoU} = 1 - \text{IoU} + \frac{\rho^2(\mathbf{b}, \mathbf{b}^{gt})}{c^2} + \alpha v
 ```
@@ -156,6 +159,7 @@ class FasterRCNNDetector:
 
     def _build_model(self, num_classes, pretrained):
         """Build Faster R-CNN with custom number of classes."""
+
         # Load pretrained model
         model = fasterrcnn_resnet50_fpn(pretrained=pretrained)
 
@@ -382,6 +386,7 @@ class YOLOv8Detector:
 
     def export(self, format='onnx'):
         """Export model to different formats."""
+
         # Formats: 'onnx', 'tflite', 'coreml', 'engine' (TensorRT)
         self.model.export(format=format)
 

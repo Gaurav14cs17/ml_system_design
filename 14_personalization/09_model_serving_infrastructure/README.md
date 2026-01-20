@@ -45,6 +45,7 @@ class RecommendationServer:
     """
 
     def __init__(self, config):
+
         # Candidate generators
         self.ann_index = ANNIndex(config['ann'])
         self.cf_cache = CFCache(config['cf'])
@@ -99,6 +100,7 @@ class RecommendationServer:
         """
         Parallel candidate generation from multiple sources
         """
+
         # Get user embedding
         user_embedding = await self.feature_store.get_user_embedding(user_id)
 
@@ -166,6 +168,7 @@ class RecommendationServer:
         """
         Apply business rules and diversity
         """
+
         # Filter already seen items
         seen_items = await self.feature_store.get_user_seen_items(user_id)
         filtered = [(item, score) for item, score in ranked if item not in seen_items]
@@ -206,6 +209,7 @@ class OptimizedRanker:
     """
 
     def __init__(self, model_path: str, device: str = 'cpu'):
+
         # Load ONNX model
         sess_options = ort.SessionOptions()
         sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
@@ -229,6 +233,7 @@ class OptimizedRanker:
         """
         Batch inference
         """
+
         # Ensure correct dtype
         features = features.astype(np.float32)
 
@@ -258,6 +263,7 @@ class TorchScriptRanker:
         """
         Batch inference with PyTorch
         """
+
         # Move to device
         inputs = torch.from_numpy(features).float().to(self.device)
 
@@ -363,6 +369,7 @@ class DynamicBatcher:
         """
         Run inference on batch and distribute results
         """
+
         # Stack features
         features = np.stack([r['features'] for r in batch])
 
@@ -406,6 +413,7 @@ class ANNIndex:
         Build FAISS index
         """
         if index_type == 'IVF':
+
             # IVF with flat quantizer
             quantizer = faiss.IndexFlatIP(self.dimension)
             self.index = faiss.IndexIVFFlat(
@@ -415,6 +423,7 @@ class ANNIndex:
                 faiss.METRIC_INNER_PRODUCT
             )
         elif index_type == 'HNSW':
+
             # HNSW for better recall
             self.index = faiss.IndexHNSWFlat(
                 self.dimension,
@@ -422,6 +431,7 @@ class ANNIndex:
                 faiss.METRIC_INNER_PRODUCT
             )
         elif index_type == 'IVF_PQ':
+
             # Product quantization for memory efficiency
             quantizer = faiss.IndexFlatIP(self.dimension)
             self.index = faiss.IndexIVFPQ(
@@ -436,6 +446,7 @@ class ANNIndex:
         """
         Add items to index
         """
+
         # Normalize for cosine similarity
         faiss.normalize_L2(embeddings)
 
@@ -454,6 +465,7 @@ class ANNIndex:
         """
         Search for similar items
         """
+
         # Normalize query
         query = query.reshape(1, -1).astype('float32')
         faiss.normalize_L2(query)
@@ -548,6 +560,7 @@ class MultiLevelCache:
     """
 
     def __init__(self, config):
+
         # L1: In-memory LRU cache
         self.l1_cache = LRUCache(maxsize=config['l1_size'])
 
@@ -564,6 +577,7 @@ class MultiLevelCache:
         """
         Get from cache (L1 -> L2)
         """
+
         # Check L1
         result = self.l1_cache.get(key)
         if result is not None:
@@ -576,6 +590,7 @@ class MultiLevelCache:
 
         if result:
             result = json.loads(result)
+
             # Populate L1
             self.l1_cache.set(key, result)
             return result
@@ -601,6 +616,7 @@ class MultiLevelCache:
         """
         Create cache key from user and context
         """
+
         # Hash context for consistent key
         context_str = json.dumps(context, sort_keys=True)
         context_hash = hashlib.md5(context_str.encode()).hexdigest()[:8]
@@ -706,6 +722,7 @@ class ProductionVectorStore:
         """
         Search all shards in parallel
         """
+
         # Search all shards
         tasks = [
             shard.search(query, k=k)
@@ -728,6 +745,7 @@ class ProductionVectorStore:
         """
         Rebalance items across shards
         """
+
         # Collect all items
         all_items = []
         for shard in self.shards:
@@ -797,6 +815,7 @@ class ABTestingService:
             'variant': variant,
             'timestamp': time.time()
         }
+
         # Send to analytics pipeline
         self.analytics.log_exposure(exposure)
 
@@ -829,6 +848,7 @@ class ModelRouter:
         """
         Route request to appropriate model variant
         """
+
         # Get variant assignment
         variant = self.ab_service.get_variant(user_id, experiment_name)
 
@@ -864,6 +884,7 @@ class RecommendationMetrics:
     """
 
     def __init__(self):
+
         # Latency metrics
         self.request_latency = prom.Histogram(
             'recommendation_request_latency_seconds',
@@ -977,6 +998,7 @@ class AutoScaler:
         """
         Calculate desired replica count based on metrics
         """
+
         # CPU-based scaling
         cpu_ratio = metrics['cpu_utilization'] / self.target_cpu
         cpu_replicas = int(self.current_replicas * cpu_ratio)
@@ -997,6 +1019,7 @@ class AutoScaler:
         """
         Determine if scaling action should be taken
         """
+
         # Avoid thrashing with hysteresis
         if desired > self.current_replicas:
             return desired > self.current_replicas * 1.1

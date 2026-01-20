@@ -40,6 +40,7 @@
 ### Common Feature Patterns
 
 ```python
+
 # 1. IDENTITY FEATURES (Raw values)
 identity_features = {
     "user_id": "user_123",
@@ -144,6 +145,7 @@ percentile_aggs = {
 ### Multi-Level Aggregations
 
 ```python
+
 # Aggregate at multiple levels
 """
 Raw Data:
@@ -198,7 +200,7 @@ Non-overlapping, fixed-size windows:
 W_i = [t_0 + i \cdot \Delta, t_0 + (i+1) \cdot \Delta)
 ```
 
-Where \( \Delta \) is the window size.
+Where $\Delta$ is the window size.
 
 #### Sliding Windows
 Overlapping windows with configurable slide interval:
@@ -207,19 +209,19 @@ Overlapping windows with configurable slide interval:
 W_i = [t_0 + i \cdot \delta, t_0 + i \cdot \delta + \Delta)
 ```
 
-Where \( \delta \) is the slide interval and \( \Delta \) is window size.
+Where $\delta$ is the slide interval and $\Delta$ is window size.
 
 #### Rolling Aggregations
 
-For a feature \( f \) computed over window \( W \):
+For a feature $f$ computed over window $W$:
 
 | Aggregation | Formula | Description |
 |------------|---------|-------------|
-| **Sum** | \( \sum_{t \in W} x_t \) | Total value in window |
-| **Mean** | \( \frac{1}{\|W\|} \sum_{t \in W} x_t \) | Average value |
-| **Count** | \( \|W\| \) | Number of events |
+| **Sum** | $\sum_{t \in W} x_t$ | Total value in window |
+| **Mean** | $\frac{1}{\|W\|} \sum_{t \in W} x_t$ | Average value |
+| **Count** | $\|W\|$ | Number of events |
 | **Variance** | \( \frac{1}{\|W\|} \sum_{t \in W} (x_t - \mu)^2 \) | Spread of values |
-| **Max/Min** | \( \max_{t \in W} x_t \) | Extreme values |
+| **Max/Min** | $\max_{t \in W} x_t$ | Extreme values |
 
 ### Window Types
 
@@ -304,6 +306,7 @@ class BatchFeatureEngine:
 
         # Compute aggregate features
         user_features = transactions.groupBy("user_id").agg(
+
             # Lifetime features
             F.sum("amount").alias("lifetime_total_spent"),
             F.count("*").alias("lifetime_transaction_count"),

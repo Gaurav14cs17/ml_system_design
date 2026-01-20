@@ -251,6 +251,7 @@ class BatchMonitor:
 
     def compute_daily_metrics(self, date: datetime) -> dict:
         """Compute metrics for a specific day."""
+
         # Get predictions and ground truth
         predictions = self.metrics_store.get_predictions(
             model_name=self.model_name,

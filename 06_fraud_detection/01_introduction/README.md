@@ -141,6 +141,7 @@ Machine learning addresses these challenges by:
 ### 3. Transaction Fraud
 
 ```python
+
 # Transaction fraud patterns
 transaction_fraud_types = {
     "first_party_fraud": {
@@ -201,6 +202,7 @@ Application fraud occurs during onboarding or credit applications:
 ### Rule-Based Systems
 
 ```python
+
 # Traditional rule-based fraud detection
 def check_fraud_rules(transaction):
     rules_triggered = []
@@ -245,6 +247,7 @@ def check_fraud_rules(transaction):
 ### Machine Learning Approach
 
 ```python
+
 # ML-based fraud detection
 class FraudDetectionModel:
     def __init__(self):
@@ -253,6 +256,7 @@ class FraudDetectionModel:
         self.threshold = 0.7
 
     def predict(self, transaction):
+
         # Extract rich feature set
         features = self.feature_extractor.transform(transaction)
 
@@ -352,6 +356,7 @@ API Integration:
 Fraudsters actively adapt to detection systems:
 
 ```python
+
 # Adversarial evolution example
 fraud_evolution = {
     "2020": {

@@ -45,6 +45,7 @@
 ### Event Schema
 
 ```python
+
 # User Event Schema
 class UserEvent:
     event_id: str
@@ -160,6 +161,7 @@ class RecommendationResponse(BaseModel):
 @app.post("/recommend", response_model=RecommendationResponse)
 async def get_recommendations(request: RecommendationRequest):
     try:
+
         # Get user features
         user_features = feature_store.get_user_features(request.user_id)
 
@@ -227,6 +229,7 @@ class ANNCandidateGenerator:
         """
         Build the ANN index from item embeddings.
         """
+
         # Normalize for cosine similarity via inner product
         faiss.normalize_L2(item_embeddings)
 
@@ -242,6 +245,7 @@ class ANNCandidateGenerator:
         """
         Find k nearest items to user embedding.
         """
+
         # Normalize query
         user_embedding = user_embedding.reshape(1, -1).astype('float32')
         faiss.normalize_L2(user_embedding)
@@ -280,6 +284,7 @@ class RankingPipeline:
         """
         Two-stage ranking pipeline.
         """
+
         # L1 Ranking (fast filtering)
         # Reduce 500 → 100
         l1_features = self._get_l1_features(user_id, candidates)
@@ -345,6 +350,7 @@ class RankingPipeline:
 ### Alerting Rules
 
 ```python
+
 # Example Prometheus alerting rules
 alert_rules = """
 groups:

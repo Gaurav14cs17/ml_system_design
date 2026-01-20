@@ -68,6 +68,7 @@ class ExplainabilityFramework:
                 self.model.feature_importances_
             ))
         else:
+
             # Use SHAP for global importance
             explainer = shap.Explainer(self.model)
             shap_values = explainer(X)
@@ -138,6 +139,7 @@ class SHAPExplainer:
         if hasattr(model, 'predict_proba'):
             self.explainer = shap.TreeExplainer(model)
         else:
+
             # For custom models, use KernelExplainer
             self.explainer = shap.KernelExplainer(
                 model.predict_proba,
@@ -761,6 +763,7 @@ class FairnessAnalyzer:
 ### Model Card Template
 
 ```yaml
+
 # Model Card: Fraud Detection Model v1.2.0
 
 ## Model Details

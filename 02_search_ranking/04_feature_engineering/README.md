@@ -78,6 +78,7 @@ class QueryFeatures:
     """
     Features extracted from the query itself
     """
+
     # Basic statistics
     query_length: int              # Character count
     num_terms: int                 # Word count
@@ -179,6 +180,7 @@ class QueryPopularityFeatures:
         stats = self.query_logs.get_query_stats(query)
 
         features = {
+
             # Raw counts
             "query_frequency_1d": stats.get("count_1d", 0),
             "query_frequency_7d": stats.get("count_7d", 0),
@@ -244,6 +246,7 @@ class DocumentFeatures:
     """
     Features inherent to the document
     """
+
     # Content features
     doc_length: int                # Word count
     title_length: int              # Title word count
@@ -353,6 +356,7 @@ class ProductFeatures:
     """
     Features specific to e-commerce products
     """
+
     # Price features
     price: float
     price_percentile: float        # Where in category price range
@@ -393,6 +397,7 @@ class ProductFeatureExtractor:
         """
         Extract product features with category-aware normalization
         """
+
         # Price features
         price = product.get('price', 0)
         category_prices = self.category_stats.get_price_distribution(category)
@@ -556,6 +561,7 @@ class LexicalMatchingFeatures:
 
     def _tfidf_cosine(self, query_terms: List[str], doc_terms: List[str]) -> float:
         """Calculate TF-IDF cosine similarity"""
+
         # Simplified implementation
         all_terms = list(set(query_terms + doc_terms))
 
@@ -579,6 +585,7 @@ class SemanticSimilarityFeatures:
     """
 
     def __init__(self):
+
         # Bi-encoder for embedding similarity
         self.bi_encoder = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -657,6 +664,7 @@ class UserFeatures:
     """
     Features derived from user profile and history
     """
+
     # User activity level
     search_count_30d: int
     click_count_30d: int
@@ -789,6 +797,7 @@ class ContextFeatures:
     """
     Features from the search context
     """
+
     # Temporal context
     hour_of_day: int
     day_of_week: int
@@ -823,6 +832,7 @@ class ContextFeatureExtractor:
         """
         Extract context features from search request
         """
+
         # Temporal
         now = datetime.now(request.timezone)
         hour_of_day = now.hour
@@ -940,6 +950,7 @@ class BehavioralFeatures:
 
         Uses propensity weighting: weighted_ctr = ctr / position_bias[pos]
         """
+
         # Position bias factors (empirically derived)
         position_bias = {
             1: 1.0, 2: 0.6, 3: 0.4, 4: 0.3, 5: 0.25,
@@ -1164,6 +1175,7 @@ class FeatureStore:
         """
         Materialize features from offline to online store
         """
+
         # Fetch from offline store
         df = self.offline_store.query(f"""
             SELECT *
@@ -1218,14 +1230,17 @@ class FeatureNormalizer:
             skewness = scipy.stats.skew(values)
 
             if abs(skewness) > 1:
+
                 # Highly skewed: use log transform
                 self.scalers[column] = ('log', None)
             elif self._is_bounded(values):
+
                 # Bounded: use min-max
                 scaler = MinMaxScaler()
                 scaler.fit(values.reshape(-1, 1))
                 self.scalers[column] = ('minmax', scaler)
             else:
+
                 # Normal-ish: use z-score
                 scaler = StandardScaler()
                 scaler.fit(values.reshape(-1, 1))
@@ -1245,6 +1260,7 @@ class FeatureNormalizer:
             values = features[column].values
 
             if method == 'log':
+
                 # Log transform (handle zeros)
                 normalized[column] = np.log1p(np.maximum(values, 0))
             elif method == 'minmax':
@@ -1296,6 +1312,7 @@ class FeatureSelector:
         threshold: float
     ) -> List[str]:
         """Select by model feature importance"""
+
         # Train model
         self.model.fit(X, y)
 
@@ -1303,6 +1320,7 @@ class FeatureSelector:
         if hasattr(self.model, 'feature_importances_'):
             importance = self.model.feature_importances_
         else:
+
             # Use permutation importance
             result = permutation_importance(self.model, X, y, n_repeats=10)
             importance = result.importances_mean
@@ -1329,6 +1347,7 @@ class FeatureSelector:
         threshold: float
     ) -> List[str]:
         """Select features correlated with target, remove redundant"""
+
         # Correlation with target
         target_corr = {}
         for col in X.columns:

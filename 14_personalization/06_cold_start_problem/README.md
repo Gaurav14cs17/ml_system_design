@@ -28,19 +28,20 @@
 ### The Core Challenge
 
 Collaborative filtering requires historical interactions:
+
 ```math
 \hat{r}_{ui} = f(\{(u', i', r_{u'i'}) : (u', i') \in \mathcal{O}\})
 ```
 
-For **new users**: No \((u, \cdot)\) pairs in \(\mathcal{O}\)  
-For **new items**: No \((\cdot, i)\) pairs in \(\mathcal{O}\)
+For **new users**: No \((u, \cdot)\) pairs in $\mathcal{O}$  
+For **new items**: No \((\cdot, i)\) pairs in $\mathcal{O}$
 
 ### Types of Cold Start
 
 | Type | Definition | Impact |
 |------|------------|--------|
-| **New User** | \(\mathcal{H}_u = \emptyset\) | Cannot build user profile |
-| **New Item** | \(\mathcal{U}_i = \emptyset\) | Cannot compute item similarity |
+| **New User** | $\mathcal{H}_u = \emptyset$ | Cannot build user profile |
+| **New Item** | $\mathcal{U}_i = \emptyset$ | Cannot compute item similarity |
 | **New System** | Both sparse | Bootstrapping challenge |
 
 ### Business Impact
@@ -55,11 +56,11 @@ For **new items**: No \((\cdot, i)\) pairs in \(\mathcal{O}\)
 
 ### The Cold Start as Missing Data
 
-In matrix factorization \(\mathbf{R} \approx \mathbf{PQ}^\top\):
+In matrix factorization $\mathbf{R} \approx \mathbf{PQ}^\top$:
 
-**New user \(u\):** \(\mathbf{p}_u\) cannot be learned (no observed \(r_{ui}\))
+**New user $u$:** $\mathbf{p}_u$ cannot be learned (no observed $r_{ui}$)
 
-**New item \(i\):** \(\mathbf{q}_i\) cannot be learned (no observed \(r_{ui}\))
+**New item $i$:** $\mathbf{q}_i$ cannot be learned (no observed $r_{ui}$)
 
 ### Information Sources
 
@@ -82,9 +83,9 @@ Map user demographics to embedding space:
 \mathbf{p}_u^{(0)} = f_\theta(\mathbf{x}_u^{\text{demo}})
 ```
 
-Where \(\mathbf{x}_u^{\text{demo}}\) includes age, gender, location, etc.
+Where $\mathbf{x}_u^{\text{demo}}$ includes age, gender, location, etc.
 
-**Training:** Learn \(f_\theta\) from users with both demographics and history.
+**Training:** Learn $f_\theta$ from users with both demographics and history.
 
 ### 2. Popularity-Based Fallback
 
@@ -115,11 +116,12 @@ Gradually transition from cold to warm recommendations:
 ```
 
 Where:
+
 ```math
 \alpha(n) = \min\left(1, \frac{|\mathcal{H}_u|}{\tau}\right)
 ```
 
-\(\tau\) is the warm-up threshold (e.g., 10 interactions).
+$\tau$ is the warm-up threshold (e.g., 10 interactions).
 
 ---
 
@@ -134,6 +136,7 @@ Map item features to collaborative embedding space:
 ```
 
 **Training objective:**
+
 ```math
 \min_\phi \sum_{i : |\mathcal{U}_i| > k} \|\mathbf{q}_i - g_\phi(\mathbf{x}_i^{\text{content}})\|_2^2
 ```
@@ -166,6 +169,7 @@ Give new items extra exposure:
 ```
 
 Where:
+
 ```math
 \text{novelty}(i) = \log\left(1 + \frac{T_{\text{now}} - T_{\text{release}}}{\text{impressions}(i) + 1}\right)
 ```
@@ -176,7 +180,7 @@ Where:
 
 ### The Multi-Armed Bandit Framework
 
-**Setting:** \(K\) items (arms), each with unknown reward distribution.
+**Setting:** $K$ items (arms), each with unknown reward distribution.
 
 **Goal:** Maximize cumulative reward while learning.
 
@@ -199,9 +203,9 @@ a_t = \arg\max_i \left(\hat{\mu}_i + c \sqrt{\frac{\ln t}{n_i}}\right)
 ```
 
 Where:
-- \(\hat{\mu}_i\): Estimated mean reward for item \(i\)
-- \(n_i\): Number of times item \(i\) was shown
-- \(c\): Exploration constant
+- $\hat{\mu}_i$: Estimated mean reward for item $i$
+- $n_i$: Number of times item $i$ was shown
+- $c$: Exploration constant
 
 **Properties:**
 - Explores uncertain items (high variance bonus)
@@ -213,10 +217,11 @@ Where:
 Maintain posterior over reward parameters:
 
 1. Sample \(\theta_i \sim P(\theta_i \mid \mathcal{D})\) for each item
-2. Select \(a_t = \arg\max_i \mathbb{E}[r \mid \theta_i]\)
+2. Select $a_t = \arg\max_i \mathbb{E}[r \mid \theta_i]$
 3. Update posterior with observed reward
 
 For binary rewards (click/no-click):
+
 ```math
 \theta_i \sim \text{Beta}(\alpha_i + \text{clicks}_i, \beta_i + \text{no\_clicks}_i)
 ```
@@ -235,11 +240,12 @@ r = f(\mathbf{x}_u, a) + \epsilon
 ```
 
 **LinUCB:**
+
 ```math
 a_t = \arg\max_i \left(\mathbf{x}_u^\top \hat{\boldsymbol{\theta}}_i + \alpha \sqrt{\mathbf{x}_u^\top \mathbf{A}_i^{-1} \mathbf{x}_u}\right)
 ```
 
-Where \(\mathbf{A}_i\) is the covariance of features for item \(i\).
+Where $\mathbf{A}_i$ is the covariance of features for item $i$.
 
 ---
 
@@ -258,13 +264,15 @@ Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text
 ### MAML for Recommendations
 
 **Meta-training:**
-1. Sample user \(u\) with history split into support/query
+1. Sample user $u$ with history split into support/query
 2. Inner loop: Adapt to support set
+
 ```math
 \theta_u' = \theta - \alpha \nabla_\theta \mathcal{L}_{\text{support}}(\theta)
 ```math
 3. Outer loop: Update on query set
 ```
+
 \phi \leftarrow \phi - \beta \nabla_\phi \mathcal{L}_{\text{query}}(\theta_u')
 ```
 
@@ -281,6 +289,7 @@ Simulate cold start during training:
 3. At test time: handles cold users naturally
 
 **Training objective:**
+
 ```math
 \mathcal{L} = \mathbb{E}_{m \sim \text{Bernoulli}(p)} \left[\mathcal{L}_{\text{rec}}(\mathbf{m} \odot \mathbf{h}_u)\right]
 ```

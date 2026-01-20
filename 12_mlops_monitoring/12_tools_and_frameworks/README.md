@@ -110,6 +110,7 @@ suite = context.add_expectation_suite(suite_name)
 
 # Define expectations for features
 expectations = [
+
     # Schema expectations
     gx.expectations.ExpectColumnToExist(column="user_id"),
     gx.expectations.ExpectColumnToExist(column="age"),
@@ -262,6 +263,7 @@ mlflow.set_tracking_uri("http://mlflow-server:5000")
 
 # Start experiment tracking
 with mlflow.start_run(run_name="fraud_detection_v2"):
+
     # Log parameters
     mlflow.log_params({
         "model_type": "xgboost",
@@ -367,6 +369,7 @@ print(f"All passed: {report.all_passed}")
 ## Implementation Checklist
 
 ```markdown
+
 ## MLOps Monitoring Implementation Checklist
 
 ### Phase 1: Foundation (Week 1-2)

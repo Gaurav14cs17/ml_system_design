@@ -175,6 +175,7 @@ class LocalLLM:
         **kwargs
     ) -> str:
         """Chat completion format."""
+
         # Format messages for instruction models
         prompt = ""
         for msg in messages:

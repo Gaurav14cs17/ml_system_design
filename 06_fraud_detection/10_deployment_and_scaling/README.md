@@ -38,6 +38,7 @@
 ### Scoring Service Dockerfile
 
 ```dockerfile
+
 # Multi-stage build for optimized image
 FROM python:3.11-slim as builder
 
@@ -81,6 +82,7 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "--worker
 ### Model Server Dockerfile
 
 ```dockerfile
+
 # Triton Inference Server with custom models
 FROM nvcr.io/nvidia/tritonserver:23.10-py3
 
@@ -241,6 +243,7 @@ spec:
   minReplicas: 10
   maxReplicas: 100
   metrics:
+
   # CPU-based scaling
   - type: Resource
     resource:
@@ -475,6 +478,7 @@ spec:
 
   strategy:
     canary:
+
       # Canary steps
       steps:
       - setWeight: 5
@@ -749,6 +753,7 @@ class ModelRegistry:
         """Rollback to previous or specific version"""
 
         if target_version is None:
+
             # Get previous production version
             archived = self.client.get_latest_versions(
                 self.model_name,
@@ -806,6 +811,7 @@ Global:
 ### Traffic Routing
 
 ```yaml
+
 # AWS Route53 latency-based routing
 resource "aws_route53_record" "fraud_scoring" {
   zone_id = aws_route53_zone.main.zone_id

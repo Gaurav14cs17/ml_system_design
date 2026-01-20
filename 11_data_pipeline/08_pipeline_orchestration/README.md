@@ -147,6 +147,7 @@ with DAG(
         def compute_product_features(**context):
             """Compute product-level features"""
             execution_date = context['ds']
+
             # ... product feature logic
             return {"features_computed": True}
 
@@ -159,6 +160,7 @@ with DAG(
         def compute_interaction_features(**context):
             """Compute user-product interaction features"""
             execution_date = context['ds']
+
             # ... interaction feature logic
             return {"features_computed": True}
 
@@ -259,6 +261,7 @@ with DAG(
 ### Airflow Best Practices
 
 ```python
+
 # 1. Use Variables and Connections for configuration
 from airflow.models import Variable
 
@@ -656,6 +659,7 @@ defs = Definitions(
 ### Pattern 1: Backfilling
 
 ```python
+
 # Airflow backfill
 from airflow.utils.dates import days_ago
 
@@ -668,6 +672,7 @@ with DAG(
     @task
     def process_partition(ds):
         """Process single partition - idempotent"""
+
         # Clear and recompute
         clear_partition(ds)
         compute_features(ds)
@@ -688,6 +693,7 @@ def backfill_features(start_date: date, end_date: date):
 ### Pattern 2: Cross-DAG Dependencies
 
 ```python
+
 # Airflow: Wait for upstream DAG
 from airflow.sensors.external_task import ExternalTaskSensor
 
@@ -705,6 +711,7 @@ wait_for_upstream = ExternalTaskSensor(
 ### Pattern 3: Dynamic Task Generation
 
 ```python
+
 # Airflow dynamic tasks
 from airflow.decorators import dag, task
 
@@ -719,6 +726,7 @@ def dynamic_feature_pipeline():
     @task
     def compute_feature(feature_name: str):
         """Compute single feature"""
+
         # ... computation logic
         return {"feature": feature_name, "status": "done"}
 

@@ -275,6 +275,7 @@ class FeatureDiscovery:
 
     def get_similar_features(self, feature_name: str, limit: int = 10) -> List[str]:
         """Find features similar to the given one."""
+
         # Based on:
         # - Name similarity
         # - Same entity
@@ -446,6 +447,7 @@ class FeatureAccessControl:
         action: str  # 'read', 'write', 'admin'
     ) -> bool:
         """Check if user has access to feature."""
+
         # Get feature's access control list
         acl = self._get_feature_acl(feature_name)
 
@@ -493,6 +495,7 @@ ACCESS_POLICIES = {
 ### Data Classification
 
 ```python
+
 # Feature classification for governance
 CLASSIFICATION_LEVELS = {
     "public": {
@@ -527,6 +530,7 @@ CLASSIFICATION_LEVELS = {
 ### GitOps for Feature Definitions
 
 ```yaml
+
 # feature_repo/feature_views/user_features.yaml
 apiVersion: feast.dev/v1alpha1
 kind: FeatureView
@@ -591,6 +595,7 @@ def get_feature_lineage(feature_name: str):
 @app.post("/features/{feature_name}/deprecate")
 def deprecate_feature(feature_name: str):
     """Mark feature as deprecated."""
+
     # Check for downstream dependencies
     downstream = lineage.get_downstream(feature_name)
     if downstream:

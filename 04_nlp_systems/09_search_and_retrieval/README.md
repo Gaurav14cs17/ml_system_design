@@ -139,10 +139,12 @@ class FAISSVectorStore:
     def _create_index(self, n_docs: int):
         """Create FAISS index."""
         if self.index_type == "flat":
+
             # Exact search (brute force)
             self.index = faiss.IndexFlatIP(self.dimension)
 
         elif self.index_type == "ivf":
+
             # Approximate search with inverted file
             n_clusters = min(n_docs, 100)
             quantizer = faiss.IndexFlatIP(self.dimension)
@@ -151,6 +153,7 @@ class FAISSVectorStore:
             )
 
         elif self.index_type == "hnsw":
+
             # Approximate search with HNSW
             self.index = faiss.IndexHNSWFlat(self.dimension, 32)
 
@@ -343,6 +346,7 @@ class HybridSearch:
         top_k: int = 10
     ) -> List[Tuple[str, float]]:
         """Hybrid search combining BM25 and dense."""
+
         # BM25 scores
         tokenized_query = query.lower().split()
         bm25_scores = self.bm25.get_scores(tokenized_query)
@@ -434,6 +438,7 @@ class TwoStageRetriever:
         rerank_k: int = 10
     ) -> List[Tuple[str, float]]:
         """Retrieve then rerank."""
+
         # First stage: fast retrieval
         candidates = self.retriever.search(query, top_k=retrieve_k)
 

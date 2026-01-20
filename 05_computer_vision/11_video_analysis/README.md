@@ -168,17 +168,20 @@ class DeepSORT:
         Returns:
             List of active tracks with IDs
         """
+
         # Predict new locations
         for track in self.tracks:
             track.predict()
 
         # Match detections to tracks
         if len(self.tracks) == 0:
+
             # Initialize new tracks
             for i, det in enumerate(detections):
                 feat = features[i] if features is not None else None
                 self.tracks.append(Track(det[:4], feat))
         else:
+
             # Compute cost matrix
             cost_matrix = self._compute_cost_matrix(detections, features)
 

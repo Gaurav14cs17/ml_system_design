@@ -148,6 +148,7 @@ class UserBasedCF:
         """
         Compute Pearson correlation between users u and v.
         """
+
         # Find common items
         u_ratings = self.ratings[u]
         v_ratings = self.ratings[v]
@@ -218,6 +219,7 @@ class UserBasedCF:
         predictions = []
 
         for item_id in range(self.n_items):
+
             # Skip already rated items
             if not np.isnan(self.ratings[user_id, item_id]):
                 continue
@@ -232,6 +234,7 @@ class UserBasedCF:
 
 # Example usage
 if __name__ == "__main__":
+
     # Sample ratings matrix (5 users, 6 items)
     # NaN = not rated
     ratings = np.array([
@@ -333,6 +336,7 @@ class ItemBasedCF:
         Compute adjusted cosine similarity between items.
         Adjusts for user rating biases.
         """
+
         # Mean-center by user
         user_means = np.nanmean(self.ratings, axis=1, keepdims=True)
         user_means = np.nan_to_num(user_means, nan=0)
@@ -351,6 +355,7 @@ class ItemBasedCF:
         """
         Predict rating for user-item pair.
         """
+
         # Get items user has rated
         user_ratings = self.ratings[user_id]
         rated_mask = ~np.isnan(user_ratings)
@@ -473,6 +478,7 @@ class MatrixFactorization:
         Fit using truncated SVD.
         Fast but doesn't handle missing values directly.
         """
+
         # Fill missing with 0 or mean
         filled = np.nan_to_num(ratings_matrix, nan=0)
 
@@ -498,6 +504,7 @@ class MatrixFactorization:
         -----------
         ratings_df : DataFrame with columns [user_id, item_id, rating]
         """
+
         # Get dimensions
         self.n_users = ratings_df['user_id'].max() + 1
         self.n_items = ratings_df['item_id'].max() + 1
@@ -560,6 +567,7 @@ class MatrixFactorization:
     def recommend(self, user_id, n_recommendations=10,
                   exclude_items=None):
         """Generate recommendations for a user."""
+
         # Compute scores for all items
         scores = (
             self.global_mean +
@@ -643,6 +651,7 @@ for item, score in recs:
 ### Storage and Caching
 
 ```python
+
 # Precompute and cache recommendations
 class CFServingLayer:
     def __init__(self, redis_client, model):
@@ -651,6 +660,7 @@ class CFServingLayer:
         self.cache_ttl = 3600  # 1 hour
 
     def get_recommendations(self, user_id, n=10):
+
         # Check cache
         cache_key = f"recs:{user_id}"
         cached = self.redis.get(cache_key)
@@ -686,6 +696,7 @@ class CFServingLayer:
 ### 3. Evaluation Strategy
 
 ```python
+
 # Proper train/test split for recommendations
 def temporal_split(ratings_df, test_ratio=0.2):
     """

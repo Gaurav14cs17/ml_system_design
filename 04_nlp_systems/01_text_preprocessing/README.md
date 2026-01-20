@@ -158,7 +158,7 @@ class TextCleaner:
         # Compile regex patterns for O(1) lookup
         self.url_pattern = re.compile(
             r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|'
-            r'[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            r'[!*\$\$,]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
         )
         self.email_pattern = re.compile(
             r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
@@ -384,10 +384,12 @@ tokenizer = TokenizerWrapper('bert-base-uncased')
 
 # Rare word gets split into subwords
 print(tokenizer.tokenize("unbelievably"))
+
 # ['un', '##bel', '##ie', '##va', '##bly']
 
 # Common words stay intact
 print(tokenizer.tokenize("the cat sat"))
+
 # ['the', 'cat', 'sat']
 ```
 

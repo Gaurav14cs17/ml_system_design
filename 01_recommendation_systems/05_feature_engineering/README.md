@@ -86,6 +86,7 @@ def get_behavioral_features(self, user_id, window_days=30):
     )
 
     return {
+
         # Activity level
         'total_interactions': len(interactions),
         'unique_items_viewed': len(set(i.item_id for i in interactions)),
@@ -166,6 +167,7 @@ class ItemFeatureExtractor:
         item = self.item_db.get(item_id)
 
         return {
+
             # Basic metadata
             'category': item.category,
             'subcategory': item.subcategory,
@@ -248,10 +250,12 @@ def get_interaction_features(self, user_id, item_id):
     """
     Features derived from user-item interaction history.
     """
+
     # User's history with this item
     user_item_history = self.get_user_item_history(user_id, item_id)
 
     features = {
+
         # Direct history
         'has_viewed': int(user_item_history.view_count > 0),
         'has_clicked': int(user_item_history.click_count > 0),
@@ -314,6 +318,7 @@ def get_temporal_features(self, timestamp):
     dt = datetime.fromtimestamp(timestamp)
 
     return {
+
         # Basic time features
         'hour_of_day': dt.hour,
         'day_of_week': dt.weekday(),
@@ -323,6 +328,7 @@ def get_temporal_features(self, timestamp):
 
         # Time buckets
         'time_bucket': self._hour_to_bucket(dt.hour),
+
         # morning (6-12), afternoon (12-18), evening (18-22), night (22-6)
 
         # Special events
@@ -444,6 +450,7 @@ class CategoricalEncoder:
             cardinality = features_df[col].nunique()
 
             if cardinality <= self.max_cardinality:
+
                 # One-hot encoding
                 encoded = pd.get_dummies(
                     features_df[col],
@@ -453,6 +460,7 @@ class CategoricalEncoder:
                 for enc_col in encoded.columns:
                     result[enc_col] = encoded[enc_col].values
             else:
+
                 # Label encoding (for embedding later)
                 le = LabelEncoder()
                 result[f'{col}_encoded'] = le.fit_transform(
@@ -540,6 +548,7 @@ class TextEmbedder:
         """
         Generate embeddings for item text.
         """
+
         # Combine text columns
         texts = items_df[text_columns].fillna('').agg(' '.join, axis=1)
 
@@ -567,6 +576,7 @@ def select_features_by_importance(X, y, n_features=50):
     """
     Select top features based on importance.
     """
+
     # Train a model
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X, y)

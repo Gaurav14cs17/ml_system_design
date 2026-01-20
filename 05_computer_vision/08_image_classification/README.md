@@ -46,21 +46,25 @@ class TransferLearningClassifier:
 
     def _build_model(self):
         """Build model with transfer learning."""
+
         # Load pretrained model
         model = models.resnet50(weights=ResNet50_Weights.IMAGENET1K_V2)
 
         if self.strategy == 'feature_extract':
+
             # Freeze all layers
             for param in model.parameters():
                 param.requires_grad = False
 
         elif self.strategy == 'fine_tune_last':
+
             # Freeze early layers, train later layers
             for name, param in model.named_parameters():
                 if 'layer4' not in name and 'fc' not in name:
                     param.requires_grad = False
 
         elif self.strategy == 'gradual_unfreeze':
+
             # Start frozen, unfreeze progressively during training
             for param in model.parameters():
                 param.requires_grad = False

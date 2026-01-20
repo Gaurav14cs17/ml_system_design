@@ -89,6 +89,7 @@ def choose_primary_metric(experiment_type: str, business_goal: str) -> dict:
     """
 
     recommendations = {
+
         # E-commerce experiments
         ('recommendation', 'revenue'): {
             'primary': 'revenue_per_user',
@@ -219,6 +220,7 @@ class MetricValidator:
 
 ```python
 ECOMMERCE_METRICS = {
+
     # Engagement
     'click_through_rate': {
         'formula': 'clicks / impressions',
@@ -277,6 +279,7 @@ ECOMMERCE_METRICS = {
 
 ```python
 CONTENT_METRICS = {
+
     # Engagement
     'completion_rate': {
         'formula': 'completions / starts',
@@ -326,6 +329,7 @@ CONTENT_METRICS = {
 
 ```python
 SEARCH_METRICS = {
+
     # Relevance
     'success_rate': {
         'formula': 'searches_with_click / total_searches',
@@ -434,6 +438,7 @@ class OverallEvaluationCriterion:
             Dictionary with metric names as keys,
             containing 'control' and 'treatment' values
         """
+
         # Normalize weights
         total_weight = sum(c['weight'] for c in self.components)
 
@@ -488,6 +493,7 @@ result = oec.compute({
 })
 
 print(f"OEC Value: {result['oec_value']:.2%}")
+
 # Shows weighted average of relative changes
 ```
 

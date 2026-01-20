@@ -191,6 +191,7 @@ class NERDataset(Dataset):
             elif word_idx != previous_word_idx:
                 label_ids.append(self.label2id[word_labels[word_idx]])
             else:
+
                 # For word pieces, use I- tag or ignore
                 label_ids.append(-100)
             previous_word_idx = word_idx

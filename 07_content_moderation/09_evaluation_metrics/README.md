@@ -126,16 +126,19 @@ More informative than ROC-AUC when negative class dominates.
 For multiple violation categories:
 
 **Macro-Average**: Unweighted mean across classes
+
 ```math
 \text{Precision}_{\text{macro}} = \frac{1}{K} \sum_{k=1}^{K} \text{Precision}_k
 ```
 
 **Micro-Average**: Global TP, FP, FN counts
+
 ```math
 \text{Precision}_{\text{micro}} = \frac{\sum_{k=1}^{K} TP_k}{\sum_{k=1}^{K} (TP_k + FP_k)}
 ```
 
 **Weighted-Average**: Weighted by class support
+
 ```math
 \text{Precision}_{\text{weighted}} = \frac{\sum_{k=1}^{K} n_k \cdot \text{Precision}_k}{\sum_{k=1}^{K} n_k}
 ```
@@ -353,6 +356,7 @@ class RankingMetrics:
         Precision among top-k ranked items.
         Critical for human review queue prioritization.
         """
+
         # Get indices of top k scores
         top_k_indices = np.argsort(y_scores)[-k:]
 
@@ -376,6 +380,7 @@ class RankingMetrics:
         Normalized Discounted Cumulative Gain.
         Accounts for ranking position of violations.
         """
+
         # Get ranking
         ranking = np.argsort(y_scores)[::-1][:k]
 
@@ -528,7 +533,7 @@ class SLAMonitor:
 
 ### Mathematical Framework for Fairness
 
-Fairness in content moderation ensures equal treatment across protected groups. Let \(A\) be a sensitive attribute (e.g., language, region, user demographics).
+Fairness in content moderation ensures equal treatment across protected groups. Let $A$ be a sensitive attribute (e.g., language, region, user demographics).
 
 **Demographic Parity (Statistical Parity)**
 
@@ -714,6 +719,7 @@ class HumanReviewMetrics:
         reviews = self.db.get_reviews(time_range)
 
         return {
+
             # Volume
             'total_reviews': len(reviews),
             'reviews_per_hour': len(reviews) / (time_range.total_seconds() / 3600),
@@ -730,6 +736,7 @@ class HumanReviewMetrics:
 
     def compute_agreement_metrics(self, reviews) -> Dict:
         """Compute inter-annotator agreement."""
+
         # Filter to reviews with multiple annotators
         multi_reviewed = [r for r in reviews if len(r.decisions) > 1]
 
@@ -785,6 +792,7 @@ class BusinessImpactMetrics:
     def compute_safety_impact(self, time_range: timedelta) -> Dict:
         """Measure impact on platform safety."""
         return {
+
             # Violations caught
             'violations_removed': self.moderation.count_removals(time_range),
             'violations_per_1m_views': self._violations_per_views(time_range),
@@ -801,6 +809,7 @@ class BusinessImpactMetrics:
     def compute_user_experience_impact(self, time_range: timedelta) -> Dict:
         """Measure impact on user experience."""
         return {
+
             # False positives impact
             'appeals_filed': self.moderation.count_appeals(time_range),
             'appeals_upheld': self.moderation.count_upheld_appeals(time_range),
@@ -816,6 +825,7 @@ class BusinessImpactMetrics:
     def compute_business_metrics(self, time_range: timedelta) -> Dict:
         """Measure business outcomes."""
         return {
+
             # Engagement
             'dau_trend': self._dau_trend(time_range),
             'time_spent_trend': self._time_spent_trend(time_range),

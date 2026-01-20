@@ -204,6 +204,7 @@ class FaceAligner:
 
     def __init__(self, output_size=(112, 112)):
         self.output_size = output_size
+
         # Scale reference landmarks to output size
         scale = output_size[0] / 112.0
         self.reference = self.REFERENCE_LANDMARKS * scale
@@ -240,6 +241,7 @@ class FaceAligner:
 
     def align_simple(self, image, left_eye, right_eye):
         """Simple alignment using only eye positions."""
+
         # Compute angle between eyes
         dx = right_eye[0] - left_eye[0]
         dy = right_eye[1] - left_eye[1]
@@ -292,11 +294,13 @@ class FaceEmbedder:
     def _load_model(self, model_name):
         """Load pretrained face recognition model."""
         if model_name == 'arcface':
+
             # Using insightface or custom ArcFace implementation
             from insightface.app import FaceAnalysis
             app = FaceAnalysis(providers=['CUDAExecutionProvider'])
             app.prepare(ctx_id=0)
             return app
+
         # Add other models as needed
 
     @torch.no_grad()
@@ -310,6 +314,7 @@ class FaceEmbedder:
         Returns:
             512-dimensional embedding vector
         """
+
         # Preprocess
         tensor = self.transform(face_image).unsqueeze(0).to(self.device)
 

@@ -200,12 +200,14 @@ Each module contains:
 ## 🚀 Quick Start
 
 ```bash
+
 # Clone and setup environment
 cd 05_computer_vision
 
 # Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
+
 # or: venv\Scripts\activate  # Windows
 
 # Install dependencies

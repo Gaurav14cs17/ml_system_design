@@ -92,6 +92,7 @@ mindmap
 ### Key Metrics to Track
 
 ```python
+
 # ml_metrics.py
 from prometheus_client import Counter, Histogram, Gauge, Summary
 import numpy as np
@@ -155,6 +156,7 @@ MODEL_MEMORY_BYTES = Gauge(
 ### Instrumented Prediction Endpoint
 
 ```python
+
 # instrumented_server.py
 from fastapi import FastAPI, HTTPException
 import time
@@ -169,6 +171,7 @@ async def predict(request: PredictionRequest):
     start_time = time.perf_counter()
 
     try:
+
         # Track feature statistics
         for i, value in enumerate(request.features):
             FEATURE_VALUE.labels(feature_name=f"feature_{i}").observe(value)
@@ -221,6 +224,7 @@ async def metrics():
 ### Prometheus Configuration
 
 ```yaml
+
 # prometheus.yml
 global:
   scrape_interval: 15s
@@ -251,6 +255,7 @@ scrape_configs:
 ### Alert Rules
 
 ```yaml
+
 # ml_alerts.yml
 groups:
   - name: ml_serving_alerts
@@ -306,6 +311,7 @@ groups:
 ### OpenTelemetry Integration
 
 ```python
+
 # tracing.py
 from opentelemetry import trace
 from opentelemetry.exporter.jaeger.thrift import JaegerExporter
@@ -368,6 +374,7 @@ async def predict(request: PredictionRequest):
 ### Data Drift Monitoring
 
 ```python
+
 # drift_detector.py
 import numpy as np
 from scipy import stats
@@ -411,6 +418,7 @@ class DriftDetector:
             curr_values = current_data[:, i]
 
             if method == "ks":
+
                 # Kolmogorov-Smirnov test
                 statistic, p_value = stats.ks_2samp(ref_values, curr_values)
                 is_drifted = p_value < threshold
@@ -424,6 +432,7 @@ class DriftDetector:
                 )
 
             elif method == "psi":
+
                 # Population Stability Index
                 psi = self._calculate_psi(ref_values, curr_values)
                 is_drifted = psi > 0.2  # PSI > 0.2 indicates significant drift
@@ -447,6 +456,7 @@ class DriftDetector:
         bins: int = 10
     ) -> float:
         """Calculate Population Stability Index"""
+
         # Create bins based on reference data
         _, bin_edges = np.histogram(reference, bins=bins)
 
@@ -475,6 +485,7 @@ for report in drift_reports:
 ### Prediction Drift
 
 ```python
+
 # prediction_drift.py
 from collections import deque
 import numpy as np

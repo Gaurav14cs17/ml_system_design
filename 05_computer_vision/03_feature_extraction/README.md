@@ -283,6 +283,7 @@ Faster alternative to SIFT using integral images and box filters.
 ![Diagram 4](images/diagram_04.svg)
 
 ```python
+
 # SURF Example (Note: may require opencv-contrib-python)
 import cv2
 
@@ -340,6 +341,7 @@ class ORBExtractor:
         Compute similarity using Hamming distance.
         Binary descriptors use Hamming, not Euclidean distance.
         """
+
         # Hamming distance = number of different bits
         xor = np.bitwise_xor(desc1, desc2)
         hamming = np.unpackbits(xor).sum()
@@ -373,11 +375,13 @@ G_y(x, y) = I(x, y+1) - I(x, y-1)
 ```
 
 **Magnitude:**
+
 ```math
 m(x, y) = \sqrt{G_x^2 + G_y^2}
 ```
 
 **Orientation:**
+
 ```math
 \theta(x, y) = \arctan\left(\frac{G_y}{G_x}\right)
 ```
@@ -406,6 +410,7 @@ Group cells into **blocks** (typically 2×2 cells = 16×16 pixels).
 Concatenate histograms and normalize:
 
 **L2-Hys Normalization:**
+
 ```math
 \mathbf{v} \leftarrow \frac{\mathbf{v}}{\sqrt{\|\mathbf{v}\|_2^2 + \epsilon^2}}
 ```
@@ -468,6 +473,7 @@ class HOGExtractor:
                 visualize=True,
                 feature_vector=True
             )
+
             # Enhance visualization
             hog_image = exposure.rescale_intensity(hog_image, in_range=(0, 10))
             return features, hog_image
@@ -526,6 +532,7 @@ class FeatureMatcher:
 
         # FLANN matcher
         if self.descriptor_type == 'binary':
+
             # LSH for binary descriptors
             index_params = dict(
                 algorithm=6,  # FLANN_INDEX_LSH
@@ -534,6 +541,7 @@ class FeatureMatcher:
                 multi_probe_level=1
             )
         else:
+
             # KD-Tree for float descriptors
             index_params = dict(algorithm=1, trees=5)  # FLANN_INDEX_KDTREE
 
@@ -574,6 +582,7 @@ class FeatureMatcher:
         Returns:
             keypoints1, keypoints2, good_matches
         """
+
         # Create detector
         if detector == 'orb':
             det = cv2.ORB_create(nfeatures=1000)

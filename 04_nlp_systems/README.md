@@ -229,6 +229,7 @@ Each subdirectory contains:
 ### Suggested Workflow
 
 ```bash
+
 # Navigate to a topic
 cd 01_text_preprocessing
 

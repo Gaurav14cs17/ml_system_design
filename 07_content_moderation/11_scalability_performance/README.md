@@ -78,6 +78,7 @@ class BottleneckAnalyzer:
 ### Kubernetes Deployment
 
 ```yaml
+
 # moderation-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -108,6 +109,7 @@ spec:
           value: "redis-cluster"
         - name: INFERENCE_SERVICE
           value: "http://inference-service:8080"
+
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
@@ -139,6 +141,7 @@ spec:
 ### GPU Cluster for Inference
 
 ```yaml
+
 # inference-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -194,6 +197,7 @@ class MultiLayerCache:
 
     def get(self, key: str) -> dict:
         """Get from cache hierarchy."""
+
         # L1: In-memory
         if key in self.l1_cache:
             return self.l1_cache[key]
@@ -216,6 +220,7 @@ class MultiLayerCache:
 
     def set(self, key: str, value: dict, ttl: int = 3600):
         """Set in all cache layers."""
+
         # L1
         self._add_to_l1(key, value)
 
@@ -228,6 +233,7 @@ class MultiLayerCache:
     def _add_to_l1(self, key, value):
         """Add to L1 with LRU eviction."""
         if len(self.l1_cache) >= self.l1_max_size:
+
             # Evict oldest
             oldest = next(iter(self.l1_cache))
             del self.l1_cache[oldest]
@@ -302,6 +308,7 @@ class DatabaseShardRouter:
 
     def batch_insert(self, items: list):
         """Batch insert with shard grouping."""
+
         # Group by shard
         shard_groups = {}
         for item in items:
@@ -502,6 +509,7 @@ class OptimizedInferenceEngine:
     """
 
     def __init__(self, model_path: str):
+
         # Load ONNX model with optimizations
         sess_options = ort.SessionOptions()
         sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
@@ -525,6 +533,7 @@ class OptimizedInferenceEngine:
 
     def predict_batch(self, inputs: np.ndarray) -> np.ndarray:
         """Run optimized batch prediction."""
+
         # Ensure contiguous memory layout
         inputs = np.ascontiguousarray(inputs)
 

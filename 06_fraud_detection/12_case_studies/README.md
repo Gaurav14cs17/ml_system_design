@@ -42,6 +42,7 @@
 ### Technical Implementation
 
 ```python
+
 # Simplified scoring service
 class EcommerceF raudScorer:
     def __init__(self):
@@ -55,6 +56,7 @@ class EcommerceF raudScorer:
         self.rule_engine = RuleEngine()
 
     async def score(self, transaction: dict) -> dict:
+
         # Parallel feature retrieval
         features = await self.feature_store.get_all_features(transaction)
 
@@ -78,11 +80,13 @@ class EcommerceF raudScorer:
         return decision
 
     def _combine_scores(self, scores: list, features: dict) -> float:
+
         # Weighted ensemble with context-aware weights
         weights = self._get_context_weights(features)
         return sum(s * w for s, w in zip(scores, weights))
 
     def _get_context_weights(self, features: dict) -> list:
+
         # Adjust weights based on context
         if features['user']['is_new_user']:
             return [0.2, 0.3, 0.4, 0.1]  # More weight on device
@@ -298,6 +302,7 @@ class LatencyOptimizedScorer:
     """Ultra-low latency fraud scoring"""
 
     def __init__(self):
+
         # Pre-loaded models in memory
         self.models = self._load_and_optimize_models()
 
@@ -311,6 +316,7 @@ class LatencyOptimizedScorer:
         """Score with strict latency budget"""
 
         async with timeout(0.040):  # 40ms total budget
+
             # Parallel execution with individual timeouts
             features_task = asyncio.create_task(
                 self._get_features_with_timeout(transaction, timeout=0.015)
@@ -338,6 +344,7 @@ class LatencyOptimizedScorer:
             async with asyncio.timeout(timeout):
                 return await self._get_all_features(txn)
         except asyncio.TimeoutError:
+
             # Return cached/default features
             return self._get_degraded_features(txn)
 
@@ -384,6 +391,7 @@ class HighScaleFeatureStore:
 
         # Pipeline for atomic updates
         async with self.redis_cluster.pipeline() as pipe:
+
             # User velocity counters
             for window in ['1m', '1h', '24h']:
                 ttl = {'1m': 120, '1h': 7200, '24h': 172800}[window]
@@ -413,6 +421,7 @@ class HighScaleFeatureStore:
         timestamp = int(transaction['timestamp'].timestamp())
 
         async with self.redis_cluster.pipeline() as pipe:
+
             # User features
             for window in ['1m', '1h', '24h']:
                 ttl = {'1m': 60, '1h': 3600, '24h': 86400}[window]
@@ -615,6 +624,7 @@ class InsuranceFraudNetwork:
             elif node.startswith('phone_'):
                 if subgraph.degree(node) > 1:
                     shared['phones'].add(node)
+
             # ... etc
 
         # Calculate suspicion score
@@ -699,8 +709,10 @@ class InsuranceFraudNetwork:
 ### 1. Data Leakage
 
 ```python
+
 # WRONG: Using future information
 def extract_features_wrong(transaction):
+
     # This uses data that wouldn't be available at decision time!
     user_chargebacks = get_user_chargebacks(transaction['user_id'])
     return {'chargeback_count': len(user_chargebacks)}
@@ -718,20 +730,24 @@ def extract_features_right(transaction):
 ### 2. Ignoring Class Imbalance
 
 ```python
+
 # WRONG: Random train/test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
 # Fraud rate in train: 0.5%, test: 0.5% - but different fraud patterns!
 
 # RIGHT: Temporal split with stratification
 train_end = '2024-01-01'
 X_train = X[X['timestamp'] < train_end]
 X_test = X[X['timestamp'] >= train_end]
+
 # Evaluates on future data, like production
 ```
 
 ### 3. Overfitting to Known Patterns
 
 ```python
+
 # Problem: Model only catches known fraud types
 # Solution: Combine supervised and unsupervised
 

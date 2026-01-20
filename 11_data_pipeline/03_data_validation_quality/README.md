@@ -73,11 +73,13 @@ Common constraints:
 **Definition:** How current the data is relative to expectations.
 
 **Age-based freshness:**
+
 ```math
 F(D) = 1 - \frac{\max(\text{now} - t_{latest}, 0)}{T_{max}}
 ```
 
 **Exponential decay model:**
+
 ```math
 F(D) = e^{-\lambda \cdot \Delta t}
 ```
@@ -728,6 +730,7 @@ class RealTimeQualityMonitor:
         ).set(drift_score)
 
         if drift_score > 0.1:
+
             # Alert on significant drift
             self.send_drift_alert(column, drift_score)
 ```
@@ -835,6 +838,7 @@ class SLOMonitor:
 ```python
 class DataValidationPipeline:
     def run(self, data):
+
         # Stage 1: Critical checks (block pipeline)
         critical_passed = self.run_critical_checks(data)
         if not critical_passed:
@@ -867,6 +871,7 @@ Layer 5: ML-Specific (feature drift, training-serving skew)
 ### 3. Version Your Expectations
 
 ```python
+
 # Store expectations with data version
 expectations_v1 = {
     "version": "1.0",

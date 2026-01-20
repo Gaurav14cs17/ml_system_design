@@ -51,8 +51,8 @@
 ### The Drift Detection Problem
 
 Given two samples:
-- **Reference sample**: \( X_{ref} = \{x_1, x_2, ..., x_n\} \) from training distribution
-- **Current sample**: \( X_{curr} = \{y_1, y_2, ..., y_m\} \) from production
+- **Reference sample**: $X_{ref} = \{x_1, x_2, ..., x_n\}$ from training distribution
+- **Current sample**: $X_{curr} = \{y_1, y_2, ..., y_m\}$ from production
 
 We want to test whether both samples come from the same distribution:
 
@@ -73,7 +73,7 @@ D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\fr
 
 **Properties:**
 - Non-negative: \( D_{KL}(P \| Q) \geq 0 \)
-- Zero iff \( P = Q \)
+- Zero iff $P = Q$
 - **Not symmetric**: \( D_{KL}(P \| Q) \neq D_{KL}(Q \| P) \)
 - Unbounded: Can be infinite if \( Q(i) = 0 \) where \( P(i) > 0 \)
 
@@ -105,9 +105,9 @@ PSI = \sum_{i=1}^{k} (A_i - E_i) \cdot \ln\left(\frac{A_i}{E_i}\right)
 ```
 
 Where:
-- \( k \) = number of bins
-- \( A_i \) = actual (current) proportion in bin \( i \)
-- \( E_i \) = expected (reference) proportion in bin \( i \)
+- $k$ = number of bins
+- $A_i$ = actual (current) proportion in bin $i$
+- $E_i$ = expected (reference) proportion in bin $i$
 
 #### Derivation
 
@@ -118,12 +118,14 @@ PSI = D_{KL}(A \| E) + D_{KL}(E \| A)
 ```
 
 This can be verified by expanding:
+
 ```math
 D_{KL}(A \| E) = \sum_i A_i \log\frac{A_i}{E_i}
 D_{KL}(E \| A) = \sum_i E_i \log\frac{E_i}{A_i} = -\sum_i E_i \log\frac{A_i}{E_i}
 ```
 
 Adding these:
+
 ```math
 D_{KL}(A \| E) + D_{KL}(E \| A) = \sum_i (A_i - E_i) \log\frac{A_i}{E_i} = PSI
 ```
@@ -132,10 +134,10 @@ D_{KL}(A \| E) + D_{KL}(E \| A) = \sum_i (A_i - E_i) \log\frac{A_i}{E_i} = PSI
 
 | PSI Value | Interpretation | Action |
 |-----------|----------------|--------|
-| \( PSI < 0.1 \) | No significant change | Continue monitoring |
-| \( 0.1 \leq PSI < 0.2 \) | Moderate change | Investigate, increase monitoring |
-| \( PSI \geq 0.2 \) | Significant change | Action required, potential retraining |
-| \( PSI \geq 0.25 \) | Major shift | Immediate investigation |
+| $PSI < 0.1$ | No significant change | Continue monitoring |
+| $0.1 \leq PSI < 0.2$ | Moderate change | Investigate, increase monitoring |
+| $PSI \geq 0.2$ | Significant change | Action required, potential retraining |
+| $PSI \geq 0.25$ | Major shift | Immediate investigation |
 
 ### 2. Kolmogorov-Smirnov Test
 
@@ -151,23 +153,23 @@ Where:
 
 #### Asymptotic Distribution
 
-Under \( H_0 \), the test statistic converges:
+Under $H_0$, the test statistic converges:
 
 ```math
 \sqrt{\frac{nm}{n+m}} D_n \xrightarrow{d} K
 ```
 
-Where \( K \) follows the **Kolmogorov distribution**.
+Where $K$ follows the **Kolmogorov distribution**.
 
 #### Critical Values
 
-| Significance Level \( \alpha \) | Critical Value \( c_\alpha \) |
+| Significance Level $\alpha$ | Critical Value $c_\alpha$ |
 |--------------------------------|------------------------------|
 | 0.10 | 1.22 |
 | 0.05 | 1.36 |
 | 0.01 | 1.63 |
 
-Reject \( H_0 \) if \( D_n > c_\alpha \cdot \sqrt{\frac{n+m}{nm}} \)
+Reject $H_0$ if $D_n > c_\alpha \cdot \sqrt{\frac{n+m}{nm}}$
 
 ### 3. Wasserstein Distance (Earth Mover's Distance)
 
@@ -177,7 +179,7 @@ The **Wasserstein distance** measures the minimum "work" to transform one distri
 W_p(P, Q) = \left(\inf_{\gamma \in \Gamma(P,Q)} \int |x - y|^p d\gamma(x,y)\right)^{1/p}
 ```
 
-For 1D distributions with CDFs \( F \) and \( G \):
+For 1D distributions with CDFs $F$ and $G$:
 
 ```math
 W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx
@@ -197,10 +199,10 @@ For categorical features, use the chi-square test:
 ```
 
 Where:
-- \( O_i \) = observed frequency in category \( i \)
-- \( E_i \) = expected frequency in category \( i \)
+- $O_i$ = observed frequency in category $i$
+- $E_i$ = expected frequency in category $i$
 
-Under \( H_0 \), \( \chi^2 \sim \chi^2_{k-1} \) with \( k-1 \) degrees of freedom.
+Under $H_0$, $\chi^2 \sim \chi^2_{k-1}$ with $k-1$ degrees of freedom.
 
 ---
 
@@ -220,20 +222,20 @@ Under \( H_0 \), \( \chi^2 \sim \chi^2_{k-1} \) with \( k-1 \) degrees of freedo
 
 ### Minimum Sample Size for Reliable Detection
 
-The power of drift detection depends on sample size. For PSI with \( k \) bins:
+The power of drift detection depends on sample size. For PSI with $k$ bins:
 
 ```math
 n_{min} \approx \frac{k \cdot z_{\alpha/2}^2}{4 \cdot \epsilon^2}
 ```
 
-Where \( \epsilon \) is the minimum detectable proportional change per bin.
+Where $\epsilon$ is the minimum detectable proportional change per bin.
 
 ### Confidence Intervals for PSI
 
 Using bootstrap methods, construct confidence intervals:
 
-1. Resample with replacement \( B \) times
-2. Compute \( PSI_b \) for each bootstrap sample
+1. Resample with replacement $B$ times
+2. Compute $PSI_b$ for each bootstrap sample
 3. Use percentile method: \( CI = [PSI_{(\alpha/2)}, PSI_{(1-\alpha/2)}] \)
 
 ---
@@ -250,6 +252,7 @@ def calculate_psi(reference: np.ndarray, current: np.ndarray,
     
     PSI = Σ(Aᵢ - Eᵢ) · ln(Aᵢ/Eᵢ)
     """
+
     # Create bins from reference distribution
     _, bin_edges = np.histogram(reference, bins=bins)
     
@@ -327,15 +330,16 @@ Reference Data (Training)
 When monitoring many features, apply **multiple testing correction**:
 
 **Bonferroni Correction:**
+
 ```math
 \alpha_{adjusted} = \frac{\alpha}{m}
 ```
 
-Where \( m \) is the number of features tested.
+Where $m$ is the number of features tested.
 
 **Benjamini-Hochberg (FDR Control):**
 1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
-2. Find largest \( k \) where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
+2. Find largest $k$ where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
 3. Reject hypotheses \( H_{(1)}, ..., H_{(k)} \)
 
 ---
@@ -357,9 +361,9 @@ Where \( m \) is the number of features tested.
 |---------|---------|-------|------------|
 | **PSI** | \( \sum(A-E)\ln(A/E) \) | \( [0, \infty) \) | Symmetric, industry standard |
 | **KL Divergence** | \( \sum P\log(P/Q) \) | \( [0, \infty) \) | Not symmetric |
-| **JS Divergence** | \( \frac{1}{2}KL(P\|M) + \frac{1}{2}KL(Q\|M) \) | \( [0, \log 2] \) | Symmetric, bounded |
-| **KS Statistic** | \( \sup|F-G| \) | \( [0, 1] \) | Distribution-free |
-| **Wasserstein** | \( \int|F-G|dx \) | \( [0, \infty) \) | True metric |
+| **JS Divergence** | \( \frac{1}{2}KL(P\|M) + \frac{1}{2}KL(Q\|M) \) | $[0, \log 2]$ | Symmetric, bounded |
+| **KS Statistic** | $\sup|F-G|$ | $[0, 1]$ | Distribution-free |
+| **Wasserstein** | $\int|F-G|dx$ | \( [0, \infty) \) | True metric |
 
 ---
 

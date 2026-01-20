@@ -39,6 +39,7 @@
 In machine learning, a **feature** is an individual measurable property or characteristic of a phenomenon being observed. Features are the input variables that ML models use to make predictions.
 
 ```python
+
 # Example: Features for a fraud detection model
 features = {
     "user_id": "user_123",
@@ -63,10 +64,12 @@ As ML systems mature, organizations face several challenges:
 One of the most insidious problems in ML systems is **training-serving skew** - when features used during training differ from features used during inference.
 
 ```python
+
 # ❌ PROBLEM: Training-Serving Skew
 
 # During Training (in a Jupyter notebook)
 def compute_user_features_training(user_id, historical_data):
+
     # Using pandas, computed on full historical data
     user_data = historical_data[historical_data['user_id'] == user_id]
     return {
@@ -77,6 +80,7 @@ def compute_user_features_training(user_id, historical_data):
 
 # During Serving (in production API)
 def compute_user_features_serving(user_id, db_connection):
+
     # Using SQL, computed in real-time
     result = db_connection.execute(f"""
         SELECT
@@ -96,6 +100,7 @@ def compute_user_features_serving(user_id, db_connection):
 ```
 
 ```python
+
 # ✅ SOLUTION: Feature Store ensures consistency
 
 from feature_store import FeatureStore
@@ -167,6 +172,7 @@ A **Feature Store** is a centralized data system that:
 ### 1. Feature Reuse
 
 ```python
+
 # Without Feature Store: Each team builds their own features
 # Team A (Fraud Detection)
 def get_user_features_fraud():
@@ -214,10 +220,12 @@ credit_features = fs.get_features(entity="user", features=["user_velocity_featur
 Avoiding **data leakage** in training datasets:
 
 ```python
+
 # ❌ WRONG: Data leakage
 # Using current feature values for historical predictions
 training_data = []
 for event in historical_events:
+
     # This uses TODAY's feature values, not values at event time!
     features = get_current_features(event.user_id)
     training_data.append((features, event.label))
@@ -228,6 +236,7 @@ training_data = fs.get_historical_features(
     entity_df=historical_events[['user_id', 'event_timestamp', 'label']],
     features=['user_avg_purchase_30d', 'user_transaction_count_7d']
 )
+
 # Returns features as they were at each event_timestamp
 # No data leakage!
 ```
@@ -237,6 +246,7 @@ training_data = fs.get_historical_features(
 ### 4. Feature Discovery
 
 ```python
+
 # Find relevant features for a new model
 available_features = fs.search_features(
     tags=["user", "engagement"],

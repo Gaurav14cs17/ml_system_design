@@ -505,6 +505,7 @@ class MultiStepForecaster:
             self.base_model.fit(X, y)
 
         elif self.strategy == 'direct':
+
             # Train separate model for each horizon
             for h in range(1, self.horizon + 1):
                 y_h = y.shift(-h + 1).dropna()
@@ -540,6 +541,7 @@ class MultiStepForecaster:
     def _update_features(self, features, new_value):
         """Shift lag features and insert new prediction"""
         updated = features.copy()
+
         # Shift lags
         for i in range(len(self.feature_cols) - 1, 0, -1):
             if f'lag_{i+1}' in updated.index and f'lag_{i}' in updated.index:

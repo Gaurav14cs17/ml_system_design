@@ -107,6 +107,7 @@ pie showData
 ### TensorFlow Lite Conversion
 
 ```python
+
 # tflite_conversion.py
 import tensorflow as tf
 
@@ -358,6 +359,7 @@ async function benchmark(model, input, iterations = 100) {
 ### Raspberry Pi Deployment
 
 ```python
+
 # raspberry_pi_inference.py
 import tflite_runtime.interpreter as tflite
 import numpy as np
@@ -366,6 +368,7 @@ import cv2
 
 class EdgeInference:
     def __init__(self, model_path: str):
+
         # Load model with Edge TPU if available
         try:
             self.interpreter = tflite.Interpreter(
@@ -384,6 +387,7 @@ class EdgeInference:
         self.output_details = self.interpreter.get_output_details()
 
     def preprocess(self, frame):
+
         # Resize and normalize
         img = cv2.resize(frame, (224, 224))
         img = img.astype(np.float32) / 255.0
@@ -431,6 +435,7 @@ if __name__ == "__main__":
 ### TensorFlow Federated Example
 
 ```python
+
 # federated_learning.py
 import tensorflow_federated as tff
 
@@ -462,6 +467,7 @@ state = iterative_process.initialize()
 
 # Training rounds
 for round_num in range(10):
+
     # Sample clients
     sampled_clients = sample_clients(federated_train_data, num_clients=10)
 

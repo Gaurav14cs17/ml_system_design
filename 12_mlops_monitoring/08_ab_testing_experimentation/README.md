@@ -53,23 +53,23 @@ H_0: \mu_T = \mu_C \quad \text{(no difference)}
 H_1: \mu_T \neq \mu_C \quad \text{(there is a difference)}
 ```
 
-Where \( \mu_T \) and \( \mu_C \) are the true mean outcomes for treatment and control.
+Where $\mu_T$ and $\mu_C$ are the true mean outcomes for treatment and control.
 
 ### Key Statistical Concepts
 
 #### Type I Error (False Positive)
 
-Rejecting \( H_0 \) when it's actually true:
+Rejecting $H_0$ when it's actually true:
 
 ```math
 \alpha = P(\text{reject } H_0 | H_0 \text{ is true})
 ```
 
-Typically set to \( \alpha = 0.05 \) (5% significance level).
+Typically set to $\alpha = 0.05$ (5% significance level).
 
 #### Type II Error (False Negative)
 
-Failing to reject \( H_0 \) when \( H_1 \) is true:
+Failing to reject $H_0$ when $H_1$ is true:
 
 ```math
 \beta = P(\text{fail to reject } H_0 | H_1 \text{ is true})
@@ -87,9 +87,9 @@ Typically target **80% power** (β = 0.20).
 
 ### Decision Matrix
 
-|                    | \( H_0 \) True | \( H_1 \) True |
+|                    | $H_0$ True | $H_1$ True |
 |--------------------|----------------|----------------|
-| **Reject \( H_0 \)** | Type I Error (α) | Correct (1-β) |
+| **Reject $H_0$** | Type I Error (α) | Correct (1-β) |
 | **Fail to Reject** | Correct (1-α) | Type II Error (β) |
 
 ---
@@ -105,9 +105,9 @@ t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}}
 ```
 
 Where:
-- \( \bar{X}_T, \bar{X}_C \) = sample means
-- \( s_T^2, s_C^2 \) = sample variances
-- \( n_T, n_C \) = sample sizes
+- $\bar{X}_T, \bar{X}_C$ = sample means
+- $s_T^2, s_C^2$ = sample variances
+- $n_T, n_C$ = sample sizes
 
 ### Welch's Approximation for Degrees of Freedom
 
@@ -117,7 +117,7 @@ df = \frac{\left(\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}\right)^2}{\frac{(s_T^2/n_
 
 ### Confidence Interval for Difference
 
-The \( (1-\alpha) \) confidence interval for \( \mu_T - \mu_C \):
+The \( (1-\alpha) \) confidence interval for $\mu_T - \mu_C$:
 
 ```math
 (\bar{X}_T - \bar{X}_C) \pm t_{\alpha/2, df} \cdot \sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}
@@ -136,10 +136,10 @@ n = 2 \cdot \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot \sigma^
 ```
 
 Where:
-- \( z_{\alpha/2} \) = z-score for significance level (1.96 for α=0.05)
-- \( z_{\beta} \) = z-score for power (0.84 for 80% power)
-- \( \delta \) = minimum detectable effect (MDE)
-- \( \sigma^2 \) = variance of the metric
+- $z_{\alpha/2}$ = z-score for significance level (1.96 for α=0.05)
+- $z_{\beta}$ = z-score for power (0.84 for 80% power)
+- $\delta$ = minimum detectable effect (MDE)
+- $\sigma^2$ = variance of the metric
 
 ### Effect Size (Cohen's d)
 
@@ -153,9 +153,9 @@ Where \( \sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 
 
 | Effect Size | Interpretation |
 |-------------|----------------|
-| \( d = 0.2 \) | Small |
-| \( d = 0.5 \) | Medium |
-| \( d = 0.8 \) | Large |
+| $d = 0.2$ | Small |
+| $d = 0.5$ | Medium |
+| $d = 0.8$ | Large |
 
 ### Sample Size Formula (Simplified)
 
@@ -165,14 +165,14 @@ For equal groups with 80% power and α = 0.05:
 n \approx \frac{16}{\delta^2}
 ```
 
-Where \( \delta \) is the effect size in standard deviation units.
+Where $\delta$ is the effect size in standard deviation units.
 
 ### Practical Example
 
 **Scenario:** Detect a 2% improvement in conversion rate (baseline: 5%, target: 5.1%)
 
-- Baseline conversion: \( p_C = 0.05 \)
-- Expected effect: \( p_T - p_C = 0.001 \)
+- Baseline conversion: $p_C = 0.05$
+- Expected effect: $p_T - p_C = 0.001$
 - Variance: \( \sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475 \)
 
 ```math
@@ -205,7 +205,7 @@ Repeatedly checking results inflates Type I error:
 \alpha^*(t) = 2 - 2\Phi\left(\frac{z_{\alpha/2}}{\sqrt{t}}\right)
 ```
 
-Where \( t \) is the information fraction (proportion of max sample size).
+Where $t$ is the information fraction (proportion of max sample size).
 
 | Information Fraction | Boundary z-score | Cumulative α |
 |---------------------|------------------|--------------|
@@ -230,7 +230,7 @@ Stop the experiment if:
 |Z_k| > c_k \quad \text{at interim analysis } k
 ```
 
-Where \( c_k \) is the critical value from the spending function.
+Where $c_k$ is the critical value from the spending function.
 
 ---
 
@@ -275,12 +275,12 @@ When running multiple tests (e.g., many metrics), control the **Family-Wise Erro
 \alpha_{adjusted} = \frac{\alpha}{m}
 ```
 
-Where \( m \) is the number of tests. Conservative but simple.
+Where $m$ is the number of tests. Conservative but simple.
 
 ### Benjamini-Hochberg (FDR Control)
 
 1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
-2. Find largest \( k \) where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
+2. Find largest $k$ where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
 3. Reject all \( H_{(1)}, ..., H_{(k)} \)
 
 Less conservative, controls **False Discovery Rate**.
@@ -301,7 +301,7 @@ P(\mu_T > \mu_C | \text{data})
 
 Prior: \( \theta \sim \text{Beta}(\alpha_0, \beta_0) \)
 
-Posterior after observing \( k \) successes in \( n \) trials:
+Posterior after observing $k$ successes in $n$ trials:
 
 ```math
 \theta | k, n \sim \text{Beta}(\alpha_0 + k, \beta_0 + n - k)
@@ -343,6 +343,7 @@ def analyze_experiment(control: np.ndarray, treatment: np.ndarray,
     
     Returns effect size, confidence interval, and significance.
     """
+
     # Basic statistics
     n_c, n_t = len(control), len(treatment)
     mean_c, mean_t = control.mean(), treatment.mean()
@@ -421,10 +422,10 @@ def analyze_experiment(control: np.ndarray, treatment: np.ndarray,
 
 | Concept | Formula |
 |---------|---------|
-| **t-statistic** | \( t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{s_T^2/n_T + s_C^2/n_C}} \) |
+| **t-statistic** | $t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{s_T^2/n_T + s_C^2/n_C}}$ |
 | **Sample size** | \( n = 2(z_{\alpha/2} + z_\beta)^2 \sigma^2 / \delta^2 \) |
 | **Cohen's d** | \( d = (\mu_T - \mu_C) / \sigma_{pooled} \) |
-| **Confidence interval** | \( \bar{X}_T - \bar{X}_C \pm t_{\alpha/2} \cdot SE \) |
+| **Confidence interval** | $\bar{X}_T - \bar{X}_C \pm t_{\alpha/2} \cdot SE$ |
 | **Power** | \( 1 - \beta = P(\text{reject } H_0 | H_1 \text{ true}) \) |
 
 ---

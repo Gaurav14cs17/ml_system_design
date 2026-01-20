@@ -373,6 +373,7 @@ For word $w$, let $\mathcal{G}\_w$ be its character n-grams (typically $n \in [3
 ```
 
 **Example**: "where" with $n=3$:
+
 ```math
 \mathcal{G}_{\text{where}} = \{\text{<wh}, \text{whe}, \text{her}, \text{ere}, \text{re>}\}
 ```
@@ -420,11 +421,13 @@ where $L$ is sequence length and $d = 768$ (base) or $1024$ (large).
 1. **[CLS] token**: $\mathbf{h}\_{\text{sentence}} = \mathbf{H}[0]$
 
 2. **Mean pooling**: 
+
 ```math
 \mathbf{h}_{\text{sentence}} = \frac{1}{L}\sum_{i=1}^{L} \mathbf{h}_i
 ```
 
 3. **Mean pooling with attention mask**:
+
 ```math
 \mathbf{h}_{\text{sentence}} = \frac{\sum_{i=1}^{L} m_i \mathbf{h}_i}{\sum_{i=1}^{L} m_i}
 ```
@@ -480,6 +483,7 @@ class BertEmbedding:
             embedding = hidden_states[:, 0, :]
         
         elif pooling == 'mean':
+
             # Mean pooling with attention mask
             mask_expanded = attention_mask.unsqueeze(-1).float()
             sum_embeddings = torch.sum(hidden_states * mask_expanded, dim=1)

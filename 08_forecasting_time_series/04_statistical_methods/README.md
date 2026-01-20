@@ -545,6 +545,7 @@ def fit_prophet(df, target_col, horizon_days,
     """
     Fit Prophet model
     """
+
     # Prepare data
     prophet_df = prepare_for_prophet(df[[target_col]], target_col)
 

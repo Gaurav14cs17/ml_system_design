@@ -341,6 +341,7 @@ flowchart TD
 ### Installation
 
 ```bash
+
 # Core dependencies
 pip install pandas numpy scipy matplotlib seaborn
 

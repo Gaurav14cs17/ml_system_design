@@ -293,6 +293,7 @@ class FreeSpeechBalancer:
 
     def _matches_category(self, content, context, category) -> bool:
         """Check if content matches a speech category."""
+
         # Would implement detailed detection logic
         return False
 ```

@@ -108,6 +108,7 @@ def calculate_p_value_from_scratch(control, treatment):
     """
     Step-by-step p-value calculation for two-sample t-test
     """
+
     # Step 1: Calculate sample statistics
     n1, n2 = len(control), len(treatment)
     mean1, mean2 = np.mean(control), np.mean(treatment)
@@ -179,6 +180,7 @@ def calculate_confidence_interval(control, treatment, confidence=0.95):
     """
     Calculate confidence interval for the difference in means
     """
+
     # Calculate statistics
     n1, n2 = len(control), len(treatment)
     mean1, mean2 = np.mean(control), np.mean(treatment)
@@ -313,6 +315,7 @@ def calculate_power(baseline_rate, mde, sample_size_per_group, alpha=0.05):
     --------
     float : Statistical power
     """
+
     # Treatment rate
     treatment_rate = baseline_rate * (1 + mde)
 
@@ -379,6 +382,7 @@ def power_sensitivity_analysis():
 
     # Factor 4: Alpha Level
     for alpha in [0.01, 0.05, 0.10, 0.20]:
+
         # Using n that gives ~80% power at alpha=0.05
         power = calculate_power(0.10, 0.05, 25000, alpha)
         results.append({'factor': 'alpha', 'value': alpha, 'power': power})
@@ -521,6 +525,7 @@ class ABTestStatistics:
 
         Use when: Comparing conversion rates, click-through rates, etc.
         """
+
         # Sample proportions
         p1 = control_conversions / control_total
         p2 = treatment_conversions / treatment_total
@@ -563,6 +568,7 @@ class ABTestStatistics:
         Use when: Comparing means of continuous metrics
         Welch's t-test doesn't assume equal variances
         """
+
         # Perform Welch's t-test
         t_stat, p_value = stats.ttest_ind(
             control_data, treatment_data,
@@ -631,6 +637,7 @@ class ABTestStatistics:
 
         Use when: Comparing categorical outcomes across groups
         """
+
         # Create contingency table
         table = np.array([
             [control_conversions, control_total - control_conversions],
@@ -663,6 +670,7 @@ class ABTestStatistics:
         # Bootstrap
         bootstrap_diffs = []
         for _ in range(n_bootstrap):
+
             # Resample
             np.random.shuffle(combined)
             boot_control = combined[:n_control]
@@ -735,6 +743,7 @@ class BayesianABTest:
         """
         Calculate P(B > A) using Monte Carlo simulation
         """
+
         # Posterior parameters
         a_alpha, a_beta = self.update_posterior(a_successes, a_trials)
         b_alpha, b_beta = self.update_posterior(b_successes, b_trials)
@@ -756,6 +765,7 @@ class BayesianABTest:
 
         Expected loss = E[max(A - B, 0)]
         """
+
         # Posterior parameters
         a_alpha, a_beta = self.update_posterior(a_successes, a_trials)
         b_alpha, b_beta = self.update_posterior(b_successes, b_trials)
@@ -792,6 +802,7 @@ class BayesianABTest:
         """
         Complete Bayesian analysis
         """
+
         # Point estimates (posterior means)
         a_alpha, a_beta = self.update_posterior(control_successes, control_trials)
         b_alpha, b_beta = self.update_posterior(treatment_successes, treatment_trials)

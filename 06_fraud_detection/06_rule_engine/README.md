@@ -372,6 +372,7 @@ class DeviceSessionRules:
 
         # Session anomalies
         if session_data:
+
             # Very short session before purchase
             if session_data.get('duration_seconds', 60) < 10:
                 results.append(RuleResult(
@@ -554,6 +555,7 @@ class RuleEngine:
 ### YAML-Based Rule Definition
 
 ```yaml
+
 # rules/velocity_rules.yaml
 rules:
   - id: VELOCITY_TXN_COUNT_1H
@@ -883,6 +885,7 @@ class HybridDecisionEngine:
 ### ML Score-Based Rules
 
 ```yaml
+
 # rules/ml_threshold_rules.yaml
 rules:
   - id: ML_HIGH_SCORE
@@ -1248,11 +1251,13 @@ Rule Design Best Practices:
 ### Common Rule Patterns
 
 ```python
+
 # Pattern 1: Threshold with context
 class ContextualThresholdRule:
     """Threshold that varies by context"""
 
     def check(self, txn: dict, user: dict) -> Optional[RuleResult]:
+
         # New users have lower thresholds
         if user.get('account_age_days', 0) < 30:
             threshold = 500

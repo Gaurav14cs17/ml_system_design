@@ -508,6 +508,7 @@ class InterleavingExperiment:
 
         while len(interleaved) < len(ranking_a) + len(ranking_b):
             if team_a_picks:
+
                 # Team A picks
                 while ptr_a < len(ranking_a) and ranking_a[ptr_a].id in used:
                     ptr_a += 1
@@ -516,6 +517,7 @@ class InterleavingExperiment:
                     attribution.append('A')
                     used.add(ranking_a[ptr_a].id)
             else:
+
                 # Team B picks
                 while ptr_b < len(ranking_b) and ranking_b[ptr_b].id in used:
                     ptr_b += 1

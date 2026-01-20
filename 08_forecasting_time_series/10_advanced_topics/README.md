@@ -83,6 +83,7 @@ class DeepEnsembleForecaster:
 
     def fit(self, X, y):
         for i, model in enumerate(self.models):
+
             # Bootstrap sampling
             idx = np.random.choice(len(X), len(X), replace=True)
             model.fit(X[idx], y[idx])
@@ -202,6 +203,7 @@ class TransferLearningForecaster:
         self.model = pretrained_model
 
         if freeze_layers:
+
             # Freeze feature extractor layers
             for param in self.model.feature_extractor.parameters():
                 param.requires_grad = False
@@ -261,6 +263,7 @@ class DomainAdaptation:
         Adapt source model to target domain
         """
         for epoch in range(epochs):
+
             # Extract features
             source_features = self.source_model.extract_features(source_data)
             target_features = self.source_model.extract_features(target_data)
@@ -270,6 +273,7 @@ class DomainAdaptation:
 
             # Backward and update
             adaptation_loss.backward()
+
             # ... optimizer step
 ```
 
@@ -473,8 +477,10 @@ class CausalForecaster:
 
     def _get_parents(self, target_var):
         """Extract causal parents from graph"""
+
         # Parse causal graph to find parents
         parents = []
+
         # ... implementation depends on graph format
         return parents
 
@@ -495,6 +501,7 @@ class CounterfactualForecaster:
             X: Current features
             intervention: Dict of {variable: new_value}
         """
+
         # Apply intervention
         X_intervened = X.copy()
         for var, value in intervention.items():
@@ -597,6 +604,7 @@ class TimeSeriesAutoML:
 
 # Using existing libraries
 """
+
 # AutoTS
 from autots import AutoTS
 

@@ -66,6 +66,7 @@ Modern search systems typically follow a **two-stage architecture**:
 ### 2. Business-Centric Requirements
 
 ```python
+
 # Key Business Metrics
 business_requirements = {
     "conversion_rate": "% of searches leading to purchase/click",
@@ -171,6 +172,7 @@ cost_model = {
 
 ```python
 online_metrics = {
+
     # Engagement Metrics
     "CTR": "Click-Through Rate = Clicks / Impressions",
     "Position_CTR": "CTR at each position",
@@ -192,6 +194,7 @@ online_metrics = {
 
 ```python
 offline_metrics = {
+
     # Ranking Quality
     "NDCG": "Normalized Discounted Cumulative Gain",
     "MAP": "Mean Average Precision",

@@ -143,6 +143,7 @@ class MaskRCNNDetector:
 
         results = []
         for output in outputs:
+
             # Filter by score
             keep = output['scores'] > score_threshold
 

@@ -140,6 +140,7 @@ class ParallelSearchService:
         """
         Parallelize independent operations for faster response
         """
+
         # Phase 1: Query understanding + feature prefetch (parallel)
         query_task = asyncio.create_task(
             self.query_understanding.process(request.query)
@@ -448,6 +449,7 @@ class RankingService:
                 model_name=self.primary_model
             )
         except Exception as e:
+
             # Fallback to simpler model
             logging.warning(f"Primary model failed: {e}")
             scores = await self.model_client.predict(
@@ -493,6 +495,7 @@ class LatencyOptimizer:
         """
         Optimized feature fetching with pipelining
         """
+
         # Use Redis pipeline for batch fetch
         pipe = self.redis.pipeline()
 
@@ -511,10 +514,12 @@ class LatencyOptimizer:
         """
         Batch requests for efficient GPU utilization
         """
+
         # Accumulate requests
         batch = self.batch_processor.add(features)
 
         if batch.is_full() or batch.timeout_reached():
+
             # Process batch
             stacked = np.vstack(batch.items)
             scores = await self.model.predict(stacked)

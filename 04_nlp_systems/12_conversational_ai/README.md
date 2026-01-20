@@ -387,6 +387,7 @@ class DialogueStateTracker:
         extracted_slots: Dict[str, str]
     ) -> Dict:
         """Update state with new information."""
+
         # Update slots
         for slot, value in extracted_slots.items():
             if value and slot in self.slots:
@@ -479,6 +480,7 @@ class ConversationManager:
         return "Hello! How can I help you today?"
 
     def _handle_info_gathering(self, user_input: str) -> str:
+
         # Extract information using the chatbot
         response = self.chatbot.chat(user_input)
 

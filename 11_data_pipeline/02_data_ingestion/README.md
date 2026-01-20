@@ -25,6 +25,7 @@ P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!}
 ```
 
 **Inter-arrival times** are exponentially distributed:
+
 ```math
 f(t) = \lambda e^{-\lambda t}, \quad E[T] = \frac{1}{\lambda}
 ```
@@ -52,11 +53,13 @@ where $\Lambda(t\_1, t\_2) = \int\_{t\_1}^{t\_2} \lambda(t) dt$.
 For incremental loads, detect changes using:
 
 **Timestamp-based:**
+
 ```math
 \Delta D = \{d \in D : d.updated\_at > t_{last\_sync}\}
 ```
 
 **Hash-based:**
+
 ```math
 \Delta D = \{d \in D : h(d) \neq h_{stored}(d.id)\}
 ```
@@ -96,6 +99,7 @@ where $op\_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
 #### Change Vector
 
 Each change event contains:
+
 ```math
 \Delta = (\text{op}, \text{before}, \text{after}, \text{timestamp}, \text{transaction\_id})
 ```
@@ -118,11 +122,13 @@ System throughput is limited by the slowest component.
 When $\lambda\_{arrival} > \mu\_{processing}$:
 
 **Queue growth rate:**
+
 ```math
 \frac{dQ}{dt} = \lambda - \mu > 0
 ```
 
 **Time to overflow:**
+
 ```math
 t_{overflow} = \frac{Q_{max}}{\lambda - \mu}
 ```
@@ -173,6 +179,7 @@ Save progress to enable recovery:
 For API ingestion with rate limit $R$ (requests/second):
 
 **Token bucket algorithm:**
+
 ```math
 \text{tokens}(t) = \min(B, \text{tokens}(t-\Delta t) + R \cdot \Delta t)
 ```
@@ -199,6 +206,7 @@ class FullLoadIngestion:
     """
 
     def ingest(self, source_table: str, target_table: str):
+
         # Step 1: Truncate target (or use write mode 'overwrite')
         self.truncate_table(target_table)
 
@@ -275,6 +283,7 @@ class IncrementalIngestion:
         - INSERT if key doesn't exist
         - UPDATE if key exists
         """
+
         # SQL MERGE example (conceptual)
         merge_sql = f"""
             MERGE INTO {target_table} AS target
@@ -393,10 +402,12 @@ class StreamIngestion:
 
         for message in consumer:
             try:
+
                 # Process each event
                 processor(message.value)
 
             except Exception as e:
+
                 # Handle failures (dead letter queue, retry, etc.)
                 self.handle_failure(message, e)
 
@@ -460,6 +471,7 @@ class APIIngestion:
         cursor = None
 
         while True:
+
             # Build request with pagination
             params = {"limit": page_size}
             if cursor:
@@ -772,6 +784,7 @@ class ExactlyOnceIngestion:
         # Begin transaction
         with self.begin_transaction() as txn:
             try:
+
                 # Write records
                 for record in new_records:
                     self.write_record(record, txn)

@@ -50,8 +50,8 @@ PSI = \sum_{i=1}^{n} (P_i^{actual} - P_i^{expected}) \cdot \ln\left(\frac{P_i^{a
 ```
 
 Where:
-- \( P_i^{actual} \) = proportion of observations in bin \( i \) for current data
-- \( P_i^{expected} \) = proportion of observations in bin \( i \) for reference data
+- $P_i^{actual}$ = proportion of observations in bin $i$ for current data
+- $P_i^{expected}$ = proportion of observations in bin $i$ for reference data
 
 | PSI Value | Interpretation |
 |-----------|----------------|
@@ -67,7 +67,7 @@ The **KS test** measures the maximum distance between two cumulative distributio
 D_{KS} = \sup_x |F_{train}(x) - F_{prod}(x)|
 ```
 
-The null hypothesis \( H_0 \): Both samples come from the same distribution. Reject if \( p < \alpha \) (typically 0.05).
+The null hypothesis $H_0$: Both samples come from the same distribution. Reject if $p < \alpha$ (typically 0.05).
 
 #### Jensen-Shannon Divergence
 
@@ -77,7 +77,7 @@ Unlike KL divergence, **JS divergence** is symmetric and bounded:
 JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
 ```
 
-Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution and \( D_{KL} \) is the Kullback-Leibler divergence:
+Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution and $D_{KL}$ is the Kullback-Leibler divergence:
 
 ```math
 D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}
@@ -108,10 +108,10 @@ D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}
 
 | Metric | Formula | Alert Threshold |
 |--------|---------|-----------------|
-| **Accuracy** | \( \frac{TP + TN}{TP + TN + FP + FN} \) | < baseline - 5% |
-| **Precision** | \( \frac{TP}{TP + FP} \) | Context-dependent |
-| **Recall** | \( \frac{TP}{TP + FN} \) | Context-dependent |
-| **F1 Score** | \( 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} \) | < baseline - 5% |
+| **Accuracy** | $\frac{TP + TN}{TP + TN + FP + FN}$ | < baseline - 5% |
+| **Precision** | $\frac{TP}{TP + FP}$ | Context-dependent |
+| **Recall** | $\frac{TP}{TP + FN}$ | Context-dependent |
+| **F1 Score** | $2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}$ | < baseline - 5% |
 | **AUC-ROC** | Area under ROC curve | < 0.7 |
 
 ### Data Quality Metrics
@@ -136,7 +136,7 @@ Monitoring response time requires understanding percentiles:
 P_k = x_{(\lceil k \cdot n / 100 \rceil)}
 ```
 
-Where \( x_{(i)} \) is the \( i \)-th order statistic.
+Where \( x_{(i)} \) is the $i$-th order statistic.
 
 ---
 
@@ -146,12 +146,12 @@ Where \( x_{(i)} \) is the \( i \)-th order statistic.
 
 When comparing distributions, we formulate:
 
-- **Null Hypothesis** \( H_0 \): No drift (distributions are identical)
-- **Alternative** \( H_1 \): Drift detected (distributions differ)
+- **Null Hypothesis** $H_0$: No drift (distributions are identical)
+- **Alternative** $H_1$: Drift detected (distributions differ)
 
 **Decision Rules:**
-- If \( p < \alpha \): Reject \( H_0 \) (drift detected)
-- If \( p \geq \alpha \): Fail to reject \( H_0 \) (no significant drift)
+- If $p < \alpha$: Reject $H_0$ (drift detected)
+- If $p \geq \alpha$: Fail to reject $H_0$ (no significant drift)
 
 ### Power Analysis
 
@@ -162,10 +162,10 @@ n = \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot 2\sigma^2
 ```
 
 Where:
-- \( z_{\alpha/2} \) = critical value for significance level
-- \( z_{\beta} \) = critical value for power \( (1-\beta) \)
-- \( \delta \) = minimum detectable effect size
-- \( \sigma^2 \) = variance estimate
+- $z_{\alpha/2}$ = critical value for significance level
+- $z_{\beta}$ = critical value for power \( (1-\beta) \)
+- $\delta$ = minimum detectable effect size
+- $\sigma^2$ = variance estimate
 
 ---
 

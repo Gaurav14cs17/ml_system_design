@@ -32,6 +32,7 @@ Inference patterns define how your model processes predictions. The choice depen
 ### Implementation
 
 ```python
+
 # real_time_server.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -129,6 +130,7 @@ async def get_features(user_id: str, item_id: str) -> List[float]:
 ### Implementation with Spark
 
 ```python
+
 # batch_inference_spark.py
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import udf, col
@@ -183,6 +185,7 @@ print(f"Processed {predictions.count()} records")
 ### Batch with GPU (Ray)
 
 ```python
+
 # batch_inference_ray.py
 import ray
 from ray import data
@@ -235,6 +238,7 @@ predictions.write_parquet("s3://data/predictions/")
 ### Implementation with Faust
 
 ```python
+
 # streaming_inference.py
 import faust
 from datetime import datetime
@@ -273,6 +277,7 @@ MODEL_VERSION = "1.0.0"
 async def process_events(events):
     """Process streaming events"""
     async for event in events:
+
         # Run inference
         input_tensor = torch.tensor([event.features], dtype=torch.float32)
         with torch.no_grad():
@@ -295,6 +300,7 @@ async def process_events(events):
 async def compute_stats(events):
     """Compute rolling statistics"""
     async for event in events.take(100, within=60):  # 100 events or 60 seconds
+
         # Compute aggregates
         pass
 
@@ -315,6 +321,7 @@ Dynamic batching collects individual requests and processes them together for be
 ### Implementation
 
 ```python
+
 # dynamic_batcher.py
 import asyncio
 import time
@@ -374,6 +381,7 @@ class DynamicBatcher:
             self.queue = self.queue[self.max_batch_size:]
 
         try:
+
             # Stack inputs
             inputs = torch.cat([req.data for req in batch], dim=0)
 
@@ -421,6 +429,7 @@ async def predict(request: PredictionRequest):
 ### Implementation
 
 ```python
+
 # ensemble_server.py
 from fastapi import FastAPI
 import torch

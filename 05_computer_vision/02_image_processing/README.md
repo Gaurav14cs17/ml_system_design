@@ -134,26 +134,31 @@ Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 ![Diagram 3](images/diagram_03.svg)
 
 **Identity Kernel:**
+
 ```math
 K_{identity} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}
 ```
 
 **Box Blur (Mean Filter):**
+
 ```math
 K_{box} = \frac{1}{9}\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
 ```
 
 **Gaussian Blur (σ = 1):**
+
 ```math
 K_{gauss} = \frac{1}{16}\begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{bmatrix}
 ```
 
 **Sharpen:**
+
 ```math
 K_{sharp} = \begin{bmatrix} 0 & -1 & 0 \\ -1 & 5 & -1 \\ 0 & -1 & 0 \end{bmatrix}
 ```
 
 **Laplacian (Edge Detection):**
+
 ```math
 K_{laplacian} = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
 ```
@@ -242,6 +247,7 @@ where:
 - $\Omega$ = neighborhood window
 
 **Components:**
+
 ```math
 G_s(\|p - q\|) = \exp\left(-\frac{\|p - q\|^2}{2\sigma_s^2}\right)
 G_r(|I(p) - I(q)|) = \exp\left(-\frac{|I(p) - I(q)|^2}{2\sigma_r^2}\right)
@@ -266,18 +272,22 @@ def denoise_image(image, method='bilateral'):
         Denoised image
     """
     if method == 'gaussian':
+
         # Fast but blurs edges
         return cv2.GaussianBlur(image, (5, 5), sigmaX=1.5)
 
     elif method == 'median':
+
         # Great for salt & pepper noise
         return cv2.medianBlur(image, 5)
 
     elif method == 'bilateral':
+
         # Preserves edges, good balance
         return cv2.bilateralFilter(image, d=9, sigmaColor=75, sigmaSpace=75)
 
     elif method == 'nlm':
+
         # Best quality but slowest
         if len(image.shape) == 2:
             return cv2.fastNlMeansDenoising(image, h=10)
@@ -352,6 +362,7 @@ def sobel_edges(image, ksize=3):
     Returns:
         Dictionary with gradient components and magnitude
     """
+
     # Convert to grayscale if needed
     if len(image.shape) == 3:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -448,6 +459,7 @@ def canny_edges(image, low_threshold=50, high_threshold=150, blur_ksize=5):
     Returns:
         Binary edge map
     """
+
     # Convert to grayscale
     if len(image.shape) == 3:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -646,21 +658,25 @@ Given a threshold $t$, pixels are divided into two classes:
 - $C\_1$: pixels with intensity $> t$ (foreground)
 
 **Class probabilities:**
+
 ```math
 \omega_0(t) = \sum_{i=0}^{t} p(i) \quad\quad \omega_1(t) = \sum_{i=t+1}^{L-1} p(i) = 1 - \omega_0(t)
 ```
 
 **Class means:**
+
 ```math
 \mu_0(t) = \frac{\sum_{i=0}^{t} i \cdot p(i)}{\omega_0(t)} \quad\quad \mu_1(t) = \frac{\sum_{i=t+1}^{L-1} i \cdot p(i)}{\omega_1(t)}
 ```
 
 **Within-class variance:**
+
 ```math
 \sigma_w^2(t) = \omega_0(t)\sigma_0^2(t) + \omega_1(t)\sigma_1^2(t)
 ```
 
 **Between-class variance:**
+
 ```math
 \sigma_b^2(t) = \omega_0(t)\omega_1(t)[\mu_0(t) - \mu_1(t)]^2
 ```
@@ -674,6 +690,7 @@ t^* = \arg\max_{t} \sigma_b^2(t)
 ```
 
 This is equivalent to minimizing within-class variance since:
+
 ```math
 \sigma^2_{total} = \sigma_w^2 + \sigma_b^2
 ```
@@ -829,6 +846,7 @@ class GeometricTransformer:
         M = cv2.getRotationMatrix2D(center, angle, scale)
 
         if expand:
+
             # Calculate new canvas size
             cos = np.abs(M[0, 0])
             sin = np.abs(M[0, 1])
@@ -927,6 +945,7 @@ class ImageEnhancer:
             brightness: Value to add (-255 to 255)
             contrast: Multiplier (0 to 3, 1 = no change)
         """
+
         # Apply contrast and brightness
         adjusted = cv2.convertScaleAbs(image, alpha=contrast, beta=brightness)
         return adjusted
@@ -940,6 +959,7 @@ class ImageEnhancer:
         gamma > 1: Darken image
         gamma = 1: No change
         """
+
         # Build lookup table
         inv_gamma = 1.0 / gamma
         table = np.array([
@@ -988,6 +1008,7 @@ class ImageEnhancer:
         """
         Sharpen image using unsharp masking.
         """
+
         # Create blurred version
         blurred = cv2.GaussianBlur(image, (0, 0), 3)
 
@@ -1176,6 +1197,7 @@ class ImagePreprocessingPipeline:
 
 # Usage example
 if __name__ == "__main__":
+
     # Create pipeline
     config = PipelineConfig(
         target_size=(224, 224),

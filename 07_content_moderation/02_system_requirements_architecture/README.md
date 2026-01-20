@@ -178,6 +178,7 @@ NFR-006: Data Protection
 
 #### API Gateway
 ```python
+
 # Example: FastAPI ingestion endpoint
 from fastapi import FastAPI, BackgroundTasks
 from pydantic import BaseModel
@@ -228,6 +229,7 @@ async def moderate_content(
 
 #### Message Queue Consumer
 ```python
+
 # Kafka consumer for high-throughput ingestion
 from kafka import KafkaConsumer
 import json
@@ -256,6 +258,7 @@ class ContentConsumer:
             )
 
     def process_message(self, content):
+
         # Preprocessing
         preprocessed = self.preprocess(content)
 
@@ -315,6 +318,7 @@ class TextPreprocessor:
 
     def _normalize_homoglyphs(self, text: str) -> str:
         """Convert homoglyphs to standard characters."""
+
         # Examples: @ -> a, 0 -> o, 1 -> l, 3 -> e
         for char, replacement in self.homoglyph_map.items():
             text = text.replace(char, replacement)
@@ -322,6 +326,7 @@ class TextPreprocessor:
 
     def _deobfuscate(self, text: str) -> str:
         """Handle common obfuscation patterns."""
+
         # Remove spaces/dots between letters: h.a.t.e -> hate
         text = re.sub(r'(\w)[.\s]+(?=\w)', r'\1', text)
 
@@ -419,6 +424,7 @@ class MediaPreprocessor:
 
     def _compute_phash(self, image: Image, hash_size: int = 16) -> str:
         """Compute perceptual hash for image matching."""
+
         # Resize to small square
         image = image.convert('L').resize((hash_size + 1, hash_size), Image.LANCZOS)
         pixels = np.array(image)
@@ -564,6 +570,7 @@ class PolicyEngine:
         requires_review = False
 
         for rule in self.rules:
+
             # Check geo restrictions
             if rule.geo_restrictions:
                 user_geo = context.get('user_country')
@@ -685,6 +692,7 @@ DEFAULT_POLICIES = [
 
 ### Blue-Green Deployment
 ```yaml
+
 # Kubernetes deployment strategy
 apiVersion: apps/v1
 kind: Deployment
@@ -722,6 +730,7 @@ spec:
 
 ### Canary Deployment for ML Models
 ```yaml
+
 # Istio virtual service for canary
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -785,6 +794,7 @@ spec:
    - Expensive models only when needed
 
 ```python
+
 # Example: Tiered processing
 class TieredModerationPipeline:
     def __init__(self):
@@ -793,6 +803,7 @@ class TieredModerationPipeline:
         self.tier3_model = load_model("llm_reviewer")  # LLM for edge cases
 
     def process(self, content):
+
         # Tier 1: Fast classification
         tier1_result = self.tier1_model.predict(content)
 

@@ -46,6 +46,7 @@
 The brain of the feature store - manages all metadata.
 
 ```python
+
 # Feature Registry Schema
 class FeatureRegistry:
     """

@@ -308,6 +308,7 @@ class PatchEmbedding(nn.Module):
         )
 
     def forward(self, x):
+
         # x: (B, C, H, W)
         x = self.proj(x)  # (B, embed_dim, H/P, W/P)
         x = x.flatten(2)  # (B, embed_dim, n_patches)

@@ -267,6 +267,7 @@ def create_difference_features(df, target_col, periods):
     df = df.copy()
 
     for period in periods:
+
         # Absolute difference
         df[f'{target_col}_diff_{period}'] = df[target_col].diff(period)
 
@@ -578,6 +579,7 @@ def create_trend_features(df, target_col, windows=[7, 14, 28]):
     df = df.copy()
 
     for window in windows:
+
         # Simple moving average trend
         sma = df[target_col].rolling(window=window).mean()
         df[f'{target_col}_above_sma_{window}'] = (df[target_col] > sma).astype(int)
@@ -729,6 +731,7 @@ class TimeSeriesFeatureEngineer:
 
     def fit(self, df):
         """Fit on training data to store parameters"""
+
         # Store scaling parameters, etc.
         return self
 

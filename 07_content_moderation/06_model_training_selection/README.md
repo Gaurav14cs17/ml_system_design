@@ -142,6 +142,7 @@ class ModerationTrainingPipeline:
 
     def train(self, train_loader, val_loader, epochs):
         """Main training loop."""
+
         # Create scheduler
         total_steps = len(train_loader) * epochs
         self.scheduler = get_linear_schedule_with_warmup(
@@ -155,6 +156,7 @@ class ModerationTrainingPipeline:
         patience_counter = 0
 
         for epoch in range(epochs):
+
             # Training
             train_loss = self._train_epoch(train_loader)
 
@@ -274,8 +276,8 @@ The standard loss for binary classification:
 ```
 
 Where:
-- \(y_i \in \{0, 1\}\) is the true label
-- \(\hat{y}_i \in [0, 1]\) is the predicted probability
+- $y_i \in \{0, 1\}$ is the true label
+- $\hat{y}_i \in [0, 1]$ is the predicted probability
 
 ### Focal Loss
 
@@ -286,11 +288,11 @@ Addresses class imbalance by down-weighting easy examples:
 ```
 
 Where:
-- \(p_t = \hat{y}\) if \(y = 1\), else \(1 - \hat{y}\)
-- \(\gamma\) is the focusing parameter (typically 2)
-- \(\alpha_t\) is the class weight
+- $p_t = \hat{y}$ if $y = 1$, else $1 - \hat{y}$
+- $\gamma$ is the focusing parameter (typically 2)
+- $\alpha_t$ is the class weight
 
-**Effect**: When a sample is misclassified and \(p_t\) is small, the loss is unaffected. But when \(p_t \to 1\), the factor \((1 - p_t)^\gamma\) goes to zero, reducing the loss for well-classified examples.
+**Effect**: When a sample is misclassified and $p_t$ is small, the loss is unaffected. But when $p_t \to 1$, the factor \((1 - p_t)^\gamma\) goes to zero, reducing the loss for well-classified examples.
 
 ### Asymmetric Loss
 
@@ -303,7 +305,7 @@ Different treatment for positive and negative samples:
 \end{cases}
 ```
 
-Where \(p_m = \max(p - m, 0)\) with margin \(m\) for hard threshold on negatives.
+Where \(p_m = \max(p - m, 0)\) with margin $m$ for hard threshold on negatives.
 
 ### Weighted Cross-Entropy for Class Imbalance
 
@@ -313,7 +315,7 @@ When violations are rare, weight the positive class:
 \mathcal{L}_{\text{weighted}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]
 ```
 
-Common weighting: \(w_+ = \frac{N}{2 \cdot N_+}\), \(w_- = \frac{N}{2 \cdot N_-}\)
+Common weighting: $w_+ = \frac{N}{2 \cdot N_+}$, $w_- = \frac{N}{2 \cdot N_-}$
 
 ### Label Smoothing
 
@@ -323,7 +325,7 @@ Prevents overconfident predictions:
 y_{\text{smooth}} = y \cdot (1 - \epsilon) + \frac{\epsilon}{K}
 ```
 
-Where \(\epsilon\) is the smoothing factor (typically 0.1) and \(K\) is the number of classes.
+Where $\epsilon$ is the smoothing factor (typically 0.1) and $K$ is the number of classes.
 
 ### Custom Loss Functions for Moderation
 
@@ -371,6 +373,7 @@ class AsymmetricLoss(nn.Module):
         self.clip = clip
 
     def forward(self, inputs, targets):
+
         # Positive samples
         xs_pos = inputs
         xs_neg = 1 - inputs
@@ -406,6 +409,7 @@ class LabelSmoothingLoss(nn.Module):
         self.smoothing = smoothing
 
     def forward(self, inputs, targets):
+
         # Smooth labels
         n_classes = inputs.size(-1)
         smooth_targets = targets * (1 - self.smoothing) + self.smoothing / n_classes
@@ -430,6 +434,7 @@ class HierarchicalLoss(nn.Module):
         # Add consistency loss for hierarchy
         hierarchy_loss = 0
         for child_idx, parent_idx in self.hierarchy.items():
+
             # If child is positive, parent should be positive
             child_prob = torch.sigmoid(inputs[:, child_idx])
             parent_prob = torch.sigmoid(inputs[:, parent_idx])
@@ -520,6 +525,7 @@ class DistillationTrainer:
         self.alpha = alpha  # Weight for distillation vs hard labels
 
     def train_step(self, batch, labels):
+
         # Get teacher predictions (no gradient)
         self.teacher.eval()
         with torch.no_grad():
@@ -679,6 +685,7 @@ with tracker.start_run("bert_fine_tuning_v1"):
     })
 
     for epoch in range(10):
+
         # Train...
         tracker.log_metrics({
             'train_loss': train_loss,

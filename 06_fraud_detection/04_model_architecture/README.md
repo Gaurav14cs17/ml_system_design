@@ -206,11 +206,13 @@ D_{KL} = -\frac{1}{2} \sum_{j=1}^{J} \left( 1 + \log(\sigma_j^2) - \mu_j^2 - \si
 For $M$ models with predictions $\hat{y}\_1, \ldots, \hat{y}\_M$:
 
 **Weighted Average:**
+
 ```math
 \hat{y}_{\text{ens}} = \sum_{m=1}^{M} w_m \hat{y}_m, \quad \sum_{m=1}^{M} w_m = 1
 ```
 
 **Optimal Weights** (minimize ensemble variance):
+
 ```math
 w_m^* \propto \frac{1}{\sigma_m^2 (1 - \rho_m)}
 ```
@@ -304,6 +306,7 @@ class FraudRandomForest:
 
     def fit(self, X, y, calibrate=True):
         if calibrate:
+
             # Isotonic calibration for better probability estimates
             self.model = CalibratedClassifierCV(
                 self.base_model,
@@ -321,6 +324,7 @@ class FraudRandomForest:
 
     def get_feature_importance(self, feature_names):
         if hasattr(self.model, 'estimators_'):
+
             # CalibratedClassifier
             importances = np.mean([
                 est.feature_importances_
@@ -631,6 +635,7 @@ class FraudDeepModel(nn.Module):
         )
 
     def forward(self, batch):
+
         # Get embeddings
         user_emb = self.user_embedding(batch['user_id'])
         merchant_emb = self.merchant_embedding(batch['merchant_id'])
@@ -749,6 +754,7 @@ class TransactionLSTM(nn.Module):
         )
 
     def forward(self, transaction_sequence, lengths):
+
         # Encode transactions
         encoded = self.transaction_encoder(transaction_sequence)
 
@@ -811,6 +817,7 @@ class TransactionTransformer(nn.Module):
         self.classifier = nn.Linear(config['hidden_dim'], 1)
 
     def forward(self, batch, attention_mask=None):
+
         # Embed transactions
         embeddings = self.transaction_embedding(batch)
 
@@ -819,6 +826,7 @@ class TransactionTransformer(nn.Module):
 
         # Create attention mask for padding
         if attention_mask is not None:
+
             # Convert to boolean mask (True = masked/ignored)
             attention_mask = ~attention_mask.bool()
 
@@ -829,6 +837,7 @@ class TransactionTransformer(nn.Module):
         if self.config.get('use_cls_token', False):
             pooled = encoded[:, 0]
         else:
+
             # Mean pooling over non-padded positions
             if attention_mask is not None:
                 mask = (~attention_mask).unsqueeze(-1).float()
@@ -1006,6 +1015,7 @@ class HeteroFraudGNN(nn.Module):
         )
 
     def forward(self, hetero_data):
+
         # Encode nodes by type
         x_dict = {}
         for node_type, encoder in self.node_encoders.items():
@@ -1049,6 +1059,7 @@ class FraudIsolationForest:
 
     def predict_anomaly_score(self, X):
         """Return anomaly scores (higher = more anomalous)"""
+
         # Isolation Forest returns negative scores, invert them
         return -self.model.score_samples(X)
 

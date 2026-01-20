@@ -252,6 +252,7 @@ class AmountAnomalyFeatures:
         merchant_std = merchant_history.get('std_amount', 1)
 
         return {
+
             # Z-scores
             'amount_user_zscore': (amount - user_mean) / (user_std + 1e-6),
             'amount_merchant_zscore': (amount - merchant_mean) / (merchant_std + 1e-6),
@@ -932,6 +933,7 @@ class TransactionEmbeddingModel(nn.Module):
         )
 
     def forward(self, batch: dict) -> torch.Tensor:
+
         # Get entity embeddings
         user_emb = self.entity_embeddings('user', batch['user_id'])
         merchant_emb = self.entity_embeddings('merchant', batch['merchant_id'])
@@ -974,6 +976,7 @@ class TransactionSequenceEncoder(nn.Module):
         self.output_projection = nn.Linear(config['hidden_dim'], config['output_dim'])
 
     def forward(self, transaction_sequence: List[dict], attention_mask: torch.Tensor) -> torch.Tensor:
+
         # Encode each transaction
         seq_len = len(transaction_sequence)
         transaction_embeddings = torch.stack([
@@ -1072,6 +1075,7 @@ class FeatureSelector:
             return [f[0] for f in sorted_features[:k]]
 
         elif method == 'cumulative_importance':
+
             # Select features that contribute to X% of importance
             total = sum(importance_scores.values())
             cumsum = 0
@@ -1120,6 +1124,7 @@ class FeatureCorrelationAnalyzer:
 
         to_remove = set()
         for feat1, feat2, corr in correlated_pairs:
+
             # Keep the more important feature
             if importance_scores.get(feat1, 0) < importance_scores.get(feat2, 0):
                 to_remove.add(feat1)
@@ -1168,6 +1173,7 @@ class RealTimeFeatureService:
             if isinstance(result, dict):
                 all_features.update(result)
             elif isinstance(result, Exception):
+
                 # Log error and continue with partial features
                 self.log_error(result)
 
@@ -1228,6 +1234,7 @@ class OptimizedFeatureComputer:
     """Optimized feature computation for low latency"""
 
     def __init__(self):
+
         # Pre-compiled feature transformations
         self.transformers = self._compile_transformers()
 

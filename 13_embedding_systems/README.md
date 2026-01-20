@@ -179,11 +179,13 @@ The embedding for item $i$ is simply row $i$ of the matrix: $\mathbf{e}\_i = \ma
 Most embedding methods optimize variations of:
 
 **Contrastive Loss (InfoNCE):**
+
 ```math
 \mathcal{L} = -\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{x^- \in \mathcal{N}} \exp(\text{sim}(f(x), f(x^-))/\tau)}
 ```
 
 **Triplet Loss:**
+
 ```math
 \mathcal{L} = \max(0, d(a, p) - d(a, n) + \text{margin})
 ```

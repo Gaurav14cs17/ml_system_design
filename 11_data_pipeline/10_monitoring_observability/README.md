@@ -159,18 +159,21 @@ metrics = PipelineMetrics("feature_pipeline")
 @timed_stage("extract")
 def extract_data():
     metrics.pipeline_started()
+
     # ... extraction logic
     return data
 
 @timed_stage("transform")
 def transform_data(data):
     for record in data:
+
         # Process record
         metrics.record_processed("transform", "success")
     return transformed
 
 @timed_stage("load")
 def load_data(data):
+
     # ... loading logic
     metrics.record_batch("load", len(data))
     metrics.pipeline_finished("success")
@@ -178,6 +181,7 @@ def load_data(data):
 # Start metrics server
 if __name__ == "__main__":
     start_http_server(8000)
+
     # Run pipeline
 ```
 
@@ -581,6 +585,7 @@ rules.add_rule(
 ### Key Dashboard Panels
 
 ```yaml
+
 # Grafana Dashboard Configuration (conceptual)
 dashboard:
   title: "ML Data Pipeline Monitoring"
@@ -716,6 +721,7 @@ class TracedPipeline:
             span.set_attribute("pipeline.date", date)
 
             try:
+
                 # Each stage is automatically traced
                 raw_data = self.extract(date)
                 validated_data = self.validate(raw_data)
@@ -731,21 +737,25 @@ class TracedPipeline:
 
     @traced_stage("extract")
     def extract(self, date: str):
+
         # Extraction logic
         return pd.read_parquet(f"s3://bucket/raw/date={date}/")
 
     @traced_stage("validate")
     def validate(self, df: pd.DataFrame):
+
         # Validation logic
         return df.dropna()
 
     @traced_stage("transform")
     def transform(self, df: pd.DataFrame):
+
         # Transformation logic
         return compute_features(df)
 
     @traced_stage("load")
     def load(self, df: pd.DataFrame):
+
         # Loading logic
         df.to_parquet("s3://bucket/features/")
 ```

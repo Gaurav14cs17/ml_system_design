@@ -53,6 +53,7 @@ More robust to outliers than standardization.
 #### Non-Linear Transformations
 
 **Log Transform:**
+
 ```math
 x' = \log(x + 1)
 ```
@@ -60,6 +61,7 @@ x' = \log(x + 1)
 Useful for right-skewed distributions. Transforms multiplicative relationships to additive.
 
 **Box-Cox Transform:**
+
 ```math
 x' = \begin{cases} \frac{x^\lambda - 1}{\lambda} & \lambda \neq 0 \\ \log(x) & \lambda = 0 \end{cases}
 ```
@@ -74,11 +76,13 @@ Extends Box-Cox to negative values.
 #### Filter Methods
 
 **Information Gain:**
+
 ```math
 IG(Y|X) = H(Y) - H(Y|X) = I(X; Y)
 ```
 
 **Gain Ratio (normalized):**
+
 ```math
 GR(Y|X) = \frac{IG(Y|X)}{H(X)}
 ```
@@ -102,11 +106,13 @@ Balances relevance to target with redundancy among features.
 For category $c$ with target $Y$:
 
 **Naive estimate:**
+
 ```math
 \hat{E}[Y|c] = \frac{\sum_{i: x_i = c} y_i}{n_c}
 ```
 
 **Smoothed estimate (regularized):**
+
 ```math
 \tilde{E}[Y|c] = \frac{n_c \cdot \hat{E}[Y|c] + m \cdot \bar{Y}}{n_c + m}
 ```
@@ -144,11 +150,13 @@ This maps cyclic values to a unit circle, preserving the property that hour 23 a
 For a time series $\{(t\_i, x\_i)\}$ and window size $w$:
 
 **Rolling Mean:**
+
 ```math
 \bar{x}_t^{(w)} = \frac{1}{w}\sum_{i=0}^{w-1} x_{t-i}
 ```
 
 **Exponential Moving Average:**
+
 ```math
 \text{EMA}_t = \alpha \cdot x_t + (1-\alpha) \cdot \text{EMA}_{t-1}
 ```
@@ -169,11 +177,13 @@ For features $x\_1, x\_2$, degree 2:
 ```
 
 The number of features for degree $d$ with $n$ original features:
+
 ```math
 \binom{n + d}{d} = \frac{(n+d)!}{d! \cdot n!}
 ```
 
 **Cross-product (interaction):**
+
 ```math
 x_{interaction} = x_1 \times x_2
 ```
@@ -278,11 +288,13 @@ class NumericFeatureEngineering:
 
         for combo in combinations_with_replacement(columns, degree):
             if len(set(combo)) == 1:
+
                 # Same column - power feature
                 col = combo[0]
                 power = len(combo)
                 df[f'{col}_pow{power}'] = df[col] ** power
             else:
+
                 # Different columns - interaction
                 name = '_x_'.join(combo)
                 df[name] = np.prod([df[c] for c in combo], axis=0)
@@ -350,6 +362,7 @@ class CategoricalFeatureEngineering:
 
         for col in columns:
             if fit:
+
                 # Calculate category statistics
                 category_stats = df.groupby(col)[target].agg(['mean', 'count'])
 
@@ -850,6 +863,7 @@ A **Feature Store** is a centralized repository for storing, managing, and servi
 ### Implementing with Feast
 
 ```python
+
 # feature_store/feature_repo/features.py
 from feast import Entity, Feature, FeatureView, FileSource, ValueType
 from feast.types import Float32, Int64, String
@@ -910,6 +924,7 @@ real_time_customer = StreamFeatureView(
 ```
 
 ```python
+
 # Using the Feature Store
 
 from feast import FeatureStore
@@ -943,6 +958,7 @@ online_features = store.get_online_features(
 ).to_dict()
 
 print(online_features)
+
 # {'customer_id': [1001], 'total_spend': [5432.50], 'days_since_last_purchase': [3], 'cart_value': [125.00]}
 ```
 

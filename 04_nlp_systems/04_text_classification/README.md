@@ -284,6 +284,7 @@ class BertTextClassifier:
         val_labels: List[int] = None
     ) -> Dict:
         """Train the classifier."""
+
         # Create datasets
         train_dataset = TextClassificationDataset(
             train_texts, train_labels, self.tokenizer, self.max_length
@@ -313,6 +314,7 @@ class BertTextClassifier:
         history = {'train_loss': [], 'val_loss': [], 'val_accuracy': []}
 
         for epoch in range(self.epochs):
+
             # Training
             self.model.train()
             total_loss = 0
@@ -657,6 +659,7 @@ service = ClassificationService()
 @app.on_event("startup")
 async def load_model():
     """Load model on startup."""
+
     # service.load_model("path/to/model.pt")
     pass
 

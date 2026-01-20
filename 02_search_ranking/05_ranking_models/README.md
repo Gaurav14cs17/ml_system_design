@@ -169,6 +169,7 @@ class RankNetLoss(nn.Module):
         scores_j: torch.Tensor,
         labels: torch.Tensor  # 1 if i > j, 0 otherwise
     ) -> torch.Tensor:
+
         # P(i > j)
         p_ij = torch.sigmoid(scores_i - scores_j)
 
@@ -277,6 +278,7 @@ class LambdaRank(nn.Module):
         idcg: torch.Tensor
     ) -> torch.Tensor:
         """Compute NDCG change if positions i and j are swapped"""
+
         # Get current positions
         sorted_indices = torch.argsort(relevance, descending=True)
 
@@ -356,6 +358,7 @@ class ListNetLoss(nn.Module):
         predicted_scores: torch.Tensor,
         true_relevance: torch.Tensor
     ) -> torch.Tensor:
+
         # Predicted top-one probability
         p_pred = torch.softmax(predicted_scores, dim=-1)
 
@@ -569,6 +572,7 @@ class DSSM(nn.Module):
 
     def encode_query(self, query_tokens: torch.Tensor) -> torch.Tensor:
         """Encode query to embedding"""
+
         # [batch, seq_len] -> [batch, seq_len, embed_dim]
         embedded = self.embedding(query_tokens)
 
@@ -638,6 +642,7 @@ class InteractionRanker(nn.Module):
         query_tokens: torch.Tensor,
         doc_tokens: torch.Tensor
     ) -> torch.Tensor:
+
         # Embed
         query_emb = self.embedding(query_tokens)  # [B, Q, D]
         doc_emb = self.embedding(doc_tokens)      # [B, D, D]
@@ -813,6 +818,7 @@ class ColBERT(nn.Module):
         For each query token, find max similarity to any doc token
         Sum over all query tokens
         """
+
         # [batch, query_len, doc_len]
         similarity = torch.bmm(query_embeddings, doc_embeddings.transpose(1, 2))
 

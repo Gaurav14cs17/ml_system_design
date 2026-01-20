@@ -65,6 +65,7 @@ from PIL import Image
 
 class ResNetEmbedder:
     def __init__(self, model_name='resnet50', layer='avgpool'):
+
         # Load pre-trained model
         self.model = getattr(models, model_name)(pretrained=True)
         self.model.eval()
@@ -326,6 +327,7 @@ class ContrastiveImageEncoder(nn.Module):
     def __init__(self, base_model, embed_dim=256):
         super().__init__()
         self.backbone = base_model
+
         # Get backbone output dimension
         with torch.no_grad():
             dummy = torch.randn(1, 3, 224, 224)

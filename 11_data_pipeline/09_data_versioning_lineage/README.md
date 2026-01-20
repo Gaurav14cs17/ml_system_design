@@ -35,6 +35,7 @@ In ML systems, **data versioning** and **lineage tracking** are essential for:
 ### Setup and Basic Usage
 
 ```bash
+
 # Initialize DVC in your project
 cd ml-project
 dvc init
@@ -62,6 +63,7 @@ git tag -a "data-v1.0" -m "Initial training data"
 ### DVC Pipeline Definition
 
 ```yaml
+
 # dvc.yaml
 stages:
   prepare:
@@ -114,6 +116,7 @@ stages:
 ```
 
 ```yaml
+
 # params.yaml
 prepare:
   split_ratio: 0.2
@@ -131,6 +134,7 @@ train:
 ### Running DVC Pipelines
 
 ```bash
+
 # Run the full pipeline
 dvc repro
 
@@ -153,6 +157,7 @@ dvc dag
 ### DVC Experiments
 
 ```python
+
 # src/train.py
 import dvc.api
 import json
@@ -188,6 +193,7 @@ with open('metrics.json', 'w') as f:
 ```
 
 ```bash
+
 # Run experiments with different parameters
 dvc exp run --set-param train.n_estimators=200
 dvc exp run --set-param train.n_estimators=300
@@ -570,6 +576,7 @@ run_id = tracker.start_job(
 )
 
 try:
+
     # Run feature computation
     compute_features()
     tracker.complete_job(run_id, "compute_user_features")

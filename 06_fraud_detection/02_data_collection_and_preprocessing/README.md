@@ -57,6 +57,7 @@ from decimal import Decimal
 
 @dataclass
 class Transaction:
+
     # Identifiers
     transaction_id: str
     customer_id: str
@@ -297,6 +298,7 @@ class ExternalDataEnricher:
         self.consortium = FraudConsortiumClient()
 
     async def enrich_transaction(self, txn: Transaction) -> EnrichedTransaction:
+
         # Parallel API calls for enrichment
         enrichment_tasks = [
             self.ip_service.lookup(txn.customer_ip),
@@ -376,6 +378,7 @@ t_env.execute_sql("""
 ### Batch Pipeline
 
 ```python
+
 # Apache Spark batch pipeline for historical features
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
@@ -432,6 +435,7 @@ class FraudDataValidator:
         """Validate transaction data quality"""
 
         expectations = [
+
             # Completeness
             {"expectation": "expect_column_values_to_not_be_null",
              "column": "transaction_id"},
@@ -637,6 +641,7 @@ class TemporalPreprocessor:
         """Extract temporal features from timestamp"""
 
         return {
+
             # Cyclical encoding for hour
             'hour_sin': np.sin(2 * np.pi * timestamp.hour / 24),
             'hour_cos': np.cos(2 * np.pi * timestamp.hour / 24),
@@ -811,6 +816,7 @@ class DataAnonymizer:
 
     def k_anonymize(self, df, quasi_identifiers: list, k: int = 5):
         """Apply k-anonymity to dataset"""
+
         # Group by quasi-identifiers and filter groups with < k records
         group_sizes = df.groupby(quasi_identifiers).size()
         valid_groups = group_sizes[group_sizes >= k].index

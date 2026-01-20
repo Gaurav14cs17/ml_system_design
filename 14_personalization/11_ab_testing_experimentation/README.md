@@ -92,6 +92,7 @@ class ExperimentationPlatform:
         for variant_name, allocation in experiment['traffic_allocation'].items():
             cumulative += allocation
             if bucket < cumulative:
+
                 # Log exposure
                 self._log_exposure(user_id, experiment_id, variant_name)
                 return variant_name
@@ -142,6 +143,7 @@ class ExperimentAnalyzer:
         """
         Compute experiment results with statistical analysis
         """
+
         # Get exposures and outcomes
         exposures = self.metrics.get_exposures(experiment_id)
         outcomes = self.metrics.get_outcomes(experiment_id)
@@ -237,6 +239,7 @@ class PowerAnalysis:
         alpha: Significance level
         power: Statistical power
         """
+
         # Effect size
         p1 = baseline_rate
         p2 = baseline_rate * (1 + mde)
@@ -263,6 +266,7 @@ class PowerAnalysis:
         """
         Sample size for continuous metrics (revenue, time spent)
         """
+
         # Absolute effect size
         delta = baseline_mean * mde
 
@@ -349,6 +353,7 @@ class SequentialTesting:
 
         More aggressive: Easier to stop early
         """
+
         # Adjust alpha for multiple looks
         adjusted_alpha = 1 - (1 - self.alpha) ** (1 / n_looks)
         z_boundary = stats.norm.ppf(1 - adjusted_alpha / 2)
@@ -363,6 +368,7 @@ class SequentialTesting:
         """
         Check if experiment should stop based on sequential analysis
         """
+
         # Compute test statistic
         n1, n2 = len(control_data), len(treatment_data)
         mean_diff = np.mean(treatment_data) - np.mean(control_data)
@@ -413,6 +419,7 @@ class ThompsonSamplingBandit:
         """
         Select arm by sampling from posterior
         """
+
         # Sample from Beta posterior for each arm
         samples = np.random.beta(self.alpha, self.beta)
 
@@ -503,6 +510,7 @@ class BanditExperiment:
         """
         Assign user to variant using bandit
         """
+
         # Forced exploration for sufficient data
         if np.random.random() < self.exploration_fraction:
             arm = np.random.randint(len(self.variants))
@@ -561,6 +569,7 @@ class InterleavingExperiment:
         """
         Team Draft Interleaving
         """
+
         # Get rankings from both systems
         ranking_a = self.ranker_a.rank(query)
         ranking_b = self.ranker_b.rank(query)
@@ -574,6 +583,7 @@ class InterleavingExperiment:
 
         while len(interleaved) < n_results:
             if current_team == 'a':
+
                 # A picks
                 while idx_a < len(ranking_a) and ranking_a[idx_a] in interleaved:
                     idx_a += 1
@@ -584,6 +594,7 @@ class InterleavingExperiment:
                     idx_a += 1
                 current_team = 'b'
             else:
+
                 # B picks
                 while idx_b < len(ranking_b) and ranking_b[idx_b] in interleaved:
                     idx_b += 1

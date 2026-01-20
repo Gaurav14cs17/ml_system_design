@@ -88,29 +88,35 @@ class Generator(nn.Module):
         super().__init__()
 
         self.net = nn.Sequential(
+
             # Input: latent_dim x 1 x 1
             nn.ConvTranspose2d(latent_dim, feature_maps * 8, 4, 1, 0, bias=False),
             nn.BatchNorm2d(feature_maps * 8),
             nn.ReLU(True),
+
             # State: (fm*8) x 4 x 4
 
             nn.ConvTranspose2d(feature_maps * 8, feature_maps * 4, 4, 2, 1, bias=False),
             nn.BatchNorm2d(feature_maps * 4),
             nn.ReLU(True),
+
             # State: (fm*4) x 8 x 8
 
             nn.ConvTranspose2d(feature_maps * 4, feature_maps * 2, 4, 2, 1, bias=False),
             nn.BatchNorm2d(feature_maps * 2),
             nn.ReLU(True),
+
             # State: (fm*2) x 16 x 16
 
             nn.ConvTranspose2d(feature_maps * 2, feature_maps, 4, 2, 1, bias=False),
             nn.BatchNorm2d(feature_maps),
             nn.ReLU(True),
+
             # State: fm x 32 x 32
 
             nn.ConvTranspose2d(feature_maps, img_channels, 4, 2, 1, bias=False),
             nn.Tanh()
+
             # Output: img_channels x 64 x 64
         )
 

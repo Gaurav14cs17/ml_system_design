@@ -176,6 +176,7 @@ class DataMinimizer:
 
         for field in identifiers:
             if field in anonymized:
+
                 # One-way hash
                 anonymized[field] = self._hash_identifier(anonymized[field])
 
@@ -183,6 +184,7 @@ class DataMinimizer:
 
     def _hash_identifier(self, value: str) -> str:
         import hashlib
+
         # Use salted hash
         salt = self.config.get('hash_salt', '')
         return hashlib.sha256(f"{salt}{value}".encode()).hexdigest()
@@ -244,6 +246,7 @@ class SecureAggregator:
 
         Each user adds random mask; masks sum to zero
         """
+
         # Verify masks sum to zero
         mask_sum = np.sum(masks, axis=0)
         assert np.allclose(mask_sum, 0), "Masks must sum to zero"
@@ -265,6 +268,7 @@ class SecureAggregator:
         Generate random masks that sum to zero
         """
         masks = [np.random.randn(*shape) for _ in range(n_users - 1)]
+
         # Last mask is negative sum of others
         masks.append(-np.sum(masks, axis=0))
 
@@ -345,6 +349,7 @@ class DPRecommendationTrainer:
         """
         DP-SGD training step
         """
+
         # Compute per-example gradients
         per_example_grads = self._compute_per_example_gradients(batch_data)
 
@@ -382,6 +387,7 @@ class DPRecommendationTrainer:
         """
         Track cumulative privacy loss using moments accountant
         """
+
         # Simplified - in practice use more sophisticated accounting
         sampling_rate = batch_size / self.dataset_size
         self.privacy_spent += sampling_rate * self.epsilon
@@ -399,6 +405,7 @@ class DPEmbeddings:
         """
         Add noise to make embedding differentially private
         """
+
         # Normalize embedding to bound sensitivity
         norm = np.linalg.norm(embedding)
         if norm > self.sensitivity:
@@ -452,6 +459,7 @@ class FederatedRecommender:
         """
         Execute one round of federated averaging
         """
+
         # Distribute global model to clients
         global_weights = self.global_model.get_weights()
 
@@ -460,6 +468,7 @@ class FederatedRecommender:
         client_sizes = []
 
         for client_id, data in client_data.items():
+
             # Client trains locally
             update, n_samples = self._client_update(
                 client_id,
@@ -483,6 +492,7 @@ class FederatedRecommender:
         """
         Train on client's local data
         """
+
         # Create local model copy
         local_model = self._create_local_model()
         local_model.set_weights(global_weights)
@@ -667,6 +677,7 @@ class FairnessConstrainedRecommender:
         """
         Generate fair recommendations
         """
+
         # Get more candidates than needed
         candidates = self.recommender.get_candidates(user_id, n_items * 5)
 
@@ -682,6 +693,7 @@ class FairnessConstrainedRecommender:
         """
         Re-rank to satisfy fairness constraints
         """
+
         # Exposure fairness: ensure diversity of item providers/categories
         if 'exposure_parity' in self.config:
             candidates = self._apply_exposure_parity(candidates)
@@ -794,6 +806,7 @@ class BiasDetector:
         bubble_scores = {}
 
         for user_id in user_history:
+
             # Get category distribution in history
             history_cats = [item_categories.get(item) for item in user_history[user_id]]
             history_dist = self._category_distribution(history_cats)
@@ -843,6 +856,7 @@ class BiasAwareMitigation:
         """
         Calibrate recommendations to match user's historical category distribution
         """
+
         # Group items by category
         by_category = {}
         for item in recommendations:
@@ -1045,6 +1059,7 @@ class GDPRCompliance:
         """
         Right to erasure (right to be forgotten)
         """
+
         # Delete all user data
         deleted_data = []
 

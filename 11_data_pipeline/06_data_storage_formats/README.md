@@ -371,10 +371,12 @@ class FeatureStoreStorage:
         key = f"{feature_view}:{entity_id}"
 
         if feature_names:
+
             # Get specific features
             values = self.redis.hmget(key, feature_names)
             return dict(zip(feature_names, [json.loads(v) if v else None for v in values]))
         else:
+
             # Get all features
             data = self.redis.hgetall(key)
             return {k.decode(): json.loads(v) for k, v in data.items()}
@@ -477,6 +479,7 @@ training_features = store.get_historical_features(
 ### Time-Based Partitioning
 
 ```python
+
 # Partitioning for ML training data
 
 # GOOD: Partition by date for time-series data
@@ -505,6 +508,7 @@ training_data = pd.read_parquet(
 ![Diagram 4](images/diagram_04.svg)
 
 ```python
+
 # Multi-level partitioning for different access patterns
 df.to_parquet(
     's3://bucket/ml_data/',

@@ -154,6 +154,7 @@ class NgramLM:
         Computes: C(w_1,...,w_n) and C(w_1,...,w_{n-1})
         """
         for sentence in sentences:
+
             # Add boundary tokens
             tokens = ['<s>'] * (self.n - 1) + sentence + ['</s>']
             
@@ -276,31 +277,37 @@ LSTMs introduce **gating mechanisms** to control information flow.
 ### LSTM Equations
 
 **Forget gate** (what to discard from cell state):
+
 ```math
 \mathbf{f}_t = \sigma(\mathbf{W}_f[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_f)
 ```
 
 **Input gate** (what new information to store):
+
 ```math
 \mathbf{i}_t = \sigma(\mathbf{W}_i[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_i)
 ```
 
 **Candidate cell state**:
+
 ```math
 \tilde{\mathbf{c}}_t = \tanh(\mathbf{W}_c[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_c)
 ```
 
 **Cell state update**:
+
 ```math
 \mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t
 ```
 
 **Output gate**:
+
 ```math
 \mathbf{o}_t = \sigma(\mathbf{W}_o[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o)
 ```
 
 **Hidden state**:
+
 ```math
 \mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{c}_t)
 ```
@@ -330,11 +337,13 @@ Transformers replace recurrence with **self-attention**, enabling parallel proce
 Given input embeddings $\mathbf{X} \in \mathbb{R}^{n \times d}$:
 
 **Query, Key, Value projections**:
+
 ```math
 \mathbf{Q} = \mathbf{X}\mathbf{W}_Q, \quad \mathbf{K} = \mathbf{X}\mathbf{W}_K, \quad \mathbf{V} = \mathbf{X}\mathbf{W}_V
 ```
 
 **Scaled Dot-Product Attention**:
+
 ```math
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}
 ```
@@ -463,6 +472,7 @@ class TransformerBlock(nn.Module):
         )
     
     def forward(self, x, mask=None):
+
         # Pre-norm architecture (more stable training)
         attn_out = self.attention(self.norm1(x), self.norm1(x), self.norm1(x), mask)
         x = x + attn_out
@@ -535,11 +545,13 @@ where $\mathbf{M}\_{ij} = \begin{cases} 0 & \text{if } i \geq j \\ -\infty & \te
 ### Decoding Strategies
 
 **Greedy decoding**:
+
 ```math
 w_t = \arg\max_w P(w | w_{1:t-1})
 ```
 
 **Temperature sampling**:
+
 ```math
 P_\tau(w) = \frac{\exp(z_w / \tau)}{\sum_{w'} \exp(z_{w'} / \tau)}
 ```
@@ -558,6 +570,7 @@ def top_p_sampling(logits: torch.Tensor, p: float = 0.9, temperature: float = 1.
     
     Sample from smallest set V_p where Σ_{w∈V_p} P(w) ≥ p
     """
+
     # Apply temperature
     logits = logits / temperature
     
@@ -567,6 +580,7 @@ def top_p_sampling(logits: torch.Tensor, p: float = 0.9, temperature: float = 1.
     
     # Remove tokens with cumulative probability above threshold
     sorted_indices_to_remove = cumulative_probs > p
+
     # Keep at least one token
     sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
     sorted_indices_to_remove[..., 0] = 0

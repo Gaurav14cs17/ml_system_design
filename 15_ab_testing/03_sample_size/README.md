@@ -94,6 +94,7 @@ def sample_size_proportions(baseline_rate, mde, alpha=0.05, power=0.80,
     --------
     dict : Sample sizes for control and treatment
     """
+
     # Treatment rate
     treatment_rate = baseline_rate * (1 + mde)
 
@@ -171,6 +172,7 @@ def sample_size_continuous(mean, std, mde_relative, alpha=0.05, power=0.80,
     --------
     dict : Sample sizes needed
     """
+
     # Z-scores
     if two_sided:
         z_alpha = stats.norm.ppf(1 - alpha/2)
@@ -254,8 +256,10 @@ class SampleSizeCalculator:
         Calculate for ratio metrics (e.g., revenue per session)
         Uses delta method for variance estimation
         """
+
         # Approximate variance using delta method
         ratio_mean = num_mean / denom_mean
+
         # Simplified: assume numerator variance dominates
         ratio_std = num_std / denom_mean
 
@@ -341,6 +345,7 @@ def calculate_experiment_duration(
     """
     Calculate experiment duration with practical constraints
     """
+
     # Calculate required sample size
     result = sample_size_proportions(baseline_rate, mde, alpha, power)
     total_sample_size = result['total_size']
@@ -459,6 +464,7 @@ class CUPED:
 
 # Example usage
 """
+
 # Prepare data with pre-experiment metric
 data = pd.DataFrame({
     'user_id': user_ids,
@@ -477,6 +483,7 @@ data['revenue_adjusted'] = cuped.transform(data)
 # Check variance reduction
 reduction = cuped.variance_reduction(data)
 print(f"Variance reduced by {reduction['variance_reduction']:.1%}")
+
 # Typical reduction: 20-50%
 """
 ```
@@ -491,6 +498,7 @@ def stratified_sample_size(strata_proportions, strata_variances,
 
     Stratification reduces variance when strata have different means
     """
+
     # Calculate overall variance without stratification
     overall_variance = sum(
         p * v for p, v in zip(strata_proportions, strata_variances)
@@ -525,6 +533,7 @@ def stratified_sample_size(strata_proportions, strata_variances,
 ### Mistake 1: Using Point Estimates for Baseline
 
 ```python
+
 # ❌ WRONG: Using recent point estimate
 baseline_rate = last_week_conversion_rate  # 10.2%
 
@@ -540,6 +549,7 @@ baseline_rate_conservative = np.percentile(baseline_rates, 25)
 ### Mistake 2: Ignoring Metric Variance
 
 ```python
+
 # Revenue is highly variable - need more samples than conversion rate
 
 # Conversion rate (binary: 0 or 1)
@@ -573,6 +583,7 @@ def sample_size_multiple_variants(baseline_rate, mde, num_variants,
 
     With K variants, you need more samples due to multiple comparisons
     """
+
     # Bonferroni correction
     adjusted_alpha = alpha / num_variants
 
@@ -592,6 +603,7 @@ multiple = sample_size_multiple_variants(0.10, 0.05, num_variants=3)
 
 print(f"Single variant: {single['total_size']:,}")
 print(f"3 variants (Bonferroni): {multiple['total_size']:,}")
+
 # Approximately 30-50% more samples needed
 ```
 

@@ -40,6 +40,7 @@ Serverless computing runs code without managing servers, automatically scaling f
 ### Lambda Function with Model
 
 ```python
+
 # lambda_handler.py
 import json
 import boto3
@@ -63,6 +64,7 @@ def load_model():
 def lambda_handler(event, context):
     """AWS Lambda handler for ML inference"""
     try:
+
         # Parse input
         body = json.loads(event.get('body', '{}'))
         features = np.array(body['features'], dtype=np.float32)
@@ -97,6 +99,7 @@ def lambda_handler(event, context):
 ### Lambda Deployment with SAM
 
 ```yaml
+
 # template.yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
@@ -158,11 +161,13 @@ Outputs:
 ### Provisioned Concurrency
 
 ```yaml
+
 # Eliminate cold starts for critical functions
 Resources:
   MLFunction:
     Type: AWS::Serverless::Function
     Properties:
+
       # ... other properties
       ProvisionedConcurrencyConfig:
         ProvisionedConcurrentExecutions: 10
@@ -178,6 +183,7 @@ Resources:
 ### Cloud Function Implementation
 
 ```python
+
 # main.py
 import functions_framework
 from flask import jsonify
@@ -198,6 +204,7 @@ def get_model():
 @functions_framework.http
 def predict(request):
     """HTTP Cloud Function for ML inference"""
+
     # Handle CORS
     if request.method == 'OPTIONS':
         headers = {
@@ -228,6 +235,7 @@ def predict(request):
 ### Deployment
 
 ```bash
+
 # Deploy to GCP
 gcloud functions deploy ml-inference \
     --runtime python310 \
@@ -251,6 +259,7 @@ gcloud functions deploy ml-inference \
 ### Optimization Strategies
 
 ```python
+
 # optimized_lambda.py
 import os
 import json
@@ -294,6 +303,7 @@ def lambda_handler(event, context):
 ### Keep-Warm Strategy
 
 ```python
+
 # keep_warm.py
 import boto3
 import json
@@ -336,6 +346,7 @@ def lambda_handler(event, context):
 ### AWS Lambda with Container Image
 
 ```dockerfile
+
 # Dockerfile
 FROM public.ecr.aws/lambda/python:3.10
 
@@ -353,6 +364,7 @@ CMD ["app.lambda_handler"]
 ### Google Cloud Run
 
 ```dockerfile
+
 # Dockerfile for Cloud Run
 FROM python:3.10-slim
 
@@ -374,6 +386,7 @@ CMD ["gunicorn", "--bind", ":8080", "--workers", "1", "--threads", "8", "app:app
 ```
 
 ```python
+
 # app.py for Cloud Run
 from flask import Flask, request, jsonify
 import onnxruntime as ort

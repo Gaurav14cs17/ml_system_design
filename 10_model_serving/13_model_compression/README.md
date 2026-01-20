@@ -22,13 +22,13 @@ Model compression reduces model size and inference cost while maintaining accura
 
 ### The Compression Problem
 
-Given a neural network \( f_\theta(x) \) with parameters \( \theta \in \mathbb{R}^n \), the goal of compression is to find a smaller representation \( \hat{\theta} \) such that:
+Given a neural network \( f_\theta(x) \) with parameters $\theta \in \mathbb{R}^n$, the goal of compression is to find a smaller representation $\hat{\theta}$ such that:
 
 \[
 \min_{\hat{\theta}} \mathcal{L}(f_{\hat{\theta}}) \quad \text{subject to} \quad |\hat{\theta}| \ll |\theta|
 \]
 
-where \( \mathcal{L} \) is the task loss and \( |\cdot| \) denotes the storage size.
+where $\mathcal{L}$ is the task loss and $|\cdot|$ denotes the storage size.
 
 ---
 
@@ -36,30 +36,30 @@ where \( \mathcal{L} \) is the task loss and \( |\cdot| \) denotes the storage s
 
 ### Information-Theoretic View
 
-The **rate-distortion theory** provides a fundamental limit on compression. For a model with weights \( W \) and reconstruction \( \hat{W} \):
+The **rate-distortion theory** provides a fundamental limit on compression. For a model with weights $W$ and reconstruction $\hat{W}$:
 
 \[
 R(D) = \min_{p(\hat{W}|W): \mathbb{E}[d(W,\hat{W})] \leq D} I(W; \hat{W})
 \]
 
 where:
-- \( R(D) \) is the minimum bits needed to achieve distortion \( D \)
+- \( R(D) \) is the minimum bits needed to achieve distortion $D$
 - \( I(W; \hat{W}) \) is the mutual information
 - \( d(W, \hat{W}) \) is a distortion measure (e.g., MSE)
 
 ### Compression Ratio
 
-The **compression ratio** \( \rho \) is defined as:
+The **compression ratio** $\rho$ is defined as:
 
 \[
 \rho = \frac{\text{Original Size}}{\text{Compressed Size}} = \frac{n \cdot b_{\text{orig}}}{n_{\text{eff}} \cdot b_{\text{new}}}
 \]
 
 where:
-- \( n \) = number of parameters
-- \( b_{\text{orig}} \) = bits per parameter (32 for FP32)
-- \( n_{\text{eff}} \) = effective non-zero parameters
-- \( b_{\text{new}} \) = bits after quantization
+- $n$ = number of parameters
+- $b_{\text{orig}}$ = bits per parameter (32 for FP32)
+- $n_{\text{eff}}$ = effective non-zero parameters
+- $b_{\text{new}}$ = bits after quantization
 
 ```mermaid
 flowchart LR
@@ -111,17 +111,17 @@ Quantization maps floating-point values to lower-precision representations. This
 
 #### Affine Quantization
 
-The affine (asymmetric) quantization maps a floating-point value \( x \) to an integer \( q \):
+The affine (asymmetric) quantization maps a floating-point value $x$ to an integer $q$:
 
 \[
 q = \text{clamp}\left(\left\lfloor \frac{x}{S} \right\rceil + Z, \, q_{\min}, \, q_{\max}\right)
 \]
 
 where:
-- \( S \) is the **scale factor** (step size)
-- \( Z \) is the **zero-point** (integer offset)
-- \( \lfloor \cdot \rceil \) denotes rounding to nearest integer
-- \( q_{\min}, q_{\max} \) are the quantization bounds (e.g., -128, 127 for INT8)
+- $S$ is the **scale factor** (step size)
+- $Z$ is the **zero-point** (integer offset)
+- $\lfloor \cdot \rceil$ denotes rounding to nearest integer
+- $q_{\min}, q_{\max}$ are the quantization bounds (e.g., -128, 127 for INT8)
 
 The **dequantization** (reconstruction) is:
 
@@ -131,7 +131,7 @@ The **dequantization** (reconstruction) is:
 
 #### Scale and Zero-Point Calculation
 
-Given the range \( [x_{\min}, x_{\max}] \) of values to quantize:
+Given the range $[x_{\min}, x_{\max}]$ of values to quantize:
 
 \[
 S = \frac{x_{\max} - x_{\min}}{q_{\max} - q_{\min}}
@@ -165,7 +165,7 @@ The **Signal-to-Quantization-Noise Ratio (SQNR)** in dB is approximately:
 \text{SQNR} \approx 6.02b + 10\log_{10}\left(\frac{\sigma_x^2}{\sigma_q^2}\right)
 \]
 
-where \( b \) is the number of bits. Each additional bit improves SQNR by ~6 dB.
+where $b$ is the number of bits. Each additional bit improves SQNR by ~6 dB.
 
 ### Precision Levels
 
@@ -182,6 +182,7 @@ where \( b \) is the number of bits. Each additional bit improves SQNR by ~6 dB.
 ### PyTorch Quantization
 
 ```python
+
 # quantization.py
 import torch
 import torch.quantization as quant
@@ -244,6 +245,7 @@ model_quantized = torch.quantization.convert(model_qat.eval())
 ### INT8 Calibration
 
 ```python
+
 # calibration.py
 import numpy as np
 from typing import List
@@ -261,6 +263,7 @@ class MinMaxCalibrator:
 
     def compute_scale_zero_point(self) -> tuple:
         """Compute quantization parameters"""
+
         # Symmetric quantization
         abs_max = max(abs(self.min_val), abs(self.max_val))
         scale = abs_max / 127.0
@@ -305,7 +308,7 @@ A randomly-initialized neural network contains a **sparse subnetwork** (the "win
 \exists \, m \in \{0,1\}^{|\theta|} : \mathcal{L}(f_{m \odot \theta_0}) \approx \mathcal{L}(f_\theta)
 \]
 
-where \( m \) is a binary mask and \( \theta_0 \) are the initial weights.
+where $m$ is a binary mask and $\theta_0$ are the initial weights.
 
 #### Importance Scoring
 
@@ -326,7 +329,7 @@ Pruning requires measuring weight importance. Common metrics include:
 \text{Importance}(w_i) = \frac{w_i^2}{2 \cdot [H^{-1}]_{ii}}
 \]
 
-where \( H \) is the Hessian matrix of the loss.
+where $H$ is the Hessian matrix of the loss.
 
 #### Sparsity Metrics
 
@@ -347,10 +350,10 @@ s_t = s_f + (s_i - s_f)\left(1 - \frac{t - t_0}{n\Delta t}\right)^3
 \]
 
 where:
-- \( s_t \) = sparsity at step \( t \)
-- \( s_i, s_f \) = initial and final sparsity
-- \( t_0 \) = pruning start step
-- \( n, \Delta t \) = pruning frequency parameters
+- $s_t$ = sparsity at step $t$
+- $s_i, s_f$ = initial and final sparsity
+- $t_0$ = pruning start step
+- $n, \Delta t$ = pruning frequency parameters
 
 ### Pruning Types
 
@@ -365,6 +368,7 @@ where:
 ### PyTorch Pruning
 
 ```python
+
 # pruning.py
 import torch
 import torch.nn.utils.prune as prune
@@ -423,6 +427,7 @@ def iterative_pruning(model, train_fn, final_sparsity=0.9, steps=10):
     sparsity_per_step = final_sparsity / steps
 
     for step in range(steps):
+
         # Prune
         current_sparsity += sparsity_per_step
         apply_unstructured_pruning(model, amount=sparsity_per_step)
@@ -445,18 +450,18 @@ Knowledge distillation transfers learned representations from a large "teacher" 
 
 #### Soft Targets and Temperature Scaling
 
-The key insight is that the teacher's soft probability distribution contains more information than hard labels. The **softmax with temperature** \( T \) is:
+The key insight is that the teacher's soft probability distribution contains more information than hard labels. The **softmax with temperature** $T$ is:
 
 \[
 p_i = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}
 \]
 
-where \( z_i \) are the logits (pre-softmax activations).
+where $z_i$ are the logits (pre-softmax activations).
 
 **Temperature effects:**
-- \( T = 1 \): Standard softmax (sharp distribution)
-- \( T > 1 \): Softer distribution, reveals "dark knowledge"
-- \( T \to \infty \): Approaches uniform distribution
+- $T = 1$: Standard softmax (sharp distribution)
+- $T > 1$: Softer distribution, reveals "dark knowledge"
+- $T \to \infty$: Approaches uniform distribution
 
 The soft probabilities encode relationships between classes (e.g., "3" is more similar to "8" than to "7").
 
@@ -481,7 +486,7 @@ The total loss combines hard and soft targets:
 where:
 - \( p^{(T)} \) = teacher's soft probabilities
 - \( p^{(S)} \) = student's soft probabilities
-- The \( T^2 \) factor compensates for the gradient magnitude reduction at high temperatures
+- The $T^2$ factor compensates for the gradient magnitude reduction at high temperatures
 
 #### Why Does Distillation Work?
 
@@ -513,6 +518,7 @@ where \( r(\cdot) \) is a regressor to match dimensions.
 ### Implementation
 
 ```python
+
 # distillation.py
 import torch
 import torch.nn as nn
@@ -536,6 +542,7 @@ class DistillationLoss(nn.Module):
         teacher_logits: torch.Tensor,
         labels: torch.Tensor
     ) -> torch.Tensor:
+
         # Hard label loss
         hard_loss = self.ce_loss(student_logits, labels)
 
@@ -602,21 +609,21 @@ Low-rank factorization exploits the fact that weight matrices in neural networks
 
 #### Singular Value Decomposition (SVD)
 
-Any matrix \( W \in \mathbb{R}^{m \times n} \) can be decomposed as:
+Any matrix $W \in \mathbb{R}^{m \times n}$ can be decomposed as:
 
 \[
 W = U \Sigma V^T = \sum_{i=1}^{r} \sigma_i u_i v_i^T
 \]
 
 where:
-- \( U \in \mathbb{R}^{m \times m} \) = left singular vectors (orthonormal)
-- \( \Sigma \in \mathbb{R}^{m \times n} \) = diagonal matrix of singular values \( \sigma_1 \geq \sigma_2 \geq \cdots \geq 0 \)
-- \( V \in \mathbb{R}^{n \times n} \) = right singular vectors (orthonormal)
+- $U \in \mathbb{R}^{m \times m}$ = left singular vectors (orthonormal)
+- $\Sigma \in \mathbb{R}^{m \times n}$ = diagonal matrix of singular values $\sigma_1 \geq \sigma_2 \geq \cdots \geq 0$
+- $V \in \mathbb{R}^{n \times n}$ = right singular vectors (orthonormal)
 - \( r = \text{rank}(W) \)
 
 #### Truncated SVD Approximation
 
-The **Eckart-Young theorem** states that the best rank-\( k \) approximation (in Frobenius norm) is:
+The **Eckart-Young theorem** states that the best rank-$k$ approximation (in Frobenius norm) is:
 
 \[
 \hat{W}_k = U_k \Sigma_k V_k^T = \sum_{i=1}^{k} \sigma_i u_i v_i^T
@@ -630,38 +637,39 @@ with approximation error:
 
 #### Parameter Reduction
 
-Original: \( m \times n \) parameters
+Original: $m \times n$ parameters
 
-After rank-\( k \) factorization: \( W \approx AB \) where \( A \in \mathbb{R}^{m \times k} \) and \( B \in \mathbb{R}^{k \times n} \)
+After rank-$k$ factorization: $W \approx AB$ where $A \in \mathbb{R}^{m \times k}$ and $B \in \mathbb{R}^{k \times n}$
 
 **Compression ratio:**
 \[
 \rho = \frac{mn}{k(m+n)} = \frac{mn}{km + kn}
 \]
 
-For compression, we need \( k < \frac{mn}{m+n} \).
+For compression, we need $k < \frac{mn}{m+n}$.
 
 #### Energy-based Rank Selection
 
-Choose rank \( k \) to preserve fraction \( \tau \) of the "energy":
+Choose rank $k$ to preserve fraction $\tau$ of the "energy":
 
 \[
 \frac{\sum_{i=1}^{k} \sigma_i^2}{\sum_{i=1}^{r} \sigma_i^2} \geq \tau
 \]
 
-Typically \( \tau = 0.99 \) preserves most information with significant compression.
+Typically $\tau = 0.99$ preserves most information with significant compression.
 
 #### Application to Convolutions
 
-For convolutional layers with kernel \( \mathcal{K} \in \mathbb{R}^{C_{out} \times C_{in} \times H \times W} \):
+For convolutional layers with kernel $\mathcal{K} \in \mathbb{R}^{C_{out} \times C_{in} \times H \times W}$:
 
 1. **Reshape** to 2D: \( W \in \mathbb{R}^{C_{out} \times (C_{in} \cdot H \cdot W)} \)
-2. **Apply SVD**: \( W \approx AB \)
+2. **Apply SVD**: $W \approx AB$
 3. **Replace** original conv with two convs: 1×1 conv (B) followed by 1×1 conv (A)
 
 ### Matrix Decomposition
 
 ```python
+
 # low_rank.py
 import torch
 import torch.nn as nn
@@ -676,6 +684,7 @@ class LowRankLinear(nn.Module):
         rank: int
     ):
         super().__init__()
+
         # W (out x in) ≈ A (out x rank) @ B (rank x in)
         self.A = nn.Linear(rank, out_features, bias=False)
         self.B = nn.Linear(in_features, rank, bias=True)
@@ -732,6 +741,7 @@ def estimate_rank(layer: nn.Linear, threshold: float = 0.99) -> int:
 ### Combined Approach
 
 ```python
+
 # compression_pipeline.py
 from dataclasses import dataclass
 from typing import Optional

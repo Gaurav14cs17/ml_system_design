@@ -733,6 +733,7 @@ alert_manager.register_rule(AlertRule(
 ### Alert Routing
 
 ```yaml
+
 # alertmanager.yml - Alert routing configuration
 route:
   receiver: 'default'
