@@ -58,7 +58,6 @@ Search and Ranking systems power the core functionality of modern tech productsâ
 
 ```
 +-----------------------------------------------------------------------------+
-
 |                          SEARCH & RANKING MASTERY PATH                       |
 +-----------------------------------------------------------------------------+
 |                                                                              |
