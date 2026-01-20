@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="bgChannels" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowChannels" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgChannels)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📺 YouTube Channels Quick Reference</text>
+  
+  <!-- Category Cards -->
+  <g transform="translate(50, 70)" filter="url(#shadowChannels)">
+    <rect width="220" height="90" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📐 Theory &amp; Math</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">3Blue1Brown</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">StatQuest, MIT OCW</text>
+  </g>
+  
+  <g transform="translate(290, 70)" filter="url(#shadowChannels)">
+    <rect width="220" height="90" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12 12 0 0" fill="#10b981"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🤖 ML Fundamentals</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Stanford Online</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Andrew Ng, Sentdex</text>
+  </g>
+  
+  <g transform="translate(530, 70)" filter="url(#shadowChannels)">
+    <rect width="220" height="90" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🧠 Deep Learning</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Andrej Karpathy</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Yannic Kilcher, Two Minute Papers</text>
+  </g>
+  
+  <g transform="translate(50, 175)" filter="url(#shadowChannels)">
+    <rect width="220" height="90" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🏗️ System Design</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">System Design Interview</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">ByteByteGo, Gaurav Sen</text>
+  </g>
+  
+  <g transform="translate(290, 175)" filter="url(#shadowChannels)">
+    <rect width="220" height="90" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12 12 0 0" fill="#ec4899"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🏭 Industry Insights</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Netflix Engineering</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Spotify, Amazon Science</text>
+  </g>
+  
+  <g transform="translate(530, 175)" filter="url(#shadowChannels)">
+    <rect width="220" height="90" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12 12 0 0" fill="#06b6d4"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📚 Research</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">ACM RecSys</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Weights &amp; Biases, DeepMind</text>
+  </g>
+  
+  <!-- Bottom tip -->
+  <g transform="translate(50, 290)" filter="url(#shadowChannels)">
+    <rect width="700" height="100" rx="14" fill="#334155"/>
+    <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fcd34d">💡 Pro Tip</text>
+    <text x="350" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Subscribe to industry engineering blogs for the latest production insights:</text>
+    <text x="350" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Netflix Tech Blog • Spotify Engineering • Uber Engineering • Pinterest Engineering</text>
+  </g>
+</svg>

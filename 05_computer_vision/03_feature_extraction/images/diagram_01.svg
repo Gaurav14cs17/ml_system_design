@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="420" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Harris Corner Detection</text>
+  
+  <!-- Three regions comparison -->
+  <g transform="translate(50, 70)">
+    <!-- Flat Region -->
+    <g transform="translate(0, 0)">
+      <text x="105" y="0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#64748b">FLAT REGION</text>
+      <text x="105" y="20" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(no change)</text>
+      
+      <rect x="0" y="35" width="210" height="140" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+      
+      <!-- Uniform gray area -->
+      <rect x="20" y="55" width="170" height="100" rx="6" fill="#475569"/>
+      
+      <!-- Detection window -->
+      <rect x="80" y="90" width="50" height="35" fill="none" stroke="#fbbf24" stroke-width="3" rx="4"/>
+      <text x="105" y="112" text-anchor="middle" font-family="Arial" font-size="10" fill="#fbbf24">window</text>
+      
+      <!-- Arrows showing no significant change -->
+      <line x1="105" y1="70" x2="105" y2="80" stroke="#64748b" stroke-width="2" marker-end="url(#arrowGray)"/>
+      <line x1="60" y1="105" x2="70" y2="105" stroke="#64748b" stroke-width="2"/>
+      <line x1="140" y1="105" x2="130" y2="105" stroke="#64748b" stroke-width="2"/>
+      
+      <text x="105" y="195" text-anchor="middle" font-family="Arial" font-size="12" fill="#64748b">λ₁ ≈ 0, λ₂ ≈ 0</text>
+    </g>
+    
+    <!-- Edge -->
+    <g transform="translate(240, 0)">
+      <text x="105" y="0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#3b82f6">EDGE</text>
+      <text x="105" y="20" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(1D change)</text>
+      
+      <rect x="0" y="35" width="210" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      
+      <!-- Left side (light) -->
+      <rect x="20" y="55" width="80" height="100" rx="6" fill="#64748b"/>
+      <!-- Gradient line -->
+      <line x1="105" y1="55" x2="105" y2="155" stroke="#1e293b" stroke-width="4"/>
+      <!-- Right side (dark) -->
+      <rect x="110" y="55" width="80" height="100" fill="#1e293b" stroke="#334155" rx="6"/>
+      
+      <!-- Detection window on edge -->
+      <rect x="80" y="90" width="50" height="35" fill="none" stroke="#fbbf24" stroke-width="3" rx="4"/>
+      
+      <!-- Arrow showing 1D change -->
+      <line x1="55" y1="105" x2="155" y2="105" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      
+      <text x="105" y="195" text-anchor="middle" font-family="Arial" font-size="12" fill="#3b82f6">λ₁ >> λ₂</text>
+    </g>
+    
+    <!-- Corner -->
+    <g transform="translate(480, 0)">
+      <text x="105" y="0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#22c55e">CORNER</text>
+      <text x="105" y="20" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(2D change)</text>
+      
+      <rect x="0" y="35" width="210" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+      
+      <!-- Four quadrants -->
+      <rect x="20" y="55" width="80" height="50" rx="6" fill="#64748b"/>
+      <rect x="110" y="55" width="80" height="50" fill="#475569" rx="6"/>
+      <rect x="20" y="105" width="80" height="50" fill="#334155" rx="6"/>
+      <rect x="110" y="105" width="80" height="50" fill="#1e293b" stroke="#334155" rx="6"/>
+      
+      <!-- Corner point -->
+      <circle cx="105" cy="105" r="6" fill="#22c55e"/>
+      
+      <!-- Detection window at corner -->
+      <rect x="80" y="82" width="50" height="45" fill="none" stroke="#fbbf24" stroke-width="3" rx="4"/>
+      
+      <!-- Arrows showing 2D change -->
+      <line x1="105" y1="65" x2="105" y2="145" stroke="#22c55e" stroke-width="2"/>
+      <line x1="60" y1="105" x2="150" y2="105" stroke="#22c55e" stroke-width="2"/>
+      
+      <text x="105" y="195" text-anchor="middle" font-family="Arial" font-size="12" fill="#22c55e">λ₁ ≈ λ₂ >> 0</text>
+    </g>
+  </g>
+  
+  <!-- Harris Response Formula -->
+  <g transform="translate(100, 300)">
+    <rect x="0" y="0" width="600" height="100" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c4b5fd">Harris Corner Response</text>
+    
+    <text x="300" y="60" text-anchor="middle" font-family="Arial" font-size="16" fill="#fbbf24">R = det(M) − k · trace(M)²</text>
+    
+    <text x="300" y="85" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">where M is the structure tensor (second moment matrix), k ≈ 0.04-0.06</text>
+  </g>
+</svg>

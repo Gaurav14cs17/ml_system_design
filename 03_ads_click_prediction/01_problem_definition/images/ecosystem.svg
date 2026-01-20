@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="advertiserGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="platformGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="publisherGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b"/>
+      <stop offset="100%" style="stop-color:#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a"/>
+      <stop offset="100%" style="stop-color:#fee140"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    Digital Advertising Ecosystem
+  </text>
+  
+  <!-- Flow arrows background -->
+  <path d="M160 200 Q300 120 400 200 Q500 280 640 200" stroke="#4a5568" stroke-width="40" fill="none" opacity="0.3"/>
+  
+  <!-- Advertiser -->
+  <g transform="translate(80, 140)">
+    <circle cx="60" cy="60" r="55" fill="url(#advertiserGrad)" filter="url(#glow)"/>
+    <text x="60" y="55" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="14" font-weight="bold">Advertiser</text>
+    <text x="60" y="72" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="10">💰 Budget</text>
+  </g>
+  
+  <!-- Platform (Center) -->
+  <g transform="translate(320, 120)">
+    <rect x="0" y="0" width="160" height="100" rx="15" fill="url(#platformGrad)" filter="url(#glow)"/>
+    <text x="80" y="40" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Ad Platform</text>
+    <text x="80" y="60" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="11">CTR Prediction</text>
+    <text x="80" y="78" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="11">🎯 Targeting</text>
+    <text x="80" y="93" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="10">⚡ Real-time</text>
+  </g>
+  
+  <!-- Publisher -->
+  <g transform="translate(560, 140)">
+    <circle cx="60" cy="60" r="55" fill="url(#publisherGrad)" filter="url(#glow)"/>
+    <text x="60" y="55" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Publisher</text>
+    <text x="60" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="10">📰 Content</text>
+  </g>
+  
+  <!-- User -->
+  <g transform="translate(560, 300)">
+    <circle cx="60" cy="60" r="55" fill="url(#userGrad)" filter="url(#glow)"/>
+    <text x="60" y="55" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">User</text>
+    <text x="60" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="10">👁️ Views and Clicks</text>
+  </g>
+  
+  <!-- Arrows with labels -->
+  <g>
+    <!-- Advertiser to Platform -->
+    <path d="M195 170 L320 170" stroke="#f5576c" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+    <rect x="210" y="145" width="90" height="20" rx="5" fill="#2d3748"/>
+    <text x="255" y="160" text-anchor="middle" fill="#f093fb" font-family="Arial" font-size="10">Ads + Budget</text>
+    
+    <!-- Platform to Publisher -->
+    <path d="M480 170 L560 170" stroke="#00f2fe" stroke-width="3" fill="none"/>
+    <rect x="488" y="145" width="60" height="20" rx="5" fill="#2d3748"/>
+    <text x="518" y="160" text-anchor="middle" fill="#4facfe" font-family="Arial" font-size="10">Ad Serve</text>
+    
+    <!-- Publisher to User -->
+    <path d="M620 255 L620 300" stroke="#38f9d7" stroke-width="3" fill="none"/>
+    <rect x="630" y="265" width="70" height="20" rx="5" fill="#2d3748"/>
+    <text x="665" y="280" text-anchor="middle" fill="#43e97b" font-family="Arial" font-size="10">Display Ad</text>
+    
+    <!-- User back to Platform -->
+    <path d="M560 360 Q400 400 400 220" stroke="#fee140" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+    <rect x="440" y="340" width="90" height="20" rx="5" fill="#2d3748"/>
+    <text x="485" y="355" text-anchor="middle" fill="#fa709a" font-family="Arial" font-size="10">Click Data</text>
+    
+    <!-- Platform back to Advertiser -->
+    <path d="M320 200 L195 200" stroke="#4facfe" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+    <rect x="210" y="205" width="90" height="20" rx="5" fill="#2d3748"/>
+    <text x="255" y="220" text-anchor="middle" fill="#4facfe" font-family="Arial" font-size="10">Analytics</text>
+  </g>
+  
+  <!-- Revenue Flow -->
+  <g transform="translate(50, 350)">
+    <rect x="0" y="0" width="700" height="100" rx="10" fill="#1a202c" stroke="#4a5568"/>
+    <text x="350" y="25" text-anchor="middle" fill="#a0aec0" font-family="Arial" font-size="14" font-weight="bold">💵 Revenue Flow</text>
+    
+    <!-- Money flow -->
+    <rect x="50" y="45" width="100" height="35" rx="5" fill="#2d3748" stroke="#f5576c"/>
+    <text x="100" y="67" text-anchor="middle" fill="#f093fb" font-family="Arial" font-size="11">Advertiser $$$</text>
+    
+    <path d="M150 62 L220 62" stroke="#fee140" stroke-width="2" fill="none" marker-end="url(#arrowYellow)"/>
+    
+    <rect x="220" y="45" width="120" height="35" rx="5" fill="#2d3748" stroke="#4facfe"/>
+    <text x="280" y="67" text-anchor="middle" fill="#4facfe" font-family="Arial" font-size="11">Platform Fee</text>
+    
+    <path d="M340 62 L410 62" stroke="#fee140" stroke-width="2" fill="none"/>
+    
+    <rect x="410" y="45" width="120" height="35" rx="5" fill="#2d3748" stroke="#43e97b"/>
+    <text x="470" y="67" text-anchor="middle" fill="#43e97b" font-family="Arial" font-size="11">Publisher Share</text>
+    
+    <path d="M530 62 L600 62" stroke="#fee140" stroke-width="2" fill="none"/>
+    
+    <rect x="600" y="45" width="80" height="35" rx="5" fill="#2d3748" stroke="#fa709a"/>
+    <text x="640" y="67" text-anchor="middle" fill="#fa709a" font-family="Arial" font-size="11">Value</text>
+  </g>
+</svg>
+

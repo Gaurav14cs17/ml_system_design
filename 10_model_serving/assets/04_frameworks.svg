@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <filter id="shadow4" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="450" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">ML Serving Frameworks</text>
+  
+  <!-- General Purpose -->
+  <g filter="url(#shadow4)">
+    <rect x="30" y="60" width="200" height="170" rx="12" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="130" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">🌐 General Purpose</text>
+    
+    <rect x="50" y="110" width="160" height="40" rx="8" fill="#0f172a" stroke="#42a5f5"/>
+    <text x="130" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1976d2">🌶️ Flask</text>
+    
+    <rect x="50" y="160" width="160" height="40" rx="8" fill="#0f172a" stroke="#42a5f5"/>
+    <text x="130" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1976d2">⚡ FastAPI</text>
+  </g>
+  
+  <!-- ML-Specialized -->
+  <g filter="url(#shadow4)">
+    <rect x="250" y="60" width="200" height="220" rx="12" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="350" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100">🧠 ML-Specialized</text>
+    
+    <rect x="270" y="110" width="160" height="40" rx="8" fill="#0f172a" stroke="#ffb74d"/>
+    <text x="350" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f57c00">TensorFlow Serving</text>
+    
+    <rect x="270" y="160" width="160" height="40" rx="8" fill="#0f172a" stroke="#ffb74d"/>
+    <text x="350" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f57c00">🔥 TorchServe</text>
+    
+    <rect x="270" y="210" width="160" height="40" rx="8" fill="#0f172a" stroke="#ffb74d"/>
+    <text x="350" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f57c00">🟢 NVIDIA Triton</text>
+  </g>
+  
+  <!-- Kubernetes Native -->
+  <g filter="url(#shadow4)">
+    <rect x="470" y="60" width="200" height="170" rx="12" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="570" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32">☸️ Kubernetes-Native</text>
+    
+    <rect x="490" y="110" width="160" height="40" rx="8" fill="#0f172a" stroke="#81c784"/>
+    <text x="570" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#388e3c">🔷 Seldon Core</text>
+    
+    <rect x="490" y="160" width="160" height="40" rx="8" fill="#0f172a" stroke="#81c784"/>
+    <text x="570" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#388e3c">📦 KServe</text>
+  </g>
+  
+  <!-- Framework Agnostic -->
+  <g filter="url(#shadow4)">
+    <rect x="690" y="60" width="180" height="170" rx="12" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+    <text x="780" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c2185b">🔧 Agnostic</text>
+    
+    <rect x="710" y="110" width="140" height="40" rx="8" fill="#0f172a" stroke="#f48fb1"/>
+    <text x="780" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#d81b60">🍱 BentoML</text>
+    
+    <rect x="710" y="160" width="140" height="40" rx="8" fill="#0f172a" stroke="#f48fb1"/>
+    <text x="780" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#d81b60">☀️ Ray Serve</text>
+  </g>
+  
+  <!-- Comparison Table -->
+  <g filter="url(#shadow4)">
+    <rect x="30" y="290" width="840" height="145" rx="10" fill="#0f172a" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- Header -->
+    <rect x="30" y="290" width="840" height="30" rx="10" fill="#1e293b"/>
+    <text x="100" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Framework</text>
+    <text x="220" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Async</text>
+    <text x="320" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Batching</text>
+    <text x="420" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">gRPC</text>
+    <text x="520" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Multi-FW</text>
+    <text x="620" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">GPU Opt</text>
+    <text x="720" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Learning</text>
+    <text x="820" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Best For</text>
+    
+    <!-- Flask -->
+    <text x="100" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Flask</text>
+    <text x="220" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">⚠️</text>
+    <text x="320" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">❌</text>
+    <text x="420" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">❌</text>
+    <text x="520" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="620" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">⚠️</text>
+    <text x="720" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4caf50">Easy</text>
+    <text x="820" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Prototyping</text>
+    
+    <!-- FastAPI -->
+    <text x="100" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">FastAPI</text>
+    <text x="220" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="320" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">❌</text>
+    <text x="420" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">❌</text>
+    <text x="520" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="620" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">⚠️</text>
+    <text x="720" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4caf50">Easy</text>
+    <text x="820" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Production APIs</text>
+    
+    <!-- Triton -->
+    <text x="100" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Triton</text>
+    <text x="220" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="320" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="420" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="520" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="620" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="720" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ff9800">Hard</text>
+    <text x="820" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">GPU Workloads</text>
+    
+    <!-- Seldon -->
+    <text x="100" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Seldon</text>
+    <text x="220" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="320" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">⚠️</text>
+    <text x="420" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="520" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">✅</text>
+    <text x="620" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f44336">⚠️</text>
+    <text x="720" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ff9800">Hard</text>
+    <text x="820" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">K8s MLOps</text>
+  </g>
+</svg>
+

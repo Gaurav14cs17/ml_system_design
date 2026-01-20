@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="toolsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#302b63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24243e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#toolsBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🛠️ MLOps Monitoring Tools Landscape
+  </text>
+  
+  <!-- Row 1: ML-Specific Monitoring -->
+  <rect x="30" y="70" width="840" height="70" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="50" y="100" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f5576c">🎯 ML-Specific Monitoring</text>
+  
+  <rect x="220" y="85" width="100" height="40" rx="8" fill="#f5576c"/>
+  <text x="270" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Evidently</text>
+  
+  <rect x="335" y="85" width="100" height="40" rx="8" fill="#667eea"/>
+  <text x="385" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">WhyLabs</text>
+  
+  <rect x="450" y="85" width="100" height="40" rx="8" fill="#4facfe"/>
+  <text x="500" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Arize</text>
+  
+  <rect x="565" y="85" width="100" height="40" rx="8" fill="#43e97b"/>
+  <text x="615" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Fiddler</text>
+  
+  <rect x="680" y="85" width="100" height="40" rx="8" fill="#ffd93d"/>
+  <text x="730" y="110" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">NannyML</text>
+  
+  <!-- Row 2: Data Quality -->
+  <rect x="30" y="155" width="840" height="70" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="50" y="185" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#43e97b">📊 Data Quality</text>
+  
+  <rect x="220" y="170" width="120" height="40" rx="8" fill="#43e97b"/>
+  <text x="280" y="195" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f8fafc">Great Expectations</text>
+  
+  <rect x="355" y="170" width="100" height="40" rx="8" fill="#4facfe"/>
+  <text x="405" y="195" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Soda</text>
+  
+  <rect x="470" y="170" width="100" height="40" rx="8" fill="#667eea"/>
+  <text x="520" y="195" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">dbt Tests</text>
+  
+  <rect x="585" y="170" width="100" height="40" rx="8" fill="#f5576c"/>
+  <text x="635" y="195" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Monte Carlo</text>
+  
+  <!-- Row 3: Observability -->
+  <rect x="30" y="240" width="840" height="70" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="50" y="270" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#4facfe">📝 Observability</text>
+  
+  <rect x="220" y="255" width="100" height="40" rx="8" fill="#ff6b6b"/>
+  <text x="270" y="280" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Prometheus</text>
+  
+  <rect x="335" y="255" width="100" height="40" rx="8" fill="#ffa502"/>
+  <text x="385" y="280" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Grafana</text>
+  
+  <rect x="450" y="255" width="100" height="40" rx="8" fill="#764ba2"/>
+  <text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">DataDog</text>
+  
+  <rect x="565" y="255" width="100" height="40" rx="8" fill="#00d9ff"/>
+  <text x="615" y="280" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">New Relic</text>
+  
+  <rect x="680" y="255" width="100" height="40" rx="8" fill="#a55eea"/>
+  <text x="730" y="280" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Jaeger</text>
+  
+  <!-- Row 4: Experiment Tracking -->
+  <rect x="30" y="325" width="840" height="70" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="50" y="355" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#ffd93d">🧪 Experiment Tracking</text>
+  
+  <rect x="220" y="340" width="100" height="40" rx="8" fill="#0194ff"/>
+  <text x="270" y="365" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">MLflow</text>
+  
+  <rect x="335" y="340" width="100" height="40" rx="8" fill="#ffbe0b"/>
+  <text x="385" y="365" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">W&amp;B</text>
+  
+  <rect x="450" y="340" width="100" height="40" rx="8" fill="#00c9ff"/>
+  <text x="500" y="365" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Neptune</text>
+  
+  <rect x="565" y="340" width="100" height="40" rx="8" fill="#eb5757"/>
+  <text x="615" y="365" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Comet</text>
+  
+  <!-- Row 5: Feature Stores -->
+  <rect x="30" y="410" width="840" height="70" rx="10" fill="#1a202c" opacity="0.8"/>
+  <text x="50" y="440" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#667eea">🗄️ Feature Stores</text>
+  
+  <rect x="220" y="425" width="100" height="40" rx="8" fill="#f093fb"/>
+  <text x="270" y="450" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Feast</text>
+  
+  <rect x="335" y="425" width="100" height="40" rx="8" fill="#667eea"/>
+  <text x="385" y="450" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Tecton</text>
+  
+  <rect x="450" y="425" width="100" height="40" rx="8" fill="#43e97b"/>
+  <text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Hopsworks</text>
+  
+  <rect x="565" y="425" width="100" height="40" rx="8" fill="#ff4b4b"/>
+  <text x="615" y="450" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#f8fafc">Databricks</text>
+  
+  <!-- Legend -->
+  <rect x="750" y="420" width="110" height="55" rx="5" fill="#2d3748"/>
+  <rect x="760" y="430" width="12" height="12" rx="2" fill="#43e97b"/>
+  <text x="778" y="440" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Open Source</text>
+  <rect x="760" y="450" width="12" height="12" rx="2" fill="#667eea"/>
+  <text x="778" y="460" font-family="Segoe UI, Arial" font-size="10" fill="#f8fafc">Commercial</text>
+</svg>
+

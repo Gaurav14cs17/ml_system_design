@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="serv1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fc5c7d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6a82fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serv2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5af19;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f12711;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serv3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b09b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#96c93d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow13" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="900" height="550" fill="#0d1117" rx="10"/>
+  
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">Model Serving Architecture</text>
+  
+  <!-- Request Flow -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="800" height="100" rx="15" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="400" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Request Flow</text>
+    
+    <!-- Components -->
+    <g transform="translate(30, 40)">
+      <rect x="0" y="0" width="90" height="45" rx="8" fill="url(#serv1Grad)"/>
+      <text x="45" y="28" text-anchor="middle" fill="#f8fafc" font-size="10">Client</text>
+    </g>
+    
+    <path d="M 130 62 L 160 62" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead13)"/>
+    
+    <g transform="translate(170, 40)">
+      <rect x="0" y="0" width="90" height="45" rx="8" fill="rgba(252,92,125,0.5)"/>
+      <text x="45" y="28" text-anchor="middle" fill="#f8fafc" font-size="10">Load Bal</text>
+    </g>
+    
+    <path d="M 270 62 L 300 62" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead13)"/>
+    
+    <g transform="translate(310, 40)">
+      <rect x="0" y="0" width="90" height="45" rx="8" fill="rgba(245,175,25,0.5)"/>
+      <text x="45" y="28" text-anchor="middle" fill="#f8fafc" font-size="10">Feature</text>
+    </g>
+    
+    <path d="M 410 62 L 440 62" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead13)"/>
+    
+    <g transform="translate(450, 40)">
+      <rect x="0" y="0" width="90" height="45" rx="8" fill="url(#serv2Grad)"/>
+      <text x="45" y="28" text-anchor="middle" fill="#f8fafc" font-size="10">Inference</text>
+    </g>
+    
+    <path d="M 550 62 L 580 62" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead13)"/>
+    
+    <g transform="translate(590, 40)">
+      <rect x="0" y="0" width="90" height="45" rx="8" fill="rgba(0,176,155,0.5)"/>
+      <text x="45" y="28" text-anchor="middle" fill="#f8fafc" font-size="10">Post-Proc</text>
+    </g>
+    
+    <path d="M 690 62 L 720 62" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead13)"/>
+    
+    <g transform="translate(730, 40)">
+      <rect x="0" y="0" width="50" height="45" rx="8" fill="url(#serv3Grad)"/>
+      <text x="25" y="28" text-anchor="middle" fill="#f8fafc" font-size="10">📤</text>
+    </g>
+  </g>
+  
+  <!-- Infrastructure Components -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="250" height="170" rx="15" fill="url(#serv1Grad)" filter="url(#shadow13)"/>
+    <text x="125" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">🗄️ Feature Store</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="220" height="110" rx="8" fill="rgba(255,255,255,0.2)"/>
+      
+      <rect x="10" y="10" width="95" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="57" y="25" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Online</text>
+      <text x="57" y="40" text-anchor="middle" fill="#f8fafc" font-size="8">Redis/DynamoDB</text>
+      
+      <rect x="115" y="10" width="95" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="162" y="25" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Offline</text>
+      <text x="162" y="40" text-anchor="middle" fill="#f8fafc" font-size="8">Hive/BigQuery</text>
+      
+      <text x="110" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Latency: andlt;5ms</text>
+      <text x="110" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">User, Item, Context features</text>
+    </g>
+  </g>
+  
+  <g transform="translate(325, 180)">
+    <rect x="0" y="0" width="250" height="170" rx="15" fill="url(#serv2Grad)" filter="url(#shadow13)"/>
+    <text x="125" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">🧠 Model Server</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="220" height="110" rx="8" fill="rgba(255,255,255,0.2)"/>
+      
+      <rect x="10" y="10" width="95" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="57" y="25" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">TensorRT</text>
+      <text x="57" y="40" text-anchor="middle" fill="#f8fafc" font-size="8">GPU optimized</text>
+      
+      <rect x="115" y="10" width="95" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="162" y="25" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">ONNX</text>
+      <text x="162" y="40" text-anchor="middle" fill="#f8fafc" font-size="8">Cross-platform</text>
+      
+      <text x="110" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Latency: andlt;10ms</text>
+      <text x="110" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Triton, TF Serving, Seldon</text>
+    </g>
+  </g>
+  
+  <g transform="translate(600, 180)">
+    <rect x="0" y="0" width="250" height="170" rx="15" fill="url(#serv3Grad)" filter="url(#shadow13)"/>
+    <text x="125" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">⚡ Caching Layer</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="220" height="110" rx="8" fill="rgba(255,255,255,0.2)"/>
+      
+      <rect x="10" y="10" width="95" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="57" y="25" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Pre-computed</text>
+      <text x="57" y="40" text-anchor="middle" fill="#f8fafc" font-size="8">Top-K per user</text>
+      
+      <rect x="115" y="10" width="95" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="162" y="25" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Request</text>
+      <text x="162" y="40" text-anchor="middle" fill="#f8fafc" font-size="8">LRU cache</text>
+      
+      <text x="110" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Cache hit: 80%+</text>
+      <text x="110" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Redis Cluster, Memcached</text>
+    </g>
+  </g>
+  
+  <!-- SLA Box -->
+  <g transform="translate(50, 370)">
+    <rect x="0" y="0" width="800" height="160" rx="15" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="400" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">📊 Production SLAs and Optimizations</text>
+    
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="160" height="95" rx="8" fill="rgba(252,92,125,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#fc5c7d" font-size="11" font-weight="bold">Latency</text>
+      <text x="80" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">P50: andlt;30ms</text>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">P99: andlt;100ms</text>
+      <text x="80" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">P99.9: andlt;200ms</text>
+      <text x="80" y="88" text-anchor="middle" fill="#aaaaaa" font-size="8">Timeout: 500ms</text>
+    </g>
+    
+    <g transform="translate(220, 45)">
+      <rect x="0" y="0" width="160" height="95" rx="8" fill="rgba(245,175,25,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#f5af19" font-size="11" font-weight="bold">Throughput</text>
+      <text x="80" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">10K QPS/node</text>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">Batch size: 128</text>
+      <text x="80" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">GPU utilization: 80%</text>
+      <text x="80" y="88" text-anchor="middle" fill="#aaaaaa" font-size="8">Auto-scaling enabled</text>
+    </g>
+    
+    <g transform="translate(410, 45)">
+      <rect x="0" y="0" width="160" height="95" rx="8" fill="rgba(0,176,155,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#00b09b" font-size="11" font-weight="bold">Reliability</text>
+      <text x="80" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Availability: 99.99%</text>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">Fallback: Popular</text>
+      <text x="80" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Circuit breaker</text>
+      <text x="80" y="88" text-anchor="middle" fill="#aaaaaa" font-size="8">Multi-region deploy</text>
+    </g>
+    
+    <g transform="translate(600, 45)">
+      <rect x="0" y="0" width="160" height="95" rx="8" fill="rgba(106,130,251,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#6a82fb" font-size="11" font-weight="bold">Optimizations</text>
+      <text x="80" y="40" text-anchor="middle" fill="#f8fafc" font-size="9">Model quantization</text>
+      <text x="80" y="55" text-anchor="middle" fill="#f8fafc" font-size="9">Feature caching</text>
+      <text x="80" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Async embedding</text>
+      <text x="80" y="88" text-anchor="middle" fill="#aaaaaa" font-size="8">Request batching</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead13" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>
+

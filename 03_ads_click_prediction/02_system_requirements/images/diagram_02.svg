@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="350" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🛡️ Fault Tolerance Design
+  </text>
+  
+  <!-- Table -->
+  <rect x="50" y="60" width="600" height="260" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="50" y="60" width="600" height="40" rx="12 12 0 0" fill="#3b82f6"/>
+  <text x="200" y="85" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14" font-weight="bold">Failure Scenario</text>
+  <text x="500" y="85" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14" font-weight="bold">Impact &amp; Recovery</text>
+  
+  <!-- Rows -->
+  <line x1="350" y1="100" x2="350" y2="320" stroke="#475569" stroke-width="1"/>
+  
+  <g fill="#f8fafc" font-family="Arial" font-size="13">
+    <text x="70" y="130">Single Node Failure</text>
+    <text x="370" y="130" fill="#10b981">✓ Continue serving, no impact</text>
+    
+    <line x1="50" y1="150" x2="650" y2="150" stroke="#475569" stroke-width="1"/>
+    
+    <text x="70" y="180">Single Zone Failure</text>
+    <text x="370" y="180" fill="#10b981">✓ Continue, andlt;5% capacity loss</text>
+    
+    <line x1="50" y1="200" x2="650" y2="200" stroke="#475569" stroke-width="1"/>
+    
+    <text x="70" y="230">Single Region Failure</text>
+    <text x="370" y="230" fill="#f59e0b">⚡ Failover andlt;1 min</text>
+    
+    <line x1="50" y1="250" x2="650" y2="250" stroke="#475569" stroke-width="1"/>
+    
+    <text x="70" y="280">Feature Store Failure</text>
+    <text x="370" y="280" fill="#f59e0b">⚡ Graceful degradation</text>
+    
+    <line x1="50" y1="300" x2="650" y2="300" stroke="#475569" stroke-width="1"/>
+    
+    <text x="70" y="330">Model Server Failure</text>
+    <text x="370" y="330" fill="#10b981">✓ Auto-restart + load balance</text>
+  </g>
+</svg>

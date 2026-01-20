@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="380" fill="#0a0a14"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    📱 Case Study: Digital Payments / Fintech
+  </text>
+  
+  <!-- Challenge -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="220" height="140" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="160" y="90" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Challenge</text>
+    <text x="70" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• P2P payment abuse</text>
+    <text x="70" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Instant transfers (no chargeback)</text>
+    <text x="70" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Synthetic identity fraud</text>
+    <text x="70" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Fraud ring networks</text>
+  </g>
+  
+  <!-- Solution -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="60" width="220" height="140" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="90" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🛠️ Solution</text>
+    <text x="310" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Graph Neural Network</text>
+    <text x="310" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Entity resolution</text>
+    <text x="310" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Velocity network analysis</text>
+    <text x="310" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Multi-model ensemble</text>
+  </g>
+  
+  <!-- Results -->
+  <g filter="url(#shadow)">
+    <rect x="530" y="60" width="220" height="140" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="640" y="90" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📈 Results</text>
+    <text x="550" y="120" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">Ring detection: +300%</text>
+    <text x="550" y="140" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">Synthetic ID: 95% catch rate</text>
+    <text x="550" y="160" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">$12M prevented (6 months)</text>
+    <text x="550" y="180" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">Onboarding fraud ↓70%</text>
+  </g>
+  
+  <!-- Key Learnings -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="220" width="700" height="140" rx="12" fill="#0f1a2e" stroke="#22c55e" stroke-width="2"/>
+    <text x="400" y="250" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      💡 Key Learnings
+    </text>
+    
+    <text x="80" y="280" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      1. Graph is essential - transaction-level ML misses coordinated attacks
+    </text>
+    <text x="80" y="305" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      2. Entity linking first - connect accounts before scoring
+    </text>
+    <text x="80" y="330" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      3. Async graph analysis - can't wait for GNN in real-time, use for post-txn
+    </text>
+    <text x="80" y="350" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">
+      Architecture: Real-time XGBoost + Async GNN for network scoring
+    </text>
+  </g>
+</svg>

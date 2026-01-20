@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320">
+  <defs>
+    <linearGradient id="memGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">💾 Memory Budget (16GB Server)</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="75" y="55" width="600" height="230" rx="16" fill="#1e293b"/>
+    
+    <!-- Memory bar visualization -->
+    <g transform="translate(100, 80)">
+      <!-- Total bar background -->
+      <rect x="0" y="0" width="550" height="40" rx="6" fill="#334155"/>
+      
+      <!-- Model: 4GB (25%) -->
+      <rect x="0" y="0" width="137" height="40" rx="6 0 0 6" fill="#ef4444"/>
+      <text x="68" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Model 4GB</text>
+      
+      <!-- Framework: 3GB (18.75%) -->
+      <rect x="137" y="0" width="103" height="40" fill="#f59e0b"/>
+      <text x="188" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Framework 3GB</text>
+      
+      <!-- Batch: 2GB (12.5%) -->
+      <rect x="240" y="0" width="69" height="40" fill="#10b981"/>
+      <text x="274" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Batch 2GB</text>
+      
+      <!-- Cache: 2GB (12.5%) -->
+      <rect x="309" y="0" width="69" height="40" fill="#3b82f6"/>
+      <text x="343" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Cache 2GB</text>
+      
+      <!-- OS: 1GB (6.25%) -->
+      <rect x="378" y="0" width="34" height="40" fill="#8b5cf6"/>
+      <text x="395" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">OS</text>
+      
+      <!-- Headroom: 4GB (25%) -->
+      <rect x="412" y="0" width="138" height="40" rx="0 6 6 0" fill="#475569" stroke="#6ee7b7" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="481" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Headroom 4GB</text>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(100, 145)">
+      <rect x="0" y="0" width="550" height="80" rx="8" fill="#334155"/>
+      
+      <g transform="translate(20, 20)">
+        <rect x="0" y="0" width="15" height="15" rx="3" fill="#ef4444"/>
+        <text x="25" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Model weights</text>
+        
+        <rect x="130" y="0" width="15" height="15" rx="3" fill="#f59e0b"/>
+        <text x="155" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">PyTorch/TF</text>
+        
+        <rect x="250" y="0" width="15" height="15" rx="3" fill="#10b981"/>
+        <text x="275" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Input batches</text>
+        
+        <rect x="370" y="0" width="15" height="15" rx="3" fill="#3b82f6"/>
+        <text x="395" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Response cache</text>
+      </g>
+      
+      <g transform="translate(20, 50)">
+        <rect x="0" y="0" width="15" height="15" rx="3" fill="#8b5cf6"/>
+        <text x="25" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">System overhead</text>
+        
+        <rect x="130" y="0" width="15" height="15" rx="3" fill="#475569" stroke="#6ee7b7" stroke-width="1"/>
+        <text x="155" y="12" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Safety margin (required!)</text>
+      </g>
+    </g>
+    
+    <!-- Warning -->
+    <rect x="100" y="240" width="550" height="30" rx="6" fill="#450a0a"/>
+    <text x="375" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">⚠️ OOM Risk: Large batches + concurrent requests can exhaust headroom</text>
+  </g>
+</svg>

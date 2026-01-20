@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">FACE EMBEDDING ARCHITECTURES</text>
+  
+  <g transform="translate(50, 80)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">FaceNet</text>
+    <text x="110" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Triplet Loss</text>
+    <rect x="25" y="65" width="40" height="40" rx="4" fill="#22c55e" opacity="0.5"/>
+    <text x="45" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">A</text>
+    <rect x="90" y="65" width="40" height="40" rx="4" fill="#22c55e" opacity="0.5"/>
+    <text x="110" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">P</text>
+    <rect x="155" y="65" width="40" height="40" rx="4" fill="#ef4444" opacity="0.5"/>
+    <text x="175" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">N</text>
+    <text x="110" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">||A-P|| + margin &lt; ||A-N||</text>
+    <text x="110" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">128-d embedding</text>
+  </g>
+  
+  <g transform="translate(290, 80)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">ArcFace</text>
+    <text x="110" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Additive Angular Margin</text>
+    <circle cx="110" cy="90" r="30" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="110" y1="90" x2="130" y2="70" stroke="#22c55e" stroke-width="2"/>
+    <line x1="110" y1="90" x2="140" y2="95" stroke="#ef4444" stroke-width="2"/>
+    <text x="110" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fef3c7">cos(θ + m) penalty</text>
+    <text x="110" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">State-of-the-art</text>
+  </g>
+  
+  <g transform="translate(530, 80)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">CosFace</text>
+    <text x="110" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Large Margin Cosine Loss</text>
+    <text x="110" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">cos(θ) - m</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">Cosine margin penalty</text>
+    <text x="110" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Similar to ArcFace</text>
+  </g>
+  
+  <g transform="translate(150, 270)">
+    <rect width="500" height="100" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a78bfa">Embedding Space Properties</text>
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Same person: embeddings close together</text>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Different people: embeddings far apart</text>
+    <text x="280" y="55" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Normalized to unit hypersphere</text>
+    <text x="280" y="75" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Cosine similarity for matching</text>
+  </g>
+</svg>

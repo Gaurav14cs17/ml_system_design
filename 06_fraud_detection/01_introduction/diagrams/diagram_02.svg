@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450">
+  <defs>
+    <linearGradient id="cnpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    <linearGradient id="cpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="mobileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="wireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">💳 Payment Fraud Categories</text>
+  
+  <!-- CNP Fraud -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="60" width="335" height="170" rx="12" fill="#0f172a"/>
+    <rect x="30" y="60" width="335" height="45" rx="12 12 0 0" fill="url(#cnpGrad)"/>
+    <text x="55" y="88" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">🛒</text>
+    <text x="80" y="90" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Card-Not-Present (CNP) Fraud</text>
+    
+    <g transform="translate(50, 120)">
+      <circle cx="0" cy="0" r="5" fill="#fecaca"/>
+      <text x="15" y="5" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Stolen card details used online</text>
+      <circle cx="0" cy="28" r="5" fill="#fecaca"/>
+      <text x="15" y="33" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Account takeover for purchases</text>
+      <circle cx="0" cy="56" r="5" fill="#fecaca"/>
+      <text x="15" y="61" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Synthetic identity fraud</text>
+    </g>
+    
+    <rect x="280" y="195" width="70" height="25" rx="12" fill="#450a0a"/>
+    <text x="315" y="212" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#dc2626">HIGH RISK</text>
+  </g>
+  
+  <!-- Card Present Fraud -->
+  <g filter="url(#shadow)">
+    <rect x="385" y="60" width="335" height="170" rx="12" fill="#0f172a"/>
+    <rect x="385" y="60" width="335" height="45" rx="12 12 0 0" fill="url(#cpGrad)"/>
+    <text x="410" y="88" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">💳</text>
+    <text x="435" y="90" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Card-Present Fraud</text>
+    
+    <g transform="translate(405, 120)">
+      <circle cx="0" cy="0" r="5" fill="#ddd6fe"/>
+      <text x="15" y="5" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Counterfeit cards (skimming)</text>
+      <circle cx="0" cy="28" r="5" fill="#ddd6fe"/>
+      <text x="15" y="33" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Lost/stolen physical cards</text>
+      <circle cx="0" cy="56" r="5" fill="#ddd6fe"/>
+      <text x="15" y="61" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Card-not-received fraud</text>
+    </g>
+    
+    <rect x="635" y="195" width="70" height="25" rx="12" fill="#ede9fe"/>
+    <text x="670" y="212" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#7c3aed">MEDIUM</text>
+  </g>
+  
+  <!-- Mobile Payment Fraud -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="250" width="335" height="170" rx="12" fill="#0f172a"/>
+    <rect x="30" y="250" width="335" height="45" rx="12 12 0 0" fill="url(#mobileGrad)"/>
+    <text x="55" y="278" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">📱</text>
+    <text x="80" y="280" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Mobile Payment Fraud</text>
+    
+    <g transform="translate(50, 310)">
+      <circle cx="0" cy="0" r="5" fill="#bfdbfe"/>
+      <text x="15" y="5" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Compromised mobile wallets</text>
+      <circle cx="0" cy="28" r="5" fill="#bfdbfe"/>
+      <text x="15" y="33" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">SIM swapping attacks</text>
+      <circle cx="0" cy="56" r="5" fill="#bfdbfe"/>
+      <text x="15" y="61" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Malicious apps</text>
+    </g>
+    
+    <rect x="280" y="385" width="70" height="25" rx="12" fill="#dbeafe"/>
+    <text x="315" y="402" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">GROWING</text>
+  </g>
+  
+  <!-- Wire/ACH Fraud -->
+  <g filter="url(#shadow)">
+    <rect x="385" y="250" width="335" height="170" rx="12" fill="#0f172a"/>
+    <rect x="385" y="250" width="335" height="45" rx="12 12 0 0" fill="url(#wireGrad)"/>
+    <text x="410" y="278" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">🏦</text>
+    <text x="435" y="280" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Wire/ACH Fraud</text>
+    
+    <g transform="translate(405, 310)">
+      <circle cx="0" cy="0" r="5" fill="#a7f3d0"/>
+      <text x="15" y="5" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Business email compromise (BEC)</text>
+      <circle cx="0" cy="28" r="5" fill="#a7f3d0"/>
+      <text x="15" y="33" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Unauthorized wire transfers</text>
+      <circle cx="0" cy="56" r="5" fill="#a7f3d0"/>
+      <text x="15" y="61" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Payroll diversion</text>
+    </g>
+    
+    <rect x="635" y="385" width="70" height="25" rx="12" fill="#d1fae5"/>
+    <text x="670" y="402" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#059669">HIGH $$$</text>
+  </g>
+</svg>

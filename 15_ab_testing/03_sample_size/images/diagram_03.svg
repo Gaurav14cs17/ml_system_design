@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='556' height='326' viewBox='0 0 556 326'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Sample Sizes for Common Scenarios (α=0.05, Power=80%, 50/50 split):
+
+┌─────────────────┬────────────┬────────────────────────────────┐
+│ Baseline Rate   │    MDE     │  Sample Size Per Group         │
+├─────────────────┼────────────┼────────────────────────────────┤
+│      1%         │    10%     │           300,000              │
+│      1%         │    20%     │            75,000              │
+│      5%         │     5%     │           125,000              │
+│      5%         │    10%     │            32,000              │
+│     10%         │     5%     │            63,000              │
+│     10%         │    10%     │            16,000              │
+│     10%         │    20%     │             4,000              │
+│     20%         │     5%     │            50,000              │
+│     20%         │    10%     │            13,000              │
+│     50%         │     5%     │            31,500              │
+│     50%         │    10%     │             8,000              │
+└─────────────────┴────────────┴────────────────────────────────┘
+  </text>
+</svg>

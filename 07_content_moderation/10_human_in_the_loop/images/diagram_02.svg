@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="routingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="400" fill="url(#routingBg)"/>
+  
+  <text x="400" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🔀 Confidence-Based Routing</text>
+  
+  <!-- Content Input -->
+  <g transform="translate(325, 55)">
+    <rect width="150" height="45" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="75" y="28" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📄 Content Input</text>
+  </g>
+  
+  <path d="M 400 100 L 400 125" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- ML Classifier -->
+  <g transform="translate(300, 130)">
+    <rect width="200" height="50" rx="10" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧠 ML Classifier</text>
+  </g>
+  
+  <!-- Branches -->
+  <path d="M 400 180 L 400 200 L 150 200 L 150 230" stroke="#64748b" stroke-width="2"/>
+  <path d="M 400 180 L 400 230" stroke="#64748b" stroke-width="2"/>
+  <path d="M 400 180 L 400 200 L 650 200 L 650 230" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- High Conf Safe -->
+  <g transform="translate(50, 235)">
+    <rect width="200" height="70" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✅ High Confidence Safe</text>
+    <text x="100" y="45" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Score andlt; 0.3</text>
+    <text x="100" y="60" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">~90% of content</text>
+  </g>
+  
+  <!-- Uncertain -->
+  <g transform="translate(300, 235)">
+    <rect width="200" height="70" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="11" font-weight="bold">⚠️ Uncertain Zone</text>
+    <text x="100" y="45" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="12" font-weight="bold">0.3 - 0.7</text>
+    <text x="100" y="60" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">~5% of content</text>
+  </g>
+  
+  <!-- High Conf Violation -->
+  <g transform="translate(550, 235)">
+    <rect width="200" height="70" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🚫 High Conf Violation</text>
+    <text x="100" y="45" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Score andgt; 0.7</text>
+    <text x="100" y="60" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">~5% of content</text>
+  </g>
+  
+  <!-- Actions -->
+  <path d="M 150 305 L 150 335" stroke="#22c55e" stroke-width="2"/>
+  <path d="M 400 305 L 400 335" stroke="#f97316" stroke-width="2"/>
+  <path d="M 650 305 L 650 335" stroke="#ef4444" stroke-width="2"/>
+  
+  <g transform="translate(75, 340)">
+    <rect width="150" height="45" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="75" y="28" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">✓ Allow</text>
+  </g>
+  
+  <g transform="translate(325, 340)">
+    <rect width="150" height="45" rx="8" fill="#713f12" stroke="#f97316" stroke-width="2"/>
+    <text x="75" y="28" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">👤 Human Review</text>
+  </g>
+  
+  <g transform="translate(575, 340)">
+    <rect width="150" height="45" rx="8" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+    <text x="75" y="28" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🛑 Auto Action</text>
+  </g>
+</svg>

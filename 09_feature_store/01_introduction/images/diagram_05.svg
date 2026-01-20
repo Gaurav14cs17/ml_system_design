@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgAfter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowAfter" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowAfter" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgAfter)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">After Feature Store: Order</text>
+  
+  <!-- Data Sources -->
+  <g filter="url(#shadowAfter)">
+    <rect x="50" y="130" width="100" height="40" rx="8" fill="#3b82f6"/>
+    <text x="100" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">PostgreSQL</text>
+  </g>
+  <g filter="url(#shadowAfter)">
+    <rect x="50" y="180" width="100" height="40" rx="8" fill="#3b82f6"/>
+    <text x="100" y="205" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">S3 Logs</text>
+  </g>
+  <g filter="url(#shadowAfter)">
+    <rect x="50" y="230" width="100" height="40" rx="8" fill="#3b82f6"/>
+    <text x="100" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">Kafka</text>
+  </g>
+  
+  <!-- Clean arrows to Feature Store -->
+  <path d="M155 150 L220 180" stroke="#10b981" stroke-width="2" marker-end="url(#arrowAfter)"/>
+  <path d="M155 200 L220 200" stroke="#10b981" stroke-width="2" marker-end="url(#arrowAfter)"/>
+  <path d="M155 250 L220 220" stroke="#10b981" stroke-width="2" marker-end="url(#arrowAfter)"/>
+  
+  <!-- Feature Store -->
+  <g filter="url(#shadowAfter)">
+    <rect x="230" y="90" width="300" height="220" rx="16" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+    <rect x="230" y="90" width="300" height="50" rx="16" fill="#059669"/>
+    <rect x="230" y="128" width="300" height="12" fill="#059669"/>
+    <text x="380" y="123" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🗄️ Feature Store</text>
+    
+    <rect x="250" y="155" width="130" height="35" rx="6" fill="#064e3b"/>
+    <text x="315" y="177" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">📋 Registry</text>
+    
+    <rect x="390" y="155" width="130" height="35" rx="6" fill="#064e3b"/>
+    <text x="455" y="177" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">⚙️ Transform</text>
+    
+    <rect x="250" y="200" width="130" height="35" rx="6" fill="#064e3b"/>
+    <text x="315" y="222" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">📚 Offline Store</text>
+    
+    <rect x="390" y="200" width="130" height="35" rx="6" fill="#064e3b"/>
+    <text x="455" y="222" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">⚡ Online Store</text>
+    
+    <rect x="250" y="250" width="270" height="45" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+    <text x="385" y="277" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Unified Feature Access API</text>
+  </g>
+  
+  <!-- Clean arrows from Feature Store -->
+  <path d="M535 170 L620 140" stroke="#10b981" stroke-width="2" marker-end="url(#arrowAfter)"/>
+  <path d="M535 240 L620 260" stroke="#10b981" stroke-width="2" marker-end="url(#arrowAfter)"/>
+  
+  <!-- Teams/Models -->
+  <g filter="url(#shadowAfter)">
+    <rect x="630" y="105" width="120" height="80" rx="10" fill="#8b5cf6"/>
+    <text x="690" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">Team A</text>
+    <text x="690" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Model A</text>
+    <text x="690" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">Training + Serving</text>
+  </g>
+  
+  <g filter="url(#shadowAfter)">
+    <rect x="630" y="215" width="120" height="80" rx="10" fill="#8b5cf6"/>
+    <text x="690" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f8fafc">Team B</text>
+    <text x="690" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Model B</text>
+    <text x="690" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa">Training + Serving</text>
+  </g>
+  
+  <!-- Benefits callout -->
+  <rect x="760" y="100" width="130" height="200" rx="8" fill="#064e3b" filter="url(#shadowAfter)"/>
+  <text x="825" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#34d399">Benefits:</text>
+  <text x="775" y="150" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Single source</text>
+  <text x="775" y="170" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Feature reuse</text>
+  <text x="775" y="190" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Consistency</text>
+  <text x="775" y="210" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Discovery</text>
+  <text x="775" y="230" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Time-travel</text>
+  <text x="775" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Monitoring</text>
+  <text x="775" y="270" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">✓ Governance</text>
+</svg>

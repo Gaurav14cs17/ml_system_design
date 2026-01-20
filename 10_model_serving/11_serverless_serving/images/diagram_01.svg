@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="coldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="warmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🥶 Cold Start vs Warm Start</text>
+  
+  <!-- Cold Start -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="70" width="370" height="300" rx="16" fill="#1e293b"/>
+    <rect x="40" y="70" width="370" height="50" rx="16 16 0 0" fill="url(#coldGrad)"/>
+    <text x="225" y="103" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🥶 Cold Start</text>
+    
+    <!-- Timeline -->
+    <g transform="translate(60, 140)">
+      <line x1="0" y1="100" x2="330" y2="100" stroke="#475569" stroke-width="2"/>
+      
+      <!-- Container init -->
+      <rect x="0" y="60" width="100" height="35" rx="6" fill="#ef4444"/>
+      <text x="50" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Container Init</text>
+      <text x="50" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">~500ms</text>
+      
+      <!-- Runtime init -->
+      <rect x="105" y="60" width="80" height="35" rx="6" fill="#f59e0b"/>
+      <text x="145" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Runtime</text>
+      <text x="145" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">~200ms</text>
+      
+      <!-- Model load -->
+      <rect x="190" y="60" width="90" height="35" rx="6" fill="#8b5cf6"/>
+      <text x="235" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Model</text>
+      <text x="235" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Load</text>
+      <text x="235" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">~2-30s!</text>
+      
+      <!-- Inference -->
+      <rect x="285" y="60" width="45" height="35" rx="6" fill="#10b981"/>
+      <text x="307" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Infer</text>
+      <text x="307" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">~50ms</text>
+    </g>
+    
+    <!-- Total time -->
+    <rect x="60" y="280" width="330" height="35" rx="8" fill="#450a0a"/>
+    <text x="225" y="303" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fca5a5">Total: 3-30+ seconds</text>
+    
+    <text x="225" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f87171">❌ Unacceptable for real-time serving</text>
+  </g>
+  
+  <!-- Warm Start -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="70" width="370" height="300" rx="16" fill="#1e293b"/>
+    <rect x="440" y="70" width="370" height="50" rx="16 16 0 0" fill="url(#warmGrad)"/>
+    <text x="625" y="103" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🔥 Warm Start</text>
+    
+    <!-- Timeline -->
+    <g transform="translate(460, 140)">
+      <line x1="0" y1="100" x2="330" y2="100" stroke="#475569" stroke-width="2"/>
+      
+      <!-- Pre-warmed container -->
+      <rect x="0" y="60" width="280" height="35" rx="6" fill="#334155" stroke="#10b981" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="140" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Already initialized (pre-warmed)</text>
+      
+      <!-- Inference only -->
+      <rect x="285" y="60" width="45" height="35" rx="6" fill="#10b981"/>
+      <text x="307" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Infer</text>
+      <text x="307" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">~50ms</text>
+    </g>
+    
+    <!-- Total time -->
+    <rect x="460" y="280" width="330" height="35" rx="8" fill="#064e3b"/>
+    <text x="625" y="303" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Total: ~50-100ms</text>
+    
+    <text x="625" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Acceptable for real-time serving</text>
+  </g>
+  
+  <!-- Mitigation strategies -->
+  <text x="425" y="395" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Mitigations: Provisioned concurrency, keep-warm pings, smaller models, lazy loading</text>
+</svg>

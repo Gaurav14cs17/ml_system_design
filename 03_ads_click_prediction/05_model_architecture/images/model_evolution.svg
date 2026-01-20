@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="50%" style="stop-color:#764ba2"/>
+      <stop offset="100%" style="stop-color:#f093fb"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="900" height="500" fill="url(#bgGrad)"/>
+  
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    CTR Model Evolution Timeline
+  </text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="130" x2="800" y2="130" stroke="url(#timelineGrad)" stroke-width="4"/>
+  
+  <!-- Era labels -->
+  <g font-family="Arial" font-size="14">
+    <text x="200" y="100" text-anchor="middle" fill="#94a3b8">Classical ML</text>
+    <text x="450" y="100" text-anchor="middle" fill="#94a3b8">Deep Learning</text>
+    <text x="700" y="100" text-anchor="middle" fill="#94a3b8">Industrial Scale</text>
+  </g>
+  
+  <!-- 2010 -->
+  <g transform="translate(120, 130)">
+    <circle cx="0" cy="0" r="15" fill="#3b82f6"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12" font-weight="bold">2010</text>
+    <rect x="-60" y="30" width="120" height="100" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="0" y="60" text-anchor="middle" fill="#60a5fa" font-family="Arial" font-size="14" font-weight="bold">LR</text>
+    <text x="0" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">Logistic Regression</text>
+    <text x="0" y="105" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">AUC: 0.70</text>
+    <text x="0" y="120" text-anchor="middle" fill="#10b981" font-family="Arial" font-size="10">andlt;1ms</text>
+  </g>
+  
+  <!-- 2014 -->
+  <g transform="translate(280, 130)">
+    <circle cx="0" cy="0" r="15" fill="#10b981"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12" font-weight="bold">2014</text>
+    <rect x="-60" y="30" width="120" height="100" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="0" y="60" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">GBDT+LR</text>
+    <text x="0" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">Feature Engineering</text>
+    <text x="0" y="105" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">AUC: 0.73</text>
+    <text x="0" y="120" text-anchor="middle" fill="#10b981" font-family="Arial" font-size="10">~2ms</text>
+  </g>
+  
+  <!-- 2016 -->
+  <g transform="translate(450, 130)">
+    <circle cx="0" cy="0" r="18" fill="#8b5cf6"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12" font-weight="bold">2016</text>
+    <rect x="-70" y="30" width="140" height="120" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="3"/>
+    <text x="0" y="60" text-anchor="middle" fill="#a78bfa" font-family="Arial" font-size="16" font-weight="bold">Wide &amp; Deep</text>
+    <text x="0" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">Memorization +</text>
+    <text x="0" y="100" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">Generalization</text>
+    <text x="0" y="120" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">AUC: 0.77</text>
+    <text x="0" y="140" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="10">~5ms</text>
+  </g>
+  
+  <!-- 2017 -->
+  <g transform="translate(620, 130)">
+    <circle cx="0" cy="0" r="15" fill="#f59e0b"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12" font-weight="bold">2017</text>
+    <rect x="-60" y="30" width="120" height="100" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="0" y="60" text-anchor="middle" fill="#fbbf24" font-family="Arial" font-size="14" font-weight="bold">DCN</text>
+    <text x="0" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">Cross Network</text>
+    <text x="0" y="105" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">AUC: 0.78</text>
+    <text x="0" y="120" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="10">~5ms</text>
+  </g>
+  
+  <!-- 2019 -->
+  <g transform="translate(780, 130)">
+    <circle cx="0" cy="0" r="18" fill="#ec4899"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12" font-weight="bold">2019+</text>
+    <rect x="-70" y="30" width="140" height="120" rx="10" fill="#1e293b" stroke="#ec4899" stroke-width="3"/>
+    <text x="0" y="60" text-anchor="middle" fill="#f472b6" font-family="Arial" font-size="16" font-weight="bold">DLRM / DIN</text>
+    <text x="0" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">Large Embeddings</text>
+    <text x="0" y="100" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="10">+ Attention</text>
+    <text x="0" y="120" text-anchor="middle" fill="#10b981" font-family="Arial" font-size="10">AUC: 0.80</text>
+    <text x="0" y="140" text-anchor="middle" fill="#ef4444" font-family="Arial" font-size="10">~10ms</text>
+  </g>
+  
+  <!-- Key insight -->
+  <rect x="150" y="320" width="600" height="150" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="355" text-anchor="middle" fill="#a5b4fc" font-family="Arial" font-size="16" font-weight="bold">Key Insights</text>
+  
+  <g font-family="Arial" font-size="12" fill="#94a3b8">
+    <text x="180" y="390">• <tspan fill="#10b981">Wide</tspan> = Memorization (cross-product features)</text>
+    <text x="180" y="415">• <tspan fill="#8b5cf6">Deep</tspan> = Generalization (learned embeddings)</text>
+    <text x="180" y="440">• <tspan fill="#f59e0b">Trade-off</tspan>: Higher AUC ↔ Higher Latency</text>
+    <text x="500" y="390">• Production: Wide &amp; Deep or DCN</text>
+    <text x="500" y="415">• At Scale: DLRM with optimizations</text>
+    <text x="500" y="440">• Always: Quantization + Batching</text>
+  </g>
+</svg>

@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bgGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="week1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="week2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="week3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="week4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="week5Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow10" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow10" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 L4,6 Z" fill="#4ade80"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad10)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">🎯 Learning Path: Mastering Recommendation Systems</text>
+  <text x="450" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#94a3b8">A structured roadmap from beginner to production-ready</text>
+  
+  <!-- Week 1-2: Fundamentals -->
+  <g transform="translate(50, 100)" filter="url(#shadow10)">
+    <rect width="380" height="150" rx="14" fill="#1e293b"/>
+    <rect width="380" height="45" rx="14 14 0 0" fill="url(#week1Grad)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">📚 WEEK 1-2: Fundamentals</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="165" height="25" rx="5" fill="#3b82f6" opacity="0.2"/>
+      <text x="10" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">✓ Linear Algebra basics</text>
+      
+      <rect x="175" y="0" width="185" height="25" rx="5" fill="#3b82f6" opacity="0.2"/>
+      <text x="185" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">✓ Probability &amp; Statistics</text>
+      
+      <rect x="0" y="32" width="165" height="25" rx="5" fill="#3b82f6" opacity="0.2"/>
+      <text x="10" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">✓ Python/Pandas</text>
+      
+      <rect x="175" y="32" width="185" height="25" rx="5" fill="#3b82f6" opacity="0.2"/>
+      <text x="185" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">✓ Basic ML concepts</text>
+      
+      <rect x="0" y="64" width="340" height="25" rx="5" fill="#1d4ed8" opacity="0.3"/>
+      <text x="170" y="81" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">📺 3Blue1Brown, StatQuest, Coursera ML</text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M440 175 L470 175" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow10)"/>
+  
+  <!-- Week 3-4: Core Algorithms -->
+  <g transform="translate(480, 100)" filter="url(#shadow10)">
+    <rect width="380" height="150" rx="14" fill="#1e293b"/>
+    <rect width="380" height="45" rx="14 14 0 0" fill="url(#week2Grad)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🧮 WEEK 3-4: Core Algorithms</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="165" height="25" rx="5" fill="#8b5cf6" opacity="0.2"/>
+      <text x="10" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">✓ Content-Based Filtering</text>
+      
+      <rect x="175" y="0" width="185" height="25" rx="5" fill="#8b5cf6" opacity="0.2"/>
+      <text x="185" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">✓ Collaborative Filtering</text>
+      
+      <rect x="0" y="32" width="165" height="25" rx="5" fill="#8b5cf6" opacity="0.2"/>
+      <text x="10" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">✓ Matrix Factorization</text>
+      
+      <rect x="175" y="32" width="185" height="25" rx="5" fill="#8b5cf6" opacity="0.2"/>
+      <text x="185" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">✓ Similarity Metrics</text>
+      
+      <rect x="0" y="64" width="340" height="25" rx="5" fill="#6d28d9" opacity="0.3"/>
+      <text x="170" y="81" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a78bfa">📺 Stanford CS246, Netflix Prize Papers</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M670 260 L670 280" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow10)"/>
+  
+  <!-- Week 5-6: Advanced Techniques -->
+  <g transform="translate(480, 290)" filter="url(#shadow10)">
+    <rect width="380" height="150" rx="14" fill="#1e293b"/>
+    <rect width="380" height="45" rx="14 14 0 0" fill="url(#week3Grad)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🧠 WEEK 5-6: Deep Learning</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="165" height="25" rx="5" fill="#f59e0b" opacity="0.2"/>
+      <text x="10" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">✓ Neural CF (NCF)</text>
+      
+      <rect x="175" y="0" width="185" height="25" rx="5" fill="#f59e0b" opacity="0.2"/>
+      <text x="185" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">✓ Sequence Models</text>
+      
+      <rect x="0" y="32" width="165" height="25" rx="5" fill="#f59e0b" opacity="0.2"/>
+      <text x="10" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">✓ Two-Tower / GNN</text>
+      
+      <rect x="175" y="32" width="185" height="25" rx="5" fill="#f59e0b" opacity="0.2"/>
+      <text x="185" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">✓ Transformers (BERT4Rec)</text>
+      
+      <rect x="0" y="64" width="340" height="25" rx="5" fill="#d97706" opacity="0.3"/>
+      <text x="170" y="81" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">📺 Andrej Karpathy, Yannic Kilcher</text>
+    </g>
+  </g>
+  
+  <!-- Arrow left -->
+  <path d="M470 365 L440 365" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow10)"/>
+  
+  <!-- Week 7-8: System Design -->
+  <g transform="translate(50, 290)" filter="url(#shadow10)">
+    <rect width="380" height="150" rx="14" fill="#1e293b"/>
+    <rect width="380" height="45" rx="14 14 0 0" fill="url(#week4Grad)"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🏗️ WEEK 7-8: System Design</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="165" height="25" rx="5" fill="#10b981" opacity="0.2"/>
+      <text x="10" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">✓ Scalability patterns</text>
+      
+      <rect x="175" y="0" width="185" height="25" rx="5" fill="#10b981" opacity="0.2"/>
+      <text x="185" y="17" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">✓ Real-time serving</text>
+      
+      <rect x="0" y="32" width="165" height="25" rx="5" fill="#10b981" opacity="0.2"/>
+      <text x="10" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">✓ Feature Stores</text>
+      
+      <rect x="175" y="32" width="185" height="25" rx="5" fill="#10b981" opacity="0.2"/>
+      <text x="185" y="49" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">✓ A/B Testing</text>
+      
+      <rect x="0" y="64" width="340" height="25" rx="5" fill="#059669" opacity="0.3"/>
+      <text x="170" y="81" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399">📺 ByteByteGo, System Design Interview</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down to final -->
+  <path d="M240 450 L240 480" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow10)"/>
+  
+  <!-- Week 9+: Specialization -->
+  <g transform="translate(50, 490)" filter="url(#shadow10)">
+    <rect width="810" height="95" rx="14" fill="#1e293b"/>
+    <rect width="810" height="40" rx="14 14 0 0" fill="url(#week5Grad)"/>
+    <text x="405" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🚀 WEEK 9+: Specialization &amp; Real-World Projects</text>
+    
+    <g transform="translate(30, 52)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#ec4899" opacity="0.2"/>
+      <text x="85" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">Domain Projects</text>
+      
+      <rect x="190" y="0" width="170" height="30" rx="6" fill="#ec4899" opacity="0.2"/>
+      <text x="275" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">Research Papers</text>
+      
+      <rect x="380" y="0" width="170" height="30" rx="6" fill="#ec4899" opacity="0.2"/>
+      <text x="465" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">Open Source</text>
+      
+      <rect x="570" y="0" width="170" height="30" rx="6" fill="#ec4899" opacity="0.2"/>
+      <text x="655" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">Industry Case Studies</text>
+    </g>
+  </g>
+</svg>

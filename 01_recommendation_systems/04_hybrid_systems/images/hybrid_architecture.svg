@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="hybridBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0c0c"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="cbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b894"/>
+      <stop offset="100%" style="stop-color:#00cec9"/>
+    </linearGradient>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e17055"/>
+      <stop offset="100%" style="stop-color:#d63031"/>
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a29bfe"/>
+      <stop offset="100%" style="stop-color:#6c5ce7"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#hybridBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Hybrid Recommendation Architecture</text>
+  
+  <!-- Input -->
+  <g transform="translate(350, 70)">
+    <rect width="200" height="60" rx="10" fill="#0f172a" opacity="0.15"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">User Request</text>
+    <text x="100" y="45" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="11">user_id, context</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M450 135 L450 165" stroke="#fff" stroke-width="2" marker-end="url(#arrowWhite)"/>
+  <defs>
+    <marker id="arrowWhite" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
+    </marker>
+  </defs>
+  
+  <!-- Parallel Models -->
+  <!-- Content-Based -->
+  <g transform="translate(80, 180)">
+    <rect width="200" height="140" rx="15" fill="url(#cbGrad)" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Content-Based</text>
+    
+    <rect x="20" y="50" width="160" height="70" rx="8" fill="#0f172a" opacity="0.9"/>
+    <text x="100" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Item features</text>
+    <text x="100" y="88" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">User profile matching</text>
+    <text x="100" y="108" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Score: 0.78</text>
+  </g>
+  
+  <!-- Collaborative -->
+  <g transform="translate(350, 180)">
+    <rect width="200" height="140" rx="15" fill="url(#cfGrad)" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Collaborative</text>
+    
+    <rect x="20" y="50" width="160" height="70" rx="8" fill="#0f172a" opacity="0.9"/>
+    <text x="100" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">User similarity</text>
+    <text x="100" y="88" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Matrix factorization</text>
+    <text x="100" y="108" text-anchor="middle" fill="#e17055" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Score: 0.85</text>
+  </g>
+  
+  <!-- Popularity -->
+  <g transform="translate(620, 180)">
+    <rect width="200" height="140" rx="15" fill="#fdcb6e" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Popularity</text>
+    
+    <rect x="20" y="50" width="160" height="70" rx="8" fill="#0f172a" opacity="0.9"/>
+    <text x="100" y="72" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Trending items</text>
+    <text x="100" y="88" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Global popularity</text>
+    <text x="100" y="108" text-anchor="middle" fill="#e67e22" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Score: 0.65</text>
+  </g>
+  
+  <!-- Arrows to combiner -->
+  <path d="M180 320 L350 380" stroke="#00cec9" stroke-width="2"/>
+  <path d="M450 320 L450 380" stroke="#d63031" stroke-width="2"/>
+  <path d="M720 320 L550 380" stroke="#fdcb6e" stroke-width="2"/>
+  
+  <!-- Combiner -->
+  <g transform="translate(300, 380)">
+    <rect width="300" height="80" rx="15" fill="url(#hybridGrad)" opacity="0.95"/>
+    <text x="150" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Hybrid Combiner</text>
+    <text x="150" y="55" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">score = α×CB + β×CF + γ×Pop</text>
+    <text x="150" y="70" text-anchor="middle" fill="#ddd" font-family="Arial, sans-serif" font-size="10">(weights learned or tuned)</text>
+  </g>
+  
+  <!-- Arrow to output -->
+  <path d="M450 460 L450 490" stroke="#fff" stroke-width="2" marker-end="url(#arrowWhite)"/>
+  
+  <!-- Output -->
+  <g transform="translate(250, 495)">
+    <rect width="400" height="80" rx="15" fill="#0f172a" opacity="0.15"/>
+    <text x="200" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Final Recommendations</text>
+    <text x="200" y="55" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="12">🥇 Item A (0.92) | 🥈 Item B (0.88) | 🥉 Item C (0.81)</text>
+    <text x="200" y="72" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="10">Ranked, filtered, diverse</text>
+  </g>
+  
+  <!-- Strategies sidebar -->
+  <g transform="translate(20, 350)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Hybrid Strategies:</text>
+    <text x="0" y="20" fill="#aaa" font-family="Arial, sans-serif" font-size="10">• Weighted</text>
+    <text x="0" y="35" fill="#aaa" font-family="Arial, sans-serif" font-size="10">• Switching</text>
+    <text x="0" y="50" fill="#aaa" font-family="Arial, sans-serif" font-size="10">• Cascade</text>
+    <text x="0" y="65" fill="#aaa" font-family="Arial, sans-serif" font-size="10">• Meta-learning</text>
+  </g>
+</svg>
+

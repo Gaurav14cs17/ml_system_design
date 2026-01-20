@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="embGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="itemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0f172a" rx="10"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="bold" font-family="Arial, sans-serif">User Modeling and Embeddings</text>
+  
+  <!-- User Section -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="200" height="180" rx="15" fill="url(#userGrad)" filter="url(#shadow)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">User Data</text>
+    
+    <!-- User attributes -->
+    <rect x="15" y="50" width="170" height="25" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="100" y="68" text-anchor="middle" fill="#f8fafc" font-size="12">Demographics</text>
+    
+    <rect x="15" y="85" width="170" height="25" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="100" y="103" text-anchor="middle" fill="#f8fafc" font-size="12">Browsing History</text>
+    
+    <rect x="15" y="120" width="170" height="25" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="100" y="138" text-anchor="middle" fill="#f8fafc" font-size="12">Purchase History</text>
+    
+    <rect x="15" y="155" width="170" height="25" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="100" y="173" text-anchor="middle" fill="#f8fafc" font-size="12">Ratings and Reviews</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 260 170 L 340 170" stroke="#ffffff" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
+  <!-- Embedding Model -->
+  <g transform="translate(350, 80)">
+    <rect x="0" y="0" width="200" height="180" rx="15" fill="url(#embGrad)" filter="url(#shadow)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Embedding Model</text>
+    
+    <!-- Neural network visualization -->
+    <circle cx="50" cy="70" r="8" fill="#0f172a"/>
+    <circle cx="50" cy="100" r="8" fill="#0f172a"/>
+    <circle cx="50" cy="130" r="8" fill="#0f172a"/>
+    <circle cx="50" cy="160" r="8" fill="#0f172a"/>
+    
+    <circle cx="100" cy="85" r="8" fill="#0f172a"/>
+    <circle cx="100" cy="115" r="8" fill="#0f172a"/>
+    <circle cx="100" cy="145" r="8" fill="#0f172a"/>
+    
+    <circle cx="150" cy="100" r="8" fill="#0f172a"/>
+    <circle cx="150" cy="130" r="8" fill="#0f172a"/>
+    
+    <!-- Connections -->
+    <line x1="58" y1="70" x2="92" y2="85" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="58" y1="70" x2="92" y2="115" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="58" y1="100" x2="92" y2="85" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="58" y1="100" x2="92" y2="115" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="58" y1="130" x2="92" y2="115" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="58" y1="130" x2="92" y2="145" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="58" y1="160" x2="92" y2="145" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    
+    <line x1="108" y1="85" x2="142" y2="100" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="108" y1="115" x2="142" y2="100" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="108" y1="115" x2="142" y2="130" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="108" y1="145" x2="142" y2="130" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 560 170 L 640 170" stroke="#ffffff" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- User Embedding Vector -->
+  <g transform="translate(650, 80)">
+    <rect x="0" y="0" width="200" height="180" rx="15" fill="url(#itemGrad)" filter="url(#shadow)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">User Embedding</text>
+    
+    <!-- Vector representation -->
+    <rect x="30" y="50" width="140" height="120" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="100" y="75" text-anchor="middle" fill="#f8fafc" font-size="11" font-family="monospace">[0.23, -0.45, 0.12,</text>
+    <text x="100" y="95" text-anchor="middle" fill="#f8fafc" font-size="11" font-family="monospace"> 0.78, -0.34, 0.56,</text>
+    <text x="100" y="115" text-anchor="middle" fill="#f8fafc" font-size="11" font-family="monospace"> 0.91, 0.23, -0.67,</text>
+    <text x="100" y="135" text-anchor="middle" fill="#f8fafc" font-size="11" font-family="monospace"> ..., 0.45, 0.12]</text>
+    <text x="100" y="158" text-anchor="middle" fill="#f8fafc" font-size="10">128-dimensional vector</text>
+  </g>
+  
+  <!-- Bottom Section - Two Tower -->
+  <g transform="translate(100, 300)">
+    <rect x="0" y="0" width="700" height="180" rx="15" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="2"/>
+    <text x="350" y="25" text-anchor="middle" fill="#f8fafc" font-size="18" font-weight="bold">Two-Tower Architecture</text>
+    
+    <!-- User Tower -->
+    <rect x="30" y="45" width="150" height="120" rx="10" fill="url(#userGrad)"/>
+    <text x="105" y="70" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">User Tower</text>
+    <text x="105" y="95" text-anchor="middle" fill="#f8fafc" font-size="11">Features → DNN</text>
+    <text x="105" y="115" text-anchor="middle" fill="#f8fafc" font-size="11">→ User Embedding</text>
+    <circle cx="105" cy="145" r="15" fill="#0f172a"/>
+    <text x="105" y="150" text-anchor="middle" fill="#667eea" font-size="10" font-weight="bold">u</text>
+    
+    <!-- Item Tower -->
+    <rect x="520" y="45" width="150" height="120" rx="10" fill="url(#itemGrad)"/>
+    <text x="595" y="70" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Item Tower</text>
+    <text x="595" y="95" text-anchor="middle" fill="#f8fafc" font-size="11">Features → DNN</text>
+    <text x="595" y="115" text-anchor="middle" fill="#f8fafc" font-size="11">→ Item Embedding</text>
+    <circle cx="595" cy="145" r="15" fill="#0f172a"/>
+    <text x="595" y="150" text-anchor="middle" fill="#4facfe" font-size="10" font-weight="bold">i</text>
+    
+    <!-- Similarity -->
+    <circle cx="350" cy="105" r="40" fill="url(#embGrad)"/>
+    <text x="350" y="100" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">Similarity</text>
+    <text x="350" y="118" text-anchor="middle" fill="#f8fafc" font-size="10">u · i</text>
+    
+    <!-- Arrows -->
+    <line x1="180" y1="105" x2="300" y2="105" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="400" y1="105" x2="520" y2="105" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+</svg>
+

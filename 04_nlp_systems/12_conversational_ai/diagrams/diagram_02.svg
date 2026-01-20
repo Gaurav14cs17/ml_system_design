@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420">
+  <defs>
+    <linearGradient id="nluGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="dmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="nlgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="chatShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Conversational AI Architecture</text>
+  <text x="425" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Classic pipeline vs. LLM-powered approaches</text>
+  
+  <!-- User input -->
+  <g transform="translate(40, 90)" filter="url(#chatShadow)">
+    <rect width="120" height="60" rx="10" fill="#374151"/>
+    <text x="60" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0">User</text>
+    <text x="60" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Input</text>
+  </g>
+  
+  <line x1="165" y1="120" x2="195" y2="120" stroke="#64748b" stroke-width="2"/>
+  <polygon points="195,120 188,115 188,125" fill="#64748b"/>
+  
+  <!-- NLU -->
+  <g transform="translate(200, 75)" filter="url(#chatShadow)">
+    <rect width="180" height="90" rx="12" fill="#1e293b" stroke="url(#nluGrad)" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">NLU</text>
+    <text x="90" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">Intent Classification</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">Entity Extraction</text>
+    <text x="90" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#93c5fd">Slot Filling</text>
+  </g>
+  
+  <line x1="385" y1="120" x2="415" y2="120" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="415,120 408,115 408,125" fill="#60a5fa"/>
+  
+  <!-- Dialog Manager -->
+  <g transform="translate(420, 75)" filter="url(#chatShadow)">
+    <rect width="180" height="90" rx="12" fill="#1e293b" stroke="url(#dmGrad)" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">Dialog Manager</text>
+    <text x="90" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#c4b5fd">State Tracking</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#c4b5fd">Policy (next action)</text>
+    <text x="90" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#c4b5fd">Context Management</text>
+  </g>
+  
+  <line x1="605" y1="120" x2="635" y2="120" stroke="#a78bfa" stroke-width="2"/>
+  <polygon points="635,120 628,115 628,125" fill="#a78bfa"/>
+  
+  <!-- NLG -->
+  <g transform="translate(640, 75)" filter="url(#chatShadow)">
+    <rect width="160" height="90" rx="12" fill="#1e293b" stroke="url(#nlgGrad)" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#34d399">NLG</text>
+    <text x="80" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6ee7b7">Response</text>
+    <text x="80" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6ee7b7">Generation</text>
+    <text x="80" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6ee7b7">Template/LLM</text>
+  </g>
+  
+  <!-- LLM approach -->
+  <g transform="translate(50, 195)" filter="url(#chatShadow)">
+    <rect width="750" height="100" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="375" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#fbbf24">Modern LLM-Powered Approach</text>
+    
+    <g transform="translate(30, 40)">
+      <rect x="0" y="0" width="160" height="45" rx="6" fill="#451a03"/>
+      <text x="80" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#fcd34d">Prompt + Context</text>
+      <text x="80" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fcd34d">System prompt, history</text>
+    </g>
+    
+    <g transform="translate(210, 40)">
+      <rect x="0" y="0" width="160" height="45" rx="6" fill="#451a03"/>
+      <text x="80" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#fcd34d">LLM (GPT-4, etc.)</text>
+      <text x="80" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fcd34d">End-to-end processing</text>
+    </g>
+    
+    <g transform="translate(390, 40)">
+      <rect x="0" y="0" width="160" height="45" rx="6" fill="#451a03"/>
+      <text x="80" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#fcd34d">Tool Calling</text>
+      <text x="80" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fcd34d">APIs, function calls</text>
+    </g>
+    
+    <g transform="translate(570, 40)">
+      <rect x="0" y="0" width="160" height="45" rx="6" fill="#451a03"/>
+      <text x="80" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#fcd34d">Response</text>
+      <text x="80" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fcd34d">Natural language</text>
+    </g>
+  </g>
+  
+  <!-- Key considerations -->
+  <g transform="translate(50, 315)" filter="url(#chatShadow)">
+    <rect width="750" height="85" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="375" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Key Considerations</text>
+    
+    <g transform="translate(30, 40)">
+      <text x="0" y="12" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">• Memory: Short-term (chat history) + Long-term (user preferences)</text>
+      <text x="0" y="30" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">• Guardrails: Content filtering, factuality checks, safety measures</text>
+    </g>
+    
+    <g transform="translate(400, 40)">
+      <text x="0" y="12" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">• Latency: Streaming responses, caching</text>
+      <text x="0" y="30" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">• Personalization: User context, preferences</text>
+    </g>
+  </g>
+</svg>

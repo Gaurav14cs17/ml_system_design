@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🧠 Model Architecture Comparison
+  </text>
+  
+  <!-- Accuracy vs Interpretability Axis -->
+  <text x="500" y="70" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">
+    Interpretability ←――――――――――――――――――――――――――――――――――――――――――――――→ Accuracy
+  </text>
+  
+  <!-- Model Cards Row 1 -->
+  <!-- Logistic Regression -->
+  <g transform="translate(30, 90)">
+    <rect width="180" height="160" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <rect width="180" height="35" rx="10" fill="#22c55e"/>
+    <text x="90" y="24" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📊 Logistic Regression</text>
+    
+    <text x="15" y="55" fill="#22c55e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Pros:</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Fully interpretable</text>
+    <text x="15" y="83" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Fast inference (andlt;1ms)</text>
+    <text x="15" y="96" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Good baseline</text>
+    
+    <text x="15" y="115" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Cons:</text>
+    <text x="15" y="128" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Limited accuracy</text>
+    <text x="15" y="141" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Linear patterns only</text>
+    
+    <rect x="15" y="148" width="60" height="8" rx="2" fill="#1e3a5f"/>
+    <rect x="15" y="148" width="25" height="8" rx="2" fill="#22c55e"/>
+    <text x="82" y="155" fill="#888" font-family="Arial, sans-serif" font-size="8">PR-AUC: 0.25</text>
+  </g>
+  
+  <!-- Random Forest -->
+  <g transform="translate(225, 90)">
+    <rect width="180" height="160" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="180" height="35" rx="10" fill="#3b82f6"/>
+    <text x="90" y="24" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🌲 Random Forest</text>
+    
+    <text x="15" y="55" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Pros:</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Feature importance</text>
+    <text x="15" y="83" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Handles non-linear</text>
+    <text x="15" y="96" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Robust to outliers</text>
+    
+    <text x="15" y="115" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Cons:</text>
+    <text x="15" y="128" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Slower inference</text>
+    <text x="15" y="141" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Memory intensive</text>
+    
+    <rect x="15" y="148" width="60" height="8" rx="2" fill="#1e3a5f"/>
+    <rect x="15" y="148" width="35" height="8" rx="2" fill="#3b82f6"/>
+    <text x="82" y="155" fill="#888" font-family="Arial, sans-serif" font-size="8">PR-AUC: 0.35</text>
+  </g>
+  
+  <!-- XGBoost -->
+  <g transform="translate(420, 90)">
+    <rect width="180" height="160" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="3"/>
+    <rect width="180" height="35" rx="10" fill="#f59e0b"/>
+    <text x="90" y="24" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚡ XGBoost ⭐</text>
+    
+    <text x="15" y="55" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Pros:</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Best accuracy/speed</text>
+    <text x="15" y="83" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• SHAP explainability</text>
+    <text x="15" y="96" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Production proven</text>
+    
+    <text x="15" y="115" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Cons:</text>
+    <text x="15" y="128" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Hyperparameter tuning</text>
+    <text x="15" y="141" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Sequential patterns</text>
+    
+    <rect x="15" y="148" width="60" height="8" rx="2" fill="#1e3a5f"/>
+    <rect x="15" y="148" width="45" height="8" rx="2" fill="#f59e0b"/>
+    <text x="82" y="155" fill="#888" font-family="Arial, sans-serif" font-size="8">PR-AUC: 0.45</text>
+  </g>
+  
+  <!-- Deep Learning -->
+  <g transform="translate(615, 90)">
+    <rect width="180" height="160" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="180" height="35" rx="10" fill="#8b5cf6"/>
+    <text x="90" y="24" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧠 Deep Learning</text>
+    
+    <text x="15" y="55" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Pros:</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Learns embeddings</text>
+    <text x="15" y="83" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Sequence modeling</text>
+    <text x="15" y="96" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Complex patterns</text>
+    
+    <text x="15" y="115" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Cons:</text>
+    <text x="15" y="128" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Black box</text>
+    <text x="15" y="141" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• More data needed</text>
+    
+    <rect x="15" y="148" width="60" height="8" rx="2" fill="#1e3a5f"/>
+    <rect x="15" y="148" width="48" height="8" rx="2" fill="#8b5cf6"/>
+    <text x="82" y="155" fill="#888" font-family="Arial, sans-serif" font-size="8">PR-AUC: 0.48</text>
+  </g>
+  
+  <!-- Graph Neural Network -->
+  <g transform="translate(810, 90)">
+    <rect width="180" height="160" rx="10" fill="#1e293b" stroke="#e94560" stroke-width="2"/>
+    <rect width="180" height="35" rx="10" fill="#e94560"/>
+    <text x="90" y="24" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🕸️ Graph NN</text>
+    
+    <text x="15" y="55" fill="#e94560" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Pros:</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Fraud ring detection</text>
+    <text x="15" y="83" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Entity relationships</text>
+    <text x="15" y="96" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Network analysis</text>
+    
+    <text x="15" y="115" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Cons:</text>
+    <text x="15" y="128" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Complex infrastructure</text>
+    <text x="15" y="141" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Higher latency</text>
+    
+    <rect x="15" y="148" width="60" height="8" rx="2" fill="#1e3a5f"/>
+    <rect x="15" y="148" width="52" height="8" rx="2" fill="#e94560"/>
+    <text x="82" y="155" fill="#888" font-family="Arial, sans-serif" font-size="8">PR-AUC: 0.52</text>
+  </g>
+  
+  <!-- Ensemble Architecture -->
+  <rect x="30" y="270" width="940" height="200" rx="12" fill="#0f1a2e" stroke="url(#modelGrad)" stroke-width="3"/>
+  <text x="500" y="298" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    🎯 Production Ensemble Architecture (Recommended)
+  </text>
+  
+  <!-- Input -->
+  <rect x="60" y="320" width="100" height="60" rx="8" fill="#1e3a5f"/>
+  <text x="110" y="350" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📥 Features</text>
+  <text x="110" y="368" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">(200+ dims)</text>
+  
+  <!-- Arrows -->
+  <path d="M 160 350 L 200 320" stroke="#e94560" stroke-width="2" fill="none"/>
+  <path d="M 160 350 L 200 350" stroke="#e94560" stroke-width="2" fill="none"/>
+  <path d="M 160 350 L 200 380" stroke="#e94560" stroke-width="2" fill="none"/>
+  <path d="M 160 350 L 200 410" stroke="#e94560" stroke-width="2" fill="none"/>
+  
+  <!-- Model Boxes -->
+  <rect x="210" y="300" width="140" height="40" rx="6" fill="#f59e0b"/>
+  <text x="280" y="325" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">XGBoost</text>
+  
+  <rect x="210" y="350" width="140" height="40" rx="6" fill="#3b82f6"/>
+  <text x="280" y="375" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">LightGBM</text>
+  
+  <rect x="210" y="400" width="140" height="40" rx="6" fill="#8b5cf6"/>
+  <text x="280" y="425" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Neural Net</text>
+  
+  <!-- Weights -->
+  <path d="M 350 320 L 420 360" stroke="#e94560" stroke-width="2" fill="none"/>
+  <path d="M 350 370 L 420 360" stroke="#e94560" stroke-width="2" fill="none"/>
+  <path d="M 350 420 L 420 360" stroke="#e94560" stroke-width="2" fill="none"/>
+  
+  <text x="380" y="310" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">w=0.4</text>
+  <text x="395" y="355" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">w=0.35</text>
+  <text x="380" y="420" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">w=0.25</text>
+  
+  <!-- Ensemble -->
+  <rect x="430" y="330" width="120" height="60" rx="8" fill="#e94560"/>
+  <text x="490" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Weighted</text>
+  <text x="490" y="375" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Ensemble</text>
+  
+  <!-- Arrow to Rules -->
+  <path d="M 550 360 L 600 360" stroke="#e94560" stroke-width="2" fill="none"/>
+  
+  <!-- Rule Engine -->
+  <rect x="610" y="330" width="120" height="60" rx="8" fill="#22c55e"/>
+  <text x="670" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Rule</text>
+  <text x="670" y="375" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Engine</text>
+  
+  <!-- Arrow to Decision -->
+  <path d="M 730 360 L 780 360" stroke="#e94560" stroke-width="2" fill="none"/>
+  
+  <!-- Decision -->
+  <rect x="790" y="310" width="150" height="100" rx="8" fill="#1e3a5f" stroke="#22c55e" stroke-width="2"/>
+  <text x="865" y="340" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DECISION</text>
+  <text x="865" y="365" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">✅ Approve</text>
+  <text x="865" y="383" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10">🔍 Review</text>
+  <text x="865" y="401" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">🚫 Block</text>
+  
+  <!-- Performance Box -->
+  <rect x="60" y="400" width="130" height="55" rx="6" fill="#1e3a5f"/>
+  <text x="125" y="420" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Ensemble Performance</text>
+  <text x="125" y="438" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">PR-AUC: 0.55</text>
+  <text x="125" y="452" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Latency: andlt;50ms P99</text>
+  
+  <!-- Bottom Stats -->
+  <rect x="30" y="490" width="940" height="90" rx="10" fill="#1e293b"/>
+  <text x="500" y="515" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    📊 Model Selection Guidelines
+  </text>
+  
+  <text x="60" y="545" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Start with XGBoost baseline</text>
+  <text x="60" y="565" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Add neural net for sequence data</text>
+  
+  <text x="350" y="545" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Use GNN only if fraud rings are an issue</text>
+  <text x="350" y="565" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">✓ Always combine with rule engine</text>
+  
+  <text x="700" y="545" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">⚡ Latency budget: andlt;100ms total</text>
+  <text x="700" y="565" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">🎯 Target: PR-AUC andgt; 0.50</text>
+</svg>
+

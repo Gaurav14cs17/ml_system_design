@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="easyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="hardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">⛏️ Hard Negative Mining</text>
+  
+  <!-- Easy Negatives -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="350" height="140" rx="14" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <text x="175" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#94a3b8">EASY NEGATIVES</text>
+    
+    <rect x="20" y="45" width="310" height="35" rx="6" fill="#0f172a"/>
+    <text x="175" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Query: "Python programming"</text>
+    
+    <rect x="20" y="90" width="310" height="40" rx="6" fill="url(#easyGrad)"/>
+    <text x="175" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#1e293b">Negative: "Cooking recipes"</text>
+    <text x="175" y="123" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">Obviously different ❌</text>
+  </g>
+  
+  <!-- Hard Negatives -->
+  <g filter="url(#shadow)" transform="translate(410, 70)">
+    <rect width="350" height="140" rx="14" fill="#1e293b" stroke="url(#hardGrad)" stroke-width="2"/>
+    <text x="175" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">HARD NEGATIVES</text>
+    
+    <rect x="20" y="45" width="310" height="35" rx="6" fill="#0f172a"/>
+    <text x="175" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Query: "Python programming"</text>
+    
+    <rect x="20" y="90" width="310" height="40" rx="6" fill="url(#hardGrad)"/>
+    <text x="175" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#1e293b">Negative: "Python snake species"</text>
+    <text x="175" y="123" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">Confusingly similar! ⚠️</text>
+  </g>
+  
+  <!-- Strategies -->
+  <g filter="url(#shadow)" transform="translate(100, 230)">
+    <rect width="600" height="170" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="300" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">HARD NEGATIVE MINING STRATEGIES</text>
+    
+    <rect x="20" y="50" width="270" height="45" rx="8" fill="#0f172a"/>
+    <text x="155" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#3b82f6">1. IN-BATCH</text>
+    <text x="155" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Other positives as negatives</text>
+    
+    <rect x="310" y="50" width="270" height="45" rx="8" fill="#0f172a"/>
+    <text x="445" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#10b981">2. BM25</text>
+    <text x="445" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Lexically similar, semantically different</text>
+    
+    <rect x="20" y="105" width="270" height="45" rx="8" fill="#0f172a"/>
+    <text x="155" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#8b5cf6">3. ANN RETRIEVAL</text>
+    <text x="155" y="143" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Top-K from current model</text>
+    
+    <rect x="310" y="105" width="270" height="45" rx="8" fill="#0f172a"/>
+    <text x="445" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#ec4899">4. CROSS-ENCODER</text>
+    <text x="445" y="143" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Use accurate model for hard cases</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='434' viewBox='0 0 524 434'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Error Rate Trade-offs:
+
+         │  High α (e.g., 10%)    │  Low α (e.g., 1%)
+─────────┼────────────────────────┼────────────────────────
+Pros     │ • More discoveries     │ • Fewer false positives
+         │ • Shorter experiments  │ • Higher confidence in
+         │ • Lower Type II error  │   shipped changes
+─────────┼────────────────────────┼────────────────────────
+Cons     │ • More false positives │ • More false negatives
+         │ • Lower confidence     │ • Longer experiments
+         │ • Wasted engineering   │ • Missed opportunities
+─────────┼────────────────────────┼────────────────────────
+Best For │ • Early stage companies│ • Mature products
+         │ • Low-cost experiments │ • High-stakes changes
+         │ • Exploratory work     │ • Revenue-impacting
+
+
+Recommended Settings:
+┌─────────────────────────────────────────────────────────────┐
+│ Standard A/B Test:  α = 0.05,  β = 0.20  (Power = 80%)     │
+│ High-stakes Test:   α = 0.01,  β = 0.10  (Power = 90%)     │
+│ Exploratory Test:   α = 0.10,  β = 0.20  (Power = 80%)     │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    Data Pipeline Architecture
+  </text>
+  
+  <!-- Real-time layer -->
+  <rect x="50" y="60" width="700" height="120" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="80" y="90" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">REAL-TIME LAYER</text>
+  
+  <g transform="translate(100, 110)">
+    <rect x="0" y="0" width="100" height="40" rx="6" fill="#3b82f6"/>
+    <text x="50" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Ad Server</text>
+  </g>
+  <line x1="200" y1="130" x2="240" y2="130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(250, 110)">
+    <rect x="0" y="0" width="80" height="40" rx="6" fill="#10b981"/>
+    <text x="40" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Kafka</text>
+  </g>
+  <line x1="330" y1="130" x2="370" y2="130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(380, 110)">
+    <rect x="0" y="0" width="80" height="40" rx="6" fill="#f59e0b"/>
+    <text x="40" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Flink</text>
+  </g>
+  <line x1="460" y1="130" x2="500" y2="130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(510, 110)">
+    <rect x="0" y="0" width="100" height="40" rx="6" fill="#8b5cf6"/>
+    <text x="50" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Redis (Hot)</text>
+  </g>
+  
+  <!-- Batch layer -->
+  <rect x="50" y="200" width="700" height="120" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="80" y="230" fill="#a5b4fc" font-family="Arial" font-size="14" font-weight="bold">BATCH LAYER</text>
+  
+  <g transform="translate(100, 250)">
+    <rect x="0" y="0" width="100" height="40" rx="6" fill="#3b82f6"/>
+    <text x="50" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Data Lake</text>
+  </g>
+  <line x1="200" y1="270" x2="240" y2="270" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(250, 250)">
+    <rect x="0" y="0" width="80" height="40" rx="6" fill="#f59e0b"/>
+    <text x="40" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Spark</text>
+  </g>
+  <line x1="330" y1="270" x2="370" y2="270" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(380, 250)">
+    <rect x="0" y="0" width="100" height="40" rx="6" fill="#10b981"/>
+    <text x="50" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Feature ETL</text>
+  </g>
+  <line x1="480" y1="270" x2="520" y2="270" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(530, 250)">
+    <rect x="0" y="0" width="100" height="40" rx="6" fill="#8b5cf6"/>
+    <text x="50" y="25" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">S3 (Cold)</text>
+  </g>
+  
+  <!-- Serving layer -->
+  <rect x="50" y="340" width="700" height="120" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+  <text x="80" y="370" fill="#f472b6" font-family="Arial" font-size="14" font-weight="bold">SERVING LAYER</text>
+  
+  <g transform="translate(200, 390)">
+    <rect x="0" y="0" width="120" height="50" rx="8" fill="#ec4899"/>
+    <text x="60" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Feature Store</text>
+    <text x="60" y="38" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">(Feast/Tecton)</text>
+  </g>
+  
+  <g transform="translate(480, 390)">
+    <rect x="0" y="0" width="120" height="50" rx="8" fill="#6366f1"/>
+    <text x="60" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11">Model Server</text>
+    <text x="60" y="38" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10">(TF Serving)</text>
+  </g>
+  
+  <!-- Arrows connecting layers -->
+  <line x1="560" y1="160" x2="560" y2="185" stroke="#34d399" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="580" y1="310" x2="580" y2="335" stroke="#f472b6" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

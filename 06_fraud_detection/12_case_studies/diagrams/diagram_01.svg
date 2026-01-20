@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a14"/>
+      <stop offset="50%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0a0a14"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <pattern id="graph" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 0 40 L 40 40 L 40 0" fill="none" stroke="#1e293b" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGrad)"/>
+  <rect width="800" height="400" fill="url(#graph)"/>
+  
+  <!-- Decorative -->
+  <circle cx="750" cy="50" r="80" fill="#22c55e" opacity="0.04"/>
+  <circle cx="50" cy="350" r="100" fill="#ef4444" opacity="0.03"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🏦 Case Study: Financial Services Fraud Detection
+  </text>
+  
+  <!-- Challenge -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="220" height="150" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="160" y="90" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Challenge</text>
+    <text x="70" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 50M daily transactions</text>
+    <text x="70" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• andlt;100ms latency required</text>
+    <text x="70" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• $50M annual fraud losses</text>
+    <text x="70" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Legacy rules-only system</text>
+    <text x="70" y="198" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9" font-weight="bold">→ Missing 40% of fraud</text>
+  </g>
+  
+  <!-- Solution -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="60" width="220" height="150" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="90" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🛠️ Solution</text>
+    <text x="310" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• XGBoost + Neural Net ensemble</text>
+    <text x="310" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Feature store (Feast + Redis)</text>
+    <text x="310" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Kubernetes auto-scaling</text>
+    <text x="310" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Shadow mode validation</text>
+    <text x="310" y="198" fill="#60a5fa" font-family="Arial, sans-serif" font-size="9" font-weight="bold">→ 6-month implementation</text>
+  </g>
+  
+  <!-- Results -->
+  <g filter="url(#shadow)">
+    <rect x="530" y="60" width="220" height="150" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="640" y="90" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📈 Results</text>
+    <text x="550" y="120" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" filter="url(#glow)">+35% fraud detection rate</text>
+    <text x="550" y="140" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" filter="url(#glow)">-40% false positive rate</text>
+    <text x="550" y="160" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" filter="url(#glow)">$18M annual savings</text>
+    <text x="550" y="180" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" filter="url(#glow)">P99 latency: 45ms</text>
+    <text x="550" y="198" fill="#22c55e" font-family="Arial, sans-serif" font-size="9" font-weight="bold">→ 36% ROI Year 1</text>
+  </g>
+  
+  <!-- Key Learnings -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="230" width="700" height="150" rx="12" fill="#0f1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="400" y="260" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+      💡 Key Learnings
+    </text>
+    
+    <text x="80" y="295" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      1. 🔒 Start with shadow mode - 3 weeks of validation before any production impact
+    </text>
+    <text x="80" y="320" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      2. ⚡ Feature store is critical - reduced feature engineering time by 60%
+    </text>
+    <text x="80" y="345" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">
+      3. 📋 Keep rules for compliance - ML complements, doesn't replace business rules
+    </text>
+    <text x="80" y="370" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">
+      Timeline: 6 months from POC to full production | Team: 4 ML engineers, 2 data engineers
+    </text>
+  </g>
+</svg>

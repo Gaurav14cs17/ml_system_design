@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="550" fill="url(#bgGrad3)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Feature Types</text>
+  
+  <!-- Row 1 -->
+  <!-- Raw Features -->
+  <rect x="40" y="80" width="260" height="130" rx="12" fill="#2d3436" stroke="#00cec9" stroke-width="2"/>
+  <circle cx="70" cy="110" r="18" fill="#00cec9"/>
+  <text x="70" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1</text>
+  <text x="155" y="110" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Raw Features</text>
+  <text x="150" y="140" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Direct from data source</text>
+  <text x="150" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• user_age</text>
+  <text x="150" y="185" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• product_price</text>
+  <text x="150" y="205" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• transaction_amount</text>
+  
+  <!-- Derived Features -->
+  <rect x="320" y="80" width="260" height="130" rx="12" fill="#2d3436" stroke="#6c5ce7" stroke-width="2"/>
+  <circle cx="350" cy="110" r="18" fill="#6c5ce7"/>
+  <text x="350" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2</text>
+  <text x="435" y="110" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Derived Features</text>
+  <text x="430" y="140" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Computed from raw</text>
+  <text x="430" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• is_premium_user</text>
+  <text x="430" y="185" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• price_bucket</text>
+  <text x="430" y="205" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• age_group</text>
+  
+  <!-- Aggregate Features -->
+  <rect x="600" y="80" width="260" height="130" rx="12" fill="#2d3436" stroke="#fd79a8" stroke-width="2"/>
+  <circle cx="630" cy="110" r="18" fill="#fd79a8"/>
+  <text x="630" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">3</text>
+  <text x="715" y="110" text-anchor="middle" fill="#fd79a8" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Aggregate Features</text>
+  <text x="710" y="140" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Summarized data</text>
+  <text x="710" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• user_total_purchases</text>
+  <text x="710" y="185" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• avg_order_value</text>
+  <text x="710" y="205" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• product_view_count</text>
+  
+  <!-- Row 2 -->
+  <!-- Time-Windowed Features -->
+  <rect x="40" y="230" width="260" height="130" rx="12" fill="#2d3436" stroke="#ffeaa7" stroke-width="2"/>
+  <circle cx="70" cy="260" r="18" fill="#ffeaa7"/>
+  <text x="70" y="265" text-anchor="middle" fill="#2d3436" font-family="Arial, sans-serif" font-size="14" font-weight="bold">4</text>
+  <text x="180" y="260" text-anchor="middle" fill="#ffeaa7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Time-Windowed</text>
+  <text x="150" y="290" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Aggregates over time periods</text>
+  <text x="150" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• purchases_last_7d</text>
+  <text x="150" y="335" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• sessions_last_24h</text>
+  <text x="150" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• rolling_avg_30d</text>
+  
+  <!-- Embedding Features -->
+  <rect x="320" y="230" width="260" height="130" rx="12" fill="#2d3436" stroke="#74b9ff" stroke-width="2"/>
+  <circle cx="350" cy="260" r="18" fill="#74b9ff"/>
+  <text x="350" y="265" text-anchor="middle" fill="#2d3436" font-family="Arial, sans-serif" font-size="14" font-weight="bold">5</text>
+  <text x="455" y="260" text-anchor="middle" fill="#74b9ff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Embedding Features</text>
+  <text x="430" y="290" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Dense vector representations</text>
+  <text x="430" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• user_embedding[128]</text>
+  <text x="430" y="335" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• product_embedding[256]</text>
+  <text x="430" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• text_embedding[768]</text>
+  
+  <!-- Interaction Features -->
+  <rect x="600" y="230" width="260" height="130" rx="12" fill="#2d3436" stroke="#a29bfe" stroke-width="2"/>
+  <circle cx="630" cy="260" r="18" fill="#a29bfe"/>
+  <text x="630" y="265" text-anchor="middle" fill="#2d3436" font-family="Arial, sans-serif" font-size="14" font-weight="bold">6</text>
+  <text x="730" y="260" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Interaction Features</text>
+  <text x="710" y="290" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Cross-entity combinations</text>
+  <text x="710" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• user_merchant_affinity</text>
+  <text x="710" y="335" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• user_category_count</text>
+  <text x="710" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">• product_pair_score</text>
+  
+  <!-- Computation Timeline -->
+  <text x="450" y="410" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Feature Computation Patterns</text>
+  
+  <rect x="80" y="435" width="220" height="45" rx="8" fill="#00b894"/>
+  <text x="190" y="463" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⏰ Batch Features</text>
+  
+  <rect x="340" y="435" width="220" height="45" rx="8" fill="#e17055"/>
+  <text x="450" y="463" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Streaming Features</text>
+  
+  <rect x="600" y="435" width="220" height="45" rx="8" fill="#0984e3"/>
+  <text x="710" y="463" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🔄 On-Demand Features</text>
+  
+  <text x="190" y="505" text-anchor="middle" fill="#888888" font-family="Arial, sans-serif" font-size="10">Hourly/Daily updates</text>
+  <text x="450" y="505" text-anchor="middle" fill="#888888" font-family="Arial, sans-serif" font-size="10">Real-time updates</text>
+  <text x="710" y="505" text-anchor="middle" fill="#888888" font-family="Arial, sans-serif" font-size="10">Computed at request</text>
+</svg>
+

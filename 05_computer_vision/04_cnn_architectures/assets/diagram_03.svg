@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <defs>
+    <linearGradient id="convGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="480" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">VGG-16 ARCHITECTURE</text>
+  <text x="425" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Very Deep Convolutional Network (2014)</text>
+  
+  <!-- Input -->
+  <g transform="translate(30, 80)">
+    <rect width="70" height="80" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="35" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">Input</text>
+    <text x="35" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">224×224</text>
+    <text x="35" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">×3</text>
+  </g>
+  
+  <!-- Block 1 -->
+  <g transform="translate(115, 80)">
+    <rect width="90" height="80" rx="8" fill="url(#convGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="45" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Block 1</text>
+    <text x="45" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e9d5ff">[Conv3-64]×2</text>
+    <text x="45" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">MaxPool</text>
+    <text x="45" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a78bfa">112×112×64</text>
+  </g>
+  
+  <!-- Block 2 -->
+  <g transform="translate(220, 80)">
+    <rect width="90" height="80" rx="8" fill="url(#convGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="45" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Block 2</text>
+    <text x="45" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e9d5ff">[Conv3-128]×2</text>
+    <text x="45" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">MaxPool</text>
+    <text x="45" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a78bfa">56×56×128</text>
+  </g>
+  
+  <!-- Block 3 -->
+  <g transform="translate(325, 80)">
+    <rect width="90" height="80" rx="8" fill="url(#convGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="45" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Block 3</text>
+    <text x="45" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e9d5ff">[Conv3-256]×3</text>
+    <text x="45" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">MaxPool</text>
+    <text x="45" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a78bfa">28×28×256</text>
+  </g>
+  
+  <!-- Block 4 -->
+  <g transform="translate(430, 80)">
+    <rect width="90" height="80" rx="8" fill="url(#convGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="45" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Block 4</text>
+    <text x="45" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e9d5ff">[Conv3-512]×3</text>
+    <text x="45" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">MaxPool</text>
+    <text x="45" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a78bfa">14×14×512</text>
+  </g>
+  
+  <!-- Block 5 -->
+  <g transform="translate(535, 80)">
+    <rect width="90" height="80" rx="8" fill="url(#convGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="45" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Block 5</text>
+    <text x="45" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e9d5ff">[Conv3-512]×3</text>
+    <text x="45" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">MaxPool</text>
+    <text x="45" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a78bfa">7×7×512</text>
+  </g>
+  
+  <!-- Flatten -->
+  <g transform="translate(640, 80)">
+    <rect width="80" height="80" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="40" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#fbbf24">Flatten</text>
+    <text x="40" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">7×7×512</text>
+    <text x="40" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">= 25088</text>
+  </g>
+  
+  <!-- FC Layers -->
+  <g transform="translate(735, 80)">
+    <rect width="90" height="80" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="45" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#34d399">FC Layers</text>
+    <text x="45" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">4096</text>
+    <text x="45" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">4096</text>
+    <text x="45" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">1000</text>
+  </g>
+  
+  <!-- Arrows between blocks -->
+  <path d="M 100 120 L 113 120" stroke="#475569" stroke-width="2"/>
+  <path d="M 205 120 L 218 120" stroke="#475569" stroke-width="2"/>
+  <path d="M 310 120 L 323 120" stroke="#475569" stroke-width="2"/>
+  <path d="M 415 120 L 428 120" stroke="#475569" stroke-width="2"/>
+  <path d="M 520 120 L 533 120" stroke="#475569" stroke-width="2"/>
+  <path d="M 625 120 L 638 120" stroke="#475569" stroke-width="2"/>
+  <path d="M 720 120 L 733 120" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Key Insight Box -->
+  <g transform="translate(100, 200)">
+    <rect width="650" height="130" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="325" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#22c55e">💡 Key Insight: 3×3 Convolutions</text>
+    
+    <g transform="translate(40, 50)">
+      <!-- 5x5 filter -->
+      <rect width="80" height="60" rx="6" fill="#334155" stroke="#ef4444" stroke-width="2"/>
+      <text x="40" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f87171">5×5 filter</text>
+      <text x="40" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">25 params</text>
+    </g>
+    
+    <text x="170" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#f8fafc">=</text>
+    
+    <g transform="translate(200, 50)">
+      <!-- Two 3x3 filters -->
+      <rect width="60" height="60" rx="6" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="30" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">3×3</text>
+      <text x="30" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">9 params</text>
+      
+      <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" fill="#f8fafc">+</text>
+      
+      <rect x="100" width="60" height="60" rx="6" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="130" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">3×3</text>
+      <text x="130" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">9 params</text>
+    </g>
+    
+    <g transform="translate(400, 50)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Same receptive field</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="11" fill="#4ade80">18 params (28% fewer!)</text>
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">+ More non-linearity</text>
+    </g>
+  </g>
+  
+  <!-- Stats -->
+  <g transform="translate(100, 360)">
+    <rect width="200" height="100" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">📊 Statistics</text>
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Total Layers: 16 (trainable)</text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Parameters: ~138 Million</text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">ImageNet Top-5: 7.3% error</text>
+  </g>
+  
+  <g transform="translate(330, 360)">
+    <rect width="200" height="100" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">⚙️ Architecture</text>
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">All 3×3 convolutions</text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">2×2 max pooling</text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">ReLU activations</text>
+  </g>
+  
+  <g transform="translate(560, 360)">
+    <rect width="200" height="100" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#34d399">✨ Impact</text>
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Showed depth matters</text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Great for transfer learning</text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Still widely used today</text>
+  </g>
+</svg>

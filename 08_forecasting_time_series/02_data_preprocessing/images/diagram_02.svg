@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400">
+  <defs>
+    <linearGradient id="missingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#missingBg)"/>
+  
+  <!-- Title -->
+  <text x="375" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Missing Data Patterns in Time Series</text>
+  <text x="375" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Understanding the Mechanism Behind Missing Values</text>
+  
+  <!-- MCAR Section -->
+  <g transform="translate(30, 80)">
+    <rect width="330" height="135" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="330" height="32" rx="10" fill="#3b82f6"/>
+    <text x="165" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">MCAR - Missing Completely At Random</text>
+    
+    <!-- Visual representation -->
+    <g transform="translate(15, 45)">
+      <circle cx="10" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="35" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="60" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="85" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="110" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="135" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="160" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="185" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="210" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="235" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="260" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="285" cy="10" r="8" fill="#22c55e"/>
+    </g>
+    
+    <text x="15" y="82" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Random gaps with no pattern</text>
+    <text x="15" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Missingness unrelated to any variable</text>
+    <text x="15" y="118" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">➤ Best case: Simple imputation works</text>
+  </g>
+  
+  <!-- MAR Section -->
+  <g transform="translate(390, 80)">
+    <rect width="330" height="135" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="330" height="32" rx="10" fill="#f59e0b"/>
+    <text x="165" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">MAR - Missing At Random</text>
+    
+    <!-- Visual representation -->
+    <g transform="translate(15, 45)">
+      <circle cx="10" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="35" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="60" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="85" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="110" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="135" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="160" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="185" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="210" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="235" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="260" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="285" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+    </g>
+    
+    <text x="15" y="82" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Missing depends on observed variables</text>
+    <text x="15" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Example: No data on weekends</text>
+    <text x="15" y="118" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">➤ Use calendar-aware imputation</text>
+  </g>
+  
+  <!-- MNAR Section -->
+  <g transform="translate(30, 235)">
+    <rect width="330" height="135" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect width="330" height="32" rx="10" fill="#ef4444"/>
+    <text x="165" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">MNAR - Missing Not At Random</text>
+    
+    <!-- Visual representation -->
+    <g transform="translate(15, 45)">
+      <circle cx="10" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="35" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="60" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="85" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="110" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="135" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="160" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="185" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="210" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="235" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="260" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="285" cy="10" r="8" fill="#22c55e"/>
+    </g>
+    
+    <text x="15" y="82" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Missing depends on unobserved value</text>
+    <text x="15" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Example: Sensor fails at high temps</text>
+    <text x="15" y="118" font-family="Segoe UI, sans-serif" font-size="11" fill="#f87171">➤ Hardest case: Model-based imputation</text>
+  </g>
+  
+  <!-- Structural Section -->
+  <g transform="translate(390, 235)">
+    <rect width="330" height="135" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="330" height="32" rx="10" fill="#8b5cf6"/>
+    <text x="165" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Structural Missing</text>
+    
+    <!-- Visual representation -->
+    <g transform="translate(15, 45)">
+      <circle cx="10" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="35" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="60" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="85" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="110" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="135" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="160" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="185" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="210" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="235" cy="10" r="8" fill="#ef4444" stroke="#fef2f2" stroke-width="2"/>
+      <circle cx="260" cy="10" r="8" fill="#22c55e"/>
+      <circle cx="285" cy="10" r="8" fill="#22c55e"/>
+    </g>
+    
+    <text x="15" y="82" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Large contiguous gaps</text>
+    <text x="15" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Example: System outages, holidays</text>
+    <text x="15" y="118" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">➤ Consider excluding or modeling</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(275, 382)">
+    <circle cx="0" cy="0" r="6" fill="#22c55e"/>
+    <text x="12" y="4" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Observed</text>
+    <circle cx="80" cy="0" r="6" fill="#ef4444"/>
+    <text x="92" y="4" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Missing</text>
+  </g>
+</svg>

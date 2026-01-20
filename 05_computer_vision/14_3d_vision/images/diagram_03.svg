@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <rect width="800" height="380" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">POINT CLOUD PROCESSING</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Deep Learning on 3D Point Sets</text>
+  
+  <g transform="translate(50, 80)">
+    <rect width="210" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="105" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">PointNet</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">• Per-point MLP</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">• Global max pooling</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">• Permutation invariant</text>
+    <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">No local structure</text>
+  </g>
+  
+  <g transform="translate(290, 80)">
+    <rect width="210" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="105" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">PointNet++</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">• Hierarchical features</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">• Set abstraction layers</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">• Local neighborhoods</text>
+    <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Multi-scale grouping</text>
+  </g>
+  
+  <g transform="translate(530, 80)">
+    <rect width="210" height="140" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="105" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">Modern Approaches</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">• Point Transformer</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">• PCT (attention)</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">• Sparse convolutions</text>
+    <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">MinkowskiNet, SPVCNN</text>
+  </g>
+  
+  <g transform="translate(100, 250)">
+    <rect width="600" height="105" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">Applications</text>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• 3D Object Detection: PointPillars, VoxelNet, CenterPoint</text>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• 3D Semantic Segmentation: RandLA-Net, Cylinder3D</text>
+    <text x="30" y="90" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Point Cloud Registration: DCP, PointNetLK</text>
+  </g>
+</svg>

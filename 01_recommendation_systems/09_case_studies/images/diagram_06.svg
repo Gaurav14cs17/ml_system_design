@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <defs>
+    <linearGradient id="bgPinterest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="pinterestRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e60023"/>
+      <stop offset="100%" style="stop-color:#c70020"/>
+    </linearGradient>
+    <filter id="shadowPinterest" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgPinterest)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">📌 Pinterest PinSage</text>
+  
+  <!-- Challenge Box -->
+  <g transform="translate(50, 70)" filter="url(#shadowPinterest)">
+    <rect width="800" height="60" rx="14" fill="#1e293b"/>
+    <rect width="200" height="60" rx="14 0 0 14" fill="url(#pinterestRed)"/>
+    <text x="100" y="38" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎯 Challenge</text>
+    <text x="500" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">3B+ pins (images) • Find visually &amp; semantically similar pins</text>
+    <text x="500" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">At web scale with real-time serving</text>
+  </g>
+  
+  <!-- Solution: Graph Convolutional Network -->
+  <g transform="translate(50, 150)" filter="url(#shadowPinterest)">
+    <rect width="800" height="280" rx="16" fill="#1e293b"/>
+    <rect width="800" height="50" rx="16 16 0 0" fill="#8b5cf6"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🌐 Solution: Graph Convolutional Network (PinSage)</text>
+    
+    <!-- User-Pin Graph Visualization -->
+    <g transform="translate(50, 70)">
+      <rect width="300" height="190" rx="12" fill="#334155"/>
+      <text x="150" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">User-Pin Interaction Graph</text>
+      
+      <!-- Graph nodes and edges -->
+      <g transform="translate(20, 40)">
+        <!-- Pins -->
+        <circle cx="40" cy="30" r="18" fill="#e60023"/>
+        <text x="40" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">P1</text>
+        
+        <circle cx="140" cy="30" r="18" fill="#e60023"/>
+        <text x="140" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">P2</text>
+        
+        <circle cx="240" cy="30" r="18" fill="#e60023"/>
+        <text x="240" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">P3</text>
+        
+        <!-- Users -->
+        <circle cx="90" cy="90" r="18" fill="#3b82f6"/>
+        <text x="90" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">U1</text>
+        
+        <circle cx="190" cy="90" r="18" fill="#3b82f6"/>
+        <text x="190" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">U2</text>
+        
+        <!-- More pins -->
+        <circle cx="90" cy="130" r="18" fill="#e60023"/>
+        <text x="90" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">P4</text>
+        
+        <circle cx="190" cy="130" r="18" fill="#e60023"/>
+        <text x="190" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">P5</text>
+        
+        <!-- Edges -->
+        <line x1="50" y1="45" x2="80" y2="75" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="130" y1="45" x2="100" y2="75" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="150" y1="45" x2="180" y2="75" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="230" y1="45" x2="200" y2="75" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="90" y1="108" x2="90" y2="112" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="190" y1="108" x2="190" y2="112" stroke="#64748b" stroke-width="1.5"/>
+      </g>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M360 165 L390 165" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrowPinterest)"/>
+    <text x="375" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Aggregate</text>
+    
+    <!-- Embedding output -->
+    <g transform="translate(400, 70)">
+      <rect width="350" height="190" rx="12" fill="#334155"/>
+      <text x="175" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">Generated Embeddings</text>
+      
+      <!-- Embedding vectors -->
+      <g transform="translate(30, 45)">
+        <rect x="0" y="0" width="280" height="30" rx="6" fill="#8b5cf6" opacity="0.3"/>
+        <text x="15" y="20" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Pin 1: [0.23, -0.45, 0.81, ...]</text>
+        
+        <rect x="0" y="40" width="280" height="30" rx="6" fill="#8b5cf6" opacity="0.3"/>
+        <text x="15" y="60" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Pin 2: [0.67, 0.12, -0.34, ...]</text>
+        
+        <rect x="0" y="80" width="280" height="30" rx="6" fill="#8b5cf6" opacity="0.3"/>
+        <text x="15" y="100" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Pin 3: [0.15, 0.89, 0.42, ...]</text>
+      </g>
+      
+      <text x="175" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Neighbor features → Dense vectors</text>
+    </g>
+  </g>
+  
+  <!-- Innovations -->
+  <g transform="translate(50, 450)" filter="url(#shadowPinterest)">
+    <rect width="530" height="110" rx="14" fill="#1e293b"/>
+    <rect width="530" height="40" rx="14 14 0 0" fill="#10b981"/>
+    <text x="265" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🚀 Key Innovations</text>
+    
+    <g transform="translate(25, 55)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">•</text>
+      <text x="15" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Random walk sampling for efficiency</text>
+      <text x="250" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">•</text>
+      <text x="265" y="15" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Importance-based neighbor pooling</text>
+      <text x="0" y="38" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">•</text>
+      <text x="15" y="38" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Map-Reduce distributed training</text>
+      <text x="250" y="38" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">•</text>
+      <text x="265" y="38" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Curriculum learning (easy → hard)</text>
+    </g>
+  </g>
+  
+  <!-- Results -->
+  <g transform="translate(600, 450)" filter="url(#shadowPinterest)">
+    <rect width="250" height="110" rx="14" fill="url(#pinterestRed)"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 Results</text>
+    <text x="125" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">+40% Engagement</text>
+    <text x="125" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fecdd3">Real-time serving</text>
+    <text x="125" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fecdd3">3B+ embeddings</text>
+  </g>
+</svg>

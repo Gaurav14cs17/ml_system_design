@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="encoderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🗄️ Vector Database Architecture</text>
+  
+  <!-- Document ingestion section -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="160" height="200" rx="14" fill="url(#docGrad)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">📚 Documents</text>
+    
+    <rect x="20" y="50" width="120" height="35" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="80" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">Doc 1</text>
+    
+    <rect x="20" y="95" width="120" height="35" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="80" y="117" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">Doc 2</text>
+    
+    <rect x="20" y="140" width="120" height="35" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="80" y="162" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">Doc N</text>
+  </g>
+  
+  <!-- Arrow to encoder -->
+  <path d="M205 170 L265 170" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Encoder -->
+  <g filter="url(#shadow)" transform="translate(270, 100)">
+    <rect width="140" height="140" rx="14" fill="url(#encoderGrad)"/>
+    <text x="70" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">🧠 Encoder</text>
+    <text x="70" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">BERT, CLIP, etc.</text>
+    
+    <!-- Neural network mini visualization -->
+    <circle cx="40" cy="90" r="6" fill="rgba(255,255,255,0.6)"/>
+    <circle cx="70" cy="80" r="6" fill="rgba(255,255,255,0.6)"/>
+    <circle cx="70" cy="100" r="6" fill="rgba(255,255,255,0.6)"/>
+    <circle cx="100" cy="90" r="6" fill="rgba(255,255,255,0.6)"/>
+    <line x1="46" y1="90" x2="64" y2="82" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <line x1="46" y1="90" x2="64" y2="98" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <line x1="76" y1="82" x2="94" y2="90" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <line x1="76" y1="98" x2="94" y2="90" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    
+    <text x="70" y="125" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.7)">f(x) → ℝ⁷⁶⁸</text>
+  </g>
+  
+  <!-- Arrow to vector DB -->
+  <path d="M415 170 L485 170" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Vector Database -->
+  <g filter="url(#shadow)" transform="translate(490, 60)">
+    <rect width="280" height="280" rx="16" fill="url(#dbGrad)"/>
+    <text x="140" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#fff">🗄️ Vector Database</text>
+    
+    <!-- Vector Index visualization -->
+    <rect x="20" y="55" width="240" height="130" rx="10" fill="rgba(0,0,0,0.2)"/>
+    <text x="140" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fff">Vector Index (HNSW)</text>
+    
+    <!-- HNSW graph visualization -->
+    <circle cx="60" cy="110" r="8" fill="#fbbf24"/>
+    <circle cx="100" cy="100" r="8" fill="#fbbf24"/>
+    <circle cx="140" cy="120" r="8" fill="#fbbf24"/>
+    <circle cx="180" cy="95" r="8" fill="#fbbf24"/>
+    <circle cx="220" cy="115" r="8" fill="#fbbf24"/>
+    <circle cx="80" cy="145" r="8" fill="#fbbf24"/>
+    <circle cx="160" cy="150" r="8" fill="#fbbf24"/>
+    <circle cx="200" cy="160" r="8" fill="#fbbf24"/>
+    
+    <line x1="60" y1="110" x2="100" y2="100" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="100" y1="100" x2="140" y2="120" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="140" y1="120" x2="180" y2="95" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="180" y1="95" x2="220" y2="115" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="60" y1="110" x2="80" y2="145" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="140" y1="120" x2="160" y2="150" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="180" y1="95" x2="200" y2="160" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="100" y1="100" x2="80" y2="145" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    
+    <!-- Metadata section -->
+    <rect x="20" y="195" width="240" height="70" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="140" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fff">Metadata Filters</text>
+    <text x="140" y="245" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.7)">category="tech", date>2023</text>
+  </g>
+  
+  <!-- Query section -->
+  <g filter="url(#shadow)" transform="translate(40, 320)">
+    <rect width="160" height="100" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#f8fafc">🔍 Query</text>
+    <rect x="15" y="45" width="130" height="40" rx="6" fill="#0f172a"/>
+    <text x="80" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">"Find similar</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">documents"</text>
+  </g>
+  
+  <!-- Query arrow to encoder -->
+  <path d="M205 370 L270 260" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Query arrow to DB -->
+  <path d="M410 200 L485 300" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Results -->
+  <g filter="url(#shadow)" transform="translate(490, 360)">
+    <rect width="280" height="130" rx="14" fill="url(#resultGrad)"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">🎯 Top-K Results</text>
+    
+    <rect x="20" y="45" width="240" height="70" rx="8" fill="rgba(0,0,0,0.15)"/>
+    <text x="50" y="70" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">1. Doc 5</text>
+    <text x="200" y="70" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.6)">0.95</text>
+    <text x="50" y="88" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">2. Doc 12</text>
+    <text x="200" y="88" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.6)">0.89</text>
+    <text x="50" y="106" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">3. Doc 3</text>
+    <text x="200" y="106" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(0,0,0,0.6)">0.87</text>
+  </g>
+  
+  <!-- Arrow from DB to results -->
+  <path d="M630 345 L630 355" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

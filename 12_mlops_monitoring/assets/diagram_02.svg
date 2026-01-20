@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="lpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0a1d"/>
+      <stop offset="100%" style="stop-color:#1a1333"/>
+    </linearGradient>
+    <linearGradient id="week1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="week2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="week3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <linearGradient id="week4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#c2410c"/>
+    </linearGradient>
+    <linearGradient id="week5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glowEffect">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#lpBg)"/>
+  
+  <!-- Grid pattern overlay -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2d2b55" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" font-weight="bold" fill="#f8fafc" filter="url(#glowEffect)">
+    📚 MLOps Monitoring Learning Path
+  </text>
+  <text x="400" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#94a3b8">
+    5-Week Comprehensive Curriculum
+  </text>
+  
+  <!-- Timeline connector -->
+  <line x1="120" y1="110" x2="120" y2="560" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Week 1: Foundations -->
+  <g transform="translate(100, 100)">
+    <circle cx="20" cy="20" r="20" fill="url(#week1)" filter="url(#dropShadow)"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">1</text>
+    
+    <rect x="60" y="0" width="600" height="75" rx="12" fill="#1e293b" filter="url(#dropShadow)"/>
+    <rect x="60" y="0" width="8" height="75" rx="4 0 0 4" fill="url(#week1)"/>
+    
+    <text x="85" y="28" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#60a5fa">Week 1: Foundations</text>
+    <text x="85" y="50" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 01_introduction_to_mlops_monitoring</text>
+    <text x="85" y="67" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 02_model_performance_monitoring</text>
+    
+    <rect x="520" y="15" width="120" height="45" rx="8" fill="#1d4ed8" opacity="0.3"/>
+    <text x="580" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#93c5fd">Core Concepts</text>
+    <text x="580" y="50" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#93c5fd">Why &amp; What</text>
+  </g>
+  
+  <!-- Week 2: Data Quality -->
+  <g transform="translate(100, 195)">
+    <circle cx="20" cy="20" r="20" fill="url(#week2)" filter="url(#dropShadow)"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">2</text>
+    
+    <rect x="60" y="0" width="600" height="90" rx="12" fill="#1e293b" filter="url(#dropShadow)"/>
+    <rect x="60" y="0" width="8" height="90" rx="4 0 0 4" fill="url(#week2)"/>
+    
+    <text x="85" y="28" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#a78bfa">Week 2: Data Quality</text>
+    <text x="85" y="50" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 03_data_drift_detection</text>
+    <text x="85" y="67" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 04_concept_drift_detection</text>
+    <text x="85" y="84" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 05_feature_store_monitoring</text>
+    
+    <rect x="520" y="22" width="120" height="45" rx="8" fill="#6d28d9" opacity="0.3"/>
+    <text x="580" y="42" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#c4b5fd">Statistical Tests</text>
+    <text x="580" y="57" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#c4b5fd">PSI, KS, JS</text>
+  </g>
+  
+  <!-- Week 3: Observability and Alerting -->
+  <g transform="translate(100, 305)">
+    <circle cx="20" cy="20" r="20" fill="url(#week3)" filter="url(#dropShadow)"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">3</text>
+    
+    <rect x="60" y="0" width="600" height="75" rx="12" fill="#1e293b" filter="url(#dropShadow)"/>
+    <rect x="60" y="0" width="8" height="75" rx="4 0 0 4" fill="url(#week3)"/>
+    
+    <text x="85" y="28" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#f472b6">Week 3: Observability &amp; Alerting</text>
+    <text x="85" y="50" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 06_logging_and_observability</text>
+    <text x="85" y="67" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 07_alerting_systems</text>
+    
+    <rect x="520" y="15" width="120" height="45" rx="8" fill="#be185d" opacity="0.3"/>
+    <text x="580" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fbcfe8">Logs, Traces</text>
+    <text x="580" y="50" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fbcfe8">Metrics Pipeline</text>
+  </g>
+  
+  <!-- Week 4: Advanced Topics -->
+  <g transform="translate(100, 400)">
+    <circle cx="20" cy="20" r="20" fill="url(#week4)" filter="url(#dropShadow)"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">4</text>
+    
+    <rect x="60" y="0" width="600" height="90" rx="12" fill="#1e293b" filter="url(#dropShadow)"/>
+    <rect x="60" y="0" width="8" height="90" rx="4 0 0 4" fill="url(#week4)"/>
+    
+    <text x="85" y="28" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#fb923c">Week 4: Advanced Topics</text>
+    <text x="85" y="50" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 08_ab_testing_experimentation</text>
+    <text x="85" y="67" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 09_infrastructure_monitoring</text>
+    <text x="85" y="84" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 10_cost_monitoring_optimization</text>
+    
+    <rect x="520" y="22" width="120" height="45" rx="8" fill="#c2410c" opacity="0.3"/>
+    <text x="580" y="42" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fed7aa">Experiments</text>
+    <text x="580" y="57" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fed7aa">Cost Analysis</text>
+  </g>
+  
+  <!-- Week 5: Governance and Tools -->
+  <g transform="translate(100, 510)">
+    <circle cx="20" cy="20" r="20" fill="url(#week5)" filter="url(#dropShadow)"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">5</text>
+    
+    <rect x="60" y="0" width="600" height="75" rx="12" fill="#1e293b" filter="url(#dropShadow)"/>
+    <rect x="60" y="0" width="8" height="75" rx="4 0 0 4" fill="url(#week5)"/>
+    
+    <text x="85" y="28" font-family="Segoe UI, Arial" font-size="16" font-weight="bold" fill="#34d399">Week 5: Governance &amp; Tools</text>
+    <text x="85" y="50" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 11_compliance_governance</text>
+    <text x="85" y="67" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">📖 12_tools_and_frameworks</text>
+    
+    <rect x="520" y="15" width="120" height="45" rx="8" fill="#047857" opacity="0.3"/>
+    <text x="580" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a7f3d0">Best Practices</text>
+    <text x="580" y="50" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#a7f3d0">Tool Ecosystem</text>
+  </g>
+</svg>

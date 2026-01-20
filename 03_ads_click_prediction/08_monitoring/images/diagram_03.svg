@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📋 Incident Response Runbook
+  </text>
+  
+  <!-- Alert header -->
+  <rect x="50" y="60" width="600" height="45" rx="8" fill="#ef4444"/>
+  <text x="350" y="88" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14" font-weight="bold">
+    🚨 ALERT: High Latency P99
+  </text>
+  
+  <!-- Steps -->
+  <rect x="50" y="120" width="600" height="300" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  
+  <g font-family="Arial">
+    <!-- Step 1 -->
+    <text x="80" y="155" fill="#60a5fa" font-size="13" font-weight="bold">1. ASSESS</text>
+    <text x="100" y="180" fill="#94a3b8" font-size="11">□ Check current p99 latency value</text>
+    <text x="100" y="200" fill="#94a3b8" font-size="11">□ Identify affected services/regions</text>
+    <text x="100" y="220" fill="#94a3b8" font-size="11">□ Determine start time of degradation</text>
+    
+    <!-- Step 2 -->
+    <text x="80" y="255" fill="#10b981" font-size="13" font-weight="bold">2. MITIGATE</text>
+    <text x="100" y="280" fill="#94a3b8" font-size="11">□ Scale up model servers if CPU andgt; 80%</text>
+    <text x="100" y="300" fill="#94a3b8" font-size="11">□ Enable aggressive caching</text>
+    <text x="100" y="320" fill="#94a3b8" font-size="11">□ Reduce batch size if needed</text>
+    
+    <!-- Step 3 -->
+    <text x="80" y="355" fill="#f59e0b" font-size="13" font-weight="bold">3. RESOLVE</text>
+    <text x="100" y="380" fill="#94a3b8" font-size="11">□ Identify root cause (logs, traces)</text>
+    <text x="100" y="400" fill="#94a3b8" font-size="11">□ Implement fix &amp; verify metrics</text>
+    
+    <!-- Contact info -->
+    <text x="400" y="155" fill="#8b5cf6" font-size="13" font-weight="bold">ESCALATION</text>
+    <text x="420" y="180" fill="#94a3b8" font-size="11">L1: On-call engineer</text>
+    <text x="420" y="200" fill="#94a3b8" font-size="11">L2: ML Platform team</text>
+    <text x="420" y="220" fill="#94a3b8" font-size="11">L3: Infrastructure team</text>
+    
+    <text x="400" y="260" fill="#ec4899" font-size="13" font-weight="bold">SLA IMPACT</text>
+    <text x="420" y="285" fill="#94a3b8" font-size="11">p99 andgt; 15ms: Warning</text>
+    <text x="420" y="305" fill="#94a3b8" font-size="11">p99 andgt; 25ms: Page</text>
+    <text x="420" y="325" fill="#94a3b8" font-size="11">p99 andgt; 50ms: Sev1</text>
+  </g>
+</svg>

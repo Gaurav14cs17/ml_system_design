@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bgCas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowCas" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowCas" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 L4,6 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgCas)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📉 Cascade Hybrid (Multi-Stage)</text>
+  
+  <!-- Stage 1 -->
+  <g transform="translate(50, 70)" filter="url(#shadowCas)">
+    <rect width="800" height="140" rx="14" fill="#1e293b"/>
+    <rect width="800" height="50" rx="14 14 0 0" fill="#3b82f6"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">STAGE 1: Candidate Generation</text>
+    
+    <g transform="translate(50, 65)">
+      <rect x="0" y="0" width="140" height="55" rx="10" fill="#ef4444" opacity="0.2"/>
+      <text x="70" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">All Items</text>
+      <text x="70" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f87171">Millions 📦</text>
+      
+      <path d="M155 28 L200 28" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+      
+      <rect x="215" y="0" width="260" height="55" rx="10" fill="#3b82f6"/>
+      <text x="345" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Collaborative Filtering</text>
+      <text x="345" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#bfdbfe">(fast, approximate)</text>
+      
+      <path d="M490 28 L535 28" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+      
+      <rect x="550" y="0" width="140" height="55" rx="10" fill="#f59e0b" opacity="0.2"/>
+      <text x="620" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">Candidates</text>
+      <text x="620" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fbbf24">Thousands</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M450 215 L450 235" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+  
+  <!-- Stage 2 -->
+  <g transform="translate(50, 240)" filter="url(#shadowCas)">
+    <rect width="800" height="140" rx="14" fill="#1e293b"/>
+    <rect width="800" height="50" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">STAGE 2: Ranking</text>
+    
+    <g transform="translate(50, 65)">
+      <rect x="0" y="0" width="140" height="55" rx="10" fill="#f59e0b" opacity="0.2"/>
+      <text x="70" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">Candidates</text>
+      <text x="70" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fbbf24">Thousands</text>
+      
+      <path d="M155 28 L200 28" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+      
+      <rect x="215" y="0" width="260" height="55" rx="10" fill="#8b5cf6"/>
+      <text x="345" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Content + Behavioral</text>
+      <text x="345" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ddd6fe">(accurate, slower)</text>
+      
+      <path d="M490 28 L535 28" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+      
+      <rect x="550" y="0" width="140" height="55" rx="10" fill="#10b981" opacity="0.2"/>
+      <text x="620" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Ranked List</text>
+      <text x="620" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#4ade80">Hundreds</text>
+    </g>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M450 385 L450 405" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+  
+  <!-- Stage 3 -->
+  <g transform="translate(50, 410)" filter="url(#shadowCas)">
+    <rect width="800" height="140" rx="14" fill="#1e293b"/>
+    <rect width="800" height="50" rx="14 14 0 0" fill="#10b981"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">STAGE 3: Re-Ranking</text>
+    
+    <g transform="translate(50, 65)">
+      <rect x="0" y="0" width="140" height="55" rx="10" fill="#10b981" opacity="0.2"/>
+      <text x="70" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Ranked List</text>
+      <text x="70" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#4ade80">Hundreds</text>
+      
+      <path d="M155 28 L200 28" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+      
+      <rect x="215" y="0" width="260" height="55" rx="10" fill="#10b981"/>
+      <text x="345" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Business Rules + Diversity</text>
+      <text x="345" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">(filters, deduping)</text>
+      
+      <path d="M490 28 L535 28" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCas)"/>
+      
+      <rect x="550" y="0" width="140" height="55" rx="10" fill="#f59e0b"/>
+      <text x="620" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Final Recs</text>
+      <text x="620" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">~10-30 🎯</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="cbfGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e55d87;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5fc3e4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cbfGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f2994a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f2c94c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow10" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="450" fill="#0d1117" rx="10"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">Content-Based Filtering</text>
+  
+  <!-- User Profile Section -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="200" height="170" rx="15" fill="url(#cbfGrad1)" filter="url(#shadow10)"/>
+    <text x="100" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">👤 User Profile</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="170" height="110" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="85" y="20" text-anchor="middle" fill="#f8fafc" font-size="10">Preferred Features:</text>
+      
+      <rect x="10" y="30" width="70" height="20" rx="4" fill="rgba(255,255,255,0.3)"/>
+      <text x="45" y="44" text-anchor="middle" fill="#f8fafc" font-size="8">Action: 0.8</text>
+      
+      <rect x="90" y="30" width="70" height="20" rx="4" fill="rgba(255,255,255,0.3)"/>
+      <text x="125" y="44" text-anchor="middle" fill="#f8fafc" font-size="8">Sci-Fi: 0.6</text>
+      
+      <rect x="10" y="55" width="70" height="20" rx="4" fill="rgba(255,255,255,0.3)"/>
+      <text x="45" y="69" text-anchor="middle" fill="#f8fafc" font-size="8">Thriller: 0.4</text>
+      
+      <rect x="90" y="55" width="70" height="20" rx="4" fill="rgba(255,255,255,0.3)"/>
+      <text x="125" y="69" text-anchor="middle" fill="#f8fafc" font-size="8">Comedy: 0.2</text>
+      
+      <text x="85" y="95" text-anchor="middle" fill="#aaaaaa" font-size="8">Built from liked items</text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 260 145 L 300 145" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrowhead10)"/>
+  
+  <!-- Matching -->
+  <g transform="translate(310, 90)">
+    <circle cx="50" cy="55" r="50" fill="rgba(255,255,255,0.1)" stroke="#f8fafc" stroke-width="2"/>
+    <text x="50" y="45" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Similarity</text>
+    <text x="50" y="62" text-anchor="middle" fill="#f8fafc" font-size="10">Matching</text>
+    <text x="50" y="80" text-anchor="middle" fill="#aaaaaa" font-size="8">cosine(u, i)</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 420 145 L 460 145" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrowhead10)"/>
+  
+  <!-- Item Features -->
+  <g transform="translate(470, 60)">
+    <rect x="0" y="0" width="280" height="170" rx="15" fill="url(#cbfGrad2)" filter="url(#shadow10)"/>
+    <text x="140" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">📦 Item Features</text>
+    
+    <g transform="translate(15, 45)">
+      <!-- Item 1 -->
+      <rect x="0" y="0" width="120" height="50" rx="5" fill="rgba(255,255,255,0.25)"/>
+      <text x="60" y="18" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Movie A</text>
+      <text x="60" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Action: 0.9, Sci-Fi: 0.7</text>
+      <text x="60" y="48" text-anchor="middle" fill="#38ef7d" font-size="8">Score: 0.85 ✓</text>
+      
+      <!-- Item 2 -->
+      <rect x="130" y="0" width="120" height="50" rx="5" fill="rgba(255,255,255,0.25)"/>
+      <text x="190" y="18" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Movie B</text>
+      <text x="190" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Comedy: 0.8, Drama: 0.5</text>
+      <text x="190" y="48" text-anchor="middle" fill="#ff6b6b" font-size="8">Score: 0.25 ✗</text>
+      
+      <!-- Item 3 -->
+      <rect x="0" y="60" width="120" height="50" rx="5" fill="rgba(255,255,255,0.25)"/>
+      <text x="60" y="78" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Movie C</text>
+      <text x="60" y="95" text-anchor="middle" fill="#f8fafc" font-size="8">Action: 0.6, Thriller: 0.8</text>
+      <text x="60" y="108" text-anchor="middle" fill="#38ef7d" font-size="8">Score: 0.72 ✓</text>
+      
+      <!-- Item 4 -->
+      <rect x="130" y="60" width="120" height="50" rx="5" fill="rgba(255,255,255,0.25)"/>
+      <text x="190" y="78" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="bold">Movie D</text>
+      <text x="190" y="95" text-anchor="middle" fill="#f8fafc" font-size="8">Sci-Fi: 0.9, Action: 0.3</text>
+      <text x="190" y="108" text-anchor="middle" fill="#feca57" font-size="8">Score: 0.58 ~</text>
+    </g>
+  </g>
+  
+  <!-- Feature Extraction Methods -->
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="700" height="170" rx="15" fill="rgba(255,255,255,0.1)" stroke="#f8fafc" stroke-width="1"/>
+    <text x="350" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">📊 Feature Extraction Methods</text>
+    
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="190" height="100" rx="8" fill="rgba(229,93,135,0.3)"/>
+      <text x="95" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Text Features</text>
+      <text x="95" y="42" text-anchor="middle" fill="#f8fafc" font-size="9">• TF-IDF</text>
+      <text x="95" y="57" text-anchor="middle" fill="#f8fafc" font-size="9">• Word2Vec/GloVe</text>
+      <text x="95" y="72" text-anchor="middle" fill="#f8fafc" font-size="9">• BERT embeddings</text>
+      <text x="95" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Titles, descriptions</text>
+    </g>
+    
+    <g transform="translate(250, 45)">
+      <rect x="0" y="0" width="190" height="100" rx="8" fill="rgba(242,153,74,0.3)"/>
+      <text x="95" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Categorical</text>
+      <text x="95" y="42" text-anchor="middle" fill="#f8fafc" font-size="9">• One-hot encoding</text>
+      <text x="95" y="57" text-anchor="middle" fill="#f8fafc" font-size="9">• Entity embeddings</text>
+      <text x="95" y="72" text-anchor="middle" fill="#f8fafc" font-size="9">• Multi-hot for tags</text>
+      <text x="95" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Genre, category, brand</text>
+    </g>
+    
+    <g transform="translate(470, 45)">
+      <rect x="0" y="0" width="190" height="100" rx="8" fill="rgba(95,195,228,0.3)"/>
+      <text x="95" y="22" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Visual/Audio</text>
+      <text x="95" y="42" text-anchor="middle" fill="#f8fafc" font-size="9">• CNN features</text>
+      <text x="95" y="57" text-anchor="middle" fill="#f8fafc" font-size="9">• ResNet embeddings</text>
+      <text x="95" y="72" text-anchor="middle" fill="#f8fafc" font-size="9">• Audio spectrograms</text>
+      <text x="95" y="90" text-anchor="middle" fill="#aaaaaa" font-size="8">Images, videos, music</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead10" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

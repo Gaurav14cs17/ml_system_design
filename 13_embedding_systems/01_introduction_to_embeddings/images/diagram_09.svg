@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="queryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="encodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="searchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 L4,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🔍 Semantic Search Pipeline</text>
+  
+  <!-- Step 1: Query -->
+  <g filter="url(#shadow)" transform="translate(30, 80)">
+    <rect width="160" height="120" rx="14" fill="url(#queryGrad)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">① USER QUERY</text>
+    <rect x="15" y="45" width="130" height="60" rx="8" fill="rgba(0,0,0,0.15)"/>
+    <text x="80" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">"How to train</text>
+    <text x="80" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e293b">neural networks?"</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M195 140 L235 140" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Encode -->
+  <g filter="url(#shadow)" transform="translate(240, 80)">
+    <rect width="160" height="120" rx="14" fill="url(#encodeGrad)"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">② ENCODE</text>
+    <rect x="15" y="45" width="130" height="60" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="80" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Sentence-BERT</text>
+    <text x="80" y="85" text-anchor="middle" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.8)">[0.23, -0.45,...]</text>
+    <text x="80" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">384 dimensions</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M405 140 L445 140" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Search -->
+  <g filter="url(#shadow)" transform="translate(450, 60)">
+    <rect width="180" height="160" rx="14" fill="url(#searchGrad)"/>
+    <text x="90" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">③ VECTOR SEARCH</text>
+    
+    <!-- Mini vector space -->
+    <circle cx="50" cy="70" r="6" fill="#fbbf24"/>
+    <text x="65" y="75" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">query</text>
+    
+    <circle cx="70" cy="95" r="5" fill="#4ade80"/>
+    <circle cx="85" cy="80" r="5" fill="#4ade80"/>
+    <circle cx="120" cy="110" r="5" fill="#64748b"/>
+    <circle cx="140" cy="75" r="5" fill="#64748b"/>
+    <circle cx="100" cy="130" r="5" fill="#64748b"/>
+    
+    <!-- Connection lines to nearest -->
+    <line x1="50" y1="70" x2="70" y2="95" stroke="#4ade80" stroke-width="1" stroke-dasharray="3,2"/>
+    <line x1="50" y1="70" x2="85" y2="80" stroke="#4ade80" stroke-width="1" stroke-dasharray="3,2"/>
+    
+    <text x="90" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">HNSW / IVF Index</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M635 140 L675 140" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Results -->
+  <g filter="url(#shadow)" transform="translate(680, 60)">
+    <rect width="150" height="160" rx="14" fill="url(#resultGrad)"/>
+    <text x="75" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">④ RESULTS</text>
+    
+    <rect x="15" y="45" width="120" height="28" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="22" y="62" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">1. PyTorch tutorial</text>
+    <text x="115" y="62" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">0.95</text>
+    
+    <rect x="15" y="78" width="120" height="28" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="22" y="95" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">2. Deep learning guide</text>
+    <text x="115" y="95" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">0.91</text>
+    
+    <rect x="15" y="111" width="120" height="28" rx="6" fill="rgba(0,0,0,0.15)"/>
+    <text x="22" y="128" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">3. Backprop explained</text>
+    <text x="115" y="128" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">0.88</text>
+    
+    <text x="75" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="rgba(0,0,0,0.6)">Ranked by similarity</text>
+  </g>
+  
+  <!-- Bottom explanation -->
+  <g transform="translate(50, 250)">
+    <rect width="750" height="130" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="375" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Why This Works</text>
+    
+    <g transform="translate(30, 45)">
+      <rect width="220" height="70" rx="8" fill="#0f172a"/>
+      <text x="110" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#ef4444">Traditional Keyword Search</text>
+      <text x="110" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">"neural network training"</text>
+      <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">❌ Misses "deep learning"</text>
+    </g>
+    
+    <g transform="translate(265, 45)">
+      <rect width="220" height="70" rx="8" fill="#0f172a"/>
+      <text x="110" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#10b981">Semantic Search</text>
+      <text x="110" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">"neural network training"</text>
+      <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">✓ Finds "deep learning" too!</text>
+    </g>
+    
+    <g transform="translate(500, 45)">
+      <rect width="220" height="70" rx="8" fill="#0f172a"/>
+      <text x="110" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#3b82f6">Key Insight</text>
+      <text x="110" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Similar meaning →</text>
+      <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Similar vectors</text>
+    </g>
+  </g>
+</svg>

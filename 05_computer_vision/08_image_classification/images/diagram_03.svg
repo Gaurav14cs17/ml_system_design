@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">FINE-TUNING STRATEGIES</text>
+  
+  <g transform="translate(50, 70)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f87171">Feature Extraction</text>
+    <rect x="20" y="45" width="180" height="25" rx="4" fill="#7f1d1d" opacity="0.5"/>
+    <text x="110" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fca5a5">Backbone FROZEN</text>
+    <rect x="20" y="80" width="180" height="25" rx="4" fill="#14532d"/>
+    <text x="110" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">Head TRAINED</text>
+    <text x="110" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Best for: small datasets</text>
+  </g>
+  
+  <g transform="translate(290, 70)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">Partial Fine-tuning</text>
+    <rect x="20" y="45" width="180" height="25" rx="4" fill="#7f1d1d" opacity="0.3"/>
+    <text x="110" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fca5a5">Early layers frozen</text>
+    <rect x="20" y="80" width="180" height="25" rx="4" fill="#14532d"/>
+    <text x="110" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">Later layers + head trained</text>
+    <text x="110" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Best for: medium datasets</text>
+  </g>
+  
+  <g transform="translate(530, 70)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">Full Fine-tuning</text>
+    <rect x="20" y="45" width="180" height="25" rx="4" fill="#14532d"/>
+    <text x="110" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">Backbone TRAINED (low LR)</text>
+    <rect x="20" y="80" width="180" height="25" rx="4" fill="#14532d"/>
+    <text x="110" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">Head TRAINED (high LR)</text>
+    <text x="110" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Best for: large datasets</text>
+  </g>
+  
+  <g transform="translate(150, 260)">
+    <rect width="500" height="110" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a78bfa">Tips for Fine-tuning</text>
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Use lower learning rate for pretrained layers</text>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Discriminative learning rates (lower for early layers)</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Gradual unfreezing: train head first, then unfreeze layers progressively</text>
+  </g>
+</svg>

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="520" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">FCN ARCHITECTURE</text>
+  <text x="425" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Fully Convolutional Networks for Semantic Segmentation</text>
+  
+  <!-- Traditional CNN vs FCN comparison -->
+  <g transform="translate(50, 80)">
+    <rect width="350" height="80" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f87171">Traditional CNN (Classification)</text>
+    <text x="175" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">Input → [Conv] → [FC layers] → Class scores</text>
+    <text x="175" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">↑ Fixed input size required</text>
+  </g>
+  
+  <g transform="translate(450, 80)">
+    <rect width="350" height="80" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">FCN (Segmentation)</text>
+    <text x="175" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">Input → [Conv] → [1×1 Conv] → [Upsample] → Pixel scores</text>
+    <text x="175" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">↑ Replace FC    ↑ Restore resolution</text>
+  </g>
+  
+  <!-- FCN-8s Architecture -->
+  <text x="425" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">FCN-8s Architecture</text>
+  
+  <!-- Input -->
+  <g transform="translate(30, 220)">
+    <rect width="80" height="60" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="40" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">Input</text>
+    <text x="40" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">H×W×3</text>
+  </g>
+  
+  <line x1="115" y1="250" x2="140" y2="250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- VGG Backbone -->
+  <g transform="translate(145, 210)">
+    <rect width="120" height="80" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="60" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e9d5ff">VGG</text>
+    <text x="60" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">Conv1-5</text>
+    <text x="60" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a78bfa">(Pretrained)</text>
+  </g>
+  
+  <!-- Pool3 branch -->
+  <line x1="270" y1="250" x2="290" y2="250" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="290" y1="250" x2="290" y2="340" stroke="#10b981" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Pool4 branch -->
+  <line x1="290" y1="250" x2="290" y2="310" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Main path continues -->
+  <line x1="290" y1="250" x2="310" y2="250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Conv6-7 (H/32) -->
+  <g transform="translate(315, 220)">
+    <rect width="100" height="60" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="50" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#a78bfa">Conv6-7</text>
+    <text x="50" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">(H/32)</text>
+  </g>
+  
+  <line x1="420" y1="250" x2="445" y2="250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 2x Upsample -->
+  <g transform="translate(450, 220)">
+    <rect width="80" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="40" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4ade80">2× up</text>
+    <text x="40" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">(H/16)</text>
+  </g>
+  
+  <!-- Pool4 connection -->
+  <line x1="290" y1="310" x2="490" y2="310" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="490" y1="285" x2="490" y2="310" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Fuse Pool4 -->
+  <g transform="translate(535, 220)">
+    <circle cx="25" cy="30" r="15" fill="#f59e0b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="25" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff">+</text>
+  </g>
+  
+  <line x1="575" y1="250" x2="600" y2="250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 2x Upsample 2 -->
+  <g transform="translate(605, 220)">
+    <rect width="80" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="40" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4ade80">2× up</text>
+    <text x="40" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">(H/8)</text>
+  </g>
+  
+  <!-- Pool3 connection -->
+  <line x1="290" y1="340" x2="645" y2="340" stroke="#10b981" stroke-width="2"/>
+  <line x1="645" y1="285" x2="645" y2="340" stroke="#10b981" stroke-width="2"/>
+  
+  <!-- Fuse Pool3 -->
+  <g transform="translate(690, 220)">
+    <circle cx="25" cy="30" r="15" fill="#10b981" stroke="#34d399" stroke-width="2"/>
+    <text x="25" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff">+</text>
+  </g>
+  
+  <line x1="730" y1="250" x2="755" y2="250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 8x Upsample to output -->
+  <g transform="translate(760, 220)">
+    <rect width="70" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="35" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4ade80">8× up</text>
+    <text x="35" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">Output</text>
+  </g>
+  
+  <!-- Labels for skip connections -->
+  <text x="290" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fbbf24">Pool4 (H/16)</text>
+  <text x="290" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#34d399">Pool3 (H/8)</text>
+  
+  <!-- Comparison section -->
+  <g transform="translate(100, 400)">
+    <rect width="650" height="100" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <text x="325" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#818cf8">Why FCN-8s is Better?</text>
+    
+    <g transform="translate(30, 45)">
+      <circle cx="8" cy="8" r="6" fill="#ef4444"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">FCN-32s: Single 32× upsample → coarse output</text>
+    </g>
+    
+    <g transform="translate(30, 65)">
+      <circle cx="8" cy="8" r="6" fill="#f59e0b"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">FCN-16s: Fuse pool4 → better boundaries</text>
+    </g>
+    
+    <g transform="translate(30, 85)">
+      <circle cx="8" cy="8" r="6" fill="#22c55e"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="10" fill="#86efac">FCN-8s: Fuse pool3 + pool4 → fine details ✓</text>
+    </g>
+  </g>
+</svg>

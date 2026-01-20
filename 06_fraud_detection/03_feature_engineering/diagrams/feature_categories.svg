@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650">
+  <defs>
+    <linearGradient id="catGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="catGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="catGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <linearGradient id="catGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="catGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#c73e54"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="650" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🔧 Feature Engineering Categories for Fraud Detection
+  </text>
+  
+  <!-- Row 1 -->
+  <!-- Transaction Features -->
+  <rect x="30" y="60" width="300" height="180" rx="12" fill="#0f1a2e" stroke="url(#catGrad1)" stroke-width="3"/>
+  <rect x="30" y="60" width="300" height="40" rx="12" fill="url(#catGrad1)"/>
+  <text x="180" y="87" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">💳 Transaction Features</text>
+  
+  <text x="45" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• amount_log, amount_zscore</text>
+  <text x="45" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• is_round_amount, amount_percentile</text>
+  <text x="45" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• mcc_risk_category</text>
+  <text x="45" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• is_international, is_online</text>
+  <text x="45" y="200" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• merchant_fraud_rate</text>
+  
+  <rect x="45" y="215" width="80" height="18" rx="3" fill="#1d4ed8"/>
+  <text x="85" y="228" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Per Request</text>
+  
+  <!-- Velocity Features -->
+  <rect x="350" y="60" width="300" height="180" rx="12" fill="#0f1a2e" stroke="url(#catGrad2)" stroke-width="3"/>
+  <rect x="350" y="60" width="300" height="40" rx="12" fill="url(#catGrad2)"/>
+  <text x="500" y="87" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚡ Velocity Features</text>
+  
+  <text x="365" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• txn_count_1h, txn_count_24h</text>
+  <text x="365" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• txn_amount_sum_7d</text>
+  <text x="365" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• unique_merchants_30d</text>
+  <text x="365" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• decline_rate_7d</text>
+  <text x="365" y="200" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• velocity_ratio (short/long term)</text>
+  
+  <rect x="365" y="215" width="80" height="18" rx="3" fill="#6d28d9"/>
+  <text x="405" y="228" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Streaming</text>
+  
+  <!-- Behavioral Features -->
+  <rect x="670" y="60" width="300" height="180" rx="12" fill="#0f1a2e" stroke="url(#catGrad3)" stroke-width="3"/>
+  <rect x="670" y="60" width="300" height="40" rx="12" fill="url(#catGrad3)"/>
+  <text x="820" y="87" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">👤 Behavioral Features</text>
+  
+  <text x="685" y="120" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• is_unusual_hour</text>
+  <text x="685" y="140" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• amount_vs_typical_ratio</text>
+  <text x="685" y="160" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• is_new_merchant_for_user</text>
+  <text x="685" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• days_since_last_txn</text>
+  <text x="685" y="200" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• session_pages_before_checkout</text>
+  
+  <rect x="685" y="215" width="80" height="18" rx="3" fill="#16a34a"/>
+  <text x="725" y="228" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Batch + RT</text>
+  
+  <!-- Row 2 -->
+  <!-- Device Features -->
+  <rect x="30" y="260" width="300" height="180" rx="12" fill="#0f1a2e" stroke="url(#catGrad4)" stroke-width="3"/>
+  <rect x="30" y="260" width="300" height="40" rx="12" fill="url(#catGrad4)"/>
+  <text x="180" y="287" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">📱 Device &amp; Session Features</text>
+  
+  <text x="45" y="320" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• device_reputation_score</text>
+  <text x="45" y="340" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• is_vpn, is_proxy, is_tor</text>
+  <text x="45" y="360" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• device_user_count_7d</text>
+  <text x="45" y="380" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• is_emulator, is_rooted</text>
+  <text x="45" y="400" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• session_duration_seconds</text>
+  
+  <rect x="45" y="415" width="80" height="18" rx="3" fill="#d97706"/>
+  <text x="85" y="428" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">External API</text>
+  
+  <!-- Network/Graph Features -->
+  <rect x="350" y="260" width="300" height="180" rx="12" fill="#0f1a2e" stroke="url(#catGrad5)" stroke-width="3"/>
+  <rect x="350" y="260" width="300" height="40" rx="12" fill="url(#catGrad5)"/>
+  <text x="500" y="287" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🕸️ Network/Graph Features</text>
+  
+  <text x="365" y="320" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• connected_fraud_users</text>
+  <text x="365" y="340" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• shared_device_user_count</text>
+  <text x="365" y="360" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• ip_user_velocity</text>
+  <text x="365" y="380" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• community_fraud_rate</text>
+  <text x="365" y="400" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• pagerank_score</text>
+  
+  <rect x="365" y="415" width="80" height="18" rx="3" fill="#c73e54"/>
+  <text x="405" y="428" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Graph DB</text>
+  
+  <!-- Embedding Features -->
+  <rect x="670" y="260" width="300" height="180" rx="12" fill="#0f1a2e" stroke="#06b6d4" stroke-width="3"/>
+  <rect x="670" y="260" width="300" height="40" rx="12" fill="#0891b2"/>
+  <text x="820" y="287" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🧬 Embedding Features</text>
+  
+  <text x="685" y="320" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• user_embedding (32-dim)</text>
+  <text x="685" y="340" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• merchant_embedding (32-dim)</text>
+  <text x="685" y="360" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• card_embedding (16-dim)</text>
+  <text x="685" y="380" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• transaction_sequence_embedding</text>
+  <text x="685" y="400" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• mcc_embedding (8-dim)</text>
+  
+  <rect x="685" y="415" width="80" height="18" rx="3" fill="#0891b2"/>
+  <text x="725" y="428" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Deep Learning</text>
+  
+  <!-- Feature Importance Chart -->
+  <rect x="30" y="460" width="940" height="170" rx="12" fill="#0f1a2e" stroke="#e94560" stroke-width="2"/>
+  <text x="500" y="488" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    📊 Feature Importance Ranking (Typical)
+  </text>
+  
+  <!-- Bar Chart -->
+  <g transform="translate(60, 510)">
+    <!-- Bars -->
+    <rect x="0" y="0" width="450" height="22" rx="3" fill="#e94560"/>
+    <text x="460" y="16" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">velocity_txn_count_1h (100%)</text>
+    
+    <rect x="0" y="28" width="400" height="22" rx="3" fill="#f59e0b"/>
+    <text x="410" y="44" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">device_reputation_score (89%)</text>
+    
+    <rect x="0" y="56" width="360" height="22" rx="3" fill="#8b5cf6"/>
+    <text x="370" y="72" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">amount_user_zscore (80%)</text>
+    
+    <rect x="0" y="84" width="300" height="22" rx="3" fill="#22c55e"/>
+    <text x="310" y="100" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">is_new_device (67%)</text>
+    
+    <rect x="0" y="112" width="250" height="22" rx="3" fill="#3b82f6"/>
+    <text x="260" y="128" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">merchant_fraud_rate (56%)</text>
+  </g>
+  
+  <!-- Tip box -->
+  <rect x="580" y="510" width="380" height="100" rx="8" fill="#1e293b"/>
+  <text x="770" y="535" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">💡 Feature Engineering Tips</text>
+  <text x="595" y="555" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Velocity features: Most important category</text>
+  <text x="595" y="572" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Combine multiple time windows (1h, 24h, 7d)</text>
+  <text x="595" y="589" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• User behavior deviations catch 40% of fraud</text>
+  <text x="595" y="606" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Graph features essential for fraud rings</text>
+</svg>
+

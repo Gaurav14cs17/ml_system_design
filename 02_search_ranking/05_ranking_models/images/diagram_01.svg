@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <defs>
+    <linearGradient id="timelineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📈 Evolution of Ranking Models</text>
+  
+  <!-- Timeline bar -->
+  <rect x="80" y="65" width="640" height="6" rx="3" fill="url(#timelineGrad2)" filter="url(#glow2)"/>
+  
+  <!-- 1990s -->
+  <g transform="translate(100, 45)">
+    <circle cx="0" cy="23" r="10" fill="#6366f1" filter="url(#glow2)"/>
+    <rect x="-65" y="45" width="130" height="90" rx="10" fill="#0f172a" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a5b4fc">TF-IDF</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Simple</text>
+    <text x="0" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Heuristics</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#e0e7ff">1990s</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M175 90 L225 90" stroke="#64748b" stroke-width="2"/>
+  <polygon points="220,87 230,90 220,93" fill="#64748b"/>
+  
+  <!-- 2000s -->
+  <g transform="translate(280, 45)">
+    <circle cx="0" cy="23" r="10" fill="#8b5cf6" filter="url(#glow2)"/>
+    <rect x="-65" y="45" width="130" height="90" rx="10" fill="#0f172a" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#c4b5fd">BM25</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Statistical</text>
+    <text x="0" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Models</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#e0e7ff">2000s</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M355 90 L405 90" stroke="#64748b" stroke-width="2"/>
+  <polygon points="400,87 410,90 400,93" fill="#64748b"/>
+  
+  <!-- 2010s -->
+  <g transform="translate(460, 45)">
+    <circle cx="0" cy="23" r="10" fill="#a855f7" filter="url(#glow2)"/>
+    <rect x="-65" y="45" width="130" height="90" rx="10" fill="#0f172a" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#d8b4fe">GBDT/LTR</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Machine</text>
+    <text x="0" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Learning</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#e0e7ff">2010s</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M535 90 L585 90" stroke="#64748b" stroke-width="2"/>
+  <polygon points="580,87 590,90 580,93" fill="#64748b"/>
+  
+  <!-- 2020s -->
+  <g transform="translate(640, 45)">
+    <circle cx="0" cy="23" r="12" fill="#ec4899" filter="url(#glow2)"/>
+    <rect x="-70" y="45" width="140" height="90" rx="10" fill="#0f172a" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f9a8d4">Transformers</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Deep</text>
+    <text x="0" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Learning</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fce7f3">2020s</text>
+  </g>
+  
+  <!-- Bottom progress bar -->
+  <rect x="100" y="210" width="600" height="30" rx="8" fill="#0f172a"/>
+  <rect x="100" y="210" width="150" height="30" rx="8 0 0 8" fill="#6366f1"/>
+  <rect x="250" y="210" width="150" height="30" fill="#8b5cf6"/>
+  <rect x="400" y="210" width="150" height="30" fill="#a855f7"/>
+  <rect x="550" y="210" width="150" height="30" rx="0 8 8 0" fill="#ec4899"/>
+  
+  <text x="175" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">Keyword Match</text>
+  <text x="325" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">Probabilistic</text>
+  <text x="475" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">Feature-based</text>
+  <text x="625" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">Semantic</text>
+  
+  <!-- Accuracy label -->
+  <text x="400" y="270" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Increasing Accuracy and Complexity →</text>
+</svg>

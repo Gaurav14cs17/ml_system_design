@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220">
+  <defs>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="connectorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="kafkaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="targetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <filter id="cdcShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+    <marker id="cdcArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="220" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="425" y="30" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC">🔄 CDC Architecture with Debezium</text>
+  
+  <!-- Source Database -->
+  <g filter="url(#cdcShadow)">
+    <rect x="30" y="60" width="140" height="100" rx="12" fill="url(#dbGrad)"/>
+    <text x="100" y="95" text-anchor="middle" font-family="system-ui" font-size="24">🗄️</text>
+    <text x="100" y="120" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">Source DB</text>
+    <text x="100" y="138" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">(MySQL/Postgres)</text>
+  </g>
+  
+  <!-- Transaction Log -->
+  <g transform="translate(60, 170)">
+    <rect x="0" y="0" width="80" height="35" rx="6" fill="#334155"/>
+    <text x="40" y="15" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">📋 Transaction</text>
+    <text x="40" y="28" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Log (binlog)</text>
+  </g>
+  <path d="M100 160 L100 167" stroke="#6366F1" stroke-width="2" marker-end="url(#cdcArrow)"/>
+  
+  <!-- Arrow 1 -->
+  <path d="M175 110 L225 110" stroke="#64748B" stroke-width="3" marker-end="url(#cdcArrow)"/>
+  <g transform="translate(185, 85)">
+    <rect x="0" y="0" width="30" height="16" rx="3" fill="#22D3EE"/>
+    <text x="15" y="11" text-anchor="middle" font-family="system-ui" font-size="8" fill="#0F172A">CDC</text>
+  </g>
+  
+  <!-- Debezium Connector -->
+  <g filter="url(#cdcShadow)">
+    <rect x="230" y="60" width="160" height="100" rx="12" fill="url(#connectorGrad)"/>
+    <text x="310" y="95" text-anchor="middle" font-family="system-ui" font-size="24">⚡</text>
+    <text x="310" y="120" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">Debezium</text>
+    <text x="310" y="138" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">Connector</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M395 110 L445 110" stroke="#64748B" stroke-width="3" marker-end="url(#cdcArrow)"/>
+  <g transform="translate(400, 85)">
+    <rect x="0" y="0" width="40" height="16" rx="3" fill="#10B981"/>
+    <text x="20" y="11" text-anchor="middle" font-family="system-ui" font-size="8" fill="#F8FAFC">Events</text>
+  </g>
+  
+  <!-- Kafka -->
+  <g filter="url(#cdcShadow)">
+    <rect x="450" y="60" width="160" height="100" rx="12" fill="url(#kafkaGrad)"/>
+    <text x="530" y="95" text-anchor="middle" font-family="system-ui" font-size="24">📨</text>
+    <text x="530" y="120" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">Kafka Topics</text>
+    <text x="530" y="138" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">Change Events</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M615 110 L665 110" stroke="#64748B" stroke-width="3" marker-end="url(#cdcArrow)"/>
+  <g transform="translate(620, 85)">
+    <rect x="0" y="0" width="40" height="16" rx="3" fill="#F59E0B"/>
+    <text x="20" y="11" text-anchor="middle" font-family="system-ui" font-size="8" fill="#0F172A">Stream</text>
+  </g>
+  
+  <!-- Target System -->
+  <g filter="url(#cdcShadow)">
+    <rect x="670" y="60" width="150" height="100" rx="12" fill="url(#targetGrad)"/>
+    <text x="745" y="95" text-anchor="middle" font-family="system-ui" font-size="24">💾</text>
+    <text x="745" y="120" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">Target System</text>
+    <text x="745" y="138" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">Data Lake / DW</text>
+  </g>
+  
+  <!-- Bottom labels -->
+  <text x="425" y="205" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748B">Real-time change capture • Low latency • No polling required</text>
+</svg>

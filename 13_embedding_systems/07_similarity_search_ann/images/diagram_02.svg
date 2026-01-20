@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="hnswGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔍 HNSW: Hierarchical Navigable Small World</text>
+  
+  <!-- Layer 0 (bottom) -->
+  <g filter="url(#shadow)" transform="translate(60, 250)">
+    <rect width="680" height="120" rx="12" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">Layer 0 (Dense)</text>
+    
+    <!-- Many nodes -->
+    <circle cx="60" cy="70" r="10" fill="#64748b"/>
+    <circle cx="100" cy="80" r="10" fill="#64748b"/>
+    <circle cx="140" cy="65" r="10" fill="#64748b"/>
+    <circle cx="180" cy="75" r="10" fill="#64748b"/>
+    <circle cx="220" cy="70" r="10" fill="#64748b"/>
+    <circle cx="260" cy="85" r="10" fill="#64748b"/>
+    <circle cx="300" cy="68" r="10" fill="#3b82f6" filter="url(#glow)"/>
+    <circle cx="340" cy="78" r="10" fill="#64748b"/>
+    <circle cx="380" cy="72" r="10" fill="#64748b"/>
+    <circle cx="420" cy="82" r="10" fill="#64748b"/>
+    <circle cx="460" cy="65" r="10" fill="#64748b"/>
+    <circle cx="500" cy="75" r="10" fill="#64748b"/>
+    <circle cx="540" cy="80" r="10" fill="#ef4444" filter="url(#glow)"/>
+    <circle cx="580" cy="70" r="10" fill="#64748b"/>
+    <circle cx="620" cy="78" r="10" fill="#64748b"/>
+    <circle cx="660" cy="68" r="10" fill="#64748b"/>
+    
+    <!-- Connections -->
+    <line x1="60" y1="70" x2="100" y2="80" stroke="#475569" stroke-width="1"/>
+    <line x1="100" y1="80" x2="140" y2="65" stroke="#475569" stroke-width="1"/>
+    <line x1="140" y1="65" x2="180" y2="75" stroke="#475569" stroke-width="1"/>
+    <line x1="180" y1="75" x2="220" y2="70" stroke="#475569" stroke-width="1"/>
+    <line x1="220" y1="70" x2="260" y2="85" stroke="#475569" stroke-width="1"/>
+    <line x1="260" y1="85" x2="300" y2="68" stroke="#10b981" stroke-width="2"/>
+    <line x1="300" y1="68" x2="340" y2="78" stroke="#10b981" stroke-width="2"/>
+    <line x1="340" y1="78" x2="380" y2="72" stroke="#10b981" stroke-width="2"/>
+    <line x1="380" y1="72" x2="420" y2="82" stroke="#10b981" stroke-width="2"/>
+    <line x1="420" y1="82" x2="460" y2="65" stroke="#10b981" stroke-width="2"/>
+    <line x1="460" y1="65" x2="500" y2="75" stroke="#10b981" stroke-width="2"/>
+    <line x1="500" y1="75" x2="540" y2="80" stroke="#10b981" stroke-width="2"/>
+  </g>
+  
+  <!-- Layer 1 -->
+  <g filter="url(#shadow)" transform="translate(150, 150)">
+    <rect width="500" height="80" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="20" y="20" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#94a3b8">Layer 1</text>
+    
+    <circle cx="80" cy="50" r="10" fill="#64748b"/>
+    <circle cx="150" cy="50" r="10" fill="#3b82f6" filter="url(#glow)"/>
+    <circle cx="220" cy="50" r="10" fill="#64748b"/>
+    <circle cx="290" cy="50" r="10" fill="#64748b"/>
+    <circle cx="360" cy="50" r="10" fill="#ef4444" filter="url(#glow)"/>
+    <circle cx="430" cy="50" r="10" fill="#64748b"/>
+    
+    <line x1="80" y1="50" x2="150" y2="50" stroke="#10b981" stroke-width="2"/>
+    <line x1="150" y1="50" x2="220" y2="50" stroke="#10b981" stroke-width="2"/>
+    <line x1="220" y1="50" x2="290" y2="50" stroke="#10b981" stroke-width="2"/>
+    <line x1="290" y1="50" x2="360" y2="50" stroke="#10b981" stroke-width="2"/>
+  </g>
+  
+  <!-- Layer 2 (top) -->
+  <g filter="url(#shadow)" transform="translate(250, 70)">
+    <rect width="300" height="60" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="20" y="18" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8">Layer 2 (Sparse)</text>
+    
+    <circle cx="80" cy="38" r="10" fill="#3b82f6" filter="url(#glow)"/>
+    <circle cx="150" cy="38" r="10" fill="#64748b"/>
+    <circle cx="220" cy="38" r="10" fill="#ef4444" filter="url(#glow)"/>
+    
+    <line x1="80" y1="38" x2="150" y2="38" stroke="#10b981" stroke-width="2"/>
+    <line x1="150" y1="38" x2="220" y2="38" stroke="#10b981" stroke-width="2"/>
+  </g>
+  
+  <!-- Vertical connections -->
+  <line x1="330" y1="108" x2="300" y2="150" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="470" y1="108" x2="510" y2="150" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="300" y1="200" x2="360" y2="250" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="510" y1="200" x2="600" y2="250" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2"/>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 380)">
+    <circle cx="10" cy="0" r="6" fill="#3b82f6"/>
+    <text x="25" y="4" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Entry point</text>
+    
+    <circle cx="130" cy="0" r="6" fill="#ef4444"/>
+    <text x="145" y="4" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Target</text>
+    
+    <line x1="230" y1="0" x2="260" y2="0" stroke="#10b981" stroke-width="2"/>
+    <text x="270" y="4" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Search path</text>
+    
+    <text x="400" y="4" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">O(log n) query time</text>
+  </g>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a35;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a5a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#51cf66;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#40c057;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="url(#bgGrad2)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Training-Serving Skew Problem</text>
+  
+  <!-- WITHOUT Feature Store (Left Side) -->
+  <text x="225" y="70" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">❌ Without Feature Store</text>
+  
+  <!-- Training Path -->
+  <rect x="50" y="100" width="140" height="50" rx="8" fill="#2d3436"/>
+  <text x="120" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Training Code</text>
+  <text x="120" y="145" text-anchor="middle" fill="#74b9ff" font-family="Arial, sans-serif" font-size="10">Python + Pandas</text>
+  
+  <path d="M195 125 L240 125" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <rect x="245" y="100" width="100" height="50" rx="8" fill="#2d3436"/>
+  <text x="295" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Feature v1</text>
+  
+  <path d="M350 125 L395 125" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <rect x="400" y="100" width="50" height="50" rx="8" fill="url(#redGrad)"/>
+  <text x="425" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18">🤖</text>
+  
+  <!-- Serving Path -->
+  <rect x="50" y="180" width="140" height="50" rx="8" fill="#2d3436"/>
+  <text x="120" y="210" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Serving Code</text>
+  <text x="120" y="225" text-anchor="middle" fill="#ffeaa7" font-family="Arial, sans-serif" font-size="10">Java + SQL</text>
+  
+  <path d="M195 205 L240 205" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <rect x="245" y="180" width="100" height="50" rx="8" fill="#2d3436"/>
+  <text x="295" y="210" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Feature v2</text>
+  
+  <path d="M350 205 L395 205" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <rect x="400" y="180" width="50" height="50" rx="8" fill="url(#redGrad)"/>
+  <text x="425" y="210" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18">🤖</text>
+  
+  <!-- Skew indicator -->
+  <path d="M295 155 L295 175" stroke="#ff6b6b" stroke-width="3"/>
+  <text x="295" y="170" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="20">≠</text>
+  
+  <rect x="80" y="255" width="340" height="35" rx="5" fill="#ff6b6b" fill-opacity="0.2" stroke="#ff6b6b" stroke-width="1"/>
+  <text x="250" y="278" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12">⚠️ Different code paths = Different results!</text>
+  
+  <!-- Divider -->
+  <line x1="450" y1="60" x2="450" y2="340" stroke="#444" stroke-width="2" stroke-dasharray="10,5"/>
+  
+  <!-- WITH Feature Store (Right Side) -->
+  <text x="675" y="70" text-anchor="middle" fill="#51cf66" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✅ With Feature Store</text>
+  
+  <!-- Unified Feature Store -->
+  <rect x="570" y="120" width="210" height="100" rx="12" fill="#1e3a5f" stroke="#51cf66" stroke-width="2"/>
+  <text x="675" y="150" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🏪 Feature Store</text>
+  <text x="675" y="175" text-anchor="middle" fill="#51cf66" font-family="Arial, sans-serif" font-size="12">Single Source of Truth</text>
+  <text x="675" y="200" text-anchor="middle" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="10">Same features for training &amp; serving</text>
+  
+  <!-- Training Arrow -->
+  <rect x="500" y="110" width="60" height="30" rx="5" fill="#2d3436"/>
+  <text x="530" y="130" text-anchor="middle" fill="#74b9ff" font-family="Arial, sans-serif" font-size="10">Training</text>
+  <path d="M565 125 L570 170" stroke="#51cf66" stroke-width="2"/>
+  
+  <!-- Serving Arrow -->
+  <rect x="500" y="200" width="60" height="30" rx="5" fill="#2d3436"/>
+  <text x="530" y="220" text-anchor="middle" fill="#ffeaa7" font-family="Arial, sans-serif" font-size="10">Serving</text>
+  <path d="M565 215 L570 170" stroke="#51cf66" stroke-width="2"/>
+  
+  <!-- Model -->
+  <path d="M785 170 L830 170" stroke="#51cf66" stroke-width="2"/>
+  <rect x="835" y="145" width="50" height="50" rx="8" fill="url(#greenGrad)"/>
+  <text x="860" y="175" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18">🤖</text>
+  
+  <!-- Success indicator -->
+  <rect x="530" y="255" width="290" height="35" rx="5" fill="#51cf66" fill-opacity="0.2" stroke="#51cf66" stroke-width="1"/>
+  <text x="675" y="278" text-anchor="middle" fill="#51cf66" font-family="Arial, sans-serif" font-size="12">✅ Same code path = Consistent results!</text>
+  
+  <!-- Bottom comparison -->
+  <text x="225" y="330" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="11">• Feature logic duplicated</text>
+  <text x="225" y="350" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="11">• Subtle bugs in production</text>
+  <text x="225" y="370" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="11">• Hard to debug</text>
+  
+  <text x="675" y="330" text-anchor="middle" fill="#51cf66" font-family="Arial, sans-serif" font-size="11">• Single feature definition</text>
+  <text x="675" y="350" text-anchor="middle" fill="#51cf66" font-family="Arial, sans-serif" font-size="11">• Guaranteed consistency</text>
+  <text x="675" y="370" text-anchor="middle" fill="#51cf66" font-family="Arial, sans-serif" font-size="11">• Easy debugging</text>
+</svg>
+

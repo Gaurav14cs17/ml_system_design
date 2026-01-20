@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 320">
+  <defs>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="25%" style="stop-color:#8b5cf6"/>
+      <stop offset="50%" style="stop-color:#ec4899"/>
+      <stop offset="75%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🎓 Recommendation Model Training Pipeline</text>
+  
+  <!-- Pipeline stages -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="55" width="100" height="60" rx="10" fill="#3b82f6"/>
+    <text x="80" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">📥 Data</text>
+    <text x="80" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Prep</text>
+  </g>
+  <path d="M135 85 L165 85" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="170" y="55" width="100" height="60" rx="10" fill="#6366f1"/>
+    <text x="220" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">✂️ Split</text>
+  </g>
+  <path d="M275 85 L305 85" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="310" y="55" width="100" height="60" rx="10" fill="#8b5cf6"/>
+    <text x="360" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🏋️ Train</text>
+  </g>
+  <path d="M415 85 L445 85" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="450" y="55" width="100" height="60" rx="10" fill="#ec4899"/>
+    <text x="500" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">✅ Validate</text>
+  </g>
+  <path d="M555 85 L585 85" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="590" y="55" width="100" height="60" rx="10" fill="#f59e0b"/>
+    <text x="640" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🧪 Test</text>
+  </g>
+  <path d="M695 85 L725 85" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="730" y="55" width="100" height="60" rx="10" fill="#10b981"/>
+    <text x="780" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🚀 Deploy</text>
+  </g>
+  
+  <!-- Key Considerations -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="140" width="650" height="160" rx="14" fill="#0f172a" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="100" y="140" width="650" height="40" rx="14 14 0 0" fill="#1e293b"/>
+    <text x="425" y="167" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">💡 KEY CONSIDERATIONS</text>
+    
+    <g transform="translate(130, 195)">
+      <rect x="0" y="0" width="280" height="35" rx="6" fill="#dbeafe"/>
+      <text x="140" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1e40af">⏱️ Use temporal splits (train past, test future)</text>
+      
+      <rect x="300" y="0" width="280" height="35" rx="6" fill="#422006"/>
+      <text x="440" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#92400e">📊 Handle implicit vs explicit feedback</text>
+      
+      <rect x="0" y="45" width="280" height="35" rx="6" fill="#dcfce7"/>
+      <text x="140" y="67" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#166534">➖ Sample negatives carefully</text>
+      
+      <rect x="300" y="45" width="280" height="35" rx="6" fill="#450a0a"/>
+      <text x="440" y="67" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#991b1b">⚠️ Watch for data leakage</text>
+    </g>
+  </g>
+</svg>

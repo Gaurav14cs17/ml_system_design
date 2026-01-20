@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='356' height='200' viewBox='0 0 356 200'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+Minimum Duration Recommendations:
+┌────────────────────────────────────────┐
+│ • At least 1 full week (day-of-week)  │
+│ • At least 2 weeks for novelty decay  │
+│ • Include any business cycles         │
+│ • Account for delayed conversions     │
+└────────────────────────────────────────┘
+
+Even if you have enough samples in 3 days,
+run for at least 1-2 weeks!
+  </text>
+</svg>

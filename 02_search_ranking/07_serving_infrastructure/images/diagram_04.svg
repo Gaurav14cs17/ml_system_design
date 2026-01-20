@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 480">
+  <defs>
+    <linearGradient id="servingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="175" y="20" width="400" height="50" rx="12" fill="url(#servingGrad)"/>
+    <text x="375" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🚀 Model Serving Architecture</text>
+  </g>
+  
+  <!-- Request Flow -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="95" width="120" height="60" rx="10" fill="#0f172a"/>
+    <text x="100" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔍 Query</text>
+    <text x="100" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">User request</text>
+  </g>
+  
+  <path d="M165 125 L195 125" stroke="#64748b" stroke-width="2"/>
+  <polygon points="195,120 210,125 195,130" fill="#64748b"/>
+  
+  <!-- Load Balancer -->
+  <g filter="url(#shadow)">
+    <rect x="210" y="95" width="120" height="60" rx="10" fill="#0f172a"/>
+    <text x="270" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">⚖️ LB</text>
+    <text x="270" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Round robin</text>
+  </g>
+  
+  <path d="M335 125 L365 125" stroke="#64748b" stroke-width="2"/>
+  <polygon points="365,120 380,125 365,130" fill="#64748b"/>
+  
+  <!-- API Gateway -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="95" width="120" height="60" rx="10" fill="#0f172a"/>
+    <text x="440" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🚪 Gateway</text>
+    <text x="440" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Auth + Rate limit</text>
+  </g>
+  
+  <path d="M505 125 L535 125" stroke="#64748b" stroke-width="2"/>
+  <polygon points="535,120 550,125 535,130" fill="#64748b"/>
+  
+  <!-- Feature Service -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="95" width="160" height="60" rx="10" fill="#0f172a"/>
+    <text x="630" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">⚡ Feature Service</text>
+    <text x="630" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Real-time features</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M630 160 L630 185" stroke="#64748b" stroke-width="2"/>
+  <polygon points="625,185 630,200 635,185" fill="#64748b"/>
+  
+  <!-- Model Serving Layer -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="200" width="670" height="250" rx="12" fill="#0f172a"/>
+    <rect x="40" y="200" width="670" height="45" rx="12 12 0 0" fill="#6366f1"/>
+    <text x="375" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧠 Model Serving Cluster</text>
+    
+    <!-- Retrieval -->
+    <rect x="60" y="260" width="190" height="170" rx="10" fill="#334155"/>
+    <text x="155" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">Retrieval Service</text>
+    <rect x="75" y="300" width="80" height="50" rx="6" fill="#dbeafe"/>
+    <text x="115" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#1e40af">BM25</text>
+    <text x="115" y="342" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Lucene</text>
+    <rect x="155" y="300" width="80" height="50" rx="6" fill="#dbeafe"/>
+    <text x="195" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#1e40af">ANN</text>
+    <text x="195" y="342" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">FAISS</text>
+    <text x="155" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">Latency: ~10ms</text>
+    <text x="155" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">Candidates: 1000</text>
+    <text x="155" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#22c55e">8 replicas</text>
+  </g>
+  
+  <!-- Arrow right -->
+  <path d="M255 335 L275 335" stroke="#64748b" stroke-width="2"/>
+  <polygon points="275,330 290,335 275,340" fill="#64748b"/>
+  
+  <!-- Ranking -->
+  <g>
+    <rect x="280" y="260" width="190" height="170" rx="10" fill="#334155"/>
+    <text x="375" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#10b981">Ranking Service</text>
+    <rect x="295" y="300" width="160" height="50" rx="6" fill="#dcfce7"/>
+    <text x="375" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#166534">LightGBM</text>
+    <text x="375" y="342" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">500 features</text>
+    <text x="375" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">Latency: ~30ms</text>
+    <text x="375" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">Top 100 scored</text>
+    <text x="375" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#22c55e">12 replicas</text>
+  </g>
+  
+  <!-- Arrow right -->
+  <path d="M475 335 L495 335" stroke="#64748b" stroke-width="2"/>
+  <polygon points="495,330 510,335 495,340" fill="#64748b"/>
+  
+  <!-- Re-ranking -->
+  <g>
+    <rect x="500" y="260" width="190" height="170" rx="10" fill="#334155"/>
+    <text x="595" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6">Re-rank Service</text>
+    <rect x="515" y="300" width="160" height="50" rx="6" fill="#ede9fe"/>
+    <text x="595" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#5b21b6">Cross-Encoder</text>
+    <text x="595" y="342" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">BERT-based</text>
+    <text x="595" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">Latency: ~50ms</text>
+    <text x="595" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">Top 10 refined</text>
+    <text x="595" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#22c55e">4 GPU replicas</text>
+  </g>
+</svg>
+
+
+

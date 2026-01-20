@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 450">
+  <defs>
+    <linearGradient id="encGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00b894"/>
+      <stop offset="100%" style="stop-color:#00cec9"/>
+    </linearGradient>
+    <linearGradient id="decGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c5ce7"/>
+      <stop offset="100%" style="stop-color:#a29bfe"/>
+    </linearGradient>
+    <linearGradient id="attenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fd79a8"/>
+      <stop offset="100%" style="stop-color:#e84393"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="450" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="475" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Sequence-to-Sequence Translation</text>
+  
+  <!-- Source Sentence -->
+  <g transform="translate(50, 70)">
+    <text x="180" y="0" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">English (Source)</text>
+    
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="70" height="40" rx="8" fill="#2d3748"/>
+      <text x="35" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="12">The</text>
+      
+      <rect x="80" y="0" width="70" height="40" rx="8" fill="#2d3748"/>
+      <text x="115" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="12">cat</text>
+      
+      <rect x="160" y="0" width="70" height="40" rx="8" fill="#2d3748"/>
+      <text x="195" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="12">sat</text>
+      
+      <rect x="240" y="0" width="90" height="40" rx="8" fill="#2d3748"/>
+      <text x="285" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="12">andlt;EOSandgt;</text>
+    </g>
+  </g>
+  
+  <!-- Encoder -->
+  <g transform="translate(50, 160)">
+    <rect width="360" height="100" rx="15" fill="#161b22" stroke="url(#encGrad)" stroke-width="2"/>
+    <text x="180" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="16" font-weight="bold">ENCODER</text>
+    
+    <!-- LSTM cells -->
+    <g transform="translate(30, 40)">
+      <rect x="0" y="0" width="60" height="40" rx="8" fill="#00b894" opacity="0.3"/>
+      <text x="30" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M65 20 L80 20" stroke="#00b894" stroke-width="2" marker-end="url(#greenArr2)"/>
+      <defs>
+        <marker id="greenArr2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#00b894"/>
+        </marker>
+      </defs>
+      
+      <rect x="85" y="0" width="60" height="40" rx="8" fill="#00b894" opacity="0.3"/>
+      <text x="115" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M150 20 L165 20" stroke="#00b894" stroke-width="2" marker-end="url(#greenArr2)"/>
+      
+      <rect x="170" y="0" width="60" height="40" rx="8" fill="#00b894" opacity="0.3"/>
+      <text x="200" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M235 20 L250 20" stroke="#00b894" stroke-width="2" marker-end="url(#greenArr2)"/>
+      
+      <rect x="255" y="0" width="60" height="40" rx="8" fill="#00b894" opacity="0.5"/>
+      <text x="285" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="10">h_n</text>
+    </g>
+  </g>
+  
+  <!-- Context Arrow -->
+  <path d="M415 210 L480 210" stroke="#f39c12" stroke-width="3" marker-end="url(#ctxArr)"/>
+  <defs>
+    <marker id="ctxArr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f39c12"/>
+    </marker>
+  </defs>
+  <text x="448" y="200" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="10">Context</text>
+  
+  <!-- Decoder -->
+  <g transform="translate(490, 160)">
+    <rect width="410" height="100" rx="15" fill="#161b22" stroke="url(#decGrad)" stroke-width="2"/>
+    <text x="205" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">DECODER</text>
+    
+    <!-- LSTM cells -->
+    <g transform="translate(30, 40)">
+      <rect x="0" y="0" width="60" height="40" rx="8" fill="#6c5ce7" opacity="0.3"/>
+      <text x="30" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M65 20 L80 20" stroke="#6c5ce7" stroke-width="2" marker-end="url(#purpArr2)"/>
+      <defs>
+        <marker id="purpArr2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#6c5ce7"/>
+        </marker>
+      </defs>
+      
+      <rect x="85" y="0" width="60" height="40" rx="8" fill="#6c5ce7" opacity="0.3"/>
+      <text x="115" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M150 20 L165 20" stroke="#6c5ce7" stroke-width="2" marker-end="url(#purpArr2)"/>
+      
+      <rect x="170" y="0" width="60" height="40" rx="8" fill="#6c5ce7" opacity="0.3"/>
+      <text x="200" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M235 20 L250 20" stroke="#6c5ce7" stroke-width="2" marker-end="url(#purpArr2)"/>
+      
+      <rect x="255" y="0" width="60" height="40" rx="8" fill="#6c5ce7" opacity="0.3"/>
+      <text x="285" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="10">LSTM</text>
+      
+      <path d="M320 20 L335 20" stroke="#6c5ce7" stroke-width="2" marker-end="url(#purpArr2)"/>
+      
+      <rect x="340" y="0" width="30" height="40" rx="8" fill="#6c5ce7" opacity="0.3"/>
+      <text x="355" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="10">...</text>
+    </g>
+  </g>
+  
+  <!-- Target Sentence -->
+  <g transform="translate(490, 290)">
+    <text x="205" y="0" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">French (Target)</text>
+    
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="70" height="40" rx="8" fill="#2d3748"/>
+      <text x="35" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12">Le</text>
+      
+      <rect x="80" y="0" width="70" height="40" rx="8" fill="#2d3748"/>
+      <text x="115" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12">chat</text>
+      
+      <rect x="160" y="0" width="120" height="40" rx="8" fill="#2d3748"/>
+      <text x="220" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12">était assis</text>
+      
+      <rect x="290" y="0" width="90" height="40" rx="8" fill="#2d3748"/>
+      <text x="335" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12">andlt;EOSandgt;</text>
+    </g>
+  </g>
+  
+  <!-- Attention Mechanism -->
+  <g transform="translate(50, 380)">
+    <rect width="850" height="60" rx="12" fill="#161b22" stroke="url(#attenGrad)" stroke-width="2"/>
+    <text x="425" y="25" text-anchor="middle" fill="#fd79a8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Attention Mechanism</text>
+    <text x="425" y="45" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">Decoder attends to relevant encoder states at each step → Better alignment for long sequences</text>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(720, 70)">
+    <text x="100" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Evaluation</text>
+    <text x="0" y="25" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">BLEU Score</text>
+    <text x="0" y="45" fill="#3498db" font-family="Arial, sans-serif" font-size="11">METEOR</text>
+    <text x="0" y="65" fill="#f39c12" font-family="Arial, sans-serif" font-size="11">chrF</text>
+  </g>
+</svg>
+

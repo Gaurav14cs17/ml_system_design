@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="tradGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔄 Traditional Software vs ML Systems</text>
+  
+  <!-- Headers -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="55" width="350" height="45" rx="10" fill="url(#tradGrad)"/>
+    <text x="215" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">💻 Traditional Software</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="410" y="55" width="350" height="45" rx="10" fill="url(#mlGrad)"/>
+    <text x="585" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🤖 ML Systems</text>
+  </g>
+  
+  <!-- Rows -->
+  <!-- Row 1 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="115" width="350" height="40" rx="6" fill="#e0e7ff"/>
+    <text x="60" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">✓ Deterministic behavior</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="410" y="115" width="350" height="40" rx="6" fill="#422006"/>
+    <text x="430" y="140" font-family="Segoe UI, sans-serif" font-size="12" fill="#92400e">⚡ Probabilistic behavior</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="165" width="350" height="40" rx="6" fill="#ede9fe"/>
+    <text x="60" y="190" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">✓ Fails loudly (errors)</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="410" y="165" width="350" height="40" rx="6" fill="#ffedd5"/>
+    <text x="430" y="190" font-family="Segoe UI, sans-serif" font-size="12" fill="#92400e">⚠️ Fails silently (wrong predictions)</text>
+  </g>
+  
+  <!-- Row 3 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="215" width="350" height="40" rx="6" fill="#e0e7ff"/>
+    <text x="60" y="240" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">✓ Code = behavior</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="410" y="215" width="350" height="40" rx="6" fill="#422006"/>
+    <text x="430" y="240" font-family="Segoe UI, sans-serif" font-size="12" fill="#92400e">📦 Code + Data + Model = behavior</text>
+  </g>
+  
+  <!-- Row 4 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="265" width="350" height="40" rx="6" fill="#ede9fe"/>
+    <text x="60" y="290" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">✓ Static once deployed</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="410" y="265" width="350" height="40" rx="6" fill="#ffedd5"/>
+    <text x="430" y="290" font-family="Segoe UI, sans-serif" font-size="12" fill="#92400e">📉 Degrades over time (drift)</text>
+  </g>
+  
+  <!-- Row 5 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="315" width="350" height="40" rx="6" fill="#e0e7ff"/>
+    <text x="60" y="340" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">✓ Bug = code error</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="410" y="315" width="350" height="40" rx="6" fill="#422006"/>
+    <text x="430" y="340" font-family="Segoe UI, sans-serif" font-size="12" fill="#92400e">🔍 Bug = data, model, or code error</text>
+  </g>
+  
+  <!-- VS divider -->
+  <circle cx="400" cy="230" r="25" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="400" y="236" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">VS</text>
+</svg>

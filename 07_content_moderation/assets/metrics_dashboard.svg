@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="dashBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#dashBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">📊 Moderation Metrics Dashboard</text>
+  
+  <!-- Top Row - Key Metrics -->
+  <g transform="translate(30, 60)">
+    <!-- Precision -->
+    <g>
+      <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="100" y="30" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">PRECISION</text>
+      <text x="100" y="65" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="32" font-weight="bold">97.2%</text>
+      <text x="100" y="88" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11">↑ 0.3% from last week</text>
+    </g>
+    
+    <!-- Recall -->
+    <g transform="translate(220, 0)">
+      <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="100" y="30" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">RECALL</text>
+      <text x="100" y="65" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="32" font-weight="bold">89.5%</text>
+      <text x="100" y="88" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11">↑ 1.2% from last week</text>
+    </g>
+    
+    <!-- F1 Score -->
+    <g transform="translate(440, 0)">
+      <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="100" y="30" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">F1 SCORE</text>
+      <text x="100" y="65" text-anchor="middle" fill="#a855f7" font-family="Arial, sans-serif" font-size="32" font-weight="bold">93.2%</text>
+      <text x="100" y="88" text-anchor="middle" fill="#c084fc" font-family="Arial, sans-serif" font-size="11">↑ 0.7% from last week</text>
+    </g>
+    
+    <!-- Latency -->
+    <g transform="translate(660, 0)">
+      <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="100" y="30" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">P99 LATENCY</text>
+      <text x="100" y="65" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="32" font-weight="bold">142ms</text>
+      <text x="100" y="88" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">↓ 8ms improvement</text>
+    </g>
+  </g>
+  
+  <!-- Confusion Matrix -->
+  <g transform="translate(30, 180)">
+    <rect width="250" height="200" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Confusion Matrix</text>
+    
+    <!-- Matrix -->
+    <g transform="translate(40, 45)">
+      <!-- Labels -->
+      <text x="55" y="-5" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Predicted</text>
+      <text x="30" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Safe</text>
+      <text x="105" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Violation</text>
+      
+      <text x="-5" y="70" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9" transform="rotate(-90, -5, 70)">Actual</text>
+      <text x="0" y="75" text-anchor="end" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Safe</text>
+      <text x="0" y="125" text-anchor="end" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Violation</text>
+      
+      <!-- Cells -->
+      <rect x="5" y="55" width="55" height="40" fill="#166534"/>
+      <text x="32" y="80" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">TN</text>
+      
+      <rect x="65" y="55" width="55" height="40" fill="#7f1d1d"/>
+      <text x="92" y="80" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">FP</text>
+      
+      <rect x="5" y="100" width="55" height="40" fill="#7c2d12"/>
+      <text x="32" y="125" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">FN</text>
+      
+      <rect x="65" y="100" width="55" height="40" fill="#14532d"/>
+      <text x="92" y="125" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">TP</text>
+    </g>
+  </g>
+  
+  <!-- Category Breakdown -->
+  <g transform="translate(300, 180)">
+    <rect width="280" height="200" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="140" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Detection by Category</text>
+    
+    <!-- Bars -->
+    <g transform="translate(20, 45)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Hate Speech</text>
+      <rect x="80" y="5" width="150" height="14" rx="3" fill="#312e81"/>
+      <rect x="80" y="5" width="128" height="14" rx="3" fill="#6366f1"/>
+      <text x="215" y="16" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">85%</text>
+      
+      <text x="0" y="40" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Violence</text>
+      <rect x="80" y="30" width="150" height="14" rx="3" fill="#312e81"/>
+      <rect x="80" y="30" width="135" height="14" rx="3" fill="#8b5cf6"/>
+      <text x="215" y="41" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">90%</text>
+      
+      <text x="0" y="65" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Adult</text>
+      <rect x="80" y="55" width="150" height="14" rx="3" fill="#312e81"/>
+      <rect x="80" y="55" width="143" height="14" rx="3" fill="#ec4899"/>
+      <text x="215" y="66" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="10">95%</text>
+      
+      <text x="0" y="90" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Spam</text>
+      <rect x="80" y="80" width="150" height="14" rx="3" fill="#312e81"/>
+      <rect x="80" y="80" width="147" height="14" rx="3" fill="#22c55e"/>
+      <text x="215" y="91" fill="#86efac" font-family="Arial, sans-serif" font-size="10">98%</text>
+      
+      <text x="0" y="115" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Self-Harm</text>
+      <rect x="80" y="105" width="150" height="14" rx="3" fill="#312e81"/>
+      <rect x="80" y="105" width="120" height="14" rx="3" fill="#f59e0b"/>
+      <text x="215" y="116" fill="#fcd34d" font-family="Arial, sans-serif" font-size="10">80%</text>
+    </g>
+  </g>
+  
+  <!-- Operational Metrics -->
+  <g transform="translate(600, 180)">
+    <rect width="270" height="200" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="135" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Operational Metrics</text>
+    
+    <g transform="translate(20, 45)">
+      <rect width="230" height="35" rx="6" fill="#0f172a"/>
+      <text x="15" y="23" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Throughput</text>
+      <text x="215" y="23" text-anchor="end" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12" font-weight="bold">125K QPS</text>
+    </g>
+    
+    <g transform="translate(20, 85)">
+      <rect width="230" height="35" rx="6" fill="#0f172a"/>
+      <text x="15" y="23" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Queue Depth</text>
+      <text x="215" y="23" text-anchor="end" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">234 items</text>
+    </g>
+    
+    <g transform="translate(20, 125)">
+      <rect width="230" height="35" rx="6" fill="#0f172a"/>
+      <text x="15" y="23" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Human Review Rate</text>
+      <text x="215" y="23" text-anchor="end" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">3.2%</text>
+    </g>
+  </g>
+  
+  <!-- Bottom Stats -->
+  <g transform="translate(30, 400)">
+    <rect width="840" height="80" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <g transform="translate(50, 20)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Daily Content</text>
+      <text x="0" y="40" fill="#22d3ee" font-family="Arial, sans-serif" font-size="20" font-weight="bold">2.1B</text>
+      <text x="0" y="55" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">items processed</text>
+    </g>
+    
+    <g transform="translate(200, 20)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Violations Caught</text>
+      <text x="0" y="40" fill="#ef4444" font-family="Arial, sans-serif" font-size="20" font-weight="bold">18.4M</text>
+      <text x="0" y="55" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">content removed</text>
+    </g>
+    
+    <g transform="translate(380, 20)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Human Reviews</text>
+      <text x="0" y="40" fill="#fbbf24" font-family="Arial, sans-serif" font-size="20" font-weight="bold">67.2K</text>
+      <text x="0" y="55" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10">completed today</text>
+    </g>
+    
+    <g transform="translate(560, 20)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Appeals</text>
+      <text x="0" y="40" fill="#a78bfa" font-family="Arial, sans-serif" font-size="20" font-weight="bold">12.3K</text>
+      <text x="0" y="55" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10">filed (23% success)</text>
+    </g>
+    
+    <g transform="translate(720, 20)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Uptime</text>
+      <text x="0" y="40" fill="#22c55e" font-family="Arial, sans-serif" font-size="20" font-weight="bold">99.97%</text>
+      <text x="0" y="55" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">this month</text>
+    </g>
+  </g>
+</svg>
+

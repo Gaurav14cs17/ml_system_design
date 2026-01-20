@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🤖 ML vs Statistical Methods for Time Series</text>
+  
+  <!-- Statistical Methods -->
+  <rect x="30" y="60" width="380" height="320" rx="14" fill="#1e293b" stroke="#22c55e" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="60" width="380" height="45" rx="14" fill="#22c55e"/>
+  <text x="220" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">📊 Statistical Methods</text>
+  
+  <!-- Statistical content -->
+  <text x="50" y="130" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Approaches:</text>
+  <text x="60" y="150" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">• ARIMA: φ(B)(1-B)ᵈYₜ = θ(B)εₜ</text>
+  <text x="60" y="170" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">• Exponential Smoothing: ŷₜ₊₁ = αyₜ + (1-α)ŷₜ</text>
+  <text x="60" y="190" font-family="Segoe UI, sans-serif" font-size="11" fill="#a7f3d0">• Prophet: y(t) = g(t) + s(t) + h(t) + εₜ</text>
+  
+  <text x="50" y="220" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Strengths:</text>
+  <text x="60" y="240" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Strong theoretical foundation</text>
+  <text x="60" y="260" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Built-in uncertainty quantification</text>
+  <text x="60" y="280" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Interpretable parameters</text>
+  <text x="60" y="300" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Work well with small data</text>
+  
+  <text x="50" y="330" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Best When:</text>
+  <text x="60" y="350" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Single time series, clear patterns</text>
+  <text x="60" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Need prediction intervals</text>
+  
+  <!-- Machine Learning -->
+  <rect x="440" y="60" width="380" height="320" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="440" y="60" width="380" height="45" rx="14" fill="#f59e0b"/>
+  <text x="630" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">🤖 Machine Learning</text>
+  
+  <!-- ML content -->
+  <text x="460" y="130" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Approaches:</text>
+  <text x="470" y="150" font-family="Segoe UI, sans-serif" font-size="11" fill="#fde68a">• Tree ensembles: ŷ = Σₖfₖ(x)</text>
+  <text x="470" y="170" font-family="Segoe UI, sans-serif" font-size="11" fill="#fde68a">• Gradient boosting: minimize Σl(y,ŷ) + Ω(f)</text>
+  <text x="470" y="190" font-family="Segoe UI, sans-serif" font-size="11" fill="#fde68a">• Feature-based: X = [lags, rolling, calendar]</text>
+  
+  <text x="460" y="220" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Strengths:</text>
+  <text x="470" y="240" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Handle many features naturally</text>
+  <text x="470" y="260" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Capture non-linear relationships</text>
+  <text x="470" y="280" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Feature importance insights</text>
+  <text x="470" y="300" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Scale to large datasets</text>
+  
+  <text x="460" y="330" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Best When:</text>
+  <text x="470" y="350" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Many exogenous features</text>
+  <text x="470" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Complex non-linear patterns</text>
+</svg>

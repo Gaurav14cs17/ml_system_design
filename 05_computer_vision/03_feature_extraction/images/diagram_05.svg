@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 320">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="320" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">ORB PIPELINE</text>
+  <text x="425" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Oriented FAST and Rotated BRIEF</text>
+  
+  <!-- Step 1: FAST Keypoint Detection -->
+  <g transform="translate(50, 85)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">FAST Keypoint Detection</text>
+    
+    <!-- Keypoints visualization -->
+    <g transform="translate(40, 45)">
+      <rect width="140" height="80" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+      <circle cx="30" cy="25" r="6" fill="#3b82f6"/>
+      <circle cx="70" cy="20" r="6" fill="#3b82f6"/>
+      <circle cx="110" cy="35" r="6" fill="#3b82f6"/>
+      <circle cx="50" cy="55" r="6" fill="#3b82f6"/>
+      <circle cx="90" cy="60" r="6" fill="#3b82f6"/>
+    </g>
+    
+    <text x="110" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">Multi-scale FAST + Harris ranking</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 280 160 L 310 160" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Orientation Assignment -->
+  <g transform="translate(320, 85)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Orientation Assignment</text>
+    
+    <!-- Oriented keypoints -->
+    <g transform="translate(40, 45)">
+      <rect width="140" height="80" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+      <circle cx="30" cy="25" r="6" fill="#f59e0b"/>
+      <line x1="30" y1="25" x2="45" y2="15" stroke="#fbbf24" stroke-width="2"/>
+      <circle cx="70" cy="40" r="6" fill="#f59e0b"/>
+      <line x1="70" y1="40" x2="85" y2="35" stroke="#fbbf24" stroke-width="2"/>
+      <circle cx="110" cy="55" r="6" fill="#f59e0b"/>
+      <line x1="110" y1="55" x2="120" y2="45" stroke="#fbbf24" stroke-width="2"/>
+    </g>
+    
+    <text x="110" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">Intensity centroid for orientation</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 550 160 L 580 160" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: rBRIEF Descriptor -->
+  <g transform="translate(590, 85)">
+    <rect width="220" height="150" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">rBRIEF Descriptor</text>
+    
+    <!-- Binary descriptor visualization -->
+    <g transform="translate(30, 45)">
+      <rect width="160" height="80" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+      <text x="80" y="25" text-anchor="middle" font-family="monospace" font-size="10" fill="#4ade80">1 0 1 1 0 0 1 0</text>
+      <text x="80" y="42" text-anchor="middle" font-family="monospace" font-size="10" fill="#4ade80">0 1 0 1 1 0 1 1</text>
+      <text x="80" y="59" text-anchor="middle" font-family="monospace" font-size="10" fill="#4ade80">1 1 0 0 1 1 0 1</text>
+      <text x="80" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">256 bits</text>
+    </g>
+    
+    <text x="110" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">Steered BRIEF (rotation invariant)</text>
+  </g>
+  
+  <!-- Bottom summary -->
+  <g transform="translate(200, 265)">
+    <rect width="450" height="40" rx="6" fill="#334155" stroke="#6366f1" stroke-width="1"/>
+    <text x="225" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#818cf8">ORB = FAST + Harris + Intensity Centroid + rBRIEF (Free &amp; Fast!)</text>
+  </g>
+</svg>

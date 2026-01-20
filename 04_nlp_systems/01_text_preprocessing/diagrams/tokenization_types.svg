@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="charGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fa709a"/>
+      <stop offset="100%" style="stop-color:#fee140"/>
+    </linearGradient>
+    <linearGradient id="subwordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a8edea"/>
+      <stop offset="100%" style="stop-color:#fed6e3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0f0f23"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Tokenization Strategies</text>
+  <text x="450" y="65" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">Input: "I can't believe it's working!"</text>
+  
+  <!-- Word-Level Tokenization -->
+  <g transform="translate(50, 100)">
+    <rect width="250" height="160" rx="15" fill="#1a1a3e" stroke="url(#wordGrad)" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" fill="url(#wordGrad)" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Word-Level</text>
+    
+    <!-- Tokens -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="35" height="28" rx="5" fill="#4facfe" opacity="0.3"/>
+      <text x="17" y="19" text-anchor="middle" fill="#4facfe" font-family="monospace" font-size="12">I</text>
+      
+      <rect x="40" y="0" width="60" height="28" rx="5" fill="#4facfe" opacity="0.3"/>
+      <text x="70" y="19" text-anchor="middle" fill="#4facfe" font-family="monospace" font-size="12">can't</text>
+      
+      <rect x="105" y="0" width="70" height="28" rx="5" fill="#4facfe" opacity="0.3"/>
+      <text x="140" y="19" text-anchor="middle" fill="#4facfe" font-family="monospace" font-size="12">believe</text>
+      
+      <rect x="180" y="0" width="35" height="28" rx="5" fill="#4facfe" opacity="0.3"/>
+      <text x="197" y="19" text-anchor="middle" fill="#4facfe" font-family="monospace" font-size="12">...</text>
+    </g>
+    
+    <!-- Pros/Cons -->
+    <text x="20" y="105" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Intuitive</text>
+    <text x="20" y="120" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Meaningful units</text>
+    <text x="20" y="140" fill="#e74c3c" font-family="Arial, sans-serif" font-size="11">✗ Large vocabulary</text>
+    <text x="20" y="155" fill="#e74c3c" font-family="Arial, sans-serif" font-size="11">✗ OOV problem</text>
+  </g>
+  
+  <!-- Character-Level Tokenization -->
+  <g transform="translate(325, 100)">
+    <rect width="250" height="160" rx="15" fill="#1a1a3e" stroke="url(#charGrad)" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" fill="url(#charGrad)" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Character-Level</text>
+    
+    <!-- Tokens -->
+    <g transform="translate(15, 50)">
+      <rect x="0" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="11" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">I</text>
+      
+      <rect x="25" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="36" y="19" text-anchor="middle" fill="#fee140" font-family="monospace" font-size="12">_</text>
+      
+      <rect x="50" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="61" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">c</text>
+      
+      <rect x="75" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="86" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">a</text>
+      
+      <rect x="100" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="111" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">n</text>
+      
+      <rect x="125" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="136" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">'</text>
+      
+      <rect x="150" y="0" width="22" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="161" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">t</text>
+      
+      <rect x="175" y="0" width="35" height="28" rx="5" fill="#fa709a" opacity="0.3"/>
+      <text x="192" y="19" text-anchor="middle" fill="#fa709a" font-family="monospace" font-size="12">...</text>
+    </g>
+    
+    <!-- Pros/Cons -->
+    <text x="20" y="105" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ No OOV</text>
+    <text x="20" y="120" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Small vocabulary</text>
+    <text x="20" y="140" fill="#e74c3c" font-family="Arial, sans-serif" font-size="11">✗ Very long sequences</text>
+    <text x="20" y="155" fill="#e74c3c" font-family="Arial, sans-serif" font-size="11">✗ Lost word semantics</text>
+  </g>
+  
+  <!-- Subword Tokenization -->
+  <g transform="translate(600, 100)">
+    <rect width="250" height="160" rx="15" fill="#1a1a3e" stroke="url(#subwordGrad)" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" fill="#a8edea" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Subword (BPE)</text>
+    
+    <!-- Tokens -->
+    <g transform="translate(10, 50)">
+      <rect x="0" y="0" width="22" height="28" rx="5" fill="#a8edea" opacity="0.3"/>
+      <text x="11" y="19" text-anchor="middle" fill="#a8edea" font-family="monospace" font-size="11">I</text>
+      
+      <rect x="25" y="0" width="40" height="28" rx="5" fill="#a8edea" opacity="0.3"/>
+      <text x="45" y="19" text-anchor="middle" fill="#a8edea" font-family="monospace" font-size="11">can</text>
+      
+      <rect x="68" y="0" width="25" height="28" rx="5" fill="#fed6e3" opacity="0.3"/>
+      <text x="80" y="19" text-anchor="middle" fill="#fed6e3" font-family="monospace" font-size="11">'t</text>
+      
+      <rect x="96" y="0" width="55" height="28" rx="5" fill="#a8edea" opacity="0.3"/>
+      <text x="123" y="19" text-anchor="middle" fill="#a8edea" font-family="monospace" font-size="11">believ</text>
+      
+      <rect x="154" y="0" width="35" height="28" rx="5" fill="#fed6e3" opacity="0.3"/>
+      <text x="171" y="19" text-anchor="middle" fill="#fed6e3" font-family="monospace" font-size="11">##e</text>
+      
+      <rect x="192" y="0" width="30" height="28" rx="5" fill="#a8edea" opacity="0.3"/>
+      <text x="207" y="19" text-anchor="middle" fill="#a8edea" font-family="monospace" font-size="11">...</text>
+    </g>
+    
+    <!-- Pros/Cons -->
+    <text x="20" y="105" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Balance of both</text>
+    <text x="20" y="120" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Handles OOV well</text>
+    <text x="20" y="140" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Manageable vocab</text>
+    <text x="20" y="155" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">✓ Used by BERT/GPT</text>
+  </g>
+  
+  <!-- Comparison Table -->
+  <g transform="translate(50, 290)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Comparison</text>
+    
+    <!-- Table Header -->
+    <rect x="0" y="20" width="800" height="35" fill="#2d3748"/>
+    <text x="100" y="43" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Property</text>
+    <text x="280" y="43" text-anchor="middle" fill="url(#wordGrad)" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Word-Level</text>
+    <text x="480" y="43" text-anchor="middle" fill="url(#charGrad)" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Character</text>
+    <text x="680" y="43" text-anchor="middle" fill="#a8edea" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Subword</text>
+    
+    <!-- Row 1 -->
+    <rect x="0" y="55" width="800" height="30" fill="#1a1a3e"/>
+    <text x="100" y="75" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="12">Vocabulary Size</text>
+    <text x="280" y="75" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">~100,000+</text>
+    <text x="480" y="75" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">~100</text>
+    <text x="680" y="75" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="12">~30,000</text>
+    
+    <!-- Row 2 -->
+    <rect x="0" y="85" width="800" height="30" fill="#2d3748"/>
+    <text x="100" y="105" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="12">Sequence Length</text>
+    <text x="280" y="105" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">Short</text>
+    <text x="480" y="105" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">Very Long</text>
+    <text x="680" y="105" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">Moderate</text>
+    
+    <!-- Row 3 -->
+    <rect x="0" y="115" width="800" height="30" fill="#1a1a3e"/>
+    <text x="100" y="135" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="12">OOV Handling</text>
+    <text x="280" y="135" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12">Poor ([UNK])</text>
+    <text x="480" y="135" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">Perfect</text>
+    <text x="680" y="135" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">Good</text>
+    
+    <!-- Row 4 -->
+    <rect x="0" y="145" width="800" height="30" fill="#2d3748"/>
+    <text x="100" y="165" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="12">Use Case</text>
+    <text x="280" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Simple NLP</text>
+    <text x="480" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Spelling tasks</text>
+    <text x="680" y="165" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">BERT, GPT, LLMs</text>
+  </g>
+</svg>
+

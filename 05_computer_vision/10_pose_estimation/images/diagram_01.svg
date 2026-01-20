@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">TOP-DOWN vs BOTTOM-UP</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Multi-Person Pose Estimation Approaches</text>
+  
+  <g transform="translate(50, 80)">
+    <rect width="330" height="200" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="165" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">TOP-DOWN</text>
+    
+    <rect x="30" y="50" width="100" height="60" rx="6" fill="#334155" stroke="#3b82f6" stroke-width="1"/>
+    <text x="80" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">1. Detect People</text>
+    
+    <text x="155" y="80" font-family="Arial, sans-serif" font-size="14" fill="#fbbf24">→</text>
+    
+    <rect x="180" y="50" width="120" height="60" rx="6" fill="#334155" stroke="#22c55e" stroke-width="1"/>
+    <text x="240" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">2. Crop each</text>
+    <text x="240" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">person box</text>
+    
+    <rect x="70" y="125" width="190" height="50" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="165" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">3. Single-person pose per crop</text>
+    
+    <text x="40" y="190" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ More accurate</text>
+    <text x="180" y="190" font-family="Arial, sans-serif" font-size="9" fill="#f87171">✗ Slower (per person)</text>
+  </g>
+  
+  <g transform="translate(420, 80)">
+    <rect width="330" height="200" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="165" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">BOTTOM-UP</text>
+    
+    <rect x="30" y="50" width="110" height="60" rx="6" fill="#334155" stroke="#f59e0b" stroke-width="1"/>
+    <text x="85" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">1. Detect all</text>
+    <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">keypoints</text>
+    
+    <text x="165" y="80" font-family="Arial, sans-serif" font-size="14" fill="#fbbf24">→</text>
+    
+    <rect x="190" y="50" width="110" height="60" rx="6" fill="#334155" stroke="#22c55e" stroke-width="1"/>
+    <text x="245" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">2. Group into</text>
+    <text x="245" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">people</text>
+    
+    <rect x="70" y="125" width="190" height="50" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="165" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">3. Assemble skeletons</text>
+    
+    <text x="40" y="190" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ Faster (constant time)</text>
+    <text x="180" y="190" font-family="Arial, sans-serif" font-size="9" fill="#f87171">✗ Harder grouping</text>
+  </g>
+  
+  <g transform="translate(200, 310)">
+    <rect width="400" height="60" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="200" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a78bfa">Top-down: HRNet, SimpleBaseline | Bottom-up: OpenPose, HigherHRNet</text>
+    <text x="200" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Choice depends on accuracy vs speed tradeoff</text>
+  </g>
+</svg>

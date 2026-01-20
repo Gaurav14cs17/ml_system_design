@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="questionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="yesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="noGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#2563EB"/>
+    </linearGradient>
+    <filter id="decisionShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+    <marker id="decisionArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="450" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC">🏪 Feature Store Decision Tree</text>
+  <text x="350" y="55" text-anchor="middle" font-family="system-ui" font-size="11" fill="#94A3B8">Choose the right storage strategy for your ML features</text>
+  
+  <!-- Root Question Diamond -->
+  <g filter="url(#decisionShadow)" transform="translate(270, 80)">
+    <polygon points="80,0 160,50 80,100 0,50" fill="url(#questionGrad)"/>
+    <text x="80" y="45" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Do you need</text>
+    <text x="80" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">real-time features?</text>
+  </g>
+  
+  <!-- YES arrow from root (right) -->
+  <path d="M430 130 L520 130 L520 190" stroke="#10B981" stroke-width="3" fill="none" marker-end="url(#decisionArrow)"/>
+  <rect x="440" y="115" width="35" height="18" rx="4" fill="url(#yesGrad)"/>
+  <text x="458" y="128" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">YES</text>
+  
+  <!-- NO arrow from root (left) -->
+  <path d="M270 130 L180 130 L180 190" stroke="#EF4444" stroke-width="3" fill="none" marker-end="url(#decisionArrow)"/>
+  <rect x="195" y="115" width="30" height="18" rx="4" fill="url(#noGrad)"/>
+  <text x="210" y="128" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">NO</text>
+  
+  <!-- NO Branch - Offline Only Result -->
+  <g filter="url(#decisionShadow)" transform="translate(80, 200)">
+    <rect x="0" y="0" width="200" height="80" rx="12" fill="#1E293B" stroke="url(#resultGrad)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#3B82F6">💾 Offline Store Only</text>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Parquet • Delta Lake</text>
+    <text x="100" y="68" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748B">Best for: Training data, batch scoring</text>
+  </g>
+  
+  <!-- YES Branch - Second Question Diamond -->
+  <g filter="url(#decisionShadow)" transform="translate(440, 200)">
+    <polygon points="80,0 160,50 80,100 0,50" fill="url(#questionGrad)"/>
+    <text x="80" y="40" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Do you also need</text>
+    <text x="80" y="55" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">batch features?</text>
+  </g>
+  
+  <!-- YES to Second Question (down-right) -->
+  <path d="M600 250 L650 250 L650 330" stroke="#10B981" stroke-width="3" fill="none" marker-end="url(#decisionArrow)"/>
+  <rect x="610" y="235" width="35" height="18" rx="4" fill="url(#yesGrad)"/>
+  <text x="628" y="248" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">YES</text>
+  
+  <!-- NO to Second Question (down-left) -->
+  <path d="M440 250 L380 250 L380 330" stroke="#EF4444" stroke-width="3" fill="none" marker-end="url(#decisionArrow)"/>
+  <rect x="395" y="235" width="30" height="18" rx="4" fill="url(#noGrad)"/>
+  <text x="410" y="248" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">NO</text>
+  
+  <!-- Online Only Result -->
+  <g filter="url(#decisionShadow)" transform="translate(280, 340)">
+    <rect x="0" y="0" width="200" height="80" rx="12" fill="#1E293B" stroke="#F59E0B" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#F59E0B">⚡ Online Store Only</text>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Redis • DynamoDB</text>
+    <text x="100" y="68" text-anchor="middle" font-family="system-ui" font-size="9" fill="#64748B">Best for: Real-time serving only</text>
+  </g>
+  
+  <!-- Both Stores Result -->
+  <g filter="url(#decisionShadow)" transform="translate(520, 340)">
+    <rect x="0" y="0" width="160" height="100" rx="12" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#10B981">🏆 Both Stores</text>
+    <text x="80" y="45" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94A3B8">Online + Offline</text>
+    <rect x="15" y="55" width="130" height="18" rx="4" fill="#334155"/>
+    <text x="80" y="68" text-anchor="middle" font-family="system-ui" font-size="9" fill="#22D3EE">Feast • Tecton • Hopsworks</text>
+    <text x="80" y="90" text-anchor="middle" font-family="system-ui" font-size="8" fill="#64748B">Best for: Complete ML platform</text>
+  </g>
+  
+  <!-- Legend at bottom -->
+  <g transform="translate(50, 410)">
+    <text x="0" y="0" font-family="system-ui" font-size="11" font-weight="bold" fill="#94A3B8">📋 Quick Guide:</text>
+    <rect x="110" y="-12" width="12" height="12" rx="2" fill="url(#questionGrad)"/>
+    <text x="128" y="0" font-family="system-ui" font-size="10" fill="#94A3B8">Decision</text>
+    <rect x="200" y="-12" width="12" height="12" rx="2" fill="#1E293B" stroke="#3B82F6"/>
+    <text x="218" y="0" font-family="system-ui" font-size="10" fill="#94A3B8">Result</text>
+    <rect x="280" y="-12" width="12" height="12" rx="2" fill="url(#yesGrad)"/>
+    <text x="298" y="0" font-family="system-ui" font-size="10" fill="#94A3B8">Yes path</text>
+    <rect x="360" y="-12" width="12" height="12" rx="2" fill="url(#noGrad)"/>
+    <text x="378" y="0" font-family="system-ui" font-size="10" fill="#94A3B8">No path</text>
+  </g>
+  
+  <!-- Latency annotations -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="180" height="35" rx="6" fill="#334155"/>
+    <text x="90" y="15" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#64748B">⏱️ LATENCY GUIDE</text>
+    <text x="90" y="28" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Online: ms │ Offline: minutes-hours</text>
+  </g>
+</svg>

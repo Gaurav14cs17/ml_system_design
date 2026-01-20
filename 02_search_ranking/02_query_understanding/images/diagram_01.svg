@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 350">
+  <defs>
+    <linearGradient id="queryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="325" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔍 Query Intent Disambiguation</text>
+  
+  <!-- Query box -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="50" width="210" height="50" rx="25" fill="url(#queryGrad)"/>
+    <text x="325" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">User types: "apple"</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M325 105 L325 135" stroke="#64748b" stroke-width="2"/>
+  <polygon points="320,135 325,145 330,135" fill="#64748b"/>
+  
+  <!-- Question -->
+  <text x="325" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#64748b">Possible Intents?</text>
+  
+  <!-- Intent cards -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="185" width="170" height="65" rx="12" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+    <text x="135" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28">🍎</text>
+    <text x="135" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#16a34a">The Fruit</text>
+    <rect x="110" y="240" width="50" height="6" rx="3" fill="#dcfce7"/>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="240" y="185" width="170" height="65" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+    <text x="325" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28">📱</text>
+    <text x="325" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#2563eb">Apple Inc.</text>
+    <rect x="275" y="240" width="100" height="6" rx="3" fill="#dbeafe"/>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="430" y="185" width="170" height="65" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+    <text x="515" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28">🎵</text>
+    <text x="515" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#d97706">Apple Music</text>
+    <rect x="485" y="240" width="60" height="6" rx="3" fill="#422006"/>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="145" y="265" width="170" height="65" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="230" y="290" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28">🖥️</text>
+    <text x="230" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed">Apple Store</text>
+    <rect x="195" y="320" width="70" height="6" rx="3" fill="#ede9fe"/>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="335" y="265" width="170" height="65" rx="12" fill="#0f172a" stroke="#ec4899" stroke-width="2"/>
+    <text x="420" y="290" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28">📰</text>
+    <text x="420" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#db2777">Apple News</text>
+    <rect x="380" y="320" width="80" height="6" rx="3" fill="#fce7f3"/>
+  </g>
+</svg>

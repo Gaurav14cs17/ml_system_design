@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+  <defs>
+    <linearGradient id="personGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="historyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="embeddingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="20" width="350" height="50" rx="12" fill="url(#personGrad)"/>
+    <text x="375" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🎯 Personalization Architecture</text>
+  </g>
+  
+  <!-- User Profile -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="100" width="200" height="160" rx="12" fill="#0f172a"/>
+    <rect x="40" y="100" width="200" height="40" rx="12 12 0 0" fill="url(#userGrad)"/>
+    <text x="140" y="127" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">👤 User Profile</text>
+    <text x="60" y="165" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Demographics</text>
+    <text x="60" y="185" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Preferences</text>
+    <text x="60" y="205" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Session Context</text>
+    <text x="60" y="225" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Real-time Signals</text>
+    <text x="60" y="245" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Device/Location</text>
+  </g>
+  
+  <!-- Interaction History -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="290" width="200" height="160" rx="12" fill="#0f172a"/>
+    <rect x="40" y="290" width="200" height="40" rx="12 12 0 0" fill="url(#historyGrad)"/>
+    <text x="140" y="317" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📜 Interaction History</text>
+    <text x="60" y="355" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Clicks (weight: 2x)</text>
+    <text x="60" y="375" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Views (weight: 1x)</text>
+    <text x="60" y="395" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Purchases (weight: 5x)</text>
+    <text x="60" y="415" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Cart Adds (weight: 3x)</text>
+    <text x="60" y="435" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Dwell Time</text>
+  </g>
+  
+  <!-- Arrows to User Embedding -->
+  <path d="M245 180 L290 250" stroke="#64748b" stroke-width="2"/>
+  <path d="M245 370 L290 300" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- User Embedding -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="220" width="170" height="110" rx="12" fill="#0f172a"/>
+    <rect x="290" y="220" width="170" height="40" rx="12 12 0 0" fill="url(#embeddingGrad)"/>
+    <text x="375" y="247" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧮 User Embedding</text>
+    <text x="310" y="285" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• 128-dim vector</text>
+    <text x="310" y="305" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Weighted average</text>
+    <text x="310" y="325" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Recency decay</text>
+  </g>
+  
+  <!-- Arrow to Ranking -->
+  <path d="M460 275 L500 275" stroke="#64748b" stroke-width="2"/>
+  <polygon points="500,270 515,275 500,280" fill="#64748b"/>
+  
+  <!-- Personalized Ranking -->
+  <g filter="url(#shadow)">
+    <rect x="515" y="100" width="200" height="350" rx="12" fill="#0f172a"/>
+    <rect x="515" y="100" width="200" height="45" rx="12 12 0 0" fill="url(#resultGrad)"/>
+    <text x="615" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 Personalized Score</text>
+    
+    <text x="535" y="170" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Score Formula:</text>
+    <rect x="530" y="180" width="170" height="45" rx="6" fill="#334155"/>
+    <text x="615" y="202" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">S = 0.7 × Relevance</text>
+    <text x="615" y="217" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">  + 0.3 × UserAffinity</text>
+    
+    <text x="535" y="250" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Components:</text>
+    <text x="545" y="275" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Query-Doc similarity</text>
+    <text x="545" y="295" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• User-Doc affinity</text>
+    <text x="545" y="315" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Session boost</text>
+    <text x="545" y="335" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Novelty factor</text>
+    
+    <text x="535" y="365" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Strategies:</text>
+    <text x="545" y="390" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Long-term pref (30 days)</text>
+    <text x="545" y="410" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Session context</text>
+    <text x="545" y="430" font-family="Segoe UI, sans-serif" font-size="11" fill="#475569">• Real-time signals</text>
+  </g>
+</svg>
+
+
+

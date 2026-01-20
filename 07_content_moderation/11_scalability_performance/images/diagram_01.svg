@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="scaleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="320" fill="url(#scaleBg)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">📈 Typical Platform Scale</text>
+  
+  <!-- Metrics grid -->
+  <g transform="translate(50, 60)">
+    <!-- Row 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">Daily Active Users</text>
+      <text x="110" y="52" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="22" font-weight="bold">500M</text>
+    </g>
+    
+    <g transform="translate(240, 0)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">Daily Content Submissions</text>
+      <text x="110" y="52" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="22" font-weight="bold">2B</text>
+    </g>
+    
+    <g transform="translate(480, 0)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="10">Peak QPS</text>
+      <text x="110" y="52" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="22" font-weight="bold">500K</text>
+    </g>
+    
+    <!-- Row 2 -->
+    <g transform="translate(0, 90)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">Average Latency Target</text>
+      <text x="110" y="52" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="22" font-weight="bold">100ms</text>
+    </g>
+    
+    <g transform="translate(240, 90)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">Daily Storage Growth</text>
+      <text x="110" y="52" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="22" font-weight="bold">10 TB</text>
+    </g>
+    
+    <g transform="translate(480, 90)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+      <text x="110" y="25" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="10">Daily Inference Cost</text>
+      <text x="110" y="52" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="22" font-weight="bold">$100K</text>
+    </g>
+  </g>
+  
+  <!-- Footer note -->
+  <g transform="translate(100, 245)">
+    <rect width="600" height="55" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="300" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🎯 Key Scaling Challenges</text>
+    <text x="300" y="42" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">High throughput • Low latency • Cost optimization • Elastic capacity • Regional coverage</text>
+  </g>
+</svg>

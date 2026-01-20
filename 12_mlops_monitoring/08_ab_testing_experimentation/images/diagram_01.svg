@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="abBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="behaviorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="businessGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="abShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#abBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-family="Segoe UI, Arial" font-size="26" font-weight="bold" fill="#f8fafc">
+    🧪 Why A/B Test ML Models?
+  </text>
+  <text x="400" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#94a3b8">
+    Offline metrics don't guarantee online success
+  </text>
+  
+  <!-- Central Question Mark -->
+  <circle cx="400" cy="250" r="50" fill="#1e293b" stroke="#475569" stroke-width="2" filter="url(#abShadow)"/>
+  <text x="400" y="265" text-anchor="middle" font-family="Segoe UI, Arial" font-size="48" fill="#f8fafc">?</text>
+  
+  <!-- Card 1: Offline ≠ Online -->
+  <g transform="translate(50, 110)" filter="url(#abShadow)">
+    <rect width="220" height="140" rx="12" fill="#1e293b"/>
+    <rect width="220" height="8" rx="4 4 0 0" fill="url(#offlineGrad)"/>
+    <text x="110" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#fca5a5">Offline ≠ Online</text>
+    <line x1="20" y1="52" x2="200" y2="52" stroke="#374151" stroke-width="1"/>
+    <text x="25" y="75" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• AUC ↑ → conversion may ↓</text>
+    <text x="25" y="95" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Lower latency → engagement ↑</text>
+    <text x="25" y="115" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Better precision → recall ↓</text>
+    <!-- Arrow to center -->
+    <line x1="220" y1="70" x2="300" y2="175" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 2: Real User Behavior -->
+  <g transform="translate(530, 110)" filter="url(#abShadow)">
+    <rect width="220" height="140" rx="12" fill="#1e293b"/>
+    <rect width="220" height="8" rx="4 4 0 0" fill="url(#behaviorGrad)"/>
+    <text x="110" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#c4b5fd">User Behavior</text>
+    <line x1="20" y1="52" x2="200" y2="52" stroke="#374151" stroke-width="1"/>
+    <text x="25" y="75" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Edge cases not in test data</text>
+    <text x="25" y="95" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Feedback loops emerge</text>
+    <text x="25" y="115" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Adaptation to model outputs</text>
+    <!-- Arrow to center -->
+    <line x1="0" y1="70" x2="-80" y2="175" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 3: Business Impact -->
+  <g transform="translate(290, 330)" filter="url(#abShadow)">
+    <rect width="220" height="130" rx="12" fill="#1e293b"/>
+    <rect width="220" height="8" rx="4 4 0 0" fill="url(#businessGrad)"/>
+    <text x="110" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#6ee7b7">Business Impact</text>
+    <line x1="20" y1="52" x2="200" y2="52" stroke="#374151" stroke-width="1"/>
+    <text x="25" y="75" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Revenue, engagement, retention</text>
+    <text x="25" y="95" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• Not just technical metrics</text>
+    <text x="25" y="115" font-family="Segoe UI, Arial" font-size="11" fill="#94a3b8">• User satisfaction matters</text>
+    <!-- Arrow from center -->
+    <line x1="110" y1="0" x2="110" y2="-30" stroke="#10b981" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Key insight box -->
+  <rect x="50" y="330" width="180" height="60" rx="10" fill="#422006" stroke="#f59e0b" stroke-width="1" filter="url(#abShadow)"/>
+  <text x="140" y="355" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#fcd34d">💡 Key Insight</text>
+  <text x="140" y="375" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fde68a">Only real users reveal truth</text>
+  
+  <!-- Stats box -->
+  <rect x="570" y="330" width="180" height="60" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="1" filter="url(#abShadow)"/>
+  <text x="660" y="355" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#93c5fd">📊 Statistical Rigor</text>
+  <text x="660" y="375" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#bfdbfe">α = 0.05, Power ≥ 80%</text>
+</svg>

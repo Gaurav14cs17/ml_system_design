@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="bgNCF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="gmfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="mlpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowNCF" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowNCF" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgNCF)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🧠 Neural Collaborative Filtering (NCF)</text>
+  
+  <!-- User ID Input -->
+  <g transform="translate(150, 80)" filter="url(#shadowNCF)">
+    <rect width="140" height="45" rx="22" fill="#8b5cf6"/>
+    <text x="70" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">👤 User ID</text>
+  </g>
+  
+  <!-- Item ID Input -->
+  <g transform="translate(610, 80)" filter="url(#shadowNCF)">
+    <rect width="140" height="45" rx="22" fill="#f59e0b"/>
+    <text x="70" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Item ID</text>
+  </g>
+  
+  <!-- Arrows down -->
+  <path d="M220 130 L220 160" stroke="#64748b" stroke-width="2" marker-end="url(#arrowNCF)"/>
+  <path d="M680 130 L680 160" stroke="#64748b" stroke-width="2" marker-end="url(#arrowNCF)"/>
+  
+  <!-- Embedding Layers -->
+  <g transform="translate(130, 170)" filter="url(#shadowNCF)">
+    <rect width="180" height="50" rx="10" fill="#1e293b"/>
+    <text x="90" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Embedding Layer</text>
+  </g>
+  
+  <g transform="translate(590, 170)" filter="url(#shadowNCF)">
+    <rect width="180" height="50" rx="10" fill="#1e293b"/>
+    <text x="90" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Embedding Layer</text>
+  </g>
+  
+  <!-- Split paths -->
+  <path d="M220 225 L220 260 L350 260 L350 290" stroke="#3b82f6" stroke-width="2"/>
+  <path d="M680 225 L680 260 L550 260 L550 290" stroke="#3b82f6" stroke-width="2"/>
+  
+  <path d="M220 225 L220 260 L450 260 L450 290" stroke="#10b981" stroke-width="2"/>
+  <path d="M680 225 L680 260 L450 260" stroke="#10b981" stroke-width="2"/>
+  
+  <!-- GMF Path -->
+  <g transform="translate(270, 295)" filter="url(#shadowNCF)">
+    <rect width="160" height="100" rx="12" fill="#1e293b"/>
+    <rect width="160" height="40" rx="12 12 0 0" fill="url(#gmfGrad)"/>
+    <text x="80" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">GMF Path</text>
+    <text x="80" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Element-wise</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">Product (⊙)</text>
+  </g>
+  
+  <!-- MLP Path -->
+  <g transform="translate(470, 295)" filter="url(#shadowNCF)">
+    <rect width="160" height="100" rx="12" fill="#1e293b"/>
+    <rect width="160" height="40" rx="12 12 0 0" fill="url(#mlpGrad)"/>
+    <text x="80" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">MLP Path</text>
+    <text x="80" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Concat → Dense</text>
+    <text x="80" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Layers</text>
+  </g>
+  
+  <!-- Merge paths -->
+  <path d="M350 400 L350 430 L450 430 L450 460" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M550 400 L550 430 L450 430" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Output -->
+  <g transform="translate(350, 465)" filter="url(#shadowNCF)">
+    <rect width="200" height="60" rx="12" fill="#f59e0b"/>
+    <text x="100" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Concat &amp; Output</text>
+    <text x="100" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎯 Prediction</text>
+  </g>
+  
+  <!-- Key insight -->
+  <g transform="translate(50, 420)">
+    <rect width="180" height="70" rx="10" fill="#334155"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">💡 Key Insight</text>
+    <text x="90" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">GMF: linear interactions</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">MLP: non-linear patterns</text>
+  </g>
+  
+  <g transform="translate(670, 420)">
+    <rect width="180" height="70" rx="10" fill="#334155"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">📊 Performance</text>
+    <text x="90" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Outperforms MF</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">by ~5-10% on HR@10</text>
+  </g>
+</svg>

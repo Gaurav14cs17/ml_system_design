@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <defs>
+    <linearGradient id="scenarioA" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="scenarioB" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="480" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    ⚖️ False Positive Impact: Precision vs Recall Trade-off
+  </text>
+  <text x="425" y="60" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">
+    E-commerce Platform: 1M Daily Transactions | 0.1% Fraud Rate
+  </text>
+  
+  <!-- Scenario A: High Security -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="85" width="380" height="300" rx="12" fill="#1e293b" stroke="url(#scenarioA)" stroke-width="2"/>
+    <rect x="30" y="85" width="380" height="45" rx="12" fill="url(#scenarioA)"/>
+    <text x="220" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      🔒 Scenario A: High Security
+    </text>
+    
+    <g transform="translate(50, 145)">
+      <text x="0" y="0" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Fraud Attempts:</text>
+      <text x="280" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1,000</text>
+      
+      <text x="0" y="30" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Detection Rate (Recall):</text>
+      <text x="280" y="30" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">95%</text>
+      
+      <text x="0" y="60" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Fraud Caught:</text>
+      <text x="280" y="60" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">950</text>
+      
+      <rect x="0" y="80" width="340" height="2" fill="#334155"/>
+      
+      <text x="0" y="105" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">False Positive Rate:</text>
+      <text x="280" y="105" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">5%</text>
+      
+      <text x="0" y="135" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Legitimate Declined:</text>
+      <text x="280" y="135" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">49,950</text>
+      
+      <rect x="0" y="155" width="340" height="2" fill="#334155"/>
+      
+      <text x="0" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Revenue Lost (@ $100 avg):</text>
+      <text x="280" y="180" fill="#ef4444" font-family="Arial, sans-serif" font-size="14" font-weight="bold">$4.99M</text>
+    </g>
+    
+    <rect x="50" y="340" width="340" height="30" rx="6" fill="#7f1d1d"/>
+    <text x="220" y="360" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      ⚠️ Customer experience severely impacted!
+    </text>
+  </g>
+  
+  <!-- Scenario B: Balanced -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="85" width="380" height="300" rx="12" fill="#1e293b" stroke="url(#scenarioB)" stroke-width="2"/>
+    <rect x="440" y="85" width="380" height="45" rx="12" fill="url(#scenarioB)"/>
+    <text x="630" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      ⚖️ Scenario B: Balanced Approach
+    </text>
+    
+    <g transform="translate(460, 145)">
+      <text x="0" y="0" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Fraud Attempts:</text>
+      <text x="280" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1,000</text>
+      
+      <text x="0" y="30" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Detection Rate (Recall):</text>
+      <text x="280" y="30" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">85%</text>
+      
+      <text x="0" y="60" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Fraud Caught:</text>
+      <text x="280" y="60" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">850</text>
+      
+      <rect x="0" y="80" width="340" height="2" fill="#334155"/>
+      
+      <text x="0" y="105" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">False Positive Rate:</text>
+      <text x="280" y="105" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1%</text>
+      
+      <text x="0" y="135" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Legitimate Declined:</text>
+      <text x="280" y="135" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">9,990</text>
+      
+      <rect x="0" y="155" width="340" height="2" fill="#334155"/>
+      
+      <text x="0" y="180" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Total Impact:</text>
+      <text x="280" y="180" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">~$1M</text>
+    </g>
+    
+    <rect x="460" y="340" width="340" height="30" rx="6" fill="#14532d"/>
+    <text x="630" y="360" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      ✅ 80% less impact than Scenario A!
+    </text>
+  </g>
+  
+  <!-- Bottom insight -->
+  <rect x="30" y="405" width="790" height="60" rx="10" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="425" y="435" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    💡 Key Insight: Optimizing for precision (reducing FPs) often provides better business value
+  </text>
+  <text x="425" y="455" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">
+    Each 1% reduction in FPR can save millions in legitimate revenue
+  </text>
+</svg>

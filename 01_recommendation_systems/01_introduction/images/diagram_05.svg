@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="userCold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="itemCold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="solGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow5">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad5)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">🥶 The Cold Start Problem</text>
+  <text x="450" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#94a3b8">The #1 challenge in recommendation systems</text>
+  
+  <!-- User Cold Start Section -->
+  <g transform="translate(50, 100)" filter="url(#shadow5)">
+    <rect width="380" height="280" rx="16" fill="#1e293b"/>
+    <rect width="380" height="60" rx="16 16 0 0" fill="url(#userCold)"/>
+    <text x="190" y="38" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">👤 New User Cold Start</text>
+    
+    <!-- User icon with question marks -->
+    <g transform="translate(140, 80)">
+      <circle cx="50" cy="40" r="35" fill="#334155" stroke="#3b82f6" stroke-width="3"/>
+      <circle cx="50" cy="30" r="15" fill="#64748b"/>
+      <ellipse cx="50" cy="60" rx="20" ry="12" fill="#64748b"/>
+      <text x="95" y="25" font-family="Segoe UI, sans-serif" font-size="24" fill="#f87171">?</text>
+      <text x="5" y="60" font-family="Segoe UI, sans-serif" font-size="24" fill="#f87171">?</text>
+      <text x="85" y="70" font-family="Segoe UI, sans-serif" font-size="24" fill="#f87171">?</text>
+    </g>
+    
+    <!-- Problems list -->
+    <g transform="translate(30, 170)">
+      <rect x="0" y="0" width="320" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="15" y="20" font-family="Segoe UI, sans-serif" font-size="12" fill="#fca5a5">❌ No interaction history</text>
+      
+      <rect x="0" y="38" width="320" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="15" y="58" font-family="Segoe UI, sans-serif" font-size="12" fill="#fca5a5">❌ No known preferences</text>
+      
+      <rect x="0" y="76" width="320" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="15" y="96" font-family="Segoe UI, sans-serif" font-size="12" fill="#fca5a5">❌ Can't find similar users</text>
+    </g>
+  </g>
+  
+  <!-- Item Cold Start Section -->
+  <g transform="translate(470, 100)" filter="url(#shadow5)">
+    <rect width="380" height="280" rx="16" fill="#1e293b"/>
+    <rect width="380" height="60" rx="16 16 0 0" fill="url(#itemCold)"/>
+    <text x="190" y="38" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">📦 New Item Cold Start</text>
+    
+    <!-- Item icon with question marks -->
+    <g transform="translate(140, 80)">
+      <rect x="20" y="15" width="60" height="70" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="3"/>
+      <text x="50" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" fill="#94a3b8">NEW</text>
+      <text x="95" y="25" font-family="Segoe UI, sans-serif" font-size="24" fill="#f87171">?</text>
+      <text x="5" y="60" font-family="Segoe UI, sans-serif" font-size="24" fill="#f87171">?</text>
+      <text x="85" y="90" font-family="Segoe UI, sans-serif" font-size="24" fill="#f87171">?</text>
+    </g>
+    
+    <!-- Problems list -->
+    <g transform="translate(30, 170)">
+      <rect x="0" y="0" width="320" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="15" y="20" font-family="Segoe UI, sans-serif" font-size="12" fill="#fca5a5">❌ No ratings or reviews</text>
+      
+      <rect x="0" y="38" width="320" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="15" y="58" font-family="Segoe UI, sans-serif" font-size="12" fill="#fca5a5">❌ No purchase history</text>
+      
+      <rect x="0" y="76" width="320" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+      <text x="15" y="96" font-family="Segoe UI, sans-serif" font-size="12" fill="#fca5a5">❌ Can't compute similarity</text>
+    </g>
+  </g>
+  
+  <!-- Solutions Section -->
+  <g transform="translate(50, 400)" filter="url(#shadow5)">
+    <rect width="800" height="65" rx="12" fill="url(#solGrad)" opacity="0.9"/>
+    <text x="400" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">✅ Solutions to Cold Start</text>
+    
+    <g transform="translate(30, 38)">
+      <rect x="0" y="0" width="130" height="22" rx="4" fill="#0f172a" opacity="0.2"/>
+      <text x="65" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Content Features</text>
+      
+      <rect x="145" y="0" width="130" height="22" rx="4" fill="#0f172a" opacity="0.2"/>
+      <text x="210" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Onboarding Quiz</text>
+      
+      <rect x="290" y="0" width="130" height="22" rx="4" fill="#0f172a" opacity="0.2"/>
+      <text x="355" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Demographics</text>
+      
+      <rect x="435" y="0" width="130" height="22" rx="4" fill="#0f172a" opacity="0.2"/>
+      <text x="500" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Popular Items</text>
+      
+      <rect x="580" y="0" width="150" height="22" rx="4" fill="#0f172a" opacity="0.2"/>
+      <text x="655" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">Hybrid Approaches</text>
+    </g>
+  </g>
+</svg>

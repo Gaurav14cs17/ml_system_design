@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgFS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowFS" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowFS" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgFS)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature Service Architecture</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Groups Feature Views into model-specific API endpoints</text>
+  
+  <!-- Feature Views -->
+  <g filter="url(#shadowFS)">
+    <rect x="50" y="90" width="200" height="250" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Feature Views</text>
+    
+    <rect x="70" y="130" width="160" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="150" y="152" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">user_features</text>
+    
+    <rect x="70" y="175" width="160" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="150" y="197" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">transaction_features</text>
+    
+    <rect x="70" y="220" width="160" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="150" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">merchant_features</text>
+    
+    <rect x="70" y="265" width="160" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="150" y="287" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">device_features</text>
+  </g>
+  
+  <!-- Arrows -->
+  <path d="M255 150 L320 180" stroke="#10b981" stroke-width="2" marker-end="url(#arrowFS)"/>
+  <path d="M255 195 L320 195" stroke="#10b981" stroke-width="2" marker-end="url(#arrowFS)"/>
+  <path d="M255 240 L320 210" stroke="#10b981" stroke-width="2" marker-end="url(#arrowFS)"/>
+  
+  <!-- Feature Service -->
+  <g filter="url(#shadowFS)">
+    <rect x="330" y="100" width="240" height="230" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="330" y="100" width="240" height="45" rx="12" fill="#059669"/>
+    <rect x="330" y="133" width="240" height="12" fill="#059669"/>
+    <text x="450" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🚀 Feature Service</text>
+    <text x="450" y="170" text-anchor="middle" font-family="monospace" font-size="11" fill="#34d399">fraud_detection_v2</text>
+    
+    <rect x="350" y="190" width="200" height="120" rx="8" fill="#064e3b"/>
+    <text x="360" y="215" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Included features:</text>
+    <text x="360" y="235" font-family="monospace" font-size="9" fill="#34d399">• user_features[age, ltv]</text>
+    <text x="360" y="252" font-family="monospace" font-size="9" fill="#34d399">• transaction_features[*]</text>
+    <text x="360" y="269" font-family="monospace" font-size="9" fill="#34d399">• merchant_features[risk]</text>
+    <text x="360" y="286" font-family="monospace" font-size="9" fill="#34d399">• on_demand_context</text>
+  </g>
+  
+  <!-- Arrow to Model -->
+  <path d="M575 195 L640 195" stroke="#10b981" stroke-width="2" marker-end="url(#arrowFS)"/>
+  
+  <!-- Model -->
+  <g filter="url(#shadowFS)">
+    <rect x="650" y="130" width="200" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="650" y="130" width="200" height="40" rx="12" fill="#d97706"/>
+    <rect x="650" y="158" width="200" height="12" fill="#d97706"/>
+    <text x="750" y="157" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🤖 ML Model</text>
+    
+    <text x="670" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#fbbf24">fraud_model_v2</text>
+    <text x="670" y="215" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Uses: fraud_detection_v2</text>
+    <text x="670" y="235" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Version controlled</text>
+  </g>
+  
+  <!-- Benefits -->
+  <rect x="150" y="355" width="600" height="35" rx="8" fill="#334155" filter="url(#shadowFS)"/>
+  <text x="270" y="377" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">✓ Single API</text>
+  <text x="400" y="377" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">✓ Version control</text>
+  <text x="530" y="377" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">✓ Model-feature binding</text>
+</svg>

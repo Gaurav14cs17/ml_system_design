@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <linearGradient id="retrieveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00b894"/>
+      <stop offset="100%" style="stop-color:#00cec9"/>
+    </linearGradient>
+    <linearGradient id="augmentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c5ce7"/>
+      <stop offset="100%" style="stop-color:#a29bfe"/>
+    </linearGradient>
+    <linearGradient id="generateGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fd79a8"/>
+      <stop offset="100%" style="stop-color:#e84393"/>
+    </linearGradient>
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">RAG Architecture</text>
+  <text x="500" y="65" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">Retrieval-Augmented Generation</text>
+  
+  <!-- User Query -->
+  <g transform="translate(50, 100)">
+    <rect width="180" height="80" rx="15" fill="#161b22" stroke="#fff" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">User Query</text>
+    <text x="90" y="55" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">"What are the</text>
+    <text x="90" y="70" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">new Python features?"</text>
+  </g>
+  
+  <!-- Arrow to Embed -->
+  <path d="M235 140 L280 140" stroke="#00b894" stroke-width="3" marker-end="url(#greenArrow)"/>
+  <defs>
+    <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00b894"/>
+    </marker>
+  </defs>
+  
+  <!-- Embed Query -->
+  <g transform="translate(290, 110)">
+    <rect width="120" height="60" rx="10" fill="#00b894" opacity="0.2" stroke="#00b894" stroke-width="2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Embed</text>
+    <text x="60" y="43" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="10">Query → Vector</text>
+  </g>
+  
+  <!-- Arrow to Vector DB -->
+  <path d="M415 140 L460 140" stroke="#00b894" stroke-width="3" marker-end="url(#greenArrow)"/>
+  
+  <!-- Vector Database -->
+  <g transform="translate(470, 85)">
+    <rect width="180" height="110" rx="15" fill="#161b22" stroke="url(#retrieveGrad)" stroke-width="2"/>
+    <text x="90" y="30" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Vector Database</text>
+    
+    <!-- Document icons -->
+    <g transform="translate(20, 45)">
+      <rect width="40" height="50" rx="5" fill="#2d3748" stroke="#00cec9"/>
+      <line x1="10" y1="15" x2="30" y2="15" stroke="#00cec9" stroke-width="2"/>
+      <line x1="10" y1="25" x2="30" y2="25" stroke="#00cec9" stroke-width="2"/>
+      <line x1="10" y1="35" x2="25" y2="35" stroke="#00cec9" stroke-width="2"/>
+    </g>
+    <g transform="translate(70, 45)">
+      <rect width="40" height="50" rx="5" fill="#2d3748" stroke="#00cec9"/>
+      <line x1="10" y1="15" x2="30" y2="15" stroke="#00cec9" stroke-width="2"/>
+      <line x1="10" y1="25" x2="30" y2="25" stroke="#00cec9" stroke-width="2"/>
+      <line x1="10" y1="35" x2="25" y2="35" stroke="#00cec9" stroke-width="2"/>
+    </g>
+    <g transform="translate(120, 45)">
+      <rect width="40" height="50" rx="5" fill="#2d3748" stroke="#00cec9"/>
+      <line x1="10" y1="15" x2="30" y2="15" stroke="#00cec9" stroke-width="2"/>
+      <line x1="10" y1="25" x2="30" y2="25" stroke="#00cec9" stroke-width="2"/>
+      <line x1="10" y1="35" x2="25" y2="35" stroke="#00cec9" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- RETRIEVE Label -->
+  <g transform="translate(340, 220)">
+    <rect width="150" height="40" rx="20" fill="url(#retrieveGrad)" filter="url(#neon)"/>
+    <text x="75" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1. RETRIEVE</text>
+  </g>
+  
+  <!-- Retrieved Documents -->
+  <g transform="translate(700, 85)">
+    <rect width="250" height="130" rx="15" fill="#161b22" stroke="#6c5ce7" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Retrieved Context</text>
+    
+    <rect x="15" y="40" width="220" height="35" rx="5" fill="#2d3748"/>
+    <text x="125" y="55" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="10">Doc 1: "Python 3.12 features..."</text>
+    <text x="215" y="68" text-anchor="end" fill="#2ecc71" font-family="Arial, sans-serif" font-size="9">0.95</text>
+    
+    <rect x="15" y="80" width="220" height="35" rx="5" fill="#2d3748"/>
+    <text x="125" y="95" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="10">Doc 2: "New type syntax..."</text>
+    <text x="215" y="108" text-anchor="end" fill="#2ecc71" font-family="Arial, sans-serif" font-size="9">0.87</text>
+  </g>
+  
+  <!-- Arrow from Vector DB to Retrieved -->
+  <path d="M655 140 L695 140" stroke="#6c5ce7" stroke-width="3" marker-end="url(#purpleArrow)"/>
+  <defs>
+    <marker id="purpleArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6c5ce7"/>
+    </marker>
+  </defs>
+  
+  <!-- Augmented Prompt -->
+  <g transform="translate(350, 280)">
+    <rect width="300" height="140" rx="15" fill="#161b22" stroke="url(#augmentGrad)" stroke-width="2"/>
+    <text x="150" y="30" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Augmented Prompt</text>
+    
+    <rect x="15" y="45" width="270" height="80" rx="8" fill="#2d3748"/>
+    <text x="150" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Context: [Retrieved Documents]</text>
+    <text x="150" y="85" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">---</text>
+    <text x="150" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Question: What are new Python features?</text>
+    <text x="150" y="115" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Answer based on context:</text>
+  </g>
+  
+  <!-- Arrows to Augmented Prompt -->
+  <path d="M140 185 L140 280 L345 350" stroke="#6c5ce7" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <path d="M825 220 L825 280 L655 350" stroke="#6c5ce7" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  
+  <!-- AUGMENT Label -->
+  <g transform="translate(550, 320)">
+    <rect width="150" height="40" rx="20" fill="url(#augmentGrad)" filter="url(#neon)"/>
+    <text x="75" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2. AUGMENT</text>
+  </g>
+  
+  <!-- Arrow to LLM -->
+  <path d="M500 425 L500 455" stroke="#fd79a8" stroke-width="3" marker-end="url(#pinkArrow)"/>
+  <defs>
+    <marker id="pinkArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#fd79a8"/>
+    </marker>
+  </defs>
+  
+  <!-- LLM -->
+  <g transform="translate(350, 460)">
+    <rect width="300" height="70" rx="15" fill="url(#generateGrad)" opacity="0.3" stroke="#fd79a8" stroke-width="2"/>
+    <text x="150" y="30" text-anchor="middle" fill="#fd79a8" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Large Language Model</text>
+    <text x="150" y="50" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">GPT-4 / Claude / LLaMA</text>
+  </g>
+  
+  <!-- GENERATE Label -->
+  <g transform="translate(700, 470)">
+    <rect width="150" height="40" rx="20" fill="url(#generateGrad)" filter="url(#neon)"/>
+    <text x="75" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">3. GENERATE</text>
+  </g>
+  
+  <!-- Response -->
+  <g transform="translate(350, 545)">
+    <rect width="300" height="45" rx="10" fill="#161b22" stroke="#2ecc71" stroke-width="2"/>
+    <text x="150" y="28" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Grounded Response with Citations</text>
+  </g>
+  
+  <!-- Arrow to Response -->
+  <path d="M500 532 L500 542" stroke="#2ecc71" stroke-width="3"/>
+  
+  <!-- Benefits -->
+  <g transform="translate(50, 300)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Benefits:</text>
+    <text x="0" y="25" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Up-to-date information</text>
+    <text x="0" y="45" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Reduced hallucination</text>
+    <text x="0" y="65" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Verifiable sources</text>
+    <text x="0" y="85" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12">✓ Domain knowledge</text>
+  </g>
+</svg>
+

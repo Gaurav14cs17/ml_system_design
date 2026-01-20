@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="bioGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="bioShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">BIO Tagging Scheme</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Standard format for sequence labeling</text>
+  
+  <!-- Example sentence -->
+  <g transform="translate(50, 90)" filter="url(#bioShadow)">
+    <rect width="700" height="120" rx="12" fill="#1e293b" stroke="url(#bioGrad)" stroke-width="2"/>
+    <text x="350" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">Example: "John Smith works at Apple Inc in California"</text>
+    
+    <g transform="translate(25, 50)">
+      <!-- Words -->
+      <rect x="0" y="0" width="60" height="30" rx="4" fill="#3b82f6"/>
+      <text x="30" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">John</text>
+      
+      <rect x="70" y="0" width="60" height="30" rx="4" fill="#2563eb"/>
+      <text x="100" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">Smith</text>
+      
+      <rect x="140" y="0" width="60" height="30" rx="4" fill="#374151"/>
+      <text x="170" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">works</text>
+      
+      <rect x="210" y="0" width="40" height="30" rx="4" fill="#374151"/>
+      <text x="230" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">at</text>
+      
+      <rect x="260" y="0" width="60" height="30" rx="4" fill="#10b981"/>
+      <text x="290" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">Apple</text>
+      
+      <rect x="330" y="0" width="50" height="30" rx="4" fill="#059669"/>
+      <text x="355" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">Inc</text>
+      
+      <rect x="390" y="0" width="40" height="30" rx="4" fill="#374151"/>
+      <text x="410" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">in</text>
+      
+      <rect x="440" y="0" width="80" height="30" rx="4" fill="#f59e0b"/>
+      <text x="480" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">California</text>
+      
+      <!-- BIO tags -->
+      <text x="30" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">B-PER</text>
+      <text x="100" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">I-PER</text>
+      <text x="170" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">O</text>
+      <text x="230" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">O</text>
+      <text x="290" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#34d399">B-ORG</text>
+      <text x="355" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#34d399">I-ORG</text>
+      <text x="410" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">O</text>
+      <text x="480" y="55" text-anchor="middle" font-family="monospace" font-size="9" fill="#fbbf24">B-LOC</text>
+    </g>
+  </g>
+  
+  <!-- Tag meanings -->
+  <g transform="translate(50, 230)" filter="url(#bioShadow)">
+    <rect width="220" height="120" rx="10" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">B (Beginning)</text>
+    <text x="110" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#93c5fd">First token of an entity</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Marks entity start</text>
+    <text x="110" y="100" text-anchor="middle" font-family="monospace" font-size="10" fill="#e2e8f0">B-PER, B-ORG, B-LOC</text>
+  </g>
+  
+  <g transform="translate(290, 230)" filter="url(#bioShadow)">
+    <rect width="220" height="120" rx="10" fill="#1e293b" stroke="#8b5cf6"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">I (Inside)</text>
+    <text x="110" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">Continuation token</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Part of multi-token entity</text>
+    <text x="110" y="100" text-anchor="middle" font-family="monospace" font-size="10" fill="#e2e8f0">I-PER, I-ORG, I-LOC</text>
+  </g>
+  
+  <g transform="translate(530, 230)" filter="url(#bioShadow)">
+    <rect width="220" height="120" rx="10" fill="#1e293b" stroke="#64748b"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">O (Outside)</text>
+    <text x="110" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#cbd5e1">Not part of any entity</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Regular words</text>
+    <text x="110" y="100" text-anchor="middle" font-family="monospace" font-size="10" fill="#e2e8f0">O</text>
+  </g>
+</svg>

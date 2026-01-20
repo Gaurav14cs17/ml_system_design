@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="llmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="50%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="openaiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10a37f"/>
+      <stop offset="100%" style="stop-color:#1ed9a4"/>
+    </linearGradient>
+    <linearGradient id="anthropicGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="googleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4285f4"/>
+      <stop offset="100%" style="stop-color:#34a853"/>
+    </linearGradient>
+    <linearGradient id="metaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0668e1"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="osGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="900" height="600" fill="url(#llmBg)"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="600" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="32" font-weight="bold" filter="url(#neonGlow)">LLM LANDSCAPE</text>
+  <text x="450" y="70" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">Large Language Models Ecosystem 2024</text>
+  
+  <!-- Proprietary Section -->
+  <text x="100" y="110" fill="#f472b6" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🔒 PROPRIETARY MODELS</text>
+  
+  <!-- OpenAI Card -->
+  <g transform="translate(30, 125)">
+    <rect width="200" height="90" rx="12" fill="#0f172a" stroke="url(#openaiGrad)" stroke-width="2"/>
+    <rect x="10" y="10" width="60" height="25" rx="5" fill="url(#openaiGrad)"/>
+    <text x="40" y="27" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">OpenAI</text>
+    <text x="15" y="50" fill="#10a37f" font-family="Arial, sans-serif" font-size="11">• GPT-4o, GPT-4 Turbo</text>
+    <text x="15" y="68" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">• GPT-3.5-turbo</text>
+    <text x="15" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">API-first approach</text>
+  </g>
+  
+  <!-- Anthropic Card -->
+  <g transform="translate(245, 125)">
+    <rect width="200" height="90" rx="12" fill="#0f172a" stroke="url(#anthropicGrad)" stroke-width="2"/>
+    <rect x="10" y="10" width="70" height="25" rx="5" fill="url(#anthropicGrad)"/>
+    <text x="45" y="27" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Anthropic</text>
+    <text x="15" y="50" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">• Claude 3.5 Sonnet</text>
+    <text x="15" y="68" fill="#422006" font-family="Arial, sans-serif" font-size="10">• Opus, Haiku</text>
+    <text x="15" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Constitutional AI</text>
+  </g>
+  
+  <!-- Google Card -->
+  <g transform="translate(460, 125)">
+    <rect width="200" height="90" rx="12" fill="#0f172a" stroke="url(#googleGrad)" stroke-width="2"/>
+    <rect x="10" y="10" width="60" height="25" rx="5" fill="url(#googleGrad)"/>
+    <text x="40" y="27" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Google</text>
+    <text x="15" y="50" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11">• Gemini 1.5 Pro/Ultra</text>
+    <text x="15" y="68" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Flash, Nano</text>
+    <text x="15" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Multimodal native</text>
+  </g>
+  
+  <!-- Meta Card -->
+  <g transform="translate(675, 125)">
+    <rect width="200" height="90" rx="12" fill="#0f172a" stroke="url(#metaGrad)" stroke-width="2"/>
+    <rect x="10" y="10" width="50" height="25" rx="5" fill="url(#metaGrad)"/>
+    <text x="35" y="27" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Meta</text>
+    <text x="15" y="50" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11">• LLaMA 3.1 (405B)</text>
+    <text x="15" y="68" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• 8B, 70B variants</text>
+    <text x="15" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Open weights</text>
+  </g>
+  
+  <!-- Open Source Section -->
+  <text x="100" y="250" fill="#34d399" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🌐 OPEN SOURCE MODELS</text>
+  
+  <!-- Open source cards -->
+  <g transform="translate(30, 265)">
+    <rect width="170" height="80" rx="10" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Mistral AI</text>
+    <text x="15" y="45" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• Mistral 7B</text>
+    <text x="15" y="60" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• Mixtral 8x7B MoE</text>
+    <text x="15" y="75" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Best efficiency</text>
+  </g>
+  
+  <g transform="translate(215, 265)">
+    <rect width="170" height="80" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Microsoft</text>
+    <text x="15" y="45" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Phi-3 (mini/small)</text>
+    <text x="15" y="60" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Phi-2</text>
+    <text x="15" y="75" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Small but mighty</text>
+  </g>
+  
+  <g transform="translate(400, 265)">
+    <rect width="170" height="80" rx="10" fill="#0f172a" stroke="#ec4899" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Alibaba</text>
+    <text x="15" y="45" fill="#fbcfe8" font-family="Arial, sans-serif" font-size="10">• Qwen 2.5 (72B)</text>
+    <text x="15" y="60" fill="#fbcfe8" font-family="Arial, sans-serif" font-size="10">• Qwen-VL</text>
+    <text x="15" y="75" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Multilingual focus</text>
+  </g>
+  
+  <g transform="translate(585, 265)">
+    <rect width="170" height="80" rx="10" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DeepSeek</text>
+    <text x="15" y="45" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• DeepSeek V2</text>
+    <text x="15" y="60" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Coder, Math</text>
+    <text x="15" y="75" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Specialized variants</text>
+  </g>
+  
+  <g transform="translate(770, 265)">
+    <rect width="110" height="80" rx="10" fill="#0f172a" stroke="#f97316" stroke-width="2"/>
+    <text x="55" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Others</text>
+    <text x="10" y="45" fill="#431407" font-family="Arial, sans-serif" font-size="9">• Falcon</text>
+    <text x="10" y="60" fill="#431407" font-family="Arial, sans-serif" font-size="9">• Yi</text>
+    <text x="10" y="75" fill="#431407" font-family="Arial, sans-serif" font-size="9">• StableLM</text>
+  </g>
+  
+  <!-- Model Sizes Section -->
+  <text x="100" y="380" fill="#f472b6" font-family="Arial, sans-serif" font-size="16" font-weight="bold">📏 MODEL SIZES</text>
+  
+  <!-- Size visualization -->
+  <g transform="translate(30, 395)">
+    <!-- Small -->
+    <rect x="0" y="0" width="150" height="70" rx="10" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+    <circle cx="35" cy="35" r="20" fill="#06b6d4" opacity="0.3"/>
+    <circle cx="35" cy="35" r="12" fill="#22d3ee"/>
+    <text x="70" y="25" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SMALL</text>
+    <text x="70" y="40" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10">1-7B params</text>
+    <text x="70" y="55" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Edge, Fast inference</text>
+  </g>
+  
+  <g transform="translate(200, 395)">
+    <!-- Medium -->
+    <rect x="0" y="0" width="150" height="70" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="35" cy="35" r="20" fill="#8b5cf6" opacity="0.3"/>
+    <circle cx="35" cy="35" r="18" fill="#a78bfa"/>
+    <text x="70" y="25" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">MEDIUM</text>
+    <text x="70" y="40" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">13-30B params</text>
+    <text x="70" y="55" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Good balance</text>
+  </g>
+  
+  <g transform="translate(370, 395)">
+    <!-- Large -->
+    <rect x="0" y="0" width="150" height="70" rx="10" fill="#0f172a" stroke="#f472b6" stroke-width="2"/>
+    <circle cx="35" cy="35" r="20" fill="#ec4899" opacity="0.3"/>
+    <circle cx="35" cy="35" r="24" fill="#f472b6"/>
+    <text x="70" y="25" fill="#f472b6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LARGE</text>
+    <text x="70" y="40" fill="#fbcfe8" font-family="Arial, sans-serif" font-size="10">65B+ params</text>
+    <text x="70" y="55" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Best quality</text>
+  </g>
+  
+  <g transform="translate(540, 395)">
+    <!-- Frontier -->
+    <rect x="0" y="0" width="150" height="70" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="35" cy="35" r="20" fill="#f59e0b" opacity="0.3"/>
+    <circle cx="35" cy="35" r="28" fill="#fbbf24"/>
+    <text x="75" y="25" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FRONTIER</text>
+    <text x="75" y="40" fill="#422006" font-family="Arial, sans-serif" font-size="10">175B-1T+ params</text>
+    <text x="75" y="55" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">SOTA capabilities</text>
+  </g>
+  
+  <!-- Capabilities Section -->
+  <text x="100" y="500" fill="#06b6d4" font-family="Arial, sans-serif" font-size="16" font-weight="bold">⚡ KEY CAPABILITIES</text>
+  
+  <g transform="translate(30, 515)">
+    <rect width="130" height="45" rx="8" fill="#164e63" stroke="#22d3ee" stroke-width="1"/>
+    <text x="65" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="10" font-weight="bold">💬 Chat</text>
+    <text x="65" y="40" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">Conversation</text>
+  </g>
+  
+  <g transform="translate(175, 515)">
+    <rect width="130" height="45" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="65" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">💻 Code</text>
+    <text x="65" y="40" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Programming</text>
+  </g>
+  
+  <g transform="translate(320, 515)">
+    <rect width="130" height="45" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="65" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📊 Reasoning</text>
+    <text x="65" y="40" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Complex tasks</text>
+  </g>
+  
+  <g transform="translate(465, 515)">
+    <rect width="130" height="45" rx="8" fill="#831843" stroke="#ec4899" stroke-width="1"/>
+    <text x="65" y="25" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🖼️ Multimodal</text>
+    <text x="65" y="40" text-anchor="middle" fill="#fbcfe8" font-family="Arial, sans-serif" font-size="9">Vision + Text</text>
+  </g>
+  
+  <g transform="translate(610, 515)">
+    <rect width="130" height="45" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="65" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🛠️ Tools</text>
+    <text x="65" y="40" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Function calling</text>
+  </g>
+  
+  <g transform="translate(755, 515)">
+    <rect width="130" height="45" rx="8" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+    <text x="65" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📚 Long Context</text>
+    <text x="65" y="40" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">100K+ tokens</text>
+  </g>
+</svg>

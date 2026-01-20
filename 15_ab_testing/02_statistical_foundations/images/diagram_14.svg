@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='560' viewBox='0 0 524 560'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│              FREQUENTIST vs BAYESIAN A/B TESTING           │
+├────────────────────────┬────────────────────────────────────┤
+│      FREQUENTIST       │           BAYESIAN                │
+├────────────────────────┼────────────────────────────────────┤
+│                        │                                    │
+│ Question:              │ Question:                          │
+│ andquot;What&#x27;s the probability│ andquot;What&#x27;s the probability the        │
+│ of this data given     │ treatment is better, given         │
+│ no effect?andquot;            │ the data?andquot;                         │
+│                        │                                    │
+│ Output:                │ Output:                            │
+│ p-value, CI            │ Posterior distribution,            │
+│                        │ P(B andgt; A)                           │
+│                        │                                    │
+│ Decision:              │ Decision:                          │
+│ p andlt; 0.05? Ship         │ P(B andgt; A) andgt; 95%? Ship              │
+│                        │                                    │
+│ Sample size:           │ Sample size:                       │
+│ Fixed upfront          │ Can peek anytime*                  │
+│                        │                                    │
+│ Prior knowledge:       │ Prior knowledge:                   │
+│ Not incorporated       │ Explicitly modeled                 │
+│                        │                                    │
+│ Interpretation:        │ Interpretation:                    │
+│ More subtle            │ More intuitive                     │
+│                        │                                    │
+└────────────────────────┴────────────────────────────────────┘
+
+*With proper loss function considerations
+  </text>
+</svg>

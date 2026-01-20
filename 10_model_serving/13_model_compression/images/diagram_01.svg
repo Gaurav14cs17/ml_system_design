@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500">
+  <defs>
+    <linearGradient id="fp32Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="fp16Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="int8Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="int4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔢 Numeric Precision in Quantization</text>
+  
+  <!-- FP32 Section -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="60" width="770" height="95" rx="12" fill="#1e293b"/>
+    <rect x="40" y="60" width="120" height="95" rx="12 0 0 12" fill="url(#fp32Grad)"/>
+    <text x="100" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">FP32</text>
+    <text x="100" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#bfdbfe">32 bits</text>
+    <text x="100" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#93c5fd">4 bytes</text>
+    
+    <!-- Bit layout -->
+    <rect x="180" y="75" width="30" height="35" rx="4" fill="#ef4444"/>
+    <text x="195" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">S</text>
+    <text x="195" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">1</text>
+    
+    <rect x="215" y="75" width="120" height="35" rx="4" fill="#f59e0b"/>
+    <text x="275" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Exponent</text>
+    <text x="275" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">8 bits</text>
+    
+    <rect x="340" y="75" width="280" height="35" rx="4" fill="#22c55e"/>
+    <text x="480" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Mantissa (Fraction)</text>
+    <text x="480" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">23 bits</text>
+    
+    <text x="650" y="90" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Range: ±3.4×10³⁸</text>
+    <text x="650" y="108" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Precision: ~7 digits</text>
+    <text x="650" y="126" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">ML Standard</text>
+  </g>
+  
+  <!-- FP16 Section -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="165" width="770" height="95" rx="12" fill="#1e293b"/>
+    <rect x="40" y="165" width="120" height="95" rx="12 0 0 12" fill="url(#fp16Grad)"/>
+    <text x="100" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">FP16</text>
+    <text x="100" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#ddd6fe">16 bits</text>
+    <text x="100" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">2× smaller</text>
+    
+    <!-- Bit layout -->
+    <rect x="180" y="180" width="30" height="35" rx="4" fill="#ef4444"/>
+    <text x="195" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">S</text>
+    <text x="195" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">1</text>
+    
+    <rect x="215" y="180" width="70" height="35" rx="4" fill="#f59e0b"/>
+    <text x="250" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Exp</text>
+    <text x="250" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">5 bits</text>
+    
+    <rect x="290" y="180" width="140" height="35" rx="4" fill="#22c55e"/>
+    <text x="360" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Mantissa</text>
+    <text x="360" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">10 bits</text>
+    
+    <text x="500" y="195" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Range: ±65,504</text>
+    <text x="500" y="213" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Precision: ~3 digits</text>
+    <text x="500" y="231" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Mixed precision training</text>
+  </g>
+  
+  <!-- INT8 Section -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="270" width="770" height="95" rx="12" fill="#1e293b"/>
+    <rect x="40" y="270" width="120" height="95" rx="12 0 0 12" fill="url(#int8Grad)"/>
+    <text x="100" y="308" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">INT8</text>
+    <text x="100" y="330" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#a7f3d0">8 bits</text>
+    <text x="100" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">4× smaller</text>
+    
+    <!-- Bit layout -->
+    <rect x="180" y="285" width="200" height="35" rx="4" fill="#10b981"/>
+    <text x="280" y="308" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Signed Integer</text>
+    <text x="280" y="335" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">8 bits total</text>
+    
+    <text x="420" y="295" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Range: -128 to 127</text>
+    <text x="420" y="313" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Requires calibration</text>
+    <text x="420" y="331" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7" font-weight="bold">Best inference speedup!</text>
+    
+    <!-- Formula -->
+    <rect x="600" y="282" width="190" height="50" rx="8" fill="#064e3b"/>
+    <text x="695" y="303" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">Q = round(X / S) + Z</text>
+    <text x="695" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">S = scale, Z = zero-point</text>
+  </g>
+  
+  <!-- INT4 Section -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="375" width="770" height="95" rx="12" fill="#1e293b"/>
+    <rect x="40" y="375" width="120" height="95" rx="12 0 0 12" fill="url(#int4Grad)"/>
+    <text x="100" y="413" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">INT4</text>
+    <text x="100" y="435" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fef3c7">4 bits</text>
+    <text x="100" y="455" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fde68a">8× smaller</text>
+    
+    <!-- Bit layout -->
+    <rect x="180" y="390" width="100" height="35" rx="4" fill="#f59e0b"/>
+    <text x="230" y="413" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">4-bit Int</text>
+    <text x="230" y="440" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">4 bits</text>
+    
+    <text x="320" y="400" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Range: -8 to 7</text>
+    <text x="320" y="418" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Extreme compression</text>
+    <text x="320" y="436" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24" font-weight="bold">LLM quantization (GPTQ, AWQ)</text>
+  </g>
+  
+  <!-- Comparison bar -->
+  <g transform="translate(500, 390)">
+    <text x="50" y="0" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#94a3b8">Memory Comparison</text>
+    <rect x="0" y="10" width="280" height="15" rx="3" fill="#3b82f6"/>
+    <text x="285" y="22" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">FP32: 100%</text>
+    <rect x="0" y="30" width="140" height="15" rx="3" fill="#8b5cf6"/>
+    <text x="145" y="42" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">FP16: 50%</text>
+    <rect x="0" y="50" width="70" height="15" rx="3" fill="#10b981"/>
+    <text x="75" y="62" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">INT8: 25%</text>
+    <rect x="0" y="70" width="35" height="15" rx="3" fill="#f59e0b"/>
+    <text x="40" y="82" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">INT4: 12.5%</text>
+  </g>
+</svg>

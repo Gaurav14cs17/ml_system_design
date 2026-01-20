@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320">
+  <style>
+    .title { font-family: "Inter", Arial, sans-serif; fill: #0b3d91; font-size: 18px; font-weight: 700; }
+    .note { font-family: "Inter", Arial, sans-serif; fill: #475569; font-size: 13px; }
+    .label { font-family: "Inter", Arial, sans-serif; fill: #0f172a; font-size: 13px; font-weight: 700; }
+    .node { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 8; ry: 8; }
+  </style>
+  <rect x="0" y="0" width="1000" height="320" fill="#0f172a"/>
+  <text x="20" y="30" class="title">Knowledge Graph Enhancement</text>
+  <text x="20" y="52" class="note">Augment item metadata with graph relations to improve similarity.</text>
+
+  <!-- Nodes -->
+  <rect x="80" y="110" width="110" height="40" class="node"/>
+  <text x="135" y="135" class="label" text-anchor="middle">Inception</text>
+
+  <rect x="280" y="80" width="120" height="40" class="node"/>
+  <text x="340" y="105" class="label" text-anchor="middle">Chris Nolan</text>
+
+  <rect x="280" y="150" width="120" height="40" class="node"/>
+  <text x="340" y="175" class="label" text-anchor="middle">Sci-Fi</text>
+
+  <rect x="500" y="80" width="140" height="40" class="node"/>
+  <text x="570" y="105" class="label" text-anchor="middle">Interstellar</text>
+
+  <rect x="500" y="150" width="120" height="40" class="node"/>
+  <text x="560" y="175" class="label" text-anchor="middle">Action</text>
+
+  <!-- Edges -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+  <line x1="190" y1="130" x2="280" y2="100" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="235" y="112" class="note" text-anchor="middle">directed_by</text>
+
+  <line x1="190" y1="130" x2="280" y2="170" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="235" y="162" class="note" text-anchor="middle">has_genre</text>
+
+  <line x1="400" y1="100" x2="500" y2="100" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="450" y="90" class="note" text-anchor="middle">also_directed</text>
+
+  <line x1="400" y1="170" x2="500" y2="170" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="450" y="160" class="note" text-anchor="middle">similar_to</text>
+
+  <text x="80" y="240" class="note">Graph-enriched features: neighbors (directors, actors), related works, awards, themes → richer vectors for similarity.</text>
+</svg>
+
+

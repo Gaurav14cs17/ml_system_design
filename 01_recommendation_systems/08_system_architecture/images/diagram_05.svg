@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgServe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowServe" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgServe)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🚀 Model Serving Options</text>
+  
+  <!-- Option 1: Embedded -->
+  <g transform="translate(50, 70)" filter="url(#shadowServe)">
+    <rect width="800" height="120" rx="14" fill="#1e293b"/>
+    <rect width="800" height="45" rx="14 14 0 0" fill="#3b82f6"/>
+    <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">1. 📦 EMBEDDED SERVING</text>
+    
+    <g transform="translate(30, 55)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Model loaded directly in application process</text>
+      
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="350" height="25" rx="5" fill="#10b981" opacity="0.15"/>
+        <text x="175" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Low latency, simple deployment</text>
+        
+        <rect x="380" y="0" width="350" height="25" rx="5" fill="#ef4444" opacity="0.15"/>
+        <text x="555" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">✗ Memory per instance, version coupling</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Option 2: Model Service -->
+  <g transform="translate(50, 210)" filter="url(#shadowServe)">
+    <rect width="800" height="120" rx="14" fill="#1e293b"/>
+    <rect width="800" height="45" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">2. ⚡ MODEL SERVICE (Triton/TorchServe/TF Serving)</text>
+    
+    <g transform="translate(30, 55)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Dedicated model serving infrastructure</text>
+      
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="350" height="25" rx="5" fill="#10b981" opacity="0.15"/>
+        <text x="175" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Batching, GPU utilization, model versioning</text>
+        
+        <rect x="380" y="0" width="350" height="25" rx="5" fill="#ef4444" opacity="0.15"/>
+        <text x="555" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">✗ Network latency, operational complexity</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Option 3: Precomputed -->
+  <g transform="translate(50, 350)" filter="url(#shadowServe)">
+    <rect width="800" height="120" rx="14" fill="#1e293b"/>
+    <rect width="800" height="45" rx="14 14 0 0" fill="#f59e0b"/>
+    <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">3. 📊 PRECOMPUTED (Batch)</text>
+    
+    <g transform="translate(30, 55)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">Recommendations computed offline, stored in cache</text>
+      
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="350" height="25" rx="5" fill="#10b981" opacity="0.15"/>
+        <text x="175" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Very low latency, simple serving</text>
+        
+        <rect x="380" y="0" width="350" height="25" rx="5" fill="#ef4444" opacity="0.15"/>
+        <text x="555" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">✗ Not real-time personalized, staleness</text>
+      </g>
+    </g>
+  </g>
+</svg>

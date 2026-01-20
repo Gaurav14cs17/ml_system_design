@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="550" viewBox="0 0 700 550" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="acqGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="actGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="retGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="revGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="refGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="550" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">AARRR Pirate Metrics</text>
+  <text x="350" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Growth Framework for Metric Selection</text>
+  
+  <!-- Funnel stages -->
+  <!-- Acquisition -->
+  <g transform="translate(50, 80)">
+    <polygon points="0,0 600,0 550,70 50,70" fill="url(#acqGrad)" filter="url(#shadow)"/>
+    <text x="300" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">ACQUISITION</text>
+    <text x="300" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">How do users find us?</text>
+  </g>
+  <g transform="translate(420, 90)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">• Signups</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">• App installs</text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">• Traffic sources</text>
+  </g>
+  
+  <!-- Activation -->
+  <g transform="translate(75, 160)">
+    <polygon points="0,0 550,0 500,70 50,70" fill="url(#actGrad)" filter="url(#shadow)"/>
+    <text x="275" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">ACTIVATION</text>
+    <text x="275" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Great first experience?</text>
+  </g>
+  <g transform="translate(420, 170)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#8b5cf6">• Onboarding complete</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="10" fill="#8b5cf6">• First key action</text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="10" fill="#8b5cf6">• Time to value</text>
+  </g>
+  
+  <!-- Retention -->
+  <g transform="translate(100, 240)">
+    <polygon points="0,0 500,0 450,70 50,70" fill="url(#retGrad)" filter="url(#shadow)"/>
+    <text x="250" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">RETENTION</text>
+    <text x="250" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Do users come back?</text>
+  </g>
+  <g transform="translate(420, 250)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• D1, D7, D30 retention</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• WAU, MAU</text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• Churn rate</text>
+  </g>
+  
+  <!-- Revenue -->
+  <g transform="translate(125, 320)">
+    <polygon points="0,0 450,0 400,70 50,70" fill="url(#revGrad)" filter="url(#shadow)"/>
+    <text x="225" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">REVENUE</text>
+    <text x="225" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">How do we make money?</text>
+  </g>
+  <g transform="translate(420, 330)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">• Conversion rate</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">• Revenue per user</text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">• Lifetime value</text>
+  </g>
+  
+  <!-- Referral -->
+  <g transform="translate(150, 400)">
+    <polygon points="0,0 400,0 350,70 50,70" fill="url(#refGrad)" filter="url(#shadow)"/>
+    <text x="200" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">REFERRAL</text>
+    <text x="200" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Do users tell others?</text>
+  </g>
+  <g transform="translate(420, 410)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">• NPS Score</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">• Referral rate</text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">• Viral coefficient</text>
+  </g>
+  
+  <!-- Bottom tip -->
+  <rect x="150" y="490" width="400" height="45" rx="8" fill="#422006" stroke="#f59e0b"/>
+  <text x="350" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#92400e">💡 Choose metrics based on your current growth priority</text>
+  <text x="350" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a16207">Early stage → Acquisition/Activation | Growth → Retention/Revenue</text>
+</svg>
+

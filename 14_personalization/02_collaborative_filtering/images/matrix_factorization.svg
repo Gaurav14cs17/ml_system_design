@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="mfMatrixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mfUserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mfItemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="mfShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="400" fill="#0d1117" rx="10"/>
+  
+  <text x="425" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">Matrix Factorization</text>
+  
+  <!-- R Matrix -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="180" height="200" rx="10" fill="url(#mfMatrixGrad)" filter="url(#mfShadow)"/>
+    <text x="90" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">R</text>
+    <text x="90" y="50" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">(m × n)</text>
+    
+    <!-- Grid -->
+    <g transform="translate(20, 65)">
+      <rect x="0" y="0" width="28" height="25" fill="rgba(255,255,255,0.4)" rx="3"/>
+      <text x="14" y="17" text-anchor="middle" fill="#f8fafc" font-size="10">5</text>
+      
+      <rect x="35" y="0" width="28" height="25" fill="rgba(255,255,255,0.2)" rx="3"/>
+      <text x="49" y="17" text-anchor="middle" fill="#aaaaaa" font-size="10">?</text>
+      
+      <rect x="70" y="0" width="28" height="25" fill="rgba(255,255,255,0.4)" rx="3"/>
+      <text x="84" y="17" text-anchor="middle" fill="#f8fafc" font-size="10">3</text>
+      
+      <rect x="105" y="0" width="28" height="25" fill="rgba(255,255,255,0.2)" rx="3"/>
+      <text x="119" y="17" text-anchor="middle" fill="#aaaaaa" font-size="10">?</text>
+      
+      <rect x="0" y="30" width="28" height="25" fill="rgba(255,255,255,0.2)" rx="3"/>
+      <text x="14" y="47" text-anchor="middle" fill="#aaaaaa" font-size="10">?</text>
+      
+      <rect x="35" y="30" width="28" height="25" fill="rgba(255,255,255,0.4)" rx="3"/>
+      <text x="49" y="47" text-anchor="middle" fill="#f8fafc" font-size="10">4</text>
+      
+      <rect x="70" y="30" width="28" height="25" fill="rgba(255,255,255,0.2)" rx="3"/>
+      <text x="84" y="47" text-anchor="middle" fill="#aaaaaa" font-size="10">?</text>
+      
+      <rect x="105" y="30" width="28" height="25" fill="rgba(255,255,255,0.4)" rx="3"/>
+      <text x="119" y="47" text-anchor="middle" fill="#f8fafc" font-size="10">5</text>
+      
+      <rect x="0" y="60" width="28" height="25" fill="rgba(255,255,255,0.4)" rx="3"/>
+      <text x="14" y="77" text-anchor="middle" fill="#f8fafc" font-size="10">2</text>
+      
+      <rect x="35" y="60" width="28" height="25" fill="rgba(255,255,255,0.2)" rx="3"/>
+      <text x="49" y="77" text-anchor="middle" fill="#aaaaaa" font-size="10">?</text>
+      
+      <rect x="70" y="60" width="28" height="25" fill="rgba(255,255,255,0.4)" rx="3"/>
+      <text x="84" y="77" text-anchor="middle" fill="#f8fafc" font-size="10">4</text>
+      
+      <rect x="105" y="60" width="28" height="25" fill="rgba(255,255,255,0.2)" rx="3"/>
+      <text x="119" y="77" text-anchor="middle" fill="#aaaaaa" font-size="10">?</text>
+    </g>
+    
+    <text x="90" y="185" text-anchor="middle" fill="#f8fafc" font-size="10">User-Item Ratings</text>
+  </g>
+  
+  <!-- Equals sign -->
+  <text x="260" y="175" text-anchor="middle" fill="#f8fafc" font-size="30" font-weight="bold">≈</text>
+  
+  <!-- P Matrix (Users) -->
+  <g transform="translate(300, 70)">
+    <rect x="0" y="0" width="100" height="200" rx="10" fill="url(#mfUserGrad)" filter="url(#mfShadow)"/>
+    <text x="50" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">P</text>
+    <text x="50" y="50" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">(m × k)</text>
+    
+    <!-- Latent factors -->
+    <g transform="translate(15, 65)">
+      <rect x="0" y="0" width="70" height="25" rx="3" fill="rgba(255,255,255,0.3)"/>
+      <text x="35" y="17" text-anchor="middle" fill="#f8fafc" font-size="9">p₁: [0.2, 0.8]</text>
+      
+      <rect x="0" y="30" width="70" height="25" rx="3" fill="rgba(255,255,255,0.3)"/>
+      <text x="35" y="47" text-anchor="middle" fill="#f8fafc" font-size="9">p₂: [0.9, 0.1]</text>
+      
+      <rect x="0" y="60" width="70" height="25" rx="3" fill="rgba(255,255,255,0.3)"/>
+      <text x="35" y="77" text-anchor="middle" fill="#f8fafc" font-size="9">p₃: [0.5, 0.6]</text>
+    </g>
+    
+    <text x="50" y="185" text-anchor="middle" fill="#f8fafc" font-size="10">User Factors</text>
+  </g>
+  
+  <!-- Times sign -->
+  <text x="430" y="175" text-anchor="middle" fill="#f8fafc" font-size="30" font-weight="bold">×</text>
+  
+  <!-- Q Matrix (Items) -->
+  <g transform="translate(470, 100)">
+    <rect x="0" y="0" width="200" height="80" rx="10" fill="url(#mfItemGrad)" filter="url(#mfShadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Q<tspan baseline-shift="super" font-size="12">T</tspan></text>
+    <text x="100" y="42" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">(k × n)</text>
+    
+    <!-- Latent factors -->
+    <text x="100" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">[q₁, q₂, q₃, q₄] each k-dim</text>
+  </g>
+  
+  <text x="660" y="145" text-anchor="middle" fill="#f8fafc" font-size="10">Item Factors</text>
+  
+  <!-- Loss Function -->
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="750" height="85" rx="10" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="375" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Optimization Objective</text>
+    
+    <text x="375" y="55" text-anchor="middle" fill="#f8fafc" font-size="13" font-family="monospace">min Σ(r_ui - p_u · q_i)² + λ(||p_u||² + ||q_i||²)</text>
+    
+    <text x="190" y="75" text-anchor="middle" fill="#aaaaaa" font-size="10">Reconstruction Error</text>
+    <text x="500" y="75" text-anchor="middle" fill="#aaaaaa" font-size="10">Regularization</text>
+  </g>
+</svg>
+

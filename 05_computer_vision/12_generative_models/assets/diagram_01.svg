@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 550">
+  <defs>
+    <linearGradient id="genBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="ganGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="vaeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="diffGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="550" fill="url(#genBg)"/>
+  
+  <!-- Decorative -->
+  <circle cx="50" cy="50" r="100" fill="#8b5cf6" opacity="0.05"/>
+  <circle cx="800" cy="500" r="150" fill="#f59e0b" opacity="0.05"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold">GENERATIVE MODELS</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Creating New Images from Learned Distributions</text>
+  
+  <!-- GAN Section -->
+  <g transform="translate(30, 90)">
+    <rect width="250" height="220" rx="15" fill="#1e293b" stroke="url(#ganGrad)" stroke-width="3"/>
+    <rect width="250" height="40" rx="15" fill="#8b5cf6"/>
+    <rect x="0" y="25" width="250" height="15" fill="#8b5cf6"/>
+    <text x="125" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🎭 GAN</text>
+    <text x="125" y="65" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">Generative Adversarial Network</text>
+    
+    <!-- Generator -->
+    <rect x="20" y="85" width="90" height="50" rx="8" fill="#4c1d95"/>
+    <text x="65" y="105" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Generator</text>
+    <text x="65" y="120" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="8">z → fake</text>
+    
+    <!-- Discriminator -->
+    <rect x="140" y="85" width="90" height="50" rx="8" fill="#6d28d9"/>
+    <text x="185" y="105" text-anchor="middle" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Discriminator</text>
+    <text x="185" y="120" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="8">real/fake?</text>
+    
+    <!-- Arrows -->
+    <path d="M 115 110 L 135 110" stroke="#a78bfa" stroke-width="2"/>
+    <polygon points="135,105 150,110 135,115" fill="#a78bfa"/>
+    
+    <!-- Adversarial -->
+    <text x="125" y="160" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="20">⚔️</text>
+    <text x="125" y="180" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Adversarial Training</text>
+    
+    <!-- Pros/Cons -->
+    <text x="20" y="200" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Sharp images</text>
+    <text x="130" y="200" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Mode collapse</text>
+  </g>
+  
+  <!-- VAE Section -->
+  <g transform="translate(300, 90)">
+    <rect width="250" height="220" rx="15" fill="#1e293b" stroke="url(#vaeGrad)" stroke-width="3"/>
+    <rect width="250" height="40" rx="15" fill="#06b6d4"/>
+    <rect x="0" y="25" width="250" height="15" fill="#06b6d4"/>
+    <text x="125" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🔄 VAE</text>
+    <text x="125" y="65" text-anchor="middle" fill="#a5f3fc" font-family="Arial, sans-serif" font-size="10">Variational Autoencoder</text>
+    
+    <!-- Encoder -->
+    <rect x="20" y="85" width="60" height="50" rx="8" fill="#155e75"/>
+    <text x="50" y="105" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Encoder</text>
+    <text x="50" y="120" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="8">x → μ,σ</text>
+    
+    <!-- Latent -->
+    <ellipse cx="125" cy="110" rx="25" ry="20" fill="#0891b2" stroke="#22d3ee" stroke-width="2"/>
+    <text x="125" y="114" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">z ~ N</text>
+    
+    <!-- Decoder -->
+    <rect x="170" y="85" width="60" height="50" rx="8" fill="#0e7490"/>
+    <text x="200" y="105" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Decoder</text>
+    <text x="200" y="120" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="8">z → x̂</text>
+    
+    <!-- Arrows -->
+    <path d="M 85 110 L 98 110" stroke="#22d3ee" stroke-width="2"/>
+    <path d="M 152 110 L 165 110" stroke="#22d3ee" stroke-width="2"/>
+    
+    <!-- ELBO -->
+    <text x="125" y="160" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="20">📊</text>
+    <text x="125" y="180" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">ELBO Optimization</text>
+    
+    <!-- Pros/Cons -->
+    <text x="20" y="200" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Stable training</text>
+    <text x="130" y="200" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Blurry outputs</text>
+  </g>
+  
+  <!-- Diffusion Section -->
+  <g transform="translate(570, 90)">
+    <rect width="250" height="220" rx="15" fill="#1e293b" stroke="url(#diffGrad)" stroke-width="3"/>
+    <rect width="250" height="40" rx="15" fill="#f59e0b"/>
+    <rect x="0" y="25" width="250" height="15" fill="#f59e0b"/>
+    <text x="125" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🌫️ Diffusion</text>
+    <text x="125" y="65" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="10">Denoising Diffusion Models</text>
+    
+    <!-- Forward process -->
+    <rect x="20" y="85" width="90" height="40" rx="6" fill="#78350f"/>
+    <text x="65" y="100" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Add Noise</text>
+    <text x="65" y="115" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="8">x → x_t</text>
+    
+    <!-- Reverse process -->
+    <rect x="140" y="85" width="90" height="40" rx="6" fill="#92400e"/>
+    <text x="185" y="100" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Denoise</text>
+    <text x="185" y="115" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="8">x_t → x</text>
+    
+    <!-- Arrow -->
+    <path d="M 115 105 L 135 105" stroke="#fbbf24" stroke-width="2"/>
+    <text x="125" y="100" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12">→</text>
+    
+    <!-- T steps -->
+    <text x="125" y="150" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="18">T steps</text>
+    <text x="125" y="180" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Iterative Refinement</text>
+    
+    <!-- Pros/Cons -->
+    <text x="20" y="200" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Best quality</text>
+    <text x="130" y="200" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Slow sampling</text>
+  </g>
+  
+  <!-- Comparison Chart -->
+  <text x="425" y="340" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Model Comparison</text>
+  
+  <g transform="translate(100, 360)">
+    <rect width="600" height="100" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="1"/>
+    
+    <!-- Headers -->
+    <text x="80" y="25" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Aspect</text>
+    <text x="200" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">GAN</text>
+    <text x="350" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="10" font-weight="bold">VAE</text>
+    <text x="500" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Diffusion</text>
+    
+    <!-- Quality -->
+    <text x="80" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Quality</text>
+    <text x="200" y="50" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐⭐</text>
+    <text x="350" y="50" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐</text>
+    <text x="500" y="50" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐⭐⭐</text>
+    
+    <!-- Speed -->
+    <text x="80" y="70" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Speed</text>
+    <text x="200" y="70" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐⭐⭐</text>
+    <text x="350" y="70" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐⭐</text>
+    <text x="500" y="70" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">⭐⭐</text>
+    
+    <!-- Stability -->
+    <text x="80" y="90" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Stability</text>
+    <text x="200" y="90" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">⭐⭐</text>
+    <text x="350" y="90" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐⭐</text>
+    <text x="500" y="90" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">⭐⭐⭐⭐⭐</text>
+  </g>
+  
+  <!-- Applications -->
+  <g transform="translate(50, 480)">
+    <text x="375" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Applications</text>
+    
+    <rect x="0" y="15" width="140" height="40" rx="6" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="70" y="40" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">🎨 Image Synthesis</text>
+    
+    <rect x="155" y="15" width="140" height="40" rx="6" fill="#155e75" stroke="#06b6d4" stroke-width="1"/>
+    <text x="225" y="40" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="10">🖼️ Super Resolution</text>
+    
+    <rect x="310" y="15" width="140" height="40" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+    <text x="380" y="40" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="10">✨ Image Editing</text>
+    
+    <rect x="465" y="15" width="140" height="40" rx="6" fill="#831843" stroke="#ec4899" stroke-width="1"/>
+    <text x="535" y="40" text-anchor="middle" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="10">🎬 Video Generation</text>
+    
+    <rect x="620" y="15" width="140" height="40" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="690" y="40" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">🔄 Style Transfer</text>
+  </g>
+</svg>
+
+
+
+
+

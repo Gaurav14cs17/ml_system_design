@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🎯 Embedding Applications Landscape</text>
+  
+  <!-- Row 1 -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">🔍</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">SEMANTIC SEARCH</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Find by meaning,</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">not keywords</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Documents, FAQs</text>
+  </g>
+  
+  <g filter="url(#shadow)" transform="translate(235, 70)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">🎯</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#10b981">RECOMMENDATIONS</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User × Item</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">= Relevance Score</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Products, Content</text>
+  </g>
+  
+  <g filter="url(#shadow)" transform="translate(430, 70)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">🤖</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6">RAG SYSTEMS</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Retrieve context</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">+ Generate answer</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Chatbots, QA</text>
+  </g>
+  
+  <g filter="url(#shadow)" transform="translate(625, 70)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">🔄</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ec4899">DEDUPLICATION</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Find near-duplicates</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">and similar items</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Data cleaning</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <g filter="url(#shadow)" transform="translate(40, 220)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">📊</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">CLUSTERING</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Group by</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">similarity</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Topics, Themes</text>
+  </g>
+  
+  <g filter="url(#shadow)" transform="translate(235, 220)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">⚠️</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ef4444">ANOMALY DETECT</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Unusual = Far</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">from cluster</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Fraud, Outliers</text>
+  </g>
+  
+  <g filter="url(#shadow)" transform="translate(430, 220)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">🖼️</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#06b6d4">MULTI-MODAL</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Image + Text</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">in same space</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">CLIP, Visual QA</text>
+  </g>
+  
+  <g filter="url(#shadow)" transform="translate(625, 220)">
+    <rect width="180" height="130" rx="12" fill="#1e293b" stroke="#84cc16" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18">🛒</text>
+    <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#84cc16">E-COMMERCE</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Visual + Text</text>
+    <text x="90" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">product search</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Similar products</text>
+  </g>
+  
+  <rect x="225" y="370" width="400" height="22" rx="6" fill="#1e293b"/>
+  <text x="425" y="385" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Embeddings power modern AI applications across all domains</text>
+</svg>

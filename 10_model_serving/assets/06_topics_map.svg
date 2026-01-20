@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <filter id="shadow6" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="deployGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e"/>
+      <stop offset="100%" style="stop-color:#38ef7d"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="advGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="opsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a"/>
+      <stop offset="100%" style="stop-color:#fee140"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">Model Serving - Complete Learning Path</text>
+  <text x="500" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">15 Topics from Fundamentals to Production</text>
+  
+  <!-- Core Concepts -->
+  <g filter="url(#shadow6)">
+    <rect x="30" y="90" width="180" height="220" rx="15" fill="url(#coreGrad)"/>
+    <text x="120" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎯 CORE CONCEPTS</text>
+    
+    <rect x="45" y="135" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="120" y="157" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#667eea">1. Introduction</text>
+    
+    <rect x="45" y="175" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="120" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#667eea">2. Frameworks</text>
+    
+    <rect x="45" y="215" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="120" y="237" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#667eea">3. Model Formats</text>
+    
+    <rect x="45" y="255" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="120" y="277" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#667eea">4. Inference Patterns</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M215 200 L240 200" stroke="#667eea" stroke-width="3" fill="none"/>
+  <polygon points="240,195 255,200 240,205" fill="#667eea"/>
+  
+  <!-- Deployment -->
+  <g filter="url(#shadow6)">
+    <rect x="260" y="90" width="180" height="180" rx="15" fill="url(#deployGrad)"/>
+    <text x="350" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🚀 DEPLOYMENT</text>
+    
+    <rect x="275" y="135" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="350" y="157" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#11998e">5. Versioning and A/B</text>
+    
+    <rect x="275" y="175" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="350" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#11998e">6. Scaling</text>
+    
+    <rect x="275" y="215" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="350" y="237" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#11998e">7. Monitoring</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M445 180 L470 180" stroke="#11998e" stroke-width="3" fill="none"/>
+  <polygon points="470,175 485,180 470,185" fill="#11998e"/>
+  
+  <!-- Data Layer -->
+  <g filter="url(#shadow6)">
+    <rect x="490" y="90" width="180" height="140" rx="15" fill="url(#dataGrad)"/>
+    <text x="580" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">💾 DATA LAYER</text>
+    
+    <rect x="505" y="135" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="580" y="157" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f5576c">8. Caching</text>
+    
+    <rect x="505" y="175" width="150" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="580" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f5576c">9. Feature Stores</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M675 160 L700 160" stroke="#f5576c" stroke-width="3" fill="none"/>
+  <polygon points="700,155 715,160 700,165" fill="#f5576c"/>
+  
+  <!-- Advanced -->
+  <g filter="url(#shadow6)">
+    <rect x="720" y="90" width="250" height="180" rx="15" fill="url(#advGrad)"/>
+    <text x="845" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚡ ADVANCED</text>
+    
+    <rect x="735" y="135" width="105" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="787" y="157" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4facfe">10. Edge</text>
+    
+    <rect x="850" y="135" width="105" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="902" y="157" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4facfe">11. Serverless</text>
+    
+    <rect x="735" y="175" width="105" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="787" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4facfe">12. GPU</text>
+    
+    <rect x="850" y="175" width="105" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="902" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4facfe">13. Compression</text>
+  </g>
+  
+  <!-- Operations -->
+  <g filter="url(#shadow6)">
+    <rect x="350" y="330" width="300" height="140" rx="15" fill="url(#opsGrad)"/>
+    <text x="500" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🔧 OPERATIONS</text>
+    
+    <rect x="370" y="375" width="120" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="430" y="397" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fa709a">14. Security</text>
+    
+    <rect x="510" y="375" width="120" height="35" rx="8" fill="rgba(255,255,255,0.9)"/>
+    <text x="570" y="397" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fa709a">15. Cost</text>
+    
+    <rect x="390" y="420" width="220" height="35" rx="8" fill="rgba(255,255,255,0.95)"/>
+    <text x="500" y="442" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fa709a">🎉 Production Ready!</text>
+  </g>
+  
+  <!-- Connecting arrows to Operations -->
+  <path d="M120 315 L120 350 L345 350" stroke="#764ba2" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M350 275 L350 325" stroke="#38ef7d" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M580 235 L580 350 L345 350" stroke="#f5576c" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M845 275 L845 350 L655 350" stroke="#00f2fe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  
+  <!-- Legend -->
+  <g>
+    <rect x="30" y="500" width="940" height="85" rx="10" fill="#0f172a" stroke="#e0e0e0" filter="url(#shadow6)"/>
+    <text x="500" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📚 Learning Path Recommendations</text>
+    
+    <text x="60" y="555" font-family="Arial, sans-serif" font-size="11" fill="#667eea">🎯 Beginner: 1 → 2 → 3 → 4</text>
+    <text x="280" y="555" font-family="Arial, sans-serif" font-size="11" fill="#11998e">🚀 Deployment: 5 → 6 → 7</text>
+    <text x="500" y="555" font-family="Arial, sans-serif" font-size="11" fill="#f5576c">💾 Data: 8 → 9</text>
+    <text x="660" y="555" font-family="Arial, sans-serif" font-size="11" fill="#4facfe">⚡ Advanced: 10-13</text>
+    <text x="860" y="555" font-family="Arial, sans-serif" font-size="11" fill="#fa709a">🔧 Ops: 14 → 15</text>
+    
+    <text x="500" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Complete all topics sequentially or jump to specific areas based on your needs</text>
+  </g>
+</svg>
+

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <!-- Background -->
+  <rect width="850" height="520" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">mAP CALCULATION</text>
+  <text x="425" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Mean Average Precision</text>
+  
+  <!-- Step 1: PR Curve -->
+  <g transform="translate(50, 80)">
+    <rect width="350" height="200" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Step 1: Precision-Recall Curve</text>
+    
+    <!-- PR Curve -->
+    <g transform="translate(50, 45)">
+      <!-- Axes -->
+      <line x1="0" y1="120" x2="250" y2="120" stroke="#475569" stroke-width="2"/>
+      <line x1="0" y1="0" x2="0" y2="120" stroke="#475569" stroke-width="2"/>
+      
+      <text x="-30" y="10" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">1.0</text>
+      <text x="-30" y="65" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">0.5</text>
+      <text x="-30" y="120" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">0.0</text>
+      <text x="-40" y="65" font-family="Arial, sans-serif" font-size="9" fill="#60a5fa" transform="rotate(-90, -40, 65)">Precision</text>
+      
+      <text x="125" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Recall</text>
+      <text x="0" y="135" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">0.0</text>
+      <text x="250" y="135" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">1.0</text>
+      
+      <!-- PR curve -->
+      <path d="M 0 10 L 40 10 L 40 25 L 80 25 L 80 45 L 120 45 L 120 65 L 160 65 L 160 90 L 200 90 L 200 110 L 250 110" fill="none" stroke="#3b82f6" stroke-width="3"/>
+      
+      <!-- Area under curve (shaded) -->
+      <path d="M 0 10 L 40 10 L 40 25 L 80 25 L 80 45 L 120 45 L 120 65 L 160 65 L 160 90 L 200 90 L 200 110 L 250 110 L 250 120 L 0 120 Z" fill="rgba(59, 130, 246, 0.2)"/>
+    </g>
+    
+    <text x="175" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Area under curve = AP</text>
+  </g>
+  
+  <!-- Step 2 and 3: Compute AP and mAP -->
+  <g transform="translate(450, 80)">
+    <rect width="350" height="200" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">Step 2 &amp; 3: Compute mAP</text>
+    
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">Step 2: AP per class</text>
+    <text x="40" y="75" font-family="Arial, sans-serif" font-size="10" fill="#86efac">• 11-point interpolation (VOC)</text>
+    <text x="40" y="93" font-family="Arial, sans-serif" font-size="10" fill="#86efac">• All-point interpolation (COCO)</text>
+    
+    <text x="30" y="125" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">Step 3: Average across classes</text>
+    
+    <g transform="translate(50, 140)">
+      <rect width="250" height="40" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+      <text x="125" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#4ade80">mAP = (1/C) × Σ AP_c</text>
+    </g>
+  </g>
+  
+  <!-- COCO Metrics -->
+  <g transform="translate(150, 310)">
+    <rect width="550" height="180" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="275" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">COCO Metrics</text>
+    
+    <!-- Metric rows -->
+    <g transform="translate(30, 50)">
+      <rect width="150" height="30" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="75" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fbbf24">mAP (AP@[.5:.95])</text>
+      <text x="180" y="20" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Avg over IoU thresholds</text>
+    </g>
+    
+    <g transform="translate(30, 85)">
+      <rect width="80" height="25" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="40" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fbbf24">AP50</text>
+      <text x="100" y="17" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">IoU=0.5</text>
+      
+      <rect x="200" width="80" height="25" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="240" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fbbf24">AP75</text>
+      <text x="300" y="17" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">IoU=0.75 (stricter)</text>
+    </g>
+    
+    <g transform="translate(30, 120)">
+      <rect width="70" height="25" rx="4" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+      <text x="35" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">APs</text>
+      <text x="85" y="17" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">small</text>
+      
+      <rect x="130" width="70" height="25" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="165" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fbbf24">APm</text>
+      <text x="215" y="17" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">medium</text>
+      
+      <rect x="270" width="70" height="25" rx="4" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+      <text x="305" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f87171">APl</text>
+      <text x="355" y="17" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">large</text>
+    </g>
+  </g>
+</svg>

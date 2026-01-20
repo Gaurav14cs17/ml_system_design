@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="simpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="learnedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="contrastGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📄 Sentence Embedding Approaches</text>
+  
+  <!-- Simple Aggregation Column -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="260" height="300" rx="16" fill="#1e293b" stroke="url(#simpleGrad)" stroke-width="3"/>
+    <rect width="260" height="45" rx="16 16 0 0" fill="url(#simpleGrad)"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">📊 Simple Aggregation</text>
+    
+    <!-- Mean Pooling -->
+    <rect x="20" y="60" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Mean Pooling</text>
+    <text x="130" y="108" text-anchor="middle" font-family="Courier New, monospace" font-size="11" fill="#64748b">(w₁ + w₂ + ... + wₙ) / n</text>
+    <text x="130" y="123" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Simple, fast baseline</text>
+    
+    <!-- TF-IDF Weighted -->
+    <rect x="20" y="140" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">TF-IDF Weighted</text>
+    <text x="130" y="188" text-anchor="middle" font-family="Courier New, monospace" font-size="11" fill="#64748b">Σ(tfidf × wᵢ) / Σ(tfidf)</text>
+    <text x="130" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Down-weight common words</text>
+    
+    <!-- SIF -->
+    <rect x="20" y="220" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">SIF (Smooth Inverse Freq)</text>
+    <text x="130" y="265" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Weight + remove 1st PC</text>
+    <text x="130" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Surprisingly effective!</text>
+  </g>
+  
+  <!-- Learned Models Column -->
+  <g filter="url(#shadow)" transform="translate(320, 70)">
+    <rect width="260" height="300" rx="16" fill="#1e293b" stroke="url(#learnedGrad)" stroke-width="3"/>
+    <rect width="260" height="45" rx="16 16 0 0" fill="url(#learnedGrad)"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">🧠 Learned Models</text>
+    
+    <!-- Doc2Vec -->
+    <rect x="20" y="60" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#34d399">Doc2Vec</text>
+    <text x="130" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">[DOC] + words → predict</text>
+    <text x="130" y="123" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Extends Word2Vec</text>
+    
+    <!-- Sentence-BERT -->
+    <rect x="20" y="140" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#34d399">Sentence-BERT</text>
+    <text x="130" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Bi-encoder + contrastive</text>
+    <text x="130" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Industry standard</text>
+    
+    <!-- E5/BGE -->
+    <rect x="20" y="220" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#34d399">E5 / BGE</text>
+    <text x="130" y="265" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Instruction-tuned</text>
+    <text x="130" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">SOTA performance</text>
+  </g>
+  
+  <!-- Contrastive Column -->
+  <g filter="url(#shadow)" transform="translate(600, 70)">
+    <rect width="260" height="300" rx="16" fill="#1e293b" stroke="url(#contrastGrad)" stroke-width="3"/>
+    <rect width="260" height="45" rx="16 16 0 0" fill="url(#contrastGrad)"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">🎯 Contrastive Learning</text>
+    
+    <!-- SimCSE -->
+    <rect x="20" y="60" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#a855f7">SimCSE</text>
+    <text x="130" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Same text + dropout</text>
+    <text x="130" y="123" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Self-supervised</text>
+    
+    <!-- InfoNCE -->
+    <rect x="20" y="140" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#a855f7">InfoNCE Loss</text>
+    <text x="130" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Positive vs negatives</text>
+    <text x="130" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">In-batch negatives</text>
+    
+    <!-- Hard Negatives -->
+    <rect x="20" y="220" width="220" height="70" rx="10" fill="#0f172a"/>
+    <text x="130" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#a855f7">Hard Negative Mining</text>
+    <text x="130" y="265" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Challenging negatives</text>
+    <text x="130" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Better representations</text>
+  </g>
+  
+  <!-- Bottom -->
+  <rect x="200" y="385" width="500" height="25" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="402" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Simple → Learned → Contrastive: Evolution toward better semantic understanding</text>
+</svg>

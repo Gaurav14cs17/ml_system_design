@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🛠️ MLOps Monitoring Tools Landscape</text>
+  
+  <!-- ML-Specific Monitoring -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="700" height="80" rx="10" fill="#1e293b"/>
+    <text x="75" y="90" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fca5a5">🎯 ML-Specific Monitoring</text>
+    <rect x="220" y="70" width="90" height="35" rx="6" fill="#ef4444"/>
+    <text x="265" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Evidently</text>
+    <rect x="320" y="70" width="90" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="365" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">WhyLabs</text>
+    <rect x="420" y="70" width="90" height="35" rx="6" fill="#3b82f6"/>
+    <text x="465" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Arize</text>
+    <rect x="520" y="70" width="90" height="35" rx="6" fill="#10b981"/>
+    <text x="565" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Fiddler</text>
+    <rect x="620" y="70" width="90" height="35" rx="6" fill="#f59e0b"/>
+    <text x="665" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">NannyML</text>
+  </g>
+  
+  <!-- Data Quality -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="155" width="700" height="80" rx="10" fill="#1e293b"/>
+    <text x="75" y="185" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">📊 Data Quality</text>
+    <rect x="220" y="165" width="110" height="35" rx="6" fill="#10b981"/>
+    <text x="275" y="188" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#f8fafc">Great Expectations</text>
+    <rect x="340" y="165" width="90" height="35" rx="6" fill="#3b82f6"/>
+    <text x="385" y="188" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Soda</text>
+    <rect x="440" y="165" width="90" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="485" y="188" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">dbt Tests</text>
+    <rect x="540" y="165" width="110" height="35" rx="6" fill="#ef4444"/>
+    <text x="595" y="188" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Monte Carlo</text>
+  </g>
+  
+  <!-- Observability -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="250" width="700" height="80" rx="10" fill="#1e293b"/>
+    <text x="75" y="280" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">📝 Observability</text>
+    <rect x="220" y="260" width="90" height="35" rx="6" fill="#ef4444"/>
+    <text x="265" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Prometheus</text>
+    <rect x="320" y="260" width="90" height="35" rx="6" fill="#f59e0b"/>
+    <text x="365" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Grafana</text>
+    <rect x="420" y="260" width="90" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="465" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">DataDog</text>
+    <rect x="520" y="260" width="90" height="35" rx="6" fill="#06b6d4"/>
+    <text x="565" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">New Relic</text>
+    <rect x="620" y="260" width="90" height="35" rx="6" fill="#a855f7"/>
+    <text x="665" y="283" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Jaeger</text>
+  </g>
+  
+  <!-- Experiment Tracking -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="345" width="700" height="80" rx="10" fill="#1e293b"/>
+    <text x="75" y="375" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fcd34d">🧪 Experiment Tracking</text>
+    <rect x="220" y="355" width="90" height="35" rx="6" fill="#0ea5e9"/>
+    <text x="265" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">MLflow</text>
+    <rect x="320" y="355" width="90" height="35" rx="6" fill="#eab308"/>
+    <text x="365" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#1f2937">W&amp;B</text>
+    <rect x="420" y="355" width="90" height="35" rx="6" fill="#06b6d4"/>
+    <text x="465" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Neptune</text>
+    <rect x="520" y="355" width="90" height="35" rx="6" fill="#ef4444"/>
+    <text x="565" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Comet</text>
+  </g>
+  
+  <!-- Feature Stores -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="440" width="700" height="80" rx="10" fill="#1e293b"/>
+    <text x="75" y="470" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">🗄️ Feature Stores</text>
+    <rect x="220" y="450" width="90" height="35" rx="6" fill="#ec4899"/>
+    <text x="265" y="473" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Feast</text>
+    <rect x="320" y="450" width="90" height="35" rx="6" fill="#8b5cf6"/>
+    <text x="365" y="473" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Tecton</text>
+    <rect x="420" y="450" width="90" height="35" rx="6" fill="#10b981"/>
+    <text x="465" y="473" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Hopsworks</text>
+    <rect x="520" y="450" width="90" height="35" rx="6" fill="#ef4444"/>
+    <text x="565" y="473" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">Databricks</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(620, 500)">
+    <rect x="0" y="0" width="130" height="40" rx="6" fill="#334155"/>
+    <rect x="10" y="10" width="12" height="12" rx="2" fill="#10b981"/>
+    <text x="28" y="20" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">Open Source</text>
+    <rect x="90" y="10" width="12" height="12" rx="2" fill="#8b5cf6"/>
+    <text x="108" y="20" font-family="Segoe UI, sans-serif" font-size="9" fill="#f8fafc">SaaS</text>
+  </g>
+</svg>

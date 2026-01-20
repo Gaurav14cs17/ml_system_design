@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+    <linearGradient id="genGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="discGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">GAN ARCHITECTURE</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Generative Adversarial Network</text>
+  
+  <!-- Training Loop Label -->
+  <rect x="250" y="70" width="300" height="30" rx="6" fill="#334155" stroke="#6366f1" stroke-width="1"/>
+  <text x="400" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#818cf8">Training Loop</text>
+  
+  <!-- Noise z -->
+  <g transform="translate(100, 130)">
+    <rect width="100" height="60" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">Noise z</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">~ N(0, 1)</text>
+  </g>
+  
+  <line x1="150" y1="195" x2="150" y2="220" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Generator -->
+  <g transform="translate(70, 225)">
+    <rect width="160" height="90" rx="12" fill="url(#genGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="80" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Generator (G)</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e9d5ff">z → fake image</text>
+    <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">ConvTranspose</text>
+  </g>
+  
+  <line x1="150" y1="320" x2="150" y2="350" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Fake Images -->
+  <g transform="translate(100, 355)">
+    <rect width="100" height="60" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">Fake Images</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">🖼️</text>
+  </g>
+  
+  <!-- Real Images -->
+  <g transform="translate(550, 130)">
+    <rect width="100" height="60" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">Real Images</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16">🖼️</text>
+  </g>
+  
+  <line x1="600" y1="195" x2="600" y2="350" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Paths to Discriminator -->
+  <line x1="200" y1="385" x2="300" y2="385" stroke="#a78bfa" stroke-width="2"/>
+  <line x1="550" y1="385" x2="450" y2="385" stroke="#4ade80" stroke-width="2"/>
+  <line x1="300" y1="385" x2="300" y2="410" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="450" y1="385" x2="450" y2="410" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="300" y1="410" x2="450" y2="410" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="375" y1="410" x2="375" y2="430" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Discriminator -->
+  <g transform="translate(290, 435)">
+    <rect width="170" height="80" rx="12" fill="url(#discGrad)" stroke="#fbbf24" stroke-width="2"/>
+    <text x="85" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Discriminator (D)</text>
+    <text x="85" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fef3c7">Real or Fake?</text>
+    <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">Conv + Sigmoid</text>
+  </g>
+  
+  <!-- Loss Functions -->
+  <g transform="translate(500, 240)">
+    <rect width="260" height="140" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <text x="130" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#818cf8">Loss Functions</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="10" fill="#fbbf24">D loss:</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">max log(D(x)) + log(1-D(G(z)))</text>
+    
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="10" fill="#a78bfa">G loss:</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">max log(D(G(z)))</text>
+  </g>
+  
+  <!-- Adversarial game label -->
+  <g transform="translate(290, 375)">
+    <text x="85" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18">⚔️</text>
+  </g>
+</svg>

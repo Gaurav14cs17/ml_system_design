@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 380">
+  <defs>
+    <filter id="shadow16" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="380" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔒 Security &amp; Privacy in Model Serving</text>
+  
+  <!-- Security Layers -->
+  <!-- Outer Layer - Network -->
+  <g filter="url(#shadow16)">
+    <rect x="30" y="55" width="790" height="310" rx="20" fill="#ffebee" stroke="#e53935" stroke-width="2"/>
+    <text x="425" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c62828">🌐 Network Security Layer</text>
+    <text x="80" y="100" font-family="Arial, sans-serif" font-size="10" fill="#e53935">TLS/SSL | VPC | Firewall | DDoS Protection</text>
+  </g>
+  
+  <!-- Middle Layer - API -->
+  <g filter="url(#shadow16)">
+    <rect x="60" y="115" width="730" height="230" rx="15" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="425" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e65100">🚪 API Security Layer</text>
+    <text x="120" y="160" font-family="Arial, sans-serif" font-size="10" fill="#f57c00">OAuth 2.0 | JWT | Rate Limiting | Input Validation</text>
+  </g>
+  
+  <!-- Inner Layer - Model -->
+  <g filter="url(#shadow16)">
+    <rect x="90" y="175" width="670" height="150" rx="12" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="425" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">🧠 Model Security Layer</text>
+  </g>
+  
+  <!-- Security Components -->
+  <!-- Model Encryption -->
+  <g filter="url(#shadow16)">
+    <rect x="110" y="215" width="145" height="95" rx="10" fill="#c8e6c9" stroke="#66bb6a"/>
+    <text x="182" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">🔐 Encryption</text>
+    <text x="182" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Model at rest</text>
+    <text x="182" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Model in transit</text>
+    <text x="182" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">AES-256 / TLS 1.3</text>
+  </g>
+  
+  <!-- Access Control -->
+  <g filter="url(#shadow16)">
+    <rect x="270" y="215" width="145" height="95" rx="10" fill="#c8e6c9" stroke="#66bb6a"/>
+    <text x="342" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">👤 Access Control</text>
+    <text x="342" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">RBAC policies</text>
+    <text x="342" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">API key rotation</text>
+    <text x="342" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Audit logging</text>
+  </g>
+  
+  <!-- Adversarial Protection -->
+  <g filter="url(#shadow16)">
+    <rect x="430" y="215" width="145" height="95" rx="10" fill="#c8e6c9" stroke="#66bb6a"/>
+    <text x="502" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">🛡️ Adversarial</text>
+    <text x="502" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Input sanitization</text>
+    <text x="502" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Anomaly detection</text>
+    <text x="502" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Attack mitigation</text>
+  </g>
+  
+  <!-- Privacy -->
+  <g filter="url(#shadow16)">
+    <rect x="590" y="215" width="155" height="95" rx="10" fill="#c8e6c9" stroke="#66bb6a"/>
+    <text x="667" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">🔏 Privacy</text>
+    <text x="667" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Differential privacy</text>
+    <text x="667" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Federated learning</text>
+    <text x="667" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">PII masking</text>
+  </g>
+  
+  <!-- Threats on the side -->
+  <g>
+    <text x="820" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="9" fill="#c62828">⚠️ DDoS</text>
+    <text x="820" y="200" text-anchor="end" font-family="Arial, sans-serif" font-size="9" fill="#e65100">⚠️ Injection</text>
+    <text x="820" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">⚠️ Extraction</text>
+    <text x="820" y="280" text-anchor="end" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">⚠️ Inversion</text>
+  </g>
+</svg>
+

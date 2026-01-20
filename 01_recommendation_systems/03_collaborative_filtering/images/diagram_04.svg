@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="bgCF4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="itemGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadowCF4" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgCF4)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📦 Item-Based Collaborative Filtering</text>
+  <text x="425" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#94a3b8">"Users who rated Item A also rated Item B similarly"</text>
+  
+  <!-- Item A -->
+  <g transform="translate(100, 100)" filter="url(#shadowCF4)">
+    <rect width="280" height="140" rx="14" fill="#1e293b"/>
+    <rect width="280" height="45" rx="14 14 0 0" fill="url(#itemGrad4)"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">📦 Item A Ratings</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="22" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User1</text>
+      <text x="22" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">5⭐</text>
+      
+      <rect x="50" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="72" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User2</text>
+      <text x="72" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">4⭐</text>
+      
+      <rect x="100" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="122" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User3</text>
+      <text x="122" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">5⭐</text>
+      
+      <rect x="150" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="172" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User4</text>
+      <text x="172" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">5⭐</text>
+      
+      <rect x="200" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="222" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User5</text>
+      <text x="222" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">4⭐</text>
+    </g>
+    
+    <text x="140" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Avg: 4.6 | Pattern: [5,4,5,5,4]</text>
+  </g>
+  
+  <!-- Similarity indicator -->
+  <g transform="translate(390, 140)">
+    <rect width="70" height="60" rx="10" fill="#10b981" filter="url(#shadowCF4)"/>
+    <text x="35" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Similar!</text>
+    <text x="35" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">0.92</text>
+  </g>
+  
+  <!-- Item B -->
+  <g transform="translate(470, 100)" filter="url(#shadowCF4)">
+    <rect width="280" height="140" rx="14" fill="#1e293b"/>
+    <rect width="280" height="45" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">📦 Item B Ratings</text>
+    
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="22" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User1</text>
+      <text x="22" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">4⭐</text>
+      
+      <rect x="50" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="72" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User2</text>
+      <text x="72" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">5⭐</text>
+      
+      <rect x="100" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="122" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User3</text>
+      <text x="122" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">4⭐</text>
+      
+      <rect x="150" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="172" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User4</text>
+      <text x="172" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">5⭐</text>
+      
+      <rect x="200" y="0" width="45" height="30" rx="6" fill="#334155"/>
+      <text x="222" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">User5</text>
+      <text x="222" y="26" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">5⭐</text>
+    </g>
+    
+    <text x="140" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Avg: 4.6 | Pattern: [4,5,4,5,5]</text>
+  </g>
+  
+  <!-- Recommendation Logic -->
+  <g transform="translate(100, 270)" filter="url(#shadowCF4)">
+    <rect width="650" height="100" rx="14" fill="#1e293b"/>
+    <rect width="650" height="40" rx="14 14 0 0" fill="#10b981"/>
+    <text x="325" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">💡 Recommendation Logic</text>
+    
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="280" height="35" rx="6" fill="#10b981" opacity="0.15"/>
+      <text x="140" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">High correlation in rating patterns</text>
+      <text x="140" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">→ Items A and B are similar</text>
+      
+      <text x="300" y="22" font-family="Segoe UI, sans-serif" font-size="20" fill="#64748b">→</text>
+      
+      <rect x="330" y="0" width="280" height="35" rx="6" fill="#3b82f6" opacity="0.15"/>
+      <text x="470" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">User likes Item A but hasn't seen B</text>
+      <text x="470" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">→ Recommend Item B!</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgTools" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="managedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="customGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadowTools" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgTools)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Feature Store Landscape</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Choosing the right tool for your ML infrastructure</text>
+  
+  <!-- Open Source Section -->
+  <g filter="url(#shadowTools)">
+    <rect x="40" y="85" width="260" height="320" rx="14" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="40" y="85" width="260" height="45" rx="14" fill="url(#ossGrad)"/>
+    <rect x="40" y="118" width="260" height="12" fill="url(#ossGrad)"/>
+    <text x="170" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🌱 Open Source</text>
+    
+    <!-- Feast -->
+    <rect x="60" y="145" width="220" height="65" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <text x="170" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">Feast</text>
+    <text x="170" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Most popular, cloud-agnostic</text>
+    <text x="170" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Python SDK • Active community</text>
+    
+    <!-- Hopsworks -->
+    <rect x="60" y="220" width="220" height="55" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <text x="170" y="243" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">Hopsworks</text>
+    <text x="170" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Full ML platform with FS</text>
+    
+    <!-- Butterfree -->
+    <rect x="60" y="285" width="220" height="55" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <text x="170" y="308" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#34d399">Butterfree</text>
+    <text x="170" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Spark-based (QuintoAndar)</text>
+    
+    <!-- Pros/Cons -->
+    <text x="170" y="365" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">✓ Free • Flexible • No lock-in</text>
+    <text x="170" y="382" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">✗ Ops overhead • DIY features</text>
+  </g>
+  
+  <!-- Managed Section -->
+  <g filter="url(#shadowTools)">
+    <rect x="320" y="85" width="260" height="320" rx="14" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="320" y="85" width="260" height="45" rx="14" fill="url(#managedGrad)"/>
+    <rect x="320" y="118" width="260" height="12" fill="url(#managedGrad)"/>
+    <text x="450" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">☁️ Managed / Commercial</text>
+    
+    <!-- Tecton -->
+    <rect x="340" y="145" width="220" height="50" rx="8" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="450" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">Tecton</text>
+    <text x="450" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Enterprise, ex-Uber team</text>
+    
+    <!-- Databricks -->
+    <rect x="340" y="205" width="220" height="50" rx="8" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="450" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">Databricks FS</text>
+    <text x="450" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Lakehouse integration</text>
+    
+    <!-- AWS -->
+    <rect x="340" y="265" width="105" height="50" rx="8" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="392" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#a78bfa">AWS SM</text>
+    <text x="392" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">SageMaker</text>
+    
+    <!-- GCP -->
+    <rect x="455" y="265" width="105" height="50" rx="8" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="507" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#a78bfa">GCP</text>
+    <text x="507" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Vertex AI</text>
+    
+    <!-- Azure -->
+    <rect x="340" y="325" width="220" height="35" rx="8" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="450" y="348" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#a78bfa">Azure ML Feature Store</text>
+    
+    <!-- Pros/Cons -->
+    <text x="450" y="377" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">✓ Managed • Supported • UI</text>
+    <text x="450" y="394" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">✗ Cost • Vendor lock-in</text>
+  </g>
+  
+  <!-- Build Your Own Section -->
+  <g filter="url(#shadowTools)">
+    <rect x="600" y="85" width="260" height="320" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="600" y="85" width="260" height="45" rx="14" fill="url(#customGrad)"/>
+    <rect x="600" y="118" width="260" height="12" fill="url(#customGrad)"/>
+    <text x="730" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🔧 Build Your Own</text>
+    
+    <!-- Companies -->
+    <rect x="620" y="145" width="220" height="120" rx="8" fill="#451a03" stroke="#fbbf24" stroke-width="1"/>
+    <text x="730" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Industry Examples</text>
+    <text x="730" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">🚗 Uber - Michelangelo</text>
+    <text x="730" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">🏠 Airbnb - Zipline</text>
+    <text x="730" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">📺 Netflix - Custom</text>
+    <text x="730" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">💳 Stripe - Radar</text>
+    
+    <!-- Requirements -->
+    <rect x="620" y="275" width="220" height="85" rx="8" fill="#451a03" stroke="#fbbf24" stroke-width="1"/>
+    <text x="730" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Requirements</text>
+    <text x="730" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Large engineering team</text>
+    <text x="730" y="335" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Unique requirements</text>
+    <text x="730" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Full customization needs</text>
+    
+    <!-- Pros/Cons -->
+    <text x="730" y="377" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">✓ Full control • Custom fit</text>
+    <text x="730" y="394" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">✗ High cost • Maintenance</text>
+  </g>
+  
+  <!-- Bottom recommendation -->
+  <rect x="150" y="425" width="600" height="40" rx="10" fill="#334155" filter="url(#shadowTools)"/>
+  <text x="450" y="450" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#f8fafc">💡 Start simple with Feast → Evaluate managed options as you scale → Custom only if necessary</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="420" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🏷️ Label Quality and Delay Challenge
+  </text>
+  
+  <!-- Timeline -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="65" width="700" height="140" rx="12" fill="#1e293b"/>
+    <text x="400" y="92" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Timeline: Transaction to Confirmed Fraud Label
+    </text>
+    
+    <!-- Timeline bar -->
+    <line x1="80" y1="140" x2="720" y2="140" stroke="#475569" stroke-width="3"/>
+    
+    <!-- Events -->
+    <circle cx="100" cy="140" r="10" fill="#22c55e"/>
+    <text x="100" y="120" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">T=0</text>
+    <text x="100" y="170" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Transaction</text>
+    
+    <circle cx="220" cy="140" r="10" fill="#3b82f6"/>
+    <text x="220" y="120" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">+1-7d</text>
+    <text x="220" y="170" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Customer</text>
+    <text x="220" y="182" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Dispute</text>
+    
+    <circle cx="340" cy="140" r="10" fill="#8b5cf6"/>
+    <text x="340" y="120" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">+7-14d</text>
+    <text x="340" y="170" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Investigation</text>
+    
+    <circle cx="460" cy="140" r="10" fill="#f59e0b"/>
+    <text x="460" y="120" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">+30-45d</text>
+    <text x="460" y="170" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Chargeback</text>
+    <text x="460" y="182" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Filed</text>
+    
+    <circle cx="580" cy="140" r="10" fill="#ef4444"/>
+    <text x="580" y="120" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">+60-90d</text>
+    <text x="580" y="170" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Chargeback</text>
+    <text x="580" y="182" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Resolved</text>
+    
+    <circle cx="700" cy="140" r="12" fill="#22c55e" stroke="#f8fafc" stroke-width="2"/>
+    <text x="700" y="120" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">+90d</text>
+    <text x="700" y="170" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Label</text>
+    <text x="700" y="182" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Ready</text>
+  </g>
+  
+  <!-- Implications -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="225" width="340" height="175" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="220" y="255" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚠️ Challenges</text>
+    
+    <text x="70" y="285" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• 90-day label maturity window</text>
+    <text x="70" y="310" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Can't train on recent transactions</text>
+    <text x="70" y="335" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Fraud patterns may have evolved</text>
+    <text x="70" y="360" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Some fraud never gets reported</text>
+    <text x="70" y="385" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">→ Label noise and concept drift</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="410" y="225" width="340" height="175" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="580" y="255" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✅ Solutions</text>
+    
+    <text x="430" y="285" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Use mature labels only for training</text>
+    <text x="430" y="310" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Combine multiple label sources</text>
+    <text x="430" y="335" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Semi-supervised learning</text>
+    <text x="430" y="360" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">• Continuous retraining (weekly)</text>
+    <text x="430" y="385" fill="#86efac" font-family="Arial, sans-serif" font-size="11" font-weight="bold">→ Drift monitoring + quick response</text>
+  </g>
+</svg>

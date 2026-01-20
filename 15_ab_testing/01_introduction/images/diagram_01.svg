@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520">
+  <defs>
+    <linearGradient id="trafficGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="splitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="controlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="treatmentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="metricsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="analysisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="decisionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowDown" markerWidth="10" markerHeight="10" refX="5" refY="10" orient="auto">
+      <path d="M0,0 L5,10 L10,0" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">A/B Test Flow</text>
+  
+  <!-- Incoming Traffic -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="50" width="200" height="50" rx="25" fill="url(#trafficGrad)"/>
+    <text x="300" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">INCOMING TRAFFIC</text>
+    <!-- Traffic icons -->
+    <circle cx="230" cy="75" r="8" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="250" cy="75" r="8" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="350" cy="75" r="8" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="370" cy="75" r="8" fill="rgba(255,255,255,0.3)"/>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M300 105 L300 130" stroke="#94a3b8" stroke-width="3"/>
+  <polygon points="295,130 300,142 305,130" fill="#94a3b8"/>
+  
+  <!-- Random Split -->
+  <g filter="url(#shadow)">
+    <rect x="225" y="145" width="150" height="45" rx="8" fill="url(#splitGrad)"/>
+    <text x="300" y="173" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Random Split</text>
+  </g>
+  
+  <!-- Split arrows -->
+  <path d="M250 195 L150 230" stroke="#94a3b8" stroke-width="3"/>
+  <polygon points="145,228 148,240 158,232" fill="#94a3b8"/>
+  <path d="M350 195 L450 230" stroke="#94a3b8" stroke-width="3"/>
+  <polygon points="455,228 452,240 442,232" fill="#94a3b8"/>
+  
+  <!-- Control Group -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="245" width="180" height="90" rx="12" fill="url(#controlGrad)"/>
+    <text x="140" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Control (A)</text>
+    <line x1="70" y1="288" x2="210" y2="288" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="140" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">Current ML Model</text>
+    <rect x="60" y="252" width="30" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="75" y="265" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">50%</text>
+  </g>
+  
+  <!-- Treatment Group -->
+  <g filter="url(#shadow)">
+    <rect x="370" y="245" width="180" height="90" rx="12" fill="url(#treatmentGrad)"/>
+    <text x="460" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Treatment (B)</text>
+    <line x1="390" y1="288" x2="530" y2="288" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="460" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">New ML Model</text>
+    <rect x="510" y="252" width="30" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="525" y="265" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f8fafc">50%</text>
+  </g>
+  
+  <!-- Arrows to metrics -->
+  <path d="M140 340 L140 360" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="135,360 140,370 145,360" fill="#94a3b8"/>
+  <path d="M460 340 L460 360" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="455,360 460,370 465,360" fill="#94a3b8"/>
+  
+  <!-- Measure Metrics boxes -->
+  <g filter="url(#shadow)">
+    <rect x="65" y="375" width="150" height="40" rx="8" fill="url(#metricsGrad)"/>
+    <text x="140" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Measure Metrics</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="385" y="375" width="150" height="40" rx="8" fill="url(#metricsGrad)"/>
+    <text x="460" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Measure Metrics</text>
+  </g>
+  
+  <!-- Converging arrows -->
+  <path d="M140 420 L250 445" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M460 420 L350 445" stroke="#94a3b8" stroke-width="2"/>
+  
+  <!-- Statistical Analysis -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="450" width="200" height="45" rx="10" fill="url(#analysisGrad)"/>
+    <text x="300" y="478" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Statistical Analysis</text>
+  </g>
+  
+  <!-- Final arrow -->
+  <path d="M300 500 L300 515" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="295,515 300,525 305,515" fill="#94a3b8"/>
+  
+  <!-- Decision -->
+  <g filter="url(#shadow)">
+    <path d="M300 530 L370 560 L300 590 L230 560 Z" fill="url(#decisionGrad)"/>
+    <text x="300" y="565" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Ship or</text>
+    <text x="300" y="580" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Rollback?</text>
+  </g>
+</svg>

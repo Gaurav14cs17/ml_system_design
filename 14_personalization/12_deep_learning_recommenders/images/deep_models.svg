@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="ncfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#feca57;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="seqGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5f72bd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gnnGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow8" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="900" height="550" fill="#0a0a1a" rx="10"/>
+  
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">Deep Learning Recommender Models</text>
+  
+  <!-- NCF -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="270" height="220" rx="15" fill="url(#ncfGrad)" filter="url(#shadow8)"/>
+    <text x="135" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Neural Collaborative Filtering</text>
+    
+    <g transform="translate(20, 45)">
+      <!-- GMF side -->
+      <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">GMF</text>
+      <circle cx="30" cy="45" r="12" fill="#0f172a"/>
+      <text x="30" y="49" text-anchor="middle" fill="#ff6b6b" font-size="8">u</text>
+      <text x="50" y="49" fill="#f8fafc" font-size="12">⊙</text>
+      <circle cx="70" cy="45" r="12" fill="#0f172a"/>
+      <text x="70" y="49" text-anchor="middle" fill="#ff6b6b" font-size="8">i</text>
+      
+      <!-- MLP side -->
+      <rect x="115" y="0" width="100" height="80" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="165" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">MLP</text>
+      <circle cx="135" cy="40" r="8" fill="#0f172a"/>
+      <circle cx="155" cy="40" r="8" fill="#0f172a"/>
+      <circle cx="175" cy="40" r="8" fill="#0f172a"/>
+      <circle cx="145" cy="60" r="8" fill="#0f172a"/>
+      <circle cx="165" cy="60" r="8" fill="#0f172a"/>
+      
+      <!-- Combine -->
+      <rect x="50" y="95" width="120" height="35" rx="5" fill="rgba(255,255,255,0.3)"/>
+      <text x="110" y="118" text-anchor="middle" fill="#f8fafc" font-size="10">Concatenate + FC</text>
+      
+      <text x="110" y="155" text-anchor="middle" fill="#f8fafc" font-size="9">r̂ = σ(h^T[GMF ⊕ MLP])</text>
+    </g>
+  </g>
+  
+  <!-- Sequential -->
+  <g transform="translate(320, 60)">
+    <rect x="0" y="0" width="270" height="220" rx="15" fill="url(#seqGrad2)" filter="url(#shadow8)"/>
+    <text x="135" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Sequential (Transformer)</text>
+    
+    <g transform="translate(20, 45)">
+      <!-- Sequence items -->
+      <rect x="0" y="0" width="40" height="30" rx="5" fill="rgba(255,255,255,0.3)"/>
+      <text x="20" y="20" text-anchor="middle" fill="#f8fafc" font-size="8">i₁</text>
+      
+      <rect x="50" y="0" width="40" height="30" rx="5" fill="rgba(255,255,255,0.3)"/>
+      <text x="70" y="20" text-anchor="middle" fill="#f8fafc" font-size="8">i₂</text>
+      
+      <rect x="100" y="0" width="40" height="30" rx="5" fill="rgba(255,255,255,0.3)"/>
+      <text x="120" y="20" text-anchor="middle" fill="#f8fafc" font-size="8">i₃</text>
+      
+      <text x="155" y="20" fill="#f8fafc" font-size="12">...</text>
+      
+      <rect x="175" y="0" width="40" height="30" rx="5" fill="rgba(255,255,255,0.3)"/>
+      <text x="195" y="20" text-anchor="middle" fill="#f8fafc" font-size="8">iₙ</text>
+      
+      <!-- Arrows -->
+      <path d="M 115 35 L 115 50" stroke="#ffffff" stroke-width="1" marker-end="url(#arrowhead8)"/>
+      
+      <!-- Attention -->
+      <rect x="30" y="55" width="170" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="115" y="80" text-anchor="middle" fill="#f8fafc" font-size="10">Self-Attention</text>
+      
+      <path d="M 115 100 L 115 115" stroke="#ffffff" stroke-width="1" marker-end="url(#arrowhead8)"/>
+      
+      <!-- FFN -->
+      <rect x="50" y="120" width="130" height="30" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="115" y="140" text-anchor="middle" fill="#f8fafc" font-size="9">Feed Forward</text>
+      
+      <text x="115" y="170" text-anchor="middle" fill="#f8fafc" font-size="9">SASRec, BERT4Rec</text>
+    </g>
+  </g>
+  
+  <!-- GNN -->
+  <g transform="translate(610, 60)">
+    <rect x="0" y="0" width="260" height="220" rx="15" fill="url(#gnnGrad2)" filter="url(#shadow8)"/>
+    <text x="130" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Graph Neural Networks</text>
+    
+    <g transform="translate(30, 50)">
+      <!-- Graph visualization -->
+      <circle cx="50" cy="30" r="20" fill="#0f172a" stroke="#11998e" stroke-width="2"/>
+      <text x="50" y="35" text-anchor="middle" fill="#11998e" font-size="10">U</text>
+      
+      <circle cx="150" cy="30" r="20" fill="#0f172a" stroke="#11998e" stroke-width="2"/>
+      <text x="150" y="35" text-anchor="middle" fill="#11998e" font-size="10">U</text>
+      
+      <circle cx="40" cy="100" r="16" fill="rgba(255,255,255,0.7)" stroke="#38ef7d" stroke-width="2"/>
+      <text x="40" y="105" text-anchor="middle" fill="#38ef7d" font-size="9">I</text>
+      
+      <circle cx="100" cy="70" r="16" fill="rgba(255,255,255,0.7)" stroke="#38ef7d" stroke-width="2"/>
+      <text x="100" y="75" text-anchor="middle" fill="#38ef7d" font-size="9">I</text>
+      
+      <circle cx="160" cy="100" r="16" fill="rgba(255,255,255,0.7)" stroke="#38ef7d" stroke-width="2"/>
+      <text x="160" y="105" text-anchor="middle" fill="#38ef7d" font-size="9">I</text>
+      
+      <!-- Edges -->
+      <line x1="50" y1="50" x2="40" y2="84" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <line x1="50" y1="50" x2="88" y2="62" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <line x1="150" y1="50" x2="112" y2="62" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <line x1="150" y1="50" x2="160" y2="84" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      
+      <text x="100" y="140" text-anchor="middle" fill="#f8fafc" font-size="9">Message passing</text>
+      <text x="100" y="155" text-anchor="middle" fill="#f8fafc" font-size="9">LightGCN, PinSage</text>
+    </g>
+  </g>
+  
+  <!-- Evolution Timeline -->
+  <g transform="translate(50, 310)">
+    <rect x="0" y="0" width="800" height="100" rx="10" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="400" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Model Evolution Timeline</text>
+    
+    <line x1="50" y1="60" x2="750" y2="60" stroke="#ffffff" stroke-width="2"/>
+    
+    <circle cx="100" cy="60" r="8" fill="#ff6b6b"/>
+    <text x="100" y="85" text-anchor="middle" fill="#aaaaaa" font-size="9">2017</text>
+    <text x="100" y="50" text-anchor="middle" fill="#f8fafc" font-size="8">NCF</text>
+    
+    <circle cx="250" cy="60" r="8" fill="#feca57"/>
+    <text x="250" y="85" text-anchor="middle" fill="#aaaaaa" font-size="9">2018</text>
+    <text x="250" y="50" text-anchor="middle" fill="#f8fafc" font-size="8">SASRec</text>
+    
+    <circle cx="400" cy="60" r="8" fill="#5f72bd"/>
+    <text x="400" y="85" text-anchor="middle" fill="#aaaaaa" font-size="9">2019</text>
+    <text x="400" y="50" text-anchor="middle" fill="#f8fafc" font-size="8">BERT4Rec</text>
+    
+    <circle cx="550" cy="60" r="8" fill="#38ef7d"/>
+    <text x="550" y="85" text-anchor="middle" fill="#aaaaaa" font-size="9">2020</text>
+    <text x="550" y="50" text-anchor="middle" fill="#f8fafc" font-size="8">LightGCN</text>
+    
+    <circle cx="700" cy="60" r="8" fill="#9b59b6"/>
+    <text x="700" y="85" text-anchor="middle" fill="#aaaaaa" font-size="9">2023+</text>
+    <text x="700" y="50" text-anchor="middle" fill="#f8fafc" font-size="8">LLM-Rec</text>
+  </g>
+  
+  <!-- Comparison -->
+  <g transform="translate(50, 430)">
+    <rect x="0" y="0" width="800" height="100" rx="10" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="400" y="22" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">When to Use Each?</text>
+    
+    <g transform="translate(30, 35)">
+      <rect x="0" y="0" width="230" height="50" rx="5" fill="rgba(255,107,107,0.2)"/>
+      <text x="115" y="18" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="bold">NCF / DeepFM</text>
+      <text x="115" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Rich features, feature interactions</text>
+      <text x="115" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">E-commerce, CTR prediction</text>
+    </g>
+    
+    <g transform="translate(280, 35)">
+      <rect x="0" y="0" width="230" height="50" rx="5" fill="rgba(95,114,189,0.2)"/>
+      <text x="115" y="18" text-anchor="middle" fill="#5f72bd" font-size="10" font-weight="bold">Sequential</text>
+      <text x="115" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Session-based, temporal patterns</text>
+      <text x="115" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">Streaming, news, short videos</text>
+    </g>
+    
+    <g transform="translate(530, 35)">
+      <rect x="0" y="0" width="230" height="50" rx="5" fill="rgba(56,239,125,0.2)"/>
+      <text x="115" y="18" text-anchor="middle" fill="#38ef7d" font-size="10" font-weight="bold">Graph Neural</text>
+      <text x="115" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Social, multi-hop relationships</text>
+      <text x="115" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">Social networks, knowledge graphs</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead8" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>
+

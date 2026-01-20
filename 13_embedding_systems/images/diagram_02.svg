@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="lbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="cacheGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
+      <path d="M0,0 L5,10 L10,0 L5,3 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">🏗️ Production Embedding Architecture</text>
+  
+  <!-- Client Layer -->
+  <g filter="url(#shadow)">
+    <rect x="350" y="65" width="200" height="50" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <text x="450" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">📱 Client Application</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M450 120 L450 155" stroke="#64748b" stroke-width="2" marker-end="url(#arrowDown)"/>
+  
+  <!-- Load Balancer -->
+  <g filter="url(#shadow)">
+    <rect x="325" y="160" width="250" height="50" rx="12" fill="url(#lbGrad)"/>
+    <text x="450" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">⚖️ Load Balancer / API Gateway</text>
+  </g>
+  
+  <!-- Arrows to API servers -->
+  <path d="M380 215 L200 265" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M450 215 L450 265" stroke="#64748b" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <path d="M520 215 L700 265" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- API Servers -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="270" width="180" height="80" rx="12" fill="url(#apiGrad)"/>
+    <text x="190" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🧠 Embedding API</text>
+    <text x="190" y="320" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Model Serving</text>
+    <text x="190" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">GPU Instance</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="360" y="270" width="180" height="80" rx="12" fill="url(#apiGrad)"/>
+    <text x="450" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🧠 Embedding API</text>
+    <text x="450" y="320" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Model Serving</text>
+    <text x="450" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">GPU Instance</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="620" y="270" width="180" height="80" rx="12" fill="url(#apiGrad)"/>
+    <text x="710" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🧠 Embedding API</text>
+    <text x="710" y="320" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Model Serving</text>
+    <text x="710" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)">GPU Instance</text>
+  </g>
+  
+  <!-- Arrows to cache and DB -->
+  <path d="M190 355 L190 385" stroke="#64748b" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <path d="M450 355 L450 385" stroke="#64748b" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <path d="M710 355 L710 385" stroke="#64748b" stroke-width="2" marker-end="url(#arrowDown)"/>
+  
+  <!-- Cache Layer -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="390" width="180" height="50" rx="10" fill="url(#cacheGrad)"/>
+    <text x="190" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">⚡ Redis Cache</text>
+  </g>
+  
+  <!-- Arrows connecting to central DB -->
+  <path d="M285 415 L360 440" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M540 440 L615 415" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Vector Database -->
+  <g filter="url(#shadow)">
+    <rect x="320" y="390" width="260" height="100" rx="14" fill="url(#dbGrad)"/>
+    <text x="450" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#fff">🗄️ Vector Database</text>
+    <text x="450" y="445" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">Distributed Cluster</text>
+    
+    <!-- Node indicators -->
+    <circle cx="380" cy="470" r="10" fill="#fff" opacity="0.3"/>
+    <circle cx="410" cy="470" r="10" fill="#fff" opacity="0.3"/>
+    <circle cx="440" cy="470" r="10" fill="#fff" opacity="0.3"/>
+    <circle cx="470" cy="470" r="10" fill="#fff" opacity="0.3"/>
+    <circle cx="500" cy="470" r="10" fill="#fff" opacity="0.3"/>
+    <circle cx="530" cy="470" r="10" fill="#fff" opacity="0.3"/>
+  </g>
+  
+  <!-- Monitoring -->
+  <g filter="url(#shadow)">
+    <rect x="620" y="390" width="180" height="50" rx="10" fill="#f43f5e"/>
+    <text x="710" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">📊 Monitoring</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 460)">
+    <rect width="800" height="35" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="400" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">
+      Horizontal scaling • GPU acceleration • Caching for frequent queries • Distributed vector storage
+    </text>
+  </g>
+</svg>

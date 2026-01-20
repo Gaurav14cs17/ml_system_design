@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="cfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#141e30"/>
+      <stop offset="100%" style="stop-color:#243b55"/>
+    </linearGradient>
+    <linearGradient id="userCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#ee5a24"/>
+    </linearGradient>
+    <linearGradient id="itemCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#26de81"/>
+      <stop offset="100%" style="stop-color:#20bf6b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="650" fill="url(#cfBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Collaborative Filtering</text>
+  <text x="450" y="65" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="14">"Users who liked X also liked Y"</text>
+  
+  <!-- User-Item Matrix -->
+  <g transform="translate(50, 100)">
+    <text x="180" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">User-Item Rating Matrix</text>
+    
+    <rect x="0" y="20" width="360" height="220" rx="10" fill="#0f172a" opacity="0.1"/>
+    
+    <!-- Headers -->
+    <text x="100" y="50" text-anchor="middle" fill="#26de81" font-family="Arial, sans-serif" font-size="12">Movie1</text>
+    <text x="160" y="50" text-anchor="middle" fill="#26de81" font-family="Arial, sans-serif" font-size="12">Movie2</text>
+    <text x="220" y="50" text-anchor="middle" fill="#26de81" font-family="Arial, sans-serif" font-size="12">Movie3</text>
+    <text x="280" y="50" text-anchor="middle" fill="#26de81" font-family="Arial, sans-serif" font-size="12">Movie4</text>
+    <text x="340" y="50" text-anchor="middle" fill="#26de81" font-family="Arial, sans-serif" font-size="12">Movie5</text>
+    
+    <!-- User rows -->
+    <text x="40" y="85" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12">User A</text>
+    <text x="100" y="85" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">5</text>
+    <text x="160" y="85" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">3</text>
+    <text x="220" y="85" text-anchor="middle" fill="#ff0" font-family="Arial, sans-serif" font-size="14" font-weight="bold">?</text>
+    <text x="280" y="85" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">4</text>
+    <text x="340" y="85" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">-</text>
+    
+    <text x="40" y="120" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12">User B</text>
+    <text x="100" y="120" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">5</text>
+    <text x="160" y="120" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">-</text>
+    <text x="220" y="120" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">4</text>
+    <text x="280" y="120" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">5</text>
+    <text x="340" y="120" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">3</text>
+    
+    <text x="40" y="155" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12">User C</text>
+    <text x="100" y="155" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">-</text>
+    <text x="160" y="155" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">3</text>
+    <text x="220" y="155" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">4</text>
+    <text x="280" y="155" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">-</text>
+    <text x="340" y="155" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">5</text>
+    
+    <text x="40" y="190" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12">User D</text>
+    <text x="100" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">4</text>
+    <text x="160" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">2</text>
+    <text x="220" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">5</text>
+    <text x="280" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">4</text>
+    <text x="340" y="190" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">-</text>
+    
+    <text x="180" y="225" text-anchor="middle" fill="#aaa" font-family="Arial, sans-serif" font-size="11">"-" = not rated, "?" = to predict</text>
+  </g>
+  
+  <!-- User-Based CF -->
+  <g transform="translate(480, 100)">
+    <rect width="380" height="220" rx="15" fill="url(#userCard)" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">User-Based CF</text>
+    
+    <rect x="20" y="50" width="340" height="150" rx="10" fill="#0f172a" opacity="0.95"/>
+    
+    <text x="180" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Find users similar to User A:</text>
+    
+    <!-- Similar users -->
+    <circle cx="60" cy="110" r="20" fill="#ff6b6b"/>
+    <text x="60" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">B</text>
+    <text x="60" y="145" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="10">sim=0.95</text>
+    
+    <circle cx="140" cy="110" r="20" fill="#ff6b6b"/>
+    <text x="140" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">D</text>
+    <text x="140" y="145" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="10">sim=0.87</text>
+    
+    <text x="220" y="110" fill="#1e293b" font-family="Arial, sans-serif" font-size="11">→ Predict A's rating</text>
+    <text x="220" y="130" fill="#1e293b" font-family="Arial, sans-serif" font-size="11">for Movie3:</text>
+    <text x="220" y="155" fill="#26de81" font-family="Arial, sans-serif" font-size="14" font-weight="bold">≈ 4.5 ⭐</text>
+    
+    <text x="180" y="185" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="10">(B rated 4, D rated 5 → weighted avg)</text>
+  </g>
+  
+  <!-- Item-Based CF -->
+  <g transform="translate(50, 350)">
+    <rect width="380" height="220" rx="15" fill="url(#itemCard)" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Item-Based CF</text>
+    
+    <rect x="20" y="50" width="340" height="150" rx="10" fill="#0f172a" opacity="0.95"/>
+    
+    <text x="180" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Find items similar to what A liked:</text>
+    
+    <!-- Similar items -->
+    <rect x="40" y="90" width="60" height="40" rx="5" fill="#26de81"/>
+    <text x="70" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Movie1</text>
+    
+    <text x="115" y="110" fill="#1e293b" font-family="Arial, sans-serif" font-size="16">≈</text>
+    
+    <rect x="130" y="90" width="60" height="40" rx="5" fill="#26de81" opacity="0.7"/>
+    <text x="160" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Movie3</text>
+    
+    <text x="210" y="105" fill="#666" font-family="Arial, sans-serif" font-size="10">sim=0.89</text>
+    <text x="210" y="120" fill="#666" font-family="Arial, sans-serif" font-size="10">(co-rated similarly)</text>
+    
+    <text x="180" y="160" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="11">A liked Movie1 (5⭐) → likely to like Movie3</text>
+    <text x="180" y="185" text-anchor="middle" fill="#26de81" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Predict: 4.5 ⭐</text>
+  </g>
+  
+  <!-- Matrix Factorization -->
+  <g transform="translate(480, 350)">
+    <rect width="380" height="220" rx="15" fill="#9b59b6" opacity="0.9"/>
+    <text x="190" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Matrix Factorization</text>
+    
+    <rect x="20" y="50" width="340" height="150" rx="10" fill="#0f172a" opacity="0.95"/>
+    
+    <text x="180" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">R ≈ P × Q^T</text>
+    
+    <!-- Matrix visualization -->
+    <rect x="40" y="90" width="50" height="50" rx="3" fill="#9b59b6" opacity="0.3"/>
+    <text x="65" y="120" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">R</text>
+    <text x="65" y="155" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="8">m×n</text>
+    
+    <text x="110" y="115" fill="#1e293b" font-family="Arial, sans-serif" font-size="14">=</text>
+    
+    <rect x="130" y="90" width="30" height="50" rx="3" fill="#e74c3c" opacity="0.5"/>
+    <text x="145" y="120" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">P</text>
+    <text x="145" y="155" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="8">m×k</text>
+    
+    <text x="175" y="115" fill="#1e293b" font-family="Arial, sans-serif" font-size="14">×</text>
+    
+    <rect x="190" y="90" width="50" height="30" rx="3" fill="#3498db" opacity="0.5"/>
+    <text x="215" y="110" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Q^T</text>
+    <text x="215" y="155" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="8">k×n</text>
+    
+    <text x="280" y="100" fill="#666" font-family="Arial, sans-serif" font-size="9">P = User</text>
+    <text x="280" y="115" fill="#666" font-family="Arial, sans-serif" font-size="9">latent factors</text>
+    <text x="280" y="135" fill="#666" font-family="Arial, sans-serif" font-size="9">Q = Item</text>
+    <text x="280" y="150" fill="#666" font-family="Arial, sans-serif" font-size="9">latent factors</text>
+    
+    <text x="180" y="185" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="11">k = 50-200 hidden dimensions</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="450" y="610" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" opacity="0.8">🔑 Key: CF uses collective user behavior, not item content</text>
+</svg>
+

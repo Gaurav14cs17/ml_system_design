@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <rect width="800" height="380" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">VERIFICATION vs IDENTIFICATION</text>
+  
+  <g transform="translate(50, 80)">
+    <rect width="330" height="180" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="165" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">VERIFICATION (1:1)</text>
+    <text x="165" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#93c5fd">"Is this person who they claim to be?"</text>
+    
+    <circle cx="80" cy="110" r="30" fill="#334155" stroke="#60a5fa" stroke-width="2"/>
+    <text x="80" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Input</text>
+    
+    <text x="165" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#fbbf24">vs</text>
+    
+    <circle cx="250" cy="110" r="30" fill="#334155" stroke="#60a5fa" stroke-width="2"/>
+    <text x="250" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Claimed</text>
+    
+    <text x="165" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4ade80">✓ Match / ✗ No Match</text>
+    <text x="165" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Example: Phone unlock, passport control</text>
+  </g>
+  
+  <g transform="translate(420, 80)">
+    <rect width="330" height="180" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="165" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">IDENTIFICATION (1:N)</text>
+    <text x="165" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fcd34d">"Who is this person?"</text>
+    
+    <circle cx="80" cy="110" r="30" fill="#334155" stroke="#f59e0b" stroke-width="2"/>
+    <text x="80" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Input</text>
+    
+    <text x="145" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fbbf24">→</text>
+    
+    <rect x="170" y="80" width="120" height="60" rx="6" fill="#334155" stroke="#f59e0b" stroke-width="1"/>
+    <text x="230" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">Database</text>
+    <text x="230" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">of N faces</text>
+    <text x="230" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">(search all)</text>
+    
+    <text x="165" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4ade80">Identity or Unknown</text>
+    <text x="165" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Example: Surveillance, photo tagging</text>
+  </g>
+  
+  <g transform="translate(150, 290)">
+    <rect width="500" height="70" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">Key Difference</text>
+    <text x="250" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">Verification: Compare 2 embeddings | Identification: Search N embeddings</text>
+  </g>
+</svg>

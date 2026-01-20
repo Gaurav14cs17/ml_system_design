@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="expBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#expBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Additive vs Multiplicative Seasonality</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Choosing the Right Decomposition for Your Time Series</text>
+  
+  <!-- Additive Section -->
+  <g transform="translate(30, 80)">
+    <rect width="360" height="290" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="360" height="40" rx="12" fill="#3b82f6"/>
+    <text x="180" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">ADDITIVE</text>
+    
+    <!-- Formula -->
+    <rect x="20" y="55" width="320" height="35" rx="6" fill="#1e3a5f"/>
+    <text x="180" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#60a5fa">Y(t) = Level + Trend + Season + Error</text>
+    
+    <!-- Chart area -->
+    <rect x="20" y="105" width="320" height="100" rx="6" fill="#0f172a"/>
+    
+    <!-- Trend line -->
+    <line x1="30" y1="180" x2="330" y2="130" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,2"/>
+    
+    <!-- Additive wave - constant amplitude -->
+    <path d="M30 175 Q50 150, 70 175 Q90 200, 110 175 Q130 150, 150 175 Q170 200, 190 175 Q210 145, 230 170 Q250 195, 270 170 Q290 140, 310 165 Q325 185, 330 160" 
+          stroke="#60a5fa" stroke-width="2.5" fill="none"/>
+    
+    <!-- Amplitude indicators -->
+    <line x1="70" y1="150" x2="70" y2="200" stroke="#6ee7b7" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="190" y1="145" x2="190" y2="195" stroke="#6ee7b7" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="310" y1="140" x2="310" y2="190" stroke="#6ee7b7" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <text x="180" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#6ee7b7">Same amplitude throughout</text>
+    
+    <!-- Description -->
+    <text x="30" y="225" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">Use When:</text>
+    <text x="30" y="245" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Seasonal fluctuations are constant</text>
+    <text x="30" y="262" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Variance doesn't change with level</text>
+    <text x="30" y="279" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Example: Temperature patterns</text>
+  </g>
+  
+  <!-- Multiplicative Section -->
+  <g transform="translate(410, 80)">
+    <rect width="360" height="290" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="360" height="40" rx="12" fill="#f59e0b"/>
+    <text x="180" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">MULTIPLICATIVE</text>
+    
+    <!-- Formula -->
+    <rect x="20" y="55" width="320" height="35" rx="6" fill="#78350f"/>
+    <text x="180" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fbbf24">Y(t) = Level × Trend × Season × Error</text>
+    
+    <!-- Chart area -->
+    <rect x="20" y="105" width="320" height="100" rx="6" fill="#0f172a"/>
+    
+    <!-- Trend line -->
+    <line x1="30" y1="190" x2="330" y2="120" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,2"/>
+    
+    <!-- Multiplicative wave - growing amplitude -->
+    <path d="M30 185 Q40 180, 50 185 Q60 190, 70 182 Q80 175, 90 185 Q105 198, 120 175 Q135 150, 150 175 Q170 205, 190 160 Q210 115, 230 160 Q260 215, 290 135 Q310 75, 330 125" 
+          stroke="#fbbf24" stroke-width="2.5" fill="none"/>
+    
+    <!-- Amplitude indicators -->
+    <line x1="70" y1="175" x2="70" y2="195" stroke="#f87171" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="75" y="185" font-family="Segoe UI, sans-serif" font-size="7" fill="#f87171">A1</text>
+    
+    <line x1="190" y1="150" x2="190" y2="205" stroke="#f87171" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="200" y="178" font-family="Segoe UI, sans-serif" font-size="7" fill="#f87171">A2</text>
+    
+    <line x1="310" y1="100" x2="310" y2="170" stroke="#f87171" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="320" y="135" font-family="Segoe UI, sans-serif" font-size="7" fill="#f87171">A3</text>
+    
+    <text x="180" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#f87171">A1 andlt; A2 andlt; A3 (growing)</text>
+    
+    <!-- Description -->
+    <text x="30" y="225" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">Use When:</text>
+    <text x="30" y="245" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Seasonal fluctuations grow with level</text>
+    <text x="30" y="262" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Variance proportional to mean</text>
+    <text x="30" y="279" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Example: Retail sales growth</text>
+  </g>
+</svg>

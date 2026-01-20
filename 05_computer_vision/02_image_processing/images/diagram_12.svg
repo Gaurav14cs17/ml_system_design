@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <!-- Background -->
+  <rect width="850" height="480" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">THRESHOLDING METHODS COMPARISON</text>
+  
+  <!-- Row 1: Global Binary, Otsu, Triangle -->
+  
+  <!-- Binary (Global) -->
+  <g transform="translate(30, 70)">
+    <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f87171">Binary (Global)</text>
+    <text x="125" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">Fixed threshold T=128</text>
+    
+    <!-- Histogram -->
+    <g transform="translate(30, 55)">
+      <line x1="0" y1="80" x2="190" y2="80" stroke="#475569" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="80" stroke="#475569" stroke-width="1"/>
+      <!-- Bimodal histogram -->
+      <path d="M 20 80 C 30 80 35 30 50 30 C 65 30 70 80 80 80" fill="none" stroke="#f87171" stroke-width="2"/>
+      <path d="M 110 80 C 120 80 125 20 140 20 C 155 20 160 80 170 80" fill="none" stroke="#f87171" stroke-width="2"/>
+      <!-- Threshold line -->
+      <line x1="95" y1="0" x2="95" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4"/>
+      <text x="95" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fbbf24">T=128</text>
+    </g>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Simple but may not be optimal</text>
+  </g>
+  
+  <!-- Otsu (Auto) -->
+  <g transform="translate(300, 70)">
+    <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">Otsu's Method</text>
+    <text x="125" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">Automatic optimal threshold</text>
+    
+    <!-- Histogram -->
+    <g transform="translate(30, 55)">
+      <line x1="0" y1="80" x2="190" y2="80" stroke="#475569" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="80" stroke="#475569" stroke-width="1"/>
+      <!-- Bimodal histogram -->
+      <path d="M 20 80 C 30 80 35 30 50 30 C 65 30 70 80 80 80" fill="none" stroke="#4ade80" stroke-width="2"/>
+      <path d="M 100 80 C 110 80 115 25 130 25 C 145 25 150 80 160 80" fill="none" stroke="#4ade80" stroke-width="2"/>
+      <!-- Threshold line at valley -->
+      <line x1="90" y1="0" x2="90" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4"/>
+      <text x="90" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fbbf24">T=optimal</text>
+    </g>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Maximizes between-class variance</text>
+  </g>
+  
+  <!-- Triangle Method -->
+  <g transform="translate(570, 70)">
+    <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a78bfa">Triangle Method</text>
+    <text x="125" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">For unimodal histograms</text>
+    
+    <!-- Histogram -->
+    <g transform="translate(30, 55)">
+      <line x1="0" y1="80" x2="190" y2="80" stroke="#475569" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="80" stroke="#475569" stroke-width="1"/>
+      <!-- Unimodal histogram -->
+      <path d="M 20 80 C 30 80 40 15 60 15 C 80 15 100 70 160 80" fill="none" stroke="#a78bfa" stroke-width="2"/>
+      <!-- Triangle line -->
+      <line x1="60" y1="15" x2="160" y2="80" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3"/>
+      <line x1="100" y1="0" x2="100" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4"/>
+      <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fbbf24">T</text>
+    </g>
+    
+    <text x="125" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Best for skewed distributions</text>
+  </g>
+  
+  <!-- Row 2: Adaptive, Multi-Otsu -->
+  
+  <!-- Adaptive (Local) -->
+  <g transform="translate(130, 270)">
+    <rect width="280" height="180" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Adaptive (Local)</text>
+    <text x="140" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Threshold varies locally</text>
+    
+    <!-- Grid showing local thresholds -->
+    <g transform="translate(40, 55)">
+      <rect width="60" height="50" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="30" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">T=120</text>
+      
+      <rect x="60" width="60" height="50" fill="#854d0e" stroke="#f59e0b" stroke-width="1"/>
+      <text x="90" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">T=145</text>
+      
+      <rect x="120" width="60" height="50" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">T=110</text>
+      
+      <rect y="50" width="60" height="50" fill="#854d0e" stroke="#f59e0b" stroke-width="1"/>
+      <text x="30" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">T=135</text>
+      
+      <rect x="60" y="50" width="60" height="50" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="90" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">T=125</text>
+      
+      <rect x="120" y="50" width="60" height="50" fill="#854d0e" stroke="#f59e0b" stroke-width="1"/>
+      <text x="150" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">T=140</text>
+    </g>
+    
+    <text x="140" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Best for uneven lighting</text>
+  </g>
+  
+  <!-- Multi-Otsu -->
+  <g transform="translate(450, 270)">
+    <rect width="280" height="180" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#22d3ee">Multi-Otsu</text>
+    <text x="140" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#67e8f9">Multiple classes</text>
+    
+    <!-- Histogram with multiple thresholds -->
+    <g transform="translate(30, 55)">
+      <line x1="0" y1="80" x2="220" y2="80" stroke="#475569" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="80" stroke="#475569" stroke-width="1"/>
+      <!-- Three peaks -->
+      <path d="M 15 80 C 20 80 25 35 35 35 C 45 35 50 80 55 80" fill="none" stroke="#ef4444" stroke-width="2"/>
+      <path d="M 75 80 C 80 80 85 25 100 25 C 115 25 120 80 125 80" fill="none" stroke="#f59e0b" stroke-width="2"/>
+      <path d="M 145 80 C 150 80 160 40 175 40 C 190 40 195 80 200 80" fill="none" stroke="#22d3ee" stroke-width="2"/>
+      <!-- Two threshold lines -->
+      <line x1="65" y1="0" x2="65" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4"/>
+      <line x1="135" y1="0" x2="135" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4"/>
+      <text x="35" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ef4444">Class 0</text>
+      <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f59e0b">Class 1</text>
+      <text x="175" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#22d3ee">Class 2</text>
+    </g>
+    
+    <text x="140" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Segments into N+1 classes</text>
+  </g>
+</svg>

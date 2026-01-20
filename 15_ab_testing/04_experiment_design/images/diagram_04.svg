@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='614' viewBox='0 0 524 614'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                 TRAFFIC ALLOCATION METHODS                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  50/50 SPLIT (Balanced)                                     │
+│  ├── Maximum statistical power                              │
+│  ├── Best for: Standard experiments                         │
+│  └── Risk: 50% traffic on potentially worse variant         │
+│                                                             │
+│      Control ████████████████████ 50%                       │
+│      Treatment ████████████████████ 50%                     │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  UNBALANCED SPLIT (e.g., 90/10)                            │
+│  ├── Lower risk exposure                                    │
+│  ├── Best for: High-risk changes, early validation         │
+│  └── Trade-off: Need more total traffic for same power     │
+│                                                             │
+│      Control ████████████████████████████████████████ 90%  │
+│      Treatment ████ 10%                                     │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  HOLDOUT GROUP                                              │
+│  ├── Measures cumulative effect of all experiments         │
+│  ├── Best for: Long-term learning                          │
+│  └── Typically 1-5% of total traffic                       │
+│                                                             │
+│      Experiments ████████████████████████████████████ 95%  │
+│      Holdout ██ 5%                                          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

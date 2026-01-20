@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    🧪 Experimentation Platform
+  </text>
+  
+  <!-- Configuration -->
+  <rect x="50" y="60" width="700" height="140" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="80" y="90" fill="#a78bfa" font-family="Arial" font-size="14" font-weight="bold">EXPERIMENT CONFIGURATION</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="80" y="120">• Experiment ID, Name, Description</text>
+    <text x="80" y="145">• Treatment vs Control definitions</text>
+    <text x="80" y="170">• Traffic allocation (50/50, 90/10, etc.)</text>
+    <text x="400" y="120">• Target metrics (primary, secondary, guardrails)</text>
+    <text x="400" y="145">• Duration &amp; sample size requirements</text>
+    <text x="400" y="170">• Eligibility criteria (segment, geo, device)</text>
+  </g>
+  
+  <!-- Assignment -->
+  <rect x="50" y="220" width="340" height="120" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="220" y="255" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">ASSIGNMENT SERVICE</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="80" y="285">Hash-based bucketing</text>
+    <text x="80" y="305">Consistent user experience</text>
+    <text x="80" y="325">Mutual exclusion support</text>
+  </g>
+  
+  <!-- Analysis -->
+  <rect x="410" y="220" width="340" height="120" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="580" y="255" text-anchor="middle" fill="#fbbf24" font-family="Arial" font-size="14" font-weight="bold">ANALYSIS ENGINE</text>
+  <g fill="#94a3b8" font-family="Arial" font-size="12">
+    <text x="440" y="285">Statistical significance tests</text>
+    <text x="440" y="305">Confidence intervals</text>
+    <text x="440" y="325">Variance reduction (CUPED)</text>
+  </g>
+  
+  <!-- Results -->
+  <rect x="50" y="360" width="700" height="120" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+  <text x="400" y="395" text-anchor="middle" fill="#f472b6" font-family="Arial" font-size="14" font-weight="bold">DECISION FRAMEWORK</text>
+  
+  <g font-family="Arial" font-size="12">
+    <rect x="100" y="415" width="150" height="45" rx="6" fill="#10b981"/>
+    <text x="175" y="435" text-anchor="middle" fill="#fff" font-weight="bold">SHIP</text>
+    <text x="175" y="452" text-anchor="middle" fill="#fff" font-size="10">p andlt; 0.05, lift andgt; 0</text>
+    
+    <rect x="320" y="415" width="150" height="45" rx="6" fill="#f59e0b"/>
+    <text x="395" y="435" text-anchor="middle" fill="#fff" font-weight="bold">ITERATE</text>
+    <text x="395" y="452" text-anchor="middle" fill="#fff" font-size="10">Inconclusive</text>
+    
+    <rect x="540" y="415" width="150" height="45" rx="6" fill="#ef4444"/>
+    <text x="615" y="435" text-anchor="middle" fill="#fff" font-weight="bold">KILL</text>
+    <text x="615" y="452" text-anchor="middle" fill="#fff" font-size="10">Negative impact</text>
+  </g>
+</svg>

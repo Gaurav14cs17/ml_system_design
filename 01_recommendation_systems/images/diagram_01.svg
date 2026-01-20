@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700">
+  <defs>
+    <linearGradient id="bgStruct" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowStruct" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgStruct)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📚 Course Structure</text>
+  
+  <!-- Root -->
+  <g transform="translate(50, 70)" filter="url(#shadowStruct)">
+    <rect width="700" height="50" rx="12" fill="#f59e0b"/>
+    <text x="350" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">01_recommendation_systems/</text>
+  </g>
+  
+  <!-- Resources -->
+  <g transform="translate(80, 135)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#8b5cf6"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 00_resources/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">youtube_channels.md • papers.md</text>
+  </g>
+  
+  <!-- Intro -->
+  <g transform="translate(380, 135)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#3b82f6"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 01_introduction/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">History, core concepts</text>
+  </g>
+  
+  <!-- Content-Based -->
+  <g transform="translate(80, 225)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#10b981"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 02_content_based_filtering/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Feature extraction, similarity</text>
+  </g>
+  
+  <!-- Collaborative -->
+  <g transform="translate(380, 225)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#06b6d4"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 03_collaborative_filtering/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User/item-based, matrix factorization</text>
+  </g>
+  
+  <!-- Hybrid -->
+  <g transform="translate(80, 315)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#ec4899"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 04_hybrid_systems/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Combining approaches</text>
+  </g>
+  
+  <!-- Feature Engineering -->
+  <g transform="translate(380, 315)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#f59e0b"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 05_feature_engineering/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User, item, context features</text>
+  </g>
+  
+  <!-- Model Training -->
+  <g transform="translate(80, 405)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#ef4444"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 06_model_training_evaluation/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Training, metrics, A/B testing</text>
+  </g>
+  
+  <!-- Deep Learning -->
+  <g transform="translate(380, 405)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#84cc16"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 07_deep_learning/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">NCF, transformers, GNNs</text>
+  </g>
+  
+  <!-- System Architecture -->
+  <g transform="translate(80, 495)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#7c3aed"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 08_system_architecture/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Production, serving, scaling</text>
+  </g>
+  
+  <!-- Case Studies -->
+  <g transform="translate(380, 495)" filter="url(#shadowStruct)">
+    <rect width="280" height="75" rx="10" fill="#1e293b"/>
+    <rect width="280" height="35" rx="10 10 0 0" fill="#0891b2"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📁 09_case_studies/</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Netflix, YouTube, Amazon, Spotify</text>
+  </g>
+  
+  <!-- Footer -->
+  <g transform="translate(50, 595)" filter="url(#shadowStruct)">
+    <rect width="700" height="70" rx="12" fill="#334155"/>
+    <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fcd34d">📖 Each module includes:</text>
+    <text x="350" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">README.md (comprehensive content) + images/ (SVG diagrams)</text>
+  </g>
+</svg>

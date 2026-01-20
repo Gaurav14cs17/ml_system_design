@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgBP" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="principleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowBP" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgBP)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Feature Design Principles</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Best practices for production-ready feature engineering</text>
+  
+  <!-- Principle 1: Single Responsibility -->
+  <g filter="url(#shadowBP)">
+    <rect x="40" y="85" width="260" height="185" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <circle cx="80" cy="115" r="22" fill="url(#principleGrad)"/>
+    <text x="80" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">1</text>
+    <text x="185" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#34d399">Single Responsibility</text>
+    
+    <text x="60" y="150" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Each feature captures ONE concept</text>
+    
+    <rect x="55" y="165" width="230" height="30" rx="5" fill="#064e3b"/>
+    <text x="170" y="185" text-anchor="middle" font-family="monospace" font-size="10" fill="#34d399">✓ user_purchases_30d</text>
+    
+    <rect x="55" y="205" width="230" height="30" rx="5" fill="#450a0a"/>
+    <text x="170" y="225" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">✗ user_engagement_score</text>
+    
+    <text x="170" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">(combines multiple signals)</text>
+  </g>
+  
+  <!-- Principle 2: Deterministic -->
+  <g filter="url(#shadowBP)">
+    <rect x="320" y="85" width="260" height="185" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="360" cy="115" r="22" fill="#2563eb"/>
+    <text x="360" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">2</text>
+    <text x="465" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#60a5fa">Deterministic</text>
+    
+    <text x="340" y="150" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Same inputs → Same outputs</text>
+    
+    <rect x="335" y="165" width="230" height="30" rx="5" fill="#172554"/>
+    <text x="450" y="185" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">✓ age = today - birthdate</text>
+    
+    <rect x="335" y="205" width="230" height="30" rx="5" fill="#450a0a"/>
+    <text x="450" y="225" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">✗ age = now() - birth_ts</text>
+    
+    <text x="450" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">(varies by millisecond)</text>
+  </g>
+  
+  <!-- Principle 3: Backward Compatible -->
+  <g filter="url(#shadowBP)">
+    <rect x="600" y="85" width="260" height="185" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="640" cy="115" r="22" fill="#d97706"/>
+    <text x="640" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">3</text>
+    <text x="745" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#fbbf24">Backward Compatible</text>
+    
+    <text x="620" y="150" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Don't break existing consumers</text>
+    
+    <rect x="615" y="165" width="230" height="30" rx="5" fill="#451a03"/>
+    <text x="730" y="185" text-anchor="middle" font-family="monospace" font-size="10" fill="#fbbf24">✓ Add to new feature view</text>
+    
+    <rect x="615" y="205" width="230" height="30" rx="5" fill="#450a0a"/>
+    <text x="730" y="225" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">✗ Rename without migration</text>
+    
+    <text x="730" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">(use versioning instead)</text>
+  </g>
+  
+  <!-- Principle 4: Meaningful Defaults -->
+  <g filter="url(#shadowBP)">
+    <rect x="40" y="290" width="260" height="185" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="80" cy="320" r="22" fill="#7c3aed"/>
+    <text x="80" y="327" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">4</text>
+    <text x="185" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#a78bfa">Meaningful Defaults</text>
+    
+    <text x="60" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Handle missing data gracefully</text>
+    
+    <rect x="55" y="370" width="230" height="30" rx="5" fill="#2e1065"/>
+    <text x="170" y="390" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">✓ purchase_count → 0</text>
+    
+    <rect x="55" y="410" width="230" height="30" rx="5" fill="#450a0a"/>
+    <text x="170" y="430" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">✗ Return NULL always</text>
+    
+    <text x="170" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">(downstream must handle)</text>
+  </g>
+  
+  <!-- Principle 5: Documented -->
+  <g filter="url(#shadowBP)">
+    <rect x="320" y="290" width="260" height="185" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <circle cx="360" cy="320" r="22" fill="#db2777"/>
+    <text x="360" y="327" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">5</text>
+    <text x="465" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f472b6">Documented</text>
+    
+    <text x="340" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Clear description &amp; context</text>
+    
+    <rect x="335" y="370" width="230" height="35" rx="5" fill="#500724"/>
+    <text x="450" y="388" text-anchor="middle" font-family="monospace" font-size="9" fill="#f9a8d4">✓ "Count of purchases in</text>
+    <text x="450" y="399" text-anchor="middle" font-family="monospace" font-size="9" fill="#f9a8d4">last 30d, excl. returns"</text>
+    
+    <rect x="335" y="415" width="230" height="30" rx="5" fill="#450a0a"/>
+    <text x="450" y="435" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">✗ "Purchase count"</text>
+    
+    <text x="450" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">(ambiguous definition)</text>
+  </g>
+  
+  <!-- Principle 6: Tested -->
+  <g filter="url(#shadowBP)">
+    <rect x="600" y="290" width="260" height="185" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="640" cy="320" r="22" fill="#dc2626"/>
+    <text x="640" y="327" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">6</text>
+    <text x="745" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f87171">Tested</text>
+    
+    <text x="620" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Validate behavior &amp; quality</text>
+    
+    <rect x="615" y="370" width="230" height="30" rx="5" fill="#450a0a" stroke="#f87171" stroke-width="1"/>
+    <text x="730" y="390" text-anchor="middle" font-family="monospace" font-size="10" fill="#fca5a5">✓ Unit tests for logic</text>
+    
+    <rect x="615" y="410" width="230" height="30" rx="5" fill="#450a0a" stroke="#f87171" stroke-width="1"/>
+    <text x="730" y="430" text-anchor="middle" font-family="monospace" font-size="10" fill="#fca5a5">✓ Integration tests</text>
+    
+    <text x="730" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Quality gates in CI/CD</text>
+  </g>
+</svg>

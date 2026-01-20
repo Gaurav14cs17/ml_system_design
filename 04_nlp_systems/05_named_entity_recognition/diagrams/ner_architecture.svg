@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="perGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#c0392b"/>
+    </linearGradient>
+    <linearGradient id="orgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="locGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Named Entity Recognition (NER)</text>
+  
+  <!-- Input Sentence -->
+  <g transform="translate(50, 70)">
+    <text x="400" y="0" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">Input Sentence</text>
+    
+    <g transform="translate(0, 20)">
+      <!-- Tokens -->
+      <rect x="0" y="0" width="100" height="45" rx="8" fill="url(#perGrad)" opacity="0.3" stroke="#e74c3c" stroke-width="2"/>
+      <text x="50" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Tim Cook</text>
+      
+      <rect x="110" y="0" width="40" height="45" rx="8" fill="#2d3748"/>
+      <text x="130" y="28" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">is</text>
+      
+      <rect x="160" y="0" width="50" height="45" rx="8" fill="#2d3748"/>
+      <text x="185" y="28" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">the</text>
+      
+      <rect x="220" y="0" width="60" height="45" rx="8" fill="#2d3748"/>
+      <text x="250" y="28" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">CEO</text>
+      
+      <rect x="290" y="0" width="40" height="45" rx="8" fill="#2d3748"/>
+      <text x="310" y="28" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">of</text>
+      
+      <rect x="340" y="0" width="80" height="45" rx="8" fill="url(#orgGrad)" opacity="0.3" stroke="#3498db" stroke-width="2"/>
+      <text x="380" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Apple</text>
+      
+      <rect x="430" y="0" width="40" height="45" rx="8" fill="#2d3748"/>
+      <text x="450" y="28" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">in</text>
+      
+      <rect x="480" y="0" width="120" height="45" rx="8" fill="url(#locGrad)" opacity="0.3" stroke="#2ecc71" stroke-width="2"/>
+      <text x="540" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Cupertino</text>
+      
+      <!-- Entity Labels -->
+      <text x="50" y="65" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="11" font-weight="bold">PERSON</text>
+      <text x="380" y="65" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="11" font-weight="bold">ORG</text>
+      <text x="540" y="65" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11" font-weight="bold">LOCATION</text>
+    </g>
+  </g>
+  
+  <!-- BIO Tagging -->
+  <g transform="translate(50, 190)">
+    <text x="400" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">BIO Tagging Scheme</text>
+    
+    <g transform="translate(0, 30)">
+      <!-- Token row -->
+      <rect x="0" y="0" width="70" height="35" rx="5" fill="#2d3748"/>
+      <text x="35" y="23" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Tim</text>
+      
+      <rect x="80" y="0" width="70" height="35" rx="5" fill="#2d3748"/>
+      <text x="115" y="23" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Cook</text>
+      
+      <rect x="160" y="0" width="70" height="35" rx="5" fill="#2d3748"/>
+      <text x="195" y="23" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12">works</text>
+      
+      <rect x="240" y="0" width="70" height="35" rx="5" fill="#2d3748"/>
+      <text x="275" y="23" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12">at</text>
+      
+      <rect x="320" y="0" width="70" height="35" rx="5" fill="#2d3748"/>
+      <text x="355" y="23" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Apple</text>
+      
+      <rect x="400" y="0" width="70" height="35" rx="5" fill="#2d3748"/>
+      <text x="435" y="23" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Inc</text>
+      
+      <!-- BIO Tags row -->
+      <rect x="0" y="45" width="70" height="35" rx="5" fill="#e74c3c" opacity="0.3" stroke="#e74c3c"/>
+      <text x="35" y="68" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">B-PER</text>
+      
+      <rect x="80" y="45" width="70" height="35" rx="5" fill="#e74c3c" opacity="0.2" stroke="#e74c3c"/>
+      <text x="115" y="68" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">I-PER</text>
+      
+      <rect x="160" y="45" width="70" height="35" rx="5" fill="#555"/>
+      <text x="195" y="68" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O</text>
+      
+      <rect x="240" y="45" width="70" height="35" rx="5" fill="#555"/>
+      <text x="275" y="68" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O</text>
+      
+      <rect x="320" y="45" width="70" height="35" rx="5" fill="#3498db" opacity="0.3" stroke="#3498db"/>
+      <text x="355" y="68" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="12" font-weight="bold">B-ORG</text>
+      
+      <rect x="400" y="45" width="70" height="35" rx="5" fill="#3498db" opacity="0.2" stroke="#3498db"/>
+      <text x="435" y="68" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="12" font-weight="bold">I-ORG</text>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(520, 30)">
+      <rect x="0" y="0" width="250" height="80" rx="10" fill="#161b22" stroke="#555"/>
+      <text x="125" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">BIO Legend</text>
+      <text x="20" y="42" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">B = Beginning of entity</text>
+      <text x="20" y="58" fill="#f39c12" font-family="Arial, sans-serif" font-size="11">I = Inside (continuation)</text>
+      <text x="20" y="74" fill="#888" font-family="Arial, sans-serif" font-size="11">O = Outside (not entity)</text>
+    </g>
+  </g>
+  
+  <!-- Entity Types -->
+  <g transform="translate(50, 350)">
+    <text x="400" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Common Entity Types</text>
+    
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="120" height="50" rx="8" fill="url(#perGrad)" opacity="0.3" stroke="#e74c3c"/>
+      <text x="60" y="22" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PERSON</text>
+      <text x="60" y="40" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Names of people</text>
+    </g>
+    
+    <g transform="translate(135, 25)">
+      <rect x="0" y="0" width="120" height="50" rx="8" fill="url(#orgGrad)" opacity="0.3" stroke="#3498db"/>
+      <text x="60" y="22" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ORG</text>
+      <text x="60" y="40" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Organizations</text>
+    </g>
+    
+    <g transform="translate(270, 25)">
+      <rect x="0" y="0" width="120" height="50" rx="8" fill="url(#locGrad)" opacity="0.3" stroke="#2ecc71"/>
+      <text x="60" y="22" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LOCATION</text>
+      <text x="60" y="40" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Places, cities</text>
+    </g>
+    
+    <g transform="translate(405, 25)">
+      <rect x="0" y="0" width="120" height="50" rx="8" fill="#f39c12" opacity="0.3" stroke="#f39c12"/>
+      <text x="60" y="22" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DATE</text>
+      <text x="60" y="40" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Dates, times</text>
+    </g>
+    
+    <g transform="translate(540, 25)">
+      <rect x="0" y="0" width="120" height="50" rx="8" fill="#9b59b6" opacity="0.3" stroke="#9b59b6"/>
+      <text x="60" y="22" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">MONEY</text>
+      <text x="60" y="40" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Currency amounts</text>
+    </g>
+    
+    <g transform="translate(675, 25)">
+      <rect x="0" y="0" width="120" height="50" rx="8" fill="#1abc9c" opacity="0.3" stroke="#1abc9c"/>
+      <text x="60" y="22" text-anchor="middle" fill="#1abc9c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PRODUCT</text>
+      <text x="60" y="40" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Products, objects</text>
+    </g>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(50, 435)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Metrics:</text>
+    <text x="70" y="0" fill="#2ecc71" font-family="Arial, sans-serif" font-size="11">Entity F1</text>
+    <text x="145" y="0" fill="#3498db" font-family="Arial, sans-serif" font-size="11">Exact Match</text>
+    <text x="240" y="0" fill="#f39c12" font-family="Arial, sans-serif" font-size="11">Partial Match</text>
+    <text x="350" y="0" fill="#9b59b6" font-family="Arial, sans-serif" font-size="11">Token Accuracy</text>
+  </g>
+</svg>
+

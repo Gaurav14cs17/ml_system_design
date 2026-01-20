@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="appGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🎯 Graph Embedding Applications</text>
+  
+  <!-- Social Networks -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="220" height="130" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ec4899">👥 Social Networks</text>
+    <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Friend recommendations</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Community detection</text>
+    <text x="110" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Influence prediction</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Node2Vec, GraphSAGE</text>
+  </g>
+  
+  <!-- Knowledge Graphs -->
+  <g filter="url(#shadow)" transform="translate(290, 70)">
+    <rect width="220" height="130" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#10b981">🧠 Knowledge Graphs</text>
+    <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Link prediction</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Entity resolution</text>
+    <text x="110" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Question answering</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">TransE, RotatE, ComplEx</text>
+  </g>
+  
+  <!-- Molecules -->
+  <g filter="url(#shadow)" transform="translate(540, 70)">
+    <rect width="220" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#3b82f6">🧬 Molecules</text>
+    <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Drug discovery</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Property prediction</text>
+    <text x="110" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Molecular similarity</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">GCN, MPNN, SchNet</text>
+  </g>
+  
+  <!-- Recommendations -->
+  <g filter="url(#shadow)" transform="translate(165, 220)">
+    <rect width="220" height="110" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f59e0b">⭐ Recommendations</text>
+    <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User-item graphs</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Personalized ranking</text>
+    <text x="110" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">PinSage, LightGCN</text>
+  </g>
+  
+  <!-- Fraud Detection -->
+  <g filter="url(#shadow)" transform="translate(415, 220)">
+    <rect width="220" height="110" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">🚨 Fraud Detection</text>
+    <text x="110" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Transaction networks</text>
+    <text x="110" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Anomaly detection</text>
+    <text x="110" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">GAT, Heterogeneous GNN</text>
+  </g>
+</svg>

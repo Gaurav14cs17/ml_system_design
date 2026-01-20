@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="520" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">R-CNN FAMILY EVOLUTION</text>
+  <text x="450" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">From Slow to Real-time Object Detection</text>
+  
+  <!-- R-CNN (2014) -->
+  <g transform="translate(50, 80)">
+    <rect width="250" height="350" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f87171">R-CNN (2014)</text>
+    
+    <!-- Pipeline boxes -->
+    <rect x="40" y="50" width="170" height="40" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Image</text>
+    
+    <path d="M 125 95 L 125 110" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="115" width="170" height="45" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+    <text x="125" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">Selective Search</text>
+    <text x="125" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fecaca">(~2000 regions)</text>
+    
+    <path d="M 125 165 L 125 180" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="185" width="170" height="45" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+    <text x="125" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">CNN per region</text>
+    <text x="125" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fecaca">(very slow!)</text>
+    
+    <path d="M 125 235 L 125 250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="255" width="170" height="40" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">SVM + Regressor</text>
+    
+    <!-- Speed -->
+    <rect x="40" y="310" width="170" height="30" rx="6" fill="#450a0a" stroke="#b91c1c" stroke-width="1"/>
+    <text x="125" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">⏱️ 47s / image</text>
+  </g>
+  
+  <!-- Fast R-CNN (2015) -->
+  <g transform="translate(325, 80)">
+    <rect width="250" height="350" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">Fast R-CNN (2015)</text>
+    
+    <!-- Pipeline boxes -->
+    <rect x="40" y="50" width="170" height="40" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Image</text>
+    
+    <path d="M 125 95 L 125 110" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="115" width="170" height="45" rx="6" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+    <text x="125" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">CNN Feature</text>
+    <text x="125" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fef3c7">Extraction</text>
+    
+    <path d="M 125 165 L 125 180" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="185" width="170" height="45" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <text x="125" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">RoI Pooling</text>
+    <text x="125" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#bbf7d0">(share features!)</text>
+    
+    <path d="M 125 235 L 125 250" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="255" width="170" height="40" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">FC Layers</text>
+    
+    <!-- Speed -->
+    <rect x="40" y="310" width="170" height="30" rx="6" fill="#422006" stroke="#d97706" stroke-width="1"/>
+    <text x="125" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">⏱️ 2s / image</text>
+  </g>
+  
+  <!-- Faster R-CNN (2015) -->
+  <g transform="translate(600, 80)">
+    <rect width="250" height="350" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4ade80">Faster R-CNN (2015)</text>
+    
+    <!-- Pipeline boxes -->
+    <rect x="40" y="50" width="170" height="40" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">Image</text>
+    
+    <path d="M 125 95 L 125 110" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="115" width="170" height="40" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <text x="125" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">CNN Features</text>
+    
+    <path d="M 125 160 L 125 175" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="180" width="170" height="45" rx="6" fill="#14532d" stroke="#4ade80" stroke-width="2"/>
+    <text x="125" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#86efac">RPN</text>
+    <text x="125" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#bbf7d0">(Region Proposals)</text>
+    
+    <path d="M 125 230 L 125 245" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <rect x="40" y="250" width="170" height="40" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="125" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8fafc">RoI Pooling + FC</text>
+    
+    <!-- Speed -->
+    <rect x="40" y="310" width="170" height="30" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="125" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">⏱️ 0.2s / image</text>
+  </g>
+  
+  <!-- Evolution arrows -->
+  <path d="M 310 250 L 320 250" stroke="#fbbf24" stroke-width="3"/>
+  <polygon points="320,245 335,250 320,255" fill="#fbbf24"/>
+  
+  <path d="M 585 250 L 595 250" stroke="#22c55e" stroke-width="3"/>
+  <polygon points="595,245 610,250 595,255" fill="#22c55e"/>
+  
+  <!-- Key Improvements -->
+  <g transform="translate(100, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" fill="#f87171">❌ Separate CNN per region</text>
+    <text x="275" y="0" font-family="Arial, sans-serif" font-size="11" fill="#fbbf24">✓ Shared features</text>
+    <text x="550" y="0" font-family="Arial, sans-serif" font-size="11" fill="#4ade80">✓ End-to-end trainable</text>
+  </g>
+  
+  <g transform="translate(100, 475)">
+    <text x="275" y="0" font-family="Arial, sans-serif" font-size="11" fill="#fbbf24">❌ External proposals</text>
+    <text x="550" y="0" font-family="Arial, sans-serif" font-size="11" fill="#4ade80">✓ Learned proposals (RPN)</text>
+  </g>
+  
+  <!-- Speed comparison bar -->
+  <text x="450" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Speed Improvement: 47s → 2s → 0.2s (235× faster!)</text>
+</svg>

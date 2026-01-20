@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgMF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="matrixR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="matrixP" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="matrixQ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowMF" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgMF)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🔢 Matrix Factorization</text>
+  
+  <!-- Equation -->
+  <g transform="translate(280, 60)">
+    <rect width="340" height="50" rx="25" fill="#334155" filter="url(#shadowMF)"/>
+    <text x="170" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">R ≈ P × Q<tspan baseline-shift="super" font-size="14">T</tspan></text>
+  </g>
+  
+  <!-- Matrix R -->
+  <g transform="translate(60, 140)" filter="url(#shadowMF)">
+    <rect width="200" height="200" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="url(#matrixR)"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">User-Item Ratings</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">(m × n) SPARSE</text>
+    
+    <!-- Matrix visualization -->
+    <g transform="translate(30, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="6" fill="#334155"/>
+      <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#f87171">5  ?  3  ?  2</text>
+      <text x="70" y="38" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#f87171">?  4  ?  5  ?</text>
+      <text x="70" y="56" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#f87171">?  ?  4  ?  3</text>
+      <text x="70" y="74" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#f87171">3  5  ?  ?  ?</text>
+      <text x="70" y="92" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#f87171">?  ?  2  4  5</text>
+    </g>
+  </g>
+  
+  <!-- ≈ symbol -->
+  <text x="290" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="36" fill="#f59e0b">≈</text>
+  
+  <!-- Matrix P -->
+  <g transform="translate(330, 140)" filter="url(#shadowMF)">
+    <rect width="150" height="200" rx="12" fill="#1e293b"/>
+    <rect width="150" height="45" rx="12 12 0 0" fill="url(#matrixP)"/>
+    <text x="75" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">User Factors</text>
+    <text x="75" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">(m × k) DENSE</text>
+    
+    <g transform="translate(20, 80)">
+      <rect x="0" y="0" width="110" height="100" rx="6" fill="#334155"/>
+      <text x="55" y="20" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#60a5fa">0.8  0.2  0.5</text>
+      <text x="55" y="38" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#60a5fa">0.3  0.9  0.1</text>
+      <text x="55" y="56" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#60a5fa">0.6  0.4  0.7</text>
+      <text x="55" y="74" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#60a5fa">0.2  0.8  0.3</text>
+      <text x="55" y="92" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#60a5fa">0.7  0.1  0.9</text>
+    </g>
+  </g>
+  
+  <!-- × symbol -->
+  <text x="510" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="36" fill="#f59e0b">×</text>
+  
+  <!-- Matrix Q^T -->
+  <g transform="translate(550, 160)" filter="url(#shadowMF)">
+    <rect width="280" height="160" rx="12" fill="#1e293b"/>
+    <rect width="280" height="45" rx="12 12 0 0" fill="url(#matrixQ)"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Item Factors (Transposed)</text>
+    <text x="140" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">(n × k)<tspan baseline-shift="super" font-size="9">T</tspan> DENSE</text>
+    
+    <g transform="translate(20, 80)">
+      <rect x="0" y="0" width="240" height="60" rx="6" fill="#334155"/>
+      <text x="120" y="20" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#6ee7b7">0.9  0.1  0.4  0.7  0.2</text>
+      <text x="120" y="38" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#6ee7b7">0.2  0.8  0.3  0.5  0.6</text>
+      <text x="120" y="56" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#6ee7b7">0.5  0.4  0.8  0.1  0.9</text>
+    </g>
+  </g>
+  
+  <!-- Dimensions Legend -->
+  <g transform="translate(60, 370)">
+    <rect width="780" height="110" rx="12" fill="#334155"/>
+    <text x="390" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📐 Dimensions &amp; Prediction Formula</text>
+    
+    <g transform="translate(30, 45)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="12" fill="#f87171">• m = number of users</text>
+      <text x="200" y="15" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">• n = number of items</text>
+      <text x="400" y="15" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">• k = latent factors (50-200)</text>
+      
+      <rect x="0" y="30" width="720" height="35" rx="6" fill="#1e293b"/>
+      <text x="360" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fcd34d">Predicted rating: r̂ᵤᵢ = pᵤ · qᵢ = Σⱼ pᵤⱼ × qᵢⱼ  →  User u's embedding dot product with Item i's embedding</text>
+    </g>
+  </g>
+</svg>

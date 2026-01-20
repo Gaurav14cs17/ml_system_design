@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">DIFFUSION PROCESS</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Denoising Diffusion Probabilistic Models (DDPM)</text>
+  
+  <!-- Forward Process -->
+  <g transform="translate(100, 90)">
+    <text x="250" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ef4444">Forward Process (Add Noise)</text>
+    
+    <rect x="0" y="20" width="80" height="60" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="40" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">x₀</text>
+    <text x="40" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">Clean</text>
+    
+    <text x="110" y="55" font-family="Arial, sans-serif" font-size="14" fill="#ef4444">→</text>
+    
+    <rect x="130" y="20" width="80" height="60" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/>
+    <text x="170" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">x₁</text>
+    
+    <text x="240" y="55" font-family="Arial, sans-serif" font-size="14" fill="#ef4444">→ ...</text>
+    
+    <rect x="300" y="20" width="80" height="60" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/>
+    <text x="340" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">xₜ</text>
+    
+    <text x="410" y="55" font-family="Arial, sans-serif" font-size="14" fill="#ef4444">→</text>
+    
+    <rect x="430" y="20" width="80" height="60" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+    <text x="470" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">xₜ</text>
+    <text x="470" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fca5a5">Noise</text>
+  </g>
+  
+  <!-- Reverse Process -->
+  <g transform="translate(100, 220)">
+    <text x="250" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">Reverse Process (Denoise) - Learned</text>
+    
+    <rect x="0" y="20" width="80" height="60" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+    <text x="40" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">xₜ</text>
+    <text x="40" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fca5a5">Noise</text>
+    
+    <text x="110" y="55" font-family="Arial, sans-serif" font-size="14" fill="#22c55e">→</text>
+    
+    <rect x="130" y="20" width="80" height="60" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/>
+    <text x="170" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">xₜ₋₁</text>
+    
+    <text x="240" y="55" font-family="Arial, sans-serif" font-size="14" fill="#22c55e">→ ...</text>
+    
+    <rect x="300" y="20" width="80" height="60" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/>
+    <text x="340" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">x₁</text>
+    
+    <text x="410" y="55" font-family="Arial, sans-serif" font-size="14" fill="#22c55e">→</text>
+    
+    <rect x="430" y="20" width="80" height="60" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="470" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">x₀</text>
+    <text x="470" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">Generated!</text>
+  </g>
+  
+  <!-- Key concepts -->
+  <g transform="translate(100, 340)">
+    <rect width="600" height="45" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="20" y="28" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">U-Net predicts noise ε at each step</text>
+    <text x="280" y="28" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">Train: MSE(ε, ε̂)</text>
+    <text x="430" y="28" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">Sample: Iterative denoising</text>
+  </g>
+</svg>

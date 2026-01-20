@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 280">
+  <defs>
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🧠 Deep Learning Evolution in RecSys</text>
+  
+  <!-- Timeline bar -->
+  <rect x="60" y="70" width="730" height="6" rx="3" fill="url(#timelineGrad)" filter="url(#glow)"/>
+  
+  <!-- 2016 -->
+  <g transform="translate(80, 50)">
+    <circle cx="0" cy="23" r="10" fill="#3b82f6" filter="url(#glow)"/>
+    <rect x="-50" y="45" width="100" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">Wide&amp;Deep</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Neural CF</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2016</text>
+  </g>
+  
+  <!-- 2017 -->
+  <g transform="translate(220, 50)">
+    <circle cx="0" cy="23" r="10" fill="#6366f1" filter="url(#glow)"/>
+    <rect x="-50" y="45" width="100" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#a5b4fc">YouTube DNN</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Deep Candidate</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2017</text>
+  </g>
+  
+  <!-- 2018 -->
+  <g transform="translate(360, 50)">
+    <circle cx="0" cy="23" r="10" fill="#8b5cf6" filter="url(#glow)"/>
+    <rect x="-50" y="45" width="100" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">BERT4Rec</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Attention+Seq</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2018</text>
+  </g>
+  
+  <!-- 2019 -->
+  <g transform="translate(500, 50)">
+    <circle cx="0" cy="23" r="10" fill="#a855f7" filter="url(#glow)"/>
+    <rect x="-50" y="45" width="100" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#d8b4fe">TDM/MIND</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Multi-Interest</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2019</text>
+  </g>
+  
+  <!-- 2020 -->
+  <g transform="translate(640, 50)">
+    <circle cx="0" cy="23" r="10" fill="#d946ef" filter="url(#glow)"/>
+    <rect x="-50" y="45" width="100" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f0abfc">PinnerSage</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Graph Neural</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2020</text>
+  </g>
+  
+  <!-- 2022+ -->
+  <g transform="translate(780, 50)">
+    <circle cx="0" cy="23" r="12" fill="#ec4899" filter="url(#glow)"/>
+    <rect x="-55" y="45" width="110" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f9a8d4">GPT/LLM Recs</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Foundation</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fce7f3">2022+</text>
+  </g>
+  
+  <!-- Era labels -->
+  <rect x="80" y="200" width="250" height="25" rx="6" fill="#1e293b"/>
+  <text x="205" y="217" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">🔢 Embedding Era</text>
+  
+  <rect x="340" y="200" width="200" height="25" rx="6" fill="#1e293b"/>
+  <text x="440" y="217" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">👁️ Attention Era</text>
+  
+  <rect x="550" y="200" width="250" height="25" rx="6" fill="#1e293b"/>
+  <text x="675" y="217" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">🤖 Foundation Model Era</text>
+</svg>

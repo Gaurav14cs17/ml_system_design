@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="250" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚡ Throughput Targets</text>
+  
+  <!-- Main Card -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="400" height="200" rx="12" fill="#1e293b"/>
+    <rect x="50" y="55" width="400" height="40" rx="12 12 0 0" fill="url(#headerGrad)"/>
+    <text x="250" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">QUERIES PER SECOND (QPS)</text>
+  </g>
+  
+  <!-- Scale Items -->
+  <g font-family="Segoe UI, sans-serif" font-size="14">
+    <!-- Small E-commerce -->
+    <circle cx="85" cy="125" r="8" fill="#22c55e"/>
+    <text x="105" y="130" fill="#94a3b8">Small E-commerce</text>
+    <text x="380" y="130" text-anchor="end" fill="#22c55e" font-weight="bold">100 QPS</text>
+    
+    <!-- Medium Platform -->
+    <circle cx="85" cy="160" r="8" fill="#3b82f6"/>
+    <text x="105" y="165" fill="#94a3b8">Medium Platform</text>
+    <text x="380" y="165" text-anchor="end" fill="#3b82f6" font-weight="bold">1,000 QPS</text>
+    
+    <!-- Large Platform -->
+    <circle cx="85" cy="195" r="8" fill="#f59e0b"/>
+    <text x="105" y="200" fill="#94a3b8">Large Platform</text>
+    <text x="380" y="200" text-anchor="end" fill="#f59e0b" font-weight="bold">10,000 QPS</text>
+    
+    <!-- Google-scale -->
+    <circle cx="85" cy="230" r="8" fill="#ef4444"/>
+    <text x="105" y="235" fill="#94a3b8">Google-scale</text>
+    <text x="380" y="235" text-anchor="end" fill="#ef4444" font-weight="bold">100,000+ QPS</text>
+  </g>
+  
+  <!-- Separator lines -->
+  <line x1="70" y1="145" x2="430" y2="145" stroke="#334155" stroke-width="1"/>
+  <line x1="70" y1="180" x2="430" y2="180" stroke="#334155" stroke-width="1"/>
+  <line x1="70" y1="215" x2="430" y2="215" stroke="#334155" stroke-width="1"/>
+</svg>

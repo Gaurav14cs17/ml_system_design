@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="300" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🎯 CTR Prediction System Overview
+  </text>
+  
+  <!-- Main box -->
+  <rect x="150" y="70" width="500" height="200" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  
+  <!-- Title inside -->
+  <text x="400" y="105" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    Ads Click Prediction System
+  </text>
+  
+  <!-- Stats -->
+  <g transform="translate(200, 130)">
+    <rect x="0" y="0" width="120" height="60" rx="8" fill="#10b981" opacity="0.2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#10b981" font-family="Arial" font-size="14" font-weight="bold">Scale</text>
+    <text x="60" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="16">1M+ QPS</text>
+  </g>
+  
+  <g transform="translate(340, 130)">
+    <rect x="0" y="0" width="120" height="60" rx="8" fill="#f59e0b" opacity="0.2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="14" font-weight="bold">Latency</text>
+    <text x="60" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="16">andlt; 10ms p99</text>
+  </g>
+  
+  <g transform="translate(480, 130)">
+    <rect x="0" y="0" width="120" height="60" rx="8" fill="#8b5cf6" opacity="0.2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#8b5cf6" font-family="Arial" font-size="14" font-weight="bold">Availability</text>
+    <text x="60" y="48" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="16">99.99%</text>
+  </g>
+  
+  <!-- Description -->
+  <text x="400" y="230" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">
+    Predict P(click | user, ad, context) for real-time ad ranking
+  </text>
+</svg>

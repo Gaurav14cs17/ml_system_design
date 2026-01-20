@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="rawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="derivedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="aggGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="timeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="embedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="interGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">Feature Taxonomy</text>
+  <text x="450" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Classification of feature types in ML systems</text>
+  
+  <!-- Row 1 -->
+  <!-- Raw Features -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="105" width="260" height="155" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="40" y="105" width="260" height="45" rx="12" fill="url(#rawGrad)"/>
+    <rect x="40" y="138" width="260" height="12" fill="url(#rawGrad)"/>
+    <text x="170" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">📊 Raw Features</text>
+    <text x="55" y="175" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Direct values from source data</text>
+    <text x="55" y="200" font-family="monospace" font-size="11" fill="#60a5fa">• user_age: 28</text>
+    <text x="55" y="220" font-family="monospace" font-size="11" fill="#60a5fa">• transaction_amount: $150.00</text>
+    <text x="55" y="240" font-family="monospace" font-size="11" fill="#60a5fa">• product_category: "electronics"</text>
+  </g>
+  
+  <!-- Derived Features -->
+  <g filter="url(#shadow)">
+    <rect x="320" y="105" width="260" height="155" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="320" y="105" width="260" height="45" rx="12" fill="url(#derivedGrad)"/>
+    <rect x="320" y="138" width="260" height="12" fill="url(#derivedGrad)"/>
+    <text x="450" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🔧 Derived Features</text>
+    <text x="335" y="175" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Computed transformations</text>
+    <text x="335" y="200" font-family="monospace" font-size="11" fill="#a78bfa">• age_bucket: f(age) → "25-34"</text>
+    <text x="335" y="220" font-family="monospace" font-size="11" fill="#a78bfa">• is_high_value: amount > $100</text>
+    <text x="335" y="240" font-family="monospace" font-size="11" fill="#a78bfa">• log_amount: log(amount + 1)</text>
+  </g>
+  
+  <!-- Aggregate Features -->
+  <g filter="url(#shadow)">
+    <rect x="600" y="105" width="260" height="155" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="600" y="105" width="260" height="45" rx="12" fill="url(#aggGrad)"/>
+    <rect x="600" y="138" width="260" height="12" fill="url(#aggGrad)"/>
+    <text x="730" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">📈 Aggregate Features</text>
+    <text x="615" y="175" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Summarized across records</text>
+    <text x="615" y="200" font-family="monospace" font-size="11" fill="#34d399">• user_total_purchases: Σ count</text>
+    <text x="615" y="220" font-family="monospace" font-size="11" fill="#34d399">• avg_order_value: μ(amounts)</text>
+    <text x="615" y="240" font-family="monospace" font-size="11" fill="#34d399">• max_transaction: max(amount)</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <!-- Time-Windowed Features -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="285" width="260" height="155" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="40" y="285" width="260" height="45" rx="12" fill="url(#timeGrad)"/>
+    <rect x="40" y="318" width="260" height="12" fill="url(#timeGrad)"/>
+    <text x="170" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">⏰ Time-Windowed</text>
+    <text x="55" y="355" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Aggregates over time periods</text>
+    <text x="55" y="380" font-family="monospace" font-size="11" fill="#fbbf24">• purchases_7d: Σ(t ∈ [now-7d, now])</text>
+    <text x="55" y="400" font-family="monospace" font-size="11" fill="#fbbf24">• avg_spend_30d: μ(amounts, 30d)</text>
+    <text x="55" y="420" font-family="monospace" font-size="11" fill="#fbbf24">• session_count_24h: count(24h)</text>
+  </g>
+  
+  <!-- Embedding Features -->
+  <g filter="url(#shadow)">
+    <rect x="320" y="285" width="260" height="155" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="320" y="285" width="260" height="45" rx="12" fill="url(#embedGrad)"/>
+    <rect x="320" y="318" width="260" height="12" fill="url(#embedGrad)"/>
+    <text x="450" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🧠 Embedding Features</text>
+    <text x="335" y="355" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Dense vector representations</text>
+    <text x="335" y="380" font-family="monospace" font-size="11" fill="#f87171">• user_emb ∈ ℝ¹²⁸</text>
+    <text x="335" y="400" font-family="monospace" font-size="11" fill="#f87171">• product_emb ∈ ℝ²⁵⁶</text>
+    <text x="335" y="420" font-family="monospace" font-size="11" fill="#f87171">• text_emb: BERT → ℝ⁷⁶⁸</text>
+  </g>
+  
+  <!-- Interaction Features -->
+  <g filter="url(#shadow)">
+    <rect x="600" y="285" width="260" height="155" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="600" y="285" width="260" height="45" rx="12" fill="url(#interGrad)"/>
+    <rect x="600" y="318" width="260" height="12" fill="url(#interGrad)"/>
+    <text x="730" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">🔗 Interaction Features</text>
+    <text x="615" y="355" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Feature combinations</text>
+    <text x="615" y="380" font-family="monospace" font-size="11" fill="#f472b6">• user×merchant: affinity</text>
+    <text x="615" y="400" font-family="monospace" font-size="11" fill="#f472b6">• age×category: preference</text>
+    <text x="615" y="420" font-family="monospace" font-size="11" fill="#f472b6">• cross_feature_hash(a, b)</text>
+  </g>
+  
+  <!-- Footer with mathematical notation -->
+  <rect x="150" y="460" width="600" height="30" rx="8" fill="#334155" fill-opacity="0.5"/>
+  <text x="450" y="480" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Features transform raw data X into feature vectors f(X) ∈ ℝⁿ for ML models</text>
+</svg>

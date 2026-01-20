@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="375" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🧩 The Compositionality Challenge</text>
+  
+  <!-- Words -->
+  <g transform="translate(30, 70)">
+    <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Words:</text>
+    
+    <rect x="60" y="-18" width="55" height="30" rx="6" fill="url(#wordGrad)"/>
+    <text x="87" y="2" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">"the"</text>
+    
+    <rect x="125" y="-18" width="55" height="30" rx="6" fill="url(#wordGrad)"/>
+    <text x="152" y="2" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">"cat"</text>
+    
+    <rect x="190" y="-18" width="55" height="30" rx="6" fill="url(#wordGrad)"/>
+    <text x="217" y="2" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">"sat"</text>
+    
+    <rect x="255" y="-18" width="55" height="30" rx="6" fill="url(#wordGrad)"/>
+    <text x="282" y="2" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">"on"</text>
+    
+    <rect x="320" y="-18" width="55" height="30" rx="6" fill="url(#wordGrad)"/>
+    <text x="347" y="2" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">"the"</text>
+    
+    <rect x="385" y="-18" width="55" height="30" rx="6" fill="url(#wordGrad)"/>
+    <text x="412" y="2" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fff">"mat"</text>
+  </g>
+  
+  <!-- Arrows down -->
+  <g transform="translate(30, 85)">
+    <path d="M87 5 L87 25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M152 5 L152 25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M217 5 L217 25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M282 5 L282 25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M347 5 L347 25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M412 5 L412 25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  </g>
+  
+  <!-- Word vectors -->
+  <g transform="translate(30, 115)">
+    <rect x="72" y="0" width="30" height="20" rx="4" fill="#10b981"/>
+    <text x="87" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">vec₁</text>
+    
+    <rect x="137" y="0" width="30" height="20" rx="4" fill="#10b981"/>
+    <text x="152" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">vec₂</text>
+    
+    <rect x="202" y="0" width="30" height="20" rx="4" fill="#10b981"/>
+    <text x="217" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">vec₃</text>
+    
+    <rect x="267" y="0" width="30" height="20" rx="4" fill="#10b981"/>
+    <text x="282" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">vec₄</text>
+    
+    <rect x="332" y="0" width="30" height="20" rx="4" fill="#10b981"/>
+    <text x="347" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">vec₅</text>
+    
+    <rect x="397" y="0" width="30" height="20" rx="4" fill="#10b981"/>
+    <text x="412" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fff">vec₆</text>
+  </g>
+  
+  <!-- All arrows converging -->
+  <g transform="translate(30, 140)">
+    <path d="M87 5 L250 50" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M152 5 L250 50" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M217 5 L250 50" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M282 5 L250 50" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M347 5 L250 50" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M412 5 L250 50" stroke="#64748b" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Question box -->
+  <g filter="url(#shadow)" transform="translate(180, 195)">
+    <rect width="250" height="45" rx="10" fill="#f59e0b"/>
+    <text x="125" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">❓ How to combine into ONE vector?</text>
+  </g>
+  
+  <!-- Output -->
+  <path d="M305 245 L305 260" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g filter="url(#shadow)" transform="translate(230, 265)">
+    <rect width="150" height="30" rx="8" fill="#8b5cf6"/>
+    <text x="75" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#fff">[sentence_vector]</text>
+  </g>
+  
+  <!-- Side note -->
+  <g transform="translate(500, 100)">
+    <rect width="220" height="130" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Approaches:</text>
+    <text x="20" y="50" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Mean pooling</text>
+    <text x="20" y="70" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• [CLS] token</text>
+    <text x="20" y="90" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Attention pooling</text>
+    <text x="20" y="110" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Learned aggregation</text>
+  </g>
+</svg>

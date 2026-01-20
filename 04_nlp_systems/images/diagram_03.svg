@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="phase1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="phase2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="phase3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <linearGradient id="phase4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="phase5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    <filter id="shadow2">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">NLP Development Lifecycle</text>
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">Iterative process from problem definition to production monitoring</text>
+  
+  <!-- Circular flow indicator -->
+  <circle cx="450" cy="195" r="130" fill="none" stroke="#1e293b" stroke-width="40" stroke-dasharray="8,4"/>
+  
+  <!-- Phase 1: Problem -->
+  <g transform="translate(70, 100)" filter="url(#shadow2)">
+    <rect width="130" height="100" rx="12" fill="#1e293b" stroke="url(#phase1)" stroke-width="2"/>
+    <circle cx="65" cy="-8" r="20" fill="url(#phase1)"/>
+    <text x="65" y="-3" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fff">1</text>
+    <text x="65" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">PROBLEM</text>
+    <text x="65" y="50" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">Scope &amp; Metrics</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">Baseline</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">Trade-offs</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M205 150 L245 150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 2: Data -->
+  <g transform="translate(250, 100)" filter="url(#shadow2)">
+    <rect width="130" height="100" rx="12" fill="#1e293b" stroke="url(#phase2)" stroke-width="2"/>
+    <circle cx="65" cy="-8" r="20" fill="url(#phase2)"/>
+    <text x="65" y="-3" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fff">2</text>
+    <text x="65" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#a78bfa">DATA</text>
+    <text x="65" y="50" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">Collect &amp; Clean</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">Augmentation</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">Versioning</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M385 150 L425 150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 3: Model -->
+  <g transform="translate(430, 100)" filter="url(#shadow2)">
+    <rect width="130" height="100" rx="12" fill="#1e293b" stroke="url(#phase3)" stroke-width="2"/>
+    <circle cx="65" cy="-8" r="20" fill="url(#phase3)"/>
+    <text x="65" y="-3" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fff">3</text>
+    <text x="65" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#f472b6">MODEL</text>
+    <text x="65" y="50" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fbcfe8">Architecture</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fbcfe8">Training</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fbcfe8">Evaluation</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M565 150 L605 150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 4: Deploy -->
+  <g transform="translate(610, 100)" filter="url(#shadow2)">
+    <rect width="130" height="100" rx="12" fill="#1e293b" stroke="url(#phase4)" stroke-width="2"/>
+    <circle cx="65" cy="-8" r="20" fill="url(#phase4)"/>
+    <text x="65" y="-3" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fff">4</text>
+    <text x="65" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">DEPLOY</text>
+    <text x="65" y="50" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">API Design</text>
+    <text x="65" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">Scaling</text>
+    <text x="65" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">Caching</text>
+  </g>
+  
+  <!-- Arrow 4 down -->
+  <path d="M675 205 L675 245" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 5: Monitor -->
+  <g transform="translate(430, 250)" filter="url(#shadow2)">
+    <rect width="310" height="100" rx="12" fill="#1e293b" stroke="url(#phase5)" stroke-width="2"/>
+    <circle cx="155" cy="-8" r="20" fill="url(#phase5)"/>
+    <text x="155" y="-3" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#fff">5</text>
+    <text x="155" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#34d399">MONITOR &amp; ITERATE</text>
+    <g transform="translate(20, 45)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• Metrics Dashboard</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• Alerting</text>
+      <text x="140" y="0" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• A/B Testing</text>
+      <text x="140" y="18" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• Retraining Pipeline</text>
+    </g>
+  </g>
+  
+  <!-- Feedback loop arrow -->
+  <path d="M430 300 L100 300 L100 205 L65 205" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="250" y="320" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#10b981">Continuous Feedback Loop</text>
+</svg>

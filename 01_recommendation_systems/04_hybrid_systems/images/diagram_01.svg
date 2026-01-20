@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="cbfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔀 The Hybrid Advantage</text>
+  
+  <!-- Content-Based -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="200" height="280" rx="14" fill="#0f172a"/>
+    <rect x="50" y="60" width="200" height="45" rx="14 14 0 0" fill="url(#cbfGrad)"/>
+    <text x="150" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Content-Based</text>
+    
+    <g transform="translate(65, 120)">
+      <rect x="0" y="0" width="170" height="28" rx="6" fill="#dcfce7"/>
+      <text x="85" y="19" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ No item cold start</text>
+      
+      <rect x="0" y="35" width="170" height="28" rx="6" fill="#dcfce7"/>
+      <text x="85" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ Transparent</text>
+      
+      <rect x="0" y="70" width="170" height="28" rx="6" fill="#450a0a"/>
+      <text x="85" y="89" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ User cold start</text>
+      
+      <rect x="0" y="105" width="170" height="28" rx="6" fill="#450a0a"/>
+      <text x="85" y="124" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ Limited variety</text>
+    </g>
+  </g>
+  
+  <!-- Plus sign -->
+  <circle cx="290" cy="200" r="25" fill="#64748b" filter="url(#shadow)"/>
+  <text x="290" y="208" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">+</text>
+  
+  <!-- Collaborative -->
+  <g filter="url(#shadow)">
+    <rect x="330" y="60" width="200" height="280" rx="14" fill="#0f172a"/>
+    <rect x="330" y="60" width="200" height="45" rx="14 14 0 0" fill="url(#cfGrad)"/>
+    <text x="430" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Collaborative</text>
+    
+    <g transform="translate(345, 120)">
+      <rect x="0" y="0" width="170" height="28" rx="6" fill="#dcfce7"/>
+      <text x="85" y="19" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ No features needed</text>
+      
+      <rect x="0" y="35" width="170" height="28" rx="6" fill="#dcfce7"/>
+      <text x="85" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ Serendipity</text>
+      
+      <rect x="0" y="70" width="170" height="28" rx="6" fill="#450a0a"/>
+      <text x="85" y="89" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ User &amp; item cold start</text>
+      
+      <rect x="0" y="105" width="170" height="28" rx="6" fill="#450a0a"/>
+      <text x="85" y="124" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#991b1b">✗ Sparsity</text>
+    </g>
+  </g>
+  
+  <!-- Equals sign -->
+  <circle cx="570" cy="200" r="25" fill="#64748b" filter="url(#shadow)"/>
+  <text x="570" y="208" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">=</text>
+  
+  <!-- Hybrid -->
+  <g filter="url(#shadow)">
+    <rect x="610" y="60" width="160" height="280" rx="14" fill="#0f172a"/>
+    <rect x="610" y="60" width="160" height="45" rx="14 14 0 0" fill="url(#hybridGrad)"/>
+    <text x="690" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Hybrid ⭐</text>
+    
+    <g transform="translate(625, 120)">
+      <rect x="0" y="0" width="130" height="28" rx="6" fill="#dcfce7"/>
+      <text x="65" y="19" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ No cold start</text>
+      
+      <rect x="0" y="35" width="130" height="28" rx="6" fill="#dcfce7"/>
+      <text x="65" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ Serendipity</text>
+      
+      <rect x="0" y="70" width="130" height="28" rx="6" fill="#dcfce7"/>
+      <text x="65" y="89" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ Better coverage</text>
+      
+      <rect x="0" y="105" width="130" height="28" rx="6" fill="#dcfce7"/>
+      <text x="65" y="124" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#166534">✓ Reduced bias</text>
+    </g>
+  </g>
+  
+  <!-- Result banner -->
+  <rect x="250" y="360" width="300" height="35" rx="17" fill="#10b981" filter="url(#shadow)"/>
+  <text x="400" y="383" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🏆 Best of Both Worlds!</text>
+</svg>

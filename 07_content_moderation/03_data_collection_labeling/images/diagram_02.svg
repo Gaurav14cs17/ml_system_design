@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="decisionBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#decisionBg)"/>
+  
+  <text x="400" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🌳 Policy Decision Tree Example</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Nudity Content Classification Flow</text>
+  
+  <!-- Root question -->
+  <g transform="translate(300, 70)">
+    <rect width="200" height="60" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="28" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Does content</text>
+    <text x="100" y="45" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">contain nudity?</text>
+  </g>
+  
+  <!-- Branches -->
+  <path d="M 400 130 L 400 150 L 150 150 L 150 170" stroke="#64748b" stroke-width="2"/>
+  <path d="M 400 130 L 400 170" stroke="#64748b" stroke-width="2"/>
+  <path d="M 400 130 L 400 150 L 650 150 L 650 170" stroke="#64748b" stroke-width="2"/>
+  
+  <text x="150" y="165" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Yes</text>
+  <text x="400" y="165" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Partial</text>
+  <text x="650" y="165" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="10" font-weight="bold">No</text>
+  
+  <!-- Yes branch -->
+  <g transform="translate(50, 180)">
+    <rect width="200" height="55" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="22" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Is it artistic/</text>
+    <text x="100" y="40" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="10" font-weight="bold">educational?</text>
+  </g>
+  
+  <path d="M 100 235 L 100 260" stroke="#64748b" stroke-width="1"/>
+  <path d="M 200 235 L 200 260" stroke="#64748b" stroke-width="1"/>
+  
+  <g transform="translate(50, 270)">
+    <rect width="90" height="40" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <text x="45" y="18" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Yes</text>
+    <text x="45" y="32" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">✅ Allow</text>
+  </g>
+  
+  <g transform="translate(160, 270)">
+    <rect width="90" height="40" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+    <text x="45" y="18" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9" font-weight="bold">No</text>
+    <text x="45" y="32" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="10">🚫 Remove</text>
+  </g>
+  
+  <!-- Partial branch -->
+  <g transform="translate(300, 180)">
+    <rect width="200" height="55" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Is it</text>
+    <text x="100" y="40" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">breastfeeding?</text>
+  </g>
+  
+  <path d="M 350 235 L 350 260" stroke="#64748b" stroke-width="1"/>
+  <path d="M 450 235 L 450 260" stroke="#64748b" stroke-width="1"/>
+  
+  <g transform="translate(300, 270)">
+    <rect width="90" height="40" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <text x="45" y="18" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Yes</text>
+    <text x="45" y="32" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">✅ Allow</text>
+  </g>
+  
+  <g transform="translate(410, 270)">
+    <rect width="90" height="40" rx="6" fill="#713f12" stroke="#f97316" stroke-width="1"/>
+    <text x="45" y="18" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="9" font-weight="bold">No</text>
+    <text x="45" y="32" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">👤 Review</text>
+  </g>
+  
+  <!-- No branch -->
+  <g transform="translate(550, 180)">
+    <rect width="200" height="55" rx="8" fill="#064e3b" stroke="#22c55e" stroke-width="2"/>
+    <text x="100" y="28" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Continue to</text>
+    <text x="100" y="45" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">next check →</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(200, 380)">
+    <rect width="400" height="55" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="200" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Decision Legend</text>
+    <rect x="30" y="32" width="60" height="15" rx="3" fill="#14532d"/>
+    <text x="60" y="43" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="8">Allow</text>
+    <rect x="110" y="32" width="60" height="15" rx="3" fill="#7f1d1d"/>
+    <text x="140" y="43" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">Remove</text>
+    <rect x="190" y="32" width="60" height="15" rx="3" fill="#713f12"/>
+    <text x="220" y="43" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="8">Review</text>
+    <rect x="270" y="32" width="100" height="15" rx="3" fill="#064e3b"/>
+    <text x="320" y="43" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="8">Continue</text>
+  </g>
+</svg>

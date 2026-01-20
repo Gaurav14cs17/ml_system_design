@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450">
+  <defs>
+    <linearGradient id="cbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="750" height="450" fill="#0d1117" rx="10"/>
+  
+  <text x="375" y="35" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="bold">Content-Based vs Collaborative Filtering</text>
+  
+  <!-- Content-Based Section -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="300" height="340" rx="15" fill="url(#cbGrad)" filter="url(#shadow)"/>
+    <text x="150" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Content-Based</text>
+    
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="240" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="120" y="22" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">📦 Item A</text>
+      <text x="120" y="40" text-anchor="middle" fill="#f8fafc" font-size="10">Features: Genre, Director, Actors</text>
+    </g>
+    
+    <path d="M 150 130 L 150 155" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow1)"/>
+    
+    <g transform="translate(30, 165)">
+      <rect x="0" y="0" width="240" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="120" y="20" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Find Similar Items</text>
+      <text x="120" y="38" text-anchor="middle" fill="#f8fafc" font-size="9">Based on content similarity</text>
+    </g>
+    
+    <path d="M 150 230 L 150 255" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow1)"/>
+    
+    <g transform="translate(30, 265)">
+      <rect x="0" y="0" width="240" height="50" rx="8" fill="rgba(255,255,255,0.3)"/>
+      <text x="120" y="20" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">🎯 Recommend B, C</text>
+      <text x="120" y="38" text-anchor="middle" fill="#f8fafc" font-size="9">Similar content features</text>
+    </g>
+  </g>
+  
+  <!-- Collaborative Section -->
+  <g transform="translate(400, 70)">
+    <rect x="0" y="0" width="300" height="340" rx="15" fill="url(#cfGrad)" filter="url(#shadow)"/>
+    <text x="150" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Collaborative</text>
+    
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="240" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="120" y="22" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">👤 User 1</text>
+      <text x="120" y="40" text-anchor="middle" fill="#f8fafc" font-size="10">Liked: A, B</text>
+    </g>
+    
+    <path d="M 150 130 L 150 155" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow1)"/>
+    
+    <g transform="translate(30, 165)">
+      <rect x="0" y="0" width="240" height="50" rx="8" fill="rgba(255,255,255,0.25)"/>
+      <text x="120" y="20" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Find Similar Users</text>
+      <text x="120" y="38" text-anchor="middle" fill="#f8fafc" font-size="9">Users 2, 3 have similar taste</text>
+    </g>
+    
+    <path d="M 150 230 L 150 255" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow1)"/>
+    
+    <g transform="translate(30, 265)">
+      <rect x="0" y="0" width="240" height="50" rx="8" fill="rgba(255,255,255,0.3)"/>
+      <text x="120" y="20" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">🎯 Recommend C, D</text>
+      <text x="120" y="38" text-anchor="middle" fill="#f8fafc" font-size="9">Items liked by similar users</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

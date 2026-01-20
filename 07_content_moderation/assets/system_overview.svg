@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#9333ea"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="url(#headerGrad)" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Content Moderation System Architecture</text>
+  
+  <!-- Content Input -->
+  <rect x="30" y="70" width="120" height="60" rx="10" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="90" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Content</text>
+  <text x="90" y="112" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Input</text>
+  
+  <!-- Arrow -->
+  <path d="M 155 100 L 190 100" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Hash Matching -->
+  <rect x="200" y="70" width="130" height="60" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+  <text x="265" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Hash Matching</text>
+  <text x="265" y="112" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">(PhotoDNA)</text>
+  
+  <!-- Arrow -->
+  <path d="M 335 100 L 370 100" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Fast Filter -->
+  <rect x="380" y="70" width="130" height="60" rx="10" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+  <text x="445" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Fast Filter</text>
+  <text x="445" y="112" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">(Keywords/Rules)</text>
+  
+  <!-- Arrow -->
+  <path d="M 515 100 L 550 100" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- ML Classifiers -->
+  <rect x="560" y="70" width="150" height="60" rx="10" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="635" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Deep Learning</text>
+  <text x="635" y="112" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">(BERT, CNN, LLM)</text>
+  
+  <!-- Arrow -->
+  <path d="M 715 100 L 750 100" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Context Analysis -->
+  <rect x="760" y="70" width="120" height="60" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+  <text x="820" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Context</text>
+  <text x="820" y="112" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Analysis</text>
+  
+  <!-- Decision Engine Box -->
+  <rect x="200" y="170" width="680" height="80" rx="15" fill="#1e293b" stroke="#475569" stroke-width="2" filter="url(#shadow)"/>
+  <text x="540" y="200" text-anchor="middle" fill="#334155" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Decision Engine</text>
+  <text x="540" y="225" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Policy Rules • Threshold Tuning • Ensemble Voting • Context Weighting</text>
+  
+  <!-- Vertical arrows down -->
+  <path d="M 540 130 L 540 170" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Three outcomes -->
+  <!-- ALLOW -->
+  <rect x="150" y="310" width="160" height="70" rx="12" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="230" y="340" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✓ ALLOW</text>
+  <text x="230" y="360" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Publish Content</text>
+  
+  <!-- REVIEW -->
+  <rect x="370" y="310" width="160" height="70" rx="12" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+  <text x="450" y="340" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚠ REVIEW</text>
+  <text x="450" y="360" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Human Review Queue</text>
+  
+  <!-- REMOVE -->
+  <rect x="590" y="310" width="160" height="70" rx="12" fill="url(#redGrad)" filter="url(#shadow)"/>
+  <text x="670" y="340" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✗ REMOVE</text>
+  <text x="670" y="360" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Block and Notify User</text>
+  
+  <!-- Arrows to outcomes -->
+  <path d="M 380 250 L 230 305" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 540 250 L 450 305" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 700 250 L 670 305" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Feedback Loop -->
+  <rect x="370" y="420" width="160" height="50" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="450" y="450" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔄 Feedback Loop</text>
+  
+  <!-- Arrow from Review to Feedback -->
+  <path d="M 450 380 L 450 415" stroke="#6366f1" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow from Feedback back up -->
+  <path d="M 530 445 L 800 445 L 800 250 L 750 250" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="810" y="350" fill="#6366f1" font-family="Arial, sans-serif" font-size="10" transform="rotate(-90, 810, 350)">Model Retraining</text>
+  
+  <!-- Stats -->
+  <text x="90" y="480" fill="#64748b" font-family="Arial, sans-serif" font-size="10">~95% Auto-processed</text>
+  <text x="400" y="480" fill="#64748b" font-family="Arial, sans-serif" font-size="10">~4% Human Review</text>
+  <text x="640" y="480" fill="#64748b" font-family="Arial, sans-serif" font-size="10">~1% Auto-removed</text>
+</svg>
+

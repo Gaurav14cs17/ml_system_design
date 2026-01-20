@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">A/B Testing Flow</text>
+  
+  <!-- Incoming Traffic -->
+  <rect x="320" y="70" width="160" height="50" rx="25" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="400" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Incoming Traffic</text>
+  
+  <!-- Arrow down -->
+  <path d="M400 120 L400 150 L390 140 M400 150 L410 140" stroke="#64748b" stroke-width="2" fill="none"/>
+  
+  <!-- Random Split Box -->
+  <rect x="325" y="160" width="150" height="45" rx="8" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  <text x="400" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#475569">Random Split</text>
+  
+  <!-- Split arrows -->
+  <path d="M350 205 L250 250" stroke="#64748b" stroke-width="2" fill="none"/>
+  <path d="M450 205 L550 250" stroke="#64748b" stroke-width="2" fill="none"/>
+  
+  <!-- Control Group -->
+  <g transform="translate(150, 260)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="3" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="#3b82f6"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Control (A)</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">50% of users</text>
+    <rect x="30" y="75" width="140" height="30" rx="6" fill="#eff6ff"/>
+    <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#3b82f6">Current Model</text>
+  </g>
+  
+  <!-- Treatment Group -->
+  <g transform="translate(450, 260)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="3" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="#10b981"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Treatment (B)</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">50% of users</text>
+    <rect x="30" y="75" width="140" height="30" rx="6" fill="#ecfdf5"/>
+    <text x="100" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#10b981">New Model</text>
+  </g>
+  
+  <!-- Arrows to measurement -->
+  <path d="M250 380 L250 420 L340 420" stroke="#64748b" stroke-width="2" fill="none"/>
+  <path d="M550 380 L550 420 L460 420" stroke="#64748b" stroke-width="2" fill="none"/>
+  
+  <!-- Measure Metrics Box -->
+  <rect x="300" y="400" width="200" height="50" rx="10" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+  <text x="400" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Measure Metrics</text>
+  
+  <!-- Arrow down -->
+  <path d="M400 450 L400 480 L390 470 M400 480 L410 470" stroke="#64748b" stroke-width="2" fill="none"/>
+  
+  <!-- Statistical Analysis -->
+  <rect x="280" y="490" width="240" height="50" rx="10" fill="#8b5cf6" filter="url(#shadow)"/>
+  <text x="400" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Statistical Analysis</text>
+  
+  <!-- Arrow down -->
+  <path d="M400 540 L400 560 L390 550 M400 560 L410 550" stroke="#64748b" stroke-width="2" fill="none"/>
+  
+  <!-- Decision -->
+  <polygon points="400,565 480,590 400,615 320,590" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="400" y="594" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Decision</text>
+  
+  <!-- Legend -->
+  <g transform="translate(620, 500)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569">Key Outcomes:</text>
+    <circle cx="10" cy="20" r="5" fill="#10b981"/>
+    <text x="22" y="24" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Ship Treatment</text>
+    <circle cx="10" cy="40" r="5" fill="#ef4444"/>
+    <text x="22" y="44" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Keep Control</text>
+    <circle cx="10" cy="60" r="5" fill="#f59e0b"/>
+    <text x="22" y="64" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Need More Data</text>
+  </g>
+</svg>
+

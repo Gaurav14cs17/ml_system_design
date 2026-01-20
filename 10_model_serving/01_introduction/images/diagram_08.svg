@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs>
+    <linearGradient id="ecomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🛒 E-Commerce Recommendation Flow</text>
+  
+  <!-- User Icon -->
+  <g transform="translate(330, 55)">
+    <circle cx="20" cy="15" r="12" fill="#f59e0b"/>
+    <text x="20" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">User browses</text>
+  </g>
+  
+  <line x1="350" y1="75" x2="350" y2="105" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 1: Collect Context -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="110" width="350" height="65" rx="12" fill="#1e293b"/>
+    <rect x="175" y="110" width="50" height="65" rx="12 0 0 12" fill="url(#stepGrad)"/>
+    <text x="200" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" fill="#fff">1</text>
+    <text x="240" y="138" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Collect Context</text>
+    <text x="240" y="158" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User history, session, device info</text>
+  </g>
+  
+  <line x1="350" y1="175" x2="350" y2="200" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Feature Lookup -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="205" width="350" height="65" rx="12" fill="#1e293b"/>
+    <rect x="175" y="205" width="50" height="65" rx="12 0 0 12" fill="url(#stepGrad)"/>
+    <text x="200" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" fill="#fff">2</text>
+    <text x="240" y="233" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Feature Lookup</text>
+    <text x="240" y="253" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User embeddings, item embeddings</text>
+  </g>
+  
+  <line x1="350" y1="270" x2="350" y2="295" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Model Inference -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="300" width="350" height="65" rx="12" fill="#1e293b"/>
+    <rect x="175" y="300" width="50" height="65" rx="12 0 0 12" fill="#10b981"/>
+    <text x="200" y="340" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" fill="#fff">3</text>
+    <text x="240" y="328" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Model Inference</text>
+    <text x="240" y="348" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">Recommendation model andlt;50ms</text>
+  </g>
+  
+  <line x1="350" y1="365" x2="350" y2="390" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Business Rules -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="395" width="350" height="65" rx="12" fill="#1e293b"/>
+    <rect x="175" y="395" width="50" height="65" rx="12 0 0 12" fill="url(#ecomGrad)"/>
+    <text x="200" y="435" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" fill="#fff">4</text>
+    <text x="240" y="423" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Business Rules</text>
+    <text x="240" y="443" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Filter out-of-stock, apply diversity</text>
+  </g>
+  
+  <text x="350" y="490" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">🎯 Display Personalized Recommendations</text>
+</svg>

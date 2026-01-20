@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">ADVANCED AUGMENTATION TECHNIQUES</text>
+  
+  <g transform="translate(50, 70)">
+    <rect width="220" height="130" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">MixUp</text>
+    <rect x="20" y="45" width="80" height="50" rx="4" fill="#ef4444" opacity="0.5"/>
+    <text x="110" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#f8fafc">+</text>
+    <rect x="120" y="45" width="80" height="50" rx="4" fill="#22c55e" opacity="0.5"/>
+    <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">λx₁ + (1-λ)x₂, λy₁ + (1-λ)y₂</text>
+  </g>
+  
+  <g transform="translate(290, 70)">
+    <rect width="220" height="130" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">CutMix</text>
+    <rect x="20" y="45" width="80" height="50" rx="4" fill="#334155"/>
+    <rect x="40" y="55" width="35" height="30" rx="2" fill="#22c55e" opacity="0.7"/>
+    <rect x="120" y="45" width="80" height="50" rx="4" fill="#334155"/>
+    <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">Cut + paste patches</text>
+  </g>
+  
+  <g transform="translate(530, 70)">
+    <rect width="220" height="130" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">Cutout/Random Erasing</text>
+    <rect x="60" y="45" width="100" height="50" rx="4" fill="#334155"/>
+    <rect x="75" y="55" width="40" height="25" rx="2" fill="#0f172a"/>
+    <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">Random occlusion</text>
+  </g>
+  
+  <g transform="translate(100, 230)">
+    <rect width="280" height="130" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">AutoAugment/RandAugment</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">Learned augmentation policies</text>
+    <text x="140" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">• AutoAugment: Search optimal</text>
+    <text x="140" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">• RandAugment: Random selection</text>
+    <text x="140" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">• TrivialAugment: Simpler random</text>
+  </g>
+  
+  <g transform="translate(420, 230)">
+    <rect width="280" height="130" rx="10" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f472b6">Test-Time Augmentation (TTA)</text>
+    <text x="140" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f9a8d4">Augment at inference, average</text>
+    <text x="140" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">• Flip, multi-scale</text>
+    <text x="140" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">• Average predictions</text>
+    <text x="140" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">• +1-2% accuracy, 5-10× slower</text>
+  </g>
+</svg>

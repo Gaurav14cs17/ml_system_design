@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <rect width="800" height="380" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">MONOCULAR DEPTH ESTIMATION</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Predicting Depth from a Single Image</text>
+  
+  <g transform="translate(50, 90)">
+    <rect width="300" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Supervised Approaches</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">• Encoder-Decoder (DPT, MiDaS)</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">• Multi-scale features</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">• Trained on depth sensor data</text>
+    
+    <text x="150" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ Most accurate</text>
+    <text x="150" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f87171">✗ Needs ground truth depth</text>
+  </g>
+  
+  <g transform="translate(450, 90)">
+    <rect width="300" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">Self-Supervised</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">• Monodepth2, PackNet</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">• View synthesis as supervision</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">• Uses video or stereo pairs</text>
+    
+    <text x="150" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ No depth labels needed</text>
+    <text x="150" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f87171">✗ Scale ambiguity</text>
+  </g>
+  
+  <g transform="translate(150, 260)">
+    <rect width="500" height="95" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">Key Challenges</text>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Scale ambiguity (relative vs metric depth)</text>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Edge artifacts and thin structures</text>
+    <text x="280" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Generalization to new scenes</text>
+    <text x="280" y="70" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Zero-shot: MiDaS, Depth Anything</text>
+  </g>
+</svg>

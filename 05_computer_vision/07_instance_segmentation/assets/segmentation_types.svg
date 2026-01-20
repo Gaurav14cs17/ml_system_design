@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="350" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Segmentation Task Comparison</text>
+  
+  <!-- Original Image -->
+  <rect x="30" y="70" width="180" height="130" rx="10" fill="#334155" filter="url(#softShadow)"/>
+  <text x="120" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#64748b">Original Image</text>
+  <!-- Car 1 -->
+  <rect x="50" y="100" width="60" height="35" rx="5" fill="#3b82f6"/>
+  <circle cx="60" cy="135" r="8" fill="#1e293b"/>
+  <circle cx="100" cy="135" r="8" fill="#1e293b"/>
+  <!-- Car 2 -->
+  <rect x="130" y="95" width="55" height="32" rx="5" fill="#3b82f6"/>
+  <circle cx="140" cy="127" r="7" fill="#1e293b"/>
+  <circle cx="175" cy="127" r="7" fill="#1e293b"/>
+  <!-- Tree -->
+  <rect x="90" y="155" width="15" height="30" fill="#92400e"/>
+  <circle cx="97" cy="150" r="25" fill="#22c55e"/>
+  <!-- Ground -->
+  <rect x="30" y="185" width="180" height="15" fill="#cbd5e1"/>
+  
+  <!-- Arrow 1 -->
+  <path d="M220 135 L260 135" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="260,130 275,135 260,140" fill="#94a3b8"/>
+  
+  <!-- Semantic Segmentation -->
+  <rect x="285" y="70" width="180" height="130" rx="10" fill="#334155" filter="url(#softShadow)"/>
+  <text x="375" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">Semantic Segmentation</text>
+  <!-- All cars same color -->
+  <rect x="305" y="100" width="60" height="35" rx="5" fill="#3b82f6"/>
+  <rect x="385" y="95" width="55" height="32" rx="5" fill="#3b82f6"/>
+  <!-- Tree -->
+  <rect x="345" y="155" width="15" height="30" fill="#22c55e"/>
+  <circle cx="352" cy="150" r="25" fill="#22c55e"/>
+  <!-- Ground -->
+  <rect x="285" y="185" width="180" height="15" fill="#94a3b8"/>
+  <!-- Legend -->
+  <rect x="295" y="145" width="10" height="10" fill="#3b82f6"/>
+  <text x="310" y="154" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Car</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M475 135 L515 135" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="515,130 530,135 515,140" fill="#94a3b8"/>
+  
+  <!-- Instance Segmentation -->
+  <rect x="540" y="70" width="180" height="130" rx="10" fill="#334155" filter="url(#softShadow)"/>
+  <text x="630" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">Instance Segmentation</text>
+  <!-- Car 1 - different color -->
+  <rect x="560" y="100" width="60" height="35" rx="5" fill="#3b82f6"/>
+  <!-- Car 2 - different color -->
+  <rect x="640" y="95" width="55" height="32" rx="5" fill="#8b5cf6"/>
+  <!-- Tree -->
+  <rect x="600" y="155" width="15" height="30" fill="#22c55e"/>
+  <circle cx="607" cy="150" r="25" fill="#22c55e"/>
+  <!-- Ground -->
+  <rect x="540" y="185" width="180" height="15" fill="#94a3b8"/>
+  <!-- Legend -->
+  <rect x="550" y="145" width="10" height="10" fill="#3b82f6"/>
+  <text x="565" y="154" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Car 1</text>
+  <rect x="600" y="145" width="10" height="10" fill="#8b5cf6"/>
+  <text x="615" y="154" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Car 2</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M730 135 L770 135" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="770,130 785,135 770,140" fill="#94a3b8"/>
+  
+  <!-- Panoptic -->
+  <rect x="795" y="70" width="90" height="130" rx="10" fill="#422006" filter="url(#softShadow)"/>
+  <text x="840" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#d97706">Panoptic</text>
+  <text x="840" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#92400e">Thing</text>
+  <text x="840" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">+</text>
+  <text x="840" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#92400e">Stuff</text>
+  <text x="840" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="20">🎯</text>
+  
+  <!-- Comparison Table -->
+  <rect x="30" y="220" width="855" height="110" rx="10" fill="#0f172a" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Headers -->
+  <text x="120" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Aspect</text>
+  <text x="300" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">Semantic</text>
+  <text x="500" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">Instance</text>
+  <text x="700" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d97706">Panoptic</text>
+  
+  <line x1="30" y1="260" x2="885" y2="260" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Row 1 -->
+  <text x="120" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Output</text>
+  <text x="300" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Class per pixel</text>
+  <text x="500" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Instance masks</text>
+  <text x="700" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Both unified</text>
+  
+  <!-- Row 2 -->
+  <text x="120" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Use Case</text>
+  <text x="300" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Scene parsing</text>
+  <text x="500" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Object counting</text>
+  <text x="700" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Complete scene</text>
+</svg>
+

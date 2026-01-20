@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="dataGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a5a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="processGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#feca57;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9f43;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="evalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="380" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">ML Training Pipeline</text>
+  
+  <!-- Step 1: Data Collection -->
+  <rect x="30" y="70" width="170" height="120" rx="12" fill="#161b22" stroke="#ff6b6b" stroke-width="2"/>
+  <rect x="30" y="70" width="170" height="35" rx="12" fill="url(#dataGrad2)"/>
+  <text x="115" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1. Data Collection</text>
+  
+  <text x="45" y="125" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📊 Click logs</text>
+  <text x="45" y="142" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">👁️ Impressions</text>
+  <text x="45" y="159" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">⏱️ Dwell time</text>
+  <text x="45" y="176" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🛒 Conversions</text>
+  
+  <!-- Arrow -->
+  <path d="M205 130 L230 130" stroke="#ff6b6b" stroke-width="3"/>
+  <polygon points="230,125 240,130 230,135" fill="#ff6b6b"/>
+  
+  <!-- Step 2: Label Generation -->
+  <rect x="245" y="70" width="170" height="120" rx="12" fill="#161b22" stroke="#feca57" stroke-width="2"/>
+  <rect x="245" y="70" width="170" height="35" rx="12" fill="url(#processGrad2)"/>
+  <text x="330" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2. Label Generation</text>
+  
+  <text x="260" y="125" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🏷️ Binary (click/no-click)</text>
+  <text x="260" y="142" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📈 Graded (0-4)</text>
+  <text x="260" y="159" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">⚖️ Position debiasing</text>
+  <text x="260" y="176" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">👥 Human labels</text>
+  
+  <!-- Arrow -->
+  <path d="M420 130 L445 130" stroke="#feca57" stroke-width="3"/>
+  <polygon points="445,125 455,130 445,135" fill="#feca57"/>
+  
+  <!-- Step 3: Feature Engineering -->
+  <rect x="460" y="70" width="170" height="120" rx="12" fill="#161b22" stroke="#667eea" stroke-width="2"/>
+  <rect x="460" y="70" width="170" height="35" rx="12" fill="url(#trainGrad)"/>
+  <text x="545" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">3. Feature Eng.</text>
+  
+  <text x="475" y="125" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🔍 Query features</text>
+  <text x="475" y="142" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📄 Document features</text>
+  <text x="475" y="159" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🔗 Interaction features</text>
+  <text x="475" y="176" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">👤 User features</text>
+  
+  <!-- Arrow -->
+  <path d="M635 130 L660 130" stroke="#667eea" stroke-width="3"/>
+  <polygon points="660,125 670,130 660,135" fill="#667eea"/>
+  
+  <!-- Step 4: Training -->
+  <rect x="675" y="70" width="195" height="120" rx="12" fill="#161b22" stroke="#38ef7d" stroke-width="2"/>
+  <rect x="675" y="70" width="195" height="35" rx="12" fill="url(#evalGrad)"/>
+  <text x="772" y="95" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">4. Model Training</text>
+  
+  <text x="690" y="125" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🌲 LambdaMART (GBDT)</text>
+  <text x="690" y="142" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🧠 Neural Ranker</text>
+  <text x="690" y="159" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📊 Cross-validation</text>
+  <text x="690" y="176" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🔧 Hyperparameter tuning</text>
+  
+  <!-- Evaluation and Deployment Row -->
+  <rect x="245" y="220" width="200" height="100" rx="12" fill="#161b22" stroke="#54a0ff" stroke-width="2"/>
+  <rect x="245" y="220" width="200" height="35" rx="12" fill="#54a0ff"/>
+  <text x="345" y="245" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">5. Offline Evaluation</text>
+  
+  <text x="260" y="275" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📏 NDCG@k, MAP, MRR</text>
+  <text x="260" y="292" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">✓ Hold-out test set</text>
+  <text x="260" y="309" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📊 A/B simulation</text>
+  
+  <!-- Arrow down -->
+  <path d="M772 195 L772 220 L455 220 L455 215" stroke="#54a0ff" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <!-- Arrow right -->
+  <path d="M450 270 L475 270" stroke="#54a0ff" stroke-width="3"/>
+  <polygon points="475,265 485,270 475,275" fill="#54a0ff"/>
+  
+  <rect x="490" y="220" width="200" height="100" rx="12" fill="#161b22" stroke="#f39c12" stroke-width="2"/>
+  <rect x="490" y="220" width="200" height="35" rx="12" fill="#f39c12"/>
+  <text x="590" y="245" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">6. A/B Testing</text>
+  
+  <text x="505" y="275" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🧪 Online experiment</text>
+  <text x="505" y="292" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📈 CTR, Conversion</text>
+  <text x="505" y="309" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📊 Statistical significance</text>
+  
+  <!-- Arrow right -->
+  <path d="M695 270 L720 270" stroke="#f39c12" stroke-width="3"/>
+  <polygon points="720,265 730,270 720,275" fill="#f39c12"/>
+  
+  <rect x="735" y="235" width="130" height="70" rx="35" fill="#22c55e"/>
+  <text x="800" y="265" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">7. Deploy</text>
+  <text x="800" y="285" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">🚀 Production</text>
+  
+  <!-- Iteration arrow -->
+  <path d="M30 345 L870 345 L870 195 L875 200 M870 195 L865 200" stroke="#6b7280" stroke-width="1" stroke-dasharray="4"/>
+  <text x="450" y="365" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">Continuous Iteration and Improvement</text>
+</svg>
+

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320">
+  <defs>
+    <linearGradient id="actionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="romanceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🎬 Personalized Thumbnails (Netflix Style)</text>
+  
+  <!-- Action User -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="55" width="280" height="120" rx="12" fill="#1e293b"/>
+    <rect x="40" y="55" width="280" height="40" rx="12 12 0 0" fill="url(#actionGrad)"/>
+    <text x="180" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎬 User likes: Action</text>
+    
+    <text x="60" y="115" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">For "Stranger Things":</text>
+    <rect x="60" y="130" width="240" height="35" rx="6" fill="#334155"/>
+    <text x="180" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fca5a5">💥 Action thumbnail with chase scenes</text>
+  </g>
+  
+  <!-- Romance User -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="55" width="280" height="120" rx="12" fill="#1e293b"/>
+    <rect x="380" y="55" width="280" height="40" rx="12 12 0 0" fill="url(#romanceGrad)"/>
+    <text x="520" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">💕 User likes: Romance</text>
+    
+    <text x="400" y="115" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">For "Stranger Things":</text>
+    <rect x="400" y="130" width="240" height="35" rx="6" fill="#334155"/>
+    <text x="520" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">💑 Character relationships thumbnail</text>
+  </g>
+  
+  <!-- Same Content, Different Presentation -->
+  <rect x="150" y="200" width="400" height="50" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+  <text x="350" y="232" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📺 Same Content, Different Presentation</text>
+  
+  <!-- Bottom explanation -->
+  <text x="350" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Content-based filtering personalizes not just WHAT to show,</text>
+  <text x="350" y="305" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">but HOW to present it based on user preferences</text>
+</svg>

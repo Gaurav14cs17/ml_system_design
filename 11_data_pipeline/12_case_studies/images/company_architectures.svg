@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="netflixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E50914;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B81D24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="uberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#276EF1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="spotifyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1DB954;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#179443;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="doordashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF3008;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D62300;stop-opacity:1" />
+    </linearGradient>
+    <filter id="caseShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="650" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" fill="#F8FAFC" font-family="system-ui" font-size="24" font-weight="bold" text-anchor="middle">Real-World ML Pipeline Architectures</text>
+  
+  <!-- Netflix -->
+  <g transform="translate(30, 70)">
+    <rect x="0" y="0" width="410" height="260" rx="12" fill="#1E293B" stroke="#E50914" stroke-width="2" filter="url(#caseShadow)"/>
+    <rect x="0" y="0" width="410" height="50" rx="12" fill="url(#netflixGrad)"/>
+    <text x="205" y="32" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold" text-anchor="middle">NETFLIX</text>
+    
+    <!-- Architecture -->
+    <g transform="translate(20, 65)">
+      <rect x="0" y="0" width="80" height="35" rx="4" fill="#334155"/>
+      <text x="40" y="22" fill="#F8FAFC" font-family="system-ui" font-size="9" text-anchor="middle">📺 User Events</text>
+      
+      <path d="M 85 17 L 110 17" stroke="#E50914" stroke-width="2" marker-end="url(#nfArrow)"/>
+      
+      <rect x="115" y="0" width="80" height="35" rx="4" fill="#E50914" opacity="0.3"/>
+      <text x="155" y="22" fill="#FCA5A5" font-family="system-ui" font-size="9" text-anchor="middle">Keystone</text>
+      
+      <path d="M 200 17 L 225 17" stroke="#E50914" stroke-width="2"/>
+      
+      <rect x="230" y="0" width="70" height="35" rx="4" fill="#E50914" opacity="0.5"/>
+      <text x="265" y="22" fill="#FCA5A5" font-family="system-ui" font-size="9" text-anchor="middle">Spark</text>
+      
+      <path d="M 305 17 L 330 17" stroke="#E50914" stroke-width="2"/>
+      
+      <rect x="335" y="0" width="55" height="35" rx="4" fill="#E50914"/>
+      <text x="362" y="22" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Metacat</text>
+      
+      <defs>
+        <marker id="nfArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#E50914"/>
+        </marker>
+      </defs>
+    </g>
+    
+    <!-- Key Points -->
+    <text x="20" y="125" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="bold">Key Technologies:</text>
+    <text x="20" y="145" fill="#FCA5A5" font-family="system-ui" font-size="9">• Keystone (Real-time streaming)</text>
+    <text x="20" y="161" fill="#FCA5A5" font-family="system-ui" font-size="9">• Metacat (Feature Store)</text>
+    <text x="20" y="177" fill="#FCA5A5" font-family="system-ui" font-size="9">• Spark (Batch processing)</text>
+    
+    <text x="200" y="145" fill="#6EE7B7" font-family="system-ui" font-size="9">• Billions of events/day</text>
+    <text x="200" y="161" fill="#6EE7B7" font-family="system-ui" font-size="9">• Personalization for 200M users</text>
+    <text x="200" y="177" fill="#6EE7B7" font-family="system-ui" font-size="9">• A/B testing platform</text>
+    
+    <!-- Lesson -->
+    <rect x="15" y="195" width="380" height="50" rx="6" fill="#334155"/>
+    <text x="205" y="215" fill="#F59E0B" font-family="system-ui" font-size="10" font-weight="bold" text-anchor="middle">💡 Key Lesson</text>
+    <text x="205" y="235" fill="#94A3B8" font-family="system-ui" font-size="9" text-anchor="middle">Hybrid batch + streaming for comprehensive personalization</text>
+  </g>
+  
+  <!-- Uber -->
+  <g transform="translate(460, 70)">
+    <rect x="0" y="0" width="410" height="260" rx="12" fill="#1E293B" stroke="#276EF1" stroke-width="2" filter="url(#caseShadow)"/>
+    <rect x="0" y="0" width="410" height="50" rx="12" fill="url(#uberGrad)"/>
+    <text x="205" y="32" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold" text-anchor="middle">UBER (Michelangelo)</text>
+    
+    <!-- Architecture -->
+    <g transform="translate(20, 65)">
+      <rect x="0" y="0" width="80" height="35" rx="4" fill="#334155"/>
+      <text x="40" y="22" fill="#F8FAFC" font-family="system-ui" font-size="9" text-anchor="middle">🚗 Ride Data</text>
+      
+      <rect x="95" y="0" width="70" height="35" rx="4" fill="#276EF1" opacity="0.5"/>
+      <text x="130" y="22" fill="#93C5FD" font-family="system-ui" font-size="9" text-anchor="middle">Kafka</text>
+      
+      <rect x="180" y="0" width="70" height="35" rx="4" fill="#276EF1" opacity="0.7"/>
+      <text x="215" y="22" fill="#93C5FD" font-family="system-ui" font-size="9" text-anchor="middle">Spark</text>
+      
+      <rect x="265" y="0" width="55" height="35" rx="4" fill="#276EF1"/>
+      <text x="292" y="22" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Palette</text>
+      
+      <rect x="335" y="0" width="55" height="35" rx="4" fill="#276EF1"/>
+      <text x="362" y="22" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">ML</text>
+      
+      <path d="M 80 17 L 90 17" stroke="#276EF1" stroke-width="2"/>
+      <path d="M 165 17 L 175 17" stroke="#276EF1" stroke-width="2"/>
+      <path d="M 250 17 L 260 17" stroke="#276EF1" stroke-width="2"/>
+      <path d="M 320 17 L 330 17" stroke="#276EF1" stroke-width="2"/>
+    </g>
+    
+    <!-- Key Points -->
+    <text x="20" y="125" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="bold">Key Technologies:</text>
+    <text x="20" y="145" fill="#93C5FD" font-family="system-ui" font-size="9">• Palette (Feature Store)</text>
+    <text x="20" y="161" fill="#93C5FD" font-family="system-ui" font-size="9">• Cassandra (Online serving)</text>
+    <text x="20" y="177" fill="#93C5FD" font-family="system-ui" font-size="9">• Unified training/serving</text>
+    
+    <text x="200" y="145" fill="#6EE7B7" font-family="system-ui" font-size="9">• Millions of predictions/sec</text>
+    <text x="200" y="161" fill="#6EE7B7" font-family="system-ui" font-size="9">• ETA, Pricing, Fraud</text>
+    <text x="200" y="177" fill="#6EE7B7" font-family="system-ui" font-size="9">• Low latency serving</text>
+    
+    <!-- Lesson -->
+    <rect x="15" y="195" width="380" height="50" rx="6" fill="#334155"/>
+    <text x="205" y="215" fill="#F59E0B" font-family="system-ui" font-size="10" font-weight="bold" text-anchor="middle">💡 Key Lesson</text>
+    <text x="205" y="235" fill="#94A3B8" font-family="system-ui" font-size="9" text-anchor="middle">Unified platform for training and serving eliminates skew</text>
+  </g>
+  
+  <!-- Spotify -->
+  <g transform="translate(30, 350)">
+    <rect x="0" y="0" width="410" height="260" rx="12" fill="#1E293B" stroke="#1DB954" stroke-width="2" filter="url(#caseShadow)"/>
+    <rect x="0" y="0" width="410" height="50" rx="12" fill="url(#spotifyGrad)"/>
+    <text x="205" y="32" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold" text-anchor="middle">SPOTIFY</text>
+    
+    <!-- Architecture -->
+    <g transform="translate(20, 65)">
+      <rect x="0" y="0" width="70" height="35" rx="4" fill="#334155"/>
+      <text x="35" y="22" fill="#F8FAFC" font-family="system-ui" font-size="9" text-anchor="middle">🎵 Audio</text>
+      
+      <rect x="85" y="0" width="70" height="35" rx="4" fill="#1DB954" opacity="0.4"/>
+      <text x="120" y="22" fill="#6EE7B7" font-family="system-ui" font-size="9" text-anchor="middle">Analysis</text>
+      
+      <rect x="170" y="0" width="70" height="35" rx="4" fill="#1DB954" opacity="0.6"/>
+      <text x="205" y="22" fill="#6EE7B7" font-family="system-ui" font-size="9" text-anchor="middle">BigQuery</text>
+      
+      <rect x="255" y="0" width="60" height="35" rx="4" fill="#1DB954" opacity="0.8"/>
+      <text x="285" y="22" fill="#6EE7B7" font-family="system-ui" font-size="9" text-anchor="middle">Dataflow</text>
+      
+      <rect x="330" y="0" width="60" height="35" rx="4" fill="#1DB954"/>
+      <text x="360" y="22" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Bigtable</text>
+    </g>
+    
+    <!-- Key Points -->
+    <text x="20" y="125" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="bold">Key Technologies:</text>
+    <text x="20" y="145" fill="#6EE7B7" font-family="system-ui" font-size="9">• Audio feature extraction</text>
+    <text x="20" y="161" fill="#6EE7B7" font-family="system-ui" font-size="9">• GCP (BigQuery, Dataflow)</text>
+    <text x="20" y="177" fill="#6EE7B7" font-family="system-ui" font-size="9">• Content + Collaborative</text>
+    
+    <text x="200" y="145" fill="#93C5FD" font-family="system-ui" font-size="9">• 100M+ tracks analyzed</text>
+    <text x="200" y="161" fill="#93C5FD" font-family="system-ui" font-size="9">• Discover Weekly</text>
+    <text x="200" y="177" fill="#93C5FD" font-family="system-ui" font-size="9">• Context-aware recs</text>
+    
+    <!-- Lesson -->
+    <rect x="15" y="195" width="380" height="50" rx="6" fill="#334155"/>
+    <text x="205" y="215" fill="#F59E0B" font-family="system-ui" font-size="10" font-weight="bold" text-anchor="middle">💡 Key Lesson</text>
+    <text x="205" y="235" fill="#94A3B8" font-family="system-ui" font-size="9" text-anchor="middle">Combine content features (audio) with behavioral signals</text>
+  </g>
+  
+  <!-- DoorDash -->
+  <g transform="translate(460, 350)">
+    <rect x="0" y="0" width="410" height="260" rx="12" fill="#1E293B" stroke="#FF3008" stroke-width="2" filter="url(#caseShadow)"/>
+    <rect x="0" y="0" width="410" height="50" rx="12" fill="url(#doordashGrad)"/>
+    <text x="205" y="32" fill="#f8fafc" font-family="system-ui" font-size="18" font-weight="bold" text-anchor="middle">DOORDASH</text>
+    
+    <!-- Architecture -->
+    <g transform="translate(20, 65)">
+      <rect x="0" y="0" width="70" height="35" rx="4" fill="#334155"/>
+      <text x="35" y="22" fill="#F8FAFC" font-family="system-ui" font-size="9" text-anchor="middle">🍕 Orders</text>
+      
+      <rect x="85" y="0" width="60" height="35" rx="4" fill="#FF3008" opacity="0.4"/>
+      <text x="115" y="22" fill="#FCA5A5" font-family="system-ui" font-size="9" text-anchor="middle">Kafka</text>
+      
+      <rect x="160" y="0" width="60" height="35" rx="4" fill="#FF3008" opacity="0.6"/>
+      <text x="190" y="22" fill="#FCA5A5" font-family="system-ui" font-size="9" text-anchor="middle">Flink</text>
+      
+      <rect x="235" y="0" width="60" height="35" rx="4" fill="#FF3008" opacity="0.8"/>
+      <text x="265" y="22" fill="#FCA5A5" font-family="system-ui" font-size="9" text-anchor="middle">Feast</text>
+      
+      <rect x="310" y="0" width="80" height="35" rx="4" fill="#FF3008"/>
+      <text x="350" y="22" fill="#f8fafc" font-family="system-ui" font-size="9" text-anchor="middle">Prediction</text>
+    </g>
+    
+    <!-- Key Points -->
+    <text x="20" y="125" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="bold">Key Technologies:</text>
+    <text x="20" y="145" fill="#FCA5A5" font-family="system-ui" font-size="9">• Feast (Feature Store)</text>
+    <text x="20" y="161" fill="#FCA5A5" font-family="system-ui" font-size="9">• Flink (Real-time features)</text>
+    <text x="20" y="177" fill="#FCA5A5" font-family="system-ui" font-size="9">• Multi-entity features</text>
+    
+    <text x="200" y="145" fill="#93C5FD" font-family="system-ui" font-size="9">• Delivery time prediction</text>
+    <text x="200" y="161" fill="#93C5FD" font-family="system-ui" font-size="9">• Restaurant, Dasher, Zone</text>
+    <text x="200" y="177" fill="#93C5FD" font-family="system-ui" font-size="9">• Real-time queue depth</text>
+    
+    <!-- Lesson -->
+    <rect x="15" y="195" width="380" height="50" rx="6" fill="#334155"/>
+    <text x="205" y="215" fill="#F59E0B" font-family="system-ui" font-size="10" font-weight="bold" text-anchor="middle">💡 Key Lesson</text>
+    <text x="205" y="235" fill="#94A3B8" font-family="system-ui" font-size="9" text-anchor="middle">Multi-entity features (restaurant + driver + zone) improve accuracy</text>
+  </g>
+</svg>
+

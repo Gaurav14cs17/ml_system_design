@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <!-- Background -->
+  <rect width="850" height="520" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">MORPHOLOGICAL OPERATIONS</text>
+  <text x="425" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Basic Operations for Binary Image Processing</text>
+  
+  <!-- Erosion -->
+  <g transform="translate(30, 75)">
+    <rect width="380" height="180" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f87171">EROSION</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">(Shrinks white regions)</text>
+    
+    <!-- Before -->
+    <g transform="translate(30, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Original</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="40" ry="30" fill="#f87171"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 145 95 L 175 95" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="175,90 190,95 175,100" fill="#fbbf24"/>
+    
+    <!-- After -->
+    <g transform="translate(200, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Eroded</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="25" ry="18" fill="#f87171"/>
+    </g>
+    
+    <text x="30" y="155" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">• Removes small objects</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">• Separates touching objects</text>
+  </g>
+  
+  <!-- Dilation -->
+  <g transform="translate(440, 75)">
+    <rect width="380" height="180" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4ade80">DILATION</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">(Expands white regions)</text>
+    
+    <!-- Before -->
+    <g transform="translate(30, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Original</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="25" ry="18" fill="#4ade80"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 145 95 L 175 95" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="175,90 190,95 175,100" fill="#fbbf24"/>
+    
+    <!-- After -->
+    <g transform="translate(200, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Dilated</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="40" ry="30" fill="#4ade80"/>
+    </g>
+    
+    <text x="30" y="155" font-family="Arial, sans-serif" font-size="10" fill="#86efac">• Fills small holes</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="10" fill="#86efac">• Connects nearby objects</text>
+  </g>
+  
+  <!-- Opening -->
+  <g transform="translate(30, 275)">
+    <rect width="380" height="210" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">OPENING</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">(Erosion → Dilation)</text>
+    
+    <!-- Before with noise -->
+    <g transform="translate(30, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Noisy Input</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="35" ry="25" fill="#60a5fa"/>
+      <!-- Noise dots -->
+      <circle cx="85" cy="20" r="5" fill="#60a5fa"/>
+      <circle cx="15" cy="60" r="4" fill="#60a5fa"/>
+      <circle cx="80" cy="65" r="3" fill="#60a5fa"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 145 95 L 175 95" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="175,90 190,95 175,100" fill="#fbbf24"/>
+    
+    <!-- After - clean -->
+    <g transform="translate(200, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">After Opening</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="35" ry="25" fill="#60a5fa"/>
+    </g>
+    
+    <text x="30" y="155" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">• Removes small bright spots (noise)</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">• Smooths object boundaries</text>
+    <text x="30" y="185" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">• Preserves overall shape</text>
+  </g>
+  
+  <!-- Closing -->
+  <g transform="translate(440, 275)">
+    <rect width="380" height="210" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">CLOSING</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">(Dilation → Erosion)</text>
+    
+    <!-- Before with holes -->
+    <g transform="translate(30, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Holey Input</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="35" ry="25" fill="#fbbf24"/>
+      <!-- Holes -->
+      <circle cx="40" cy="35" r="6" fill="#1e293b"/>
+      <circle cx="60" cy="45" r="5" fill="#1e293b"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 145 95 L 175 95" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="175,90 190,95 175,100" fill="#fbbf24"/>
+    
+    <!-- After - filled -->
+    <g transform="translate(200, 55)">
+      <text x="50" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">After Closing</text>
+      <rect width="100" height="80" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="50" cy="40" rx="35" ry="25" fill="#fbbf24"/>
+    </g>
+    
+    <text x="30" y="155" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">• Fills small dark holes</text>
+    <text x="30" y="170" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">• Connects narrow gaps</text>
+    <text x="30" y="185" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">• Preserves overall shape</text>
+  </g>
+</svg>

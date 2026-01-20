@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="segGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Semantic Segmentation</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Pixel-wise Classification</text>
+  
+  <!-- Input Image -->
+  <g transform="translate(50, 90)">
+    <text x="80" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">Input Image</text>
+    <rect x="0" y="0" width="160" height="120" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Scene elements -->
+    <rect x="10" y="80" width="140" height="30" rx="2" fill="#6b7280"/>
+    <text x="80" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1f2937">Road</text>
+    
+    <rect x="60" y="30" width="40" height="45" rx="2" fill="#ef4444"/>
+    <text x="80" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">Car</text>
+    
+    <circle cx="130" cy="25" r="15" fill="#fbbf24"/>
+    
+    <rect x="15" y="40" width="30" height="35" rx="1" fill="#22c55e"/>
+    <text x="30" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">Tree</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(230, 140)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#f8fafc" stroke-width="3"/>
+    <polygon points="60,-8 80,0 60,8" fill="#f8fafc"/>
+    <text x="40" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">CNN</text>
+  </g>
+  
+  <!-- Segmentation Output -->
+  <g transform="translate(330, 90)">
+    <text x="80" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a78bfa">Segmentation Map</text>
+    <rect x="0" y="0" width="160" height="120" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Segmented regions (colored by class) -->
+    <rect x="10" y="80" width="140" height="30" rx="2" fill="#6366f1"/>
+    <rect x="60" y="30" width="40" height="45" rx="2" fill="#f43f5e"/>
+    <circle cx="130" cy="25" r="15" fill="#fbbf24"/>
+    <rect x="15" y="40" width="30" height="35" rx="1" fill="#10b981"/>
+    <rect x="10" y="10" width="100" height="25" fill="#0ea5e9"/>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(530, 90)">
+    <text x="100" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Class Legend</text>
+    <rect x="0" y="0" width="200" height="130" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    
+    <rect x="15" y="15" width="20" height="15" rx="2" fill="#0ea5e9"/>
+    <text x="45" y="27" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0">Sky</text>
+    
+    <rect x="15" y="40" width="20" height="15" rx="2" fill="#6366f1"/>
+    <text x="45" y="52" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0">Road</text>
+    
+    <rect x="15" y="65" width="20" height="15" rx="2" fill="#f43f5e"/>
+    <text x="45" y="77" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0">Vehicle</text>
+    
+    <rect x="15" y="90" width="20" height="15" rx="2" fill="#10b981"/>
+    <text x="45" y="102" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0">Vegetation</text>
+    
+    <rect x="110" y="15" width="20" height="15" rx="2" fill="#fbbf24"/>
+    <text x="140" y="27" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0">Sun</text>
+  </g>
+  
+  <!-- Key Concept -->
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="700" height="110" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="350" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c4b5fd">Key Concept</text>
+    
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0">• Each pixel is assigned a class label (sky, road, car, etc.)</text>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0">• Output shape: H × W × num_classes (one-hot) or H × W (class indices)</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0">• Different instances of same class have same color (unlike instance segmentation)</text>
+  </g>
+</svg>

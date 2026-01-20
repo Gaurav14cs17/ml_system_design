@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450">
+  <defs>
+    <linearGradient id="featGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="200" y="20" width="350" height="50" rx="12" fill="url(#featGrad)"/>
+    <text x="375" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚙️ Feature Categories for Ranking</text>
+  </g>
+  
+  <!-- Query Features -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="95" width="210" height="160" rx="12" fill="#0f172a"/>
+    <rect x="40" y="95" width="210" height="40" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="145" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🔍 Query Features</text>
+    <text x="55" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Query length (tokens)</text>
+    <text x="55" y="173" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Query embedding (768-d)</text>
+    <text x="55" y="191" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Intent classification</text>
+    <text x="55" y="209" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Entity types present</text>
+    <text x="55" y="227" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Historical CTR</text>
+    <text x="55" y="245" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Query frequency tier</text>
+  </g>
+  
+  <!-- Document Features -->
+  <g filter="url(#shadow)">
+    <rect x="270" y="95" width="210" height="160" rx="12" fill="#0f172a"/>
+    <rect x="270" y="95" width="210" height="40" rx="12 12 0 0" fill="#10b981"/>
+    <text x="375" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📄 Document Features</text>
+    <text x="285" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Title/body embedding</text>
+    <text x="285" y="173" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• PageRank score</text>
+    <text x="285" y="191" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Document age</text>
+    <text x="285" y="209" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Click popularity</text>
+    <text x="285" y="227" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Quality score</text>
+    <text x="285" y="245" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Content length</text>
+  </g>
+  
+  <!-- Cross Features -->
+  <g filter="url(#shadow)">
+    <rect x="500" y="95" width="210" height="160" rx="12" fill="#0f172a"/>
+    <rect x="500" y="95" width="210" height="40" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="605" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🔀 Cross Features</text>
+    <text x="515" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Query-doc similarity</text>
+    <text x="515" y="173" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• BM25 score</text>
+    <text x="515" y="191" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• TF-IDF cosine</text>
+    <text x="515" y="209" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Semantic similarity</text>
+    <text x="515" y="227" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Title/body matches</text>
+    <text x="515" y="245" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Entity overlap</text>
+  </g>
+  
+  <!-- User Features -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="280" width="210" height="150" rx="12" fill="#0f172a"/>
+    <rect x="120" y="280" width="210" height="40" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="225" y="307" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">👤 User Features</text>
+    <text x="135" y="340" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• User embedding (128-d)</text>
+    <text x="135" y="358" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Click history with doc</text>
+    <text x="135" y="376" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Session context</text>
+    <text x="135" y="394" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Demographics</text>
+    <text x="135" y="412" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Device/location</text>
+  </g>
+  
+  <!-- Context Features -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="280" width="210" height="150" rx="12" fill="#0f172a"/>
+    <rect x="420" y="280" width="210" height="40" rx="12 12 0 0" fill="#ef4444"/>
+    <text x="525" y="307" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🌐 Context Features</text>
+    <text x="435" y="340" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Time of day</text>
+    <text x="435" y="358" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Day of week</text>
+    <text x="435" y="376" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Seasonality flags</text>
+    <text x="435" y="394" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Position in session</text>
+    <text x="435" y="412" font-family="Segoe UI, sans-serif" font-size="10" fill="#475569">• Previous queries</text>
+  </g>
+</svg>
+
+
+

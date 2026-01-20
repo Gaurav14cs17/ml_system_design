@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    <linearGradient id="card1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="card2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="card3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="card4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="card5Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="card6Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Header -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="15" width="450" height="50" rx="12" fill="url(#headerGrad)"/>
+    <text x="400" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">⚠️ Feature Engineering Challenges</text>
+  </g>
+  
+  <!-- Row 1 -->
+  <!-- Card 1: Duplication -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="85" width="235" height="130" rx="12" fill="#0f172a"/>
+    <rect x="30" y="85" width="235" height="40" rx="12 12 0 0" fill="url(#card1Grad)"/>
+    <text x="55" y="112" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">1. Duplication</text>
+    <text x="220" y="112" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">📋</text>
+    
+    <text x="45" y="150" font-family="Courier New, monospace" font-size="10" fill="#64748b">Team A: user_age = 2024-dob</text>
+    <text x="45" y="168" font-family="Courier New, monospace" font-size="10" fill="#64748b">Team B: user_age = 2024-dob</text>
+    <text x="45" y="186" font-family="Courier New, monospace" font-size="10" fill="#64748b">Team C: user_age = 2024-dob</text>
+    <text x="147" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#d97706">Same work 3x! 😤</text>
+  </g>
+  
+  <!-- Card 2: Inconsistency -->
+  <g filter="url(#shadow)">
+    <rect x="282" y="85" width="235" height="130" rx="12" fill="#0f172a"/>
+    <rect x="282" y="85" width="235" height="40" rx="12 12 0 0" fill="url(#card2Grad)"/>
+    <text x="307" y="112" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">2. Inconsistency</text>
+    <text x="472" y="112" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">🔀</text>
+    
+    <text x="297" y="150" font-family="Courier New, monospace" font-size="10" fill="#64748b">Training: AVG(amount)/30</text>
+    <text x="297" y="168" font-family="Courier New, monospace" font-size="10" fill="#64748b">Serving:  SUM(amount)/30</text>
+    <rect x="297" y="180" width="200" height="25" rx="4" fill="#450a0a"/>
+    <text x="397" y="197" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#dc2626">⚡ Training-Serving Skew!</text>
+  </g>
+  
+  <!-- Card 3: Discovery -->
+  <g filter="url(#shadow)">
+    <rect x="534" y="85" width="235" height="130" rx="12" fill="#0f172a"/>
+    <rect x="534" y="85" width="235" height="40" rx="12 12 0 0" fill="url(#card3Grad)"/>
+    <text x="559" y="112" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">3. Discovery</text>
+    <text x="724" y="112" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">🔍</text>
+    
+    <text x="549" y="150" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">"Does user_lifetime_value</text>
+    <text x="549" y="168" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">feature already exist?"</text>
+    <rect x="549" y="180" width="200" height="25" rx="4" fill="#ede9fe"/>
+    <text x="649" y="197" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#7c3aed">🤷 No central catalog</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <!-- Card 4: Freshness -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="235" width="235" height="130" rx="12" fill="#0f172a"/>
+    <rect x="30" y="235" width="235" height="40" rx="12 12 0 0" fill="url(#card4Grad)"/>
+    <text x="55" y="262" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">4. Freshness</text>
+    <text x="220" y="262" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">⏰</text>
+    
+    <text x="45" y="300" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Feature computed yesterday</text>
+    <text x="45" y="318" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Serving stale data today</text>
+    <rect x="45" y="330" width="200" height="25" rx="4" fill="#dbeafe"/>
+    <text x="145" y="347" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">No freshness guarantees</text>
+  </g>
+  
+  <!-- Card 5: Governance -->
+  <g filter="url(#shadow)">
+    <rect x="282" y="235" width="235" height="130" rx="12" fill="#0f172a"/>
+    <rect x="282" y="235" width="235" height="40" rx="12 12 0 0" fill="url(#card5Grad)"/>
+    <text x="307" y="262" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">5. Governance</text>
+    <text x="472" y="262" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">📜</text>
+    
+    <text x="297" y="300" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Who owns this feature?</text>
+    <text x="297" y="318" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Is it GDPR compliant?</text>
+    <rect x="297" y="330" width="200" height="25" rx="4" fill="#d1fae5"/>
+    <text x="397" y="347" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#059669">🤷 No clear answers</text>
+  </g>
+  
+  <!-- Card 6: Latency -->
+  <g filter="url(#shadow)">
+    <rect x="534" y="235" width="235" height="130" rx="12" fill="#0f172a"/>
+    <rect x="534" y="235" width="235" height="40" rx="12 12 0 0" fill="url(#card6Grad)"/>
+    <text x="559" y="262" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">6. Serving Latency</text>
+    <text x="724" y="262" font-family="Segoe UI, sans-serif" font-size="16" fill="#f8fafc">⚡</text>
+    
+    <text x="549" y="300" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Need features in andlt;10ms</text>
+    <text x="549" y="318" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Current: 500ms from DB</text>
+    <rect x="549" y="330" width="200" height="25" rx="4" fill="#fce7f3"/>
+    <text x="649" y="347" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#db2777">50x too slow! 🐢</text>
+  </g>
+  
+  <!-- Solution hint -->
+  <rect x="200" y="395" width="400" height="60" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="420" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#166534">💡 Solution: Feature Store</text>
+  <text x="400" y="440" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#15803d">Centralized feature management infrastructure</text>
+</svg>

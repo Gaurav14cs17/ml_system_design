@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#archBg)"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Production Recommendation System Architecture</text>
+  
+  <!-- User Request -->
+  <g transform="translate(420, 55)">
+    <rect width="160" height="45" rx="8" fill="#238636" opacity="0.9"/>
+    <text x="80" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">User Request</text>
+    <text x="80" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">user_id, context</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M500 100 L500 125" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  
+  <!-- API Gateway -->
+  <g transform="translate(350, 130)">
+    <rect width="300" height="40" rx="8" fill="#1f6feb" opacity="0.8"/>
+    <text x="150" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">API Gateway / Load Balancer</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M500 170 L500 195" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Recommendation Service Box -->
+  <g transform="translate(100, 200)">
+    <rect width="800" height="200" rx="15" fill="#21262d" stroke="#30363d" stroke-width="2"/>
+    <text x="400" y="25" text-anchor="middle" fill="#58a6ff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Recommendation Service</text>
+    
+    <!-- Candidate Generation -->
+    <g transform="translate(30, 45)">
+      <rect width="160" height="130" rx="10" fill="#238636" opacity="0.8"/>
+      <text x="80" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Candidate Gen</text>
+      <rect x="15" y="40" width="130" height="75" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="80" y="58" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• ANN Search (FAISS)</text>
+      <text x="80" y="73" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• Similar Items</text>
+      <text x="80" y="88" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• Popular Items</text>
+      <text x="80" y="103" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">→ 500 candidates</text>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M205 110 L235 110" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+    
+    <!-- Ranking -->
+    <g transform="translate(250, 45)">
+      <rect width="160" height="130" rx="10" fill="#a371f7" opacity="0.8"/>
+      <text x="80" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Ranking Model</text>
+      <rect x="15" y="40" width="130" height="75" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="80" y="58" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• L1: Fast scoring</text>
+      <text x="80" y="73" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• L2: Deep ranking</text>
+      <text x="80" y="88" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• ML Model (DNN)</text>
+      <text x="80" y="103" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">→ 50 ranked</text>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M425 110 L455 110" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+    
+    <!-- Re-ranking -->
+    <g transform="translate(470, 45)">
+      <rect width="160" height="130" rx="10" fill="#f0883e" opacity="0.8"/>
+      <text x="80" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Re-ranking</text>
+      <rect x="15" y="40" width="130" height="75" rx="5" fill="#0f172a" opacity="0.9"/>
+      <text x="80" y="58" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• Business rules</text>
+      <text x="80" y="73" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• Diversity (MMR)</text>
+      <text x="80" y="88" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">• Freshness boost</text>
+      <text x="80" y="103" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">→ 10 final</text>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M645 110 L675 110" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+    
+    <!-- Response -->
+    <g transform="translate(690, 45)">
+      <rect width="90" height="130" rx="10" fill="#3fb950" opacity="0.8"/>
+      <text x="45" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Response</text>
+      <text x="45" y="70" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24">📤</text>
+      <text x="45" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">JSON</text>
+    </g>
+  </g>
+  
+  <!-- Data Layer -->
+  <g transform="translate(100, 430)">
+    <rect width="800" height="130" rx="15" fill="#21262d" stroke="#30363d" stroke-width="2"/>
+    <text x="400" y="25" text-anchor="middle" fill="#f0883e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Data Layer</text>
+    
+    <!-- Feature Store -->
+    <g transform="translate(30, 40)">
+      <rect width="150" height="70" rx="8" fill="#da3633" opacity="0.8"/>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Feature Store</text>
+      <text x="75" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Redis + DynamoDB</text>
+      <text x="75" y="60" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">&amp;lt; 5ms lookup</text>
+    </g>
+    
+    <!-- Model Store -->
+    <g transform="translate(210, 40)">
+      <rect width="150" height="70" rx="8" fill="#8957e5" opacity="0.8"/>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Model Store</text>
+      <text x="75" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">S3 + MLflow</text>
+      <text x="75" y="60" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Versioned models</text>
+    </g>
+    
+    <!-- Cache -->
+    <g transform="translate(390, 40)">
+      <rect width="150" height="70" rx="8" fill="#1f6feb" opacity="0.8"/>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Cache Layer</text>
+      <text x="75" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Redis Cluster</text>
+      <text x="75" y="60" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Precomputed recs</text>
+    </g>
+    
+    <!-- ANN Index -->
+    <g transform="translate(570, 40)">
+      <rect width="150" height="70" rx="8" fill="#238636" opacity="0.8"/>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">ANN Index</text>
+      <text x="75" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">FAISS / ScaNN</text>
+      <text x="75" y="60" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">&amp;lt; 10ms search</text>
+    </g>
+  </g>
+  
+  <!-- Connection lines -->
+  <path d="M200 400 L200 430" stroke="#58a6ff" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M400 400 L400 430" stroke="#58a6ff" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M600 400 L600 430" stroke="#58a6ff" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M750 400 L750 430" stroke="#58a6ff" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Offline Pipeline -->
+  <g transform="translate(100, 590)">
+    <rect width="800" height="80" rx="15" fill="#21262d" stroke="#30363d" stroke-width="2"/>
+    <text x="400" y="25" text-anchor="middle" fill="#3fb950" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Offline Pipeline (Batch Processing)</text>
+    
+    <text x="100" y="55" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📊 Data Lake (S3)</text>
+    <text x="280" y="55" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">⚙️ Spark / Airflow</text>
+    <text x="460" y="55" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">🧠 Model Training</text>
+    <text x="640" y="55" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">📈 Embeddings Update</text>
+  </g>
+  
+  <!-- Latency Box -->
+  <g transform="translate(920, 200)">
+    <rect width="70" height="160" rx="8" fill="#388bfd" opacity="0.3"/>
+    <text x="35" y="20" text-anchor="middle" fill="#58a6ff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Latency</text>
+    <text x="35" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Total:</text>
+    <text x="35" y="60" text-anchor="middle" fill="#3fb950" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&amp;lt;100ms</text>
+    <line x1="10" y1="75" x2="60" y2="75" stroke="#30363d" stroke-width="1"/>
+    <text x="35" y="95" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="8">Cand: 15ms</text>
+    <text x="35" y="110" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="8">Rank: 30ms</text>
+    <text x="35" y="125" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="8">Other: 5ms</text>
+  </g>
+</svg>
+

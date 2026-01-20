@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="monitorBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="380" fill="url(#monitorBg)"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">📊 Monitoring Architecture</text>
+  <text x="400" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Four-Layer Observability Stack</text>
+  
+  <!-- Layer 1: Business -->
+  <g transform="translate(50, 75)">
+    <rect width="700" height="65" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <rect width="150" height="65" rx="10 0 0 10" fill="#14532d"/>
+    <text x="75" y="38" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="12" font-weight="bold">💼 Business</text>
+    <text x="180" y="28" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• Harm prevented rate</text>
+    <text x="360" y="28" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• Appeals volume</text>
+    <text x="520" y="28" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• User reports</text>
+    <text x="180" y="50" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• False positive impact</text>
+    <text x="360" y="50" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• Review turnaround</text>
+    <text x="520" y="50" fill="#86efac" font-family="Arial, sans-serif" font-size="10">• Content velocity</text>
+  </g>
+  
+  <!-- Layer 2: Model -->
+  <g transform="translate(50, 150)">
+    <rect width="700" height="65" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="150" height="65" rx="10 0 0 10" fill="#4c1d95"/>
+    <text x="75" y="38" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧠 Model</text>
+    <text x="180" y="28" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Accuracy / F1 score</text>
+    <text x="360" y="28" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Data drift detection</text>
+    <text x="520" y="28" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Prediction distribution</text>
+    <text x="180" y="50" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Confidence calibration</text>
+    <text x="360" y="50" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Feature stability</text>
+    <text x="520" y="50" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">• Model staleness</text>
+  </g>
+  
+  <!-- Layer 3: Application -->
+  <g transform="translate(50, 225)">
+    <rect width="700" height="65" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <rect width="150" height="65" rx="10 0 0 10" fill="#7c2d12"/>
+    <text x="75" y="38" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚙️ Application</text>
+    <text x="180" y="28" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• P50/P95/P99 latency</text>
+    <text x="360" y="28" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• Throughput (QPS)</text>
+    <text x="520" y="28" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• Error rates</text>
+    <text x="180" y="50" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• Queue depth</text>
+    <text x="360" y="50" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• Timeout rates</text>
+    <text x="520" y="50" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• Cache hit ratio</text>
+  </g>
+  
+  <!-- Layer 4: Infrastructure -->
+  <g transform="translate(50, 300)">
+    <rect width="700" height="65" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="150" height="65" rx="10 0 0 10" fill="#1e3a8a"/>
+    <text x="75" y="38" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🖥️ Infrastructure</text>
+    <text x="180" y="28" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• CPU utilization</text>
+    <text x="360" y="28" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• GPU memory</text>
+    <text x="520" y="28" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Disk I/O</text>
+    <text x="180" y="50" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Memory pressure</text>
+    <text x="360" y="50" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Network bandwidth</text>
+    <text x="520" y="50" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• Pod health</text>
+  </g>
+</svg>

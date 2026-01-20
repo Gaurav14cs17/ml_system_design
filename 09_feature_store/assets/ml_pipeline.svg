@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1b26;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24283b;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7aa2f7"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="url(#bgGrad6)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#c0caf5" font-family="Arial, sans-serif" font-size="22" font-weight="bold">ML Pipeline with Feature Store</text>
+  
+  <!-- Data Sources -->
+  <rect x="30" y="80" width="120" height="90" rx="10" fill="#1f2335" stroke="#7aa2f7" stroke-width="2"/>
+  <text x="90" y="110" text-anchor="middle" fill="#7aa2f7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📊 Data</text>
+  <text x="90" y="130" text-anchor="middle" fill="#7aa2f7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Sources</text>
+  <text x="90" y="155" text-anchor="middle" fill="#565f89" font-family="Arial, sans-serif" font-size="10">DBs, Streams, APIs</text>
+  
+  <!-- Arrow -->
+  <path d="M155 125 L195 125" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Feature Engineering -->
+  <rect x="200" y="80" width="120" height="90" rx="10" fill="#1f2335" stroke="#bb9af7" stroke-width="2"/>
+  <text x="260" y="110" text-anchor="middle" fill="#bb9af7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚙️ Feature</text>
+  <text x="260" y="130" text-anchor="middle" fill="#bb9af7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Engineering</text>
+  <text x="260" y="155" text-anchor="middle" fill="#565f89" font-family="Arial, sans-serif" font-size="10">Transform &amp; Compute</text>
+  
+  <!-- Arrow -->
+  <path d="M325 125 L365 125" stroke="#7aa2f7" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Feature Store (Main) -->
+  <rect x="370" y="60" width="160" height="130" rx="12" fill="#1f2335" stroke="#7dcfff" stroke-width="3"/>
+  <rect x="370" y="60" width="160" height="35" rx="12" fill="#7dcfff"/>
+  <text x="450" y="85" text-anchor="middle" fill="#1a1b26" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🏪 Feature Store</text>
+  <text x="450" y="115" text-anchor="middle" fill="#7dcfff" font-family="Arial, sans-serif" font-size="11">Registry</text>
+  <text x="450" y="135" text-anchor="middle" fill="#7dcfff" font-family="Arial, sans-serif" font-size="11">Online Store</text>
+  <text x="450" y="155" text-anchor="middle" fill="#7dcfff" font-family="Arial, sans-serif" font-size="11">Offline Store</text>
+  <text x="450" y="180" text-anchor="middle" fill="#565f89" font-family="Arial, sans-serif" font-size="9">Single Source of Truth</text>
+  
+  <!-- Training Path -->
+  <path d="M535 100 L590 100 L590 240 L635 240" stroke="#9ece6a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="610" y="170" fill="#9ece6a" font-family="Arial, sans-serif" font-size="10" transform="rotate(90,610,170)">Historical</text>
+  
+  <!-- Model Training -->
+  <rect x="640" y="200" width="120" height="80" rx="10" fill="#1f2335" stroke="#9ece6a" stroke-width="2"/>
+  <text x="700" y="230" text-anchor="middle" fill="#9ece6a" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🎓 Model</text>
+  <text x="700" y="250" text-anchor="middle" fill="#9ece6a" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Training</text>
+  <text x="700" y="270" text-anchor="middle" fill="#565f89" font-family="Arial, sans-serif" font-size="10">Point-in-time data</text>
+  
+  <!-- Model Registry -->
+  <path d="M700 285 L700 310" stroke="#e0af68" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="640" y="315" width="120" height="50" rx="10" fill="#1f2335" stroke="#e0af68" stroke-width="2"/>
+  <text x="700" y="345" text-anchor="middle" fill="#e0af68" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📦 Model Registry</text>
+  
+  <!-- Serving Path -->
+  <path d="M535 140 L590 140 L590 320 L765 320" stroke="#f7768e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="630" y="250" fill="#f7768e" font-family="Arial, sans-serif" font-size="10" transform="rotate(90,630,250)">Real-time</text>
+  
+  <!-- Model Serving -->
+  <rect x="770" y="285" width="110" height="70" rx="10" fill="#1f2335" stroke="#f7768e" stroke-width="2"/>
+  <text x="825" y="315" text-anchor="middle" fill="#f7768e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🚀 Model</text>
+  <text x="825" y="335" text-anchor="middle" fill="#f7768e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Serving</text>
+  
+  <!-- Model Registry to Serving -->
+  <path d="M765 340 L770 340" stroke="#e0af68" stroke-width="2"/>
+  
+  <!-- Application -->
+  <rect x="770" y="80" width="110" height="70" rx="10" fill="#1f2335" stroke="#ff9e64" stroke-width="2"/>
+  <text x="825" y="110" text-anchor="middle" fill="#ff9e64" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📱 App</text>
+  <text x="825" y="130" text-anchor="middle" fill="#565f89" font-family="Arial, sans-serif" font-size="10">End Users</text>
+  
+  <!-- Serving to App -->
+  <path d="M825 280 L825 155" stroke="#f7768e" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Legend -->
+  <rect x="30" y="320" width="200" height="70" rx="8" fill="#1f2335"/>
+  <text x="130" y="340" text-anchor="middle" fill="#c0caf5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Legend</text>
+  <line x1="50" y1="355" x2="80" y2="355" stroke="#9ece6a" stroke-width="2"/>
+  <text x="90" y="360" fill="#9ece6a" font-family="Arial, sans-serif" font-size="10">Training Flow</text>
+  <line x1="50" y1="375" x2="80" y2="375" stroke="#f7768e" stroke-width="2"/>
+  <text x="90" y="380" fill="#f7768e" font-family="Arial, sans-serif" font-size="10">Serving Flow</text>
+</svg>
+

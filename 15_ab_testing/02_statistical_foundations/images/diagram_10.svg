@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='290' viewBox='0 0 524 290'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                    STATISTICAL POWER                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Power = P(Reject H₀ | H₁ is true)                         │
+│        = 1 - β                                              │
+│        = Probability of detecting a TRUE effect             │
+│                                                             │
+│  80% Power means:                                           │
+│  If there really is an effect of the size you specified,    │
+│  you have an 80% chance of detecting it.                    │
+│                                                             │
+│  20% of the time (β), you&#x27;ll miss it (Type II error)       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

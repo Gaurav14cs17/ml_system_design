@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="bgOffline" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="offlineStoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="trainingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="batchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadowOffline" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowOffline" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgOffline)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Offline Serving Purpose</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Historical feature retrieval for model training and batch scoring</text>
+  
+  <!-- Left Section: Data Sources -->
+  <g filter="url(#shadowOffline)">
+    <rect x="40" y="85" width="200" height="250" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="40" y="85" width="200" height="35" rx="12" fill="url(#offlineStoreGrad)"/>
+    <rect x="40" y="108" width="200" height="12" fill="url(#offlineStoreGrad)"/>
+    <text x="140" y="108" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Offline Store</text>
+    
+    <text x="60" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Characteristics:</text>
+    <text x="60" y="165" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Petabytes of historical data</text>
+    <text x="60" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Time-travel capability</text>
+    <text x="60" y="199" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Columnar storage (Parquet)</text>
+    <text x="60" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Complex joins &amp; aggregations</text>
+    
+    <text x="60" y="245" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Technologies:</text>
+    <text x="60" y="265" font-family="monospace" font-size="10" fill="#60a5fa">S3 + Delta Lake</text>
+    <text x="60" y="282" font-family="monospace" font-size="10" fill="#60a5fa">BigQuery / Snowflake</text>
+    <text x="60" y="299" font-family="monospace" font-size="10" fill="#60a5fa">Apache Iceberg</text>
+    
+    <rect x="60" y="310" width="160" height="18" rx="4" fill="#172554"/>
+    <text x="140" y="323" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">Latency: min → hours</text>
+  </g>
+  
+  <!-- Arrow to Training -->
+  <path d="M245 160 L310 160" stroke="#475569" stroke-width="2" marker-end="url(#arrowOffline)"/>
+  <text x="277" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">historical</text>
+  
+  <!-- Arrow to Batch -->
+  <path d="M245 260 L310 260" stroke="#475569" stroke-width="2" marker-end="url(#arrowOffline)"/>
+  <text x="277" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">batch</text>
+  
+  <!-- Center Section: Use Cases -->
+  <g filter="url(#shadowOffline)">
+    <rect x="315" y="100" width="270" height="120" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="315" y="100" width="270" height="35" rx="12" fill="url(#trainingGrad)"/>
+    <rect x="315" y="123" width="270" height="12" fill="url(#trainingGrad)"/>
+    <text x="450" y="123" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🎓 Training Data Generation</text>
+    
+    <text x="335" y="160" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">get_historical_features()</text>
+    <text x="335" y="180" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Point-in-time correct joins</text>
+    <text x="335" y="197" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• No data leakage guarantee</text>
+    <text x="335" y="214" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Reproducible datasets</text>
+  </g>
+  
+  <g filter="url(#shadowOffline)">
+    <rect x="315" y="230" width="270" height="105" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="315" y="230" width="270" height="35" rx="12" fill="url(#batchGrad)"/>
+    <rect x="315" y="253" width="270" height="12" fill="url(#batchGrad)"/>
+    <text x="450" y="253" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📊 Batch Scoring</text>
+    
+    <text x="335" y="290" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Periodic prediction jobs</text>
+    <text x="335" y="307" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Feature backfilling</text>
+    <text x="335" y="324" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">• Analytics &amp; reporting</text>
+  </g>
+  
+  <!-- Right Section: Outputs -->
+  <path d="M590 160 L640 160" stroke="#475569" stroke-width="2" marker-end="url(#arrowOffline)"/>
+  <path d="M590 280 L640 280" stroke="#475569" stroke-width="2" marker-end="url(#arrowOffline)"/>
+  
+  <g filter="url(#shadowOffline)">
+    <rect x="645" y="100" width="215" height="240" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="752" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">📤 Outputs</text>
+    
+    <rect x="665" y="150" width="175" height="55" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="752" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#c4b5fd">Training DataFrame</text>
+    <text x="752" y="195" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">.parquet / .arrow</text>
+    
+    <rect x="665" y="215" width="175" height="55" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="752" y="240" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#c4b5fd">Batch Predictions</text>
+    <text x="752" y="260" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">scores, rankings</text>
+    
+    <rect x="665" y="280" width="175" height="50" rx="6" fill="#2e1065" stroke="#a78bfa" stroke-width="1"/>
+    <text x="752" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#c4b5fd">Feature Backfills</text>
+    <text x="752" y="322" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">historical values</text>
+  </g>
+  
+  <!-- Bottom note -->
+  <rect x="150" y="360" width="600" height="45" rx="10" fill="#334155" filter="url(#shadowOffline)"/>
+  <text x="450" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Key Principle: Offline serving prioritizes</text>
+  <text x="450" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f8fafc">CORRECTNESS over SPEED — Point-in-time joins prevent data leakage</text>
+</svg>

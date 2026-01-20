@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340">
+  <style>
+    .title { font-family: "Inter", Arial, sans-serif; fill: #0b3d91; font-size: 18px; font-weight: 700; }
+    .label { font-family: "Inter", Arial, sans-serif; fill: #0f172a; font-size: 13px; font-weight: 700; }
+    .note { font-family: "Inter", Arial, sans-serif; fill: #475569; font-size: 12px; }
+    .box { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.6; rx: 10; ry: 10; }
+  </style>
+  <rect x="0" y="0" width="1000" height="340" fill="#0f172a"/>
+  <text x="20" y="30" class="title">Production Architecture (Content-Based)</text>
+
+  <!-- Boxes -->
+  <rect x="80" y="80" width="180" height="70" class="box"/>
+  <text x="170" y="110" class="label" text-anchor="middle">Feature Store</text>
+  <text x="170" y="128" class="note" text-anchor="middle">(Redis)</text>
+
+  <rect x="320" y="80" width="180" height="70" class="box"/>
+  <text x="410" y="110" class="label" text-anchor="middle">Profile Store</text>
+  <text x="410" y="128" class="note" text-anchor="middle">(DynamoDB)</text>
+
+  <rect x="560" y="80" width="200" height="70" class="box"/>
+  <text x="660" y="110" class="label" text-anchor="middle">Similarity Index</text>
+  <text x="660" y="128" class="note" text-anchor="middle">(FAISS / ANN)</text>
+
+  <rect x="320" y="200" width="240" height="80" class="box"/>
+  <text x="440" y="235" class="label" text-anchor="middle">Recommendation Service</text>
+  <text x="440" y="253" class="note" text-anchor="middle">&amp;lt; 50ms latency budget</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrow2" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+  <line x1="260" y1="115" x2="320" y2="115" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow2)"/>
+  <line x1="500" y1="115" x2="560" y2="115" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow2)"/>
+  <line x1="410" y1="150" x2="410" y2="200" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow2)"/>
+  <line x1="660" y1="150" x2="560" y2="200" stroke="#0ea5e9" stroke-width="2.5" marker-end="url(#arrow2)"/>
+
+  <text x="170" y="165" class="note" text-anchor="middle">item embeddings</text>
+  <text x="410" y="165" class="note" text-anchor="middle">user profiles</text>
+  <text x="660" y="165" class="note" text-anchor="middle">top-K search</text>
+
+  <text x="620" y="280" class="note">Request flow: fetch user profile → search nearest item vectors → return ranked list.</text>
+</svg>
+
+

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="550" fill="url(#bgGrad7)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Feature Store Architecture Layers</text>
+  
+  <!-- Layer 1: Control Plane -->
+  <rect x="150" y="70" width="600" height="80" rx="12" fill="#1e3a5f" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="150" y="70" width="600" height="30" rx="12" fill="#38bdf8"/>
+  <text x="450" y="92" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CONTROL PLANE</text>
+  
+  <rect x="180" y="110" width="160" height="30" rx="6" fill="#0ea5e9"/>
+  <text x="260" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Feature Registry</text>
+  
+  <rect x="370" y="110" width="160" height="30" rx="6" fill="#0ea5e9"/>
+  <text x="450" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Metadata Store</text>
+  
+  <rect x="560" y="110" width="160" height="30" rx="6" fill="#0ea5e9"/>
+  <text x="640" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Access Control</text>
+  
+  <!-- Arrow down -->
+  <path d="M450 155 L450 175" stroke="#64748b" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Layer 2: Transformation -->
+  <rect x="150" y="180" width="600" height="80" rx="12" fill="#1e3a5f" stroke="#a78bfa" stroke-width="2"/>
+  <rect x="150" y="180" width="600" height="30" rx="12" fill="#a78bfa"/>
+  <text x="450" y="202" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">TRANSFORMATION LAYER</text>
+  
+  <rect x="180" y="220" width="130" height="30" rx="6" fill="#8b5cf6"/>
+  <text x="245" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Batch Engine</text>
+  
+  <rect x="330" y="220" width="130" height="30" rx="6" fill="#8b5cf6"/>
+  <text x="395" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Stream Engine</text>
+  
+  <rect x="480" y="220" width="130" height="30" rx="6" fill="#8b5cf6"/>
+  <text x="545" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">On-Demand</text>
+  
+  <rect x="630" y="220" width="90" height="30" rx="6" fill="#8b5cf6"/>
+  <text x="675" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">dbt / SQL</text>
+  
+  <!-- Arrow down -->
+  <path d="M450 265 L450 285" stroke="#64748b" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Layer 3: Storage -->
+  <rect x="150" y="290" width="600" height="100" rx="12" fill="#1e3a5f" stroke="#4ade80" stroke-width="2"/>
+  <rect x="150" y="290" width="600" height="30" rx="12" fill="#4ade80"/>
+  <text x="450" y="312" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">STORAGE LAYER</text>
+  
+  <rect x="180" y="330" width="260" height="50" rx="8" fill="#22c55e"/>
+  <text x="310" y="350" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📦 Offline Store</text>
+  <text x="310" y="370" text-anchor="middle" fill="#dcfce7" font-family="Arial, sans-serif" font-size="10">S3 / Delta Lake / BigQuery</text>
+  
+  <rect x="460" y="330" width="260" height="50" rx="8" fill="#16a34a"/>
+  <text x="590" y="350" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Online Store</text>
+  <text x="590" y="370" text-anchor="middle" fill="#dcfce7" font-family="Arial, sans-serif" font-size="10">Redis / DynamoDB / Bigtable</text>
+  
+  <!-- Arrow down -->
+  <path d="M450 395 L450 415" stroke="#64748b" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Layer 4: Serving -->
+  <rect x="150" y="420" width="600" height="80" rx="12" fill="#1e3a5f" stroke="#fb923c" stroke-width="2"/>
+  <rect x="150" y="420" width="600" height="30" rx="12" fill="#fb923c"/>
+  <text x="450" y="442" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">SERVING LAYER</text>
+  
+  <rect x="180" y="460" width="160" height="30" rx="6" fill="#f97316"/>
+  <text x="260" y="480" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">REST / gRPC API</text>
+  
+  <rect x="370" y="460" width="160" height="30" rx="6" fill="#f97316"/>
+  <text x="450" y="480" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Python SDK</text>
+  
+  <rect x="560" y="460" width="160" height="30" rx="6" fill="#f97316"/>
+  <text x="640" y="480" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Feature Server</text>
+  
+  <!-- Side annotations -->
+  <text x="100" y="115" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Metadata</text>
+  <text x="100" y="225" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Compute</text>
+  <text x="100" y="355" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Data</text>
+  <text x="100" y="465" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Access</text>
+  
+  <!-- Right side arrows to consumers -->
+  <path d="M755 355 L800 355 L800 280" stroke="#4ade80" stroke-width="2"/>
+  <text x="820" y="270" fill="#4ade80" font-family="Arial, sans-serif" font-size="10">Training</text>
+  
+  <path d="M755 465 L840 465 L840 370" stroke="#fb923c" stroke-width="2"/>
+  <text x="855" y="370" fill="#fb923c" font-family="Arial, sans-serif" font-size="10">Inference</text>
+</svg>
+

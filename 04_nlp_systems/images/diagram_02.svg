@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="inputGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrowPink" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ec4899"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#f8fafc">NLP System Architecture</text>
+  <text x="450" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">End-to-end pipeline from raw text to actionable output</text>
+  
+  <!-- Input Handler -->
+  <g transform="translate(30, 100)">
+    <rect width="150" height="120" rx="12" fill="#1e293b" stroke="url(#inputGrad)" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#inputGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">📥 INPUT</text>
+    <text x="75" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">REST API / gRPC</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">WebSocket</text>
+    <text x="75" y="96" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">Validation</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M185 160 L225 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Preprocessor -->
+  <g transform="translate(230, 100)">
+    <rect width="150" height="120" rx="12" fill="#1e293b" stroke="url(#processGrad)" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#processGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🔧 PREPROCESS</text>
+    <text x="75" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">Tokenization</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">Normalization</text>
+    <text x="75" y="96" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">Cleaning</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M385 160 L425 160" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowPurple)"/>
+  
+  <!-- Feature Extractor -->
+  <g transform="translate(430, 100)">
+    <rect width="150" height="120" rx="12" fill="#1e293b" stroke="url(#modelGrad)" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#modelGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🧮 FEATURES</text>
+    <text x="75" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fbcfe8">Embeddings</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fbcfe8">BERT / GPT</text>
+    <text x="75" y="96" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fbcfe8">TF-IDF</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M585 160 L625 160" stroke="#ec4899" stroke-width="3" marker-end="url(#arrowPink)"/>
+  
+  <!-- Model -->
+  <g transform="translate(630, 100)">
+    <rect width="150" height="120" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🤖 MODEL</text>
+    <text x="75" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">Transformer</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">Fine-tuned LLM</text>
+    <text x="75" y="96" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">Classifier</text>
+  </g>
+  
+  <!-- Second Row -->
+  <!-- Post-processor -->
+  <g transform="translate(430, 270)">
+    <rect width="150" height="120" rx="12" fill="#1e293b" stroke="url(#outputGrad)" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="url(#outputGrad)"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">📤 OUTPUT</text>
+    <text x="75" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">Formatting</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">Filtering</text>
+    <text x="75" y="96" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">Ranking</text>
+  </g>
+  
+  <!-- Arrow from Model down -->
+  <path d="M705 225 L705 280 L585 280" stroke="#10b981" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  
+  <!-- Serving Layer -->
+  <g transform="translate(630, 270)">
+    <rect width="150" height="120" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <rect width="150" height="35" rx="12 12 0 0" fill="#06b6d4"/>
+    <text x="75" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff">🚀 SERVING</text>
+    <text x="75" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a5f3fc">TorchServe</text>
+    <text x="75" y="78" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a5f3fc">Triton / vLLM</text>
+    <text x="75" y="96" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a5f3fc">Auto-scaling</text>
+  </g>
+  
+  <!-- Mathematical notation box -->
+  <g transform="translate(30, 270)">
+    <rect width="350" height="120" rx="12" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Core Mathematical Operations</text>
+    <text x="20" y="50" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">Embedding: x → E·x ∈ ℝᵈ</text>
+    <text x="20" y="72" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">Attention: softmax(QKᵀ/√d)·V</text>
+    <text x="20" y="94" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">Output: P(y|x) = softmax(Wh + b)</text>
+  </g>
+</svg>

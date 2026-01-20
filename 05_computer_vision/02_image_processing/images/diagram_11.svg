@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <!-- Background -->
+  <rect width="850" height="450" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">ADVANCED MORPHOLOGICAL OPERATIONS</text>
+  
+  <!-- Gradient -->
+  <g transform="translate(30, 70)">
+    <rect width="380" height="160" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#a78bfa">GRADIENT = Dilation - Erosion</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">(Edge Detection)</text>
+    
+    <!-- Before -->
+    <g transform="translate(40, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="40" cy="35" rx="30" ry="25" fill="#8b5cf6"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 140 90 L 170 90" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="170,85 185,90 170,95" fill="#fbbf24"/>
+    
+    <!-- After - edge only -->
+    <g transform="translate(200, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="40" cy="35" rx="30" ry="25" fill="none" stroke="#a78bfa" stroke-width="4"/>
+    </g>
+    
+    <text x="320" y="85" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">Extracts</text>
+    <text x="320" y="100" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">edges</text>
+    
+    <text x="20" y="145" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">• Highlights boundaries between objects</text>
+  </g>
+  
+  <!-- Top Hat -->
+  <g transform="translate(440, 70)">
+    <rect width="380" height="160" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#4ade80">TOP HAT = Original - Opening</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#86efac">(Extract Bright Features)</text>
+    
+    <!-- Before -->
+    <g transform="translate(40, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="40" cy="35" rx="30" ry="25" fill="#334155"/>
+      <circle cx="25" cy="25" r="6" fill="#4ade80"/>
+      <circle cx="55" cy="45" r="5" fill="#4ade80"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 140 90 L 170 90" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="170,85 185,90 170,95" fill="#fbbf24"/>
+    
+    <!-- After - small bright spots only -->
+    <g transform="translate(200, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <circle cx="25" cy="25" r="6" fill="#4ade80"/>
+      <circle cx="55" cy="45" r="5" fill="#4ade80"/>
+    </g>
+    
+    <text x="320" y="85" font-family="Arial, sans-serif" font-size="10" fill="#86efac">Small bright</text>
+    <text x="320" y="100" font-family="Arial, sans-serif" font-size="10" fill="#86efac">objects</text>
+    
+    <text x="20" y="145" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">• Isolates bright spots on dark background</text>
+  </g>
+  
+  <!-- Black Hat -->
+  <g transform="translate(30, 250)">
+    <rect width="380" height="160" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fbbf24">BLACK HAT = Closing - Original</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">(Extract Dark Features)</text>
+    
+    <!-- Before -->
+    <g transform="translate(40, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <ellipse cx="40" cy="35" rx="30" ry="25" fill="#fbbf24"/>
+      <circle cx="30" cy="30" r="6" fill="#1e293b"/>
+      <circle cx="50" cy="40" r="5" fill="#1e293b"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 140 90 L 170 90" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="170,85 185,90 170,95" fill="#fbbf24"/>
+    
+    <!-- After - small dark holes only -->
+    <g transform="translate(200, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <circle cx="30" cy="30" r="6" fill="#fbbf24"/>
+      <circle cx="50" cy="40" r="5" fill="#fbbf24"/>
+    </g>
+    
+    <text x="320" y="85" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Small dark</text>
+    <text x="320" y="100" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">holes</text>
+    
+    <text x="20" y="145" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">• Isolates dark spots on bright background</text>
+  </g>
+  
+  <!-- Skeletonization -->
+  <g transform="translate(440, 250)">
+    <rect width="380" height="160" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#22d3ee">SKELETONIZATION</text>
+    <text x="190" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#67e8f9">(Reduce to Skeleton)</text>
+    
+    <!-- Before - thick shape -->
+    <g transform="translate(40, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <rect x="10" y="10" width="60" height="50" rx="4" fill="#22d3ee"/>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 140 90 L 170 90" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="170,85 185,90 170,95" fill="#fbbf24"/>
+    
+    <!-- After - skeleton lines -->
+    <g transform="translate(200, 55)">
+      <rect width="80" height="70" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <line x1="15" y1="35" x2="65" y2="35" stroke="#22d3ee" stroke-width="2"/>
+      <line x1="40" y1="15" x2="40" y2="55" stroke="#22d3ee" stroke-width="2"/>
+    </g>
+    
+    <text x="320" y="85" font-family="Arial, sans-serif" font-size="10" fill="#67e8f9">1-pixel</text>
+    <text x="320" y="100" font-family="Arial, sans-serif" font-size="10" fill="#67e8f9">skeleton</text>
+    
+    <text x="20" y="145" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">• Reduces shapes to 1-pixel wide lines</text>
+  </g>
+</svg>

@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="recallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="mrrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="ndcgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="spearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📊 Evaluation Metrics Overview</text>
+  
+  <!-- Recall@K -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="380" height="140" rx="14" fill="#1e293b" stroke="url(#recallGrad)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#34d399">RECALL@K</text>
+    
+    <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Top-K retrieved:</text>
+    
+    <rect x="25" y="65" width="50" height="35" rx="4" fill="#10b981"/>
+    <text x="50" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✓</text>
+    
+    <rect x="85" y="65" width="50" height="35" rx="4" fill="#ef4444"/>
+    <text x="110" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✗</text>
+    
+    <rect x="145" y="65" width="50" height="35" rx="4" fill="#10b981"/>
+    <text x="170" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✓</text>
+    
+    <rect x="205" y="65" width="50" height="35" rx="4" fill="#ef4444"/>
+    <text x="230" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✗</text>
+    
+    <rect x="265" y="65" width="50" height="35" rx="4" fill="#10b981"/>
+    <text x="290" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✓</text>
+    
+    <text x="50" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">1</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">2</text>
+    <text x="170" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">3</text>
+    <text x="230" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">4</text>
+    <text x="290" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">5</text>
+    
+    <text x="190" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#34d399">Recall@5 = 3/4 = 75%</text>
+  </g>
+  
+  <!-- MRR -->
+  <g filter="url(#shadow)" transform="translate(430, 70)">
+    <rect width="380" height="140" rx="14" fill="#1e293b" stroke="url(#mrrGrad)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">MRR (Mean Reciprocal Rank)</text>
+    
+    <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Ranked results:</text>
+    
+    <rect x="25" y="65" width="50" height="35" rx="4" fill="#ef4444"/>
+    <text x="50" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✗</text>
+    
+    <rect x="85" y="65" width="50" height="35" rx="4" fill="#ef4444"/>
+    <text x="110" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✗</text>
+    
+    <rect x="145" y="65" width="50" height="35" rx="4" fill="#10b981"/>
+    <text x="170" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✓</text>
+    
+    <rect x="205" y="65" width="50" height="35" rx="4" fill="#ef4444"/>
+    <text x="230" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✗</text>
+    
+    <rect x="265" y="65" width="50" height="35" rx="4" fill="#ef4444"/>
+    <text x="290" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">✗</text>
+    
+    <text x="50" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">1</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">2</text>
+    <text x="170" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">3</text>
+    <text x="230" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">4</text>
+    <text x="290" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">5</text>
+    
+    <text x="190" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">RR = 1/3 = 0.33 (first relevant at pos 3)</text>
+  </g>
+  
+  <!-- NDCG -->
+  <g filter="url(#shadow)" transform="translate(40, 230)">
+    <rect width="380" height="150" rx="14" fill="#1e293b" stroke="url(#ndcgGrad)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">NDCG (Normalized DCG)</text>
+    
+    <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Relevance grades:</text>
+    
+    <rect x="25" y="65" width="50" height="35" rx="4" fill="#8b5cf6"/>
+    <text x="50" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">3</text>
+    
+    <rect x="85" y="65" width="50" height="35" rx="4" fill="#a78bfa"/>
+    <text x="110" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">1</text>
+    
+    <rect x="145" y="65" width="50" height="35" rx="4" fill="#8b5cf6"/>
+    <text x="170" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">2</text>
+    
+    <rect x="205" y="65" width="50" height="35" rx="4" fill="#334155"/>
+    <text x="230" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">0</text>
+    
+    <rect x="265" y="65" width="50" height="35" rx="4" fill="#a78bfa"/>
+    <text x="290" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">1</text>
+    
+    <text x="50" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">pos 1</text>
+    <text x="110" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">pos 2</text>
+    <text x="170" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">pos 3</text>
+    <text x="230" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">pos 4</text>
+    <text x="290" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">pos 5</text>
+    
+    <text x="190" y="140" text-anchor="middle" font-family="Courier New, monospace" font-size="9" fill="#a855f7">DCG = Σ rel_i / log₂(i+1)</text>
+  </g>
+  
+  <!-- Spearman -->
+  <g filter="url(#shadow)" transform="translate(430, 230)">
+    <rect width="380" height="150" rx="14" fill="#1e293b" stroke="url(#spearGrad)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">SPEARMAN CORRELATION</text>
+    
+    <rect x="20" y="50" width="340" height="40" rx="6" fill="#0f172a"/>
+    <text x="190" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Human: [4.5, 3.2, 1.8, 4.9, 2.1]</text>
+    <text x="190" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Model: [0.9, 0.7, 0.3, 0.95, 0.4]</text>
+    
+    <text x="190" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fbbf24">ρ = 0.95</text>
+    <text x="190" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#4ade80">✓ Ranks match well!</text>
+  </g>
+  
+  <!-- Bottom summary -->
+  <g filter="url(#shadow)" transform="translate(100, 400)">
+    <rect width="650" height="100" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="325" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">When to Use Each Metric</text>
+    
+    <text x="40" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#34d399">• Recall@K</text>
+    <text x="130" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ Did we find all relevant items?</text>
+    
+    <text x="40" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#60a5fa">• MRR</text>
+    <text x="130" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ How quickly do we find the first relevant?</text>
+    
+    <text x="350" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#a855f7">• NDCG</text>
+    <text x="440" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ Are highly relevant items ranked higher?</text>
+    
+    <text x="350" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">• Spearman</text>
+    <text x="440" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">→ Does model ordering match human?</text>
+  </g>
+</svg>

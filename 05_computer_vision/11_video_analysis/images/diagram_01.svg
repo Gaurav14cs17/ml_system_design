@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">TRACKING APPROACHES</text>
+  
+  <g transform="translate(50, 80)">
+    <rect width="220" height="170" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">SORT</text>
+    <text x="110" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Simple Online Realtime</text>
+    
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Kalman filter prediction</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Hungarian matching (IoU)</text>
+    <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Very fast (~260 FPS)</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="9" fill="#f87171">✗ No appearance features</text>
+    <text x="20" y="160" font-family="Arial, sans-serif" font-size="9" fill="#f87171">✗ ID switches on occlusion</text>
+  </g>
+  
+  <g transform="translate(290, 80)">
+    <rect width="220" height="170" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">DeepSORT</text>
+    <text x="110" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Deep Appearance Features</text>
+    
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• SORT + Re-ID features</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Appearance + motion cost</text>
+    <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Cascade matching</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ Better ID consistency</text>
+    <text x="20" y="160" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">△ Slower (~40 FPS)</text>
+  </g>
+  
+  <g transform="translate(530, 80)">
+    <rect width="220" height="170" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">ByteTrack</text>
+    <text x="110" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Every Detection Matters</text>
+    
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Uses low-confidence detections</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Two-stage association</text>
+    <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">• Motion-only (no Re-ID)</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ State-of-the-art MOTA</text>
+    <text x="20" y="160" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">✓ Fast and accurate</text>
+  </g>
+  
+  <g transform="translate(200, 280)">
+    <rect width="400" height="90" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="200" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">Evaluation Metrics</text>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">MOTA: Overall accuracy</text>
+    <text x="180" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">IDF1: ID consistency</text>
+    <text x="300" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">HOTA: Detection + Association</text>
+    <text x="200" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Datasets: MOT17, MOT20, KITTI</text>
+  </g>
+</svg>

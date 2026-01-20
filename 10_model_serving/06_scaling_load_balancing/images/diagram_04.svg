@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="gpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#76b900"/>
+      <stop offset="100%" style="stop-color:#5a8f00"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🎮 GPU Scaling Patterns</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="50" width="700" height="450" rx="16" fill="#1e293b"/>
+    
+    <!-- 1. One Model Per GPU -->
+    <g transform="translate(75, 80)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a5b4fc">1. ONE MODEL PER GPU (Data Parallel)</text>
+      
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="180" height="80" rx="12" fill="url(#gpuGrad)"/>
+        <text x="90" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">GPU 0</text>
+        <rect x="30" y="35" width="120" height="35" rx="6" fill="url(#modelGrad)"/>
+        <text x="90" y="57" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Model A</text>
+        
+        <rect x="210" y="0" width="180" height="80" rx="12" fill="url(#gpuGrad)"/>
+        <text x="300" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">GPU 1</text>
+        <rect x="240" y="35" width="120" height="35" rx="6" fill="url(#modelGrad)"/>
+        <text x="300" y="57" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Model A</text>
+        
+        <rect x="420" y="0" width="180" height="80" rx="12" fill="url(#gpuGrad)"/>
+        <text x="510" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">GPU 2</text>
+        <rect x="450" y="35" width="120" height="35" rx="6" fill="url(#modelGrad)"/>
+        <text x="510" y="57" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Model A</text>
+      </g>
+      
+      <text x="620" y="65" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">(replicas)</text>
+    </g>
+    
+    <!-- 2. Multiple Models Per GPU -->
+    <g transform="translate(75, 210)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a5b4fc">2. MULTIPLE MODELS PER GPU (MIG/MPS)</text>
+      
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="600" height="100" rx="12" fill="url(#gpuGrad)"/>
+        <text x="300" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">GPU 0 (Partitioned)</text>
+        
+        <rect x="40" y="40" width="150" height="45" rx="8" fill="url(#modelGrad)"/>
+        <text x="115" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Model A</text>
+        
+        <rect x="220" y="40" width="150" height="45" rx="8" fill="#ef4444"/>
+        <text x="295" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Model B</text>
+        
+        <rect x="400" y="40" width="150" height="45" rx="8" fill="#f59e0b"/>
+        <text x="475" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Model C</text>
+      </g>
+    </g>
+    
+    <!-- 3. Model Parallelism -->
+    <g transform="translate(75, 355)">
+      <text x="0" y="0" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#a5b4fc">3. MODEL PARALLELISM (Large Models)</text>
+      
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="180" height="80" rx="12" fill="url(#gpuGrad)"/>
+        <text x="90" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">GPU 0</text>
+        <rect x="20" y="40" width="140" height="30" rx="6" fill="#3b82f6"/>
+        <text x="90" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Layers 1-4</text>
+        
+        <line x1="180" y1="40" x2="210" y2="40" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+        
+        <rect x="225" y="0" width="180" height="80" rx="12" fill="url(#gpuGrad)"/>
+        <text x="315" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">GPU 1</text>
+        <rect x="245" y="40" width="140" height="30" rx="6" fill="#8b5cf6"/>
+        <text x="315" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Layers 5-8</text>
+        
+        <line x1="405" y1="40" x2="435" y2="40" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+        
+        <rect x="450" y="0" width="180" height="80" rx="12" fill="url(#gpuGrad)"/>
+        <text x="540" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">GPU 2</text>
+        <rect x="470" y="40" width="140" height="30" rx="6" fill="#ec4899"/>
+        <text x="540" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fff">Layers 9+</text>
+      </g>
+    </g>
+  </g>
+</svg>

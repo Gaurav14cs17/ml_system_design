@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420">
+  <defs>
+    <linearGradient id="netflixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E50914"/>
+      <stop offset="100%" style="stop-color:#B20710"/>
+    </linearGradient>
+    <linearGradient id="kafkaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#231F20"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E25A1C"/>
+      <stop offset="100%" style="stop-color:#C74618"/>
+    </linearGradient>
+    <linearGradient id="fsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <filter id="netShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <marker id="netArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="850" height="420" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="790" height="380" rx="12" fill="#1E293B" stroke="url(#netflixGrad)" stroke-width="2"/>
+  <rect x="30" y="20" width="790" height="45" rx="12 12 0 0" fill="url(#netflixGrad)"/>
+  <text x="425" y="50" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#F8FAFC">🎬 Netflix Recommendation Pipeline</text>
+  
+  <!-- Data Sources -->
+  <g filter="url(#netShadow)" transform="translate(60, 85)">
+    <rect x="0" y="0" width="140" height="70" rx="8" fill="#334155"/>
+    <text x="70" y="28" text-anchor="middle" font-family="system-ui" font-size="14">📺</text>
+    <text x="70" y="48" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">User Events</text>
+    <text x="70" y="62" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Views, Browsing</text>
+  </g>
+  
+  <path d="M205 120 L265 120" stroke="#64748B" stroke-width="2" marker-end="url(#netArrow)"/>
+  
+  <!-- Kafka -->
+  <g filter="url(#netShadow)" transform="translate(270, 85)">
+    <rect x="0" y="0" width="140" height="70" rx="8" fill="url(#kafkaGrad)"/>
+    <text x="70" y="28" text-anchor="middle" font-family="system-ui" font-size="14">📨</text>
+    <text x="70" y="48" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Keystone (Kafka)</text>
+    <text x="70" y="62" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Event Streaming</text>
+  </g>
+  
+  <path d="M415 120 L475 120" stroke="#64748B" stroke-width="2" marker-end="url(#netArrow)"/>
+  
+  <!-- Spark -->
+  <g filter="url(#netShadow)" transform="translate(480, 85)">
+    <rect x="0" y="0" width="140" height="70" rx="8" fill="url(#sparkGrad)"/>
+    <text x="70" y="28" text-anchor="middle" font-family="system-ui" font-size="14">⚡</text>
+    <text x="70" y="48" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Spark Processing</text>
+    <text x="70" y="62" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.8)">Feature Computation</text>
+  </g>
+  
+  <path d="M550 160 L550 180" stroke="#64748B" stroke-width="2" marker-end="url(#netArrow)"/>
+  
+  <!-- Feature Store -->
+  <g filter="url(#netShadow)" transform="translate(150, 195)">
+    <rect x="0" y="0" width="550" height="100" rx="8" fill="url(#fsGrad)"/>
+    <text x="275" y="25" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#F8FAFC">🏪 Feature Store (Metacat)</text>
+    
+    <g transform="translate(25, 40)">
+      <rect x="0" y="0" width="150" height="50" rx="4" fill="rgba(0,0,0,0.2)"/>
+      <text x="75" y="18" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#F8FAFC">User Features</text>
+      <text x="75" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.7)">Watch history</text>
+      <text x="75" y="44" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.7)">Preferences</text>
+    </g>
+    
+    <g transform="translate(195, 40)">
+      <rect x="0" y="0" width="150" height="50" rx="4" fill="rgba(0,0,0,0.2)"/>
+      <text x="75" y="18" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#F8FAFC">Content Features</text>
+      <text x="75" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.7)">Genre, Cast</text>
+      <text x="75" y="44" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.7)">Ratings</text>
+    </g>
+    
+    <g transform="translate(365, 40)">
+      <rect x="0" y="0" width="160" height="50" rx="4" fill="rgba(0,0,0,0.2)"/>
+      <text x="80" y="18" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#F8FAFC">Contextual Features</text>
+      <text x="80" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.7)">Time of day</text>
+      <text x="80" y="44" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.7)">Device, Location</text>
+    </g>
+  </g>
+  
+  <!-- Arrows to outputs -->
+  <path d="M320 300 L320 330" stroke="#64748B" stroke-width="2" marker-end="url(#netArrow)"/>
+  <path d="M530 300 L530 330" stroke="#64748B" stroke-width="2" marker-end="url(#netArrow)"/>
+  
+  <!-- Offline Training -->
+  <g filter="url(#netShadow)" transform="translate(170, 340)">
+    <rect x="0" y="0" width="200" height="50" rx="8" fill="#3B82F6"/>
+    <text x="100" y="22" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">📚 Offline Training</text>
+    <text x="100" y="40" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Models &amp; A/B Experiments</text>
+  </g>
+  
+  <!-- Online Serving -->
+  <g filter="url(#netShadow)" transform="translate(430, 340)">
+    <rect x="0" y="0" width="200" height="50" rx="8" fill="#10B981"/>
+    <text x="100" y="22" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">🚀 Online Serving</text>
+    <text x="100" y="40" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Real-time Personalization</text>
+  </g>
+  
+  <!-- Scale callout -->
+  <g transform="translate(680, 90)">
+    <rect x="0" y="0" width="120" height="65" rx="6" fill="#334155"/>
+    <text x="60" y="18" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#E50914">📊 Scale</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">200M+ users</text>
+    <text x="60" y="50" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Petabytes/day</text>
+  </g>
+</svg>

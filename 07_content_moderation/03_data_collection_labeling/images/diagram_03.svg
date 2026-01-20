@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="labelFlowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#labelFlowBg)"/>
+  
+  <text x="400" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">📋 Multi-Stage Labeling Pipeline</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Escalation flow for quality assurance</text>
+  
+  <!-- Stage 1 -->
+  <g transform="translate(250, 70)">
+    <rect width="300" height="45" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📝 Stage 1: Initial Labeling</text>
+    <text x="150" y="42" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">(3 annotators)</text>
+  </g>
+  
+  <path d="M 400 115 L 400 135" stroke="#64748b" stroke-width="2"/>
+  
+  <g transform="translate(150, 140)">
+    <rect width="500" height="90" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="250" y="22" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Agreement Check</text>
+    <line x1="30" y1="32" x2="470" y2="32" stroke="#374151" stroke-width="1"/>
+    <text x="30" y="52" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• If 3/3 agree → ✅ Accept label</text>
+    <text x="30" y="68" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">• If 2/3 agree with high confidence → ✅ Accept</text>
+    <text x="30" y="84" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10">• Otherwise → ⬇️ Escalate to Stage 2</text>
+  </g>
+  
+  <path d="M 400 230 L 400 250" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Stage 2 -->
+  <g transform="translate(250, 255)">
+    <rect width="300" height="45" rx="8" fill="#7c2d12" stroke="#f97316" stroke-width="2"/>
+    <text x="150" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">👥 Stage 2: Expert Review</text>
+    <text x="150" y="42" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">(2 senior annotators)</text>
+  </g>
+  
+  <path d="M 400 300 L 400 315" stroke="#64748b" stroke-width="2"/>
+  
+  <g transform="translate(200, 320)">
+    <rect width="400" height="65" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+    <text x="200" y="22" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Resolution</text>
+    <line x1="30" y1="32" x2="370" y2="32" stroke="#374151" stroke-width="1"/>
+    <text x="30" y="48" fill="#fdba74" font-family="Arial, sans-serif" font-size="10">• If 2/2 agree → ✅ Accept label</text>
+    <text x="30" y="62" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10">• If disagree → ⬇️ Escalate to Stage 3</text>
+  </g>
+  
+  <path d="M 400 385 L 400 400" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Stage 3 -->
+  <g transform="translate(250, 405)">
+    <rect width="300" height="35" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="150" y="23" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">⚖️ Stage 3: Policy Team Decision</text>
+  </g>
+  
+  <!-- Final output indicator -->
+  <g transform="translate(600, 280)">
+    <rect width="170" height="80" rx="8" fill="#064e3b" stroke="#22c55e" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✅ Final Label</text>
+    <line x1="20" y1="35" x2="150" y2="35" stroke="#22c55e" stroke-width="1"/>
+    <text x="85" y="52" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Add to</text>
+    <text x="85" y="68" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Training Data</text>
+  </g>
+  
+  <path d="M 550 180 L 580 180 L 580 320 L 600 320" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M 550 352 L 580 352 L 580 320" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+</svg>

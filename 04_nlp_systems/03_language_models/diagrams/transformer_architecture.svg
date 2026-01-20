@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <linearGradient id="encoderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b894"/>
+      <stop offset="100%" style="stop-color:#00cec9"/>
+    </linearGradient>
+    <linearGradient id="decoderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c5ce7"/>
+      <stop offset="100%" style="stop-color:#a29bfe"/>
+    </linearGradient>
+    <linearGradient id="attnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fd79a8"/>
+      <stop offset="100%" style="stop-color:#e84393"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Transformer Architecture</text>
+  <text x="500" y="65" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">"Attention Is All You Need" - Vaswani et al., 2017</text>
+  
+  <!-- Encoder Stack -->
+  <g transform="translate(150, 100)">
+    <rect width="280" height="480" rx="15" fill="#161b22" stroke="url(#encoderGrad)" stroke-width="3"/>
+    <text x="140" y="30" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="18" font-weight="bold">ENCODER</text>
+    
+    <!-- Nx label -->
+    <text x="255" y="55" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="14">Nx</text>
+    
+    <!-- Encoder Layer -->
+    <g transform="translate(20, 60)">
+      <!-- Add and Norm 2 -->
+      <rect x="0" y="0" width="240" height="35" rx="8" fill="#2d3748" stroke="#00cec9"/>
+      <text x="120" y="22" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="12">Add &amp; Norm</text>
+      
+      <!-- Feed Forward -->
+      <rect x="0" y="50" width="240" height="50" rx="8" fill="#1e3a5f" stroke="#00b894"/>
+      <text x="120" y="70" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Feed Forward</text>
+      <text x="120" y="88" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">FFN(x) = ReLU(xW₁+b₁)W₂+b₂</text>
+      
+      <!-- Add and Norm 1 -->
+      <rect x="0" y="115" width="240" height="35" rx="8" fill="#2d3748" stroke="#00cec9"/>
+      <text x="120" y="137" text-anchor="middle" fill="#00cec9" font-family="Arial, sans-serif" font-size="12">Add &amp; Norm</text>
+      
+      <!-- Multi-Head Attention -->
+      <rect x="0" y="165" width="240" height="70" rx="8" fill="url(#attnGrad)" opacity="0.3" stroke="#fd79a8" stroke-width="2"/>
+      <text x="120" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Multi-Head</text>
+      <text x="120" y="210" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Self-Attention</text>
+      <text x="120" y="228" text-anchor="middle" fill="#ffeaa7" font-family="Arial, sans-serif" font-size="10">Q, K, V from same input</text>
+    </g>
+    
+    <!-- Positional Encoding -->
+    <rect x="20" y="320" width="240" height="35" rx="8" fill="#2d3748" stroke="#f39c12"/>
+    <text x="140" y="342" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="12">+ Positional Encoding</text>
+    
+    <!-- Input Embedding -->
+    <rect x="20" y="370" width="240" height="40" rx="8" fill="#1a1a3e" stroke="#00b894"/>
+    <text x="140" y="395" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="13">Input Embedding</text>
+    
+    <!-- Input -->
+    <text x="140" y="445" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12">↑</text>
+    <text x="140" y="465" text-anchor="middle" fill="#00b894" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Inputs</text>
+  </g>
+  
+  <!-- Decoder Stack -->
+  <g transform="translate(570, 100)">
+    <rect width="280" height="480" rx="15" fill="#161b22" stroke="url(#decoderGrad)" stroke-width="3"/>
+    <text x="140" y="30" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="18" font-weight="bold">DECODER</text>
+    
+    <!-- Nx label -->
+    <text x="255" y="55" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="14">Nx</text>
+    
+    <!-- Decoder Layer -->
+    <g transform="translate(20, 60)">
+      <!-- Add and Norm 3 -->
+      <rect x="0" y="0" width="240" height="30" rx="8" fill="#2d3748" stroke="#a29bfe"/>
+      <text x="120" y="20" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="11">Add &amp; Norm</text>
+      
+      <!-- Feed Forward -->
+      <rect x="0" y="40" width="240" height="40" rx="8" fill="#1e3a5f" stroke="#6c5ce7"/>
+      <text x="120" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Feed Forward</text>
+      
+      <!-- Add and Norm 2 -->
+      <rect x="0" y="90" width="240" height="30" rx="8" fill="#2d3748" stroke="#a29bfe"/>
+      <text x="120" y="110" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="11">Add &amp; Norm</text>
+      
+      <!-- Cross-Attention -->
+      <rect x="0" y="130" width="240" height="55" rx="8" fill="#0984e3" opacity="0.3" stroke="#0984e3" stroke-width="2"/>
+      <text x="120" y="152" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Cross-Attention</text>
+      <text x="120" y="172" text-anchor="middle" fill="#74b9ff" font-family="Arial, sans-serif" font-size="10">Q from decoder, K,V from encoder</text>
+      
+      <!-- Add and Norm 1 -->
+      <rect x="0" y="195" width="240" height="30" rx="8" fill="#2d3748" stroke="#a29bfe"/>
+      <text x="120" y="215" text-anchor="middle" fill="#a29bfe" font-family="Arial, sans-serif" font-size="11">Add &amp; Norm</text>
+      
+      <!-- Masked Multi-Head Attention -->
+      <rect x="0" y="235" width="240" height="55" rx="8" fill="url(#attnGrad)" opacity="0.3" stroke="#fd79a8" stroke-width="2"/>
+      <text x="120" y="257" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Masked Self-Attention</text>
+      <text x="120" y="277" text-anchor="middle" fill="#ffeaa7" font-family="Arial, sans-serif" font-size="10">Prevents seeing future tokens</text>
+    </g>
+    
+    <!-- Positional Encoding -->
+    <rect x="20" y="360" width="240" height="30" rx="8" fill="#2d3748" stroke="#f39c12"/>
+    <text x="140" y="380" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="11">+ Positional Encoding</text>
+    
+    <!-- Output Embedding -->
+    <rect x="20" y="400" width="240" height="35" rx="8" fill="#1a1a3e" stroke="#6c5ce7"/>
+    <text x="140" y="423" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12">Output Embedding</text>
+    
+    <!-- Output Label -->
+    <text x="140" y="460" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="12">↑</text>
+    <text x="140" y="475" text-anchor="middle" fill="#6c5ce7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Outputs (shifted right)</text>
+  </g>
+  
+  <!-- Cross-attention arrow -->
+  <path d="M430 270 L590 270" stroke="#0984e3" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#blueArrow)"/>
+  <defs>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0984e3"/>
+    </marker>
+  </defs>
+  <text x="510" y="260" text-anchor="middle" fill="#74b9ff" font-family="Arial, sans-serif" font-size="10">encoder output</text>
+  
+  <!-- Output layers -->
+  <g transform="translate(620, 595)">
+    <rect width="180" height="35" rx="8" fill="#2d3748" stroke="#fff"/>
+    <text x="90" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">Linear + Softmax</text>
+  </g>
+  
+  <text x="710" y="655" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Output Probabilities</text>
+  
+  <!-- Arrow from decoder to output -->
+  <line x1="710" y1="580" x2="710" y2="593" stroke="#fff" stroke-width="2"/>
+</svg>
+

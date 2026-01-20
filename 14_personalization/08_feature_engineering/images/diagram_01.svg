@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400">
+  <defs>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="itemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="ctxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="intGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e"/>
+      <stop offset="100%" style="stop-color:#38ef7d"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="750" height="400" fill="#0d1117" rx="10"/>
+  
+  <text x="375" y="35" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="bold">Feature Categories in Personalization</text>
+  
+  <!-- User Features -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="url(#userGrad)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">👤 USER FEATURES</text>
+    <text x="100" y="50" text-anchor="middle" fill="#f8fafc" font-size="9">• Demographics</text>
+    <text x="100" y="68" text-anchor="middle" fill="#f8fafc" font-size="9">• Preferences</text>
+    <text x="100" y="86" text-anchor="middle" fill="#f8fafc" font-size="9">• History stats</text>
+    <text x="100" y="104" text-anchor="middle" fill="#f8fafc" font-size="9">• Behavior agg.</text>
+  </g>
+  
+  <!-- Item Features -->
+  <g transform="translate(275, 60)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="url(#itemGrad)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">📦 ITEM FEATURES</text>
+    <text x="100" y="50" text-anchor="middle" fill="#f8fafc" font-size="9">• Attributes</text>
+    <text x="100" y="68" text-anchor="middle" fill="#f8fafc" font-size="9">• Categories</text>
+    <text x="100" y="86" text-anchor="middle" fill="#f8fafc" font-size="9">• Content emb.</text>
+    <text x="100" y="104" text-anchor="middle" fill="#f8fafc" font-size="9">• Popularity</text>
+  </g>
+  
+  <!-- Context Features -->
+  <g transform="translate(500, 60)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="url(#ctxGrad)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">🌍 CONTEXT FEATURES</text>
+    <text x="100" y="50" text-anchor="middle" fill="#f8fafc" font-size="9">• Time of day</text>
+    <text x="100" y="68" text-anchor="middle" fill="#f8fafc" font-size="9">• Device</text>
+    <text x="100" y="86" text-anchor="middle" fill="#f8fafc" font-size="9">• Location</text>
+    <text x="100" y="104" text-anchor="middle" fill="#f8fafc" font-size="9">• Session state</text>
+  </g>
+  
+  <!-- Arrows pointing down -->
+  <path d="M 150 185 L 150 210 L 375 240" stroke="#f8fafc" stroke-width="2" fill="none"/>
+  <path d="M 375 185 L 375 240" stroke="#f8fafc" stroke-width="2"/>
+  <path d="M 600 185 L 600 210 L 375 240" stroke="#f8fafc" stroke-width="2" fill="none"/>
+  
+  <!-- Interaction Features -->
+  <g transform="translate(225, 250)">
+    <rect x="0" y="0" width="300" height="120" rx="12" fill="url(#intGrad)" filter="url(#shadow)"/>
+    <text x="150" y="25" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">✖️ INTERACTION FEATURES</text>
+    <text x="150" y="55" text-anchor="middle" fill="#f8fafc" font-size="10">• User-Item cross features</text>
+    <text x="150" y="75" text-anchor="middle" fill="#f8fafc" font-size="10">• Historical pairs</text>
+    <text x="150" y="95" text-anchor="middle" fill="#f8fafc" font-size="10">• Sequence features</text>
+  </g>
+  
+  <defs>
+    <marker id="arrow5" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

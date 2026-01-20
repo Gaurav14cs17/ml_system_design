@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="devGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🔄 Development vs Production</text>
+  
+  <!-- Development Column -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="330" height="330" rx="14" fill="#0f172a"/>
+    <rect x="50" y="55" width="330" height="50" rx="14 14 0 0" fill="url(#devGrad)"/>
+    <text x="215" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">💻 DEVELOPMENT</text>
+    
+    <g transform="translate(70, 120)">
+      <rect x="0" y="0" width="290" height="30" rx="6" fill="#e0e7ff"/>
+      <text x="145" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">🖥️ Single machine</text>
+      
+      <rect x="0" y="40" width="290" height="30" rx="6" fill="#ede9fe"/>
+      <text x="145" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">📦 Batch processing</text>
+      
+      <rect x="0" y="80" width="290" height="30" rx="6" fill="#e0e7ff"/>
+      <text x="145" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">📁 Static datasets</text>
+      
+      <rect x="0" y="120" width="290" height="30" rx="6" fill="#ede9fe"/>
+      <text x="145" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">🐍 Python/Jupyter</text>
+      
+      <rect x="0" y="160" width="290" height="30" rx="6" fill="#e0e7ff"/>
+      <text x="145" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">🤷 "Works on my machine"</text>
+      
+      <rect x="0" y="200" width="290" height="30" rx="6" fill="#ede9fe"/>
+      <text x="145" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">👤 Researcher writes code</text>
+      
+      <rect x="0" y="240" width="290" height="30" rx="6" fill="#e0e7ff"/>
+      <text x="145" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3730a3">📊 No monitoring needed</text>
+    </g>
+  </g>
+  
+  <!-- VS divider -->
+  <circle cx="400" cy="220" r="25" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="400" y="226" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">VS</text>
+  
+  <!-- Production Column -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="55" width="330" height="330" rx="14" fill="#0f172a"/>
+    <rect x="420" y="55" width="330" height="50" rx="14 14 0 0" fill="url(#prodGrad)"/>
+    <text x="585" y="87" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🚀 PRODUCTION</text>
+    
+    <g transform="translate(440, 120)">
+      <rect x="0" y="0" width="290" height="30" rx="6" fill="#d1fae5"/>
+      <text x="145" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">🌐 Distributed systems</text>
+      
+      <rect x="0" y="40" width="290" height="30" rx="6" fill="#ecfdf5"/>
+      <text x="145" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">⚡ Real-time, ms latency</text>
+      
+      <rect x="0" y="80" width="290" height="30" rx="6" fill="#d1fae5"/>
+      <text x="145" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">🔄 Streaming, evolving data</text>
+      
+      <rect x="0" y="120" width="290" height="30" rx="6" fill="#ecfdf5"/>
+      <text x="145" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">🐳 Containerized microservices</text>
+      
+      <rect x="0" y="160" width="290" height="30" rx="6" fill="#d1fae5"/>
+      <text x="145" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">✅ 99.99% availability required</text>
+      
+      <rect x="0" y="200" width="290" height="30" rx="6" fill="#ecfdf5"/>
+      <text x="145" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">👥 Entire team maintains</text>
+      
+      <rect x="0" y="240" width="290" height="30" rx="6" fill="#d1fae5"/>
+      <text x="145" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#065f46">📈 Comprehensive observability</text>
+    </g>
+  </g>
+</svg>

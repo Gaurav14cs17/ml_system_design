@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="qaGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="qaGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="qaGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="qaGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="qaShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="qaArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Question Answering Pipeline</text>
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">From question to answer through retrieval and comprehension</text>
+  
+  <!-- Stage 1: Question Analysis -->
+  <g transform="translate(40, 90)" filter="url(#qaShadow)">
+    <rect width="180" height="130" rx="14" fill="#1e293b" stroke="url(#qaGrad1)" stroke-width="2"/>
+    <rect width="180" height="40" rx="14 14 0 0" fill="url(#qaGrad1)"/>
+    <text x="90" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">❓</text>
+    <text x="90" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Question Analysis</text>
+    <text x="90" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">• Parse query intent</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">• Identify type</text>
+    <text x="90" y="105" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">• Extract entities</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M225 155 L265 155" stroke="#64748b" stroke-width="3" marker-end="url(#qaArrow)"/>
+  
+  <!-- Stage 2: Document Retrieval -->
+  <g transform="translate(270, 90)" filter="url(#qaShadow)">
+    <rect width="180" height="130" rx="14" fill="#1e293b" stroke="url(#qaGrad2)" stroke-width="2"/>
+    <rect width="180" height="40" rx="14 14 0 0" fill="url(#qaGrad2)"/>
+    <text x="90" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">📚</text>
+    <text x="90" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Document Retrieval</text>
+    <text x="90" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">• Semantic search</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">• BM25 + dense</text>
+    <text x="90" y="105" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">• Top-k passages</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M455 155 L495 155" stroke="#64748b" stroke-width="3" marker-end="url(#qaArrow)"/>
+  
+  <!-- Stage 3: Reading Comprehension -->
+  <g transform="translate(500, 90)" filter="url(#qaShadow)">
+    <rect width="180" height="130" rx="14" fill="#1e293b" stroke="url(#qaGrad3)" stroke-width="2"/>
+    <rect width="180" height="40" rx="14 14 0 0" fill="url(#qaGrad3)"/>
+    <text x="90" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">🧠</text>
+    <text x="90" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Comprehension</text>
+    <text x="90" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">• Extract spans</text>
+    <text x="90" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">• Generate answers</text>
+    <text x="90" y="105" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fcd34d">• Score candidates</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M685 155 L725 155" stroke="#64748b" stroke-width="3" marker-end="url(#qaArrow)"/>
+  
+  <!-- Stage 4: Answer Ranking -->
+  <g transform="translate(730, 90)" filter="url(#qaShadow)">
+    <rect width="140" height="130" rx="14" fill="#1e293b" stroke="url(#qaGrad4)" stroke-width="2"/>
+    <rect width="140" height="40" rx="14 14 0 0" fill="url(#qaGrad4)"/>
+    <text x="70" y="18" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16">✅</text>
+    <text x="70" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#fff">Answer</text>
+    <text x="70" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">• Rank results</text>
+    <text x="70" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">• Format output</text>
+    <text x="70" y="105" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">• Cite sources</text>
+  </g>
+  
+  <!-- Mathematical formulation box -->
+  <g transform="translate(40, 250)" filter="url(#qaShadow)">
+    <rect width="820" height="120" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">Core Formulations</text>
+    
+    <text x="40" y="55" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">Retrieval Score: </text>
+    <text x="145" y="55" font-family="Georgia, serif" font-size="12" fill="#60a5fa">score(q, d) = cos(E(q), E(d))</text>
+    
+    <text x="40" y="80" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">Span Extraction: </text>
+    <text x="155" y="80" font-family="Georgia, serif" font-size="12" fill="#a78bfa">P(start=i, end=j | c, q) = softmax(s_i) · softmax(e_j)</text>
+    
+    <text x="40" y="105" font-family="Georgia, serif" font-size="12" fill="#e2e8f0">Answer Score: </text>
+    <text x="145" y="105" font-family="Georgia, serif" font-size="12" fill="#10b981">final_score = α·retrieval_score + β·reader_score + γ·confidence</text>
+  </g>
+</svg>

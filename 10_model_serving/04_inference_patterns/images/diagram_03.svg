@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420">
+  <defs>
+    <linearGradient id="sourceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e65100"/>
+      <stop offset="100%" style="stop-color:#ff6d00"/>
+    </linearGradient>
+    <linearGradient id="inferGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📦 Batch Inference Pipeline</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="50" y="55" width="650" height="330" rx="16" fill="#1e293b"/>
+    
+    <!-- Data Source -->
+    <g transform="translate(80, 90)">
+      <rect x="0" y="0" width="150" height="80" rx="12" fill="url(#sourceGrad)"/>
+      <text x="75" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#fff">📂</text>
+      <text x="75" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">Data Source</text>
+      <text x="75" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fef3c7">(S3/HDFS)</text>
+    </g>
+    
+    <line x1="230" y1="130" x2="270" y2="130" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Feature Compute -->
+    <g transform="translate(285, 90)">
+      <rect x="0" y="0" width="150" height="80" rx="12" fill="url(#sparkGrad)"/>
+      <text x="75" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#fff">⚡</text>
+      <text x="75" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">Feature Compute</text>
+      <text x="75" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffecb3">(Spark/Dask)</text>
+    </g>
+    
+    <line x1="435" y1="130" x2="475" y2="130" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Batch Inference -->
+    <g transform="translate(490, 90)">
+      <rect x="0" y="0" width="150" height="80" rx="12" fill="url(#inferGrad)"/>
+      <text x="75" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#fff">🧠</text>
+      <text x="75" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">Batch Inference</text>
+      <text x="75" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#d1fae5">(Ray/Spark ML)</text>
+    </g>
+    
+    <!-- Arrow down -->
+    <line x1="565" y1="170" x2="565" y2="200" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="565" y1="200" x2="375" y2="200" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="375" y1="200" x2="375" y2="230" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Results Storage -->
+    <g transform="translate(100, 240)">
+      <rect x="0" y="0" width="550" height="90" rx="12" fill="#334155"/>
+      <text x="275" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📁 Results Storage</text>
+      
+      <g transform="translate(40, 40)">
+        <rect x="0" y="0" width="130" height="40" rx="8" fill="#3b82f6"/>
+        <text x="65" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">🗄️ Database</text>
+        
+        <rect x="160" y="0" width="130" height="40" rx="8" fill="#f59e0b"/>
+        <text x="240" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">📦 S3 / GCS</text>
+        
+        <rect x="320" y="0" width="130" height="40" rx="8" fill="#ef4444"/>
+        <text x="385" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">⚡ Cache (Redis)</text>
+      </g>
+    </g>
+    
+    <!-- Schedule info -->
+    <g transform="translate(100, 350)">
+      <rect x="0" y="0" width="550" height="25" rx="6" fill="#164e63"/>
+      <text x="275" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#22d3ee">⏰ Schedule: Daily @ 2AM | Duration: 2-4 hours | Throughput: millions of records</text>
+    </g>
+  </g>
+</svg>

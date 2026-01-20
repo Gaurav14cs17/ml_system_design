@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="energyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#energyBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">⚡ Energy Load Forecasting</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Case Study: Utility Power Demand Prediction</text>
+  
+  <!-- Business Context -->
+  <g transform="translate(30, 80)">
+    <rect width="360" height="150" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#f59e0b"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📊 Business Context</text>
+    
+    <g transform="translate(20, 50)">
+      <circle cx="8" cy="8" r="4" fill="#fbbf24"/>
+      <text x="20" y="12" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Regional utility serving 2M customers</text>
+      
+      <circle cx="8" cy="32" r="4" fill="#fbbf24"/>
+      <text x="20" y="36" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">24-hour ahead hourly load forecast</text>
+      
+      <circle cx="8" cy="56" r="4" fill="#fbbf24"/>
+      <text x="20" y="60" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Optimize power procurement</text>
+    </g>
+    
+    <!-- Target -->
+    <rect x="20" y="115" width="320" height="25" rx="4" fill="#78350f"/>
+    <text x="180" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">🎯 Target: MAPE andlt; 3%</text>
+  </g>
+  
+  <!-- Challenges -->
+  <g transform="translate(410, 80)">
+    <rect width="360" height="150" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#ef4444"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">⚠️ Key Challenges</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="155" height="40" rx="6" fill="#450a0a"/>
+      <text x="10" y="18" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">Weather Dependence</text>
+      <text x="10" y="32" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Temperature drives load</text>
+      
+      <rect x="165" y="0" width="155" height="40" rx="6" fill="#450a0a"/>
+      <text x="175" y="18" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">Multiple Seasonality</text>
+      <text x="175" y="32" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Daily, weekly, yearly</text>
+      
+      <rect x="0" y="50" width="155" height="40" rx="6" fill="#450a0a"/>
+      <text x="10" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">Special Events</text>
+      <text x="10" y="82" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Holidays, sports events</text>
+      
+      <rect x="165" y="50" width="155" height="40" rx="6" fill="#450a0a"/>
+      <text x="175" y="68" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">High Accuracy Need</text>
+      <text x="175" y="82" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Costly over/under</text>
+    </g>
+  </g>
+  
+  <!-- Data Available -->
+  <g transform="translate(30, 250)">
+    <rect width="360" height="170" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#22c55e"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📁 Available Data</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="320" height="26" rx="5" fill="#064e3b"/>
+      <text x="15" y="18" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">📊 5 years hourly load data</text>
+      
+      <rect x="0" y="32" width="320" height="26" rx="5" fill="#064e3b"/>
+      <text x="15" y="50" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">🌤️ Weather forecasts (temp, humidity, clouds)</text>
+      
+      <rect x="0" y="64" width="320" height="26" rx="5" fill="#064e3b"/>
+      <text x="15" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">📈 Economic indicators</text>
+      
+      <rect x="0" y="96" width="320" height="26" rx="5" fill="#064e3b"/>
+      <text x="15" y="114" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">📅 Event calendar (holidays, sports)</text>
+    </g>
+  </g>
+  
+  <!-- Solution Approach -->
+  <g transform="translate(410, 250)">
+    <rect width="360" height="170" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#glow)"/>
+    <rect width="360" height="35" rx="12" fill="#8b5cf6"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">💡 Solution Approach</text>
+    
+    <g transform="translate(20, 50)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd" font-weight="bold">Model Ensemble:</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• SARIMAX for base forecast</text>
+      <text x="10" y="52" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• LightGBM with weather features</text>
+      <text x="10" y="69" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• LSTM for peak detection</text>
+      
+      <text x="0" y="95" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd" font-weight="bold">Key Features:</text>
+      <text x="10" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• HDD/CDD temperature transforms</text>
+    </g>
+  </g>
+</svg>

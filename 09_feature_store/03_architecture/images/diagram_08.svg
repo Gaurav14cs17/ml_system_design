@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="bgSync" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowSync" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowSync" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgSync)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Materialization: Offline to Online Sync</text>
+  
+  <!-- Offline Store -->
+  <g filter="url(#shadowSync)">
+    <rect x="100" y="80" width="250" height="280" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="100" y="80" width="250" height="50" rx="16" fill="#2563eb"/>
+    <rect x="100" y="118" width="250" height="12" fill="#2563eb"/>
+    <text x="225" y="113" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📚 Offline Store</text>
+    
+    <text x="120" y="160" font-family="system-ui, sans-serif" font-size="11" fill="#93c5fd">Historical Feature Data</text>
+    
+    <rect x="120" y="175" width="210" height="160" rx="8" fill="#172554"/>
+    <text x="130" y="195" font-family="monospace" font-size="9" fill="#60a5fa">user_id | feature | ts</text>
+    <text x="130" y="215" font-family="monospace" font-size="9" fill="#64748b">─────────────────────</text>
+    <text x="130" y="235" font-family="monospace" font-size="9" fill="#94a3b8">u001 | 42.5 | Jan 1</text>
+    <text x="130" y="255" font-family="monospace" font-size="9" fill="#94a3b8">u001 | 45.2 | Jan 2</text>
+    <text x="130" y="275" font-family="monospace" font-size="9" fill="#94a3b8">u001 | 48.1 | Jan 3</text>
+    <text x="130" y="295" font-family="monospace" font-size="9" fill="#34d399">u001 | 51.0 | Jan 4 ← latest</text>
+    <text x="130" y="315" font-family="monospace" font-size="9" fill="#94a3b8">u002 | 33.2 | Jan 4</text>
+  </g>
+  
+  <!-- Sync Arrow -->
+  <path d="M355 220 L545 220" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowSync)"/>
+  <rect x="400" y="195" width="100" height="50" rx="8" fill="#451a03" filter="url(#shadowSync)"/>
+  <text x="450" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#fbbf24">Materialize</text>
+  <text x="450" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">Latest values</text>
+  
+  <!-- Online Store -->
+  <g filter="url(#shadowSync)">
+    <rect x="550" y="80" width="250" height="280" rx="16" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="550" y="80" width="250" height="50" rx="16" fill="#059669"/>
+    <rect x="550" y="118" width="250" height="12" fill="#059669"/>
+    <text x="675" y="113" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⚡ Online Store</text>
+    
+    <text x="570" y="160" font-family="system-ui, sans-serif" font-size="11" fill="#6ee7b7">Latest Feature Values Only</text>
+    
+    <rect x="570" y="175" width="210" height="160" rx="8" fill="#064e3b"/>
+    <text x="580" y="195" font-family="monospace" font-size="9" fill="#34d399">user_id | feature</text>
+    <text x="580" y="215" font-family="monospace" font-size="9" fill="#64748b">─────────────────</text>
+    <text x="580" y="240" font-family="monospace" font-size="10" fill="#6ee7b7">u001 → 51.0</text>
+    <text x="580" y="265" font-family="monospace" font-size="10" fill="#6ee7b7">u002 → 33.2</text>
+    <text x="580" y="290" font-family="monospace" font-size="10" fill="#6ee7b7">u003 → 27.8</text>
+    <text x="580" y="315" font-family="monospace" font-size="10" fill="#6ee7b7">...</text>
+  </g>
+  
+  <!-- Bottom info -->
+  <g filter="url(#shadowSync)">
+    <rect x="150" y="380" width="600" height="30" rx="8" fill="#334155"/>
+    <text x="450" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Materialization Schedule: Continuous (streaming) or Scheduled (batch hourly/daily)</text>
+  </g>
+</svg>

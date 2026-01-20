@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580">
+  <!-- Background -->
+  <rect width="800" height="580" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Common Filter Kernels</text>
+  
+  <!-- Row 1: Identity, Box Blur, Gaussian -->
+  <g transform="translate(40, 70)">
+    <!-- Identity Kernel -->
+    <g transform="translate(0, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#60a5fa">Identity</text>
+      <text x="75" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">(No change)</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="0" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="0" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="0" y="35" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="35" width="50" height="35" fill="#3b82f6" stroke="#60a5fa"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">1</text>
+        <rect x="100" y="35" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="0" y="70" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="70" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="70" width="50" height="35" fill="#1e293b" stroke="#3b82f6"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+      </g>
+    </g>
+    
+    <!-- Box Blur Kernel -->
+    <g transform="translate(210, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#22c55e">Box Blur</text>
+      <text x="75" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">(Average)</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="50" y="0" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="100" y="0" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="0" y="35" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="50" y="35" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="100" y="35" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="0" y="70" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="50" y="70" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+        <rect x="100" y="70" width="50" height="35" fill="#064e3b" stroke="#22c55e"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#4ade80">1/9</text>
+      </g>
+    </g>
+    
+    <!-- Gaussian Blur Kernel -->
+    <g transform="translate(420, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#8b5cf6">Gaussian Blur</text>
+      <text x="75" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">(Weighted)</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="50" height="35" fill="#4c1d95" stroke="#8b5cf6"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">1/16</text>
+        <rect x="50" y="0" width="50" height="35" fill="#5b21b6" stroke="#8b5cf6"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">2/16</text>
+        <rect x="100" y="0" width="50" height="35" fill="#4c1d95" stroke="#8b5cf6"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">1/16</text>
+        <rect x="0" y="35" width="50" height="35" fill="#5b21b6" stroke="#8b5cf6"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">2/16</text>
+        <rect x="50" y="35" width="50" height="35" fill="#7c3aed" stroke="#a78bfa"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#fff">4/16</text>
+        <rect x="100" y="35" width="50" height="35" fill="#5b21b6" stroke="#8b5cf6"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">2/16</text>
+        <rect x="0" y="70" width="50" height="35" fill="#4c1d95" stroke="#8b5cf6"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">1/16</text>
+        <rect x="50" y="70" width="50" height="35" fill="#5b21b6" stroke="#8b5cf6"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">2/16</text>
+        <rect x="100" y="70" width="50" height="35" fill="#4c1d95" stroke="#8b5cf6"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="10" fill="#c4b5fd">1/16</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Row 2: Sharpen, Laplacian, Emboss -->
+  <g transform="translate(40, 240)">
+    <!-- Sharpen Kernel -->
+    <g transform="translate(0, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#fbbf24">Sharpen</text>
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="50" height="35" fill="#1e293b" stroke="#fbbf24"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="0" width="50" height="35" fill="#78350f" stroke="#fbbf24"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#fcd34d">-1</text>
+        <rect x="100" y="0" width="50" height="35" fill="#1e293b" stroke="#fbbf24"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="0" y="35" width="50" height="35" fill="#78350f" stroke="#fbbf24"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#fcd34d">-1</text>
+        <rect x="50" y="35" width="50" height="35" fill="#fbbf24" stroke="#fcd34d"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1e293b">5</text>
+        <rect x="100" y="35" width="50" height="35" fill="#78350f" stroke="#fbbf24"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#fcd34d">-1</text>
+        <rect x="0" y="70" width="50" height="35" fill="#1e293b" stroke="#fbbf24"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="70" width="50" height="35" fill="#78350f" stroke="#fbbf24"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#fcd34d">-1</text>
+        <rect x="100" y="70" width="50" height="35" fill="#1e293b" stroke="#fbbf24"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+      </g>
+    </g>
+    
+    <!-- Laplacian Kernel -->
+    <g transform="translate(210, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">Edge (Laplacian)</text>
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="50" height="35" fill="#1e293b" stroke="#ef4444"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="0" width="50" height="35" fill="#7f1d1d" stroke="#ef4444"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#fca5a5">1</text>
+        <rect x="100" y="0" width="50" height="35" fill="#1e293b" stroke="#ef4444"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="0" y="35" width="50" height="35" fill="#7f1d1d" stroke="#ef4444"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#fca5a5">1</text>
+        <rect x="50" y="35" width="50" height="35" fill="#ef4444" stroke="#f87171"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">-4</text>
+        <rect x="100" y="35" width="50" height="35" fill="#7f1d1d" stroke="#ef4444"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#fca5a5">1</text>
+        <rect x="0" y="70" width="50" height="35" fill="#1e293b" stroke="#ef4444"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="70" width="50" height="35" fill="#7f1d1d" stroke="#ef4444"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#fca5a5">1</text>
+        <rect x="100" y="70" width="50" height="35" fill="#1e293b" stroke="#ef4444"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+      </g>
+    </g>
+    
+    <!-- Emboss Kernel -->
+    <g transform="translate(420, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#ec4899">Emboss</text>
+      <g transform="translate(0, 20)">
+        <rect x="0" y="0" width="50" height="35" fill="#831843" stroke="#ec4899"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a8d4">-2</text>
+        <rect x="50" y="0" width="50" height="35" fill="#831843" stroke="#ec4899"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a8d4">-1</text>
+        <rect x="100" y="0" width="50" height="35" fill="#1e293b" stroke="#ec4899"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="0" y="35" width="50" height="35" fill="#831843" stroke="#ec4899"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a8d4">-1</text>
+        <rect x="50" y="35" width="50" height="35" fill="#ec4899" stroke="#f472b6"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">1</text>
+        <rect x="100" y="35" width="50" height="35" fill="#9d174d" stroke="#ec4899"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a8d4">1</text>
+        <rect x="0" y="70" width="50" height="35" fill="#1e293b" stroke="#ec4899"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="70" width="50" height="35" fill="#9d174d" stroke="#ec4899"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a8d4">1</text>
+        <rect x="100" y="70" width="50" height="35" fill="#9d174d" stroke="#ec4899"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a8d4">2</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Row 3: Sobel X, Sobel Y, Prewitt -->
+  <g transform="translate(40, 410)">
+    <!-- Sobel X -->
+    <g transform="translate(0, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#06b6d4">Sobel X</text>
+      <text x="75" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">(Horizontal)</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="50" height="35" fill="#164e63" stroke="#06b6d4"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#67e8f9">-1</text>
+        <rect x="50" y="0" width="50" height="35" fill="#1e293b" stroke="#06b6d4"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="0" width="50" height="35" fill="#0e7490" stroke="#06b6d4"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#67e8f9">1</text>
+        <rect x="0" y="35" width="50" height="35" fill="#164e63" stroke="#06b6d4"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#67e8f9">-2</text>
+        <rect x="50" y="35" width="50" height="35" fill="#1e293b" stroke="#06b6d4"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="35" width="50" height="35" fill="#0e7490" stroke="#06b6d4"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#67e8f9">2</text>
+        <rect x="0" y="70" width="50" height="35" fill="#164e63" stroke="#06b6d4"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#67e8f9">-1</text>
+        <rect x="50" y="70" width="50" height="35" fill="#1e293b" stroke="#06b6d4"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="70" width="50" height="35" fill="#0e7490" stroke="#06b6d4"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#67e8f9">1</text>
+      </g>
+    </g>
+    
+    <!-- Sobel Y -->
+    <g transform="translate(210, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#14b8a6">Sobel Y</text>
+      <text x="75" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">(Vertical)</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="50" height="35" fill="#134e4a" stroke="#14b8a6"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#5eead4">-1</text>
+        <rect x="50" y="0" width="50" height="35" fill="#134e4a" stroke="#14b8a6"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#5eead4">-2</text>
+        <rect x="100" y="0" width="50" height="35" fill="#134e4a" stroke="#14b8a6"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#5eead4">-1</text>
+        <rect x="0" y="35" width="50" height="35" fill="#1e293b" stroke="#14b8a6"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="50" y="35" width="50" height="35" fill="#1e293b" stroke="#14b8a6"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="35" width="50" height="35" fill="#1e293b" stroke="#14b8a6"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="0" y="70" width="50" height="35" fill="#0d9488" stroke="#14b8a6"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#5eead4">1</text>
+        <rect x="50" y="70" width="50" height="35" fill="#0d9488" stroke="#14b8a6"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#5eead4">2</text>
+        <rect x="100" y="70" width="50" height="35" fill="#0d9488" stroke="#14b8a6"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#5eead4">1</text>
+      </g>
+    </g>
+    
+    <!-- Prewitt X -->
+    <g transform="translate(420, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#f97316">Prewitt X</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="50" height="35" fill="#7c2d12" stroke="#f97316"/><text x="25" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#fdba74">-1</text>
+        <rect x="50" y="0" width="50" height="35" fill="#1e293b" stroke="#f97316"/><text x="75" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="0" width="50" height="35" fill="#9a3412" stroke="#f97316"/><text x="125" y="22" text-anchor="middle" font-family="Arial" font-size="12" fill="#fdba74">1</text>
+        <rect x="0" y="35" width="50" height="35" fill="#7c2d12" stroke="#f97316"/><text x="25" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#fdba74">-1</text>
+        <rect x="50" y="35" width="50" height="35" fill="#1e293b" stroke="#f97316"/><text x="75" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="35" width="50" height="35" fill="#9a3412" stroke="#f97316"/><text x="125" y="57" text-anchor="middle" font-family="Arial" font-size="12" fill="#fdba74">1</text>
+        <rect x="0" y="70" width="50" height="35" fill="#7c2d12" stroke="#f97316"/><text x="25" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#fdba74">-1</text>
+        <rect x="50" y="70" width="50" height="35" fill="#1e293b" stroke="#f97316"/><text x="75" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">0</text>
+        <rect x="100" y="70" width="50" height="35" fill="#9a3412" stroke="#f97316"/><text x="125" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#fdba74">1</text>
+      </g>
+    </g>
+  </g>
+</svg>

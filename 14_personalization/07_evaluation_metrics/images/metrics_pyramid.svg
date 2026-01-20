@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="businessGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f5af19;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f12711;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="onlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#654ea3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eaafc8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00b09b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#96c93d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="unitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4b6cb7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#182848;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0f0f1a" rx="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold" font-family="Arial, sans-serif">Recommendation Evaluation Pyramid</text>
+  
+  <!-- Pyramid Level 4 (Top) - Business Impact -->
+  <g transform="translate(275, 60)">
+    <polygon points="125,0 250,80 0,80" fill="url(#businessGrad)" filter="url(#shadow6)"/>
+    <text x="125" y="55" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Business</text>
+    <text x="125" y="72" text-anchor="middle" fill="#f8fafc" font-size="10">Impact</text>
+  </g>
+  
+  <!-- Level 4 Description -->
+  <g transform="translate(550, 75)">
+    <rect x="0" y="0" width="200" height="55" rx="8" fill="rgba(245,175,25,0.2)" stroke="#f5af19" stroke-width="1"/>
+    <text x="100" y="18" text-anchor="middle" fill="#f5af19" font-size="11" font-weight="bold">💰 Business Metrics</text>
+    <text x="100" y="35" text-anchor="middle" fill="#f8fafc" font-size="9">• Revenue, LTV</text>
+    <text x="100" y="48" text-anchor="middle" fill="#f8fafc" font-size="9">• User Retention</text>
+  </g>
+  
+  <!-- Pyramid Level 3 - Online Metrics -->
+  <g transform="translate(225, 145)">
+    <polygon points="0,0 350,0 300,80 50,80" fill="url(#onlineGrad)" filter="url(#shadow6)"/>
+    <text x="175" y="50" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Online Metrics</text>
+  </g>
+  
+  <!-- Level 3 Description -->
+  <g transform="translate(50, 155)">
+    <rect x="0" y="0" width="150" height="70" rx="8" fill="rgba(101,78,163,0.2)" stroke="#654ea3" stroke-width="1"/>
+    <text x="75" y="18" text-anchor="middle" fill="#eaafc8" font-size="11" font-weight="bold">📊 A/B Testing</text>
+    <text x="75" y="35" text-anchor="middle" fill="#f8fafc" font-size="9">• CTR, Conversion</text>
+    <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="9">• Session Duration</text>
+    <text x="75" y="61" text-anchor="middle" fill="#f8fafc" font-size="9">• Engagement</text>
+  </g>
+  
+  <!-- Pyramid Level 2 - Offline Metrics -->
+  <g transform="translate(175, 230)">
+    <polygon points="0,0 450,0 400,80 50,80" fill="url(#offlineGrad)" filter="url(#shadow6)"/>
+    <text x="225" y="50" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Offline Metrics</text>
+  </g>
+  
+  <!-- Level 2 Description -->
+  <g transform="translate(600, 245)">
+    <rect x="0" y="0" width="170" height="85" rx="8" fill="rgba(0,176,155,0.2)" stroke="#00b09b" stroke-width="1"/>
+    <text x="85" y="18" text-anchor="middle" fill="#96c93d" font-size="11" font-weight="bold">📈 Ranking Quality</text>
+    <text x="85" y="35" text-anchor="middle" fill="#f8fafc" font-size="9">• NDCG, MAP</text>
+    <text x="85" y="48" text-anchor="middle" fill="#f8fafc" font-size="9">• Precision@K, Recall@K</text>
+    <text x="85" y="61" text-anchor="middle" fill="#f8fafc" font-size="9">• AUC, MRR</text>
+    <text x="85" y="74" text-anchor="middle" fill="#f8fafc" font-size="9">• RMSE, MAE</text>
+  </g>
+  
+  <!-- Pyramid Level 1 (Base) - Unit Tests -->
+  <g transform="translate(125, 315)">
+    <polygon points="0,0 550,0 500,80 50,80" fill="url(#unitGrad)" filter="url(#shadow6)"/>
+    <text x="275" y="50" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Unit Tests and Sanity Checks</text>
+  </g>
+  
+  <!-- Level 1 Description -->
+  <g transform="translate(30, 330)">
+    <rect x="0" y="0" width="150" height="70" rx="8" fill="rgba(75,108,183,0.2)" stroke="#4b6cb7" stroke-width="1"/>
+    <text x="75" y="18" text-anchor="middle" fill="#4b6cb7" font-size="11" font-weight="bold">🧪 Foundation</text>
+    <text x="75" y="35" text-anchor="middle" fill="#f8fafc" font-size="9">• Pipeline Tests</text>
+    <text x="75" y="48" text-anchor="middle" fill="#f8fafc" font-size="9">• Data Validation</text>
+    <text x="75" y="61" text-anchor="middle" fill="#f8fafc" font-size="9">• Coverage Checks</text>
+  </g>
+  
+  <!-- Speed vs Quality Arrow -->
+  <g transform="translate(700, 120)">
+    <line x1="20" y1="0" x2="20" y2="280" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead6)"/>
+    <text x="15" y="140" text-anchor="middle" fill="#f8fafc" font-size="10" transform="rotate(-90, 15, 140)">Increasing Validity</text>
+  </g>
+  
+  <g transform="translate(40, 400)">
+    <line x1="0" y1="20" x2="280" y2="20" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead6)"/>
+    <text x="140" y="40" text-anchor="middle" fill="#f8fafc" font-size="10">Increasing Speed and Scale</text>
+  </g>
+  
+  <!-- Key Metrics Grid -->
+  <g transform="translate(100, 430)">
+    <rect x="0" y="0" width="600" height="100" rx="10" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="300" y="22" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Key Metrics Quick Reference</text>
+    
+    <g transform="translate(20, 35)">
+      <rect x="0" y="0" width="130" height="55" rx="5" fill="rgba(0,176,155,0.3)"/>
+      <text x="65" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">NDCG@K</text>
+      <text x="65" y="35" text-anchor="middle" fill="#aaaaaa" font-size="8">Position-aware</text>
+      <text x="65" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">ranking quality</text>
+    </g>
+    
+    <g transform="translate(165, 35)">
+      <rect x="0" y="0" width="130" height="55" rx="5" fill="rgba(0,176,155,0.3)"/>
+      <text x="65" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Precision@K</text>
+      <text x="65" y="35" text-anchor="middle" fill="#aaaaaa" font-size="8">Relevant in top-K</text>
+      <text x="65" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">/ K</text>
+    </g>
+    
+    <g transform="translate(310, 35)">
+      <rect x="0" y="0" width="130" height="55" rx="5" fill="rgba(101,78,163,0.3)"/>
+      <text x="65" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">CTR</text>
+      <text x="65" y="35" text-anchor="middle" fill="#aaaaaa" font-size="8">Clicks /</text>
+      <text x="65" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">Impressions</text>
+    </g>
+    
+    <g transform="translate(455, 35)">
+      <rect x="0" y="0" width="130" height="55" rx="5" fill="rgba(245,175,25,0.3)"/>
+      <text x="65" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Revenue</text>
+      <text x="65" y="35" text-anchor="middle" fill="#aaaaaa" font-size="8">Business</text>
+      <text x="65" y="48" text-anchor="middle" fill="#aaaaaa" font-size="8">impact</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead6" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>
+

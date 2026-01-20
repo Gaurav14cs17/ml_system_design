@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="420" fill="url(#compBg)"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">🧠 Model Selection: Accuracy vs Latency Trade-off</text>
+  
+  <!-- Chart Area -->
+  <g transform="translate(80, 60)">
+    <!-- Axes -->
+    <line x1="0" y1="280" x2="700" y2="280" stroke="#475569" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="280" stroke="#475569" stroke-width="2"/>
+    
+    <!-- X-axis label -->
+    <text x="350" y="320" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Inference Latency (ms)</text>
+    
+    <!-- Y-axis label -->
+    <text x="-40" y="140" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" transform="rotate(-90, -40, 140)">Accuracy (%)</text>
+    
+    <!-- X-axis ticks -->
+    <text x="0" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">0</text>
+    <text x="140" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">50</text>
+    <text x="280" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">100</text>
+    <text x="420" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">200</text>
+    <text x="560" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">500</text>
+    <text x="700" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">2000+</text>
+    
+    <!-- Y-axis ticks -->
+    <text x="-10" y="280" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">80%</text>
+    <text x="-10" y="210" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">85%</text>
+    <text x="-10" y="140" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">90%</text>
+    <text x="-10" y="70" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">95%</text>
+    <text x="-10" y="0" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="10">100%</text>
+    
+    <!-- Grid lines -->
+    <line x1="0" y1="210" x2="700" y2="210" stroke="#1e293b" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="0" y1="140" x2="700" y2="140" stroke="#1e293b" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="0" y1="70" x2="700" y2="70" stroke="#1e293b" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- Model bubbles -->
+    
+    <!-- Regex/Keywords - Fast but low accuracy -->
+    <circle cx="15" cy="260" r="25" fill="#ef4444" opacity="0.8"/>
+    <text x="15" y="265" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Regex</text>
+    
+    <!-- FastText - Fast, medium accuracy -->
+    <circle cx="30" cy="210" r="28" fill="#f97316" opacity="0.8"/>
+    <text x="30" y="215" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">FastText</text>
+    
+    <!-- LogReg + TF-IDF -->
+    <circle cx="20" cy="230" r="22" fill="#eab308" opacity="0.8"/>
+    <text x="20" y="235" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8" font-weight="bold">LogReg</text>
+    
+    <!-- TextCNN -->
+    <circle cx="80" cy="170" r="30" fill="#84cc16" opacity="0.8"/>
+    <text x="80" y="175" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">TextCNN</text>
+    
+    <!-- DistilBERT -->
+    <circle cx="180" cy="110" r="35" fill="#22c55e" opacity="0.8"/>
+    <text x="180" y="105" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Distil</text>
+    <text x="180" y="118" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">BERT</text>
+    
+    <!-- BERT-base -->
+    <circle cx="300" cy="70" r="38" fill="#14b8a6" opacity="0.8"/>
+    <text x="300" y="65" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">BERT</text>
+    <text x="300" y="80" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">base</text>
+    
+    <!-- RoBERTa-large -->
+    <circle cx="420" cy="50" r="40" fill="#06b6d4" opacity="0.8"/>
+    <text x="420" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">RoBERTa</text>
+    <text x="420" y="60" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">large</text>
+    
+    <!-- GPT-4 -->
+    <circle cx="650" cy="20" r="45" fill="#8b5cf6" opacity="0.8"/>
+    <text x="650" y="15" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">GPT-4</text>
+    <text x="650" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">LLM</text>
+    
+    <!-- Optimal zone highlight -->
+    <rect x="100" y="50" width="250" height="120" rx="10" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="225" y="185" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="11" font-weight="bold">⭐ Optimal Zone</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(620, 350)">
+    <rect width="200" height="55" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="100" y="20" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Bubble size = Model size</text>
+    <text x="100" y="40" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">Higher = Better accuracy</text>
+  </g>
+</svg>
+

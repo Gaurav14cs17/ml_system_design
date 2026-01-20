@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="lcycleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="baselineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="deployGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="collectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="analyzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="alertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="respondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <linearGradient id="improveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+    <filter id="cycleShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="cycleArrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="520" fill="url(#lcycleBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" font-weight="bold" fill="#f8fafc">
+    🔄 ML Monitoring Lifecycle
+  </text>
+  <text x="400" y="65" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" fill="#94a3b8">
+    Continuous feedback loop for production ML systems
+  </text>
+  
+  <!-- Step 1: Baseline -->
+  <g transform="translate(60, 90)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#baselineGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">📊</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">BASELINE</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#bfdbfe">Establish metrics</text>
+  </g>
+  
+  <!-- Arrow 1→2 -->
+  <line x1="240" y1="130" x2="310" y2="130" stroke="#64748b" stroke-width="2" marker-end="url(#cycleArrow)"/>
+  
+  <!-- Step 2: Deploy -->
+  <g transform="translate(320, 90)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#deployGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">🚀</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">DEPLOY</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#a7f3d0">Ship with monitoring</text>
+  </g>
+  
+  <!-- Arrow 2→3 -->
+  <line x1="500" y1="130" x2="560" y2="130" stroke="#64748b" stroke-width="2" marker-end="url(#cycleArrow)"/>
+  
+  <!-- Step 3: Collect -->
+  <g transform="translate(570, 90)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#collectGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">📥</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">COLLECT</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#ddd6fe">Gather all signals</text>
+  </g>
+  
+  <!-- Arrow 3→4 (down) -->
+  <line x1="660" y1="170" x2="660" y2="220" stroke="#64748b" stroke-width="2" marker-end="url(#cycleArrow)"/>
+  
+  <!-- Step 4: Analyze -->
+  <g transform="translate(570, 230)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#analyzeGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">🔍</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">ANALYZE</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#fef3c7">Detect anomalies</text>
+  </g>
+  
+  <!-- Arrow 4→5 -->
+  <line x1="570" y1="270" x2="510" y2="270" stroke="#64748b" stroke-width="2" marker-end="url(#cycleArrow)"/>
+  
+  <!-- Step 5: Alert -->
+  <g transform="translate(320, 230)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#alertGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">🚨</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">ALERT</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#fecaca">Threshold breached</text>
+  </g>
+  
+  <!-- Arrow 5→6 (down) -->
+  <line x1="410" y1="310" x2="410" y2="360" stroke="#64748b" stroke-width="2" marker-end="url(#cycleArrow)"/>
+  
+  <!-- Step 6: Respond -->
+  <g transform="translate(320, 370)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#respondGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">🔧</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">RESPOND</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#fbcfe8">Diagnose &amp; fix</text>
+  </g>
+  
+  <!-- Arrow 6→7 -->
+  <line x1="320" y1="410" x2="250" y2="410" stroke="#64748b" stroke-width="2" marker-end="url(#cycleArrow)"/>
+  
+  <!-- Step 7: Improve -->
+  <g transform="translate(60, 370)" filter="url(#cycleShadow)">
+    <rect width="180" height="80" rx="12" fill="url(#improveGrad)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#f8fafc">📈</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="bold" fill="#f8fafc">IMPROVE</text>
+    <text x="90" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#99f6e4">Retrain, update</text>
+  </g>
+  
+  <!-- Arrow 7→1 (curved back) -->
+  <path d="M60,410 Q20,300 60,170" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="60,170 55,182 65,182" fill="#64748b"/>
+  
+  <!-- Center info -->
+  <rect x="290" y="130" width="220" height="55" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" filter="url(#cycleShadow)"/>
+  <text x="400" y="155" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#94a3b8">🔁 Continuous Loop</text>
+  <text x="400" y="175" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#64748b">Each iteration improves the system</text>
+  
+  <!-- Bottom annotation -->
+  <text x="400" y="490" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" fill="#64748b">
+    💡 Monitoring is not a one-time setup — it's a continuous practice
+  </text>
+</svg>

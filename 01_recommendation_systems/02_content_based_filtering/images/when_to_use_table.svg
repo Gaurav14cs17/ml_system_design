@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        table { width: 100%; border-collapse: collapse; font-family: "Inter", Arial, sans-serif; font-size: 14px; color: #1f2933; }
+        th, td { border: 1px solid #d8dde7; padding: 10px 12px; text-align: left; vertical-align: top; }
+        th { background: #eef2f7; font-weight: 700; }
+        tbody tr:nth-child(even) td { background: #f8fafc; }
+      </style>
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Why It Works</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>New items with no ratings</td><td>Uses item features, not interaction history</td></tr>
+          <tr><td>Niche items with few interactions</td><td>Doesn't need popularity</td></tr>
+          <tr><td>Explainable recommendations needed</td><td>&amp;quot;Because you liked similar items&amp;quot;</td></tr>
+          <tr><td>Privacy concerns</td><td>Doesn't need other users' data</td></tr>
+          <tr><td>Domain with rich metadata</td><td>Books, movies, products with descriptions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>
+

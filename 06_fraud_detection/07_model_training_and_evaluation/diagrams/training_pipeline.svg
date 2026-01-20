@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 550">
+  <defs>
+    <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#e94560"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="550" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="475" y="35" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🎓 Model Training &amp; Evaluation Pipeline
+  </text>
+  
+  <!-- Pipeline Flow -->
+  <rect x="30" y="70" width="890" height="140" rx="10" fill="#0f1a2e" stroke="url(#trainGrad)" stroke-width="2"/>
+  <text x="475" y="95" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    📊 Training Pipeline Flow
+  </text>
+  
+  <!-- Pipeline Steps -->
+  <rect x="50" y="115" width="110" height="70" rx="8" fill="#1e3a5f"/>
+  <text x="105" y="145" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📥 Data</text>
+  <text x="105" y="162" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Feature Store</text>
+  <text x="105" y="175" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Labels</text>
+  
+  <path d="M 160 150 L 190 150" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect x="195" y="115" width="110" height="70" rx="8" fill="#854d0e"/>
+  <text x="250" y="145" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">⚙️ Preprocess</text>
+  <text x="250" y="162" text-anchor="middle" fill="#fde047" font-family="Arial, sans-serif" font-size="8">Imbalance</text>
+  <text x="250" y="175" text-anchor="middle" fill="#fde047" font-family="Arial, sans-serif" font-size="8">Sampling</text>
+  
+  <path d="M 305 150 L 335 150" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <rect x="340" y="115" width="110" height="70" rx="8" fill="#6b4d8a"/>
+  <text x="395" y="145" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🧠 Train</text>
+  <text x="395" y="162" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="8">XGBoost</text>
+  <text x="395" y="175" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="8">Neural Net</text>
+  
+  <path d="M 450 150 L 480 150" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <rect x="485" y="115" width="110" height="70" rx="8" fill="#14532d"/>
+  <text x="540" y="145" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📊 Evaluate</text>
+  <text x="540" y="162" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="8">PR-AUC</text>
+  <text x="540" y="175" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="8">Thresholds</text>
+  
+  <path d="M 595 150 L 625 150" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <rect x="630" y="115" width="110" height="70" rx="8" fill="#3f1219"/>
+  <text x="685" y="145" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">✅ Validate</text>
+  <text x="685" y="162" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">Backtesting</text>
+  <text x="685" y="175" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">Fairness</text>
+  
+  <path d="M 740 150 L 770 150" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <rect x="775" y="115" width="110" height="70" rx="8" fill="#22c55e"/>
+  <text x="830" y="145" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🚀 Deploy</text>
+  <text x="830" y="162" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">A/B Test</text>
+  <text x="830" y="175" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">Rollout</text>
+  
+  <!-- Metrics Section -->
+  <rect x="30" y="230" width="440" height="180" rx="10" fill="#0f1a2e" stroke="#22c55e" stroke-width="2"/>
+  <text x="250" y="258" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    📊 Key Evaluation Metrics
+  </text>
+  
+  <!-- Precision-Recall Curve Mock -->
+  <rect x="50" y="275" width="180" height="120" rx="6" fill="#1e293b"/>
+  <text x="140" y="295" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">PR Curve</text>
+  
+  <!-- Axes -->
+  <line x1="70" y1="375" x2="210" y2="375" stroke="#888" stroke-width="1"/>
+  <line x1="70" y1="310" x2="70" y2="375" stroke="#888" stroke-width="1"/>
+  <text x="140" y="390" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Recall</text>
+  <text x="55" y="345" fill="#888" font-family="Arial, sans-serif" font-size="8" transform="rotate(-90, 55, 345)">Precision</text>
+  
+  <!-- Curve -->
+  <path d="M 70 315 Q 100 320, 130 340 Q 160 360, 200 370" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <circle cx="100" cy="322" r="4" fill="#e94560"/>
+  <text x="110" y="320" fill="#e94560" font-family="Arial, sans-serif" font-size="7">Operating Point</text>
+  
+  <!-- Metrics List -->
+  <rect x="250" y="275" width="200" height="120" rx="6" fill="#1e293b"/>
+  <text x="350" y="295" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Target Metrics</text>
+  
+  <text x="265" y="315" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">✓ PR-AUC: andgt;0.50</text>
+  <text x="265" y="333" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">✓ Precision@0.01: andgt;70%</text>
+  <text x="265" y="351" fill="#22c55e" font-family="Arial, sans-serif" font-size="10">✓ Recall@0.01: andgt;50%</text>
+  <text x="265" y="369" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10">⚠ False Positive Rate: andlt;3%</text>
+  <text x="265" y="387" fill="#888" font-family="Arial, sans-serif" font-size="10">Value at Risk: $10M+</text>
+  
+  <!-- Handling Imbalance -->
+  <rect x="490" y="230" width="430" height="180" rx="10" fill="#0f1a2e" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="705" y="258" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    ⚖️ Handling Class Imbalance
+  </text>
+  
+  <rect x="510" y="275" width="190" height="55" rx="6" fill="#1e293b"/>
+  <text x="605" y="295" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Undersampling</text>
+  <text x="605" y="312" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Reduce legit samples</text>
+  <text x="605" y="325" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">1:10 fraud:legit ratio</text>
+  
+  <rect x="510" y="340" width="190" height="55" rx="6" fill="#1e293b"/>
+  <text x="605" y="360" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="10" font-weight="bold">SMOTE</text>
+  <text x="605" y="377" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Synthetic oversampling</text>
+  <text x="605" y="390" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Careful: can overfit</text>
+  
+  <rect x="715" y="275" width="190" height="55" rx="6" fill="#1e293b"/>
+  <text x="810" y="295" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Class Weights</text>
+  <text x="810" y="312" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">scale_pos_weight</text>
+  <text x="810" y="325" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">Most common approach</text>
+  
+  <rect x="715" y="340" width="190" height="55" rx="6" fill="#1e293b"/>
+  <text x="810" y="360" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Focal Loss</text>
+  <text x="810" y="377" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">For neural networks</text>
+  <text x="810" y="390" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Focuses on hard examples</text>
+  
+  <!-- Time-based Validation -->
+  <rect x="30" y="430" width="890" height="100" rx="10" fill="#0f1a2e" stroke="#e94560" stroke-width="2"/>
+  <text x="475" y="458" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    ⏰ Time-Based Cross-Validation (Critical for Fraud)
+  </text>
+  
+  <!-- Timeline -->
+  <rect x="60" y="480" width="820" height="30" rx="5" fill="#1e293b"/>
+  
+  <rect x="60" y="480" width="200" height="30" rx="5" fill="#3b82f6"/>
+  <text x="160" y="500" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Train (Jan-Jun)</text>
+  
+  <rect x="260" y="480" width="100" height="30" fill="#854d0e"/>
+  <text x="310" y="500" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Val (Jul)</text>
+  
+  <rect x="360" y="480" width="100" height="30" fill="#991b1b"/>
+  <text x="410" y="500" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Test (Aug)</text>
+  
+  <rect x="460" y="480" width="100" height="30" fill="#14532d"/>
+  <text x="510" y="500" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Backtest</text>
+  
+  <rect x="580" y="480" width="300" height="30" rx="5" fill="#22c55e"/>
+  <text x="730" y="500" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Production A/B Test (Sep-Oct)</text>
+  
+  <text x="475" y="525" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">
+    ⚠️ Never use random splits - fraud patterns evolve over time!
+  </text>
+</svg>
+

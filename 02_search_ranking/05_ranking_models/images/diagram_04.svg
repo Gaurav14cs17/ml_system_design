@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450">
+  <defs>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="175" y="20" width="400" height="50" rx="12" fill="url(#modelGrad)"/>
+    <text x="375" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🧠 Ranking Model Evolution</text>
+  </g>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="110" x2="650" y2="110" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Model 1: TF-IDF -->
+  <g filter="url(#shadow)">
+    <circle cx="130" cy="110" r="10" fill="#ef4444"/>
+    <rect x="60" y="130" width="140" height="130" rx="10" fill="#0f172a"/>
+    <text x="130" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ef4444">TF-IDF / BM25</text>
+    <text x="130" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">1970s-2000s</text>
+    <text x="75" y="200" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Term frequency</text>
+    <text x="75" y="215" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Inverse doc freq</text>
+    <text x="75" y="230" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Fast indexing</text>
+    <text x="75" y="250" font-family="Segoe UI, sans-serif" font-size="9" fill="#22c55e">Still used today!</text>
+  </g>
+  
+  <!-- Model 2: GBDT -->
+  <g filter="url(#shadow)">
+    <circle cx="280" cy="110" r="10" fill="#f59e0b"/>
+    <rect x="210" y="130" width="140" height="130" rx="10" fill="#0f172a"/>
+    <text x="280" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">GBDT (LambdaMART)</text>
+    <text x="280" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">2010s</text>
+    <text x="225" y="200" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• 100s of features</text>
+    <text x="225" y="215" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• XGBoost/LightGBM</text>
+    <text x="225" y="230" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Pairwise loss</text>
+    <text x="225" y="250" font-family="Segoe UI, sans-serif" font-size="9" fill="#22c55e">Production standard</text>
+  </g>
+  
+  <!-- Model 3: Deep Learning -->
+  <g filter="url(#shadow)">
+    <circle cx="430" cy="110" r="10" fill="#8b5cf6"/>
+    <rect x="360" y="130" width="140" height="130" rx="10" fill="#0f172a"/>
+    <text x="430" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6">Deep Learning</text>
+    <text x="430" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">2016-2020</text>
+    <text x="375" y="200" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• RankNet/LambdaRank</text>
+    <text x="375" y="215" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Embeddings</text>
+    <text x="375" y="230" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Feature interactions</text>
+    <text x="375" y="250" font-family="Segoe UI, sans-serif" font-size="9" fill="#22c55e">YouTube/Netflix</text>
+  </g>
+  
+  <!-- Model 4: Transformers -->
+  <g filter="url(#shadow)">
+    <circle cx="580" cy="110" r="10" fill="#22c55e"/>
+    <rect x="510" y="130" width="140" height="130" rx="10" fill="#0f172a"/>
+    <text x="580" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">BERT/Transformers</text>
+    <text x="580" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">2020+</text>
+    <text x="525" y="200" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Cross-attention</text>
+    <text x="525" y="215" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Semantic matching</text>
+    <text x="525" y="230" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• ColBERT, MonoT5</text>
+    <text x="525" y="250" font-family="Segoe UI, sans-serif" font-size="9" fill="#22c55e">State-of-art</text>
+  </g>
+  
+  <!-- Current Stack -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="290" width="550" height="140" rx="12" fill="#0f172a"/>
+    <text x="375" y="320" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🏗️ Modern Production Stack (Multi-Stage)</text>
+    
+    <g transform="translate(120, 340)">
+      <rect x="0" y="0" width="130" height="70" rx="8" fill="#0f172a"/>
+      <text x="65" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#ef4444">Stage 1: Retrieval</text>
+      <text x="65" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">BM25 + ANN</text>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">~10ms, 1000 docs</text>
+    </g>
+    
+    <path d="M255 375 L285 375" stroke="#64748b" stroke-width="2"/>
+    <polygon points="285,370 300,375 285,380" fill="#64748b"/>
+    
+    <g transform="translate(300, 340)">
+      <rect x="0" y="0" width="130" height="70" rx="8" fill="#0f172a"/>
+      <text x="65" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f59e0b">Stage 2: Ranking</text>
+      <text x="65" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">GBDT/Neural</text>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">~50ms, 100 docs</text>
+    </g>
+    
+    <path d="M435 375 L465 375" stroke="#64748b" stroke-width="2"/>
+    <polygon points="465,370 480,375 465,380" fill="#64748b"/>
+    
+    <g transform="translate(480, 340)">
+      <rect x="0" y="0" width="130" height="70" rx="8" fill="#0f172a"/>
+      <text x="65" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#22c55e">Stage 3: Re-rank</text>
+      <text x="65" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">BERT/Cross-enc</text>
+      <text x="65" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">~100ms, 10 docs</text>
+    </g>
+  </g>
+</svg>
+
+
+

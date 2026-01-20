@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="textModBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#textModBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="26" font-weight="bold">TEXT MODERATION</text>
+  <text x="400" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">NLP-Powered Content Analysis Pipeline</text>
+  
+  <!-- Pipeline -->
+  <g transform="translate(50, 90)">
+    <!-- Input -->
+    <rect width="100" height="60" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="50" y="28" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📝 Input</text>
+    <text x="50" y="45" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="8">User text</text>
+    
+    <path d="M 160 120 L 190 120" stroke="#60a5fa" stroke-width="2"/>
+    <polygon points="190,115 205,120 190,125" fill="#60a5fa"/>
+    
+    <!-- Preprocessing -->
+    <rect x="210" y="0" width="120" height="60" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="270" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">⚙️ Preprocess</text>
+    <text x="270" y="42" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="8">Normalize, clean</text>
+    <text x="270" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="7">Handle obfuscation</text>
+    
+    <path d="M 340 120 L 370 120" stroke="#fb923c" stroke-width="2"/>
+    <polygon points="370,115 385,120 370,125" fill="#fb923c"/>
+    
+    <!-- Models -->
+    <rect x="390" y="0" width="150" height="60" rx="10" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2" filter="url(#glow)"/>
+    <text x="465" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🧠 ML Models</text>
+    <text x="465" y="42" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="8">BERT / LLM classifier</text>
+    <text x="465" y="55" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="7">Multi-label output</text>
+    
+    <path d="M 550 120 L 580 120" stroke="#a78bfa" stroke-width="2"/>
+    <polygon points="580,115 595,120 580,125" fill="#a78bfa"/>
+    
+    <!-- Decision -->
+    <rect x="600" y="0" width="130" height="60" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="665" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">⚖️ Decision</text>
+    <text x="665" y="42" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="8">Allow / Flag / Block</text>
+    <text x="665" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="7">+ confidence score</text>
+  </g>
+  
+  <!-- Detection Techniques -->
+  <text x="400" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Detection Techniques</text>
+  
+  <g transform="translate(50, 205)">
+    <rect width="220" height="100" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔍 Keyword Detection</text>
+    <text x="20" y="48" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">• Blocklist matching</text>
+    <text x="20" y="65" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">• Regex patterns</text>
+    <text x="20" y="82" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="8">✓ Fast, interpretable</text>
+    <text x="20" y="95" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">✗ Easy to evade</text>
+  </g>
+  
+  <g transform="translate(290, 205)">
+    <rect width="220" height="100" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🧠 Semantic Analysis</text>
+    <text x="20" y="48" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Embedding similarity</text>
+    <text x="20" y="65" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">• Contextual understanding</text>
+    <text x="20" y="82" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="8">✓ Handles paraphrasing</text>
+    <text x="20" y="95" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">✗ More compute</text>
+  </g>
+  
+  <g transform="translate(530, 205)">
+    <rect width="220" height="100" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔗 Entity Detection</text>
+    <text x="20" y="48" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">• Named entity recognition</text>
+    <text x="20" y="65" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">• PII detection</text>
+    <text x="20" y="82" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="8">✓ Targeted moderation</text>
+    <text x="20" y="95" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">✗ Domain-specific</text>
+  </g>
+  
+  <!-- Obfuscation Challenges -->
+  <text x="400" y="340" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Handling Obfuscation</text>
+  
+  <g transform="translate(80, 355)">
+    <rect width="160" height="60" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+    <text x="80" y="22" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">L33tspeak</text>
+    <text x="80" y="40" text-anchor="middle" fill="#fdba74" font-family="monospace" font-size="10">"h4t3" → "hate"</text>
+    <text x="80" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Character substitution</text>
+  </g>
+  
+  <g transform="translate(260, 355)">
+    <rect width="160" height="60" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+    <text x="80" y="22" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Spacing</text>
+    <text x="80" y="40" text-anchor="middle" fill="#f9a8d4" font-family="monospace" font-size="10">"h a t e" → "hate"</text>
+    <text x="80" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Split words</text>
+  </g>
+  
+  <g transform="translate(440, 355)">
+    <rect width="160" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="80" y="22" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Unicode</text>
+    <text x="80" y="40" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="10">"hаte" → "hate"</text>
+    <text x="80" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Lookalike chars</text>
+  </g>
+  
+  <g transform="translate(620, 355)">
+    <rect width="120" height="60" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="60" y="22" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Phonetic</text>
+    <text x="60" y="40" text-anchor="middle" fill="#c4b5fd" font-family="monospace" font-size="9">"h8" → "hate"</text>
+    <text x="60" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Sound-alike</text>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(100, 435)">
+    <rect width="180" height="50" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="90" y="22" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Target: 99%+ Recall</text>
+    <text x="90" y="40" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Don't miss violations</text>
+  </g>
+  
+  <g transform="translate(310, 435)">
+    <rect width="180" height="50" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="90" y="22" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Balance Precision</text>
+    <text x="90" y="40" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Minimize false positives</text>
+  </g>
+  
+  <g transform="translate(520, 435)">
+    <rect width="180" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="90" y="22" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Latency andlt; 100ms</text>
+    <text x="90" y="40" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Real-time response</text>
+  </g>
+</svg>

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgDS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="streamGradDS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="lakeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="fsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadowDS" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowDS" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgDS)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Data Sources for Feature Store</text>
+  <text x="450" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Ingestion patterns and connectors for various data sources</text>
+  
+  <!-- Left Column: Data Sources -->
+  <!-- Databases -->
+  <g filter="url(#shadowDS)">
+    <rect x="40" y="85" width="200" height="90" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="40" y="85" width="200" height="30" rx="10" fill="url(#dbGrad)"/>
+    <rect x="40" y="103" width="200" height="12" fill="url(#dbGrad)"/>
+    <text x="140" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🗄️ Databases</text>
+    <text x="60" y="135" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">PostgreSQL, MySQL</text>
+    <text x="60" y="150" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">MongoDB, DynamoDB</text>
+    <text x="60" y="165" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">CDC, Batch extracts</text>
+  </g>
+  
+  <!-- Event Streams -->
+  <g filter="url(#shadowDS)">
+    <rect x="40" y="190" width="200" height="90" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="40" y="190" width="200" height="30" rx="10" fill="url(#streamGradDS)"/>
+    <rect x="40" y="208" width="200" height="12" fill="url(#streamGradDS)"/>
+    <text x="140" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">⚡ Event Streams</text>
+    <text x="60" y="240" font-family="system-ui, sans-serif" font-size="10" fill="#a78bfa">Kafka, Kinesis</text>
+    <text x="60" y="255" font-family="system-ui, sans-serif" font-size="10" fill="#a78bfa">Pulsar, EventHub</text>
+    <text x="60" y="270" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Real-time, Near-RT</text>
+  </g>
+  
+  <!-- Data Lakes -->
+  <g filter="url(#shadowDS)">
+    <rect x="40" y="295" width="200" height="90" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="40" y="295" width="200" height="30" rx="10" fill="url(#lakeGrad)"/>
+    <rect x="40" y="313" width="200" height="12" fill="url(#lakeGrad)"/>
+    <text x="140" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🌊 Data Lakes</text>
+    <text x="60" y="345" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">S3, GCS, ADLS</text>
+    <text x="60" y="360" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Delta, Iceberg</text>
+    <text x="60" y="375" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Parquet, Avro</text>
+  </g>
+  
+  <!-- External APIs -->
+  <g filter="url(#shadowDS)">
+    <rect x="40" y="400" width="200" height="75" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="40" y="400" width="200" height="30" rx="10" fill="url(#apiGrad)"/>
+    <rect x="40" y="418" width="200" height="12" fill="url(#apiGrad)"/>
+    <text x="140" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🌐 External APIs</text>
+    <text x="60" y="450" font-family="system-ui, sans-serif" font-size="10" fill="#fbbf24">REST, GraphQL</text>
+    <text x="60" y="465" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Third-party data</text>
+  </g>
+  
+  <!-- Arrows to Feature Store -->
+  <path d="M245 130 L340 200" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowDS)"/>
+  <path d="M245 235 L340 235" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowDS)"/>
+  <path d="M245 340 L340 270" stroke="#10b981" stroke-width="2" marker-end="url(#arrowDS)"/>
+  <path d="M245 437 L340 285" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowDS)"/>
+  
+  <!-- Center: Feature Store -->
+  <g filter="url(#shadowDS)">
+    <rect x="345" y="140" width="210" height="195" rx="14" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect x="345" y="140" width="210" height="40" rx="14" fill="url(#fsGrad)"/>
+    <rect x="345" y="168" width="210" height="12" fill="url(#fsGrad)"/>
+    <text x="450" y="167" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🏪 Feature Store</text>
+    
+    <text x="370" y="205" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f87171">Ingestion Modes:</text>
+    
+    <rect x="365" y="215" width="170" height="28" rx="5" fill="#450a0a" stroke="#7f1d1d" stroke-width="1"/>
+    <text x="450" y="234" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">📦 Batch (Spark, dbt)</text>
+    
+    <rect x="365" y="250" width="170" height="28" rx="5" fill="#450a0a" stroke="#7f1d1d" stroke-width="1"/>
+    <text x="450" y="269" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">⚡ Streaming (Flink)</text>
+    
+    <rect x="365" y="285" width="170" height="28" rx="5" fill="#450a0a" stroke="#7f1d1d" stroke-width="1"/>
+    <text x="450" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">🔄 Push API</text>
+  </g>
+  
+  <!-- Arrows to Outputs -->
+  <path d="M560 200 L620 165" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowDS)"/>
+  <path d="M560 270 L620 270" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowDS)"/>
+  
+  <!-- Right: Outputs -->
+  <g filter="url(#shadowDS)">
+    <rect x="625" y="100" width="235" height="110" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="742" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">📦 Offline Store</text>
+    <text x="742" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Historical features</text>
+    <text x="742" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Training data generation</text>
+    <rect x="665" y="185" width="155" height="18" rx="4" fill="#172554"/>
+    <text x="742" y="197" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">Delta Lake / Parquet</text>
+  </g>
+  
+  <g filter="url(#shadowDS)">
+    <rect x="625" y="225" width="235" height="110" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    <text x="742" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f87171">⚡ Online Store</text>
+    <text x="742" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Latest feature values</text>
+    <text x="742" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Real-time serving</text>
+    <rect x="665" y="310" width="155" height="18" rx="4" fill="#450a0a"/>
+    <text x="742" y="322" text-anchor="middle" font-family="monospace" font-size="9" fill="#f87171">Redis / DynamoDB</text>
+  </g>
+  
+  <!-- Bottom note -->
+  <rect x="300" y="435" width="560" height="45" rx="8" fill="#334155" filter="url(#shadowDS)"/>
+  <text x="580" y="458" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Data flows from diverse sources → unified transformation → dual-store architecture</text>
+  <text x="580" y="473" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Supports batch, streaming, and push-based ingestion patterns</text>
+</svg>

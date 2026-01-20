@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgPIT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="featureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="eventGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="wrongGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="rightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowPIT" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgPIT)"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Point-in-Time Join Visualization</text>
+  <text x="450" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Training(eᵢ, tᵢ) = argmax{τⱼ ≤ tᵢ} F(eⱼ = eᵢ, τⱼ) — Only use features from the past</text>
+  
+  <!-- Timeline -->
+  <line x1="60" y1="150" x2="840" y2="150" stroke="#475569" stroke-width="3"/>
+  <text x="850" y="155" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Time →</text>
+  
+  <!-- Time markers -->
+  <g>
+    <line x1="150" y1="140" x2="150" y2="160" stroke="#64748b" stroke-width="2"/>
+    <text x="150" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">t₁</text>
+    <text x="150" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Jan 1</text>
+    
+    <line x1="350" y1="140" x2="350" y2="160" stroke="#64748b" stroke-width="2"/>
+    <text x="350" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">t₂</text>
+    <text x="350" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Jan 15</text>
+    
+    <line x1="550" y1="140" x2="550" y2="160" stroke="#64748b" stroke-width="2"/>
+    <text x="550" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">t₃</text>
+    <text x="550" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Feb 1</text>
+    
+    <line x1="750" y1="140" x2="750" y2="160" stroke="#64748b" stroke-width="2"/>
+    <text x="750" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">t₄</text>
+    <text x="750" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Feb 15</text>
+  </g>
+  
+  <!-- Feature updates (blue circles above timeline) -->
+  <g>
+    <text x="60" y="95" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Feature Values F(τ):</text>
+    
+    <circle cx="150" cy="115" r="22" fill="url(#featureGrad)" filter="url(#shadowPIT)"/>
+    <text x="150" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">10</text>
+    
+    <circle cx="550" cy="115" r="22" fill="url(#featureGrad)" filter="url(#shadowPIT)"/>
+    <text x="550" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">25</text>
+    
+    <circle cx="750" cy="115" r="22" fill="url(#featureGrad)" filter="url(#shadowPIT)"/>
+    <text x="750" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">40</text>
+  </g>
+  
+  <!-- Events to predict (orange squares below timeline) -->
+  <g>
+    <text x="60" y="235" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Prediction Events E(t):</text>
+    
+    <rect x="330" y="205" width="40" height="35" rx="5" fill="url(#eventGrad)" filter="url(#shadowPIT)"/>
+    <text x="350" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">A</text>
+    
+    <rect x="530" y="205" width="40" height="35" rx="5" fill="url(#eventGrad)" filter="url(#shadowPIT)"/>
+    <text x="550" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">B</text>
+  </g>
+  
+  <!-- Connection lines to timeline -->
+  <line x1="350" y1="155" x2="350" y2="205" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="550" y1="155" x2="550" y2="205" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+  
+  <!-- Wrong approach -->
+  <g filter="url(#shadowPIT)">
+    <rect x="60" y="280" width="380" height="200" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect x="60" y="280" width="380" height="35" rx="12" fill="url(#wrongGrad)"/>
+    <rect x="60" y="303" width="380" height="12" fill="url(#wrongGrad)"/>
+    <text x="250" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">❌ WRONG: Latest Feature Values</text>
+    
+    <text x="85" y="340" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Using current/latest values for all events:</text>
+    
+    <rect x="85" y="355" width="330" height="40" rx="6" fill="#450a0a" stroke="#7f1d1d" stroke-width="1"/>
+    <text x="100" y="378" font-family="monospace" font-size="11" fill="#fca5a5">Event A (t₂) → F(t₄) = 40  ⚠️</text>
+    <text x="100" y="393" font-family="monospace" font-size="11" fill="#fca5a5">Event B (t₃) → F(t₄) = 40  ⚠️</text>
+    
+    <rect x="85" y="410" width="330" height="55" rx="6" fill="#7f1d1d" fill-opacity="0.3"/>
+    <text x="250" y="432" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f87171">⚠️ DATA LEAKAGE!</text>
+    <text x="250" y="450" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#fca5a5">Future information used in training</text>
+    <text x="250" y="463" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Model learns patterns it can't use in production</text>
+  </g>
+  
+  <!-- Correct approach -->
+  <g filter="url(#shadowPIT)">
+    <rect x="460" y="280" width="380" height="200" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="460" y="280" width="380" height="35" rx="12" fill="url(#rightGrad)"/>
+    <rect x="460" y="303" width="380" height="12" fill="url(#rightGrad)"/>
+    <text x="650" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">✅ CORRECT: Point-in-Time Join</text>
+    
+    <text x="485" y="340" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Using only features available at event time:</text>
+    
+    <rect x="485" y="355" width="330" height="40" rx="6" fill="#064e3b" stroke="#065f46" stroke-width="1"/>
+    <text x="500" y="378" font-family="monospace" font-size="11" fill="#6ee7b7">Event A (t₂) → F(t₁) = 10  ✓</text>
+    <text x="500" y="393" font-family="monospace" font-size="11" fill="#6ee7b7">Event B (t₃) → F(t₃) = 25  ✓</text>
+    
+    <rect x="485" y="410" width="330" height="55" rx="6" fill="#065f46" fill-opacity="0.3"/>
+    <text x="650" y="432" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#34d399">✓ TEMPORAL CORRECTNESS</text>
+    <text x="650" y="450" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Only past information used</text>
+    <text x="650" y="463" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Model trained on realistic scenarios</text>
+  </g>
+</svg>

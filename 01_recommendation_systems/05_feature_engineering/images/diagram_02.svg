@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgFE2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowFE2" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgFE2)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🗂️ Feature Categories</text>
+  
+  <!-- Row 1 -->
+  <!-- 1. User Features -->
+  <g transform="translate(50, 70)" filter="url(#shadowFE2)">
+    <rect width="260" height="170" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">1. 👤 User Features</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">•</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Demographics (age, location)</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">•</text>
+      <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Behavioral stats (activity level)</text>
+      <text x="10" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">•</text>
+      <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Preference signals</text>
+      <text x="10" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">•</text>
+      <text x="25" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Engagement history</text>
+    </g>
+  </g>
+  
+  <!-- 2. Item Features -->
+  <g transform="translate(320, 70)" filter="url(#shadowFE2)">
+    <rect width="260" height="170" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#10b981"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">2. 📦 Item Features</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">•</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Metadata (category, tags)</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">•</text>
+      <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Content features (text, images)</text>
+      <text x="10" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">•</text>
+      <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Popularity statistics</text>
+      <text x="10" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">•</text>
+      <text x="25" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Quality signals</text>
+    </g>
+  </g>
+  
+  <!-- 3. Interaction Features -->
+  <g transform="translate(590, 70)" filter="url(#shadowFE2)">
+    <rect width="260" height="170" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">3. 🔗 Interaction Features</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">•</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Click patterns</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">•</text>
+      <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Purchase history</text>
+      <text x="10" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">•</text>
+      <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Rating behavior</text>
+      <text x="10" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#fcd34d">•</text>
+      <text x="25" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Session data</text>
+    </g>
+  </g>
+  
+  <!-- Row 2 -->
+  <!-- 4. Contextual Features -->
+  <g transform="translate(50, 260)" filter="url(#shadowFE2)">
+    <rect width="260" height="170" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">4. 🌍 Contextual Features</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">•</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Time of day / day of week</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">•</text>
+      <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Device type (mobile, desktop)</text>
+      <text x="10" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">•</text>
+      <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Location / region</text>
+      <text x="10" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">•</text>
+      <text x="25" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Platform (web, iOS, Android)</text>
+    </g>
+  </g>
+  
+  <!-- 5. Cross Features -->
+  <g transform="translate(320, 260)" filter="url(#shadowFE2)">
+    <rect width="260" height="170" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#ec4899"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">5. ✖️ Cross Features</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">•</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">User-Item affinity</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">•</text>
+      <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Category match score</text>
+      <text x="10" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">•</text>
+      <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Historical match</text>
+      <text x="10" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#f9a8d4">•</text>
+      <text x="25" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Price sensitivity match</text>
+    </g>
+  </g>
+  
+  <!-- 6. Embedding Features -->
+  <g transform="translate(590, 260)" filter="url(#shadowFE2)">
+    <rect width="260" height="170" rx="12" fill="#1e293b"/>
+    <rect width="260" height="45" rx="12 12 0 0" fill="#0ea5e9"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">6. 🧮 Embedding Features</text>
+    
+    <g transform="translate(20, 55)">
+      <text x="10" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#38bdf8">•</text>
+      <text x="25" y="15" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">User embeddings (CF)</text>
+      <text x="10" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#38bdf8">•</text>
+      <text x="25" y="35" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Item embeddings</text>
+      <text x="10" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#38bdf8">•</text>
+      <text x="25" y="55" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Graph embeddings (GNN)</text>
+      <text x="10" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#38bdf8">•</text>
+      <text x="25" y="75" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Text embeddings (BERT)</text>
+    </g>
+  </g>
+  
+  <!-- Bottom tip -->
+  <g transform="translate(50, 450)">
+    <rect width="800" height="40" rx="10" fill="#334155"/>
+    <text x="400" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f8fafc">💡 Combine features from multiple categories for best results - don't rely on just one!</text>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="bgSim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowSim" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgSim)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">📐 Similarity Measures Comparison</text>
+  
+  <!-- Cosine Similarity -->
+  <g transform="translate(50, 70)" filter="url(#shadowSim)">
+    <rect width="400" height="120" rx="12" fill="#1e293b"/>
+    <rect width="400" height="40" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="200" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">1. Cosine Similarity</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="360" height="25" rx="5" fill="#334155"/>
+      <text x="180" y="17" text-anchor="middle" font-family="Segoe UI, monospace" font-size="11" fill="#60a5fa">sim(u,v) = (u · v) / (||u|| × ||v||)</text>
+      
+      <text x="0" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Handles different rating scales</text>
+      <text x="200" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Popular choice</text>
+      <text x="0" y="62" font-family="Segoe UI, sans-serif" font-size="10" fill="#f87171">✗ Doesn't account for rating bias</text>
+    </g>
+  </g>
+  
+  <!-- Pearson Correlation -->
+  <g transform="translate(470, 70)" filter="url(#shadowSim)">
+    <rect width="400" height="120" rx="12" fill="#1e293b"/>
+    <rect width="400" height="40" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="200" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">2. Pearson Correlation</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="360" height="25" rx="5" fill="#334155"/>
+      <text x="180" y="17" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#c4b5fd">sim(u,v) = Σ(rᵤᵢ - r̄ᵤ)(rᵥᵢ - r̄ᵥ) / (σᵤ × σᵥ)</text>
+      
+      <text x="0" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Accounts for rating bias</text>
+      <text x="200" y="45" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Range: [-1, 1]</text>
+      <text x="0" y="62" font-family="Segoe UI, sans-serif" font-size="10" fill="#f87171">✗ Sensitive to outliers</text>
+    </g>
+  </g>
+  
+  <!-- Adjusted Cosine -->
+  <g transform="translate(50, 210)" filter="url(#shadowSim)">
+    <rect width="400" height="140" rx="12" fill="#1e293b"/>
+    <rect width="400" height="40" rx="12 12 0 0" fill="#10b981"/>
+    <text x="200" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">3. Adjusted Cosine (for Item-Based)</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="360" height="40" rx="5" fill="#334155"/>
+      <text x="180" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Mean-center by USER before computing cosine</text>
+      <text x="180" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Accounts for user rating scales</text>
+      
+      <text x="0" y="60" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Best for item-item similarity</text>
+      <text x="0" y="77" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Handles "tough" vs "easy" raters</text>
+    </g>
+  </g>
+  
+  <!-- Jaccard Similarity -->
+  <g transform="translate(470, 210)" filter="url(#shadowSim)">
+    <rect width="400" height="140" rx="12" fill="#1e293b"/>
+    <rect width="400" height="40" rx="12 12 0 0" fill="#f59e0b"/>
+    <text x="200" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">4. Jaccard Similarity (Implicit)</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="360" height="30" rx="5" fill="#334155"/>
+      <text x="180" y="20" text-anchor="middle" font-family="Segoe UI, monospace" font-size="10" fill="#fcd34d">sim(u,v) = |items(u) ∩ items(v)| / |items(u) ∪ items(v)|</text>
+      
+      <text x="0" y="55" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Works with binary data (viewed/not viewed)</text>
+      <text x="0" y="72" font-family="Segoe UI, sans-serif" font-size="10" fill="#4ade80">✓ Simple and interpretable</text>
+      <text x="200" y="72" font-family="Segoe UI, sans-serif" font-size="10" fill="#f87171">✗ Ignores rating values</text>
+    </g>
+  </g>
+  
+  <!-- When to Use -->
+  <g transform="translate(50, 380)" filter="url(#shadowSim)">
+    <rect width="820" height="140" rx="12" fill="#334155"/>
+    <text x="410" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎯 When to Use Each Measure</text>
+    
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="190" height="80" rx="8" fill="#3b82f6" opacity="0.15"/>
+      <text x="95" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa">Cosine</text>
+      <text x="95" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">General purpose</text>
+      <text x="95" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User-Based CF</text>
+      <text x="95" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Sparse data</text>
+      
+      <rect x="200" y="0" width="190" height="80" rx="8" fill="#8b5cf6" opacity="0.15"/>
+      <text x="295" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">Pearson</text>
+      <text x="295" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">User-Based CF</text>
+      <text x="295" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Explicit ratings</text>
+      <text x="295" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Need bias handling</text>
+      
+      <rect x="400" y="0" width="190" height="80" rx="8" fill="#10b981" opacity="0.15"/>
+      <text x="495" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Adjusted Cosine</text>
+      <text x="495" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Item-Based CF</text>
+      <text x="495" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">E-commerce</text>
+      <text x="495" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Mixed rating styles</text>
+      
+      <rect x="600" y="0" width="190" height="80" rx="8" fill="#f59e0b" opacity="0.15"/>
+      <text x="695" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">Jaccard</text>
+      <text x="695" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Implicit feedback</text>
+      <text x="695" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Click/view data</text>
+      <text x="695" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Binary interactions</text>
+    </g>
+  </g>
+</svg>

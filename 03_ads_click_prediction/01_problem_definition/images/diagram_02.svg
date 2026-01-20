@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450">
+  <defs>
+    <linearGradient id="advGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="sysGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="pubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="platGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="regGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🗺️ Stakeholder Map</text>
+  
+  <!-- Advertisers -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="160" height="120" rx="12" fill="#0f172a"/>
+    <rect x="50" y="60" width="160" height="35" rx="12 12 0 0" fill="url(#advGrad)"/>
+    <text x="130" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">💼 Advertisers</text>
+    <text x="70" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• ROI</text>
+    <text x="70" y="132" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Reach</text>
+    <text x="70" y="149" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Targeting</text>
+    <text x="70" y="166" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Analytics</text>
+  </g>
+  
+  <!-- Users -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="60" width="160" height="120" rx="12" fill="#0f172a"/>
+    <rect x="540" y="60" width="160" height="35" rx="12 12 0 0" fill="url(#userGrad)"/>
+    <text x="620" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">👤 Users</text>
+    <text x="560" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Relevance</text>
+    <text x="560" y="132" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Privacy</text>
+    <text x="560" y="149" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Experience</text>
+    <text x="560" y="166" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Trust</text>
+  </g>
+  
+  <!-- Central Ad System -->
+  <g filter="url(#shadow)">
+    <rect x="295" y="100" width="160" height="60" rx="30" fill="url(#sysGrad)"/>
+    <text x="375" y="138" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🎯 AD SYSTEM</text>
+  </g>
+  
+  <!-- Arrows to center -->
+  <path d="M215 120 L290 130" stroke="#10b981" stroke-width="2"/>
+  <path d="M535 120 L460 130" stroke="#ec4899" stroke-width="2"/>
+  
+  <!-- Arrows from center -->
+  <path d="M330 165 L200 240" stroke="#64748b" stroke-width="2"/>
+  <path d="M375 165 L375 240" stroke="#64748b" stroke-width="2"/>
+  <path d="M420 165 L550 240" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Publishers -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="250" width="160" height="120" rx="12" fill="#0f172a"/>
+    <rect x="100" y="250" width="160" height="35" rx="12 12 0 0" fill="url(#pubGrad)"/>
+    <text x="180" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🌐 Publishers</text>
+    <text x="120" y="305" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Revenue</text>
+    <text x="120" y="322" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• UX</text>
+    <text x="120" y="339" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Control</text>
+  </g>
+  
+  <!-- Platform -->
+  <g filter="url(#shadow)">
+    <rect x="295" y="250" width="160" height="120" rx="12" fill="#0f172a"/>
+    <rect x="295" y="250" width="160" height="35" rx="12 12 0 0" fill="url(#platGrad)"/>
+    <text x="375" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🏢 Platform</text>
+    <text x="315" y="305" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Revenue</text>
+    <text x="315" y="322" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Growth</text>
+    <text x="315" y="339" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Trust</text>
+  </g>
+  
+  <!-- Regulators -->
+  <g filter="url(#shadow)">
+    <rect x="490" y="250" width="160" height="120" rx="12" fill="#0f172a"/>
+    <rect x="490" y="250" width="160" height="35" rx="12 12 0 0" fill="url(#regGrad)"/>
+    <text x="570" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">⚖️ Regulators</text>
+    <text x="510" y="305" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Compliance</text>
+    <text x="510" y="322" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Privacy</text>
+    <text x="510" y="339" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Fairness</text>
+  </g>
+</svg>

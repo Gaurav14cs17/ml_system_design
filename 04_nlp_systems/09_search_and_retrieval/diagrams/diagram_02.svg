@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="sparseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#475569"/>
+    </linearGradient>
+    <linearGradient id="denseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="searchShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Search &amp; Retrieval Methods</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Sparse vs Dense vs Hybrid retrieval</text>
+  
+  <!-- Sparse -->
+  <g transform="translate(40, 85)" filter="url(#searchShadow)">
+    <rect width="230" height="220" rx="12" fill="#1e293b" stroke="url(#sparseGrad)" stroke-width="2"/>
+    <rect width="230" height="40" rx="12 12 0 0" fill="url(#sparseGrad)"/>
+    <text x="115" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#fff">Sparse (BM25)</text>
+    
+    <g transform="translate(15, 55)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#cbd5e1">Keyword matching</text>
+      
+      <text x="100" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#e2e8f0">BM25 = Σ IDF(qi) ·</text>
+      <text x="100" y="65" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#e2e8f0">tf(qi,D)·(k+1) / ...</text>
+    </g>
+    
+    <g transform="translate(15, 130)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#22c55e">✓ Fast &amp; interpretable</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#22c55e">✓ No training needed</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#ef4444">✗ No semantic match</text>
+      <text x="0" y="54" font-family="Inter, sans-serif" font-size="10" fill="#ef4444">✗ Exact words only</text>
+    </g>
+  </g>
+  
+  <!-- Dense -->
+  <g transform="translate(285, 85)" filter="url(#searchShadow)">
+    <rect width="230" height="220" rx="12" fill="#1e293b" stroke="url(#denseGrad)" stroke-width="2"/>
+    <rect width="230" height="40" rx="12 12 0 0" fill="url(#denseGrad)"/>
+    <text x="115" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#fff">Dense (Embeddings)</text>
+    
+    <g transform="translate(15, 55)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">Semantic matching</text>
+      
+      <text x="100" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">score = cos(E(q), E(d))</text>
+      <text x="100" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">E = encoder model</text>
+    </g>
+    
+    <g transform="translate(15, 130)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#22c55e">✓ Semantic similarity</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#22c55e">✓ Handles synonyms</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#ef4444">✗ Needs encoding</text>
+      <text x="0" y="54" font-family="Inter, sans-serif" font-size="10" fill="#ef4444">✗ May miss keywords</text>
+    </g>
+  </g>
+  
+  <!-- Hybrid -->
+  <g transform="translate(530, 85)" filter="url(#searchShadow)">
+    <rect width="230" height="220" rx="12" fill="#1e293b" stroke="url(#hybridGrad)" stroke-width="2"/>
+    <rect width="230" height="40" rx="12 12 0 0" fill="url(#hybridGrad)"/>
+    <text x="115" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#fff">Hybrid</text>
+    
+    <g transform="translate(15, 55)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">Best of both worlds</text>
+      
+      <text x="100" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">s = α·BM25 + (1-α)·dense</text>
+      <text x="100" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">α tuned per domain</text>
+    </g>
+    
+    <g transform="translate(15, 130)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="10" fill="#22c55e">✓ Keywords + semantics</text>
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#22c55e">✓ Best retrieval quality</text>
+      <text x="0" y="36" font-family="Inter, sans-serif" font-size="10" fill="#ef4444">✗ More complexity</text>
+      <text x="0" y="54" font-family="Inter, sans-serif" font-size="10" fill="#ef4444">✗ Needs reranking</text>
+    </g>
+  </g>
+  
+  <!-- Recommendation -->
+  <g transform="translate(100, 325)" filter="url(#searchShadow)">
+    <rect width="600" height="55" rx="10" fill="#1e293b" stroke="#f59e0b"/>
+    <text x="300" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Recommendation</text>
+    <text x="300" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">Production: Hybrid with BM25 recall + Dense reranking (cross-encoder)</text>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <!-- Background -->
+  <rect width="700" height="400" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">FAST CORNER DETECTION</text>
+  <text x="350" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Features from Accelerated Segment Test</text>
+  
+  <!-- Circle of 16 pixels -->
+  <g transform="translate(200, 180)">
+    <!-- Center point p -->
+    <circle cx="100" cy="100" r="12" fill="#ef4444" stroke="#f87171" stroke-width="2"/>
+    <text x="100" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff">p</text>
+    
+    <!-- Circle outline -->
+    <circle cx="100" cy="100" r="60" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <!-- 16 pixels around the circle -->
+    <!-- Pixel 1 (top) -->
+    <circle cx="100" cy="40" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="100" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">1</text>
+    
+    <!-- Pixel 2 -->
+    <circle cx="123" cy="43" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="123" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">2</text>
+    
+    <!-- Pixel 3 -->
+    <circle cx="143" cy="57" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="143" y="61" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">3</text>
+    
+    <!-- Pixel 4 -->
+    <circle cx="157" cy="77" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="157" y="81" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">4</text>
+    
+    <!-- Pixel 5 (right) - highlighted -->
+    <circle cx="160" cy="100" r="10" fill="#f59e0b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="160" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#fff">5</text>
+    
+    <!-- Pixel 6 -->
+    <circle cx="157" cy="123" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="157" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">6</text>
+    
+    <!-- Pixel 7 -->
+    <circle cx="143" cy="143" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="143" y="147" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">7</text>
+    
+    <!-- Pixel 8 -->
+    <circle cx="123" cy="157" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="123" y="161" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">8</text>
+    
+    <!-- Pixel 9 (bottom) - highlighted -->
+    <circle cx="100" cy="160" r="10" fill="#f59e0b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="100" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#fff">9</text>
+    
+    <!-- Pixel 10 -->
+    <circle cx="77" cy="157" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="77" y="161" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">10</text>
+    
+    <!-- Pixel 11 -->
+    <circle cx="57" cy="143" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="57" y="147" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">11</text>
+    
+    <!-- Pixel 12 -->
+    <circle cx="43" cy="123" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="43" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">12</text>
+    
+    <!-- Pixel 13 (left) - highlighted -->
+    <circle cx="40" cy="100" r="10" fill="#f59e0b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="40" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#fff">13</text>
+    
+    <!-- Pixel 14 -->
+    <circle cx="43" cy="77" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="43" y="81" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">14</text>
+    
+    <!-- Pixel 15 -->
+    <circle cx="57" cy="57" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="57" y="61" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">15</text>
+    
+    <!-- Pixel 16 -->
+    <circle cx="77" cy="43" r="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <text x="77" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">16</text>
+  </g>
+  
+  <!-- Explanation box -->
+  <g transform="translate(420, 100)">
+    <rect width="250" height="200" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#34d399">FAST-9 Algorithm</text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">Corner if 9+ contiguous</text>
+    <text x="20" y="78" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">pixels are ALL brighter</text>
+    <text x="20" y="96" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">or darker than p ± t</text>
+    
+    <line x1="20" y1="110" x2="230" y2="110" stroke="#334155" stroke-width="1"/>
+    
+    <text x="125" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Quick Rejection:</text>
+    <text x="20" y="155" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Check pixels 1, 5, 9, 13 first</text>
+    <text x="20" y="175" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">At least 3 must pass for</text>
+    <text x="20" y="190" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">possible corner detection</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 350)">
+    <circle cx="10" cy="8" r="8" fill="#ef4444"/>
+    <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Center pixel (p)</text>
+    
+    <circle cx="130" cy="8" r="8" fill="#f59e0b"/>
+    <text x="145" y="12" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Quick check pixels</text>
+    
+    <circle cx="280" cy="8" r="8" fill="#3b82f6"/>
+    <text x="295" y="12" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">Circle pixels (16 total)</text>
+  </g>
+</svg>

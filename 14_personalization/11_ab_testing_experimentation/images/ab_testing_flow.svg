@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <defs>
+    <linearGradient id="abGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff416c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4b2b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="abGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4776e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e54e9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="abGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow14" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="520" fill="#0d1117" rx="10"/>
+  
+  <text x="425" y="35" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">A/B Testing for Recommendations</text>
+  
+  <!-- Traffic Split -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="750" height="120" rx="15" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="375" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">🔀 Traffic Splitting</text>
+    
+    <!-- Users -->
+    <g transform="translate(40, 45)">
+      <rect x="0" y="0" width="100" height="55" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">👥 Users</text>
+      <text x="50" y="42" text-anchor="middle" fill="#f8fafc" font-size="9">100%</text>
+    </g>
+    
+    <!-- Arrow split -->
+    <path d="M 155 72 L 210 50" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead14)"/>
+    <path d="M 155 72 L 210 95" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead14)"/>
+    
+    <!-- Control -->
+    <g transform="translate(220, 35)">
+      <rect x="0" y="0" width="120" height="45" rx="8" fill="url(#abGrad1)"/>
+      <text x="60" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Control (A)</text>
+      <text x="60" y="35" text-anchor="middle" fill="#f8fafc" font-size="9">50% - Old Model</text>
+    </g>
+    
+    <!-- Treatment -->
+    <g transform="translate(220, 90)">
+      <rect x="0" y="0" width="120" height="45" rx="8" fill="url(#abGrad2)"/>
+      <text x="60" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Treatment (B)</text>
+      <text x="60" y="35" text-anchor="middle" fill="#f8fafc" font-size="9">50% - New Model</text>
+    </g>
+    
+    <!-- Arrows to metrics -->
+    <path d="M 350 57 L 420 72" stroke="#ff416c" stroke-width="2"/>
+    <path d="M 350 112 L 420 72" stroke="#4776e6" stroke-width="2"/>
+    
+    <!-- Metrics -->
+    <g transform="translate(430, 45)">
+      <rect x="0" y="0" width="120" height="55" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="60" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">📊 Metrics</text>
+      <text x="60" y="42" text-anchor="middle" fill="#f8fafc" font-size="8">CTR, CVR, Rev</text>
+    </g>
+    
+    <!-- Arrow to analysis -->
+    <path d="M 560 72 L 600 72" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead14)"/>
+    
+    <!-- Analysis -->
+    <g transform="translate(610, 45)">
+      <rect x="0" y="0" width="120" height="55" rx="8" fill="url(#abGrad3)"/>
+      <text x="60" y="22" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">🧮 Analysis</text>
+      <text x="60" y="42" text-anchor="middle" fill="#f8fafc" font-size="8">Statistical Test</text>
+    </g>
+  </g>
+  
+  <!-- Statistical Testing -->
+  <g transform="translate(50, 200)">
+    <rect x="0" y="0" width="360" height="160" rx="15" fill="url(#abGrad1)" filter="url(#shadow14)"/>
+    <text x="180" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">📈 Statistical Tests</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="160" height="50" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="80" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">t-test / z-test</text>
+      <text x="80" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Continuous metrics</text>
+    </g>
+    
+    <g transform="translate(185, 45)">
+      <rect x="0" y="0" width="160" height="50" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="80" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Chi-squared</text>
+      <text x="80" y="35" text-anchor="middle" fill="#f8fafc" font-size="8">Proportion metrics</text>
+    </g>
+    
+    <g transform="translate(15, 105)">
+      <rect x="0" y="0" width="330" height="40" rx="8" fill="rgba(255,255,255,0.15)"/>
+      <text x="165" y="18" text-anchor="middle" fill="#f8fafc" font-size="9">p-value andlt; 0.05 → Statistically Significant</text>
+      <text x="165" y="33" text-anchor="middle" fill="#aaaaaa" font-size="8">Also check: confidence intervals, effect size</text>
+    </g>
+  </g>
+  
+  <!-- Sample Size -->
+  <g transform="translate(440, 200)">
+    <rect x="0" y="0" width="360" height="160" rx="15" fill="url(#abGrad2)" filter="url(#shadow14)"/>
+    <text x="180" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">🔢 Sample Size Calculation</text>
+    
+    <g transform="translate(15, 45)">
+      <rect x="0" y="0" width="330" height="100" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="165" y="22" text-anchor="middle" fill="#f8fafc" font-size="10">n = 2 × (Z_α + Z_β)² × σ² / Δ²</text>
+      
+      <text x="50" y="48" text-anchor="start" fill="#f8fafc" font-size="8">• α = 0.05 (significance)</text>
+      <text x="50" y="63" text-anchor="start" fill="#f8fafc" font-size="8">• β = 0.20 (power = 80%)</text>
+      <text x="50" y="78" text-anchor="start" fill="#f8fafc" font-size="8">• Δ = minimum detectable effect</text>
+      <text x="50" y="93" text-anchor="start" fill="#f8fafc" font-size="8">• σ = baseline variance</text>
+    </g>
+  </g>
+  
+  <!-- Common Pitfalls -->
+  <g transform="translate(50, 380)">
+    <rect x="0" y="0" width="750" height="120" rx="15" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1"/>
+    <text x="375" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">⚠️ Common Pitfalls</text>
+    
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="160" height="60" rx="8" fill="rgba(255,65,108,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#ff416c" font-size="10" font-weight="bold">Peeking</text>
+      <text x="80" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">Early stopping</text>
+      <text x="80" y="52" text-anchor="middle" fill="#aaaaaa" font-size="7">Inflates false positives</text>
+    </g>
+    
+    <g transform="translate(210, 45)">
+      <rect x="0" y="0" width="160" height="60" rx="8" fill="rgba(71,118,230,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#4776e6" font-size="10" font-weight="bold">Simpson's Paradox</text>
+      <text x="80" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">Segment analysis</text>
+      <text x="80" y="52" text-anchor="middle" fill="#aaaaaa" font-size="7">Check subgroups</text>
+    </g>
+    
+    <g transform="translate(390, 45)">
+      <rect x="0" y="0" width="160" height="60" rx="8" fill="rgba(17,153,142,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#11998e" font-size="10" font-weight="bold">Novelty Effect</text>
+      <text x="80" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">Short-term bias</text>
+      <text x="80" y="52" text-anchor="middle" fill="#aaaaaa" font-size="7">Run longer tests</text>
+    </g>
+    
+    <g transform="translate(570, 45)">
+      <rect x="0" y="0" width="160" height="60" rx="8" fill="rgba(142,84,233,0.2)"/>
+      <text x="80" y="20" text-anchor="middle" fill="#8e54e9" font-size="10" font-weight="bold">Multiple Testing</text>
+      <text x="80" y="38" text-anchor="middle" fill="#f8fafc" font-size="8">Many metrics</text>
+      <text x="80" y="52" text-anchor="middle" fill="#aaaaaa" font-size="7">Bonferroni correction</text>
+    </g>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead14" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

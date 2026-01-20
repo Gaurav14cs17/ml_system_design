@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <defs>
+    <linearGradient id="courseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow8" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🎥 Video Courses</text>
+  
+  <g filter="url(#shadow8)">
+    <rect x="40" y="50" width="620" height="40" rx="8 8 0 0" fill="url(#courseGrad)"/>
+    <text x="180" y="77" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Course</text>
+    <text x="420" y="77" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Platform</text>
+    <text x="580" y="77" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Link</text>
+    
+    <rect x="40" y="90" width="620" height="35" fill="#1e293b"/>
+    <text x="180" y="113" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Information Retrieval</text>
+    <text x="420" y="113" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Stanford CS276</text>
+    <text x="580" y="113" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">YouTube</text>
+    
+    <rect x="40" y="125" width="620" height="35" fill="#334155"/>
+    <text x="180" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Neural Information Retrieval</text>
+    <text x="420" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">SIGIR Tutorial</text>
+    <text x="580" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">YouTube</text>
+    
+    <rect x="40" y="160" width="620" height="35" rx="0 0 8 8" fill="#1e293b"/>
+    <text x="180" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f8fafc">Search Systems at Scale</text>
+    <text x="420" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Tech talks</text>
+    <text x="580" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Various</text>
+  </g>
+</svg>

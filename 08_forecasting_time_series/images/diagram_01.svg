@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
+  
+  <!-- Title Section -->
+  <rect x="50" y="20" width="800" height="80" rx="16" fill="url(#headerGrad)" filter="url(#shadow)"/>
+  <text x="450" y="55" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" fill="#ffffff">📈 TIME SERIES FORECASTING</text>
+  <text x="450" y="82" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#e2e8f0">Complete ML System Design Guide</text>
+  
+  <!-- Time Series Visualization -->
+  <rect x="50" y="120" width="520" height="180" rx="12" fill="url(#cardGrad1)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="310" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">Time Series: Y(t) = T(t) + S(t) + ε(t)</text>
+  
+  <!-- Axes -->
+  <line x1="80" y1="270" x2="540" y2="270" stroke="#475569" stroke-width="2"/>
+  <line x1="80" y1="160" x2="80" y2="270" stroke="#475569" stroke-width="2"/>
+  <text x="540" y="288" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Time (t)</text>
+  <text x="65" y="165" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8" transform="rotate(-90, 65, 165)">Value</text>
+  
+  <!-- Trend line -->
+  <path d="M100 250 L200 240 L300 220 L400 200 L500 180" stroke="#22c55e" stroke-width="2" fill="none" stroke-dasharray="8,4"/>
+  
+  <!-- Seasonal + Trend -->
+  <path d="M100 245 Q120 230 140 250 Q160 270 180 245 Q200 220 220 245 Q240 270 260 235 Q280 200 300 235 Q320 270 340 220 Q360 170 380 210 Q400 250 420 195 Q440 140 460 185 Q480 230 500 170" 
+        stroke="#3b82f6" stroke-width="3" fill="none" filter="url(#glow)"/>
+  
+  <!-- Data points -->
+  <circle cx="100" cy="245" r="4" fill="#3b82f6"/>
+  <circle cx="180" cy="245" r="4" fill="#3b82f6"/>
+  <circle cx="260" cy="235" r="4" fill="#3b82f6"/>
+  <circle cx="340" cy="220" r="4" fill="#3b82f6"/>
+  <circle cx="420" cy="195" r="4" fill="#3b82f6"/>
+  <circle cx="500" cy="170" r="4" fill="#3b82f6"/>
+  
+  <!-- Legend -->
+  <rect x="100" y="275" width="15" height="3" fill="#3b82f6"/>
+  <text x="120" y="280" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Observed</text>
+  <rect x="180" y="275" width="15" height="3" fill="#22c55e" stroke-dasharray="4,2"/>
+  <text x="200" y="280" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Trend</text>
+  
+  <!-- Mathematical Foundation Card -->
+  <rect x="590" y="120" width="260" height="180" rx="12" fill="url(#cardGrad1)" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <text x="720" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#f8fafc">🧮 Mathematical Foundations</text>
+  
+  <text x="610" y="178" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">Stationarity:</text>
+  <text x="620" y="196" font-family="monospace" font-size="10" fill="#a5b4fc">E[Yₜ] = μ (constant)</text>
+  <text x="620" y="212" font-family="monospace" font-size="10" fill="#a5b4fc">Cov(Yₜ, Yₜ₊ₕ) = γ(h)</text>
+  
+  <text x="610" y="238" font-family="Segoe UI, sans-serif" font-size="11" fill="#34d399">Autocorrelation:</text>
+  <text x="620" y="256" font-family="monospace" font-size="10" fill="#6ee7b7">ρ(h) = γ(h) / γ(0)</text>
+  
+  <text x="610" y="282" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">Decomposition:</text>
+  <text x="620" y="298" font-family="monospace" font-size="10" fill="#fde047">Yₜ = Tₜ + Sₜ + εₜ</text>
+  
+  <!-- Model Categories -->
+  <g transform="translate(50, 320)">
+    <!-- Statistical -->
+    <rect width="200" height="160" rx="12" fill="url(#cardGrad1)" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="#10b981"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#ffffff">📊 Statistical</text>
+    
+    <text x="15" y="58" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">ARIMA(p,d,q)</text>
+    <text x="20" y="75" font-family="monospace" font-size="9" fill="#94a3b8">φ(B)(1-B)ᵈYₜ = θ(B)εₜ</text>
+    
+    <text x="15" y="98" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Exponential Smoothing</text>
+    <text x="20" y="115" font-family="monospace" font-size="9" fill="#94a3b8">ŷₜ₊₁ = αyₜ + (1-α)ŷₜ</text>
+    
+    <text x="15" y="138" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Prophet</text>
+    <text x="20" y="155" font-family="monospace" font-size="9" fill="#94a3b8">y(t) = g(t) + s(t) + h(t)</text>
+  </g>
+  
+  <g transform="translate(270, 320)">
+    <!-- Machine Learning -->
+    <rect width="200" height="160" rx="12" fill="url(#cardGrad1)" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="#f59e0b"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#ffffff">🤖 Machine Learning</text>
+    
+    <text x="15" y="58" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">XGBoost / LightGBM</text>
+    <text x="20" y="75" font-family="monospace" font-size="9" fill="#94a3b8">ŷ = Σᵢ fᵢ(x) + residuals</text>
+    
+    <text x="15" y="98" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">Random Forest</text>
+    <text x="20" y="115" font-family="monospace" font-size="9" fill="#94a3b8">ŷ = (1/B)Σᵦ Tᵦ(x)</text>
+    
+    <text x="15" y="138" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">Feature Engineering</text>
+    <text x="20" y="155" font-family="monospace" font-size="9" fill="#94a3b8">lag, rolling, Fourier</text>
+  </g>
+  
+  <g transform="translate(490, 320)">
+    <!-- Deep Learning -->
+    <rect width="200" height="160" rx="12" fill="url(#cardGrad1)" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="#8b5cf6"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#ffffff">🧠 Deep Learning</text>
+    
+    <text x="15" y="58" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">LSTM / GRU</text>
+    <text x="20" y="75" font-family="monospace" font-size="9" fill="#94a3b8">hₜ = σ(Wₕhₜ₋₁ + Wₓxₜ)</text>
+    
+    <text x="15" y="98" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">Transformer</text>
+    <text x="20" y="115" font-family="monospace" font-size="9" fill="#94a3b8">Attn(Q,K,V) = softmax(QKᵀ/√d)V</text>
+    
+    <text x="15" y="138" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">TCN / WaveNet</text>
+    <text x="20" y="155" font-family="monospace" font-size="9" fill="#94a3b8">Dilated causal conv</text>
+  </g>
+  
+  <g transform="translate(710, 320)">
+    <!-- Production -->
+    <rect width="140" height="160" rx="12" fill="url(#cardGrad1)" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="140" height="35" rx="12" fill="#ec4899"/>
+    <text x="70" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#ffffff">🚀 Production</text>
+    
+    <text x="12" y="58" font-family="Segoe UI, sans-serif" font-size="10" fill="#f9a8d4">• Feature Store</text>
+    <text x="12" y="78" font-family="Segoe UI, sans-serif" font-size="10" fill="#f9a8d4">• Model Registry</text>
+    <text x="12" y="98" font-family="Segoe UI, sans-serif" font-size="10" fill="#f9a8d4">• Batch/Online Serving</text>
+    <text x="12" y="118" font-family="Segoe UI, sans-serif" font-size="10" fill="#f9a8d4">• Monitoring</text>
+    <text x="12" y="138" font-family="Segoe UI, sans-serif" font-size="10" fill="#f9a8d4">• Auto-Retraining</text>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1e2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#11111b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="onlineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f38ba8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eb6f92;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#89b4fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7aa2f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="450" fill="url(#bgGrad4)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Online vs Offline Stores</text>
+  
+  <!-- Online Store Section -->
+  <rect x="50" y="70" width="380" height="340" rx="15" fill="#313244" stroke="url(#onlineGrad)" stroke-width="3"/>
+  <rect x="50" y="70" width="380" height="50" rx="15" fill="url(#onlineGrad)"/>
+  <text x="240" y="102" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="18" font-weight="bold">⚡ Online Store</text>
+  
+  <!-- Online Store Content -->
+  <text x="240" y="150" text-anchor="middle" fill="#f38ba8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Real-time Feature Serving</text>
+  
+  <rect x="80" y="170" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="100" y="195" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Latency:</text>
+  <text x="280" y="195" text-anchor="middle" fill="#a6e3a1" font-family="Arial, sans-serif" font-size="14" font-weight="bold">andlt; 10ms P99</text>
+  
+  <rect x="80" y="220" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="100" y="245" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Data:</text>
+  <text x="280" y="245" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="12">Latest feature values only</text>
+  
+  <rect x="80" y="270" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="100" y="295" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Scale:</text>
+  <text x="280" y="295" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="12">100K+ QPS</text>
+  
+  <rect x="80" y="320" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="100" y="345" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Use Case:</text>
+  <text x="280" y="345" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="12">Model inference</text>
+  
+  <!-- Storage icons -->
+  <rect x="100" y="375" width="80" height="25" rx="5" fill="#f38ba8"/>
+  <text x="140" y="392" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Redis</text>
+  <rect x="195" y="375" width="80" height="25" rx="5" fill="#f38ba8"/>
+  <text x="235" y="392" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">DynamoDB</text>
+  <rect x="290" y="375" width="80" height="25" rx="5" fill="#f38ba8"/>
+  <text x="330" y="392" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Bigtable</text>
+  
+  <!-- Offline Store Section -->
+  <rect x="470" y="70" width="380" height="340" rx="15" fill="#313244" stroke="url(#offlineGrad)" stroke-width="3"/>
+  <rect x="470" y="70" width="380" height="50" rx="15" fill="url(#offlineGrad)"/>
+  <text x="660" y="102" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="18" font-weight="bold">📦 Offline Store</text>
+  
+  <!-- Offline Store Content -->
+  <text x="660" y="150" text-anchor="middle" fill="#89b4fa" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Historical Feature Storage</text>
+  
+  <rect x="500" y="170" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="520" y="195" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Latency:</text>
+  <text x="700" y="195" text-anchor="middle" fill="#f9e2af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Minutes to Hours</text>
+  
+  <rect x="500" y="220" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="520" y="245" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Data:</text>
+  <text x="700" y="245" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="12">Historical + time-travel</text>
+  
+  <rect x="500" y="270" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="520" y="295" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Scale:</text>
+  <text x="700" y="295" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="12">Petabytes</text>
+  
+  <rect x="500" y="320" width="320" height="40" rx="8" fill="#45475a"/>
+  <text x="520" y="345" fill="#a6adc8" font-family="Arial, sans-serif" font-size="12">Use Case:</text>
+  <text x="700" y="345" text-anchor="middle" fill="#cdd6f4" font-family="Arial, sans-serif" font-size="12">Training data generation</text>
+  
+  <!-- Storage icons -->
+  <rect x="520" y="375" width="80" height="25" rx="5" fill="#89b4fa"/>
+  <text x="560" y="392" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">S3/GCS</text>
+  <rect x="615" y="375" width="80" height="25" rx="5" fill="#89b4fa"/>
+  <text x="655" y="392" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Delta Lake</text>
+  <rect x="710" y="375" width="80" height="25" rx="5" fill="#89b4fa"/>
+  <text x="750" y="392" text-anchor="middle" fill="#1e1e2e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">BigQuery</text>
+  
+  <!-- Sync Arrow -->
+  <path d="M435 240 L445 240 L445 200 L455 200" stroke="#a6e3a1" stroke-width="2" fill="none"/>
+  <path d="M465 200 L455 195 L455 205 Z" fill="#a6e3a1"/>
+  <text x="450" y="260" text-anchor="middle" fill="#a6e3a1" font-family="Arial, sans-serif" font-size="10">Sync</text>
+  <path d="M465 280 L455 280 L455 320 L445 320" stroke="#a6e3a1" stroke-width="2" fill="none"/>
+  <path d="M435 320 L445 315 L445 325 Z" fill="#a6e3a1"/>
+</svg>
+

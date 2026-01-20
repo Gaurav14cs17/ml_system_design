@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 550">
+  <defs>
+    <linearGradient id="monGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="550" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="475" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    📊 Monitoring &amp; Observability Stack
+  </text>
+  
+  <!-- Data Sources Column -->
+  <rect x="30" y="70" width="200" height="300" rx="10" fill="#0f1a2e" stroke="#3b82f6" stroke-width="2"/>
+  <text x="130" y="95" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">📥 DATA SOURCES</text>
+  
+  <rect x="45" y="110" width="170" height="40" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🧠 Model Predictions</text>
+  <text x="130" y="145" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">scores, decisions, latency</text>
+  
+  <rect x="45" y="160" width="170" height="40" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="180" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📊 Feature Values</text>
+  <text x="130" y="195" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">distributions, null rates</text>
+  
+  <rect x="45" y="210" width="170" height="40" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="230" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">⚡ System Metrics</text>
+  <text x="130" y="245" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">CPU, memory, latency</text>
+  
+  <rect x="45" y="260" width="170" height="40" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="280" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📋 Application Logs</text>
+  <text x="130" y="295" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">errors, decisions, audit</text>
+  
+  <rect x="45" y="310" width="170" height="40" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="330" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🏷️ Feedback Labels</text>
+  <text x="130" y="345" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">chargebacks, reviews</text>
+  
+  <!-- Arrows -->
+  <path d="M 230 220 L 270 220" stroke="#e94560" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+  </defs>
+  
+  <!-- Processing Layer -->
+  <rect x="280" y="70" width="200" height="300" rx="10" fill="#0f1a2e" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="380" y="95" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚙️ PROCESSING</text>
+  
+  <rect x="295" y="110" width="170" height="50" rx="5" fill="#2d2d44"/>
+  <text x="380" y="135" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📈 Prometheus</text>
+  <text x="380" y="152" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Time-series metrics</text>
+  
+  <rect x="295" y="170" width="170" height="50" rx="5" fill="#2d2d44"/>
+  <text x="380" y="195" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📝 Elasticsearch</text>
+  <text x="380" y="212" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Log aggregation</text>
+  
+  <rect x="295" y="230" width="170" height="50" rx="5" fill="#2d2d44"/>
+  <text x="380" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🔍 ML Monitoring</text>
+  <text x="380" y="272" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Drift detection, performance</text>
+  
+  <rect x="295" y="290" width="170" height="50" rx="5" fill="#2d2d44"/>
+  <text x="380" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📊 Custom Aggregator</text>
+  <text x="380" y="332" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Business metrics</text>
+  
+  <!-- Arrows -->
+  <path d="M 480 220 L 520 220" stroke="#e94560" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Visualization Layer -->
+  <rect x="530" y="70" width="200" height="300" rx="10" fill="#0f1a2e" stroke="#22c55e" stroke-width="2"/>
+  <text x="630" y="95" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">📊 VISUALIZATION</text>
+  
+  <rect x="545" y="110" width="170" height="50" rx="5" fill="#14532d"/>
+  <text x="630" y="135" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📉 Grafana</text>
+  <text x="630" y="152" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Operational dashboards</text>
+  
+  <rect x="545" y="170" width="170" height="50" rx="5" fill="#14532d"/>
+  <text x="630" y="195" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📋 Kibana</text>
+  <text x="630" y="212" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Log exploration</text>
+  
+  <rect x="545" y="230" width="170" height="50" rx="5" fill="#14532d"/>
+  <text x="630" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🎯 ML Dashboard</text>
+  <text x="630" y="272" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Model performance</text>
+  
+  <rect x="545" y="290" width="170" height="50" rx="5" fill="#14532d"/>
+  <text x="630" y="315" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">💰 Business Reports</text>
+  <text x="630" y="332" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Fraud $, false positives</text>
+  
+  <!-- Arrows -->
+  <path d="M 730 220 L 770 220" stroke="#e94560" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Alerting Layer -->
+  <rect x="780" y="70" width="140" height="300" rx="10" fill="#0f1a2e" stroke="#f59e0b" stroke-width="2"/>
+  <text x="850" y="95" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🚨 ALERTS</text>
+  
+  <rect x="795" y="110" width="110" height="45" rx="5" fill="#854d0e"/>
+  <text x="850" y="130" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">📟 PagerDuty</text>
+  <text x="850" y="147" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Critical alerts</text>
+  
+  <rect x="795" y="165" width="110" height="45" rx="5" fill="#854d0e"/>
+  <text x="850" y="185" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">💬 Slack</text>
+  <text x="850" y="202" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Team notifications</text>
+  
+  <rect x="795" y="220" width="110" height="45" rx="5" fill="#854d0e"/>
+  <text x="850" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">📧 Email</text>
+  <text x="850" y="257" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Reports, summaries</text>
+  
+  <rect x="795" y="275" width="110" height="45" rx="5" fill="#854d0e"/>
+  <text x="850" y="295" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">🤖 Auto-Remediation</text>
+  <text x="850" y="312" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="8">Rollback, scaling</text>
+  
+  <!-- Key Metrics Section -->
+  <rect x="30" y="390" width="890" height="140" rx="10" fill="#0f1a2e" stroke="url(#monGrad)" stroke-width="2"/>
+  <text x="475" y="418" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    📈 Key Monitoring Metrics
+  </text>
+  
+  <!-- Metric Boxes -->
+  <rect x="50" y="435" width="200" height="80" rx="8" fill="#1e3a5f"/>
+  <text x="150" y="460" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Model Performance</text>
+  <text x="150" y="480" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• PR-AUC trend</text>
+  <text x="150" y="495" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Score distribution</text>
+  <text x="150" y="510" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Decision distribution</text>
+  
+  <rect x="270" y="435" width="200" height="80" rx="8" fill="#1e3a5f"/>
+  <text x="370" y="460" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Drift Detection</text>
+  <text x="370" y="480" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Feature drift (PSI)</text>
+  <text x="370" y="495" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Concept drift</text>
+  <text x="370" y="510" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Prediction drift</text>
+  
+  <rect x="490" y="435" width="200" height="80" rx="8" fill="#1e3a5f"/>
+  <text x="590" y="460" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">System Health</text>
+  <text x="590" y="480" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Latency P50/P95/P99</text>
+  <text x="590" y="495" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Error rate</text>
+  <text x="590" y="510" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Throughput (TPS)</text>
+  
+  <rect x="710" y="435" width="200" height="80" rx="8" fill="#1e3a5f"/>
+  <text x="810" y="460" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Business Impact</text>
+  <text x="810" y="480" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Fraud caught ($)</text>
+  <text x="810" y="495" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• False positive rate</text>
+  <text x="810" y="510" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Review queue size</text>
+</svg>
+

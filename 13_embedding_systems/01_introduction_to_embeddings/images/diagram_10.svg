@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="coldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="driftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="biasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="interpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="costGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="domainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">⚠️ Challenges and Considerations</text>
+  
+  <!-- Row 1 -->
+  <!-- Cold Start -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="260" height="150" rx="14" fill="#1e293b" stroke="url(#coldGrad)" stroke-width="3"/>
+    <rect width="260" height="40" rx="14 14 0 0" fill="url(#coldGrad)"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">❄️ Cold Start Problem</text>
+    
+    <text x="130" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">New items/users have no history</text>
+    
+    <rect x="20" y="80" width="220" height="55" rx="8" fill="#0f172a"/>
+    <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#22d3ee">Solutions:</text>
+    <text x="130" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Content-based features</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Hybrid approaches</text>
+  </g>
+  
+  <!-- Drift -->
+  <g filter="url(#shadow)" transform="translate(320, 70)">
+    <rect width="260" height="150" rx="14" fill="#1e293b" stroke="url(#driftGrad)" stroke-width="3"/>
+    <rect width="260" height="40" rx="14 14 0 0" fill="url(#driftGrad)"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">📈 Embedding Drift</text>
+    
+    <text x="130" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Distributions change over time</text>
+    
+    <rect x="20" y="80" width="220" height="55" rx="8" fill="#0f172a"/>
+    <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#fbbf24">Solutions:</text>
+    <text x="130" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Regular retraining</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Online learning, monitoring</text>
+  </g>
+  
+  <!-- Bias -->
+  <g filter="url(#shadow)" transform="translate(600, 70)">
+    <rect width="260" height="150" rx="14" fill="#1e293b" stroke="url(#biasGrad)" stroke-width="3"/>
+    <rect width="260" height="40" rx="14 14 0 0" fill="url(#biasGrad)"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">⚖️ Bias and Fairness</text>
+    
+    <text x="130" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Societal biases encoded in data</text>
+    
+    <rect x="20" y="80" width="220" height="55" rx="8" fill="#0f172a"/>
+    <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f97316">Solutions:</text>
+    <text x="130" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Debiasing techniques</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Careful data curation</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <!-- Interpretability -->
+  <g filter="url(#shadow)" transform="translate(40, 240)">
+    <rect width="260" height="150" rx="14" fill="#1e293b" stroke="url(#interpGrad)" stroke-width="3"/>
+    <rect width="260" height="40" rx="14 14 0 0" fill="url(#interpGrad)"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🔍 Interpretability</text>
+    
+    <text x="130" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Dense vectors aren't human-readable</text>
+    
+    <rect x="20" y="80" width="220" height="55" rx="8" fill="#0f172a"/>
+    <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#a855f7">Solutions:</text>
+    <text x="130" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Probing tasks</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• t-SNE/UMAP visualization</text>
+  </g>
+  
+  <!-- Computational Cost -->
+  <g filter="url(#shadow)" transform="translate(320, 240)">
+    <rect width="260" height="150" rx="14" fill="#1e293b" stroke="url(#costGrad)" stroke-width="3"/>
+    <rect width="260" height="40" rx="14 14 0 0" fill="url(#costGrad)"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">💰 Computational Cost</text>
+    
+    <text x="130" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Training and storing at scale</text>
+    
+    <rect x="20" y="80" width="220" height="55" rx="8" fill="#0f172a"/>
+    <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#34d399">Solutions:</text>
+    <text x="130" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Quantization (PQ, SQ)</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Dimensionality reduction</text>
+  </g>
+  
+  <!-- Domain Mismatch -->
+  <g filter="url(#shadow)" transform="translate(600, 240)">
+    <rect width="260" height="150" rx="14" fill="#1e293b" stroke="url(#domainGrad)" stroke-width="3"/>
+    <rect width="260" height="40" rx="14 14 0 0" fill="url(#domainGrad)"/>
+    <text x="130" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🎯 Domain Mismatch</text>
+    
+    <text x="130" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Pre-trained may not transfer</text>
+    
+    <rect x="20" y="80" width="220" height="55" rx="8" fill="#0f172a"/>
+    <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f472b6">Solutions:</text>
+    <text x="130" y="118" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Domain adaptation</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">• Fine-tuning on domain data</text>
+  </g>
+  
+  <!-- Bottom -->
+  <rect x="200" y="400" width="500" height="16" rx="4" fill="#1e293b"/>
+  <text x="450" y="412" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Understanding these challenges is key to building robust embedding systems</text>
+</svg>

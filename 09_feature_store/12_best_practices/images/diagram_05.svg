@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgChecklist" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowChecklist" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgChecklist)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Production Readiness Checklist</text>
+  
+  <!-- Column 1: Data Quality -->
+  <g filter="url(#shadowChecklist)">
+    <rect x="50" y="60" width="250" height="350" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="50" y="60" width="250" height="45" rx="12" fill="#059669"/>
+    <rect x="50" y="93" width="250" height="12" fill="#059669"/>
+    <text x="175" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">📊 Data Quality</text>
+    
+    <text x="70" y="130" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Schema validation</text>
+    <text x="70" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Null rate thresholds</text>
+    <text x="70" y="180" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Value range checks</text>
+    <text x="70" y="205" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Distribution monitoring</text>
+    <text x="70" y="230" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Freshness SLAs</text>
+    <text x="70" y="255" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Drift detection</text>
+    <text x="70" y="280" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">☑ Data lineage</text>
+    
+    <rect x="70" y="305" width="210" height="85" rx="6" fill="#064e3b"/>
+    <text x="175" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">Key Metrics:</text>
+    <text x="80" y="355" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">• Null rate andlt; 5%</text>
+    <text x="80" y="373" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">• Freshness andlt; 1h</text>
+  </g>
+  
+  <!-- Column 2: Operations -->
+  <g filter="url(#shadowChecklist)">
+    <rect x="325" y="60" width="250" height="350" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="325" y="60" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="325" y="93" width="250" height="12" fill="#2563eb"/>
+    <text x="450" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">⚙️ Operations</text>
+    
+    <text x="345" y="130" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ CI/CD pipeline</text>
+    <text x="345" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ Automated tests</text>
+    <text x="345" y="180" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ Monitoring dashboards</text>
+    <text x="345" y="205" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ Alerting configured</text>
+    <text x="345" y="230" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ Runbooks documented</text>
+    <text x="345" y="255" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ Rollback procedures</text>
+    <text x="345" y="280" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">☑ On-call rotation</text>
+    
+    <rect x="345" y="305" width="210" height="85" rx="6" fill="#172554"/>
+    <text x="450" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">SLA Targets:</text>
+    <text x="355" y="355" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">• Uptime: 99.9%</text>
+    <text x="355" y="373" font-family="system-ui, sans-serif" font-size="8" fill="#93c5fd">• Latency p99: 50ms</text>
+  </g>
+  
+  <!-- Column 3: Security -->
+  <g filter="url(#shadowChecklist)">
+    <rect x="600" y="60" width="250" height="350" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="600" y="60" width="250" height="45" rx="12" fill="#d97706"/>
+    <rect x="600" y="93" width="250" height="12" fill="#d97706"/>
+    <text x="725" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔐 Security</text>
+    
+    <text x="620" y="130" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ Access control (RBAC)</text>
+    <text x="620" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ Encryption at rest</text>
+    <text x="620" y="180" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ Encryption in transit</text>
+    <text x="620" y="205" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ Audit logging</text>
+    <text x="620" y="230" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ PII handling</text>
+    <text x="620" y="255" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ Compliance (GDPR/SOC)</text>
+    <text x="620" y="280" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d">☑ Secret management</text>
+    
+    <rect x="620" y="305" width="210" height="85" rx="6" fill="#451a03"/>
+    <text x="725" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">Compliance:</text>
+    <text x="630" y="355" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">• SOC 2 ready</text>
+    <text x="630" y="373" font-family="system-ui, sans-serif" font-size="8" fill="#fcd34d">• GDPR compliant</text>
+  </g>
+</svg>

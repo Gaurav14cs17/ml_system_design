@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="400" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📊 Metrics Hierarchy
+  </text>
+  
+  <!-- North Star -->
+  <rect x="225" y="60" width="250" height="70" rx="12" fill="#ec4899"/>
+  <text x="350" y="90" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14" font-weight="bold">NORTH STAR METRIC</text>
+  <text x="350" y="115" text-anchor="middle" fill="#fff" font-family="Arial" font-size="16">Revenue per User (RPU)</text>
+  
+  <!-- Primary -->
+  <rect x="50" y="160" width="280" height="90" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="190" y="190" text-anchor="middle" fill="#a78bfa" font-family="Arial" font-size="13" font-weight="bold">PRIMARY METRICS</text>
+  <text x="190" y="215" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">• CTR (Click-Through Rate)</text>
+  <text x="190" y="235" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">• Revenue per Impression</text>
+  
+  <!-- Secondary -->
+  <rect x="370" y="160" width="280" height="90" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="510" y="190" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="13" font-weight="bold">SECONDARY METRICS</text>
+  <text x="510" y="215" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">• Conversion Rate</text>
+  <text x="510" y="235" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="11">• Time on Site</text>
+  
+  <!-- Guardrails -->
+  <rect x="50" y="280" width="600" height="100" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="350" y="310" text-anchor="middle" fill="#fbbf24" font-family="Arial" font-size="13" font-weight="bold">GUARDRAIL METRICS (Must Not Regress)</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="120" y="340">• Latency p99</text>
+    <text x="120" y="360">• Error Rate</text>
+    <text x="300" y="340">• User Complaints</text>
+    <text x="300" y="360">• Page Load Time</text>
+    <text x="480" y="340">• Ad Quality Score</text>
+    <text x="480" y="360">• User Retention</text>
+  </g>
+</svg>

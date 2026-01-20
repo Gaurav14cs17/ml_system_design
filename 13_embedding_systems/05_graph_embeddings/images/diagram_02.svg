@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="n2vGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="gatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📊 Graph Embedding Methods Comparison</text>
+  
+  <!-- Node2Vec -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="230" height="280" rx="14" fill="#1e293b" stroke="url(#n2vGrad)" stroke-width="3"/>
+    <rect width="230" height="40" rx="14 14 0 0" fill="url(#n2vGrad)"/>
+    <text x="115" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Node2Vec</text>
+    
+    <rect x="15" y="55" width="200" height="50" rx="6" fill="#0f172a"/>
+    <text x="115" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#34d399">Approach</text>
+    <text x="115" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Random walks + Skip-gram</text>
+    
+    <rect x="15" y="115" width="200" height="70" rx="6" fill="#0f172a"/>
+    <text x="115" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">Strengths</text>
+    <text x="115" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• BFS + DFS exploration</text>
+    <text x="115" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Tunable p, q params</text>
+    
+    <rect x="15" y="195" width="200" height="70" rx="6" fill="#0f172a"/>
+    <text x="115" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">Use Cases</text>
+    <text x="115" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Node classification</text>
+    <text x="115" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Link prediction</text>
+  </g>
+  
+  <!-- GraphSAGE -->
+  <g filter="url(#shadow)" transform="translate(285, 70)">
+    <rect width="230" height="280" rx="14" fill="#1e293b" stroke="url(#sageGrad)" stroke-width="3"/>
+    <rect width="230" height="40" rx="14 14 0 0" fill="url(#sageGrad)"/>
+    <text x="115" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">GraphSAGE</text>
+    
+    <rect x="15" y="55" width="200" height="50" rx="6" fill="#0f172a"/>
+    <text x="115" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#60a5fa">Approach</text>
+    <text x="115" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Sample + Aggregate neighbors</text>
+    
+    <rect x="15" y="115" width="200" height="70" rx="6" fill="#0f172a"/>
+    <text x="115" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">Strengths</text>
+    <text x="115" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Inductive learning</text>
+    <text x="115" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Generalizes to new nodes</text>
+    
+    <rect x="15" y="195" width="200" height="70" rx="6" fill="#0f172a"/>
+    <text x="115" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">Use Cases</text>
+    <text x="115" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Dynamic graphs</text>
+    <text x="115" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Large-scale graphs</text>
+  </g>
+  
+  <!-- GAT -->
+  <g filter="url(#shadow)" transform="translate(530, 70)">
+    <rect width="230" height="280" rx="14" fill="#1e293b" stroke="url(#gatGrad)" stroke-width="3"/>
+    <rect width="230" height="40" rx="14 14 0 0" fill="url(#gatGrad)"/>
+    <text x="115" y="27" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">GAT</text>
+    
+    <rect x="15" y="55" width="200" height="50" rx="6" fill="#0f172a"/>
+    <text x="115" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#a855f7">Approach</text>
+    <text x="115" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Attention over neighbors</text>
+    
+    <rect x="15" y="115" width="200" height="70" rx="6" fill="#0f172a"/>
+    <text x="115" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#4ade80">Strengths</text>
+    <text x="115" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Learns edge importance</text>
+    <text x="115" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Multi-head attention</text>
+    
+    <rect x="15" y="195" width="200" height="70" rx="6" fill="#0f172a"/>
+    <text x="115" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#f87171">Use Cases</text>
+    <text x="115" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Heterogeneous graphs</text>
+    <text x="115" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">• Citation networks</text>
+  </g>
+  
+  <rect x="200" y="360" width="400" height="18" rx="4" fill="#1e293b"/>
+  <text x="400" y="373" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#64748b">Node2Vec: transductive | GraphSAGE: inductive | GAT: attention-based</text>
+</svg>

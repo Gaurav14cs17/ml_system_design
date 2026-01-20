@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgWeight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="cbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadowWeight" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowW" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgWeight)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">⚖️ Weighted Hybrid</text>
+  
+  <!-- Formula -->
+  <g transform="translate(200, 70)" filter="url(#shadowWeight)">
+    <rect width="500" height="60" rx="12" fill="#334155"/>
+    <text x="250" y="25" text-anchor="middle" font-family="Segoe UI, monospace" font-size="14" fill="#fcd34d">score_hybrid(u, i) = α × score_CF(u, i) + β × score_CB(u, i)</text>
+    <text x="250" y="48" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">where α + β = 1</text>
+  </g>
+  
+  <!-- CF Component -->
+  <g transform="translate(50, 160)" filter="url(#shadowWeight)">
+    <rect width="280" height="120" rx="14" fill="#1e293b"/>
+    <rect width="280" height="50" rx="14 14 0 0" fill="url(#cfGrad)"/>
+    <text x="140" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">👥 Collaborative Filtering</text>
+    
+    <g transform="translate(30, 65)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">score_CF =</text>
+      <rect x="90" y="0" width="70" height="30" rx="8" fill="#3b82f6"/>
+      <text x="125" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">4.2</text>
+    </g>
+    
+    <rect x="200" y="75" width="55" height="25" rx="6" fill="#f59e0b"/>
+    <text x="227" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">α=0.6</text>
+  </g>
+  
+  <!-- CB Component -->
+  <g transform="translate(50, 300)" filter="url(#shadowWeight)">
+    <rect width="280" height="120" rx="14" fill="#1e293b"/>
+    <rect width="280" height="50" rx="14 14 0 0" fill="url(#cbGrad)"/>
+    <text x="140" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📄 Content-Based</text>
+    
+    <g transform="translate(30, 65)">
+      <text x="0" y="15" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">score_CB =</text>
+      <rect x="90" y="0" width="70" height="30" rx="8" fill="#10b981"/>
+      <text x="125" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">3.8</text>
+    </g>
+    
+    <rect x="200" y="75" width="55" height="25" rx="6" fill="#f59e0b"/>
+    <text x="227" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">β=0.4</text>
+  </g>
+  
+  <!-- Arrows to calculation -->
+  <path d="M340 220 L400 280" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowW)"/>
+  <path d="M340 360 L400 300" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowW)"/>
+  
+  <!-- Calculation Box -->
+  <g transform="translate(420, 200)" filter="url(#shadowWeight)">
+    <rect width="430" height="200" rx="14" fill="#1e293b"/>
+    <rect width="430" height="50" rx="14 14 0 0" fill="#f59e0b"/>
+    <text x="215" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🧮 Calculation</text>
+    
+    <g transform="translate(30, 65)">
+      <!-- CF calculation -->
+      <rect x="0" y="0" width="370" height="35" rx="8" fill="#3b82f6" opacity="0.15"/>
+      <text x="20" y="23" font-family="Segoe UI, sans-serif" font-size="12" fill="#60a5fa">CF:  0.6 × 4.2 =</text>
+      <text x="150" y="23" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">2.52</text>
+      
+      <!-- CB calculation -->
+      <rect x="0" y="45" width="370" height="35" rx="8" fill="#10b981" opacity="0.15"/>
+      <text x="20" y="68" font-family="Segoe UI, sans-serif" font-size="12" fill="#6ee7b7">CB:  0.4 × 3.8 =</text>
+      <text x="150" y="68" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">1.52</text>
+      
+      <!-- Final result -->
+      <rect x="0" y="95" width="370" height="45" rx="8" fill="#f59e0b"/>
+      <text x="185" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#f8fafc">FINAL: 2.52 + 1.52 =</text>
+      <text x="320" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">4.04</text>
+    </g>
+  </g>
+</svg>

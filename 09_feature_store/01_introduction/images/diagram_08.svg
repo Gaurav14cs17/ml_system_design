@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgMaturity" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowMaturity" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowMaturity" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgMaturity)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature Store Maturity Journey</text>
+  
+  <!-- Timeline Arrow -->
+  <path d="M100 200 L800 200" stroke="#334155" stroke-width="4"/>
+  <polygon points="800,195 820,200 800,205" fill="#334155"/>
+  
+  <!-- Stage 1 -->
+  <circle cx="175" cy="200" r="12" fill="#ef4444"/>
+  <g filter="url(#shadowMaturity)">
+    <rect x="100" y="80" width="150" height="100" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="175" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f87171">Stage 1</text>
+    <text x="175" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">Ad-hoc Scripts</text>
+    <text x="115" y="145" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Jupyter notebooks</text>
+    <text x="115" y="160" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Copy-paste code</text>
+  </g>
+  <line x1="175" y1="180" x2="175" y2="188" stroke="#ef4444" stroke-width="2"/>
+  
+  <!-- Stage 2 -->
+  <circle cx="350" cy="200" r="12" fill="#f59e0b"/>
+  <g filter="url(#shadowMaturity)">
+    <rect x="275" y="230" width="150" height="100" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="350" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Stage 2</text>
+    <text x="350" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">Shared Library</text>
+    <text x="290" y="295" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Common transforms</text>
+    <text x="290" y="310" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• No serving layer</text>
+  </g>
+  <line x1="350" y1="212" x2="350" y2="230" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Stage 3 -->
+  <circle cx="525" cy="200" r="12" fill="#3b82f6"/>
+  <g filter="url(#shadowMaturity)">
+    <rect x="450" y="80" width="150" height="100" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="525" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Stage 3</text>
+    <text x="525" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">Basic Feature Store</text>
+    <text x="465" y="145" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Registry + Storage</text>
+    <text x="465" y="160" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Basic serving</text>
+  </g>
+  <line x1="525" y1="180" x2="525" y2="188" stroke="#3b82f6" stroke-width="2"/>
+  
+  <!-- Stage 4 -->
+  <circle cx="700" cy="200" r="12" fill="#10b981"/>
+  <g filter="url(#shadowMaturity)">
+    <rect x="625" y="230" width="150" height="110" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="700" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#34d399">Stage 4</text>
+    <text x="700" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#f8fafc">Enterprise Platform</text>
+    <text x="640" y="295" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Full governance</text>
+    <text x="640" y="310" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Real-time + batch</text>
+    <text x="640" y="325" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8">• Self-service</text>
+  </g>
+  <line x1="700" y1="212" x2="700" y2="230" stroke="#10b981" stroke-width="2"/>
+</svg>

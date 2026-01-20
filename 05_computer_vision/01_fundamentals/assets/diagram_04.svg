@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+  <defs>
+    <linearGradient id="hueWheel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff0000"/>
+      <stop offset="17%" style="stop-color:#ffff00"/>
+      <stop offset="33%" style="stop-color:#00ff00"/>
+      <stop offset="50%" style="stop-color:#00ffff"/>
+      <stop offset="67%" style="stop-color:#0000ff"/>
+      <stop offset="83%" style="stop-color:#ff00ff"/>
+      <stop offset="100%" style="stop-color:#ff0000"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="420" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">HSV Color Space</text>
+  <text x="350" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Hue, Saturation, Value</text>
+  
+  <!-- HSV Cylinder Visualization -->
+  <g transform="translate(100, 100)">
+    <!-- Hue circle (top) -->
+    <ellipse cx="100" cy="0" rx="80" ry="30" fill="none" stroke="url(#hueWheel)" stroke-width="15"/>
+    <text x="100" y="-50" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#f8fafc">Hue (0° - 360°)</text>
+    
+    <!-- Cylinder body -->
+    <line x1="20" y1="0" x2="20" y2="150" stroke="#334155" stroke-width="2"/>
+    <line x1="180" y1="0" x2="180" y2="150" stroke="#334155" stroke-width="2"/>
+    
+    <!-- Bottom (Value = 0, black) -->
+    <ellipse cx="100" cy="150" rx="80" ry="30" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="100" y="155" text-anchor="middle" font-family="Arial" font-size="10" fill="#64748b">V = 0 (Black)</text>
+    
+    <!-- Saturation arrow -->
+    <line x1="100" y1="0" x2="180" y2="0" stroke="#f8fafc" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="140" y="-10" text-anchor="middle" font-family="Arial" font-size="10" fill="#94a3b8">Saturation →</text>
+    
+    <!-- Value arrow -->
+    <line x1="200" y1="0" x2="200" y2="150" stroke="#f8fafc" stroke-width="2"/>
+    <polygon points="200,0 195,10 205,10" fill="#f8fafc"/>
+    <text x="220" y="75" font-family="Arial" font-size="10" fill="#94a3b8">Value</text>
+    <text x="210" y="5" font-family="Arial" font-size="9" fill="#94a3b8">1</text>
+    <text x="210" y="150" font-family="Arial" font-size="9" fill="#94a3b8">0</text>
+  </g>
+  
+  <!-- Component descriptions -->
+  <g transform="translate(350, 90)">
+    <rect x="0" y="0" width="300" height="180" rx="12" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Components</text>
+    
+    <!-- Hue -->
+    <rect x="20" y="45" width="260" height="35" rx="6" fill="url(#hueWheel)" opacity="0.8"/>
+    <text x="150" y="68" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">H: Color Type (0° - 360°)</text>
+    
+    <!-- Saturation -->
+    <defs>
+      <linearGradient id="satGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#808080"/>
+        <stop offset="100%" style="stop-color:#ff0000"/>
+      </linearGradient>
+    </defs>
+    <rect x="20" y="90" width="260" height="35" rx="6" fill="url(#satGrad)"/>
+    <text x="150" y="113" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">S: Purity (0 = Gray, 1 = Vivid)</text>
+    
+    <!-- Value -->
+    <defs>
+      <linearGradient id="valGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#000000"/>
+        <stop offset="100%" style="stop-color:#ff0000"/>
+      </linearGradient>
+    </defs>
+    <rect x="20" y="135" width="260" height="35" rx="6" fill="url(#valGrad)"/>
+    <text x="150" y="158" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">V: Brightness (0 = Black, 1 = Full)</text>
+  </g>
+  
+  <!-- Use cases -->
+  <g transform="translate(50, 310)">
+    <rect x="0" y="0" width="600" height="90" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="300" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c4b5fd">Use Cases</text>
+    
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">🎨 Color-based segmentation</text>
+    <text x="220" y="55" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">🚦 Traffic light detection</text>
+    <text x="420" y="55" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">👤 Skin tone detection</text>
+    
+    <text x="30" y="80" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">🎯 Object tracking by color</text>
+    <text x="220" y="80" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">🖼️ Image editing</text>
+  </g>
+</svg>

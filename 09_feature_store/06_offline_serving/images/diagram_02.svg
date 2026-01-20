@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgPIT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowPIT" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgPIT)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Point-in-Time Join Visualization</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="180" x2="800" y2="180" stroke="#64748b" stroke-width="3"/>
+  <text x="450" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Time →</text>
+  
+  <!-- Feature Updates -->
+  <g filter="url(#shadowPIT)">
+    <circle cx="200" cy="180" r="12" fill="#3b82f6"/>
+    <text x="200" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">Feature v1</text>
+    <text x="200" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Jan 1</text>
+  </g>
+  
+  <g filter="url(#shadowPIT)">
+    <circle cx="400" cy="180" r="12" fill="#3b82f6"/>
+    <text x="400" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">Feature v2</text>
+    <text x="400" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Jan 5</text>
+  </g>
+  
+  <g filter="url(#shadowPIT)">
+    <circle cx="600" cy="180" r="12" fill="#3b82f6"/>
+    <text x="600" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#60a5fa">Feature v3</text>
+    <text x="600" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Jan 10</text>
+  </g>
+  
+  <!-- Event (label) -->
+  <g filter="url(#shadowPIT)">
+    <circle cx="500" cy="180" r="16" fill="#10b981"/>
+    <text x="500" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#f8fafc">★</text>
+    <text x="500" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Event (Label)</text>
+    <text x="500" y="273" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Jan 7</text>
+  </g>
+  
+  <!-- Correct Join -->
+  <path d="M500 195 L500 290 L400 290 L400 195" stroke="#10b981" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <rect x="350" y="300" width="200" height="80" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2" filter="url(#shadowPIT)"/>
+  <text x="450" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#34d399">✓ Correct: Use v2</text>
+  <text x="450" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Latest value BEFORE event</text>
+  <text x="450" y="368" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">(prevents data leakage)</text>
+  
+  <!-- Wrong Join -->
+  <path d="M500 195 L500 70 L600 70 L600 165" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <rect x="550" y="60" width="200" height="60" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2" filter="url(#shadowPIT)"/>
+  <text x="650" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f87171">✗ Wrong: Use v3</text>
+  <text x="650" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fca5a5">Future data = leakage!</text>
+</svg>

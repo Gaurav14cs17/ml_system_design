@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23"/>
+      <stop offset="50%" style="stop-color:#1a1a3e"/>
+      <stop offset="100%" style="stop-color:#0d1b2a"/>
+    </linearGradient>
+    
+    <!-- Accent gradients -->
+    <linearGradient id="accentGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1" stroke="#f59e0b" stroke-width="0.5">
+    <line x1="0" y1="50" x2="1200" y2="50"/>
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="250" x2="1200" y2="250"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="500" y1="0" x2="500" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="700" y1="0" x2="700" y2="400"/>
+    <line x1="800" y1="0" x2="800" y2="400"/>
+    <line x1="900" y1="0" x2="900" y2="400"/>
+    <line x1="1000" y1="0" x2="1000" y2="400"/>
+    <line x1="1100" y1="0" x2="1100" y2="400"/>
+  </g>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="80" r="60" fill="url(#accentGrad1)" opacity="0.15"/>
+  <circle cx="1100" cy="320" r="80" fill="url(#accentGrad2)" opacity="0.12"/>
+  <circle cx="950" cy="100" r="40" fill="url(#accentGrad3)" opacity="0.1"/>
+  
+  <!-- Click cursor icon -->
+  <g transform="translate(130, 140)" filter="url(#glow)">
+    <path d="M10 0 L10 60 L25 45 L35 70 L45 65 L35 40 L55 40 Z" fill="url(#accentGrad1)" stroke="#fff" stroke-width="2"/>
+  </g>
+  
+  <!-- CTR chart icon -->
+  <g transform="translate(1000, 140)" filter="url(#glow)">
+    <rect x="0" y="70" width="20" height="50" rx="3" fill="url(#accentGrad2)"/>
+    <rect x="30" y="40" width="20" height="80" rx="3" fill="url(#accentGrad1)"/>
+    <rect x="60" y="10" width="20" height="110" rx="3" fill="url(#accentGrad3)"/>
+    <path d="M0 60 Q40 20 90 30" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Main title -->
+  <text x="600" y="150" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="bold" fill="#f8fafc" filter="url(#shadow)">
+    🎯 Ads Click Prediction (CTR)
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="200" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#a0aec0">
+    Complete ML System Design Guide
+  </text>
+  
+  <!-- Feature boxes -->
+  <g transform="translate(200, 250)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="12" fill="#1e1e3f" stroke="url(#accentGrad1)" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc">📊 9 Modules</text>
+    <text x="90" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#718096">End-to-End</text>
+  </g>
+  
+  <g transform="translate(420, 250)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="12" fill="#1e1e3f" stroke="url(#accentGrad2)" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc">⚡ andlt;10ms</text>
+    <text x="90" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#718096">Latency Target</text>
+  </g>
+  
+  <g transform="translate(640, 250)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="12" fill="#1e1e3f" stroke="url(#accentGrad3)" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc">🚀 1M+ QPS</text>
+    <text x="90" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#718096">Scale Target</text>
+  </g>
+  
+  <g transform="translate(860, 250)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="12" fill="#1e1e3f" stroke="#10b981" stroke-width="2"/>
+    <text x="90" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc">💰 Revenue</text>
+    <text x="90" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#718096">Core Engine</text>
+  </g>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b">
+    From Problem Definition → Production Deployment → Scaling to Billions
+  </text>
+</svg>
+
+

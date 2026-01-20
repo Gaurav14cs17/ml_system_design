@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 420">
+  <defs>
+    <linearGradient id="devGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="abGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="deployGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="325" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📊 Evaluation Framework</text>
+  
+  <!-- Model Development -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="55" width="300" height="120" rx="12" fill="#1e293b"/>
+    <rect x="175" y="55" width="300" height="35" rx="12 12 0 0" fill="url(#devGrad)"/>
+    <text x="325" y="79" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🧠 MODEL DEVELOPMENT</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">
+    <text x="200" y="115">1. Train new model</text>
+    <text x="200" y="135">2. Offline evaluation (NDCG, MAP)</text>
+    <text x="200" y="155">3. Human evaluation</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M325 180 L325 205" stroke="#64748b" stroke-width="2"/>
+  <polygon points="320,205 325,220 330,205" fill="#64748b"/>
+  <text x="400" y="198" font-family="Segoe UI, sans-serif" font-size="10" fill="#22c55e">Pass threshold?</text>
+  
+  <!-- A/B Testing -->
+  <g filter="url(#shadow)">
+    <rect x="175" y="225" width="300" height="100" rx="12" fill="#1e293b"/>
+    <rect x="175" y="225" width="300" height="35" rx="12 12 0 0" fill="url(#abGrad)"/>
+    <text x="325" y="249" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🧪 A/B TESTING</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">
+    <text x="200" y="285">4. Live traffic experiment</text>
+    <text x="200" y="305">5. Online metrics (CTR, conversions)</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M325 330 L325 355" stroke="#64748b" stroke-width="2"/>
+  <polygon points="320,355 325,370 330,355" fill="#64748b"/>
+  <text x="400" y="348" font-family="Segoe UI, sans-serif" font-size="10" fill="#22c55e">Statistical significance?</text>
+  
+  <!-- Deploy -->
+  <g filter="url(#shadow)">
+    <rect x="225" y="375" width="200" height="35" rx="17" fill="url(#deployGrad)"/>
+    <text x="325" y="398" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🚀 DEPLOY TO PRODUCTION</text>
+  </g>
+  
+  <!-- Side indicators -->
+  <rect x="50" y="85" width="100" height="25" rx="5" fill="#3b82f620"/>
+  <text x="100" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#60a5fa">Offline Metrics</text>
+  
+  <rect x="50" y="255" width="100" height="25" rx="5" fill="#f59e0b20"/>
+  <text x="100" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fbbf24">Online Metrics</text>
+  
+  <rect x="500" y="170" width="100" height="25" rx="5" fill="#10b98120"/>
+  <text x="550" y="187" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Guardrails</text>
+</svg>

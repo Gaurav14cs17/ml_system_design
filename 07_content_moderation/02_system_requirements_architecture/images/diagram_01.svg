@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 700">
+  <defs>
+    <linearGradient id="sourceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="ingestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="prepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="decisionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="humanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🛡️ Content Moderation System Architecture</text>
+  
+  <!-- Content Sources -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="45" width="250" height="40" rx="10" fill="url(#sourceGrad)"/>
+    <text x="425" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">📥 Content Sources (Posts, Images, Videos)</text>
+  </g>
+  
+  <path d="M425 90 L425 110" stroke="#64748b" stroke-width="2"/>
+  <polygon points="420,110 425,120 430,110" fill="#64748b"/>
+  
+  <!-- Ingestion Layer -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="125" width="750" height="70" rx="12" fill="#1e293b"/>
+    <rect x="50" y="125" width="750" height="25" rx="12 12 0 0" fill="url(#ingestGrad)"/>
+    <text x="425" y="143" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">INGESTION LAYER</text>
+    
+    <g transform="translate(80, 160)">
+      <rect x="0" y="0" width="100" height="25" rx="5" fill="#334155"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">REST API</text>
+      <rect x="120" y="0" width="100" height="25" rx="5" fill="#334155"/>
+      <text x="170" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">GraphQL</text>
+      <rect x="240" y="0" width="100" height="25" rx="5" fill="#334155"/>
+      <text x="290" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">Kafka Consumer</text>
+      <rect x="360" y="0" width="100" height="25" rx="5" fill="#334155"/>
+      <text x="410" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">WebSocket</text>
+      <rect x="480" y="0" width="100" height="25" rx="5" fill="#334155"/>
+      <text x="530" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">S3/GCS Trigger</text>
+      <rect x="600" y="0" width="100" height="25" rx="5" fill="#334155"/>
+      <text x="650" y="17" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">SDK/Mobile</text>
+    </g>
+  </g>
+  
+  <path d="M425 200 L425 215" stroke="#64748b" stroke-width="2"/>
+  <polygon points="420,215 425,225 430,215" fill="#64748b"/>
+  
+  <!-- Preprocessing Layer -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="230" width="650" height="60" rx="12" fill="#1e293b"/>
+    <rect x="100" y="230" width="650" height="25" rx="12 12 0 0" fill="url(#prepGrad)"/>
+    <text x="425" y="248" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">PREPROCESSING LAYER</text>
+    
+    <g transform="translate(130, 262)">
+      <rect x="0" y="0" width="130" height="20" rx="4" fill="#334155"/>
+      <text x="65" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#c4b5fd">Content Normalization</text>
+      <rect x="150" y="0" width="130" height="20" rx="4" fill="#334155"/>
+      <text x="215" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#c4b5fd">Media Transcoding</text>
+      <rect x="300" y="0" width="130" height="20" rx="4" fill="#334155"/>
+      <text x="365" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#c4b5fd">Feature Extraction</text>
+      <rect x="450" y="0" width="130" height="20" rx="4" fill="#334155"/>
+      <text x="515" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#c4b5fd">Hash Computation</text>
+    </g>
+  </g>
+  
+  <path d="M425 295 L425 310" stroke="#64748b" stroke-width="2"/>
+  <polygon points="420,310 425,320 430,310" fill="#64748b"/>
+  
+  <!-- Analysis Layer -->
+  <g filter="url(#shadow)">
+    <rect x="75" y="325" width="700" height="110" rx="12" fill="#1e293b"/>
+    <rect x="75" y="325" width="700" height="25" rx="12 12 0 0" fill="url(#mlGrad)"/>
+    <text x="425" y="343" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">ML ANALYSIS LAYER</text>
+    
+    <!-- Models row -->
+    <g transform="translate(105, 358)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#059669"/>
+      <text x="65" y="13" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" font-weight="bold" fill="#f8fafc">📝 Text Models</text>
+      <text x="65" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#d1fae5">BERT/LLM</text>
+      
+      <rect x="145" y="0" width="130" height="30" rx="6" fill="#059669"/>
+      <text x="210" y="13" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" font-weight="bold" fill="#f8fafc">🖼️ Image Models</text>
+      <text x="210" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#d1fae5">ViT/CNN</text>
+      
+      <rect x="290" y="0" width="130" height="30" rx="6" fill="#059669"/>
+      <text x="355" y="13" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" font-weight="bold" fill="#f8fafc">🎬 Video Models</text>
+      <text x="355" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#d1fae5">3D-CNN</text>
+      
+      <rect x="435" y="0" width="130" height="30" rx="6" fill="#059669"/>
+      <text x="500" y="13" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" font-weight="bold" fill="#f8fafc">🎵 Audio Models</text>
+      <text x="500" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="7" fill="#d1fae5">Whisper</text>
+    </g>
+    
+    <!-- Secondary row -->
+    <g transform="translate(180, 398)">
+      <rect x="0" y="0" width="130" height="25" rx="5" fill="#334155"/>
+      <text x="65" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#6ee7b7">Hash Matching</text>
+      <rect x="150" y="0" width="130" height="25" rx="5" fill="#334155"/>
+      <text x="215" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#6ee7b7">Rules Engine</text>
+      <rect x="300" y="0" width="130" height="25" rx="5" fill="#334155"/>
+      <text x="365" y="16" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#6ee7b7">Ensemble Aggregator</text>
+    </g>
+  </g>
+  
+  <path d="M425 440 L425 455" stroke="#64748b" stroke-width="2"/>
+  <polygon points="420,455 425,465 430,455" fill="#64748b"/>
+  
+  <!-- Decision Layer -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="470" width="550" height="60" rx="12" fill="#1e293b"/>
+    <rect x="150" y="470" width="550" height="25" rx="12 12 0 0" fill="url(#decisionGrad)"/>
+    <text x="425" y="488" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">DECISION LAYER</text>
+    
+    <g transform="translate(180, 502)">
+      <rect x="0" y="0" width="110" height="20" rx="4" fill="#334155"/>
+      <text x="55" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fcd34d">Threshold Engine</text>
+      <rect x="125" y="0" width="110" height="20" rx="4" fill="#334155"/>
+      <text x="180" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fcd34d">Policy Evaluator</text>
+      <rect x="250" y="0" width="110" height="20" rx="4" fill="#334155"/>
+      <text x="305" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fcd34d">Action Executor</text>
+      <rect x="375" y="0" width="110" height="20" rx="4" fill="#334155"/>
+      <text x="430" y="14" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#fcd34d">Appeal Handler</text>
+    </g>
+  </g>
+  
+  <!-- Decision outputs -->
+  <path d="M275 535 L275 560 L175 560 L175 580" stroke="#64748b" stroke-width="2"/>
+  <path d="M425 535 L425 580" stroke="#64748b" stroke-width="2"/>
+  <path d="M575 535 L575 560 L675 560 L675 580" stroke="#64748b" stroke-width="2"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="100" y="585" width="140" height="35" rx="8" fill="#10b981"/>
+    <text x="170" y="607" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">✅ Allow/Publish</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="355" y="585" width="140" height="35" rx="8" fill="url(#humanGrad)"/>
+    <text x="425" y="607" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">👤 Human Review</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="610" y="585" width="140" height="35" rx="8" fill="#ef4444"/>
+    <text x="680" y="607" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f8fafc">🚫 Remove/Label</text>
+  </g>
+  
+  <!-- Feedback loop -->
+  <path d="M425 625 L425 660" stroke="#64748b" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <rect x="200" y="660" width="450" height="30" rx="8" fill="#1e293b"/>
+  <text x="425" y="680" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">📊 Data Store → Model Registry → Feature Store → Feedback Loop</text>
+</svg>

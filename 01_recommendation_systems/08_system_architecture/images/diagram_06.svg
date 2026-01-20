@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgCG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowCG" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowCG" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgCG)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🎯 Candidate Generation</text>
+  
+  <!-- User Request -->
+  <g transform="translate(350, 70)" filter="url(#shadowCG)">
+    <rect width="200" height="50" rx="25" fill="#f59e0b"/>
+    <text x="100" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">👤 User Request</text>
+  </g>
+  
+  <!-- Split arrows -->
+  <path d="M450 125 L450 155 L150 155 L150 185" stroke="#64748b" stroke-width="2"/>
+  <path d="M450 155 L320 155 L320 185" stroke="#64748b" stroke-width="2"/>
+  <path d="M450 155 L580 155 L580 185" stroke="#64748b" stroke-width="2"/>
+  <path d="M450 155 L750 155 L750 185" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Candidate Sources -->
+  <g transform="translate(50, 190)" filter="url(#shadowCG)">
+    <rect width="200" height="110" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="#3b82f6"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🔍 ANN Lookup</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">User → Item</text>
+    <text x="100" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">200 items</text>
+  </g>
+  
+  <g transform="translate(260, 190)" filter="url(#shadowCG)">
+    <rect width="200" height="110" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="#8b5cf6"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Similar Items</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Item → Item</text>
+    <text x="100" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#c4b5fd">100 items</text>
+  </g>
+  
+  <g transform="translate(470, 190)" filter="url(#shadowCG)">
+    <rect width="200" height="110" rx="12" fill="#1e293b"/>
+    <rect width="200" height="45" rx="12 12 0 0" fill="#10b981"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📈 Popular Items</text>
+    <text x="100" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Trending</text>
+    <text x="100" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">50 items</text>
+  </g>
+  
+  <g transform="translate(680, 190)" filter="url(#shadowCG)">
+    <rect width="170" height="110" rx="12" fill="#1e293b"/>
+    <rect width="170" height="45" rx="12 12 0 0" fill="#ec4899"/>
+    <text x="85" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🆕 Recent</text>
+    <text x="85" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">New items</text>
+    <text x="85" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f9a8d4">50 items</text>
+  </g>
+  
+  <!-- Merge arrows -->
+  <path d="M150 305 L150 340 L450 340 L450 370" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M360 305 L360 340" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M570 305 L570 340" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M765 305 L765 340 L450 340" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Merge Box -->
+  <g transform="translate(300, 375)" filter="url(#shadowCG)">
+    <rect width="300" height="70" rx="12" fill="#f59e0b"/>
+    <text x="150" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🔄 Merge &amp; Dedupe</text>
+    <text x="150" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">400 items</text>
+  </g>
+  
+  <!-- Arrow to output -->
+  <path d="M450 450 L450 480" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowCG)"/>
+  
+  <!-- Output -->
+  <g transform="translate(275, 485)">
+    <rect width="350" height="35" rx="17" fill="#10b981"/>
+    <text x="175" y="23" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 Candidates for Ranking</text>
+  </g>
+</svg>

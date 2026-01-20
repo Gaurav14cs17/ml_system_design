@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <!-- Background -->
+  <rect width="800" height="380" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">COMMON STRUCTURING ELEMENTS</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">For Morphological Operations</text>
+  
+  <!-- Rectangle SE -->
+  <g transform="translate(60, 80)">
+    <rect width="200" height="250" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#60a5fa">RECTANGLE (5×5)</text>
+    
+    <!-- 5x5 Grid - all 1s -->
+    <g transform="translate(25, 50)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="0" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="45" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="0" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="75" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="0" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="105" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="0" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="135" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <!-- Row 2-5 same pattern -->
+      <rect x="0" y="30" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="15" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="30" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="45" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="30" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="75" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="30" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="105" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="30" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="135" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="0" y="60" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="15" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="60" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="45" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="60" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="75" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="60" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="105" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="60" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="135" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="0" y="90" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="15" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="90" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="45" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="90" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="75" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="90" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="105" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="90" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="135" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="0" y="120" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="15" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="120" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="45" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="120" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="75" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="120" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="105" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="120" width="30" height="30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/><text x="135" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+    </g>
+    <text x="100" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Most common</text>
+    <text x="100" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">square/rectangular</text>
+  </g>
+  
+  <!-- Ellipse SE -->
+  <g transform="translate(300, 80)">
+    <rect width="200" height="250" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fbbf24">ELLIPSE (5×5)</text>
+    
+    <!-- 5x5 Grid with ellipse pattern -->
+    <g transform="translate(25, 50)">
+      <!-- Row 1: 0 0 1 0 0 -->
+      <rect x="0" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="30" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="45" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="60" y="0" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="75" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="105" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="120" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="135" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <!-- Row 2: 1 1 1 1 1 -->
+      <rect x="0" y="30" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="15" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="30" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="45" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="30" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="75" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="30" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="105" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="30" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="135" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <!-- Row 3: 1 1 1 1 1 -->
+      <rect x="0" y="60" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="15" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="60" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="45" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="60" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="75" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="60" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="105" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="60" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="135" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <!-- Row 4: 1 1 1 1 1 -->
+      <rect x="0" y="90" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="15" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="90" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="45" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="90" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="75" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="90" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="105" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="90" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="135" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <!-- Row 5: 0 0 1 0 0 -->
+      <rect x="0" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="15" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="30" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="45" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="60" y="120" width="30" height="30" fill="#f59e0b" stroke="#fbbf24" stroke-width="1"/><text x="75" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="105" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="120" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="135" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+    </g>
+    <text x="100" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">Round objects</text>
+    <text x="100" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">smoother edges</text>
+  </g>
+  
+  <!-- Cross SE -->
+  <g transform="translate(540, 80)">
+    <rect width="200" height="250" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#34d399">CROSS (5×5)</text>
+    
+    <!-- 5x5 Grid with cross pattern -->
+    <g transform="translate(25, 50)">
+      <!-- Row 1: 0 0 1 0 0 -->
+      <rect x="0" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="30" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="45" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="60" y="0" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="75" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="105" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="120" y="0" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="135" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <!-- Row 2: 0 0 1 0 0 -->
+      <rect x="0" y="30" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="15" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="30" y="30" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="45" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="60" y="30" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="75" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="30" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="105" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="120" y="30" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="135" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <!-- Row 3: 1 1 1 1 1 -->
+      <rect x="0" y="60" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="15" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="30" y="60" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="45" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="60" y="60" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="75" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="60" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="105" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="120" y="60" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="135" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <!-- Row 4: 0 0 1 0 0 -->
+      <rect x="0" y="90" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="15" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="30" y="90" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="45" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="60" y="90" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="75" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="90" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="105" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="120" y="90" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="135" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <!-- Row 5: 0 0 1 0 0 -->
+      <rect x="0" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="15" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="30" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="45" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="60" y="120" width="30" height="30" fill="#10b981" stroke="#34d399" stroke-width="1"/><text x="75" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">1</text>
+      <rect x="90" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="105" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+      <rect x="120" y="120" width="30" height="30" fill="#334155" stroke="#475569" stroke-width="1"/><text x="135" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">0</text>
+    </g>
+    <text x="100" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Thin lines</text>
+    <text x="100" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">less aggressive</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(250, 345)">
+    <rect x="0" y="0" width="20" height="20" fill="#3b82f6" stroke="#60a5fa" stroke-width="1"/>
+    <text x="30" y="15" font-family="Arial, sans-serif" font-size="11" fill="#f8fafc">1 = Part of structuring element</text>
+    <rect x="240" y="0" width="20" height="20" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <text x="270" y="15" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0 = Not included</text>
+  </g>
+</svg>

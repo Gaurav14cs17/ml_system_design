@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgHA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowHA" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgHA)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">High Availability Architecture</text>
+  
+  <!-- Region 1 -->
+  <g filter="url(#shadowHA)">
+    <rect x="50" y="70" width="380" height="290" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="240" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#60a5fa">🌍 Region 1 (Primary)</text>
+    
+    <!-- Primary components -->
+    <rect x="70" y="120" width="160" height="60" rx="8" fill="#172554" stroke="#3b82f6"/>
+    <text x="150" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">Online Store</text>
+    <text x="150" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">PRIMARY</text>
+    
+    <rect x="250" y="120" width="160" height="60" rx="8" fill="#172554" stroke="#3b82f6"/>
+    <text x="330" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">Serving API</text>
+    <text x="330" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">ACTIVE</text>
+    
+    <rect x="70" y="200" width="160" height="60" rx="8" fill="#172554" stroke="#3b82f6"/>
+    <text x="150" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">Registry</text>
+    <text x="150" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#34d399">PRIMARY</text>
+    
+    <rect x="250" y="200" width="160" height="60" rx="8" fill="#172554" stroke="#3b82f6"/>
+    <text x="330" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#93c5fd">Offline Store</text>
+    <text x="330" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Read/Write</text>
+    
+    <!-- Health indicator -->
+    <circle cx="400" cy="90" r="8" fill="#10b981"/>
+    <text x="70" y="300" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Cross-AZ replication enabled</text>
+  </g>
+  
+  <!-- Sync arrows -->
+  <path d="M435 180 L465 180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M435 240 L465 240" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="450" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#fbbf24" transform="rotate(-90, 450, 215)">SYNC</text>
+  
+  <!-- Region 2 -->
+  <g filter="url(#shadowHA)">
+    <rect x="470" y="70" width="380" height="290" rx="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="660" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">🌍 Region 2 (DR)</text>
+    
+    <!-- DR components -->
+    <rect x="490" y="120" width="160" height="60" rx="8" fill="#2e1065" stroke="#8b5cf6"/>
+    <text x="570" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Online Store</text>
+    <text x="570" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">REPLICA</text>
+    
+    <rect x="670" y="120" width="160" height="60" rx="8" fill="#2e1065" stroke="#8b5cf6"/>
+    <text x="750" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Serving API</text>
+    <text x="750" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">STANDBY</text>
+    
+    <rect x="490" y="200" width="160" height="60" rx="8" fill="#2e1065" stroke="#8b5cf6"/>
+    <text x="570" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Registry</text>
+    <text x="570" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fbbf24">REPLICA</text>
+    
+    <rect x="670" y="200" width="160" height="60" rx="8" fill="#2e1065" stroke="#8b5cf6"/>
+    <text x="750" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c4b5fd">Offline Store</text>
+    <text x="750" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Read Only</text>
+    
+    <!-- Health indicator -->
+    <circle cx="820" cy="90" r="8" fill="#f59e0b"/>
+    <text x="490" y="300" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Failover RTO: andlt; 5 minutes</text>
+  </g>
+  
+  <!-- SLA bar -->
+  <rect x="100" y="375" width="700" height="20" rx="5" fill="#334155"/>
+  <text x="450" y="389" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Target SLA: 99.99% uptime | RPO: andlt;1 min | RTO: andlt;5 min</text>
+</svg>

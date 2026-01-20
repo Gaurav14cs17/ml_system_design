@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 600">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="600" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">DeepLabV3+ ARCHITECTURE</text>
+  
+  <!-- Input -->
+  <g transform="translate(375, 60)">
+    <rect width="100" height="40" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#60a5fa">Input</text>
+  </g>
+  
+  <line x1="425" y1="105" x2="425" y2="125" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Backbone -->
+  <g transform="translate(325, 130)">
+    <rect width="200" height="50" rx="6" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e9d5ff">Backbone</text>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c4b5fd">(ResNet / Xception)</text>
+  </g>
+  
+  <!-- Branch to low-level and ASPP -->
+  <line x1="425" y1="185" x2="425" y2="200" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="200" y1="200" x2="650" y2="200" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="200" y1="200" x2="200" y2="225" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="550" y1="200" x2="550" y2="225" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Low-level features -->
+  <g transform="translate(120, 230)">
+    <rect width="160" height="45" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">Low-level features</text>
+    <text x="80" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">(1/4 resolution)</text>
+  </g>
+  
+  <!-- ASPP Module -->
+  <g transform="translate(400, 230)">
+    <rect width="300" height="150" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="150" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">ASPP Module</text>
+    
+    <!-- ASPP branches -->
+    <g transform="translate(25, 40)">
+      <rect width="55" height="35" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="27" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">1×1</text>
+      <text x="27" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fef3c7">Conv</text>
+    </g>
+    <g transform="translate(90, 40)">
+      <rect width="55" height="35" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="27" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">3×3</text>
+      <text x="27" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fef3c7">r=6</text>
+    </g>
+    <g transform="translate(155, 40)">
+      <rect width="55" height="35" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="27" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">3×3</text>
+      <text x="27" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fef3c7">r=12</text>
+    </g>
+    <g transform="translate(220, 40)">
+      <rect width="55" height="35" rx="4" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="27" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">3×3</text>
+      <text x="27" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fef3c7">r=18</text>
+    </g>
+    
+    <!-- Concat -->
+    <rect x="75" y="90" width="150" height="30" rx="4" fill="#334155" stroke="#f59e0b" stroke-width="1"/>
+    <text x="150" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fbbf24">Concat + 1×1 Conv</text>
+  </g>
+  
+  <!-- Arrows from ASPP -->
+  <line x1="550" y1="385" x2="550" y2="405" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 4x Upsample -->
+  <g transform="translate(480, 410)">
+    <rect width="140" height="35" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="70" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">4× Upsample</text>
+  </g>
+  
+  <!-- Low-level arrow down and concat -->
+  <line x1="200" y1="280" x2="200" y2="460" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="200" y1="460" x2="410" y2="460" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="550" y1="450" x2="550" y2="460" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="410" y1="460" x2="550" y2="460" stroke="#60a5fa" stroke-width="2"/>
+  
+  <!-- Concat point -->
+  <circle cx="480" cy="460" r="12" fill="#22c55e" stroke="#4ade80" stroke-width="2"/>
+  <text x="480" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff">+</text>
+  
+  <line x1="480" y1="475" x2="480" y2="495" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Final convs -->
+  <g transform="translate(400, 500)">
+    <rect width="160" height="35" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a78bfa">3×3 Conv × 2 → 4× Up</text>
+  </g>
+  
+  <!-- Output -->
+  <g transform="translate(400, 550)">
+    <rect width="160" height="35" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">Output</text>
+  </g>
+  
+  <line x1="480" y1="540" x2="480" y2="548" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

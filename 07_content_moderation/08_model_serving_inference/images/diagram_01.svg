@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="servingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="450" fill="url(#servingBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">⚡ Model Serving Architecture</text>
+  <text x="450" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Low-latency, high-throughput inference pipeline</text>
+  
+  <!-- Request Flow -->
+  <g transform="translate(50, 80)">
+    <!-- Client -->
+    <rect width="100" height="60" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="50" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="20">📱</text>
+    <text x="50" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Client</text>
+    
+    <!-- Arrow -->
+    <path d="M 110 110 L 150 110" stroke="#60a5fa" stroke-width="2" marker-end="url(#blueArrow)"/>
+    <defs>
+      <marker id="blueArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#60a5fa"/>
+      </marker>
+    </defs>
+    
+    <!-- Load Balancer -->
+    <rect x="160" y="0" width="120" height="60" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="220" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="20">⚖️</text>
+    <text x="220" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Load Balancer</text>
+    
+    <!-- Arrow -->
+    <path d="M 290 110 L 330 110" stroke="#a78bfa" stroke-width="2" marker-end="url(#purpleArrow)"/>
+    <defs>
+      <marker id="purpleArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#a78bfa"/>
+      </marker>
+    </defs>
+    
+    <!-- API Gateway -->
+    <rect x="340" y="0" width="120" height="60" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="400" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="20">🚪</text>
+    <text x="400" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">API Gateway</text>
+    
+    <!-- Arrow -->
+    <path d="M 470 110 L 510 110" stroke="#4ade80" stroke-width="2" marker-end="url(#greenArrow)"/>
+    <defs>
+      <marker id="greenArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#4ade80"/>
+      </marker>
+    </defs>
+    
+    <!-- Model Server -->
+    <rect x="520" y="0" width="140" height="60" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2" filter="url(#glow)"/>
+    <text x="590" y="25" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="20">🧠</text>
+    <text x="590" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Model Server</text>
+    
+    <!-- Arrow -->
+    <path d="M 670 110 L 710 110" stroke="#10b981" stroke-width="2" marker-end="url(#greenArrow2)"/>
+    <defs>
+      <marker id="greenArrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+      </marker>
+    </defs>
+    
+    <!-- Response -->
+    <rect x="720" y="0" width="100" height="60" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="770" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="20">📤</text>
+    <text x="770" y="45" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Response</text>
+  </g>
+  
+  <!-- Performance Metrics -->
+  <g transform="translate(50, 180)">
+    <rect width="800" height="80" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="400" y="22" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📊 Performance Targets</text>
+    
+    <g transform="translate(50, 40)">
+      <rect width="160" height="30" rx="6" fill="#14532d"/>
+      <text x="80" y="20" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="11" font-weight="bold">P50: andlt;50ms</text>
+    </g>
+    
+    <g transform="translate(230, 40)">
+      <rect width="160" height="30" rx="6" fill="#1e3a8a"/>
+      <text x="80" y="20" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="11" font-weight="bold">P95: andlt;150ms</text>
+    </g>
+    
+    <g transform="translate(410, 40)">
+      <rect width="160" height="30" rx="6" fill="#7c2d12"/>
+      <text x="80" y="20" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="11" font-weight="bold">P99: andlt;300ms</text>
+    </g>
+    
+    <g transform="translate(590, 40)">
+      <rect width="160" height="30" rx="6" fill="#4c1d95"/>
+      <text x="80" y="20" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="11" font-weight="bold">QPS: 100K+</text>
+    </g>
+  </g>
+  
+  <!-- Optimization Techniques -->
+  <text x="450" y="295" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Optimization Techniques</text>
+  
+  <g transform="translate(50, 310)">
+    <rect width="190" height="110" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📦 Batching</text>
+    <text x="95" y="50" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Dynamic batch sizing</text>
+    <text x="95" y="70" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Sequence bucketing</text>
+    <text x="95" y="90" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">↑ Throughput 3-5×</text>
+  </g>
+  
+  <g transform="translate(260, 310)">
+    <rect width="190" height="110" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="11" font-weight="bold">💾 Caching</text>
+    <text x="95" y="50" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Content hash cache</text>
+    <text x="95" y="70" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Embedding cache</text>
+    <text x="95" y="90" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">Hit rate: 30-40%</text>
+  </g>
+  
+  <g transform="translate(470, 310)">
+    <rect width="190" height="110" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">⚡ Quantization</text>
+    <text x="95" y="50" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">INT8/FP16 inference</text>
+    <text x="95" y="70" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">TensorRT optimization</text>
+    <text x="95" y="90" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">↓ Latency 2-4×</text>
+  </g>
+  
+  <g transform="translate(680, 310)">
+    <rect width="170" height="110" rx="10" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔀 Distillation</text>
+    <text x="85" y="50" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Teacher → Student</text>
+    <text x="85" y="70" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Smaller, faster models</text>
+    <text x="85" y="90" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">↓ Size 10×</text>
+  </g>
+</svg>

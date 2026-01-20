@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgNetflix" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="netflixRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e50914"/>
+      <stop offset="100%" style="stop-color:#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <filter id="shadowNF" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgNetflix)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🏆 The Netflix Prize ($1M, 2006-2009)</text>
+  
+  <!-- Winner Banner -->
+  <g transform="translate(50, 70)" filter="url(#shadowNF)">
+    <rect width="800" height="100" rx="14" fill="#1e293b"/>
+    <rect width="800" height="50" rx="14 14 0 0" fill="url(#goldGrad)"/>
+    <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">🥇 WINNER: BellKor's Pragmatic Chaos</text>
+    
+    <text x="400" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#f8fafc">Ensemble of 100+ different algorithms</text>
+  </g>
+  
+  <!-- Algorithm Components -->
+  <g transform="translate(50, 190)" filter="url(#shadowNF)">
+    <rect width="800" height="120" rx="14" fill="#1e293b"/>
+    <text x="400" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧩 Winning Ensemble Components</text>
+    
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="140" height="55" rx="8" fill="#3b82f6"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Matrix Factor.</text>
+      <text x="70" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#bfdbfe">SVD variants</text>
+      
+      <rect x="155" y="0" width="140" height="55" rx="8" fill="#8b5cf6"/>
+      <text x="225" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Neighborhood</text>
+      <text x="225" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ddd6fe">k-NN methods</text>
+      
+      <rect x="310" y="0" width="140" height="55" rx="8" fill="#ec4899"/>
+      <text x="380" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">RBM</text>
+      <text x="380" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbcfe8">Deep learning</text>
+      
+      <rect x="465" y="0" width="140" height="55" rx="8" fill="#10b981"/>
+      <text x="535" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Time-Based</text>
+      <text x="535" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">Temporal dynamics</text>
+      
+      <rect x="620" y="0" width="140" height="55" rx="8" fill="#f59e0b"/>
+      <text x="690" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Features</text>
+      <text x="690" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#422006">Engineering</text>
+    </g>
+  </g>
+  
+  <!-- Key Insight -->
+  <g transform="translate(50, 330)" filter="url(#shadowNF)">
+    <rect width="800" height="100" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="800" height="45" rx="14 14 0 0" fill="url(#netflixRed)"/>
+    <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">💡 KEY INSIGHT</text>
+    
+    <text x="400" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">The winning solution improved by</text>
+    <text x="400" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">10.06% over Netflix's baseline</text>
+    
+    <!-- Arrow and insight -->
+    <g transform="translate(550, 50)">
+      <rect width="200" height="40" rx="8" fill="#10b981" opacity="0.2"/>
+      <text x="100" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7">Biggest gains came from</text>
+      <text x="100" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#4ade80">COMBINING methods!</text>
+    </g>
+  </g>
+</svg>

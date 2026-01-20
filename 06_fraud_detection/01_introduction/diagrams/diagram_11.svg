@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 470">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a14"/>
+      <stop offset="50%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0a0a14"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <pattern id="hexGrid" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
+      <path d="M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.2"/>
+      <path d="M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.2"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="470" fill="url(#bgGrad)"/>
+  <rect width="850" height="470" fill="url(#hexGrid)"/>
+  
+  <!-- Decorative glows -->
+  <ellipse cx="425" cy="235" rx="350" ry="180" fill="#e94560" opacity="0.02"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    📊 Operational Metrics Dashboard
+  </text>
+  
+  <!-- Top row metrics -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="60" width="185" height="110" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="122" y="90" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Detection Rate</text>
+    <text x="122" y="125" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#glow)">85%</text>
+    <text x="122" y="155" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="11">Target: andgt;80%</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="235" y="60" width="185" height="110" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="327" y="90" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Precision</text>
+    <text x="327" y="125" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#glow)">94%</text>
+    <text x="327" y="155" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11">Target: andgt;90%</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="440" y="60" width="185" height="110" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="532" y="90" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">False Positive Rate</text>
+    <text x="532" y="125" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#glow)">0.8%</text>
+    <text x="532" y="155" text-anchor="middle" fill="#fde047" font-family="Arial, sans-serif" font-size="11">Target: andlt;1%</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="645" y="60" width="185" height="110" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="737" y="90" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PR-AUC</text>
+    <text x="737" y="125" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#glow)">0.52</text>
+    <text x="737" y="155" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="11">Target: andgt;0.50</text>
+  </g>
+  
+  <!-- Second row -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="190" width="185" height="110" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="122" y="220" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">P99 Latency</text>
+    <text x="122" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="bold">87ms</text>
+    <text x="122" y="285" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="11">Target: andlt;100ms</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="235" y="190" width="185" height="110" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="327" y="220" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Throughput</text>
+    <text x="327" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="bold">125K</text>
+    <text x="327" y="285" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11">TPS | Target: andgt;100K</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="440" y="190" width="185" height="110" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="532" y="220" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Availability</text>
+    <text x="532" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="bold">99.99%</text>
+    <text x="532" y="285" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="11">Last 30 days</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="645" y="190" width="185" height="110" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="737" y="220" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Error Rate</text>
+    <text x="737" y="255" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="bold">0.02%</text>
+    <text x="737" y="285" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11">Target: andlt;0.1%</text>
+  </g>
+  
+  <!-- Business metrics -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="320" width="800" height="130" rx="12" fill="#0f1a2e" stroke="#e94560" stroke-width="2"/>
+    <text x="430" y="355" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      💰 Business Impact (Last 30 Days)
+    </text>
+    
+    <g transform="translate(60, 385)">
+      <text x="0" y="0" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Fraud Prevented:</text>
+      <text x="130" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">$8.2M</text>
+    </g>
+    
+    <g transform="translate(280, 385)">
+      <text x="0" y="0" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Fraud Losses:</text>
+      <text x="100" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">$1.4M (15% miss rate)</text>
+    </g>
+    
+    <g transform="translate(540, 385)">
+      <text x="0" y="0" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">False Declines:</text>
+      <text x="110" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">$420K revenue impact</text>
+    </g>
+    
+    <g transform="translate(60, 420)">
+      <text x="0" y="0" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Review Queue:</text>
+      <text x="105" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">12,500 cases (0.4%)</text>
+    </g>
+    
+    <g transform="translate(320, 420)">
+      <text x="0" y="0" fill="#3b82f6" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Investigation Rate:</text>
+      <text x="125" y="0" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">28% fraud confirmation</text>
+    </g>
+    
+    <g transform="translate(580, 420)">
+      <text x="0" y="0" fill="#22c55e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Net Value:</text>
+      <text x="75" y="0" fill="#22c55e" font-family="Arial, sans-serif" font-size="16" font-weight="bold" filter="url(#glow)">+$6.4M</text>
+    </g>
+  </g>
+</svg>

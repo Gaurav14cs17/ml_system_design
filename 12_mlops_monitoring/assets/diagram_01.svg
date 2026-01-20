@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#be185d"/>
+    </linearGradient>
+    <linearGradient id="cardGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#c2410c"/>
+    </linearGradient>
+    <linearGradient id="cardGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+    <linearGradient id="cardGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#b91c1c"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-family="Segoe UI, Arial" font-size="26" font-weight="bold" fill="#f8fafc" filter="url(#glow)">
+    ⚠️ ML Model Degradation Sources
+  </text>
+  <text x="400" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#94a3b8">
+    Why production ML models silently fail over time
+  </text>
+  
+  <!-- Central Model Icon -->
+  <circle cx="400" cy="240" r="55" fill="#1e293b" stroke="#475569" stroke-width="3" filter="url(#shadow)"/>
+  <text x="400" y="232" text-anchor="middle" font-family="Segoe UI, Arial" font-size="28" fill="#f8fafc">🤖</text>
+  <text x="400" y="258" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#94a3b8">ML MODEL</text>
+  
+  <!-- Card 1: Data Drift (top-left) -->
+  <g transform="translate(60, 100)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="12" fill="url(#cardGrad1)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#f8fafc">📊</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">Data Drift</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#bfdbfe">Input distribution</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#bfdbfe">changes over time</text>
+    <!-- Arrow to center -->
+    <line x1="180" y1="50" x2="295" y2="190" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 2: Concept Drift (top-right) -->
+  <g transform="translate(560, 100)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="12" fill="url(#cardGrad2)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#f8fafc">🎯</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">Concept Drift</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#ddd6fe">P(Y|X) relationship</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#ddd6fe">changes over time</text>
+    <!-- Arrow to center -->
+    <line x1="0" y1="50" x2="-95" y2="190" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 3: Model Staleness (middle-left) -->
+  <g transform="translate(60, 230)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="12" fill="url(#cardGrad3)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#f8fafc">⏰</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">Model Staleness</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fbcfe8">World changes but</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fbcfe8">model stays static</text>
+    <!-- Arrow to center -->
+    <line x1="180" y1="50" x2="295" y2="10" stroke="#ec4899" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 4: Infrastructure (middle-right) -->
+  <g transform="translate(560, 230)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="12" fill="url(#cardGrad4)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#f8fafc">🔧</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">Infrastructure</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fed7aa">Hardware failures &amp;</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fed7aa">resource exhaustion</text>
+    <!-- Arrow to center -->
+    <line x1="0" y1="50" x2="-95" y2="10" stroke="#f97316" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 5: Scale Issues (bottom-left) -->
+  <g transform="translate(140, 360)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="12" fill="url(#cardGrad5)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#f8fafc">📈</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">Scale Issues</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#99f6e4">Performance degrades</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#99f6e4">under increased load</text>
+    <!-- Arrow to center -->
+    <line x1="140" y1="0" x2="215" y2="-70" stroke="#14b8a6" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Card 6: Software Bugs (bottom-right) -->
+  <g transform="translate(480, 360)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="12" fill="url(#cardGrad6)"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#f8fafc">🐛</text>
+    <text x="90" y="58" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">Software Bugs</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fecaca">Feature engineering</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial" font-size="10" fill="#fecaca">pipeline errors</text>
+    <!-- Arrow to center -->
+    <line x1="40" y1="0" x2="-35" y2="-70" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+</svg>

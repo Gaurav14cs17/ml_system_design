@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520">
+  <!-- Background -->
+  <rect width="850" height="520" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">RETINANET + FOCAL LOSS</text>
+  
+  <!-- Problem Section -->
+  <g transform="translate(50, 70)">
+    <rect width="350" height="140" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f87171">PROBLEM: Class Imbalance</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">• Thousands of easy negative anchors (bg)</text>
+    <text x="20" y="75" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">• Few positive anchors (objects)</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">• Easy negatives dominate the loss</text>
+    
+    <g transform="translate(30, 105)">
+      <rect width="100" height="25" fill="#7f1d1d" stroke="#ef4444" stroke-width="1" rx="4"/>
+      <text x="50" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fca5a5">Background 99%</text>
+      <rect x="105" width="40" height="25" fill="#14532d" stroke="#22c55e" stroke-width="1" rx="4"/>
+      <text x="125" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4ade80">Obj 1%</text>
+    </g>
+  </g>
+  
+  <!-- Focal Loss Solution -->
+  <g transform="translate(450, 70)">
+    <rect width="350" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#4ade80">FOCAL LOSS SOLUTION</text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">Standard CE: CE(p) = -log(p)</text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">Focal Loss:</text>
+    <text x="40" y="100" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">FL(p) = -α(1-p)^γ × log(p)</text>
+    
+    <text x="20" y="125" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">α balances pos/neg, γ=2 down-weights easy examples</text>
+  </g>
+  
+  <!-- Loss Curve Visualization -->
+  <g transform="translate(150, 240)">
+    <rect width="550" height="250" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="275" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#a78bfa">Loss vs Confidence Comparison</text>
+    
+    <!-- Axes -->
+    <g transform="translate(80, 50)">
+      <line x1="0" y1="150" x2="400" y2="150" stroke="#475569" stroke-width="2"/>
+      <line x1="0" y1="0" x2="0" y2="150" stroke="#475569" stroke-width="2"/>
+      
+      <text x="-20" y="10" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Loss</text>
+      <text x="-25" y="30" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">1.0</text>
+      <text x="-25" y="80" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">0.5</text>
+      <text x="-25" y="150" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">0.0</text>
+      
+      <text x="200" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">p (confidence)</text>
+      <text x="0" y="165" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">0.0</text>
+      <text x="200" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">0.5</text>
+      <text x="400" y="165" text-anchor="end" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">1.0</text>
+      
+      <!-- CE curve (γ=0) -->
+      <path d="M 0 5 Q 100 30 200 70 Q 300 110 400 145" fill="none" stroke="#ef4444" stroke-width="3"/>
+      <text x="300" y="50" font-family="Arial, sans-serif" font-size="10" fill="#f87171">CE (γ=0)</text>
+      
+      <!-- Focal Loss curves -->
+      <path d="M 0 20 Q 100 60 200 110 Q 300 140 400 148" fill="none" stroke="#f59e0b" stroke-width="3"/>
+      <text x="300" y="95" font-family="Arial, sans-serif" font-size="10" fill="#fbbf24">FL (γ=1)</text>
+      
+      <path d="M 0 50 Q 100 100 200 135 Q 300 148 400 149" fill="none" stroke="#22c55e" stroke-width="3"/>
+      <text x="300" y="125" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">FL (γ=2)</text>
+    </g>
+  </g>
+  
+  <!-- Effect summary -->
+  <text x="425" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4ade80">✓ Hard examples (low p) → higher weight | Easy examples (high p) → very low weight</text>
+</svg>

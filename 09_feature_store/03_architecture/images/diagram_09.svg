@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgScaling" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowScaling" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgScaling)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Scaling Patterns</text>
+  
+  <!-- Horizontal Scaling -->
+  <g filter="url(#shadowScaling)">
+    <rect x="50" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="50" y="70" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="50" y="103" width="250" height="12" fill="#2563eb"/>
+    <text x="175" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">↔️ Horizontal Scaling</text>
+    
+    <text x="70" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">Add more nodes</text>
+    
+    <!-- Node representations -->
+    <rect x="80" y="160" width="60" height="40" rx="6" fill="#172554" stroke="#3b82f6"/>
+    <text x="110" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Node 1</text>
+    
+    <rect x="150" y="160" width="60" height="40" rx="6" fill="#172554" stroke="#3b82f6"/>
+    <text x="180" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Node 2</text>
+    
+    <rect x="220" y="160" width="60" height="40" rx="6" fill="#172554" stroke="#3b82f6"/>
+    <text x="250" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Node N</text>
+    
+    <text x="70" y="230" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Use Cases:</text>
+    <text x="70" y="250" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• High read throughput</text>
+    <text x="70" y="268" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Redis Cluster</text>
+    <text x="70" y="286" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• DynamoDB auto-scaling</text>
+    
+    <rect x="70" y="305" width="210" height="40" rx="6" fill="#0f172a"/>
+    <text x="175" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#3b82f6">Best for: Read-heavy workloads</text>
+  </g>
+  
+  <!-- Sharding -->
+  <g filter="url(#shadowScaling)">
+    <rect x="325" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="325" y="70" width="250" height="45" rx="12" fill="#7c3aed"/>
+    <rect x="325" y="103" width="250" height="12" fill="#7c3aed"/>
+    <text x="450" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🔀 Sharding</text>
+    
+    <text x="345" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#a78bfa">Partition by entity</text>
+    
+    <!-- Shard representations -->
+    <rect x="345" y="160" width="90" height="55" rx="6" fill="#2e1065" stroke="#8b5cf6"/>
+    <text x="390" y="182" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Shard A-H</text>
+    <text x="390" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Users A-H</text>
+    
+    <rect x="465" y="160" width="90" height="55" rx="6" fill="#2e1065" stroke="#8b5cf6"/>
+    <text x="510" y="182" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Shard I-Z</text>
+    <text x="510" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Users I-Z</text>
+    
+    <text x="345" y="245" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Strategies:</text>
+    <text x="345" y="265" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Hash-based</text>
+    <text x="345" y="283" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Range-based</text>
+    <text x="345" y="301" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Consistent hashing</text>
+    
+    <rect x="345" y="315" width="210" height="30" rx="6" fill="#0f172a"/>
+    <text x="450" y="335" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#8b5cf6">Best for: Large entity counts</text>
+  </g>
+  
+  <!-- Caching -->
+  <g filter="url(#shadowScaling)">
+    <rect x="600" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="600" y="70" width="250" height="45" rx="12" fill="#059669"/>
+    <rect x="600" y="103" width="250" height="12" fill="#059669"/>
+    <text x="725" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">💾 Caching Tiers</text>
+    
+    <text x="620" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">Multi-level caching</text>
+    
+    <!-- Cache levels -->
+    <rect x="620" y="160" width="210" height="30" rx="6" fill="#064e3b" stroke="#10b981"/>
+    <text x="725" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">L1: In-process (~1ms)</text>
+    
+    <rect x="640" y="200" width="170" height="30" rx="6" fill="#064e3b" stroke="#10b981"/>
+    <text x="725" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">L2: Redis (~5ms)</text>
+    
+    <rect x="660" y="240" width="130" height="30" rx="6" fill="#064e3b" stroke="#10b981"/>
+    <text x="725" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">L3: Store (~20ms)</text>
+    
+    <text x="620" y="295" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Cache strategies:</text>
+    <text x="620" y="315" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Read-through / Write-behind</text>
+    <text x="620" y="333" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• TTL-based invalidation</text>
+  </g>
+</svg>

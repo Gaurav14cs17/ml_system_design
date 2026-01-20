@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='578' viewBox='0 0 524 578'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                    AARRR FRAMEWORK                          │
+│              (Pirate Metrics for Growth)                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ACQUISITION - How do users find us?                        │
+│  ├── Signups, App installs                                 │
+│  ├── Traffic sources                                       │
+│  └── Cost per acquisition                                  │
+│                                                             │
+│  ACTIVATION - Do users have great first experience?         │
+│  ├── Onboarding completion                                 │
+│  ├── First key action (AHA moment)                         │
+│  └── Time to value                                         │
+│                                                             │
+│  RETENTION - Do users come back?                            │
+│  ├── D1, D7, D30 retention                                 │
+│  ├── Weekly/Monthly active users                           │
+│  └── Churn rate                                            │
+│                                                             │
+│  REVENUE - How do we make money?                            │
+│  ├── Conversion rate                                       │
+│  ├── Revenue per user                                      │
+│  └── Lifetime value                                        │
+│                                                             │
+│  REFERRAL - Do users tell others?                           │
+│  ├── Net Promoter Score                                    │
+│  ├── Referral rate                                         │
+│  └── Viral coefficient                                     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

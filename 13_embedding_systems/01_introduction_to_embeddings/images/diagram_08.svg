@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="searchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="recGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+    <linearGradient id="nlpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="cvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="anomalyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="clusterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🚀 Real-World Applications</text>
+  
+  <!-- Row 1 -->
+  <!-- Search -->
+  <g filter="url(#shadow)" transform="translate(40, 70)">
+    <rect width="260" height="140" rx="14" fill="url(#searchGrad)"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#fff">🔍</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#fff">Search and Retrieval</text>
+    <rect x="20" y="75" width="220" height="55" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Semantic search (meaning)</text>
+    <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Similar image search</text>
+    <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Code search</text>
+  </g>
+  
+  <!-- Recommendations -->
+  <g filter="url(#shadow)" transform="translate(320, 70)">
+    <rect width="260" height="140" rx="14" fill="url(#recGrad)"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#fff">⭐</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#fff">Recommendation Systems</text>
+    <rect x="20" y="75" width="220" height="55" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Netflix: movie suggestions</text>
+    <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Spotify: music discovery</text>
+    <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Amazon: products</text>
+  </g>
+  
+  <!-- NLP -->
+  <g filter="url(#shadow)" transform="translate(600, 70)">
+    <rect width="260" height="140" rx="14" fill="url(#nlpGrad)"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#1e293b">📝</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#1e293b">Natural Language</text>
+    <rect x="20" y="75" width="220" height="55" rx="8" fill="rgba(0,0,0,0.15)"/>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Sentiment analysis</text>
+    <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Machine translation</text>
+    <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Question answering</text>
+  </g>
+  
+  <!-- Row 2 -->
+  <!-- Computer Vision -->
+  <g filter="url(#shadow)" transform="translate(40, 230)">
+    <rect width="260" height="140" rx="14" fill="url(#cvGrad)"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#fff">👁️</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#fff">Computer Vision</text>
+    <rect x="20" y="75" width="220" height="55" rx="8" fill="rgba(0,0,0,0.2)"/>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Face recognition</text>
+    <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Object detection</text>
+    <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">• Visual similarity</text>
+  </g>
+  
+  <!-- Anomaly Detection -->
+  <g filter="url(#shadow)" transform="translate(320, 230)">
+    <rect width="260" height="140" rx="14" fill="url(#anomalyGrad)"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#1e293b">⚠️</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#1e293b">Anomaly Detection</text>
+    <rect x="20" y="75" width="220" height="55" rx="8" fill="rgba(0,0,0,0.15)"/>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Fraud detection</text>
+    <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Security monitoring</text>
+    <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Outlier identification</text>
+  </g>
+  
+  <!-- Clustering -->
+  <g filter="url(#shadow)" transform="translate(600, 230)">
+    <rect width="260" height="140" rx="14" fill="url(#clusterGrad)"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" fill="#1e293b">📊</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#1e293b">Clustering and Organization</text>
+    <rect x="20" y="75" width="220" height="55" rx="8" fill="rgba(0,0,0,0.15)"/>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Topic modeling</text>
+    <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Customer segmentation</text>
+    <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="rgba(0,0,0,0.8)">• Content organization</text>
+  </g>
+  
+  <!-- Bottom -->
+  <rect x="200" y="385" width="500" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="404" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Embeddings power the AI experiences you use every day</text>
+</svg>

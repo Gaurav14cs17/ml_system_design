@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <filter id="shadow7" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="300" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">💰 ML Serving Cost Distribution</text>
+  
+  <!-- Pie Chart -->
+  <g transform="translate(180, 200)">
+    <!-- Compute - 70% -->
+    <path d="M0,0 L0,-120 A120,120 0 1,1 -114.13,-37.08 Z" fill="#667eea" filter="url(#shadow7)"/>
+    <text x="30" y="60" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">70%</text>
+    
+    <!-- Storage - 10% -->
+    <path d="M0,0 L-114.13,-37.08 A120,120 0 0,1 -74.16,-94.39 Z" fill="#4caf50" filter="url(#shadow7)"/>
+    
+    <!-- Network - 10% -->
+    <path d="M0,0 L-74.16,-94.39 A120,120 0 0,1 -18.54,-118.56 Z" fill="#ff9800" filter="url(#shadow7)"/>
+    
+    <!-- Monitoring - 5% -->
+    <path d="M0,0 L-18.54,-118.56 A120,120 0 0,1 18.54,-118.56 Z" fill="#e91e63" filter="url(#shadow7)"/>
+    
+    <!-- Other - 5% -->
+    <path d="M0,0 L18.54,-118.56 A120,120 0 0,1 0,-120 Z" fill="#9c27b0" filter="url(#shadow7)"/>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(350, 100)">
+    <rect x="0" y="0" width="20" height="20" rx="3" fill="#667eea"/>
+    <text x="30" y="15" font-family="Arial, sans-serif" font-size="13" fill="#f8fafc">Compute (GPU/CPU) - 70%</text>
+    
+    <rect x="0" y="35" width="20" height="20" rx="3" fill="#4caf50"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="13" fill="#f8fafc">Storage - 10%</text>
+    
+    <rect x="0" y="70" width="20" height="20" rx="3" fill="#ff9800"/>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="13" fill="#f8fafc">Network - 10%</text>
+    
+    <rect x="0" y="105" width="20" height="20" rx="3" fill="#e91e63"/>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="13" fill="#f8fafc">Monitoring - 5%</text>
+    
+    <rect x="0" y="140" width="20" height="20" rx="3" fill="#9c27b0"/>
+    <text x="30" y="155" font-family="Arial, sans-serif" font-size="13" fill="#f8fafc">Other - 5%</text>
+  </g>
+  
+  <!-- Optimization Tips -->
+  <g filter="url(#shadow7)">
+    <rect x="30" y="320" width="540" height="65" rx="10" fill="#e8f5e9" stroke="#4caf50"/>
+    <text x="300" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32">💡 Top Optimization Levers</text>
+    <text x="300" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#388e3c">Right-sizing (40-60%) | Spot Instances (60-90%) | Model Optimization (2-10x) | Autoscaling (20-40%)</text>
+  </g>
+</svg>
+

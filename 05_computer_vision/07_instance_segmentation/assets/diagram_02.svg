@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 380">
+  <!-- Background -->
+  <rect width="750" height="380" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="375" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">MASK R-CNN LOSS FUNCTION</text>
+  
+  <!-- Main Loss Equation -->
+  <g transform="translate(150, 70)">
+    <rect width="450" height="60" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="225" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">L = L<tspan font-size="12" dy="5">cls</tspan><tspan dy="-5"> + L</tspan><tspan font-size="12" dy="5">box</tspan><tspan dy="-5"> + L</tspan><tspan font-size="12" dy="5">mask</tspan></text>
+  </g>
+  
+  <!-- Loss Components -->
+  <g transform="translate(50, 160)">
+    <!-- L_cls -->
+    <rect width="200" height="100" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f87171">L_cls</text>
+    <text x="100" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fca5a5">Cross-Entropy</text>
+    <text x="100" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Classification</text>
+    <text x="100" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">loss</text>
+  </g>
+  
+  <g transform="translate(280, 160)">
+    <!-- L_box -->
+    <rect width="200" height="100" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">L_box</text>
+    <text x="100" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fcd34d">Smooth L1</text>
+    <text x="100" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Bounding box</text>
+    <text x="100" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">regression</text>
+  </g>
+  
+  <g transform="translate(510, 160)">
+    <!-- L_mask -->
+    <rect width="200" height="100" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4ade80">L_mask</text>
+    <text x="100" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#86efac">Binary CE per-pixel</text>
+    <text x="100" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Only for GT class</text>
+    <text x="100" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">mask</text>
+  </g>
+  
+  <!-- Key Insight Box -->
+  <g transform="translate(100, 285)">
+    <rect width="550" height="80" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <text x="275" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#818cf8">💡 Key Insight: Mask prediction is CLASS-AGNOSTIC per RoI</text>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Predict K masks (one per class)</text>
+    <text x="30" y="68" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Use only the mask corresponding to predicted class → Decouples mask and classification</text>
+  </g>
+</svg>

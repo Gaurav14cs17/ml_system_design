@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420">
+  <defs>
+    <linearGradient id="apmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="bothGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📊 The ML Monitoring Gap</text>
+  
+  <!-- Traditional APM -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="60" width="280" height="260" rx="14" fill="#1e293b"/>
+    <rect x="60" y="60" width="280" height="50" rx="14 14 0 0" fill="url(#apmGrad)"/>
+    <text x="200" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">Traditional APM</text>
+    
+    <g transform="translate(80, 125)">
+      <rect x="0" y="0" width="240" height="55" rx="10" fill="#334155"/>
+      <text x="30" y="25" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">🖥️</text>
+      <text x="55" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#a5b4fc">Infra Metrics</text>
+      <text x="55" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">CPU, Memory, Disk</text>
+      
+      <rect x="0" y="65" width="240" height="55" rx="10" fill="#334155"/>
+      <text x="30" y="90" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">📱</text>
+      <text x="55" y="90" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#a5b4fc">Application Metrics</text>
+      <text x="55" y="107" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Latency, Throughput</text>
+      
+      <rect x="0" y="130" width="240" height="55" rx="10" fill="#334155"/>
+      <text x="30" y="155" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">🐛</text>
+      <text x="55" y="155" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#a5b4fc">Error Tracking</text>
+      <text x="55" y="172" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Exceptions, Logs</text>
+    </g>
+  </g>
+  
+  <!-- Plus sign -->
+  <circle cx="375" cy="190" r="25" fill="#8b5cf6" filter="url(#shadow)"/>
+  <text x="375" y="197" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">+</text>
+  
+  <!-- ML-Specific -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="60" width="280" height="260" rx="14" fill="#1e293b"/>
+    <rect x="410" y="60" width="280" height="50" rx="14 14 0 0" fill="url(#mlGrad)"/>
+    <text x="550" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">ML-Specific Monitoring</text>
+    
+    <g transform="translate(430, 125)">
+      <rect x="0" y="0" width="240" height="55" rx="10" fill="#334155"/>
+      <text x="30" y="25" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">📊</text>
+      <text x="55" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Data Quality</text>
+      <text x="55" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Schema, Distribution</text>
+      
+      <rect x="0" y="65" width="240" height="55" rx="10" fill="#334155"/>
+      <text x="30" y="90" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">🎯</text>
+      <text x="55" y="90" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Model Performance</text>
+      <text x="55" y="107" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Accuracy, Precision, Recall</text>
+      
+      <rect x="0" y="130" width="240" height="55" rx="10" fill="#334155"/>
+      <text x="30" y="155" font-family="Segoe UI, sans-serif" font-size="18" fill="#f8fafc">📉</text>
+      <text x="55" y="155" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">Prediction Drift</text>
+      <text x="55" y="172" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Concept, Feature Drift</text>
+    </g>
+  </g>
+  
+  <!-- Bottom banner -->
+  <rect x="150" y="345" width="450" height="55" rx="12" fill="url(#bothGrad)" filter="url(#shadow)"/>
+  <text x="375" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🔗 BOTH ARE NEEDED FOR ML SYSTEMS</text>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+    <filter id="blur3">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">GAUSSIAN BLUR EFFECT</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Smoothing with different sigma (σ) values</text>
+  
+  <!-- Original Image Box -->
+  <g transform="translate(60, 80)">
+    <rect width="180" height="130" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Original</text>
+    <rect x="30" y="40" width="120" height="75" fill="#334155" stroke="#475569" stroke-width="1"/>
+    <line x1="30" y1="60" x2="150" y2="60" stroke="#22c55e" stroke-width="2"/>
+    <line x1="90" y1="40" x2="90" y2="115" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="70" cy="80" r="15" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="90" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Sharp edges</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 260 145 L 290 145" stroke="#fbbf24" stroke-width="2" fill="none"/>
+  <polygon points="290,140 305,145 290,150" fill="#fbbf24"/>
+  
+  <!-- σ = 1 Box -->
+  <g transform="translate(320, 80)">
+    <rect width="180" height="130" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">σ = 1</text>
+    <rect x="30" y="40" width="120" height="75" fill="#334155" stroke="#475569" stroke-width="1" filter="url(#blur1)"/>
+    <line x1="30" y1="60" x2="150" y2="60" stroke="#22c55e" stroke-width="3" filter="url(#blur1)"/>
+    <line x1="90" y1="40" x2="90" y2="115" stroke="#ef4444" stroke-width="3" filter="url(#blur1)"/>
+    <circle cx="70" cy="80" r="15" fill="none" stroke="#3b82f6" stroke-width="3" filter="url(#blur1)"/>
+    <text x="90" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Slight blur</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 520 145 L 550 145" stroke="#fbbf24" stroke-width="2" fill="none"/>
+  <polygon points="550,140 565,145 550,150" fill="#fbbf24"/>
+  
+  <!-- σ = 3 Box -->
+  <g transform="translate(580, 80)">
+    <rect width="180" height="130" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#34d399">σ = 3</text>
+    <rect x="30" y="40" width="120" height="75" fill="#334155" stroke="#475569" stroke-width="1" filter="url(#blur3)"/>
+    <line x1="30" y1="60" x2="150" y2="60" stroke="#22c55e" stroke-width="4" filter="url(#blur3)"/>
+    <line x1="90" y1="40" x2="90" y2="115" stroke="#ef4444" stroke-width="4" filter="url(#blur3)"/>
+    <circle cx="70" cy="80" r="15" fill="none" stroke="#3b82f6" stroke-width="4" filter="url(#blur3)"/>
+    <text x="90" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Heavy blur</text>
+  </g>
+  
+  <!-- Gaussian Kernel Section -->
+  <text x="400" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Gaussian Kernel (5×5, σ=1)</text>
+  
+  <!-- Kernel Grid -->
+  <g transform="translate(250, 265)">
+    <!-- Grid cells -->
+    <rect x="0" y="0" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="60" y="0" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="120" y="0" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="180" y="0" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="240" y="0" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <rect x="0" y="35" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="60" y="35" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="120" y="35" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="180" y="35" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="240" y="35" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <rect x="0" y="70" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="60" y="70" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="120" y="70" width="60" height="35" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="180" y="70" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="240" y="70" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <rect x="0" y="105" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="60" y="105" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="120" y="105" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="180" y="105" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="240" y="105" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <rect x="0" y="140" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="60" y="140" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="120" y="140" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="180" y="140" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="240" y="140" width="60" height="35" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    
+    <!-- Values Row 1 -->
+    <text x="30" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.003</text>
+    <text x="90" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    <text x="150" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.022</text>
+    <text x="210" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    <text x="270" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.003</text>
+    
+    <!-- Values Row 2 -->
+    <text x="30" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    <text x="90" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.059</text>
+    <text x="150" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.097</text>
+    <text x="210" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.059</text>
+    <text x="270" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    
+    <!-- Values Row 3 (center) -->
+    <text x="30" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.022</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.097</text>
+    <text x="150" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">0.159</text>
+    <text x="210" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.097</text>
+    <text x="270" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.022</text>
+    
+    <!-- Values Row 4 -->
+    <text x="30" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    <text x="90" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.059</text>
+    <text x="150" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.097</text>
+    <text x="210" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.059</text>
+    <text x="270" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    
+    <!-- Values Row 5 -->
+    <text x="30" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.003</text>
+    <text x="90" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    <text x="150" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.022</text>
+    <text x="210" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.013</text>
+    <text x="270" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">0.003</text>
+  </g>
+  
+  <!-- Center highlight annotation -->
+  <text x="400" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#60a5fa">Center pixel has highest weight (0.159)</text>
+</svg>

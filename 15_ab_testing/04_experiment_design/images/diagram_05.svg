@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='488' viewBox='0 0 524 488'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│                    EXPERIMENT TYPES                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  BY SCOPE:                                                  │
+│  ├── Feature Launch: New functionality                      │
+│  ├── Optimization: Improve existing feature                 │
+│  ├── Bug Fix: Verify fix doesn&#x27;t regress                   │
+│  └── Infrastructure: Backend changes                        │
+│                                                             │
+│  BY DURATION:                                               │
+│  ├── Short-term: 1-2 weeks (quick validation)              │
+│  ├── Standard: 2-4 weeks (typical A/B test)                │
+│  └── Long-term: 1-3 months (lifetime value tests)          │
+│                                                             │
+│  BY TRAFFIC:                                                │
+│  ├── Full-traffic: 100% of eligible users                  │
+│  ├── Partial: Subset of users (10-50%)                     │
+│  └── Targeted: Specific segment only                       │
+│                                                             │
+│  BY ANALYSIS:                                               │
+│  ├── Fixed-horizon: Analyze at predetermined end           │
+│  ├── Sequential: Continuous monitoring with stopping rules │
+│  └── Bayesian: Update beliefs as data arrives             │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

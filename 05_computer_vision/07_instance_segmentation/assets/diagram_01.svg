@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 600">
+  <defs>
+    <linearGradient id="maskBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="backboneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="rpnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="roiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="headGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="600" fill="url(#maskBg)"/>
+  
+  <!-- Grid -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-width="0.2" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="850" height="600" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold">MASK R-CNN ARCHITECTURE</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Instance Segmentation with Pixel-Perfect Masks</text>
+  
+  <!-- Input Image -->
+  <g transform="translate(50, 90)">
+    <rect width="100" height="80" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <text x="50" y="35" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="24">🖼️</text>
+    <text x="50" y="55" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Input</text>
+    <text x="50" y="70" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Image</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 160 130 L 190 130" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="190,125 205,130 190,135" fill="#6366f1"/>
+  
+  <!-- Backbone + FPN -->
+  <g transform="translate(210, 85)">
+    <rect width="140" height="90" rx="12" fill="url(#backboneGrad)" filter="url(#glow)"/>
+    <text x="70" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Backbone + FPN</text>
+    <text x="70" y="50" text-anchor="middle" fill="#dbeafe" font-family="Arial, sans-serif" font-size="10">ResNet-50/101</text>
+    <text x="70" y="68" text-anchor="middle" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="9">Feature Pyramid</text>
+    <text x="70" y="82" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Multi-scale features</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 360 130 L 390 130" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="390,125 405,130 390,135" fill="#60a5fa"/>
+  
+  <!-- RPN -->
+  <g transform="translate(410, 85)">
+    <rect width="120" height="90" rx="12" fill="url(#rpnGrad)" filter="url(#glow)"/>
+    <text x="60" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">RPN</text>
+    <text x="60" y="50" text-anchor="middle" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="9">Region Proposal</text>
+    <text x="60" y="65" text-anchor="middle" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="9">Network</text>
+    <text x="60" y="82" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">~2000 proposals</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 540 130 L 570 130" stroke="#a78bfa" stroke-width="2"/>
+  <polygon points="570,125 585,130 570,135" fill="#a78bfa"/>
+  
+  <!-- RoI Align -->
+  <g transform="translate(590, 85)">
+    <rect width="130" height="90" rx="12" fill="url(#roiGrad)" filter="url(#glow)"/>
+    <text x="65" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">RoI Align</text>
+    <text x="65" y="48" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">Bilinear</text>
+    <text x="65" y="62" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">Interpolation</text>
+    <text x="65" y="82" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">No quantization!</text>
+  </g>
+  
+  <!-- Better than badge -->
+  <g transform="translate(730, 95)">
+    <rect width="90" height="30" rx="5" fill="#dc2626"/>
+    <text x="45" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Better than</text>
+  </g>
+  <g transform="translate(730, 130)">
+    <rect width="90" height="25" rx="5" fill="#1e293b" stroke="#dc2626" stroke-width="1"/>
+    <text x="45" y="17" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">RoI Pool ✗</text>
+  </g>
+  
+  <!-- Three Heads Section -->
+  <text x="425" y="210" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Three Parallel Heads</text>
+  
+  <!-- Arrow down to heads -->
+  <path d="M 425 180 L 425 220" stroke="#fbbf24" stroke-width="2"/>
+  
+  <!-- Branch lines -->
+  <path d="M 425 230 L 200 270 M 425 230 L 425 270 M 425 230 L 650 270" stroke="#fbbf24" stroke-width="2" fill="none"/>
+  
+  <!-- Class Head -->
+  <g transform="translate(100, 280)">
+    <rect width="200" height="110" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <rect width="200" height="35" rx="12" fill="#ec4899"/>
+    <rect x="0" y="22" width="200" height="13" fill="#ec4899"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🏷️ Class Head</text>
+    <text x="100" y="60" text-anchor="middle" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="11">Fully Connected Layers</text>
+    <text x="100" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Output: Class Scores</text>
+    <text x="100" y="100" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="9">N × num_classes</text>
+  </g>
+  
+  <!-- BBox Head -->
+  <g transform="translate(325, 280)">
+    <rect width="200" height="110" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <rect width="200" height="35" rx="12" fill="#06b6d4"/>
+    <rect x="0" y="22" width="200" height="13" fill="#06b6d4"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📦 BBox Head</text>
+    <text x="100" y="60" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="11">Fully Connected Layers</text>
+    <text x="100" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Output: Box Deltas</text>
+    <text x="100" y="100" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="9">N × 4 (dx, dy, dw, dh)</text>
+  </g>
+  
+  <!-- Mask Head -->
+  <g transform="translate(550, 280)">
+    <rect width="200" height="110" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect width="200" height="35" rx="12" fill="url(#headGrad)"/>
+    <rect x="0" y="22" width="200" height="13" fill="#10b981"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🎭 Mask Head</text>
+    <text x="100" y="60" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11">Convolutional Layers</text>
+    <text x="100" y="85" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Output: Binary Masks</text>
+    <text x="100" y="100" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="9">N × 28 × 28</text>
+  </g>
+  
+  <!-- RoI Align vs RoI Pool Comparison -->
+  <text x="425" y="430" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">RoI Align vs RoI Pool</text>
+  
+  <!-- RoI Pool -->
+  <g transform="translate(130, 450)">
+    <rect width="240" height="120" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="120" y="25" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">❌ RoI Pool (Quantized)</text>
+    
+    <!-- Grid with snapping -->
+    <g transform="translate(30, 40)">
+      <rect width="80" height="60" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      <line x1="20" y1="0" x2="20" y2="60" stroke="#4b5563" stroke-width="1"/>
+      <line x1="40" y1="0" x2="40" y2="60" stroke="#4b5563" stroke-width="1"/>
+      <line x1="60" y1="0" x2="60" y2="60" stroke="#4b5563" stroke-width="1"/>
+      <line x1="0" y1="20" x2="80" y2="20" stroke="#4b5563" stroke-width="1"/>
+      <line x1="0" y1="40" x2="80" y2="40" stroke="#4b5563" stroke-width="1"/>
+      
+      <!-- Misaligned box -->
+      <rect x="8" y="12" width="52" height="38" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+      <rect x="0" y="0" width="60" height="40" fill="#ef4444" opacity="0.3"/>
+    </g>
+    
+    <text x="155" y="65" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">Snaps to grid</text>
+    <text x="155" y="80" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">→ Misalignment</text>
+    <text x="155" y="95" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">→ Information loss</text>
+  </g>
+  
+  <!-- RoI Align -->
+  <g transform="translate(430, 450)">
+    <rect width="240" height="120" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="120" y="25" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">✓ RoI Align (Interpolated)</text>
+    
+    <!-- Grid with interpolation -->
+    <g transform="translate(30, 40)">
+      <rect width="80" height="60" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      
+      <!-- Sampling points -->
+      <circle cx="15" cy="15" r="3" fill="#10b981"/>
+      <circle cx="35" cy="15" r="3" fill="#10b981"/>
+      <circle cx="55" cy="15" r="3" fill="#10b981"/>
+      <circle cx="70" cy="15" r="3" fill="#10b981"/>
+      <circle cx="15" cy="35" r="3" fill="#10b981"/>
+      <circle cx="35" cy="35" r="3" fill="#10b981"/>
+      <circle cx="55" cy="35" r="3" fill="#10b981"/>
+      <circle cx="70" cy="35" r="3" fill="#10b981"/>
+      <circle cx="15" cy="50" r="3" fill="#10b981"/>
+      <circle cx="35" cy="50" r="3" fill="#10b981"/>
+      <circle cx="55" cy="50" r="3" fill="#10b981"/>
+      <circle cx="70" cy="50" r="3" fill="#10b981"/>
+      
+      <!-- Precise box -->
+      <rect x="8" y="8" width="67" height="47" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="2"/>
+    </g>
+    
+    <text x="155" y="65" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Bilinear sampling</text>
+    <text x="155" y="80" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">→ Precise alignment</text>
+    <text x="155" y="95" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">→ Better masks!</text>
+  </g>
+  
+  <!-- Key stats -->
+  <g transform="translate(700, 470)">
+    <rect width="120" height="90" rx="8" fill="#4c1d95"/>
+    <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Improvements</text>
+    <text x="60" y="50" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="20" font-weight="bold">+3%</text>
+    <text x="60" y="70" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="9">AP on COCO</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ddd6fe" font-family="Arial, sans-serif" font-size="8">mask accuracy</text>
+  </g>
+</svg>

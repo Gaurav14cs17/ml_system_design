@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500">
+  <defs>
+    <linearGradient id="ocrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="500" fill="url(#ocrBg)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="26" font-weight="bold">OPTICAL CHARACTER RECOGNITION</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Text Detection and Recognition Pipeline</text>
+  
+  <!-- OCR Pipeline -->
+  <g transform="translate(40, 90)">
+    <!-- Input -->
+    <rect width="100" height="80" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="50" y="30" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="20">📷</text>
+    <text x="50" y="50" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Image</text>
+    <text x="50" y="68" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Document/Scene</text>
+    
+    <path d="M 150 130 L 180 130" stroke="#60a5fa" stroke-width="2"/>
+    <polygon points="180,125 195,130 180,135" fill="#60a5fa"/>
+    
+    <!-- Text Detection -->
+    <rect x="200" y="0" width="160" height="80" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="280" y="28" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📍 Text Detection</text>
+    <text x="280" y="48" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">Find text regions</text>
+    <text x="280" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">EAST, CRAFT, DBNet</text>
+    
+    <path d="M 370 130 L 400 130" stroke="#fbbf24" stroke-width="2"/>
+    <polygon points="400,125 415,130 400,135" fill="#fbbf24"/>
+    
+    <!-- Crop and Align -->
+    <rect x="420" y="0" width="130" height="80" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="485" y="28" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✂️ Crop &amp; Align</text>
+    <text x="485" y="48" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Rectify perspective</text>
+    <text x="485" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">STN, TPS</text>
+    
+    <path d="M 560 130 L 590 130" stroke="#a78bfa" stroke-width="2"/>
+    <polygon points="590,125 605,130 590,135" fill="#a78bfa"/>
+    
+    <!-- Text Recognition -->
+    <rect x="610" y="0" width="160" height="80" rx="12" fill="#4c1d95" stroke="#10b981" stroke-width="3" filter="url(#glow)"/>
+    <text x="690" y="28" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📖 Recognition</text>
+    <text x="690" y="48" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">CRNN + CTC / Attention</text>
+    <text x="690" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">TrOCR, PaddleOCR</text>
+  </g>
+  
+  <!-- Output -->
+  <g transform="translate(40, 180)">
+    <rect width="770" height="50" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <text x="30" y="30" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Output:</text>
+    <text x="100" y="30" fill="#6ee7b7" font-family="monospace" font-size="11">"Machine Learning System Design - ML Pipeline Architecture"</text>
+    <text x="650" y="30" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">+ confidence, bboxes</text>
+  </g>
+  
+  <!-- OCR Types -->
+  <text x="425" y="265" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">OCR Application Types</text>
+  
+  <g transform="translate(80, 280)">
+    <!-- Document OCR -->
+    <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📄 Document OCR</text>
+    <text x="20" y="48" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">• Printed text</text>
+    <text x="20" y="65" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">• Structured layouts</text>
+    <text x="20" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">PDFs, invoices, forms</text>
+  </g>
+  
+  <g transform="translate(310, 280)">
+    <!-- Scene Text -->
+    <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🏙️ Scene Text</text>
+    <text x="20" y="48" fill="#422006" font-family="Arial, sans-serif" font-size="9">• Text in natural images</text>
+    <text x="20" y="65" fill="#422006" font-family="Arial, sans-serif" font-size="9">• Various fonts/angles</text>
+    <text x="20" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Signs, menus, products</text>
+  </g>
+  
+  <g transform="translate(540, 280)">
+    <!-- Handwriting -->
+    <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">✍️ Handwriting</text>
+    <text x="20" y="48" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="9">• Cursive, varying styles</text>
+    <text x="20" y="65" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="9">• Historical documents</text>
+    <text x="20" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Most challenging!</text>
+  </g>
+  
+  <!-- Challenges -->
+  <text x="425" y="415" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Key Challenges</text>
+  
+  <g transform="translate(100, 430)">
+    <rect width="140" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    <text x="70" y="22" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🔄 Rotation</text>
+    <text x="70" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Arbitrary angles</text>
+  </g>
+  
+  <g transform="translate(260, 430)">
+    <rect width="140" height="50" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="1"/>
+    <text x="70" y="22" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🌫️ Blur/Noise</text>
+    <text x="70" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Low quality input</text>
+  </g>
+  
+  <g transform="translate(420, 430)">
+    <rect width="140" height="50" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="70" y="22" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🔤 Font Variety</text>
+    <text x="70" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Stylized text</text>
+  </g>
+  
+  <g transform="translate(580, 430)">
+    <rect width="140" height="50" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="70" y="22" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🌐 Multilingual</text>
+    <text x="70" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">CJK, Arabic, etc.</text>
+  </g>
+</svg>
+
+
+
+
+

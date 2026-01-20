@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="pyramidBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="tier1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="tier2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="tier3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="tier4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <filter id="pyramidShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="550" fill="url(#pyramidBg)"/>
+  
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="pyramidGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#334155" stroke-width="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="550" fill="url(#pyramidGrid)" opacity="0.2"/>
+  
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-family="Segoe UI, Arial" font-size="26" font-weight="bold" fill="#f8fafc" filter="url(#textGlow)">
+    📊 The ML Monitoring Pyramid
+  </text>
+  <text x="400" y="72" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" fill="#94a3b8">
+    Layered approach to comprehensive ML system monitoring
+  </text>
+  
+  <!-- Pyramid structure -->
+  <g filter="url(#pyramidShadow)">
+    <!-- Tier 4: Business KPIs (Top) -->
+    <polygon points="400,105 480,175 320,175" fill="url(#tier1)"/>
+    <text x="400" y="152" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" font-weight="bold" fill="#1f2937">💰</text>
+    
+    <!-- Tier 3: Model Metrics -->
+    <polygon points="320,180 480,180 540,270 260,270" fill="url(#tier2)"/>
+    
+    <!-- Tier 2: Data Quality -->
+    <polygon points="260,275 540,275 610,380 190,380" fill="url(#tier3)"/>
+    
+    <!-- Tier 1: Operational (Base) -->
+    <polygon points="190,385 610,385 680,490 120,490" fill="url(#tier4)"/>
+  </g>
+  
+  <!-- Tier labels on pyramid -->
+  <text x="400" y="235" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">🎯 Model Metrics</text>
+  <text x="400" y="338" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">📊 Data Quality</text>
+  <text x="400" y="450" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="bold" fill="#f8fafc">⚙️ Operational Metrics</text>
+  
+  <!-- Right side descriptions -->
+  <!-- Business KPIs -->
+  <g transform="translate(520, 115)">
+    <line x1="0" y1="30" x2="35" y2="30" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="40" y="10" width="200" height="50" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
+    <text x="55" y="32" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#fbbf24">Business KPIs</text>
+    <text x="55" y="48" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">Revenue, Conversion, NPS</text>
+  </g>
+  
+  <!-- Model Metrics -->
+  <g transform="translate(570, 200)">
+    <line x1="0" y1="30" x2="25" y2="30" stroke="#f472b6" stroke-width="2"/>
+    <rect x="30" y="5" width="180" height="55" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1"/>
+    <text x="45" y="27" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#f472b6">Model Performance</text>
+    <text x="45" y="42" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">Accuracy, F1, AUC-ROC</text>
+    <text x="45" y="55" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">Precision, Recall</text>
+  </g>
+  
+  <!-- Data Quality -->
+  <g transform="translate(630, 305)">
+    <line x1="0" y1="30" x2="15" y2="30" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="20" y="5" width="140" height="55" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+    <text x="35" y="27" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#a78bfa">Data Quality</text>
+    <text x="35" y="42" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">Drift, Schema</text>
+    <text x="35" y="55" font-family="Segoe UI, Arial" font-size="10" fill="#94a3b8">Missing Values</text>
+  </g>
+  
+  <!-- Operational -->
+  <g transform="translate(690, 420)">
+    <line x1="0" y1="30" x2="10" y2="30" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="15" y="0" width="85" height="60" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1"/>
+    <text x="25" y="22" font-family="Segoe UI, Arial" font-size="10" font-weight="bold" fill="#60a5fa">Operational</text>
+    <text x="25" y="37" font-family="Segoe UI, Arial" font-size="9" fill="#94a3b8">Latency</text>
+    <text x="25" y="50" font-family="Segoe UI, Arial" font-size="9" fill="#94a3b8">Throughput</text>
+  </g>
+  
+  <!-- Left side - Foundation label -->
+  <g transform="translate(20, 420)">
+    <rect x="0" y="0" width="95" height="60" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1"/>
+    <text x="48" y="22" text-anchor="middle" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" fill="#60a5fa">Foundation</text>
+    <text x="48" y="38" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#94a3b8">CPU, Memory</text>
+    <text x="48" y="51" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9" fill="#94a3b8">GPU, Errors</text>
+    <line x1="95" y1="30" x2="115" y2="30" stroke="#60a5fa" stroke-width="2"/>
+  </g>
+  
+  <!-- Bottom annotation -->
+  <rect x="200" y="505" width="400" height="35" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="400" y="528" text-anchor="middle" font-family="Segoe UI, Arial" font-size="12" fill="#94a3b8">
+    🔼 Higher layers depend on stability of lower layers
+  </text>
+</svg>

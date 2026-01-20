@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="450" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    ✅ Optimization Checklist
+  </text>
+  
+  <!-- Latency -->
+  <rect x="50" y="60" width="290" height="170" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="195" y="90" text-anchor="middle" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">⚡ LATENCY</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="75" y="120"><tspan fill="#10b981">□</tspan> Parallel feature fetching</text>
+    <text x="75" y="145"><tspan fill="#10b981">□</tspan> Multi-level caching (L1+L2+L3)</text>
+    <text x="75" y="170"><tspan fill="#10b981">□</tspan> Connection pooling</text>
+    <text x="75" y="195"><tspan fill="#10b981">□</tspan> Request batching</text>
+    <text x="75" y="220"><tspan fill="#10b981">□</tspan> Model quantization (INT8)</text>
+  </g>
+  
+  <!-- Throughput -->
+  <rect x="360" y="60" width="290" height="170" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="505" y="90" text-anchor="middle" fill="#60a5fa" font-family="Arial" font-size="14" font-weight="bold">📈 THROUGHPUT</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="385" y="120"><tspan fill="#3b82f6">□</tspan> Horizontal auto-scaling</text>
+    <text x="385" y="145"><tspan fill="#3b82f6">□</tspan> GPU utilization andgt; 80%</text>
+    <text x="385" y="170"><tspan fill="#3b82f6">□</tspan> Request coalescing</text>
+    <text x="385" y="195"><tspan fill="#3b82f6">□</tspan> Sharding strategy</text>
+    <text x="385" y="220"><tspan fill="#3b82f6">□</tspan> Async processing</text>
+  </g>
+  
+  <!-- Cost -->
+  <rect x="50" y="250" width="290" height="170" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="195" y="280" text-anchor="middle" fill="#fbbf24" font-family="Arial" font-size="14" font-weight="bold">💰 COST</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="75" y="310"><tspan fill="#f59e0b">□</tspan> Spot instances (70% savings)</text>
+    <text x="75" y="335"><tspan fill="#f59e0b">□</tspan> Reserved capacity planning</text>
+    <text x="75" y="360"><tspan fill="#f59e0b">□</tspan> Right-size instances</text>
+    <text x="75" y="385"><tspan fill="#f59e0b">□</tspan> Storage tiering (hot/cold)</text>
+    <text x="75" y="410"><tspan fill="#f59e0b">□</tspan> Model compression</text>
+  </g>
+  
+  <!-- Reliability -->
+  <rect x="360" y="250" width="290" height="170" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="505" y="280" text-anchor="middle" fill="#a78bfa" font-family="Arial" font-size="14" font-weight="bold">🛡️ RELIABILITY</text>
+  
+  <g fill="#94a3b8" font-family="Arial" font-size="11">
+    <text x="385" y="310"><tspan fill="#8b5cf6">□</tspan> Multi-region deployment</text>
+    <text x="385" y="335"><tspan fill="#8b5cf6">□</tspan> Circuit breakers</text>
+    <text x="385" y="360"><tspan fill="#8b5cf6">□</tspan> Graceful degradation</text>
+    <text x="385" y="385"><tspan fill="#8b5cf6">□</tspan> Chaos engineering</text>
+    <text x="385" y="410"><tspan fill="#8b5cf6">□</tspan> Fallback strategies</text>
+  </g>
+</svg>

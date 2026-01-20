@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="ubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b4db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0083b0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ibGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f2994a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f2c94c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mfGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e063;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#56ab2f;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="550" fill="#16213e" rx="10"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="bold" font-family="Arial, sans-serif">Collaborative Filtering Methods</text>
+  
+  <!-- User-Item Matrix (Center) -->
+  <g transform="translate(325, 70)">
+    <rect x="0" y="0" width="250" height="180" rx="10" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">User-Item Matrix</text>
+    
+    <!-- Matrix grid -->
+    <g transform="translate(25, 40)">
+      <!-- Headers -->
+      <text x="25" y="15" text-anchor="middle" fill="#aaaaaa" font-size="10">i₁</text>
+      <text x="60" y="15" text-anchor="middle" fill="#aaaaaa" font-size="10">i₂</text>
+      <text x="95" y="15" text-anchor="middle" fill="#aaaaaa" font-size="10">i₃</text>
+      <text x="130" y="15" text-anchor="middle" fill="#aaaaaa" font-size="10">i₄</text>
+      <text x="165" y="15" text-anchor="middle" fill="#aaaaaa" font-size="10">i₅</text>
+      
+      <text x="0" y="40" text-anchor="end" fill="#aaaaaa" font-size="10">u₁</text>
+      <text x="0" y="65" text-anchor="end" fill="#aaaaaa" font-size="10">u₂</text>
+      <text x="0" y="90" text-anchor="end" fill="#aaaaaa" font-size="10">u₃</text>
+      <text x="0" y="115" text-anchor="end" fill="#aaaaaa" font-size="10">u₄</text>
+      
+      <!-- Cells -->
+      <rect x="10" y="25" width="30" height="20" fill="#00b4db" rx="3"/>
+      <text x="25" y="40" text-anchor="middle" fill="#f8fafc" font-size="11">5</text>
+      
+      <rect x="45" y="25" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="60" y="40" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="80" y="25" width="30" height="20" fill="#f2994a" rx="3"/>
+      <text x="95" y="40" text-anchor="middle" fill="#f8fafc" font-size="11">3</text>
+      
+      <rect x="115" y="25" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="130" y="40" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="150" y="25" width="30" height="20" fill="#56ab2f" rx="3"/>
+      <text x="165" y="40" text-anchor="middle" fill="#f8fafc" font-size="11">1</text>
+      
+      <!-- Row 2 -->
+      <rect x="10" y="50" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="25" y="65" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="45" y="50" width="30" height="20" fill="#00b4db" rx="3"/>
+      <text x="60" y="65" text-anchor="middle" fill="#f8fafc" font-size="11">4</text>
+      
+      <rect x="80" y="50" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="95" y="65" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="115" y="50" width="30" height="20" fill="#00b4db" rx="3"/>
+      <text x="130" y="65" text-anchor="middle" fill="#f8fafc" font-size="11">5</text>
+      
+      <rect x="150" y="50" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="165" y="65" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <!-- Row 3 -->
+      <rect x="10" y="75" width="30" height="20" fill="#f2994a" rx="3"/>
+      <text x="25" y="90" text-anchor="middle" fill="#f8fafc" font-size="11">3</text>
+      
+      <rect x="45" y="75" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="60" y="90" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="80" y="75" width="30" height="20" fill="#00b4db" rx="3"/>
+      <text x="95" y="90" text-anchor="middle" fill="#f8fafc" font-size="11">5</text>
+      
+      <rect x="115" y="75" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="130" y="90" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="150" y="75" width="30" height="20" fill="#56ab2f" rx="3"/>
+      <text x="165" y="90" text-anchor="middle" fill="#f8fafc" font-size="11">4</text>
+      
+      <!-- Row 4 -->
+      <rect x="10" y="100" width="30" height="20" fill="#f2994a" rx="3"/>
+      <text x="25" y="115" text-anchor="middle" fill="#f8fafc" font-size="11">3</text>
+      
+      <rect x="45" y="100" width="30" height="20" fill="#00b4db" rx="3"/>
+      <text x="60" y="115" text-anchor="middle" fill="#f8fafc" font-size="11">5</text>
+      
+      <rect x="80" y="100" width="30" height="20" fill="rgba(255,255,255,0.1)" rx="3"/>
+      <text x="95" y="115" text-anchor="middle" fill="#888888" font-size="11">?</text>
+      
+      <rect x="115" y="100" width="30" height="20" fill="#56ab2f" rx="3"/>
+      <text x="130" y="115" text-anchor="middle" fill="#f8fafc" font-size="11">4</text>
+      
+      <rect x="150" y="100" width="30" height="20" fill="#f2994a" rx="3"/>
+      <text x="165" y="115" text-anchor="middle" fill="#f8fafc" font-size="11">3</text>
+    </g>
+  </g>
+  
+  <!-- User-Based CF (Left) -->
+  <g transform="translate(30, 280)">
+    <rect x="0" y="0" width="260" height="240" rx="15" fill="url(#ubGrad)" filter="url(#shadow3)"/>
+    <text x="130" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">User-Based CF</text>
+    
+    <!-- Visual -->
+    <g transform="translate(30, 50)">
+      <!-- Users -->
+      <circle cx="30" cy="30" r="25" fill="#0f172a"/>
+      <text x="30" y="35" text-anchor="middle" fill="#00b4db" font-size="12" font-weight="bold">You</text>
+      
+      <circle cx="100" cy="80" r="20" fill="rgba(255,255,255,0.8)"/>
+      <text x="100" y="85" text-anchor="middle" fill="#00b4db" font-size="10">Similar</text>
+      
+      <circle cx="170" cy="30" r="20" fill="rgba(255,255,255,0.8)"/>
+      <text x="170" y="35" text-anchor="middle" fill="#00b4db" font-size="10">Similar</text>
+      
+      <!-- Connection lines -->
+      <line x1="55" y1="30" x2="80" y2="65" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,3"/>
+      <line x1="55" y1="30" x2="150" y2="30" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,3"/>
+    </g>
+    
+    <text x="130" y="170" text-anchor="middle" fill="#f8fafc" font-size="11">"Users who agreed in the</text>
+    <text x="130" y="185" text-anchor="middle" fill="#f8fafc" font-size="11">past will agree in the future"</text>
+    
+    <rect x="20" y="200" width="220" height="30" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="130" y="220" text-anchor="middle" fill="#f8fafc" font-size="11">sim(u₁, u₂) = cosine(r_u₁, r_u₂)</text>
+  </g>
+  
+  <!-- Item-Based CF (Middle) -->
+  <g transform="translate(320, 280)">
+    <rect x="0" y="0" width="260" height="240" rx="15" fill="url(#ibGrad)" filter="url(#shadow3)"/>
+    <text x="130" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Item-Based CF</text>
+    
+    <!-- Visual -->
+    <g transform="translate(30, 50)">
+      <!-- Items -->
+      <rect x="10" y="10" width="40" height="50" rx="5" fill="#0f172a"/>
+      <text x="30" y="40" text-anchor="middle" fill="#f2994a" font-size="10" font-weight="bold">📖</text>
+      <text x="30" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Liked</text>
+      
+      <rect x="80" y="10" width="40" height="50" rx="5" fill="rgba(255,255,255,0.8)"/>
+      <text x="100" y="40" text-anchor="middle" fill="#f2994a" font-size="10" font-weight="bold">📖</text>
+      <text x="100" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Similar</text>
+      
+      <rect x="150" y="10" width="40" height="50" rx="5" fill="rgba(255,255,255,0.8)"/>
+      <text x="170" y="40" text-anchor="middle" fill="#f2994a" font-size="10" font-weight="bold">📖</text>
+      <text x="170" y="70" text-anchor="middle" fill="#f8fafc" font-size="9">Suggest</text>
+      
+      <!-- Arrows -->
+      <path d="M 55 35 L 75 35" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead3)"/>
+      <path d="M 125 35 L 145 35" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead3)"/>
+    </g>
+    
+    <text x="130" y="160" text-anchor="middle" fill="#f8fafc" font-size="11">"Items similar to those</text>
+    <text x="130" y="175" text-anchor="middle" fill="#f8fafc" font-size="11">you liked"</text>
+    
+    <rect x="20" y="200" width="220" height="30" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="130" y="220" text-anchor="middle" fill="#f8fafc" font-size="11">sim(i₁, i₂) = adjusted_cosine</text>
+  </g>
+  
+  <!-- Matrix Factorization (Right) -->
+  <g transform="translate(610, 280)">
+    <rect x="0" y="0" width="260" height="240" rx="15" fill="url(#mfGrad2)" filter="url(#shadow3)"/>
+    <text x="130" y="30" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">Matrix Factorization</text>
+    
+    <!-- Visual -->
+    <g transform="translate(20, 50)">
+      <!-- R matrix -->
+      <rect x="0" y="20" width="50" height="50" fill="rgba(255,255,255,0.3)" rx="5"/>
+      <text x="25" y="50" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">R</text>
+      
+      <text x="65" y="50" fill="#f8fafc" font-size="16">=</text>
+      
+      <!-- P matrix -->
+      <rect x="80" y="20" width="35" height="50" fill="rgba(255,255,255,0.4)" rx="5"/>
+      <text x="97" y="50" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">P</text>
+      
+      <text x="125" y="50" fill="#f8fafc" font-size="14">×</text>
+      
+      <!-- Q matrix -->
+      <rect x="140" y="30" width="60" height="30" fill="rgba(255,255,255,0.4)" rx="5"/>
+      <text x="170" y="50" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Q<tspan baseline-shift="super" font-size="10">T</tspan></text>
+    </g>
+    
+    <text x="130" y="135" text-anchor="middle" fill="#f8fafc" font-size="11">Learn latent factors</text>
+    <text x="130" y="150" text-anchor="middle" fill="#f8fafc" font-size="11">for users and items</text>
+    
+    <rect x="20" y="165" width="220" height="65" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="130" y="185" text-anchor="middle" fill="#f8fafc" font-size="11">r̂_ui = μ + b_u + b_i + p_u · q_i</text>
+    <text x="130" y="205" text-anchor="middle" fill="#f8fafc" font-size="10">SVD, ALS, BPR</text>
+    <text x="130" y="220" text-anchor="middle" fill="#f8fafc" font-size="10">Neural MF</text>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>
+

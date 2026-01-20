@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <defs>
+    <linearGradient id="bgFeat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowFeat" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowFeat" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgFeat)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🔗 Feature Combination Hybrid</text>
+  
+  <!-- Approach 1: Feature Augmentation -->
+  <g transform="translate(50, 70)" filter="url(#shadowFeat)">
+    <rect width="800" height="200" rx="14" fill="#1e293b"/>
+    <rect width="800" height="50" rx="14 14 0 0" fill="#3b82f6"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">Approach 1: Feature Augmentation</text>
+    
+    <!-- Feature boxes -->
+    <g transform="translate(30, 70)">
+      <rect x="0" y="0" width="200" height="50" rx="8" fill="#10b981" opacity="0.2"/>
+      <text x="100" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Content Features</text>
+      <text x="100" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">genre, director, actors, year</text>
+      
+      <rect x="220" y="0" width="200" height="50" rx="8" fill="#8b5cf6" opacity="0.2"/>
+      <text x="320" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">CF Embeddings</text>
+      <text x="320" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">user_embed, item_embed</text>
+      
+      <rect x="440" y="0" width="200" height="50" rx="8" fill="#f59e0b" opacity="0.2"/>
+      <text x="540" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">Behavioral Features</text>
+      <text x="540" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">click_rate, dwell_time</text>
+    </g>
+    
+    <!-- Arrow down -->
+    <path d="M400 130 L400 150" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowFeat)"/>
+    
+    <!-- Combined features -->
+    <rect x="150" y="155" width="500" height="30" rx="8" fill="#334155"/>
+    <text x="400" y="175" text-anchor="middle" font-family="Segoe UI, monospace" font-size="11" fill="#f8fafc">[content || cf_embed || behavioral] → ML Model → Prediction</text>
+  </g>
+  
+  <!-- Approach 2: Cascade Features -->
+  <g transform="translate(50, 290)" filter="url(#shadowFeat)">
+    <rect width="800" height="220" rx="14" fill="#1e293b"/>
+    <rect width="800" height="50" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">Approach 2: Cascade Features</text>
+    
+    <!-- Flow -->
+    <g transform="translate(30, 70)">
+      <!-- User Profile path -->
+      <rect x="0" y="0" width="140" height="50" rx="8" fill="#10b981"/>
+      <text x="70" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">User Profile</text>
+      
+      <path d="M150 25 L180 25" stroke="#64748b" stroke-width="2" marker-end="url(#arrowFeat)"/>
+      
+      <rect x="190" y="0" width="140" height="50" rx="8" fill="#3b82f6"/>
+      <text x="260" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">CB Model</text>
+      
+      <path d="M340 25 L370 25" stroke="#64748b" stroke-width="2" marker-end="url(#arrowFeat)"/>
+      
+      <rect x="380" y="0" width="140" height="50" rx="8" fill="#f59e0b"/>
+      <text x="450" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">CB Scores</text>
+      
+      <!-- Arrow down from CB Scores -->
+      <path d="M450 55 L450 90" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowFeat)"/>
+      
+      <!-- User History path -->
+      <rect x="0" y="70" width="140" height="50" rx="8" fill="#ec4899"/>
+      <text x="70" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">User History</text>
+      
+      <path d="M150 95 L180 95" stroke="#64748b" stroke-width="2" marker-end="url(#arrowFeat)"/>
+      
+      <!-- CF Model receives both -->
+      <rect x="190" y="70" width="340" height="50" rx="8" fill="#8b5cf6"/>
+      <text x="360" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">CF Model (enhanced with CB Scores)</text>
+      
+      <path d="M540 95 L590 95" stroke="#64748b" stroke-width="2" marker-end="url(#arrowFeat)"/>
+      
+      <!-- Final -->
+      <rect x="600" y="60" width="130" height="70" rx="8" fill="#10b981"/>
+      <text x="665" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Final</text>
+      <text x="665" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">Predictions</text>
+    </g>
+  </g>
+</svg>

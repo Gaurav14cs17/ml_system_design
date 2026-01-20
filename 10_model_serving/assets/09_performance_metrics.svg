@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <filter id="shadow9" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="350" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📈 Key Performance Metrics</text>
+  
+  <!-- Metric Cards -->
+  <!-- Latency P99 -->
+  <g filter="url(#shadow9)">
+    <rect x="30" y="55" width="170" height="130" rx="12" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="115" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32">⏱️ Latency P99</text>
+    <text x="115" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#4caf50">andlt;100ms</text>
+    <text x="115" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Target for real-time</text>
+    <rect x="50" y="165" width="130" height="8" rx="4" fill="#c8e6c9"/>
+    <rect x="50" y="165" width="110" height="8" rx="4" fill="#4caf50"/>
+  </g>
+  
+  <!-- Throughput -->
+  <g filter="url(#shadow9)">
+    <rect x="220" y="55" width="170" height="130" rx="12" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="305" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1565c0">🚀 Throughput</text>
+    <text x="305" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1976d2">1000+</text>
+    <text x="305" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Requests per second</text>
+    <rect x="240" y="165" width="130" height="8" rx="4" fill="#bbdefb"/>
+    <rect x="240" y="165" width="100" height="8" rx="4" fill="#1976d2"/>
+  </g>
+  
+  <!-- Availability -->
+  <g filter="url(#shadow9)">
+    <rect x="410" y="55" width="170" height="130" rx="12" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="495" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e65100">🎯 Availability</text>
+    <text x="495" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ff9800">99.9%</text>
+    <text x="495" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Uptime SLO</text>
+    <rect x="430" y="165" width="130" height="8" rx="4" fill="#ffe0b2"/>
+    <rect x="430" y="165" width="126" height="8" rx="4" fill="#ff9800"/>
+  </g>
+  
+  <!-- GPU Utilization -->
+  <g filter="url(#shadow9)">
+    <rect x="600" y="55" width="170" height="130" rx="12" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="685" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#7b1fa2">💻 GPU Util</text>
+    <text x="685" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#9c27b0">70%+</text>
+    <text x="685" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Resource efficiency</text>
+    <rect x="620" y="165" width="130" height="8" rx="4" fill="#e1bee7"/>
+    <rect x="620" y="165" width="91" height="8" rx="4" fill="#9c27b0"/>
+  </g>
+  
+  <!-- SLO Table -->
+  <g filter="url(#shadow9)">
+    <rect x="30" y="205" width="740" height="130" rx="10" fill="#0f172a" stroke="#e0e0e0"/>
+    <rect x="30" y="205" width="740" height="30" rx="10" fill="#1e293b"/>
+    
+    <text x="130" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Metric</text>
+    <text x="300" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Real-time Target</text>
+    <text x="470" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Batch Target</text>
+    <text x="640" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Current Status</text>
+    
+    <line x1="210" y1="205" x2="210" y2="335" stroke="#e0e0e0"/>
+    <line x1="385" y1="205" x2="385" y2="335" stroke="#e0e0e0"/>
+    <line x1="555" y1="205" x2="555" y2="335" stroke="#e0e0e0"/>
+    
+    <text x="130" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Latency (P99)</text>
+    <text x="300" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">andlt; 100ms</text>
+    <text x="470" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">N/A</text>
+    <text x="640" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">✅ 85ms</text>
+    
+    <text x="130" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Throughput</text>
+    <text x="300" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">1000+ RPS</text>
+    <text x="470" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">1M+/hour</text>
+    <text x="640" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">✅ 1.2K RPS</text>
+    
+    <text x="130" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Error Rate</text>
+    <text x="300" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">andlt; 0.1%</text>
+    <text x="470" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">andlt; 1%</text>
+    <text x="640" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">✅ 0.02%</text>
+  </g>
+</svg>
+

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="queryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="interGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🎯 Search Ranking Features</text>
+  
+  <!-- Query Features (Top Center) -->
+  <g filter="url(#shadow)">
+    <rect x="245" y="55" width="210" height="110" rx="12" fill="#1e293b"/>
+    <rect x="245" y="55" width="210" height="35" rx="12 12 0 0" fill="url(#queryGrad)"/>
+    <text x="350" y="79" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">🔍 QUERY FEATURES</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">
+    <text x="265" y="115">• Query length</text>
+    <text x="265" y="135">• Query intent</text>
+    <text x="265" y="155">• Query popularity</text>
+  </g>
+  
+  <!-- Arrow down from Query -->
+  <path d="M350 170 L350 200" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,200 350,215 355,200" fill="#64748b"/>
+  
+  <!-- Central Interaction Box -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="220" width="260" height="120" rx="12" fill="#1e293b"/>
+    <rect x="220" y="220" width="260" height="35" rx="12 12 0 0" fill="url(#interGrad)"/>
+    <text x="350" y="244" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">⚡ QUERY-DOCUMENT INTERACTION</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">
+    <text x="240" y="280">• BM25 score</text>
+    <text x="240" y="300">• Semantic similarity</text>
+    <text x="240" y="320">• Term match counts</text>
+  </g>
+  
+  <!-- Document Features (Left) -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="220" width="170" height="130" rx="12" fill="#1e293b"/>
+    <rect x="30" y="220" width="170" height="35" rx="12 12 0 0" fill="url(#docGrad)"/>
+    <text x="115" y="244" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">📄 DOCUMENT</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">
+    <text x="50" y="280">• PageRank</text>
+    <text x="50" y="300">• Freshness</text>
+    <text x="50" y="320">• Quality score</text>
+    <text x="50" y="340">• Click rate</text>
+  </g>
+  
+  <!-- User Features (Right) -->
+  <g filter="url(#shadow)">
+    <rect x="500" y="220" width="170" height="130" rx="12" fill="#1e293b"/>
+    <rect x="500" y="220" width="170" height="35" rx="12 12 0 0" fill="url(#userGrad)"/>
+    <text x="585" y="244" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fff">👤 USER</text>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">
+    <text x="520" y="280">• Past clicks</text>
+    <text x="520" y="300">• Preferences</text>
+    <text x="520" y="320">• Location</text>
+    <text x="520" y="340">• Device</text>
+  </g>
+  
+  <!-- Arrows between boxes -->
+  <path d="M205 285 L215 285" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="215,280 230,285 215,290" fill="#f59e0b"/>
+  <path d="M485 285 L495 285" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="480,280 480,290 495,285" fill="#f59e0b"/>
+  
+  <!-- Final output arrow -->
+  <path d="M350 345 L350 380" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,380 350,395 355,380" fill="#64748b"/>
+  
+  <!-- Output -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="400" width="300" height="40" rx="20" fill="#22c55e"/>
+    <text x="350" y="426" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">✅ RANKING MODEL INPUT</text>
+  </g>
+</svg>

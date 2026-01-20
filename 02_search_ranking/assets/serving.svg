@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b4db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0083b0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cacheGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f857a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff5858;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0f0f23"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Production Serving Architecture</text>
+  
+  <!-- Clients -->
+  <rect x="380" y="55" width="140" height="40" rx="20" fill="url(#clientGrad)"/>
+  <text x="450" y="80" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">👤 Clients</text>
+  
+  <!-- Arrow -->
+  <path d="M450 95 L450 115" stroke="#00b4db" stroke-width="2"/>
+  <polygon points="445,115 450,125 455,115" fill="#00b4db"/>
+  
+  <!-- Load Balancer -->
+  <rect x="350" y="130" width="200" height="40" rx="8" fill="#1e1e3f" stroke="#4facfe" stroke-width="2"/>
+  <text x="450" y="155" text-anchor="middle" fill="#4facfe" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚖️ Load Balancer</text>
+  
+  <!-- Arrows to API Gateway -->
+  <path d="M400 170 L250 195" stroke="#4facfe" stroke-width="2"/>
+  <path d="M450 170 L450 195" stroke="#4facfe" stroke-width="2"/>
+  <path d="M500 170 L650 195" stroke="#4facfe" stroke-width="2"/>
+  
+  <!-- API Gateways -->
+  <rect x="150" y="200" width="140" height="35" rx="5" fill="#252547"/>
+  <text x="220" y="222" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">API Gateway 1</text>
+  
+  <rect x="380" y="200" width="140" height="35" rx="5" fill="#252547"/>
+  <text x="450" y="222" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">API Gateway 2</text>
+  
+  <rect x="610" y="200" width="140" height="35" rx="5" fill="#252547"/>
+  <text x="680" y="222" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="10">API Gateway 3</text>
+  
+  <!-- Search Service Cluster -->
+  <rect x="80" y="255" width="740" height="160" rx="15" fill="#f8fafc" stroke="#667eea" stroke-width="2"/>
+  <text x="450" y="280" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Search Service Cluster</text>
+  
+  <!-- Query Understanding -->
+  <rect x="100" y="295" width="150" height="50" rx="8" fill="url(#serviceGrad)"/>
+  <text x="175" y="318" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Query Understanding</text>
+  <text x="175" y="333" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">~10ms</text>
+  
+  <!-- Arrow -->
+  <path d="M255 320 L275 320" stroke="#a5b4fc" stroke-width="2"/>
+  <polygon points="275,315 285,320 275,325" fill="#a5b4fc"/>
+  
+  <!-- Retrieval -->
+  <rect x="290" y="295" width="150" height="50" rx="8" fill="url(#serviceGrad)"/>
+  <text x="365" y="318" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Retrieval Service</text>
+  <text x="365" y="333" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">~20ms</text>
+  
+  <!-- Arrow -->
+  <path d="M445 320 L465 320" stroke="#a5b4fc" stroke-width="2"/>
+  <polygon points="465,315 475,320 465,325" fill="#a5b4fc"/>
+  
+  <!-- Ranking -->
+  <rect x="480" y="295" width="150" height="50" rx="8" fill="url(#serviceGrad)"/>
+  <text x="555" y="318" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Ranking Service</text>
+  <text x="555" y="333" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">~40ms</text>
+  
+  <!-- Arrow -->
+  <path d="M635 320 L655 320" stroke="#a5b4fc" stroke-width="2"/>
+  <polygon points="655,315 665,320 655,325" fill="#a5b4fc"/>
+  
+  <!-- Post-processing -->
+  <rect x="670" y="295" width="130" height="50" rx="8" fill="url(#serviceGrad)"/>
+  <text x="735" y="318" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Post-Process</text>
+  <text x="735" y="333" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">~5ms</text>
+  
+  <!-- Latency indicator -->
+  <rect x="300" y="365" width="300" height="30" rx="5" fill="#252547"/>
+  <text x="450" y="385" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="11">⚡ Total P90 Latency: ~75ms</text>
+  
+  <!-- Data Layer -->
+  <rect x="80" y="430" width="180" height="55" rx="10" fill="url(#cacheGrad)"/>
+  <text x="170" y="455" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔴 Redis Cache</text>
+  <text x="170" y="472" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">L1: In-memory | L2: Cluster</text>
+  
+  <rect x="280" y="430" width="180" height="55" rx="10" fill="url(#dataGrad)"/>
+  <text x="370" y="455" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📦 Feature Store</text>
+  <text x="370" y="472" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Real-time features</text>
+  
+  <rect x="480" y="430" width="180" height="55" rx="10" fill="url(#dataGrad)"/>
+  <text x="570" y="455" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🗄️ Index Store</text>
+  <text x="570" y="472" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Inverted + Vector</text>
+  
+  <rect x="680" y="430" width="140" height="55" rx="10" fill="#ff9f43"/>
+  <text x="750" y="455" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🤖 Model Store</text>
+  <text x="750" y="472" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">TF Serving</text>
+  
+  <!-- Connection lines -->
+  <path d="M170 430 L170 415 L555 415 L555 345" stroke="#f857a6" stroke-width="1" stroke-dasharray="4"/>
+  <path d="M370 430 L370 395 L555 395 L555 345" stroke="#38ef7d" stroke-width="1" stroke-dasharray="4"/>
+  <path d="M570 430 L570 365 L365 365 L365 345" stroke="#38ef7d" stroke-width="1" stroke-dasharray="4"/>
+  <path d="M750 430 L750 375 L555 375 L555 345" stroke="#ff9f43" stroke-width="1" stroke-dasharray="4"/>
+</svg>
+

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="poseBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#poseBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="26" font-weight="bold">HUMAN POSE ESTIMATION</text>
+  <text x="400" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Keypoint Detection and Skeleton Mapping</text>
+  
+  <!-- Stick Figure Visualization -->
+  <g transform="translate(100, 100)">
+    <rect width="200" height="280" rx="15" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Pose Skeleton</text>
+    
+    <!-- Head -->
+    <circle cx="100" cy="70" r="20" fill="none" stroke="#22d3ee" stroke-width="3"/>
+    <circle cx="100" cy="70" r="6" fill="#22d3ee" filter="url(#glow)"/>
+    
+    <!-- Neck -->
+    <line x1="100" y1="90" x2="100" y2="110" stroke="#22d3ee" stroke-width="3"/>
+    <circle cx="100" cy="110" r="5" fill="#f59e0b" filter="url(#glow)"/>
+    
+    <!-- Shoulders -->
+    <line x1="100" y1="110" x2="60" y2="115" stroke="#22d3ee" stroke-width="3"/>
+    <line x1="100" y1="110" x2="140" y2="115" stroke="#22d3ee" stroke-width="3"/>
+    <circle cx="60" cy="115" r="5" fill="#10b981" filter="url(#glow)"/>
+    <circle cx="140" cy="115" r="5" fill="#10b981" filter="url(#glow)"/>
+    
+    <!-- Arms -->
+    <line x1="60" y1="115" x2="40" y2="165" stroke="#10b981" stroke-width="3"/>
+    <line x1="40" y1="165" x2="30" y2="210" stroke="#10b981" stroke-width="3"/>
+    <circle cx="40" cy="165" r="4" fill="#ec4899" filter="url(#glow)"/>
+    <circle cx="30" cy="210" r="4" fill="#ec4899" filter="url(#glow)"/>
+    
+    <line x1="140" y1="115" x2="160" y2="165" stroke="#10b981" stroke-width="3"/>
+    <line x1="160" y1="165" x2="170" y2="210" stroke="#10b981" stroke-width="3"/>
+    <circle cx="160" cy="165" r="4" fill="#ec4899" filter="url(#glow)"/>
+    <circle cx="170" cy="210" r="4" fill="#ec4899" filter="url(#glow)"/>
+    
+    <!-- Torso -->
+    <line x1="100" y1="110" x2="100" y2="180" stroke="#f59e0b" stroke-width="3"/>
+    <circle cx="100" cy="180" r="5" fill="#f59e0b" filter="url(#glow)"/>
+    
+    <!-- Hips -->
+    <line x1="100" y1="180" x2="70" y2="190" stroke="#f59e0b" stroke-width="3"/>
+    <line x1="100" y1="180" x2="130" y2="190" stroke="#f59e0b" stroke-width="3"/>
+    <circle cx="70" cy="190" r="5" fill="#3b82f6" filter="url(#glow)"/>
+    <circle cx="130" cy="190" r="5" fill="#3b82f6" filter="url(#glow)"/>
+    
+    <!-- Legs -->
+    <line x1="70" y1="190" x2="65" y2="230" stroke="#3b82f6" stroke-width="3"/>
+    <line x1="65" y1="230" x2="60" y2="260" stroke="#3b82f6" stroke-width="3"/>
+    <circle cx="65" cy="230" r="4" fill="#a78bfa" filter="url(#glow)"/>
+    <circle cx="60" cy="260" r="4" fill="#a78bfa" filter="url(#glow)"/>
+    
+    <line x1="130" y1="190" x2="135" y2="230" stroke="#3b82f6" stroke-width="3"/>
+    <line x1="135" y1="230" x2="140" y2="260" stroke="#3b82f6" stroke-width="3"/>
+    <circle cx="135" cy="230" r="4" fill="#a78bfa" filter="url(#glow)"/>
+    <circle cx="140" cy="260" r="4" fill="#a78bfa" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Keypoint Legend -->
+  <g transform="translate(320, 100)">
+    <rect width="180" height="280" rx="15" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="12" font-weight="bold">17 Keypoints (COCO)</text>
+    
+    <g transform="translate(20, 45)">
+      <circle cx="10" cy="8" r="5" fill="#22d3ee"/>
+      <text x="25" y="12" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">Nose, Eyes, Ears</text>
+      
+      <circle cx="10" cy="35" r="5" fill="#f59e0b"/>
+      <text x="25" y="39" fill="#fcd34d" font-family="Arial, sans-serif" font-size="9">Neck, Spine</text>
+      
+      <circle cx="10" cy="62" r="5" fill="#10b981"/>
+      <text x="25" y="66" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Shoulders</text>
+      
+      <circle cx="10" cy="89" r="5" fill="#ec4899"/>
+      <text x="25" y="93" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="9">Elbows, Wrists</text>
+      
+      <circle cx="10" cy="116" r="5" fill="#3b82f6"/>
+      <text x="25" y="120" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Hips</text>
+      
+      <circle cx="10" cy="143" r="5" fill="#a78bfa"/>
+      <text x="25" y="147" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Knees, Ankles</text>
+    </g>
+    
+    <text x="90" y="220" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Common Formats</text>
+    <text x="90" y="240" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">COCO: 17 keypoints</text>
+    <text x="90" y="255" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">MPII: 16 keypoints</text>
+    <text x="90" y="270" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="9">OpenPose: 25 keypoints</text>
+  </g>
+  
+  <!-- Approaches Section -->
+  <g transform="translate(520, 100)">
+    <text x="130" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Approaches</text>
+    
+    <!-- Top-Down -->
+    <rect y="20" width="260" height="120" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="130" y="45" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⬇️ Top-Down</text>
+    <text x="20" y="70" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">1. Detect person bounding boxes</text>
+    <text x="20" y="88" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">2. Crop each person</text>
+    <text x="20" y="106" fill="#93c5fd" font-family="Arial, sans-serif" font-size="10">3. Estimate keypoints per crop</text>
+    <text x="20" y="128" fill="#60a5fa" font-family="Arial, sans-serif" font-size="9">✓ Better accuracy | ✗ Slower</text>
+    
+    <!-- Bottom-Up -->
+    <rect y="155" width="260" height="120" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="130" y="180" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⬆️ Bottom-Up</text>
+    <text x="20" y="205" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">1. Detect all keypoints in image</text>
+    <text x="20" y="223" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">2. Group keypoints by person</text>
+    <text x="20" y="241" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">3. Build skeleton connections</text>
+    <text x="20" y="263" fill="#34d399" font-family="Arial, sans-serif" font-size="9">✓ Real-time | ✗ Complex grouping</text>
+  </g>
+  
+  <!-- Applications -->
+  <g transform="translate(50, 410)">
+    <text x="350" y="0" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Applications</text>
+    
+    <rect x="0" y="15" width="130" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="65" y="40" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🏃 Fitness</text>
+    <text x="65" y="55" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Form analysis</text>
+    
+    <rect x="145" y="15" width="130" height="50" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="210" y="40" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🎮 Gaming</text>
+    <text x="210" y="55" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Motion capture</text>
+    
+    <rect x="290" y="15" width="130" height="50" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="355" y="40" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📹 Security</text>
+    <text x="355" y="55" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Activity detection</text>
+    
+    <rect x="435" y="15" width="130" height="50" rx="8" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+    <text x="500" y="40" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🤖 Robotics</text>
+    <text x="500" y="55" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">Human interaction</text>
+    
+    <rect x="580" y="15" width="130" height="50" rx="8" fill="#831843" stroke="#ec4899" stroke-width="1"/>
+    <text x="645" y="40" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🏥 Healthcare</text>
+    <text x="645" y="55" text-anchor="middle" fill="#fbcfe8" font-family="Arial, sans-serif" font-size="9">Rehabilitation</text>
+  </g>
+</svg>
+
+
+
+
+

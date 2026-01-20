@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="480" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">HOG COMPUTATION</text>
+  <text x="425" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Histogram of Oriented Gradients</text>
+  
+  <!-- Step 1: Compute Gradients -->
+  <g transform="translate(50, 80)">
+    <rect width="220" height="180" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Step 1: Compute Gradients</text>
+    
+    <!-- Gradient arrows visualization -->
+    <g transform="translate(40, 45)">
+      <rect width="140" height="100" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/>
+      <!-- Gradient arrows -->
+      <line x1="25" y1="25" x2="40" y2="15" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="55" y1="25" x2="55" y2="10" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="85" y1="25" x2="70" y2="15" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="115" y1="25" x2="100" y2="25" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="25" y1="50" x2="25" y2="35" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="55" y1="50" x2="40" y2="40" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="85" y1="50" x2="85" y2="65" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="115" y1="50" x2="130" y2="60" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="25" y1="75" x2="40" y2="85" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="55" y1="75" x2="70" y2="85" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="85" y1="75" x2="70" y2="75" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="115" y1="75" x2="100" y2="65" stroke="#60a5fa" stroke-width="2"/>
+    </g>
+    
+    <text x="110" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd">Magnitude & direction at each pixel</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 280 170 L 310 170" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Cell Histograms -->
+  <g transform="translate(320, 80)">
+    <rect width="220" height="180" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Step 2: Cell Histograms</text>
+    
+    <!-- 3x3 grid of cells -->
+    <g transform="translate(40, 45)">
+      <rect width="45" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="22" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">9-bin</text>
+      <rect x="45" width="45" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="67" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">9-bin</text>
+      <rect x="90" width="50" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <text x="115" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">9-bin</text>
+      
+      <rect y="30" width="45" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <rect x="45" y="30" width="45" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <rect x="90" y="30" width="50" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      
+      <rect y="60" width="45" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <rect x="45" y="60" width="45" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+      <rect x="90" y="60" width="50" height="30" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+    </g>
+    
+    <text x="110" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fcd34d">9-bin histogram per 8×8 cell</text>
+    <text x="110" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">(0°-180° unsigned gradients)</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 550 170 L 580 170" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Block Normalization -->
+  <g transform="translate(590, 80)">
+    <rect width="220" height="180" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">Step 3: Block Normalize</text>
+    
+    <!-- 2x2 blocks -->
+    <g transform="translate(40, 45)">
+      <rect width="65" height="45" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+      <text x="32" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">L2 norm</text>
+      
+      <rect x="75" width="65" height="45" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+      <text x="107" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">L2 norm</text>
+      
+      <rect y="55" width="65" height="45" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+      <text x="32" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">L2 norm</text>
+      
+      <rect x="75" y="55" width="65" height="45" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+      <text x="107" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">L2 norm</text>
+    </g>
+    
+    <text x="110" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6ee7b7">L2 normalize over 2×2 cell blocks</text>
+  </g>
+  
+  <!-- HOG Descriptor Structure -->
+  <g transform="translate(100, 290)">
+    <rect width="650" height="160" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="325" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#a78bfa">HOG Descriptor Structure (Pedestrian Detection)</text>
+    
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Image: 64×128 pixels</text>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Cells: 8×8 pixels each → 8×16 cells</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Blocks: 2×2 cells with 50% overlap → 7×15 blocks</text>
+    <text x="30" y="115" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Histograms: 9 bins per cell</text>
+    
+    <rect x="350" y="45" width="270" height="45" rx="6" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="485" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e9d5ff">Final descriptor:</text>
+    <text x="485" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">7 × 15 × 2 × 2 × 9 = 3780 dim</text>
+    
+    <text x="485" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Used with SVM for object detection</text>
+  </g>
+</svg>

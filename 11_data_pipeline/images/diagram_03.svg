@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550">
+  <defs>
+    <linearGradient id="sourceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="storeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="serveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <linearGradient id="orchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#0EA5E9"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+    <marker id="flowArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="550" fill="#0F172A"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" fill="#F8FAFC">End-to-End ML Data Pipeline Architecture</text>
+  <text x="500" y="65" text-anchor="middle" font-family="system-ui" font-size="13" fill="#94A3B8">From raw data sources to ML model serving</text>
+  
+  <!-- DATA SOURCES Section -->
+  <g filter="url(#boxShadow)">
+    <rect x="30" y="95" width="180" height="340" rx="12" fill="#1E293B"/>
+    <rect x="30" y="95" width="180" height="40" rx="12 12 0 0" fill="url(#sourceGrad)"/>
+    <text x="120" y="122" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">📊 DATA SOURCES</text>
+    
+    <g transform="translate(45, 150)">
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#334155"/>
+      <text x="75" y="16" text-anchor="middle" font-family="system-ui" font-size="18">🗄️</text>
+      <text x="75" y="30" text-anchor="middle" font-family="system-ui" font-size="10" fill="#E2E8F0">Databases</text>
+    </g>
+    <g transform="translate(45, 195)">
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#334155"/>
+      <text x="75" y="16" text-anchor="middle" font-family="system-ui" font-size="18">🔌</text>
+      <text x="75" y="30" text-anchor="middle" font-family="system-ui" font-size="10" fill="#E2E8F0">REST APIs</text>
+    </g>
+    <g transform="translate(45, 240)">
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#334155"/>
+      <text x="75" y="16" text-anchor="middle" font-family="system-ui" font-size="18">📁</text>
+      <text x="75" y="30" text-anchor="middle" font-family="system-ui" font-size="10" fill="#E2E8F0">File Systems</text>
+    </g>
+    <g transform="translate(45, 285)">
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#334155"/>
+      <text x="75" y="16" text-anchor="middle" font-family="system-ui" font-size="18">🌊</text>
+      <text x="75" y="30" text-anchor="middle" font-family="system-ui" font-size="10" fill="#E2E8F0">Event Streams</text>
+    </g>
+    <g transform="translate(45, 330)">
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#334155"/>
+      <text x="75" y="16" text-anchor="middle" font-family="system-ui" font-size="18">📡</text>
+      <text x="75" y="30" text-anchor="middle" font-family="system-ui" font-size="10" fill="#E2E8F0">IoT Devices</text>
+    </g>
+    <g transform="translate(45, 375)">
+      <rect x="0" y="0" width="150" height="36" rx="8" fill="#334155"/>
+      <text x="75" y="16" text-anchor="middle" font-family="system-ui" font-size="18">🔗</text>
+      <text x="75" y="30" text-anchor="middle" font-family="system-ui" font-size="10" fill="#E2E8F0">Third-Party</text>
+    </g>
+  </g>
+  
+  <!-- Arrow from Sources -->
+  <path d="M215 265 L265 265" stroke="#64748B" stroke-width="3" marker-end="url(#flowArrow)"/>
+  
+  <!-- PROCESSING Section -->
+  <g filter="url(#boxShadow)">
+    <rect x="270" y="95" width="250" height="340" rx="12" fill="#1E293B"/>
+    <rect x="270" y="95" width="250" height="40" rx="12 12 0 0" fill="url(#processGrad)"/>
+    <text x="395" y="122" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">⚙️ PROCESSING</text>
+    
+    <!-- Ingestion -->
+    <g transform="translate(285, 150)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#334155"/>
+      <text x="110" y="20" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F59E0B">📥 Ingestion</text>
+      <text x="110" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Batch • Streaming • CDC</text>
+      <text x="110" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Schema validation</text>
+    </g>
+    
+    <!-- Validation -->
+    <g transform="translate(285, 215)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#334155"/>
+      <text x="110" y="20" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#22D3EE">✅ Validation</text>
+      <text x="110" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Quality checks • Anomaly detection</text>
+      <text x="110" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Data profiling</text>
+    </g>
+    
+    <!-- Transformation -->
+    <g transform="translate(285, 280)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#334155"/>
+      <text x="110" y="20" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#10B981">🔄 Transformation</text>
+      <text x="110" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Clean • Normalize • Enrich</text>
+      <text x="110" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Medallion architecture</text>
+    </g>
+    
+    <!-- Feature Engineering -->
+    <g transform="translate(285, 345)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#334155"/>
+      <text x="110" y="20" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#EC4899">✨ Feature Engineering</text>
+      <text x="110" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Aggregations • Encodings</text>
+      <text x="110" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Time-series features</text>
+    </g>
+  </g>
+  
+  <!-- Arrow from Processing -->
+  <path d="M525 265 L575 265" stroke="#64748B" stroke-width="3" marker-end="url(#flowArrow)"/>
+  
+  <!-- STORAGE Section -->
+  <g filter="url(#boxShadow)">
+    <rect x="580" y="95" width="180" height="340" rx="12" fill="#1E293B"/>
+    <rect x="580" y="95" width="180" height="40" rx="12 12 0 0" fill="url(#storeGrad)"/>
+    <text x="670" y="122" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">💾 STORAGE</text>
+    
+    <g transform="translate(595, 150)">
+      <rect x="0" y="0" width="150" height="50" rx="8" fill="#334155"/>
+      <text x="75" y="22" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#10B981">Data Lake</text>
+      <text x="75" y="40" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Raw + Processed</text>
+    </g>
+    <g transform="translate(595, 210)">
+      <rect x="0" y="0" width="150" height="50" rx="8" fill="#334155"/>
+      <text x="75" y="22" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#3B82F6">Data Warehouse</text>
+      <text x="75" y="40" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Analytics ready</text>
+    </g>
+    <g transform="translate(595, 270)">
+      <rect x="0" y="0" width="150" height="50" rx="8" fill="#334155"/>
+      <text x="75" y="22" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#8B5CF6">Feature Store</text>
+      <text x="75" y="40" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Online + Offline</text>
+    </g>
+    <g transform="translate(595, 330)">
+      <rect x="0" y="0" width="150" height="50" rx="8" fill="#334155"/>
+      <text x="75" y="22" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F59E0B">Model Registry</text>
+      <text x="75" y="40" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Versioned models</text>
+    </g>
+  </g>
+  
+  <!-- Arrow from Storage -->
+  <path d="M765 265 L815 265" stroke="#64748B" stroke-width="3" marker-end="url(#flowArrow)"/>
+  
+  <!-- SERVING Section -->
+  <g filter="url(#boxShadow)">
+    <rect x="820" y="95" width="150" height="340" rx="12" fill="#1E293B"/>
+    <rect x="820" y="95" width="150" height="40" rx="12 12 0 0" fill="url(#serveGrad)"/>
+    <text x="895" y="122" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">🚀 SERVE</text>
+    
+    <g transform="translate(835, 150)">
+      <rect x="0" y="0" width="120" height="65" rx="8" fill="#334155"/>
+      <text x="60" y="25" text-anchor="middle" font-family="system-ui" font-size="20">🤖</text>
+      <text x="60" y="45" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#EC4899">Training</text>
+      <text x="60" y="58" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Batch features</text>
+    </g>
+    <g transform="translate(835, 225)">
+      <rect x="0" y="0" width="120" height="65" rx="8" fill="#334155"/>
+      <text x="60" y="25" text-anchor="middle" font-family="system-ui" font-size="20">⚡</text>
+      <text x="60" y="45" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#22D3EE">Inference</text>
+      <text x="60" y="58" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Real-time</text>
+    </g>
+    <g transform="translate(835, 300)">
+      <rect x="0" y="0" width="120" height="65" rx="8" fill="#334155"/>
+      <text x="60" y="25" text-anchor="middle" font-family="system-ui" font-size="20">📊</text>
+      <text x="60" y="45" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#10B981">Analytics</text>
+      <text x="60" y="58" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">BI dashboards</text>
+    </g>
+    <g transform="translate(835, 375)">
+      <rect x="0" y="0" width="120" height="45" rx="8" fill="#334155"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui" font-size="20">🔬</text>
+      <text x="60" y="38" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F59E0B">Experiments</text>
+    </g>
+  </g>
+  
+  <!-- ORCHESTRATION Bar at bottom -->
+  <g filter="url(#boxShadow)">
+    <rect x="30" y="460" width="940" height="60" rx="10" fill="#1E293B" stroke="url(#orchGrad)" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="500" y="490" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#22D3EE">🔄 Orchestration Layer</text>
+    <text x="500" y="508" text-anchor="middle" font-family="system-ui" font-size="11" fill="#94A3B8">Airflow • Dagster • Prefect │ Monitoring • Alerting • Lineage Tracking</text>
+  </g>
+  
+  <!-- Vertical connection lines to orchestration -->
+  <line x1="120" y1="435" x2="120" y2="455" stroke="#22D3EE" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="395" y1="435" x2="395" y2="455" stroke="#22D3EE" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="670" y1="435" x2="670" y2="455" stroke="#22D3EE" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="895" y1="435" x2="895" y2="455" stroke="#22D3EE" stroke-width="2" stroke-dasharray="4,2"/>
+</svg>

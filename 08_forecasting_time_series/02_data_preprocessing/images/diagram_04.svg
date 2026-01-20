@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="outlierBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#outlierBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Types of Outliers in Time Series</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Different Anomaly Patterns Require Different Detection Strategies</text>
+  
+  <!-- Point Outliers -->
+  <g transform="translate(30, 80)">
+    <rect width="360" height="160" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#ef4444"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Point Outliers</text>
+    
+    <!-- Chart area -->
+    <rect x="20" y="50" width="200" height="90" rx="6" fill="#0f172a"/>
+    
+    <!-- Normal line -->
+    <path d="M 30 120 Q 50 110 70 115 Q 90 120 110 118 Q 130 115 150 120 Q 170 118 190 115 Q 210 120 220 118" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    
+    <!-- Outlier points -->
+    <circle cx="90" cy="65" r="6" fill="#ef4444"/>
+    <circle cx="160" cy="75" r="6" fill="#ef4444"/>
+    
+    <!-- Labels -->
+    <text x="240" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">• Single extreme values</text>
+    <text x="240" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#fca5a5">• Far from distribution</text>
+    <text x="240" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Detection: Z-score, IQR</text>
+    <text x="240" y="135" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Treatment: Clip or replace</text>
+  </g>
+  
+  <!-- Contextual Outliers -->
+  <g transform="translate(410, 80)">
+    <rect width="360" height="160" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#f59e0b"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Contextual Outliers</text>
+    
+    <!-- Chart area -->
+    <rect x="20" y="50" width="200" height="90" rx="6" fill="#0f172a"/>
+    
+    <!-- Seasonal pattern -->
+    <path d="M 30 130 Q 50 80 70 130 Q 90 80 110 130 Q 130 80 150 130 Q 170 80 190 130 Q 210 80 220 130" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    
+    <!-- Contextual outlier (wrong season) -->
+    <circle cx="150" cy="75" r="6" fill="#f59e0b"/>
+    <text x="156" y="70" font-family="Segoe UI, sans-serif" font-size="8" fill="#fbbf24">?</text>
+    
+    <!-- Season labels -->
+    <text x="50" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">Win</text>
+    <text x="110" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">Sum</text>
+    <text x="170" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8" fill="#94a3b8">Win</text>
+    
+    <!-- Labels -->
+    <text x="240" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">• Normal in one context</text>
+    <text x="240" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#fcd34d">• Abnormal in another</text>
+    <text x="240" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Detection: STL residuals</text>
+    <text x="240" y="135" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Treatment: Context-aware</text>
+  </g>
+  
+  <!-- Collective Outliers -->
+  <g transform="translate(30, 260)">
+    <rect width="360" height="160" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#8b5cf6"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Collective Outliers</text>
+    
+    <!-- Chart area -->
+    <rect x="20" y="50" width="200" height="90" rx="6" fill="#0f172a"/>
+    
+    <!-- Normal line before and after -->
+    <path d="M 30 110 Q 50 105 70 108" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    <path d="M 160 110 Q 180 105 200 108 Q 210 112 220 108" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    
+    <!-- Abnormal sequence -->
+    <rect x="70" y="65" width="90" height="45" rx="4" fill="#8b5cf6" opacity="0.3"/>
+    <path d="M 70 108 Q 85 75 100 95 Q 115 60 130 85 Q 145 70 160 110" stroke="#a78bfa" stroke-width="2.5" fill="none"/>
+    
+    <!-- Labels -->
+    <text x="240" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">• Abnormal subsequence</text>
+    <text x="240" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">• Pattern, not individual</text>
+    <text x="240" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Detection: Isolation Forest</text>
+    <text x="240" y="135" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Treatment: Segment removal</text>
+  </g>
+  
+  <!-- Level Shifts -->
+  <g transform="translate(410, 260)">
+    <rect width="360" height="160" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <rect width="360" height="35" rx="12" fill="#06b6d4"/>
+    <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Level Shifts</text>
+    
+    <!-- Chart area -->
+    <rect x="20" y="50" width="200" height="90" rx="6" fill="#0f172a"/>
+    
+    <!-- Lower level -->
+    <path d="M 30 115 Q 50 110 70 118 Q 90 112 105 115" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    
+    <!-- Jump -->
+    <line x1="105" y1="115" x2="115" y2="75" stroke="#22d3ee" stroke-width="2" stroke-dasharray="4,2"/>
+    
+    <!-- Higher level -->
+    <path d="M 115 75 Q 135 80 155 72 Q 175 78 195 75 Q 210 70 220 78" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    
+    <!-- Shift indicator -->
+    <text x="110" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#22d3ee">↑</text>
+    
+    <!-- Labels -->
+    <text x="240" y="75" font-family="Segoe UI, sans-serif" font-size="10" fill="#67e8f9">• Permanent level change</text>
+    <text x="240" y="95" font-family="Segoe UI, sans-serif" font-size="10" fill="#67e8f9">• Structural break</text>
+    <text x="240" y="115" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Detection: CUSUM, Chow test</text>
+    <text x="240" y="135" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Treatment: Segment modeling</text>
+  </g>
+</svg>

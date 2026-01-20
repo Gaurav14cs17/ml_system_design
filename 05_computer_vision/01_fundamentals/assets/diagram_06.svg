@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+    <linearGradient id="lumaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="cbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="crGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="350" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">YCbCr Color Space Components</text>
+  
+  <!-- Components Row -->
+  <g transform="translate(40, 70)">
+    <!-- Original Image -->
+    <g transform="translate(0, 0)">
+      <text x="75" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#f8fafc">Original Image</text>
+      <rect x="0" y="15" width="150" height="100" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+      <!-- Sample color blocks -->
+      <rect x="10" y="25" width="40" height="35" fill="#ef4444"/>
+      <rect x="55" y="25" width="40" height="35" fill="#22c55e"/>
+      <rect x="100" y="25" width="40" height="35" fill="#3b82f6"/>
+      <rect x="10" y="65" width="40" height="40" fill="#fbbf24"/>
+      <rect x="55" y="65" width="40" height="40" fill="#ec4899"/>
+      <rect x="100" y="65" width="40" height="40" fill="#06b6d4"/>
+      <text x="75" y="130" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">Color Image</text>
+    </g>
+    
+    <!-- Arrow -->
+    <line x1="165" y1="70" x2="195" y2="70" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Y (Luma) -->
+    <g transform="translate(210, 0)">
+      <text x="60" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#e2e8f0">Y (Luma)</text>
+      <rect x="0" y="15" width="120" height="100" rx="8" fill="url(#lumaGrad)" stroke="#64748b" stroke-width="2"/>
+      <text x="60" y="70" text-anchor="middle" font-family="Arial" font-size="11" fill="#f8fafc">Brightness</text>
+      <text x="60" y="130" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">Grayscale</text>
+    </g>
+    
+    <!-- Cb (Blue diff) -->
+    <g transform="translate(355, 0)">
+      <text x="60" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#60a5fa">Cb (Blue diff)</text>
+      <rect x="0" y="15" width="120" height="100" rx="8" fill="url(#cbGrad)" stroke="#3b82f6" stroke-width="2"/>
+      <text x="60" y="70" text-anchor="middle" font-family="Arial" font-size="11" fill="#f8fafc">Blue-ish</text>
+      <text x="60" y="130" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">Chrominance</text>
+    </g>
+    
+    <!-- Cr (Red diff) -->
+    <g transform="translate(500, 0)">
+      <text x="60" y="0" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#f87171">Cr (Red diff)</text>
+      <rect x="0" y="15" width="120" height="100" rx="8" fill="url(#crGrad)" stroke="#ef4444" stroke-width="2"/>
+      <text x="60" y="70" text-anchor="middle" font-family="Arial" font-size="11" fill="#f8fafc">Red-ish</text>
+      <text x="60" y="130" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">Chrominance</text>
+    </g>
+    
+    <!-- Plus signs -->
+    <text x="340" y="75" font-family="Arial" font-size="24" fill="#64748b">+</text>
+    <text x="485" y="75" font-family="Arial" font-size="24" fill="#64748b">+</text>
+  </g>
+  
+  <!-- Conversion Formulas -->
+  <g transform="translate(80, 240)">
+    <rect x="0" y="0" width="640" height="90" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="320" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">Conversion from RGB</text>
+    
+    <text x="30" y="55" font-family="Arial" font-size="13" fill="#e2e8f0">Y</text>
+    <text x="55" y="55" font-family="Arial" font-size="13" fill="#64748b">=</text>
+    <text x="75" y="55" font-family="Arial" font-size="13" fill="#fbbf24">0.299R + 0.587G + 0.114B</text>
+    
+    <text x="30" y="75" font-family="Arial" font-size="13" fill="#60a5fa">Cb</text>
+    <text x="55" y="75" font-family="Arial" font-size="13" fill="#64748b">=</text>
+    <text x="75" y="75" font-family="Arial" font-size="13" fill="#fbbf24">128 − 0.169R − 0.331G + 0.500B</text>
+    
+    <text x="350" y="55" font-family="Arial" font-size="13" fill="#f87171">Cr</text>
+    <text x="375" y="55" font-family="Arial" font-size="13" fill="#64748b">=</text>
+    <text x="395" y="55" font-family="Arial" font-size="13" fill="#fbbf24">128 + 0.500R − 0.419G − 0.081B</text>
+  </g>
+</svg>

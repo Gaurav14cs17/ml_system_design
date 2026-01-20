@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="230">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        table { width: 100%; border-collapse: collapse; font-family: "Inter", Arial, sans-serif; font-size: 14px; color: #1f2933; }
+        th, td { border: 1px solid #d8dde7; padding: 10px 12px; text-align: left; vertical-align: top; }
+        th { background: #eef2f7; font-weight: 700; }
+        tbody tr:nth-child(even) td { background: #f8fafc; }
+      </style>
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Best For</th>
+            <th>Magnitude Sensitive</th>
+            <th>Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cosine</td><td>Text, sparse vectors</td><td>No</td><td>[-1, 1]</td></tr>
+          <tr><td>Euclidean</td><td>Dense, numeric features</td><td>Yes</td><td>[0, ∞)</td></tr>
+          <tr><td>Jaccard</td><td>Categorical, sets</td><td>No</td><td>[0, 1]</td></tr>
+          <tr><td>Pearson</td><td>Rating data</td><td>No</td><td>[-1, 1]</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>
+

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <filter id="shadow14" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="400" fill="#1e293b"/>
+  
+  <!-- Title -->
+  <text x="425" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📱 Edge Deployment Architecture</text>
+  
+  <!-- Cloud -->
+  <g filter="url(#shadow14)">
+    <rect x="325" y="55" width="200" height="80" rx="40" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="425" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">☁️ Cloud</text>
+    <text x="425" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976d2">Model Training and Registry</text>
+  </g>
+  
+  <!-- Arrows from Cloud -->
+  <path d="M325 95 L200 170" stroke="#1976d2" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M425 140 L425 170" stroke="#1976d2" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M525 95 L650 170" stroke="#1976d2" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <!-- Edge Gateway -->
+  <g filter="url(#shadow14)">
+    <rect x="275" y="175" width="300" height="60" rx="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="425" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100">🌐 Edge Gateway / CDN</text>
+    <text x="425" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f57c00">Model Distribution and Updates</text>
+  </g>
+  
+  <!-- Arrows to devices -->
+  <path d="M325 240 L130 280" stroke="#ff9800" stroke-width="2"/>
+  <path d="M375 240 L295 280" stroke="#ff9800" stroke-width="2"/>
+  <path d="M475 240 L555 280" stroke="#ff9800" stroke-width="2"/>
+  <path d="M525 240 L720 280" stroke="#ff9800" stroke-width="2"/>
+  
+  <!-- Mobile -->
+  <g filter="url(#shadow14)">
+    <rect x="50" y="285" width="160" height="100" rx="12" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="130" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32">📱 Mobile</text>
+    <text x="130" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">TensorFlow Lite</text>
+    <text x="130" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">Core ML</text>
+    <text x="130" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#388e3c">ONNX Runtime</text>
+    <text x="130" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~10-50ms</text>
+  </g>
+  
+  <!-- Browser -->
+  <g filter="url(#shadow14)">
+    <rect x="225" y="285" width="140" height="100" rx="12" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="295" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#7b1fa2">🌐 Browser</text>
+    <text x="295" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9c27b0">TensorFlow.js</text>
+    <text x="295" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9c27b0">ONNX.js</text>
+    <text x="295" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9c27b0">WebGPU/WebGL</text>
+    <text x="295" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~20-100ms</text>
+  </g>
+  
+  <!-- IoT -->
+  <g filter="url(#shadow14)">
+    <rect x="485" y="285" width="140" height="100" rx="12" fill="#e0f7fa" stroke="#00acc1" stroke-width="2"/>
+    <text x="555" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#006064">📡 IoT</text>
+    <text x="555" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#00838f">TinyML</text>
+    <text x="555" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#00838f">Microcontrollers</text>
+    <text x="555" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#00838f">ARM Cortex</text>
+    <text x="555" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~1-10ms</text>
+  </g>
+  
+  <!-- Edge Server -->
+  <g filter="url(#shadow14)">
+    <rect x="640" y="285" width="160" height="100" rx="12" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+    <text x="720" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c2185b">🖥️ Edge Server</text>
+    <text x="720" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#d81b60">NVIDIA Jetson</text>
+    <text x="720" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#d81b60">Intel NUC</text>
+    <text x="720" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#d81b60">Edge TPU</text>
+    <text x="720" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~5-20ms</text>
+  </g>
+  
+  <!-- Benefits -->
+  <g>
+    <rect x="50" y="60" width="100" height="70" rx="8" fill="#0f172a" stroke="#e0e0e0" filter="url(#shadow14)"/>
+    <text x="100" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#4caf50">✅ Benefits</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Low latency</text>
+    <text x="100" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Offline capable</text>
+    <text x="100" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Privacy</text>
+    
+    <rect x="700" y="60" width="100" height="70" rx="8" fill="#0f172a" stroke="#e0e0e0" filter="url(#shadow14)"/>
+    <text x="750" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f44336">⚠️ Challenges</text>
+    <text x="750" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Limited compute</text>
+    <text x="750" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Model updates</text>
+    <text x="750" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Monitoring</text>
+  </g>
+</svg>
+

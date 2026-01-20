@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns='http://www.w3.org/2000/svg' width='524' height='434' viewBox='0 0 524 434'>
+  <style>
+    text {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+    }
+  </style>
+  <rect width='100%' height='100%' fill='#ffffff' stroke='#d0d7de' />
+  <text x='10' y='24' xml:space='preserve'>
+┌─────────────────────────────────────────────────────────────┐
+│              WHY RANDOMIZATION IS CRITICAL                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Without Randomization:                                     │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ Users who see treatment might be systematically     │  │
+│  │ different from users who see control                │  │
+│  │                                                     │  │
+│  │ Example: Power users opt into new features         │  │
+│  │ → Selection bias makes treatment look better       │  │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  With Proper Randomization:                                 │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ Users in control and treatment are statistically    │  │
+│  │ equivalent on ALL dimensions (measured &amp; unmeasured)│  │
+│  │                                                     │  │
+│  │ → Any difference in outcomes is caused by treatment │  │
+│  │ → Enables causal inference                          │  │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+  </text>
+</svg>

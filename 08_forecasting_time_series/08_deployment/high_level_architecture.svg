@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350">
+  <defs>
+    <linearGradient id="hlaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#60a5fa"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#hlaBg)"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🏗️ High-Level System Architecture</text>
+  
+  <!-- Data Sources -->
+  <g transform="translate(30, 130)">
+    <rect width="150" height="90" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="150" height="28" rx="12" fill="#3b82f6"/>
+    <text x="75" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Data Sources</text>
+    <text x="75" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">Logs · APIs · S3</text>
+    <text x="75" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Raw data streams</text>
+  </g>
+  
+  <!-- Arrow -->
+  <line x1="180" y1="175" x2="220" y2="175" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Ingestion -->
+  <g transform="translate(220, 130)">
+    <rect width="170" height="90" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="170" height="28" rx="12" fill="#f59e0b"/>
+    <text x="85" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Ingestion</text>
+    <text x="85" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">Kafka · ETL</text>
+    <text x="85" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Stream processing</text>
+  </g>
+  
+  <!-- Arrow -->
+  <line x1="390" y1="175" x2="430" y2="175" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Feature Store -->
+  <g transform="translate(430, 130)">
+    <rect width="150" height="90" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2" filter="url(#glow)"/>
+    <rect width="150" height="28" rx="12" fill="#22c55e"/>
+    <text x="75" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Feature Store</text>
+    <text x="75" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#34d399">Offline + Online</text>
+    <text x="75" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Centralized features</text>
+  </g>
+  
+  <!-- Arrows to Training and Inference -->
+  <line x1="580" y1="150" x2="630" y2="110" stroke="#34d399" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="580" y1="200" x2="630" y2="240" stroke="#34d399" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Training Pipeline -->
+  <g transform="translate(630, 70)">
+    <rect width="160" height="80" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="160" height="28" rx="12" fill="#8b5cf6"/>
+    <text x="80" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Training Pipeline</text>
+    <text x="80" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a78bfa">Batch (Spark/DBT)</text>
+    <text x="80" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Model development</text>
+  </g>
+  
+  <!-- Inference Service -->
+  <g transform="translate(630, 200)">
+    <rect width="160" height="80" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <rect width="160" height="28" rx="12" fill="#ec4899"/>
+    <text x="80" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Inference Service</text>
+    <text x="80" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#f472b6">API / Batch</text>
+    <text x="80" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Predictions</text>
+  </g>
+  
+  <!-- Arrow from Training to Registry -->
+  <line x1="790" y1="110" x2="830" y2="110" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Deploy arrow -->
+  <line x1="790" y1="130" x2="790" y2="200" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="798" y="170" font-family="Segoe UI, sans-serif" font-size="9" fill="#a78bfa">Deploy</text>
+  
+  <!-- Model Registry -->
+  <g transform="translate(830, 70)">
+    <rect width="150" height="80" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2" filter="url(#glow)"/>
+    <rect width="150" height="28" rx="12" fill="#06b6d4"/>
+    <text x="75" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Model Registry</text>
+    <text x="75" y="50" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#22d3ee">Versions · Metrics</text>
+    <text x="75" y="68" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">MLflow / Sagemaker</text>
+  </g>
+  
+  <!-- Arrows to Monitoring -->
+  <line x1="980" y1="110" x2="1020" y2="155" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="790" y1="255" x2="1020" y2="190" stroke="#f472b6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Monitoring -->
+  <g transform="translate(1020, 130)">
+    <rect width="150" height="90" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <rect width="150" height="28" rx="12" fill="#ef4444"/>
+    <text x="75" y="20" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Monitoring</text>
+    <text x="75" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#f87171">Drift · SLOs · Alerts</text>
+    <text x="75" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Prometheus/Grafana</text>
+  </g>
+  
+  <!-- Backfill path -->
+  <path d="M 105 130 L 105 80 L 430 80 L 430 130" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,3" fill="none"/>
+  <text x="270" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Backfills</text>
+  
+  <!-- Online lookup -->
+  <path d="M 505 220 L 505 280 L 630 280 L 630 260" stroke="#34d399" stroke-width="1.5" stroke-dasharray="5,3" fill="none"/>
+  <text x="567" y="295" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#34d399">Online lookup</text>
+</svg>

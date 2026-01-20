@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🚨 Alert Severity Matrix</text>
+  
+  <!-- Critical P1 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="60" width="700" height="105" rx="10" fill="#1e293b"/>
+    <rect x="50" y="60" width="12" height="105" rx="5 0 0 5" fill="#ef4444"/>
+    <text x="80" y="85" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fca5a5">CRITICAL (P1)</text>
+    <text x="600" y="85" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Response: andlt; 15 minutes</text>
+    <text x="600" y="100" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">📞 Page + Call</text>
+    <line x1="70" y1="100" x2="550" y2="100" stroke="#334155"/>
+    <text x="80" y="120" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Model completely down</text>
+    <text x="80" y="138" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Data pipeline failure (no predictions)</text>
+    <text x="320" y="120" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Accuracy drop andgt; 20%</text>
+    <text x="320" y="138" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Revenue impact andgt; $10K/hour</text>
+  </g>
+  
+  <!-- High P2 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="180" width="700" height="105" rx="10" fill="#1e293b"/>
+    <rect x="50" y="180" width="12" height="105" rx="5 0 0 5" fill="#f59e0b"/>
+    <text x="80" y="205" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fcd34d">HIGH (P2)</text>
+    <text x="600" y="205" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Response: andlt; 1 hour</text>
+    <text x="600" y="220" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">📟 Page</text>
+    <line x1="70" y1="220" x2="550" y2="220" stroke="#334155"/>
+    <text x="80" y="240" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Significant accuracy degradation (10-20%)</text>
+    <text x="80" y="258" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Latency SLA breach (P99 andgt; threshold)</text>
+    <text x="80" y="276" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Feature pipeline delayed andgt; 1 hour</text>
+  </g>
+  
+  <!-- Medium P3 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="300" width="700" height="95" rx="10" fill="#1e293b"/>
+    <rect x="50" y="300" width="12" height="95" rx="5 0 0 5" fill="#3b82f6"/>
+    <text x="80" y="325" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">MEDIUM (P3)</text>
+    <text x="600" y="325" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Response: andlt; 4 hours</text>
+    <text x="600" y="340" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">💬 Slack</text>
+    <line x1="70" y1="340" x2="550" y2="340" stroke="#334155"/>
+    <text x="80" y="360" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Moderate drift detected</text>
+    <text x="80" y="378" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Error rate elevated (1-5%)</text>
+    <text x="320" y="360" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Non-critical feature staleness</text>
+  </g>
+  
+  <!-- Low P4 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="410" width="700" height="95" rx="10" fill="#1e293b"/>
+    <rect x="50" y="410" width="12" height="95" rx="5 0 0 5" fill="#10b981"/>
+    <text x="80" y="435" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">LOW (P4)</text>
+    <text x="600" y="435" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Response: Next business day</text>
+    <text x="600" y="450" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">📧 Email/Ticket</text>
+    <line x1="70" y1="450" x2="550" y2="450" stroke="#334155"/>
+    <text x="80" y="470" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Minor performance variations</text>
+    <text x="80" y="488" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Non-urgent optimizations</text>
+    <text x="320" y="470" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">• Process improvements</text>
+  </g>
+</svg>

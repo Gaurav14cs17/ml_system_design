@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgOrg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowOrg" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgOrg)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Feature Group Organization Patterns</text>
+  
+  <!-- By Entity Pattern -->
+  <g filter="url(#shadowOrg)">
+    <rect x="50" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="50" y="70" width="250" height="40" rx="12" fill="#2563eb"/>
+    <rect x="50" y="98" width="250" height="12" fill="#2563eb"/>
+    <text x="175" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📁 By Entity</text>
+    
+    <rect x="70" y="125" width="210" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="175" y="147" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_profile_features</text>
+    
+    <rect x="70" y="170" width="210" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="175" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_transaction_features</text>
+    
+    <rect x="70" y="215" width="210" height="35" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="1"/>
+    <text x="175" y="237" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">user_engagement_features</text>
+    
+    <rect x="70" y="270" width="210" height="70" rx="6" fill="#0f172a"/>
+    <text x="175" y="295" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Good for: entity-centric</text>
+    <text x="175" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">discovery and access</text>
+  </g>
+  
+  <!-- By Source Pattern -->
+  <g filter="url(#shadowOrg)">
+    <rect x="325" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="325" y="70" width="250" height="40" rx="12" fill="#7c3aed"/>
+    <rect x="325" y="98" width="250" height="12" fill="#7c3aed"/>
+    <text x="450" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🗄️ By Source</text>
+    
+    <rect x="345" y="125" width="210" height="35" rx="6" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="450" y="147" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">clickstream_features</text>
+    
+    <rect x="345" y="170" width="210" height="35" rx="6" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="450" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">transactions_features</text>
+    
+    <rect x="345" y="215" width="210" height="35" rx="6" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="450" y="237" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">crm_features</text>
+    
+    <rect x="345" y="270" width="210" height="70" rx="6" fill="#0f172a"/>
+    <text x="450" y="295" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Good for: optimizing</text>
+    <text x="450" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">data pipeline efficiency</text>
+  </g>
+  
+  <!-- By Domain Pattern -->
+  <g filter="url(#shadowOrg)">
+    <rect x="600" y="70" width="250" height="290" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="600" y="70" width="250" height="40" rx="12" fill="#059669"/>
+    <rect x="600" y="98" width="250" height="12" fill="#059669"/>
+    <text x="725" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🏢 By Domain</text>
+    
+    <rect x="620" y="125" width="210" height="35" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="725" y="147" text-anchor="middle" font-family="monospace" font-size="10" fill="#34d399">fraud_detection_features</text>
+    
+    <rect x="620" y="170" width="210" height="35" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="725" y="192" text-anchor="middle" font-family="monospace" font-size="10" fill="#34d399">recommendation_features</text>
+    
+    <rect x="620" y="215" width="210" height="35" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="725" y="237" text-anchor="middle" font-family="monospace" font-size="10" fill="#34d399">pricing_features</text>
+    
+    <rect x="620" y="270" width="210" height="70" rx="6" fill="#0f172a"/>
+    <text x="725" y="295" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Good for: team-based</text>
+    <text x="725" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">ownership and governance</text>
+  </g>
+</svg>

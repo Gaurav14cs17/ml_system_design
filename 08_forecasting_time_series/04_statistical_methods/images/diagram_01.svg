@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500">
+  <defs>
+    <linearGradient id="statBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="500" fill="url(#statBg)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="24" font-weight="bold">STATISTICAL FORECASTING METHODS</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Classical Time Series Models</text>
+  
+  <!-- Methods -->
+  <g transform="translate(30, 90)">
+    <!-- AR -->
+    <rect width="190" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">AR(p)</text>
+    <text x="95" y="42" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Autoregressive</text>
+    <rect x="15" y="52" width="160" height="30" rx="4" fill="#1e3a5f"/>
+    <text x="95" y="72" text-anchor="middle" fill="#60a5fa" font-family="monospace" font-size="9">Yt = Σ φᵢYt-i + εt</text>
+    <text x="20" y="100" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• Uses past values</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• PACF for order p</text>
+  </g>
+  
+  <g transform="translate(240, 90)">
+    <!-- MA -->
+    <rect width="190" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="95" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">MA(q)</text>
+    <text x="95" y="42" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Moving Average</text>
+    <rect x="15" y="52" width="160" height="30" rx="4" fill="#4c1d95"/>
+    <text x="95" y="72" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="9">Yt = μ + Σ θᵢεt-i + εt</text>
+    <text x="20" y="100" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• Uses past errors</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• ACF for order q</text>
+  </g>
+  
+  <g transform="translate(450, 90)">
+    <!-- ARIMA -->
+    <rect width="190" height="130" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="3" filter="url(#glow)"/>
+    <text x="95" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ARIMA(p,d,q)</text>
+    <text x="95" y="42" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Auto-Regressive Integrated MA</text>
+    <rect x="15" y="52" width="160" height="30" rx="4" fill="#064e3b"/>
+    <text x="95" y="72" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">AR + d differencing + MA</text>
+    <text x="20" y="100" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• Handles non-stationary</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• Most common model</text>
+  </g>
+  
+  <g transform="translate(660, 90)">
+    <!-- SARIMA -->
+    <rect width="160" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SARIMA</text>
+    <text x="80" y="42" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">Seasonal ARIMA</text>
+    <rect x="10" y="52" width="140" height="30" rx="4" fill="#78350f"/>
+    <text x="80" y="72" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="8">(p,d,q)(P,D,Q)s</text>
+    <text x="15" y="100" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• + Seasonal terms</text>
+    <text x="15" y="115" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">• Period s</text>
+  </g>
+  
+  <!-- Other Methods -->
+  <text x="425" y="250" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Exponential Smoothing Family</text>
+  
+  <g transform="translate(80, 265)">
+    <!-- SES -->
+    <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Simple ES (α)</text>
+    <text x="100" y="45" text-anchor="middle" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="9">Level only</text>
+    <text x="20" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• No trend or season</text>
+    <text x="20" y="85" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Flat forecasts</text>
+  </g>
+  
+  <g transform="translate(310, 265)">
+    <!-- Holt -->
+    <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Holt's (α, β)</text>
+    <text x="100" y="45" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="9">Level + Trend</text>
+    <text x="20" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Captures trends</text>
+    <text x="20" y="85" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Linear projections</text>
+  </g>
+  
+  <g transform="translate(540, 265)">
+    <!-- Holt-Winters -->
+    <rect width="200" height="100" rx="12" fill="#1e293b" stroke="#a78bfa" stroke-width="3" filter="url(#glow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Holt-Winters (α,β,γ)</text>
+    <text x="100" y="45" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Level + Trend + Season</text>
+    <text x="20" y="68" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Full decomposition</text>
+    <text x="20" y="85" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">• Additive or mult.</text>
+  </g>
+  
+  <!-- Model Selection -->
+  <text x="425" y="400" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Model Selection Criteria</text>
+  
+  <g transform="translate(100, 415)">
+    <rect width="200" height="55" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="100" y="22" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">AIC / BIC</text>
+    <text x="100" y="40" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">Balance fit vs complexity</text>
+    <text x="100" y="52" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Lower is better</text>
+  </g>
+  
+  <g transform="translate(325, 415)">
+    <rect width="200" height="55" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="100" y="22" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Auto-ARIMA</text>
+    <text x="100" y="40" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">Automated selection</text>
+    <text x="100" y="52" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Grid search p,d,q</text>
+  </g>
+  
+  <g transform="translate(550, 415)">
+    <rect width="200" height="55" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Cross-Validation</text>
+    <text x="100" y="40" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="9">Rolling origin evaluation</text>
+    <text x="100" y="52" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Out-of-sample testing</text>
+  </g>
+</svg>

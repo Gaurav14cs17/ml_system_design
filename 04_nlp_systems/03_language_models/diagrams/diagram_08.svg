@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="tfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="tfShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Transformer Block Architecture</text>
+  
+  <!-- Left: Full block -->
+  <g transform="translate(50, 70)" filter="url(#tfShadow)">
+    <rect width="300" height="300" rx="14" fill="#1e293b" stroke="url(#tfGrad)" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#a78bfa">Transformer Layer</text>
+    
+    <!-- Input -->
+    <rect x="100" y="40" width="100" height="30" rx="6" fill="#374151"/>
+    <text x="150" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#e2e8f0">Input</text>
+    
+    <!-- MHA -->
+    <line x1="150" y1="70" x2="150" y2="90" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="60" y="90" width="180" height="40" rx="6" fill="#581c87"/>
+    <text x="150" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#e9d5ff">Multi-Head Attention</text>
+    
+    <!-- Add and Norm 1 -->
+    <line x1="150" y1="130" x2="150" y2="145" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="80" y="145" width="140" height="30" rx="6" fill="#3730a3"/>
+    <text x="150" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">Add &amp; LayerNorm</text>
+    
+    <!-- Residual line 1 -->
+    <path d="M 50 55 L 30 55 L 30 160 L 80 160" stroke="#6366f1" stroke-width="1.5" fill="none" stroke-dasharray="4,2"/>
+    
+    <!-- FFN -->
+    <line x1="150" y1="175" x2="150" y2="190" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="60" y="190" width="180" height="40" rx="6" fill="#064e3b"/>
+    <text x="150" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">Feed-Forward Network</text>
+    
+    <!-- Add and Norm 2 -->
+    <line x1="150" y1="230" x2="150" y2="245" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="80" y="245" width="140" height="30" rx="6" fill="#3730a3"/>
+    <text x="150" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#c4b5fd">Add &amp; LayerNorm</text>
+    
+    <!-- Residual line 2 -->
+    <path d="M 50 160 L 20 160 L 20 260 L 80 260" stroke="#6366f1" stroke-width="1.5" fill="none" stroke-dasharray="4,2"/>
+  </g>
+  
+  <!-- Right: Key components -->
+  <g transform="translate(400, 70)" filter="url(#tfShadow)">
+    <rect width="350" height="130" rx="10" fill="#1e293b" stroke="#10b981"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#34d399">Feed-Forward Network</text>
+    <text x="175" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">FFN(x) = max(0, xW₁ + b₁)W₂ + b₂</text>
+    <text x="175" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">• Two linear transformations</text>
+    <text x="175" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7">• ReLU (or GELU) activation</text>
+    <text x="175" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Hidden dim typically 4× model dim</text>
+  </g>
+  
+  <g transform="translate(400, 220)" filter="url(#tfShadow)">
+    <rect width="350" height="130" rx="10" fill="#1e293b" stroke="#f59e0b"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#fbbf24">Residual + LayerNorm</text>
+    <text x="175" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">LayerNorm(x + Sublayer(x))</text>
+    <text x="175" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">• Residual: gradient flow</text>
+    <text x="175" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">• LayerNorm: training stability</text>
+    <text x="175" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Pre-LN vs Post-LN variants</text>
+  </g>
+</svg>

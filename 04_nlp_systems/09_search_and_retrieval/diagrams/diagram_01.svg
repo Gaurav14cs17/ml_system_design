@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 550">
+  <defs>
+    <linearGradient id="searchBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="sparseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="denseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="550" fill="url(#searchBg)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="26" font-weight="bold">SEARCH &amp; RETRIEVAL</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Information Retrieval Paradigms</text>
+  
+  <!-- Query Input -->
+  <g transform="translate(350, 85)">
+    <rect width="150" height="45" rx="22" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="30" y="28" fill="#22d3ee" font-family="Arial, sans-serif" font-size="16">🔍</text>
+    <text x="55" y="30" fill="#67e8f9" font-family="Arial, sans-serif" font-size="11">"apple recipes"</text>
+  </g>
+  
+  <!-- Arrows down -->
+  <path d="M 425 135 L 275 180 M 425 135 L 425 180 M 425 135 L 575 180" stroke="#94a3b8" stroke-width="2" fill="none"/>
+  
+  <!-- Three Paradigms -->
+  <!-- Sparse Retrieval -->
+  <g transform="translate(80, 190)">
+    <rect width="230" height="200" rx="15" fill="#1e293b" stroke="url(#sparseGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect width="230" height="40" rx="15" fill="url(#sparseGrad)"/>
+    <rect x="0" y="25" width="230" height="15" fill="url(#sparseGrad)"/>
+    <text x="115" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📊 Sparse Retrieval</text>
+    
+    <text x="115" y="65" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="11">Keyword-Based (BM25/TF-IDF)</text>
+    
+    <!-- Sparse vector visualization -->
+    <g transform="translate(30, 80)">
+      <rect width="170" height="50" rx="6" fill="#1f2937"/>
+      <text x="10" y="18" fill="#fcd34d" font-family="monospace" font-size="8">[0, 0, 3.2, 0, 0, 1.5,</text>
+      <text x="10" y="32" fill="#fcd34d" font-family="monospace" font-size="8">0, 0, 2.1, 0, 0, 0...]</text>
+      <text x="85" y="48" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">Mostly zeros!</text>
+    </g>
+    
+    <text x="20" y="155" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Fast, interpretable</text>
+    <text x="20" y="172" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ No training required</text>
+    <text x="20" y="189" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Exact term matching</text>
+  </g>
+  
+  <!-- Dense Retrieval -->
+  <g transform="translate(330, 190)">
+    <rect width="230" height="200" rx="15" fill="#1e293b" stroke="url(#denseGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect width="230" height="40" rx="15" fill="url(#denseGrad)"/>
+    <rect x="0" y="25" width="230" height="15" fill="url(#denseGrad)"/>
+    <text x="115" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🧠 Dense Retrieval</text>
+    
+    <text x="115" y="65" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="11">Embedding-Based (BERT/E5)</text>
+    
+    <!-- Dense vector visualization -->
+    <g transform="translate(30, 80)">
+      <rect width="170" height="50" rx="6" fill="#1f2937"/>
+      <text x="10" y="18" fill="#c4b5fd" font-family="monospace" font-size="8">[0.23, -0.15, 0.87,</text>
+      <text x="10" y="32" fill="#c4b5fd" font-family="monospace" font-size="8">0.45, -0.33, 0.12...]</text>
+      <text x="85" y="48" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="8">All values populated</text>
+    </g>
+    
+    <text x="20" y="155" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Semantic understanding</text>
+    <text x="20" y="172" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Handles synonyms</text>
+    <text x="20" y="189" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Needs training data</text>
+  </g>
+  
+  <!-- Hybrid Retrieval -->
+  <g transform="translate(580, 190)">
+    <rect width="230" height="200" rx="15" fill="#1e293b" stroke="url(#hybridGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect width="230" height="40" rx="15" fill="url(#hybridGrad)"/>
+    <rect x="0" y="25" width="230" height="15" fill="url(#hybridGrad)"/>
+    <text x="115" y="28" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Hybrid Retrieval</text>
+    
+    <text x="115" y="65" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11">Best of Both Worlds</text>
+    
+    <!-- Hybrid visualization -->
+    <g transform="translate(30, 80)">
+      <rect width="170" height="50" rx="6" fill="#1f2937"/>
+      <rect x="10" y="10" width="70" height="15" rx="3" fill="#f59e0b" opacity="0.5"/>
+      <text x="45" y="21" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="7">Sparse</text>
+      <rect x="90" y="10" width="70" height="15" rx="3" fill="#8b5cf6" opacity="0.5"/>
+      <text x="125" y="21" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="7">Dense</text>
+      <text x="85" y="42" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="9" font-weight="bold">α × S + (1-α) × D</text>
+    </g>
+    
+    <text x="20" y="155" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Handles exact and semantic</text>
+    <text x="20" y="172" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Best retrieval quality</text>
+    <text x="20" y="189" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ More complexity</text>
+  </g>
+  
+  <!-- Retrieval Pipeline -->
+  <text x="425" y="420" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Two-Stage Retrieval Pipeline</text>
+  
+  <g transform="translate(100, 440)">
+    <!-- Query -->
+    <rect width="100" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+    <text x="50" y="30" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🔍 Query</text>
+    <text x="50" y="45" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="8">User input</text>
+    
+    <path d="M 110 465 L 145 465" stroke="#60a5fa" stroke-width="2"/>
+    <polygon points="145,460 160,465 145,470" fill="#60a5fa"/>
+    
+    <!-- Retriever -->
+    <rect x="165" y="440" width="120" height="50" rx="8" fill="#164e63" stroke="#06b6d4" stroke-width="2"/>
+    <text x="225" y="460" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="10" font-weight="bold">⚡ Retriever</text>
+    <text x="225" y="478" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="8">Fast, coarse (1000→100)</text>
+    
+    <path d="M 295 465 L 330 465" stroke="#22d3ee" stroke-width="2"/>
+    <polygon points="330,460 345,465 330,470" fill="#22d3ee"/>
+    
+    <!-- Candidate Pool -->
+    <rect x="350" y="440" width="100" height="50" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="400" y="460" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="10" font-weight="bold">📚 Top-K</text>
+    <text x="400" y="478" text-anchor="middle" fill="#431407" font-family="Arial, sans-serif" font-size="8">Candidates</text>
+    
+    <path d="M 460 465 L 495 465" stroke="#fb923c" stroke-width="2"/>
+    <polygon points="495,460 510,465 495,470" fill="#fb923c"/>
+    
+    <!-- Reranker -->
+    <rect x="515" y="440" width="120" height="50" rx="8" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="575" y="460" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="10" font-weight="bold">🎯 Reranker</text>
+    <text x="575" y="478" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="8">Precise scoring (100→10)</text>
+    
+    <path d="M 645 465 L 680 465" stroke="#a78bfa" stroke-width="2"/>
+    <polygon points="680,460 695,465 680,470" fill="#10b981"/>
+    
+    <!-- Results -->
+    <rect x="700" y="440" width="100" height="50" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <text x="750" y="460" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="10" font-weight="bold">✅ Results</text>
+    <text x="750" y="478" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="8">Ranked docs</text>
+  </g>
+  
+  <!-- ANN Index Note -->
+  <g transform="translate(250, 510)">
+    <rect width="350" height="30" rx="6" fill="#1e293b" stroke="#94a3b8" stroke-width="1"/>
+    <text x="175" y="20" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">💡 Use ANN indexes (FAISS, ScaNN, HNSW) for billion-scale retrieval</text>
+  </g>
+</svg>

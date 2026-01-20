@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420">
+  <defs>
+    <linearGradient id="skipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="cbowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="w2vShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Word2Vec Architectures</text>
+  
+  <!-- Skip-gram -->
+  <g transform="translate(40, 70)" filter="url(#w2vShadow)">
+    <rect width="370" height="310" rx="14" fill="#1e293b" stroke="url(#skipGrad)" stroke-width="2"/>
+    <rect width="370" height="45" rx="14 14 0 0" fill="url(#skipGrad)"/>
+    <text x="185" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#fff">Skip-gram</text>
+    
+    <!-- Architecture diagram -->
+    <g transform="translate(85, 70)">
+      <rect x="60" y="0" width="80" height="40" rx="6" fill="#1e3a5f"/>
+      <text x="100" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#60a5fa">Center word</text>
+      
+      <line x1="100" y1="45" x2="100" y2="70" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="100" y1="70" x2="30" y2="100" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="100" y1="70" x2="100" y2="100" stroke="#60a5fa" stroke-width="2"/>
+      <line x1="100" y1="70" x2="170" y2="100" stroke="#60a5fa" stroke-width="2"/>
+      
+      <rect x="0" y="105" width="60" height="35" rx="6" fill="#3b82f6"/>
+      <text x="30" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">Context</text>
+      <rect x="70" y="105" width="60" height="35" rx="6" fill="#3b82f6"/>
+      <text x="100" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">Context</text>
+      <rect x="140" y="105" width="60" height="35" rx="6" fill="#3b82f6"/>
+      <text x="170" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">Context</text>
+    </g>
+    
+    <text x="185" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#93c5fd">Predict context from center:</text>
+    <text x="185" y="255" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">P(w_context | w_center)</text>
+    <text x="185" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748b">Better for rare words</text>
+  </g>
+  
+  <!-- CBOW -->
+  <g transform="translate(440, 70)" filter="url(#w2vShadow)">
+    <rect width="370" height="310" rx="14" fill="#1e293b" stroke="url(#cbowGrad)" stroke-width="2"/>
+    <rect width="370" height="45" rx="14 14 0 0" fill="url(#cbowGrad)"/>
+    <text x="185" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#fff">CBOW (Continuous Bag of Words)</text>
+    
+    <!-- Architecture diagram -->
+    <g transform="translate(85, 70)">
+      <rect x="0" y="0" width="60" height="35" rx="6" fill="#10b981"/>
+      <text x="30" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">Context</text>
+      <rect x="70" y="0" width="60" height="35" rx="6" fill="#10b981"/>
+      <text x="100" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">Context</text>
+      <rect x="140" y="0" width="60" height="35" rx="6" fill="#10b981"/>
+      <text x="170" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">Context</text>
+      
+      <line x1="30" y1="40" x2="100" y2="70" stroke="#34d399" stroke-width="2"/>
+      <line x1="100" y1="40" x2="100" y2="70" stroke="#34d399" stroke-width="2"/>
+      <line x1="170" y1="40" x2="100" y2="70" stroke="#34d399" stroke-width="2"/>
+      <line x1="100" y1="75" x2="100" y2="100" stroke="#34d399" stroke-width="2"/>
+      
+      <rect x="60" y="105" width="80" height="40" rx="6" fill="#064e3b"/>
+      <text x="100" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6ee7b7">Center word</text>
+    </g>
+    
+    <text x="185" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#6ee7b7">Predict center from context:</text>
+    <text x="185" y="255" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">P(w_center | w_context)</text>
+    <text x="185" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#64748b">Faster training, frequent words</text>
+  </g>
+</svg>

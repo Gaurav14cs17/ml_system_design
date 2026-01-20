@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="onlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e"/>
+      <stop offset="100%" style="stop-color:#38ef7d"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="500" fill="#0d1117" rx="10"/>
+  
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="bold">Content-Based Filtering Architecture</text>
+  
+  <!-- Offline Pipeline -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="700" height="150" rx="15" fill="url(#offlineGrad)" filter="url(#shadow)"/>
+    <text x="350" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">📦 OFFLINE PIPELINE</text>
+    
+    <g transform="translate(40, 50)">
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Catalog Items</text>
+      <text x="60" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">Product DB</text>
+    </g>
+    
+    <path d="M 170 85 L 200 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(210, 50)">
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Feature Extract</text>
+      <text x="60" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">TF-IDF, BERT</text>
+    </g>
+    
+    <path d="M 340 85 L 370 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(380, 50)">
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Index Build</text>
+      <text x="60" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">FAISS/Milvus</text>
+    </g>
+    
+    <path d="M 510 85 L 540 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(550, 50)">
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="rgba(255,255,255,0.3)"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Vector Store</text>
+      <text x="60" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">Item Embeddings</text>
+    </g>
+  </g>
+  
+  <!-- Online Pipeline -->
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="700" height="200" rx="15" fill="url(#onlineGrad)" filter="url(#shadow)"/>
+    <text x="350" y="28" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">⚡ ONLINE PIPELINE</text>
+    
+    <g transform="translate(40, 55)">
+      <rect x="0" y="0" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">👤 User ID</text>
+      <text x="50" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">Request</text>
+    </g>
+    
+    <path d="M 150 85 L 180 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(190, 55)">
+      <rect x="0" y="0" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Build Profile</text>
+      <text x="50" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">User history</text>
+    </g>
+    
+    <path d="M 300 85 L 330 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(340, 55)">
+      <rect x="0" y="0" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">ANN Search</text>
+      <text x="50" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">Vector DB</text>
+    </g>
+    
+    <path d="M 450 85 L 480 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(490, 55)">
+      <rect x="0" y="0" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Re-rank</text>
+      <text x="50" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">Filter</text>
+    </g>
+    
+    <path d="M 600 85 L 630 85" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <g transform="translate(640, 55)">
+      <rect x="0" y="0" width="70" height="60" rx="8" fill="rgba(255,255,255,0.35)"/>
+      <text x="35" y="25" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">📤</text>
+      <text x="35" y="45" text-anchor="middle" fill="#aaaaaa" font-size="8">Recs</text>
+    </g>
+    
+    <!-- Redis Cache -->
+    <g transform="translate(190, 130)">
+      <rect x="0" y="0" width="140" height="45" rx="8" fill="rgba(255,255,255,0.15)"/>
+      <text x="70" y="20" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">🗄️ Redis Cache</text>
+      <text x="70" y="35" text-anchor="middle" fill="#aaaaaa" font-size="8">User history cache</text>
+    </g>
+    <path d="M 240 115 L 260 130" stroke="#f8fafc" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+  
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f8fafc"/>
+    </marker>
+  </defs>
+</svg>

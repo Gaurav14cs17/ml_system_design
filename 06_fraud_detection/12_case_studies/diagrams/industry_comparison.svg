@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <linearGradient id="caseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🏢 Industry Case Studies Comparison
+  </text>
+  
+  <!-- Stripe -->
+  <rect x="30" y="60" width="300" height="250" rx="12" fill="#0f1a2e" stroke="#635bff" stroke-width="3"/>
+  <rect x="30" y="60" width="300" height="45" rx="12" fill="#635bff"/>
+  <text x="180" y="90" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">💳 Stripe Radar</text>
+  
+  <text x="50" y="130" fill="#22c55e" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Key Innovations:</text>
+  <text x="50" y="150" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Network-level features</text>
+  <text x="50" y="168" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Merchant behavior analysis</text>
+  <text x="50" y="186" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Adaptive thresholds</text>
+  
+  <text x="50" y="210" fill="#3b82f6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Results:</text>
+  <text x="50" y="228" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 25% fraud reduction</text>
+  <text x="50" y="246" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• andlt;100ms latency</text>
+  
+  <rect x="50" y="260" width="260" height="35" rx="5" fill="#14532d"/>
+  <text x="180" y="283" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Scale: 100M+ txn/day</text>
+  
+  <!-- PayPal -->
+  <rect x="350" y="60" width="300" height="250" rx="12" fill="#0f1a2e" stroke="#003087" stroke-width="3"/>
+  <rect x="350" y="60" width="300" height="45" rx="12" fill="#003087"/>
+  <text x="500" y="90" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">💰 PayPal</text>
+  
+  <text x="370" y="130" fill="#22c55e" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Key Innovations:</text>
+  <text x="370" y="150" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Deep learning + GBM ensemble</text>
+  <text x="370" y="168" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Graph-based fraud rings</text>
+  <text x="370" y="186" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Real-time feature store</text>
+  
+  <text x="370" y="210" fill="#3b82f6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Results:</text>
+  <text x="370" y="228" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 0.32% fraud rate (industry: 1.8%)</text>
+  <text x="370" y="246" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• $4B+ fraud prevented/year</text>
+  
+  <rect x="370" y="260" width="260" height="35" rx="5" fill="#14532d"/>
+  <text x="500" y="283" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Scale: 500M+ users</text>
+  
+  <!-- Netflix -->
+  <rect x="670" y="60" width="300" height="250" rx="12" fill="#0f1a2e" stroke="#e50914" stroke-width="3"/>
+  <rect x="670" y="60" width="300" height="45" rx="12" fill="#e50914"/>
+  <text x="820" y="90" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🎬 Netflix (ATO)</text>
+  
+  <text x="690" y="130" fill="#22c55e" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Key Innovations:</text>
+  <text x="690" y="150" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Behavior-based detection</text>
+  <text x="690" y="168" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Device fingerprinting</text>
+  <text x="690" y="186" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Anomaly detection ML</text>
+  
+  <text x="690" y="210" fill="#3b82f6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Results:</text>
+  <text x="690" y="228" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• 99% ATO detection</text>
+  <text x="690" y="246" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">• Minimal false positives</text>
+  
+  <rect x="690" y="260" width="260" height="35" rx="5" fill="#14532d"/>
+  <text x="820" y="283" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Scale: 230M+ subscribers</text>
+  
+  <!-- Common Patterns Section -->
+  <rect x="30" y="330" width="940" height="130" rx="10" fill="#0f1a2e" stroke="url(#caseGrad)" stroke-width="2"/>
+  <text x="500" y="358" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    🔑 Common Success Patterns Across All Cases
+  </text>
+  
+  <rect x="50" y="375" width="200" height="70" rx="6" fill="#1e293b"/>
+  <text x="150" y="400" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Ensemble Models</text>
+  <text x="150" y="420" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">XGBoost + Neural Net</text>
+  <text x="150" y="435" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">+ Rule Engine</text>
+  
+  <rect x="270" y="375" width="200" height="70" rx="6" fill="#1e293b"/>
+  <text x="370" y="400" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Feature Store</text>
+  <text x="370" y="420" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Real-time + Batch</text>
+  <text x="370" y="435" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Point-in-time training</text>
+  
+  <rect x="490" y="375" width="200" height="70" rx="6" fill="#1e293b"/>
+  <text x="590" y="400" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Graph Analysis</text>
+  <text x="590" y="420" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Fraud ring detection</text>
+  <text x="590" y="435" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Network features</text>
+  
+  <rect x="710" y="375" width="200" height="70" rx="6" fill="#1e293b"/>
+  <text x="810" y="400" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Continuous Learning</text>
+  <text x="810" y="420" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">Weekly/monthly retraining</text>
+  <text x="810" y="435" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="9">A/B testing new models</text>
+  
+  <!-- Key Takeaways -->
+  <rect x="30" y="480" width="940" height="100" rx="10" fill="#0f1a2e" stroke="#22c55e" stroke-width="2"/>
+  <text x="500" y="508" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    💡 Key Takeaways for Your Fraud Detection System
+  </text>
+  
+  <text x="60" y="540" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">✓ Start with XGBoost baseline - proven in production</text>
+  <text x="60" y="560" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">✓ Invest heavily in feature engineering - biggest ROI</text>
+  
+  <text x="380" y="540" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">✓ Build feedback loops early - labels are gold</text>
+  <text x="380" y="560" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">✓ Monitor continuously - fraud patterns evolve</text>
+  
+  <text x="700" y="540" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">✓ Combine ML + Rules - best of both worlds</text>
+  <text x="700" y="560" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">✓ Design for andlt;100ms latency from day 1</text>
+</svg>
+

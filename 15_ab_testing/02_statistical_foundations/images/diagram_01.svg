@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280">
+  <defs>
+    <linearGradient id="scienceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="abGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#14b8a6"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="375" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Scientific Method → A/B Testing</text>
+  
+  <!-- Headers -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="50" width="280" height="40" rx="8" fill="url(#scienceGrad)"/>
+    <text x="180" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🔬 Scientific Method</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="430" y="50" width="280" height="40" rx="8" fill="url(#abGrad)"/>
+    <text x="570" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 A/B Testing Equivalent</text>
+  </g>
+  
+  <!-- Row 1 -->
+  <rect x="40" y="100" width="280" height="32" rx="6" fill="#e0e7ff"/>
+  <circle cx="60" cy="116" r="10" fill="#6366f1"/>
+  <text x="60" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">1</text>
+  <text x="85" y="121" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">Observation</text>
+  <path d="M325 116 L425 116" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <rect x="430" y="100" width="280" height="32" rx="6" fill="#d1fae5"/>
+  <text x="450" y="121" font-family="Segoe UI, sans-serif" font-size="12" fill="#065f46">Identify opportunity/problem</text>
+  
+  <!-- Row 2 -->
+  <rect x="40" y="138" width="280" height="32" rx="6" fill="#ede9fe"/>
+  <circle cx="60" cy="154" r="10" fill="#6366f1"/>
+  <text x="60" y="158" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">2</text>
+  <text x="85" y="159" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">Question</text>
+  <path d="M325 154 L425 154" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <rect x="430" y="138" width="280" height="32" rx="6" fill="#ecfdf5"/>
+  <text x="450" y="159" font-family="Segoe UI, sans-serif" font-size="12" fill="#065f46">Form business question</text>
+  
+  <!-- Row 3 -->
+  <rect x="40" y="176" width="280" height="32" rx="6" fill="#e0e7ff"/>
+  <circle cx="60" cy="192" r="10" fill="#6366f1"/>
+  <text x="60" y="196" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">3</text>
+  <text x="85" y="197" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">Hypothesis</text>
+  <path d="M325 192 L425 192" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <rect x="430" y="176" width="280" height="32" rx="6" fill="#d1fae5"/>
+  <text x="450" y="197" font-family="Segoe UI, sans-serif" font-size="12" fill="#065f46">Define H₀ and H₁</text>
+  
+  <!-- Row 4 -->
+  <rect x="40" y="214" width="280" height="32" rx="6" fill="#ede9fe"/>
+  <circle cx="60" cy="230" r="10" fill="#6366f1"/>
+  <text x="60" y="234" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">4</text>
+  <text x="85" y="235" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">Experiment</text>
+  <path d="M325 230 L425 230" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <rect x="430" y="214" width="280" height="32" rx="6" fill="#ecfdf5"/>
+  <text x="450" y="235" font-family="Segoe UI, sans-serif" font-size="12" fill="#065f46">Design and run A/B test</text>
+  
+  <!-- Row 5 -->
+  <rect x="40" y="252" width="280" height="32" rx="6" fill="#e0e7ff"/>
+  <circle cx="60" cy="268" r="10" fill="#6366f1"/>
+  <text x="60" y="272" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">5</text>
+  <text x="85" y="273" font-family="Segoe UI, sans-serif" font-size="12" fill="#3730a3">Analysis → Conclusion</text>
+  <path d="M325 268 L425 268" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <rect x="430" y="252" width="280" height="32" rx="6" fill="#d1fae5"/>
+  <text x="450" y="273" font-family="Segoe UI, sans-serif" font-size="12" fill="#065f46">Statistical analysis → Ship decision</text>
+</svg>

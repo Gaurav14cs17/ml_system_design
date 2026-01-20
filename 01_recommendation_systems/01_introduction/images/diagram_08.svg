@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="amazonGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9900"/>
+      <stop offset="100%" style="stop-color:#ffb84d"/>
+    </linearGradient>
+    <linearGradient id="impactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow8" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad8)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">🛒 E-Commerce Recommendation Applications</text>
+  <text x="450" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#94a3b8">How Amazon and others use recommendations to drive sales</text>
+  
+  <!-- Recommendation Types Section -->
+  <g transform="translate(50, 100)" filter="url(#shadow8)">
+    <rect width="500" height="300" rx="16" fill="#1e293b"/>
+    <rect width="500" height="50" rx="16 16 0 0" fill="url(#amazonGrad8)"/>
+    <text x="250" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📦 Recommendation Placements</text>
+    
+    <!-- Type 1 -->
+    <g transform="translate(20, 70)">
+      <rect width="220" height="55" rx="8" fill="#334155"/>
+      <rect width="5" height="55" rx="2" fill="#f59e0b"/>
+      <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fcd34d">"Frequently Bought Together"</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Bundle recommendations</text>
+    </g>
+    
+    <!-- Type 2 -->
+    <g transform="translate(260, 70)">
+      <rect width="220" height="55" rx="8" fill="#334155"/>
+      <rect width="5" height="55" rx="2" fill="#3b82f6"/>
+      <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">"Customers Also Viewed"</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Behavioral similarity</text>
+    </g>
+    
+    <!-- Type 3 -->
+    <g transform="translate(20, 140)">
+      <rect width="220" height="55" rx="8" fill="#334155"/>
+      <rect width="5" height="55" rx="2" fill="#10b981"/>
+      <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#6ee7b7">"Based on Your History"</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Personalized browsing</text>
+    </g>
+    
+    <!-- Type 4 -->
+    <g transform="translate(260, 140)">
+      <rect width="220" height="55" rx="8" fill="#334155"/>
+      <rect width="5" height="55" rx="2" fill="#ec4899"/>
+      <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f9a8d4">"Personalized Deals"</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Price-sensitive offers</text>
+    </g>
+    
+    <!-- Type 5 -->
+    <g transform="translate(20, 210)">
+      <rect width="220" height="55" rx="8" fill="#334155"/>
+      <rect width="5" height="55" rx="2" fill="#8b5cf6"/>
+      <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#c4b5fd">"Complete the Look"</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Fashion/style matching</text>
+    </g>
+    
+    <!-- Type 6 -->
+    <g transform="translate(260, 210)">
+      <rect width="220" height="55" rx="8" fill="#334155"/>
+      <rect width="5" height="55" rx="2" fill="#ef4444"/>
+      <text x="20" y="25" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#fca5a5">"Trending in Your Area"</text>
+      <text x="20" y="42" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Location-based popularity</text>
+    </g>
+  </g>
+  
+  <!-- Business Impact Section -->
+  <g transform="translate(580, 100)" filter="url(#shadow8)">
+    <rect width="280" height="300" rx="16" fill="#1e293b"/>
+    <rect width="280" height="50" rx="16 16 0 0" fill="url(#impactGrad)"/>
+    <text x="140" y="33" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">📈 Business Impact</text>
+    
+    <!-- Metric 1: Revenue -->
+    <g transform="translate(20, 70)">
+      <rect width="240" height="65" rx="10" fill="#334155"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Revenue from Recommendations</text>
+      <text x="120" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#4ade80">+35%</text>
+    </g>
+    
+    <!-- Metric 2: AOV -->
+    <g transform="translate(20, 145)">
+      <rect width="240" height="65" rx="10" fill="#334155"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Average Order Value</text>
+      <text x="120" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#60a5fa">+25%</text>
+    </g>
+    
+    <!-- Metric 3: Returns -->
+    <g transform="translate(20, 220)">
+      <rect width="240" height="65" rx="10" fill="#334155"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Return Rate Reduction</text>
+      <text x="120" y="52" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#f59e0b">-15%</text>
+    </g>
+  </g>
+  
+  <!-- Customer Journey -->
+  <g transform="translate(50, 420)" filter="url(#shadow8)">
+    <rect width="810" height="85" rx="12" fill="#334155"/>
+    <text x="405" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🛍️ Customer Journey Touchpoints</text>
+    
+    <!-- Journey stages -->
+    <g transform="translate(30, 40)">
+      <rect x="0" y="0" width="120" height="35" rx="6" fill="#3b82f6" opacity="0.3"/>
+      <text x="60" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#60a5fa">Homepage</text>
+      <text x="60" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Personalized</text>
+      
+      <text x="140" y="20" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">→</text>
+      
+      <rect x="160" y="0" width="120" height="35" rx="6" fill="#8b5cf6" opacity="0.3"/>
+      <text x="220" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#a78bfa">Search</text>
+      <text x="220" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Ranked results</text>
+      
+      <text x="300" y="20" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">→</text>
+      
+      <rect x="320" y="0" width="120" height="35" rx="6" fill="#f59e0b" opacity="0.3"/>
+      <text x="380" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#fcd34d">Product Page</text>
+      <text x="380" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Similar items</text>
+      
+      <text x="460" y="20" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">→</text>
+      
+      <rect x="480" y="0" width="120" height="35" rx="6" fill="#ec4899" opacity="0.3"/>
+      <text x="540" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#f9a8d4">Cart</text>
+      <text x="540" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Upsells</text>
+      
+      <text x="620" y="20" font-family="Segoe UI, sans-serif" font-size="16" fill="#4ade80">→</text>
+      
+      <rect x="640" y="0" width="120" height="35" rx="6" fill="#10b981" opacity="0.3"/>
+      <text x="700" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#6ee7b7">Post-Purchase</text>
+      <text x="700" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Follow-ups</text>
+    </g>
+  </g>
+</svg>

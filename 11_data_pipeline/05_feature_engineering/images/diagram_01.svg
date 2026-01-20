@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350">
+  <defs>
+    <linearGradient id="feRawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="feCleanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="feCreateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="feStoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="feModelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="feShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+    <marker id="feArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="850" height="350" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="790" height="310" rx="12" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <rect x="30" y="20" width="790" height="40" rx="12 12 0 0" fill="#334155"/>
+  <text x="425" y="47" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">✨ Feature Engineering Pipeline</text>
+  
+  <!-- Top row: Main pipeline -->
+  <g filter="url(#feShadow)" transform="translate(60, 80)">
+    <rect x="0" y="0" width="110" height="70" rx="8" fill="url(#feRawGrad)"/>
+    <text x="55" y="30" text-anchor="middle" font-family="system-ui" font-size="18">📊</text>
+    <text x="55" y="50" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Raw Data</text>
+  </g>
+  
+  <path d="M175 115 L215 115" stroke="#64748B" stroke-width="2" marker-end="url(#feArrow)"/>
+  
+  <g filter="url(#feShadow)" transform="translate(220, 80)">
+    <rect x="0" y="0" width="110" height="70" rx="8" fill="url(#feCleanGrad)"/>
+    <text x="55" y="30" text-anchor="middle" font-family="system-ui" font-size="18">🧹</text>
+    <text x="55" y="50" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Clean Data</text>
+  </g>
+  
+  <path d="M335 115 L375 115" stroke="#64748B" stroke-width="2" marker-end="url(#feArrow)"/>
+  
+  <g filter="url(#feShadow)" transform="translate(380, 80)">
+    <rect x="0" y="0" width="110" height="70" rx="8" fill="url(#feCreateGrad)"/>
+    <text x="55" y="30" text-anchor="middle" font-family="system-ui" font-size="18">⚙️</text>
+    <text x="55" y="50" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Feature Creation</text>
+  </g>
+  
+  <path d="M495 115 L535 115" stroke="#64748B" stroke-width="2" marker-end="url(#feArrow)"/>
+  
+  <g filter="url(#feShadow)" transform="translate(540, 80)">
+    <rect x="0" y="0" width="110" height="70" rx="8" fill="url(#feStoreGrad)"/>
+    <text x="55" y="30" text-anchor="middle" font-family="system-ui" font-size="18">🏪</text>
+    <text x="55" y="50" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Feature Store</text>
+  </g>
+  
+  <path d="M655 115 L695 115" stroke="#64748B" stroke-width="2" marker-end="url(#feArrow)"/>
+  
+  <g filter="url(#feShadow)" transform="translate(700, 80)">
+    <rect x="0" y="0" width="100" height="70" rx="8" fill="url(#feModelGrad)"/>
+    <text x="50" y="30" text-anchor="middle" font-family="system-ui" font-size="18">🤖</text>
+    <text x="50" y="50" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#F8FAFC">Training</text>
+  </g>
+  
+  <!-- Bottom: Serving path -->
+  <path d="M435 155 L435 190" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4,2"/>
+  <path d="M595 155 L595 190 L595 230 L380 230" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4,2"/>
+  <path d="M750 155 L750 230 L380 230" stroke="#10B981" stroke-width="2" stroke-dasharray="4,2"/>
+  
+  <g filter="url(#feShadow)" transform="translate(270, 200)">
+    <rect x="0" y="0" width="220" height="60" rx="8" fill="#334155" stroke="#EC4899" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#EC4899">🚀 Feature Serving</text>
+    <text x="110" y="45" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Low-latency feature retrieval</text>
+  </g>
+  
+  <path d="M380 265 L380 290" stroke="#64748B" stroke-width="2" marker-end="url(#feArrow)"/>
+  
+  <g filter="url(#feShadow)" transform="translate(270, 295)">
+    <rect x="0" y="0" width="220" height="50" rx="8" fill="#EC4899"/>
+    <text x="110" y="30" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">⚡ Model Inference</text>
+  </g>
+</svg>

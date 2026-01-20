@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #6366f1; stroke-width: 2.2; rx: 12; ry: 12; }
+      .title { font: 600 16px "Inter", Arial, sans-serif; fill: #0f172a; }
+      .label { font: 13px "Inter", Arial, sans-serif; fill: #0f172a; }
+      .arrow { stroke: #6366f1; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .fan { stroke: #94a3b8; stroke-width: 2.6; marker-end: url(#arrowhead); }
+      .bg { fill: #eef2ff; opacity: 0.35; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#6366f1" />
+    </marker>
+  </defs>
+
+  <!-- Lane backgrounds -->
+  <rect class="bg" x="20" y="60" width="1160" height="160" />
+  <rect class="bg" x="20" y="240" width="1160" height="140" />
+  <rect class="bg" x="20" y="410" width="1160" height="120" />
+
+  <!-- Top flow -->
+  <rect class="box" x="40" y="80" width="200" height="120" />
+  <text class="title" x="140" y="115" text-anchor="middle">Content Sources</text>
+  <text class="label" x="140" y="135" text-anchor="middle">Posts · Images · Video · Audio</text>
+  <text class="label" x="140" y="155" text-anchor="middle">Messages · Live · Uploads</text>
+
+  <rect class="box" x="280" y="80" width="210" height="120" />
+  <text class="title" x="385" y="115" text-anchor="middle">Ingestion</text>
+  <text class="label" x="385" y="135" text-anchor="middle">REST/GraphQL · WebSocket</text>
+  <text class="label" x="385" y="155" text-anchor="middle">Kafka / SQS / PubSub · S3</text>
+
+  <rect class="box" x="520" y="80" width="210" height="120" />
+  <text class="title" x="625" y="115" text-anchor="middle">Preprocessing</text>
+  <text class="label" x="625" y="135" text-anchor="middle">Text normalize · OCR · ASR</text>
+  <text class="label" x="625" y="155" text-anchor="middle">Media transcode · Feature extract</text>
+
+  <rect class="box" x="760" y="60" width="220" height="160" />
+  <text class="title" x="870" y="100" text-anchor="middle">Analysis Layer</text>
+  <text class="label" x="870" y="120" text-anchor="middle">ML inference (text / image / video / audio)</text>
+  <text class="label" x="870" y="140" text-anchor="middle">Hash matching (PhotoDNA) · Rules/Ensemble</text>
+  <text class="label" x="870" y="160" text-anchor="middle">Risk scoring</text>
+
+  <!-- Decision -->
+  <rect class="box" x="520" y="260" width="210" height="140" />
+  <text class="title" x="625" y="295" text-anchor="middle">Decision Layer</text>
+  <text class="label" x="625" y="315" text-anchor="middle">Policy/geo/age evaluation</text>
+  <text class="label" x="625" y="335" text-anchor="middle">Thresholding · Action selection</text>
+
+  <!-- Outputs -->
+  <rect class="box" x="200" y="420" width="210" height="110" />
+  <text class="title" x="305" y="455" text-anchor="middle">Actions</text>
+  <text class="label" x="305" y="475" text-anchor="middle">Allow · Flag · Reduce reach</text>
+  <text class="label" x="305" y="495" text-anchor="middle">Remove · Account actions</text>
+
+  <rect class="box" x="495" y="420" width="210" height="110" />
+  <text class="title" x="600" y="455" text-anchor="middle">Human Review</text>
+  <text class="label" x="600" y="475" text-anchor="middle">Queues · SLA · QA</text>
+  <text class="label" x="600" y="495" text-anchor="middle">Feedback loop</text>
+
+  <rect class="box" x="790" y="420" width="210" height="110" />
+  <text class="title" x="895" y="455" text-anchor="middle">Data and Feedback</text>
+  <text class="label" x="895" y="475" text-anchor="middle">Decision store · Metrics</text>
+  <text class="label" x="895" y="495" text-anchor="middle">Feature store · Model registry · Retrain</text>
+
+  <!-- Arrows: horizontal top -->
+  <line class="arrow" x1="240" y1="140" x2="280" y2="140" />
+  <line class="arrow" x1="490" y1="140" x2="520" y2="140" />
+  <line class="arrow" x1="730" y1="140" x2="760" y2="140" />
+
+  <!-- Downward to decision -->
+  <line class="arrow" x1="870" y1="220" x2="870" y2="260" />
+  <line class="arrow" x1="625" y1="200" x2="625" y2="260" />
+  <line class="arrow" x1="385" y1="200" x2="385" y2="220" />
+  <line class="arrow" x1="385" y1="220" x2="625" y2="260" />
+
+  <!-- Fan-out from decision -->
+  <line class="fan" x1="625" y1="400" x2="305" y2="420" />
+  <line class="fan" x1="625" y1="400" x2="600" y2="420" />
+  <line class="fan" x1="625" y1="400" x2="895" y2="420" />
+</svg>

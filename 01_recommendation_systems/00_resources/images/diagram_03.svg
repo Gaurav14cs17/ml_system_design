@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="bgMLOps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowMLOps" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgMLOps)"/>
+  
+  <!-- Title -->
+  <text x="350" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">📅 MLOps.community</text>
+  <text x="350" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Production ML Best Practices</text>
+  
+  <!-- Topics Grid -->
+  <g transform="translate(50, 90)" filter="url(#shadowMLOps)">
+    <rect width="290" height="65" rx="12" fill="#1e293b"/>
+    <rect width="60" height="65" rx="12 0 0 12" fill="#3b82f6"/>
+    <text x="30" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#f8fafc">🏪</text>
+    <text x="180" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Feature Stores in Production</text>
+  </g>
+  
+  <g transform="translate(360, 90)" filter="url(#shadowMLOps)">
+    <rect width="290" height="65" rx="12" fill="#1e293b"/>
+    <rect width="60" height="65" rx="12 0 0 12" fill="#10b981"/>
+    <text x="30" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#f8fafc">🚀</text>
+    <text x="180" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Model Serving Best Practices</text>
+  </g>
+  
+  <g transform="translate(50, 170)" filter="url(#shadowMLOps)">
+    <rect width="290" height="65" rx="12" fill="#1e293b"/>
+    <rect width="60" height="65" rx="12 0 0 12" fill="#8b5cf6"/>
+    <text x="30" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#f8fafc">🧪</text>
+    <text x="180" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">A/B Testing for ML</text>
+  </g>
+  
+  <g transform="translate(360, 170)" filter="url(#shadowMLOps)">
+    <rect width="290" height="65" rx="12" fill="#1e293b"/>
+    <rect width="60" height="65" rx="12 0 0 12" fill="#f59e0b"/>
+    <text x="30" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#f8fafc">📊</text>
+    <text x="180" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">Monitoring ML Systems</text>
+  </g>
+  
+  <!-- Channel link -->
+  <text x="350" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">📺 youtube.com/@mlopcommunity</text>
+</svg>

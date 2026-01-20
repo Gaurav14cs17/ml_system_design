@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="matrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="420" fill="url(#matrixBg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Model Selection Decision Matrix</text>
+  <text x="450" y="55" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Choose the right model for your requirements</text>
+  
+  <!-- Header Row -->
+  <g transform="translate(30, 80)">
+    <!-- Column headers -->
+    <rect x="170" y="0" width="160" height="40" rx="6" fill="#1e3a8a"/>
+    <text x="250" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Small ML</text>
+    <text x="250" y="38" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="9">LogReg/FastText</text>
+    
+    <rect x="340" y="0" width="160" height="40" rx="6" fill="#7c2d12"/>
+    <text x="420" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CNN/LSTM</text>
+    <text x="420" y="38" text-anchor="middle" fill="#fdba74" font-family="Arial, sans-serif" font-size="9">Neural Networks</text>
+    
+    <rect x="510" y="0" width="160" height="40" rx="6" fill="#14532d"/>
+    <text x="590" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">BERT</text>
+    <text x="590" y="38" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="9">Transformer</text>
+    
+    <rect x="680" y="0" width="160" height="40" rx="6" fill="#581c87"/>
+    <text x="760" y="26" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11" font-weight="bold">LLM</text>
+    <text x="760" y="38" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">GPT-4/Claude</text>
+    
+    <!-- Row headers and data -->
+    <!-- Row 1: Latency < 10ms -->
+    <rect x="0" y="50" width="160" height="35" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="80" y="72" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Latency andlt; 10ms</text>
+    
+    <rect x="170" y="50" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="250" y="72" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="340" y="50" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="420" y="72" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="510" y="50" width="160" height="35" rx="4" fill="#7f1d1d"/>
+    <text x="590" y="72" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">✗</text>
+    
+    <rect x="680" y="50" width="160" height="35" rx="4" fill="#7f1d1d"/>
+    <text x="760" y="72" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">✗</text>
+    
+    <!-- Row 2: Latency < 50ms -->
+    <rect x="0" y="95" width="160" height="35" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="80" y="117" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Latency andlt; 50ms</text>
+    
+    <rect x="170" y="95" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="250" y="117" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="340" y="95" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="420" y="117" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="510" y="95" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="590" y="117" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="680" y="95" width="160" height="35" rx="4" fill="#7f1d1d"/>
+    <text x="760" y="117" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">✗</text>
+    
+    <!-- Row 3: Accuracy > 95% -->
+    <rect x="0" y="140" width="160" height="35" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="80" y="162" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Accuracy andgt; 95%</text>
+    
+    <rect x="170" y="140" width="160" height="35" rx="4" fill="#7f1d1d"/>
+    <text x="250" y="162" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">✗</text>
+    
+    <rect x="340" y="140" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="420" y="162" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="510" y="140" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="590" y="162" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="680" y="140" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="760" y="162" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <!-- Row 4: Low Training Cost -->
+    <rect x="0" y="185" width="160" height="35" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="80" y="207" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Low Training Cost</text>
+    
+    <rect x="170" y="185" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="250" y="207" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="340" y="185" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="420" y="207" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="510" y="185" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="590" y="207" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="680" y="185" width="160" height="35" rx="4" fill="#7f1d1d"/>
+    <text x="760" y="207" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">✗</text>
+    
+    <!-- Row 5: Context Understanding -->
+    <rect x="0" y="230" width="160" height="35" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="80" y="252" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Context Understanding</text>
+    
+    <rect x="170" y="230" width="160" height="35" rx="4" fill="#7f1d1d"/>
+    <text x="250" y="252" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">✗</text>
+    
+    <rect x="340" y="230" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="420" y="252" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="510" y="230" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="590" y="252" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="680" y="230" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="760" y="252" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <!-- Row 6: Explainability -->
+    <rect x="0" y="275" width="160" height="35" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="80" y="297" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Explainability</text>
+    
+    <rect x="170" y="275" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="250" y="297" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+    
+    <rect x="340" y="275" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="420" y="297" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="510" y="275" width="160" height="35" rx="4" fill="#713f12"/>
+    <text x="590" y="297" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">⚠️</text>
+    
+    <rect x="680" y="275" width="160" height="35" rx="4" fill="#166534"/>
+    <text x="760" y="297" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16">✓</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(250, 395)">
+    <rect x="0" y="-5" width="20" height="15" rx="3" fill="#166534"/>
+    <text x="28" y="7" fill="#86efac" font-family="Arial, sans-serif" font-size="10">Recommended</text>
+    
+    <rect x="130" y="-5" width="20" height="15" rx="3" fill="#713f12"/>
+    <text x="158" y="7" fill="#fbbf24" font-family="Arial, sans-serif" font-size="10">Possible with trade-offs</text>
+    
+    <rect x="310" y="-5" width="20" height="15" rx="3" fill="#7f1d1d"/>
+    <text x="338" y="7" fill="#f87171" font-family="Arial, sans-serif" font-size="10">Not recommended</text>
+  </g>
+</svg>

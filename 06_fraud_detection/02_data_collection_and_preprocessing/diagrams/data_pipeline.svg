@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e94560"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    📊 Data Pipeline Architecture
+  </text>
+  
+  <!-- Data Sources Column -->
+  <text x="100" y="75" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="14" font-weight="bold">DATA SOURCES</text>
+  
+  <rect x="30" y="90" width="140" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="115" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">💳 Transactions</text>
+  <text x="100" y="130" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Kafka Topic</text>
+  
+  <rect x="30" y="150" width="140" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="175" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">👤 User Events</text>
+  <text x="100" y="190" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Clickstream</text>
+  
+  <rect x="30" y="210" width="140" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="235" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📱 Device Data</text>
+  <text x="100" y="250" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Fingerprint API</text>
+  
+  <rect x="30" y="270" width="140" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="295" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🌐 External APIs</text>
+  <text x="100" y="310" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">IP, Email, Phone</text>
+  
+  <rect x="30" y="330" width="140" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🏦 Historical DB</text>
+  <text x="100" y="370" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">PostgreSQL</text>
+  
+  <!-- Arrows to Ingestion -->
+  <path d="M 170 115 L 220 200" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 170 175 L 220 200" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 170 235 L 220 200" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 170 295 L 220 200" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 170 355 L 220 350" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Stream Processing -->
+  <rect x="230" y="90" width="170" height="160" rx="10" fill="#f8fafc" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="315" y="115" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚡ STREAM PROCESSING</text>
+  
+  <rect x="245" y="130" width="140" height="35" rx="5" fill="#2d2d44"/>
+  <text x="315" y="152" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Apache Flink</text>
+  
+  <rect x="245" y="175" width="140" height="35" rx="5" fill="#2d2d44"/>
+  <text x="315" y="197" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Real-time Aggregations</text>
+  
+  <rect x="245" y="220" width="140" height="20" rx="3" fill="#22c55e"/>
+  <text x="315" y="234" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Latency: andlt;1sec</text>
+  
+  <!-- Batch Processing -->
+  <rect x="230" y="270" width="170" height="130" rx="10" fill="#f8fafc" stroke="#f59e0b" stroke-width="2"/>
+  <text x="315" y="295" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📦 BATCH PROCESSING</text>
+  
+  <rect x="245" y="310" width="140" height="35" rx="5" fill="#2d2d44"/>
+  <text x="315" y="332" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Apache Spark</text>
+  
+  <rect x="245" y="355" width="140" height="35" rx="5" fill="#2d2d44"/>
+  <text x="315" y="377" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Daily/Hourly Jobs</text>
+  
+  <!-- Arrows to Feature Store -->
+  <path d="M 400 170 L 450 200" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 400 335 L 450 300" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Feature Store -->
+  <rect x="460" y="120" width="180" height="200" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="3"/>
+  <text x="550" y="150" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🗄️ FEATURE STORE</text>
+  
+  <rect x="475" y="165" width="150" height="45" rx="5" fill="#1e3a5f"/>
+  <text x="550" y="185" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">🔥 Online Store</text>
+  <text x="550" y="200" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Redis Cluster</text>
+  
+  <rect x="475" y="220" width="150" height="45" rx="5" fill="#1e3a5f"/>
+  <text x="550" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📦 Offline Store</text>
+  <text x="550" y="255" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">S3 + Delta Lake</text>
+  
+  <rect x="475" y="275" width="150" height="35" rx="5" fill="#1e3a5f"/>
+  <text x="550" y="297" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">📋 Feature Registry</text>
+  
+  <!-- Arrows to Model Serving -->
+  <path d="M 640 220 L 700 220" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Model Serving -->
+  <rect x="710" y="120" width="180" height="200" rx="10" fill="#f8fafc" stroke="#22c55e" stroke-width="2"/>
+  <text x="800" y="150" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🧠 MODEL SERVING</text>
+  
+  <rect x="725" y="165" width="150" height="35" rx="5" fill="#14532d"/>
+  <text x="800" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Triton Inference Server</text>
+  
+  <rect x="725" y="210" width="150" height="35" rx="5" fill="#14532d"/>
+  <text x="800" y="232" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">XGBoost + Neural Net</text>
+  
+  <rect x="725" y="255" width="150" height="35" rx="5" fill="#14532d"/>
+  <text x="800" y="277" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Rule Engine</text>
+  
+  <rect x="725" y="300" width="150" height="15" rx="3" fill="#22c55e"/>
+  <text x="800" y="311" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="8">P99 Latency: andlt;50ms</text>
+  
+  <!-- Arrow to Decision -->
+  <path d="M 890 220 L 940 220" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Decision Output -->
+  <rect x="945" y="180" width="45" height="80" rx="5" fill="#e94560"/>
+  <text x="967" y="210" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold" transform="rotate(90, 967, 210)">DECISION</text>
+  
+  <!-- Data Quality Section -->
+  <rect x="230" y="420" width="660" height="80" rx="10" fill="#f8fafc" stroke="#60a5fa" stroke-width="2"/>
+  <text x="560" y="445" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+    ✅ DATA QUALITY &amp; VALIDATION
+  </text>
+  
+  <rect x="250" y="455" width="140" height="35" rx="5" fill="#1e3a5f"/>
+  <text x="320" y="477" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Schema Validation</text>
+  
+  <rect x="410" y="455" width="140" height="35" rx="5" fill="#1e3a5f"/>
+  <text x="480" y="477" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Null Rate andlt; 1%</text>
+  
+  <rect x="570" y="455" width="140" height="35" rx="5" fill="#1e3a5f"/>
+  <text x="640" y="477" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Freshness Check</text>
+  
+  <rect x="730" y="455" width="140" height="35" rx="5" fill="#1e3a5f"/>
+  <text x="800" y="477" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Drift Detection</text>
+  
+  <!-- Volume Metrics -->
+  <rect x="30" y="520" width="940" height="60" rx="8" fill="#1e293b"/>
+  <text x="500" y="555" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13">
+    📈 Scale: 100M+ transactions/day | 📦 Storage: Petabytes | ⚡ Streaming: 100K events/sec | 🔄 Batch: Hourly updates
+  </text>
+</svg>
+

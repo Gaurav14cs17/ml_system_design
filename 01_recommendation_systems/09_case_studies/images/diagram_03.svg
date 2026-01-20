@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
+  <defs>
+    <linearGradient id="bgAmz" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="amzOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadowAmz" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgAmz)"/>
+  
+  <!-- Title &amp; Stats -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">🛒 Amazon Recommendation Ecosystem</text>
+  <rect x="350" y="55" width="200" height="30" rx="15" fill="#f59e0b"/>
+  <text x="450" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">35% of Revenue</text>
+  
+  <!-- Recommendation Types Grid -->
+  <g transform="translate(50, 100)" filter="url(#shadowAmz)">
+    <rect width="260" height="130" rx="14" fill="#1e293b"/>
+    <rect width="260" height="45" rx="14 14 0 0" fill="#3b82f6"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">"Customers who bought..."</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Item-to-Item</text>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">Collaborative Filtering</text>
+    <text x="130" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Classic 1998 paper</text>
+  </g>
+  
+  <g transform="translate(320, 100)" filter="url(#shadowAmz)">
+    <rect width="260" height="130" rx="14" fill="#1e293b"/>
+    <rect width="260" height="45" rx="14 14 0 0" fill="#8b5cf6"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">"Frequently bought together"</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Association Rules</text>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#c4b5fd">Market Basket</text>
+    <text x="130" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Bundle suggestions</text>
+  </g>
+  
+  <g transform="translate(590, 100)" filter="url(#shadowAmz)">
+    <rect width="260" height="130" rx="14" fill="#1e293b"/>
+    <rect width="260" height="45" rx="14 14 0 0" fill="#10b981"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">"Recommended for you"</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Personalized</text>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">Ranking Model</text>
+    <text x="130" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Deep learning</text>
+  </g>
+  
+  <g transform="translate(50, 245)" filter="url(#shadowAmz)">
+    <rect width="260" height="130" rx="14" fill="#1e293b"/>
+    <rect width="260" height="45" rx="14 14 0 0" fill="#ec4899"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">"Compare similar items"</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Content-Based</text>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f9a8d4">Similarity</text>
+    <text x="130" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Product attributes</text>
+  </g>
+  
+  <g transform="translate(320, 245)" filter="url(#shadowAmz)">
+    <rect width="260" height="130" rx="14" fill="#1e293b"/>
+    <rect width="260" height="45" rx="14 14 0 0" fill="#06b6d4"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">"Also viewed..."</text>
+    <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Session-Based</text>
+    <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#67e8f9">Collaborative Filtering</text>
+    <text x="130" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">View patterns</text>
+  </g>
+  
+  <!-- Key Innovation Box -->
+  <g transform="translate(590, 245)" filter="url(#shadowAmz)">
+    <rect width="260" height="130" rx="14" fill="url(#amzOrange)"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">⭐ Key Innovation</text>
+    <text x="130" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Item-to-Item CF (1998)</text>
+    <text x="130" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#422006">Precompute offline</text>
+    <text x="130" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#422006">Fast lookup at serving</text>
+    <text x="130" y="119" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#422006">Scales to 100M+ products</text>
+  </g>
+  
+  <!-- Scale Stats -->
+  <g transform="translate(50, 400)" filter="url(#shadowAmz)">
+    <rect width="800" height="80" rx="14" fill="#1e293b"/>
+    <g transform="translate(50, 25)">
+      <rect width="200" height="35" rx="8" fill="#3b82f6" opacity="0.2"/>
+      <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">100M+ Products</text>
+    </g>
+    <g transform="translate(300, 25)">
+      <rect width="200" height="35" rx="8" fill="#10b981" opacity="0.2"/>
+      <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#6ee7b7">300M+ Users</text>
+    </g>
+    <g transform="translate(550, 25)">
+      <rect width="200" height="35" rx="8" fill="#f59e0b" opacity="0.2"/>
+      <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fcd34d">&amp;lt;100ms Latency</text>
+    </g>
+  </g>
+  
+  <!-- Bottom insight -->
+  <g transform="translate(50, 510)">
+    <rect width="800" height="50" rx="12" fill="#334155" filter="url(#shadowAmz)"/>
+    <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#f8fafc">💡 <tspan font-weight="bold" fill="#fcd34d">Success Factor:</tspan> Hybrid approach combining multiple recommendation strategies across the customer journey</text>
+  </g>
+</svg>

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="textGenBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="promptGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#textGenBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="26" font-weight="bold">TEXT GENERATION</text>
+  <text x="400" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Autoregressive Language Generation Pipeline</text>
+  
+  <!-- Generation Flow -->
+  <text x="400" y="100" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Generation Pipeline</text>
+  
+  <!-- Prompt -->
+  <g transform="translate(50, 120)">
+    <rect width="160" height="80" rx="12" fill="#1e3a5f" stroke="url(#promptGrad)" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📝 Prompt</text>
+    <rect x="15" y="40" width="130" height="30" rx="6" fill="#1e293b"/>
+    <text x="80" y="60" text-anchor="middle" fill="#93c5fd" font-family="Georgia, serif" font-size="10" font-style="italic">"The future of AI..."</text>
+  </g>
+  
+  <path d="M 220 160 L 260 160" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="260,155 275,160 260,165" fill="#60a5fa"/>
+  
+  <!-- Tokenizer -->
+  <g transform="translate(280, 120)">
+    <rect width="100" height="80" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="50" y="30" text-anchor="middle" fill="#fb923c" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Tokenizer</text>
+    <text x="50" y="50" text-anchor="middle" fill="#431407" font-family="Arial, sans-serif" font-size="9">[1, 2456, 32,</text>
+    <text x="50" y="65" text-anchor="middle" fill="#431407" font-family="Arial, sans-serif" font-size="9">789, 45...]</text>
+  </g>
+  
+  <path d="M 390 160 L 430 160" stroke="#fb923c" stroke-width="2"/>
+  <polygon points="430,155 445,160 430,165" fill="#a78bfa"/>
+  
+  <!-- Language Model -->
+  <g transform="translate(450, 110)">
+    <rect width="140" height="100" rx="15" fill="#4c1d95" stroke="url(#modelGrad)" stroke-width="3" filter="url(#glow)"/>
+    <text x="70" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🧠 LLM</text>
+    <text x="70" y="50" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="9">Transformer</text>
+    <text x="70" y="68" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="9">Decoder-only</text>
+    <text x="70" y="86" text-anchor="middle" fill="#ddd6fe" font-family="Arial, sans-serif" font-size="8">P(next | context)</text>
+  </g>
+  
+  <path d="M 600 160 L 640 160" stroke="#a78bfa" stroke-width="2"/>
+  <polygon points="640,155 655,160 640,165" fill="#34d399"/>
+  
+  <!-- Output -->
+  <g transform="translate(660, 120)">
+    <rect width="120" height="80" rx="12" fill="#064e3b" stroke="url(#outputGrad)" stroke-width="2"/>
+    <text x="60" y="30" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="12" font-weight="bold">✨ Output</text>
+    <rect x="10" y="40" width="100" height="30" rx="6" fill="#1e293b"/>
+    <text x="60" y="60" text-anchor="middle" fill="#6ee7b7" font-family="Georgia, serif" font-size="9" font-style="italic">"is bright and..."</text>
+  </g>
+  
+  <!-- Decoding Strategies -->
+  <text x="400" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Decoding Strategies</text>
+  
+  <g transform="translate(50, 260)">
+    <!-- Greedy -->
+    <rect width="170" height="100" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Greedy Search</text>
+    <text x="85" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Pick highest prob token</text>
+    <text x="85" y="70" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Fast, deterministic</text>
+    <text x="85" y="88" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Repetitive, boring</text>
+  </g>
+  
+  <g transform="translate(235, 260)">
+    <!-- Beam -->
+    <rect width="170" height="100" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Beam Search</text>
+    <text x="85" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Track k best sequences</text>
+    <text x="85" y="70" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Better quality</text>
+    <text x="85" y="88" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Still deterministic</text>
+  </g>
+  
+  <g transform="translate(420, 260)">
+    <!-- Sampling -->
+    <rect width="170" height="100" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Temperature Sampling</text>
+    <text x="85" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Sample from softmax(z/T)</text>
+    <text x="85" y="70" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Diverse outputs</text>
+    <text x="85" y="88" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Can be incoherent</text>
+  </g>
+  
+  <g transform="translate(605, 260)">
+    <!-- Top-p -->
+    <rect width="170" height="100" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="85" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Top-p (Nucleus)</text>
+    <text x="85" y="50" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Sample from top p% prob</text>
+    <text x="85" y="70" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="9">✓ Best of both worlds</text>
+    <text x="85" y="88" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="9">✗ Requires tuning p</text>
+  </g>
+  
+  <!-- Parameters -->
+  <text x="400" y="395" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Key Parameters</text>
+  
+  <g transform="translate(100, 410)">
+    <rect width="180" height="60" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="90" y="25" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🌡️ Temperature</text>
+    <text x="90" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Controls randomness</text>
+    <text x="90" y="57" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="8">Low=focused, High=creative</text>
+  </g>
+  
+  <g transform="translate(310, 410)">
+    <rect width="180" height="60" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+    <text x="90" y="25" text-anchor="middle" fill="#f472b6" font-family="Arial, sans-serif" font-size="11" font-weight="bold">📏 Max Tokens</text>
+    <text x="90" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Output length limit</text>
+    <text x="90" y="57" text-anchor="middle" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="8">Controls generation length</text>
+  </g>
+  
+  <g transform="translate(520, 410)">
+    <rect width="180" height="60" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <text x="90" y="25" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" font-weight="bold">🔄 Repetition Penalty</text>
+    <text x="90" y="45" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">Avoid loops</text>
+    <text x="90" y="57" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="8">Penalizes repeated tokens</text>
+  </g>
+</svg>

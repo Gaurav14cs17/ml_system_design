@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <linearGradient id="layerGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="layerGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="layerGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="layerGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="550" fill="#0a0a14"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+    🏗️ Modern Hybrid Fraud Detection Architecture
+  </text>
+  <text x="400" y="58" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">
+    Rules + ML Combined for Best Results
+  </text>
+  
+  <!-- Layer 1: Deterministic Rules -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="80" width="700" height="100" rx="12" fill="#1e293b" stroke="url(#layerGrad1)" stroke-width="2"/>
+    <rect x="50" y="80" width="180" height="100" rx="12" fill="url(#layerGrad1)"/>
+    <text x="140" y="120" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Layer 1</text>
+    <text x="140" y="140" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Deterministic Rules</text>
+    <text x="140" y="160" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="10">Instant Block</text>
+    
+    <text x="260" y="115" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🚫 Block known bad actors (blacklists)</text>
+    <text x="260" y="135" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">⚡ Velocity limits (hard caps)</text>
+    <text x="260" y="155" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">📋 Compliance rules (regulatory requirements)</text>
+    
+    <text x="680" y="130" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10" font-weight="bold">andlt;1ms</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 400 180 L 400 195" stroke="#e94560" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Layer 2: ML Scoring -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="200" width="700" height="100" rx="12" fill="#1e293b" stroke="url(#layerGrad2)" stroke-width="2"/>
+    <rect x="50" y="200" width="180" height="100" rx="12" fill="url(#layerGrad2)"/>
+    <text x="140" y="240" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Layer 2</text>
+    <text x="140" y="260" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">ML Scoring</text>
+    <text x="140" y="280" text-anchor="middle" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="10">Risk Score</text>
+    
+    <text x="260" y="235" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🎯 Primary ML model (XGBoost/LightGBM)</text>
+    <text x="260" y="255" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🧠 Secondary models (Neural Nets, GNN)</text>
+    <text x="260" y="275" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🔀 Ensemble combination (weighted average)</text>
+    
+    <text x="680" y="250" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">andlt;50ms</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 400 300 L 400 315" stroke="#e94560" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Layer 3: Business Rules on ML Score -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="320" width="700" height="100" rx="12" fill="#1e293b" stroke="url(#layerGrad3)" stroke-width="2"/>
+    <rect x="50" y="320" width="180" height="100" rx="12" fill="url(#layerGrad3)"/>
+    <text x="140" y="360" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Layer 3</text>
+    <text x="140" y="380" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Score-Based Rules</text>
+    <text x="140" y="400" text-anchor="middle" fill="#fde047" font-family="Arial, sans-serif" font-size="10">Decision</text>
+    
+    <text x="260" y="355" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">📊 Score thresholds by customer segment</text>
+    <text x="260" y="375" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🔐 Risk-based authentication triggers</text>
+    <text x="260" y="395" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">👁️ Manual review queue routing</text>
+    
+    <text x="680" y="370" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">andlt;10ms</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 400 420 L 400 435" stroke="#e94560" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Layer 4: Post-Transaction -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="440" width="700" height="90" rx="12" fill="#1e293b" stroke="url(#layerGrad4)" stroke-width="2"/>
+    <rect x="50" y="440" width="180" height="90" rx="12" fill="url(#layerGrad4)"/>
+    <text x="140" y="475" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Layer 4</text>
+    <text x="140" y="495" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">Post-Transaction</text>
+    <text x="140" y="515" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="10">Async Analysis</text>
+    
+    <text x="260" y="475" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🕸️ Network analysis (fraud rings)</text>
+    <text x="260" y="495" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">🔗 Link analysis (connected entities)</text>
+    <text x="260" y="515" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">⏰ Delayed pattern detection</text>
+    
+    <text x="680" y="490" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Async</text>
+  </g>
+</svg>

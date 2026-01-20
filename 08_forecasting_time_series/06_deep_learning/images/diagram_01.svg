@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🧠 Deep Learning Architectures for Time Series</text>
+  <text x="450" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#94a3b8">Recurrent, Convolutional, and Attention-based Models</text>
+  
+  <!-- LSTM Section -->
+  <rect x="30" y="90" width="270" height="380" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="90" width="270" height="45" rx="16" fill="#3b82f6"/>
+  <text x="165" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">LSTM / GRU</text>
+  
+  <!-- LSTM Cell visualization -->
+  <rect x="55" y="150" width="220" height="160" rx="10" fill="#0f172a"/>
+  
+  <!-- Cell state -->
+  <line x1="70" y1="185" x2="260" y2="185" stroke="#22c55e" stroke-width="3"/>
+  <text x="75" y="178" font-family="monospace" font-size="10" fill="#22c55e">Cell State Cₜ</text>
+  
+  <!-- Gates -->
+  <rect x="80" y="210" width="45" height="30" rx="5" fill="#ef4444" opacity="0.9"/>
+  <text x="102" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="white">Forget</text>
+  
+  <rect x="140" y="210" width="45" height="30" rx="5" fill="#22c55e" opacity="0.9"/>
+  <text x="162" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="white">Input</text>
+  
+  <rect x="200" y="210" width="45" height="30" rx="5" fill="#8b5cf6" opacity="0.9"/>
+  <text x="222" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="white">Output</text>
+  
+  <!-- Hidden state -->
+  <line x1="70" y1="270" x2="260" y2="270" stroke="#3b82f6" stroke-width="3"/>
+  <text x="75" y="290" font-family="monospace" font-size="10" fill="#3b82f6">Hidden State hₜ</text>
+  
+  <!-- Math formulas -->
+  <text x="55" y="330" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Key Equations:</text>
+  <text x="60" y="350" font-family="monospace" font-size="9" fill="#a5b4fc">fₜ = σ(Wf·[hₜ₋₁,xₜ] + bf)</text>
+  <text x="60" y="368" font-family="monospace" font-size="9" fill="#a5b4fc">iₜ = σ(Wi·[hₜ₋₁,xₜ] + bi)</text>
+  <text x="60" y="386" font-family="monospace" font-size="9" fill="#a5b4fc">Cₜ = fₜ⊙Cₜ₋₁ + iₜ⊙C̃ₜ</text>
+  <text x="60" y="404" font-family="monospace" font-size="9" fill="#a5b4fc">hₜ = oₜ⊙tanh(Cₜ)</text>
+  
+  <!-- Best for -->
+  <text x="55" y="435" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Sequential dependencies</text>
+  <text x="55" y="452" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">✓ Variable length sequences</text>
+  
+  <!-- TCN Section -->
+  <rect x="320" y="90" width="260" height="380" rx="16" fill="#1e293b" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="320" y="90" width="260" height="45" rx="16" fill="#f59e0b"/>
+  <text x="450" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">TCN / WaveNet</text>
+  
+  <!-- Dilated conv visualization -->
+  <rect x="345" y="150" width="210" height="160" rx="10" fill="#0f172a"/>
+  
+  <!-- Dilated convolution layers -->
+  <text x="355" y="170" font-family="Segoe UI, sans-serif" font-size="10" fill="#fbbf24">Dilated Causal Convolutions:</text>
+  
+  <!-- Layer 0: dilation=1 -->
+  <circle cx="380" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="400" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="420" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="440" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="460" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="480" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="500" cy="200" r="8" fill="#fbbf24"/>
+  <circle cx="520" cy="200" r="8" fill="#fbbf24"/>
+  <text x="540" y="205" font-family="monospace" font-size="8" fill="#94a3b8">d=1</text>
+  
+  <!-- Layer 1: dilation=2 -->
+  <circle cx="380" cy="235" r="8" fill="#fb923c"/>
+  <circle cx="420" cy="235" r="8" fill="#fb923c"/>
+  <circle cx="460" cy="235" r="8" fill="#fb923c"/>
+  <circle cx="500" cy="235" r="8" fill="#fb923c"/>
+  <text x="540" y="240" font-family="monospace" font-size="8" fill="#94a3b8">d=2</text>
+  
+  <!-- Layer 2: dilation=4 -->
+  <circle cx="380" cy="270" r="8" fill="#ea580c"/>
+  <circle cx="460" cy="270" r="8" fill="#ea580c"/>
+  <text x="540" y="275" font-family="monospace" font-size="8" fill="#94a3b8">d=4</text>
+  
+  <!-- Output -->
+  <circle cx="420" cy="295" r="10" fill="#22c55e"/>
+  <text x="455" y="300" font-family="monospace" font-size="8" fill="#22c55e">output</text>
+  
+  <!-- Connections -->
+  <line x1="400" y1="208" x2="400" y2="227" stroke="#475569" stroke-width="1"/>
+  <line x1="420" y1="208" x2="420" y2="227" stroke="#475569" stroke-width="1"/>
+  <line x1="400" y1="243" x2="420" y2="262" stroke="#475569" stroke-width="1"/>
+  <line x1="460" y1="243" x2="460" y2="262" stroke="#475569" stroke-width="1"/>
+  <line x1="420" y1="278" x2="420" y2="285" stroke="#475569" stroke-width="1"/>
+  
+  <!-- Math -->
+  <text x="345" y="330" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Receptive Field:</text>
+  <text x="350" y="350" font-family="monospace" font-size="9" fill="#fde047">R = 1 + Σ(k-1)·dₗ</text>
+  <text x="345" y="375" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Causal Padding:</text>
+  <text x="350" y="395" font-family="monospace" font-size="9" fill="#fde047">pad = (k-1)·d</text>
+  
+  <!-- Best for -->
+  <text x="345" y="435" font-family="Segoe UI, sans-serif" font-size="10" fill="#fde047">✓ Parallel training</text>
+  <text x="345" y="452" font-family="Segoe UI, sans-serif" font-size="10" fill="#fde047">✓ Long-range with fewer params</text>
+  
+  <!-- Transformer Section -->
+  <rect x="600" y="90" width="270" height="380" rx="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="600" y="90" width="270" height="45" rx="16" fill="#8b5cf6"/>
+  <text x="735" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Transformer</text>
+  
+  <!-- Attention visualization -->
+  <rect x="625" y="150" width="220" height="160" rx="10" fill="#0f172a"/>
+  
+  <text x="635" y="170" font-family="Segoe UI, sans-serif" font-size="10" fill="#a78bfa">Self-Attention Mechanism:</text>
+  
+  <!-- Q, K, V -->
+  <rect x="640" y="185" width="40" height="25" rx="4" fill="#3b82f6"/>
+  <text x="660" y="202" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="white">Q</text>
+  
+  <rect x="695" y="185" width="40" height="25" rx="4" fill="#22c55e"/>
+  <text x="715" y="202" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="white">K</text>
+  
+  <rect x="750" y="185" width="40" height="25" rx="4" fill="#f59e0b"/>
+  <text x="770" y="202" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="white">V</text>
+  
+  <!-- Attention scores -->
+  <rect x="665" y="225" width="100" height="35" rx="6" fill="#8b5cf6"/>
+  <text x="715" y="245" text-anchor="middle" font-family="monospace" font-size="9" fill="white">softmax(QKᵀ/√d)</text>
+  
+  <!-- Output -->
+  <rect x="680" y="275" width="70" height="25" rx="4" fill="#ec4899"/>
+  <text x="715" y="292" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="white">Output</text>
+  
+  <!-- Arrows -->
+  <line x1="660" y1="210" x2="695" y2="225" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="715" y1="210" x2="715" y2="225" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="770" y1="210" x2="735" y2="225" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="715" y1="260" x2="715" y2="275" stroke="#94a3b8" stroke-width="1"/>
+  
+  <!-- Math -->
+  <text x="625" y="330" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Multi-Head Attention:</text>
+  <text x="630" y="350" font-family="monospace" font-size="9" fill="#c4b5fd">Attn(Q,K,V) = softmax(QKᵀ/√dₖ)V</text>
+  <text x="625" y="375" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Positional Encoding:</text>
+  <text x="630" y="395" font-family="monospace" font-size="9" fill="#c4b5fd">PE = sin(pos/10000^(2i/d))</text>
+  
+  <!-- Best for -->
+  <text x="625" y="435" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">✓ Long-range dependencies</text>
+  <text x="625" y="452" font-family="Segoe UI, sans-serif" font-size="10" fill="#c4b5fd">✓ Interpretable attention</text>
+</svg>

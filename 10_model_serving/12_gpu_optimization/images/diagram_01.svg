@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="cpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="gpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">🖥️ GPU vs CPU Architecture</text>
+  
+  <!-- CPU Section -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="60" width="370" height="370" rx="16" fill="#1e293b"/>
+    <rect x="40" y="60" width="370" height="50" rx="16 16 0 0" fill="url(#cpuGrad)"/>
+    <text x="225" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">💻 CPU</text>
+    
+    <!-- CPU cores visualization -->
+    <g transform="translate(70, 130)">
+      <text x="155" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Few Powerful Cores</text>
+      
+      <!-- Large CPU cores -->
+      <rect x="20" y="10" width="80" height="80" rx="8" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+      <text x="60" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Core 1</text>
+      <text x="60" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#bfdbfe">ALU+FPU</text>
+      
+      <rect x="115" y="10" width="80" height="80" rx="8" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+      <text x="155" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Core 2</text>
+      <text x="155" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#bfdbfe">ALU+FPU</text>
+      
+      <rect x="210" y="10" width="80" height="80" rx="8" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+      <text x="250" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">Core N</text>
+      <text x="250" y="72" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#bfdbfe">ALU+FPU</text>
+      
+      <text x="155" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">8-64 cores typical</text>
+    </g>
+    
+    <!-- CPU characteristics -->
+    <rect x="60" y="280" width="330" height="130" rx="10" fill="#334155"/>
+    <text x="225" y="305" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#60a5fa">Characteristics</text>
+    
+    <text x="75" y="330" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Complex control logic per core</text>
+    <text x="75" y="350" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Large cache per core (MB)</text>
+    <text x="75" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Best for sequential tasks</text>
+    <text x="75" y="390" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Branch prediction, speculation</text>
+  </g>
+  
+  <!-- GPU Section -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="60" width="370" height="370" rx="16" fill="#1e293b"/>
+    <rect x="440" y="60" width="370" height="50" rx="16 16 0 0" fill="url(#gpuGrad)"/>
+    <text x="625" y="93" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">⚡ GPU</text>
+    
+    <!-- GPU cores visualization -->
+    <g transform="translate(470, 130)">
+      <text x="155" y="-5" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#94a3b8">Thousands of Simple Cores</text>
+      
+      <!-- Grid of small GPU cores -->
+      <g fill="#10b981" stroke="#34d399" stroke-width="0.5">
+        <!-- Row 1 -->
+        <rect x="30" y="10" width="20" height="20" rx="2"/>
+        <rect x="55" y="10" width="20" height="20" rx="2"/>
+        <rect x="80" y="10" width="20" height="20" rx="2"/>
+        <rect x="105" y="10" width="20" height="20" rx="2"/>
+        <rect x="130" y="10" width="20" height="20" rx="2"/>
+        <rect x="155" y="10" width="20" height="20" rx="2"/>
+        <rect x="180" y="10" width="20" height="20" rx="2"/>
+        <rect x="205" y="10" width="20" height="20" rx="2"/>
+        <rect x="230" y="10" width="20" height="20" rx="2"/>
+        <rect x="255" y="10" width="20" height="20" rx="2"/>
+        
+        <!-- Row 2 -->
+        <rect x="30" y="35" width="20" height="20" rx="2"/>
+        <rect x="55" y="35" width="20" height="20" rx="2"/>
+        <rect x="80" y="35" width="20" height="20" rx="2"/>
+        <rect x="105" y="35" width="20" height="20" rx="2"/>
+        <rect x="130" y="35" width="20" height="20" rx="2"/>
+        <rect x="155" y="35" width="20" height="20" rx="2"/>
+        <rect x="180" y="35" width="20" height="20" rx="2"/>
+        <rect x="205" y="35" width="20" height="20" rx="2"/>
+        <rect x="230" y="35" width="20" height="20" rx="2"/>
+        <rect x="255" y="35" width="20" height="20" rx="2"/>
+        
+        <!-- Row 3 -->
+        <rect x="30" y="60" width="20" height="20" rx="2"/>
+        <rect x="55" y="60" width="20" height="20" rx="2"/>
+        <rect x="80" y="60" width="20" height="20" rx="2"/>
+        <rect x="105" y="60" width="20" height="20" rx="2"/>
+        <rect x="130" y="60" width="20" height="20" rx="2"/>
+        <rect x="155" y="60" width="20" height="20" rx="2"/>
+        <rect x="180" y="60" width="20" height="20" rx="2"/>
+        <rect x="205" y="60" width="20" height="20" rx="2"/>
+        <rect x="230" y="60" width="20" height="20" rx="2"/>
+        <rect x="255" y="60" width="20" height="20" rx="2"/>
+      </g>
+      
+      <text x="155" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#6ee7b7">... and thousands more</text>
+      <text x="155" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">1000-16000+ CUDA cores</text>
+    </g>
+    
+    <!-- GPU characteristics -->
+    <rect x="460" y="280" width="330" height="130" rx="10" fill="#334155"/>
+    <text x="625" y="305" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7">Characteristics</text>
+    
+    <text x="475" y="330" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Simple cores, SIMD execution</text>
+    <text x="475" y="350" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ High memory bandwidth (~2 TB/s)</text>
+    <text x="475" y="370" font-family="Segoe UI, sans-serif" font-size="11" fill="#6ee7b7" font-weight="bold">✓ Best for parallel tasks (ML!)</text>
+    <text x="475" y="390" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">✓ Matrix operations, convolutions</text>
+  </g>
+</svg>

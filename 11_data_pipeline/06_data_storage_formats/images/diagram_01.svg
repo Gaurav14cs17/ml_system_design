@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="hotGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <linearGradient id="warmGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="coldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="archiveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <filter id="hierShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="450" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="740" height="410" rx="12" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <rect x="30" y="20" width="740" height="40" rx="12 12 0 0" fill="#334155"/>
+  <text x="400" y="47" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#F8FAFC">🗄️ ML Data Storage Hierarchy</text>
+  
+  <!-- HOT tier -->
+  <g filter="url(#hierShadow)" transform="translate(60, 80)">
+    <rect x="0" y="0" width="680" height="75" rx="10" fill="#1E293B" stroke="url(#hotGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="120" height="75" rx="10 0 0 10" fill="url(#hotGrad)"/>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">🔥 HOT</text>
+    <text x="60" y="52" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Frequent</text>
+    
+    <text x="145" y="28" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Redis / Memcached (Feature Serving)</text>
+    <text x="145" y="45" font-family="system-ui" font-size="10" fill="#94A3B8">Online feature store • Real-time inference</text>
+    <text x="145" y="62" font-family="system-ui" font-size="9" fill="#EF4444">⏱️ Latency: andlt;10ms │ 💰 Cost: $$$$</text>
+  </g>
+  
+  <!-- WARM tier -->
+  <g filter="url(#hierShadow)" transform="translate(60, 165)">
+    <rect x="0" y="0" width="680" height="75" rx="10" fill="#1E293B" stroke="url(#warmGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="120" height="75" rx="10 0 0 10" fill="url(#warmGrad)"/>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">🌡️ WARM</text>
+    <text x="60" y="52" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Regular</text>
+    
+    <text x="145" y="28" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Data Warehouse (Snowflake, BigQuery)</text>
+    <text x="145" y="45" font-family="system-ui" font-size="10" fill="#94A3B8">Feature Store offline • Analytical queries</text>
+    <text x="145" y="62" font-family="system-ui" font-size="9" fill="#F59E0B">⏱️ Latency: seconds │ 💰 Cost: $$$</text>
+  </g>
+  
+  <!-- COLD tier -->
+  <g filter="url(#hierShadow)" transform="translate(60, 250)">
+    <rect x="0" y="0" width="680" height="75" rx="10" fill="#1E293B" stroke="url(#coldGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="120" height="75" rx="10 0 0 10" fill="url(#coldGrad)"/>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">❄️ COLD</text>
+    <text x="60" y="52" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Infrequent</text>
+    
+    <text x="145" y="28" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Data Lake (S3, ADLS, GCS)</text>
+    <text x="145" y="45" font-family="system-ui" font-size="10" fill="#94A3B8">Historical training data • Raw storage</text>
+    <text x="145" y="62" font-family="system-ui" font-size="9" fill="#3B82F6">⏱️ Latency: minutes │ 💰 Cost: $$</text>
+  </g>
+  
+  <!-- ARCHIVE tier -->
+  <g filter="url(#hierShadow)" transform="translate(60, 335)">
+    <rect x="0" y="0" width="680" height="75" rx="10" fill="#1E293B" stroke="url(#archiveGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="120" height="75" rx="10 0 0 10" fill="url(#archiveGrad)"/>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#F8FAFC">📦 ARCHIVE</text>
+    <text x="60" y="52" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Rare</text>
+    
+    <text x="145" y="28" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Glacier, Archive Storage</text>
+    <text x="145" y="45" font-family="system-ui" font-size="10" fill="#94A3B8">Compliance &amp; backup data • Long-term retention</text>
+    <text x="145" y="62" font-family="system-ui" font-size="9" fill="#6366F1">⏱️ Latency: hours │ 💰 Cost: $</text>
+  </g>
+  
+  <!-- Arrows between tiers -->
+  <path d="M400 160 L400 163" stroke="#64748B" stroke-width="2"/>
+  <path d="M400 245 L400 248" stroke="#64748B" stroke-width="2"/>
+  <path d="M400 330 L400 333" stroke="#64748B" stroke-width="2"/>
+</svg>

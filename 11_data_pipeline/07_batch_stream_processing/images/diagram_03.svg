@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="kapSourceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="kapStreamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="kapKafkaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="kapServeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="kapShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+    <marker id="kapArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#64748B"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="450" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="740" height="410" rx="12" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="30" y="20" width="740" height="40" rx="12 12 0 0" fill="#334155"/>
+  <text x="400" y="47" text-anchor="middle" font-family="system-ui" font-size="18" font-weight="bold" fill="#F8FAFC">κ Kappa Architecture</text>
+  
+  <!-- Data Source -->
+  <g filter="url(#kapShadow)" transform="translate(300, 80)">
+    <rect x="0" y="0" width="200" height="50" rx="10" fill="url(#kapSourceGrad)"/>
+    <text x="100" y="32" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">📡 Data Source (Events)</text>
+  </g>
+  
+  <path d="M400 135 L400 155" stroke="#64748B" stroke-width="2" marker-end="url(#kapArrow)"/>
+  
+  <!-- Stream Processing Layer -->
+  <g filter="url(#kapShadow)" transform="translate(100, 165)">
+    <rect x="0" y="0" width="600" height="180" rx="12" fill="#0F172A" stroke="url(#kapStreamGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="600" height="35" rx="12 12 0 0" fill="url(#kapStreamGrad)"/>
+    <text x="300" y="25" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#F8FAFC">🌊 STREAM PROCESSING LAYER</text>
+    
+    <!-- Kafka -->
+    <rect x="30" y="50" width="540" height="50" rx="8" fill="url(#kapKafkaGrad)"/>
+    <text x="300" y="70" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">📨 Kafka / Kinesis (Immutable Event Log)</text>
+    <text x="300" y="88" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.8)">Retains full history for replay</text>
+    
+    <path d="M300 105 L300 120" stroke="#64748B" stroke-width="2" marker-end="url(#kapArrow)"/>
+    
+    <!-- Stream Processor -->
+    <rect x="30" y="115" width="540" height="55" rx="8" fill="#334155"/>
+    <text x="300" y="138" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#8B5CF6">⚡ Stream Processor (Flink / Kafka Streams)</text>
+    <text x="300" y="158" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94A3B8">Real-time processing • Replay from any point • Same code for batch &amp; stream</text>
+  </g>
+  
+  <path d="M400 350 L400 375" stroke="#64748B" stroke-width="2" marker-end="url(#kapArrow)"/>
+  
+  <!-- Serving Layer -->
+  <g filter="url(#kapShadow)" transform="translate(200, 380)">
+    <rect x="0" y="0" width="400" height="50" rx="10" fill="url(#kapServeGrad)"/>
+    <text x="200" y="32" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#F8FAFC">🚀 Serving Layer (Materialized Views)</text>
+  </g>
+  
+  <!-- Key advantage callout -->
+  <g transform="translate(620, 280)">
+    <rect x="0" y="0" width="130" height="70" rx="6" fill="#22C55E" opacity="0.2"/>
+    <text x="65" y="18" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#22C55E">✅ Simplified</text>
+    <text x="65" y="35" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">No batch layer</text>
+    <text x="65" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">One codebase</text>
+    <text x="65" y="61" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Replay = reprocess</text>
+  </g>
+</svg>

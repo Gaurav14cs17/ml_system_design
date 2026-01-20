@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400">
+  <defs>
+    <linearGradient id="parqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="rowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <filter id="parqShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="750" height="400" fill="#0F172A"/>
+  
+  <!-- Container -->
+  <rect x="30" y="20" width="690" height="360" rx="12" fill="#1E293B" stroke="url(#parqGrad)" stroke-width="2"/>
+  <rect x="30" y="20" width="690" height="40" rx="12 12 0 0" fill="url(#parqGrad)"/>
+  <text x="375" y="47" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="bold" fill="#F8FAFC">📄 Parquet File Structure (Columnar)</text>
+  
+  <!-- Row Group 1 -->
+  <g filter="url(#parqShadow)" transform="translate(50, 80)">
+    <rect x="0" y="0" width="650" height="85" rx="8" fill="#0F172A" stroke="url(#rowGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="650" height="25" rx="8 8 0 0" fill="url(#rowGrad)"/>
+    <text x="325" y="18" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Row Group 1</text>
+    
+    <g transform="translate(20, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#3B82F6">Col A Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+    <g transform="translate(170, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#22D3EE">Col B Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+    <g transform="translate(320, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#F59E0B">Col C Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+    <g transform="translate(470, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#EC4899">Col D Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+  </g>
+  
+  <!-- Row Group 2 -->
+  <g filter="url(#parqShadow)" transform="translate(50, 175)">
+    <rect x="0" y="0" width="650" height="85" rx="8" fill="#0F172A" stroke="url(#rowGrad)" stroke-width="2"/>
+    <rect x="0" y="0" width="650" height="25" rx="8 8 0 0" fill="url(#rowGrad)"/>
+    <text x="325" y="18" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#F8FAFC">Row Group 2</text>
+    
+    <g transform="translate(20, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#3B82F6">Col A Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+    <g transform="translate(170, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#22D3EE">Col B Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+    <g transform="translate(320, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#F59E0B">Col C Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+    <g transform="translate(470, 35)">
+      <rect x="0" y="0" width="140" height="40" rx="4" fill="#334155"/>
+      <text x="70" y="17" text-anchor="middle" font-family="system-ui" font-size="10" fill="#EC4899">Col D Chunk</text>
+      <text x="70" y="32" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94A3B8">Compressed</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <g filter="url(#parqShadow)" transform="translate(50, 275)">
+    <rect x="0" y="0" width="650" height="85" rx="8" fill="url(#footerGrad)"/>
+    <text x="325" y="25" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#F8FAFC">📋 Footer (Metadata)</text>
+    <text x="200" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Schema Definition</text>
+    <text x="375" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Row Group Metadata</text>
+    <text x="550" y="50" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.9)">• Column Statistics</text>
+    <text x="375" y="70" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.7)">(min/max values for predicate pushdown)</text>
+  </g>
+</svg>

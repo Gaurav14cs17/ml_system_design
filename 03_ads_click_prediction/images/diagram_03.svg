@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="700" height="400" fill="url(#bgGrad)"/>
+  
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    📁 Project Structure
+  </text>
+  
+  <!-- Tree structure -->
+  <g fill="#94a3b8" font-family="Consolas, monospace" font-size="13">
+    <text x="50" y="70" fill="#60a5fa">03_ads_click_prediction/</text>
+    <text x="70" y="95">├── README.md</text>
+    <text x="70" y="120">├── images/</text>
+    <text x="70" y="145" fill="#10b981">├── 01_problem_definition/</text>
+    <text x="70" y="170" fill="#10b981">├── 02_system_requirements/</text>
+    <text x="70" y="195" fill="#f59e0b">├── 03_data_engineering/</text>
+    <text x="70" y="220" fill="#f59e0b">├── 04_feature_engineering/</text>
+    <text x="70" y="245" fill="#8b5cf6">├── 05_model_architecture/</text>
+    <text x="70" y="270" fill="#ec4899">├── 06_serving_infrastructure/</text>
+    <text x="70" y="295" fill="#ec4899">├── 07_ab_testing/</text>
+    <text x="70" y="320" fill="#ec4899">├── 08_monitoring/</text>
+    <text x="70" y="345" fill="#ec4899">└── 09_scaling_optimization/</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(450, 100)">
+    <rect x="0" y="0" width="200" height="130" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="100" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial" font-size="12" font-weight="bold">Legend</text>
+    <circle cx="20" cy="50" r="6" fill="#10b981"/>
+    <text x="35" y="54" fill="#94a3b8" font-family="Arial" font-size="11">Fundamentals</text>
+    <circle cx="20" cy="75" r="6" fill="#f59e0b"/>
+    <text x="35" y="79" fill="#94a3b8" font-family="Arial" font-size="11">Data &amp; Features</text>
+    <circle cx="20" cy="100" r="6" fill="#8b5cf6"/>
+    <text x="35" y="104" fill="#94a3b8" font-family="Arial" font-size="11">Model</text>
+    <circle cx="20" cy="125" r="6" fill="#ec4899"/>
+    <text x="35" y="129" fill="#94a3b8" font-family="Arial" font-size="11">Production</text>
+  </g>
+</svg>

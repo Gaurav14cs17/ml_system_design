@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="gloveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="gloveShadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.2"/></filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">GloVe: Global Vectors</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Learning from co-occurrence statistics</text>
+  
+  <!-- Co-occurrence matrix -->
+  <g transform="translate(50, 85)" filter="url(#gloveShadow)">
+    <rect width="300" height="200" rx="12" fill="#1e293b" stroke="url(#gloveGrad)" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#fbbf24">Co-occurrence Matrix X</text>
+    
+    <!-- Matrix visualization -->
+    <g transform="translate(30, 45)">
+      <text x="0" y="15" font-family="monospace" font-size="9" fill="#94a3b8">        ice   steam  solid  gas</text>
+      <text x="0" y="35" font-family="monospace" font-size="9" fill="#fcd34d">ice     -     2      8      1</text>
+      <text x="0" y="55" font-family="monospace" font-size="9" fill="#fcd34d">steam   2     -      1      7</text>
+      <text x="0" y="75" font-family="monospace" font-size="9" fill="#fcd34d">water   5     5      3      3</text>
+    </g>
+    
+    <text x="150" y="145" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">X_ij = count(word_i, word_j)</text>
+    <text x="150" y="165" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#e2e8f0">in context window</text>
+    <text x="150" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Captures global statistics</text>
+  </g>
+  
+  <!-- Objective function -->
+  <g transform="translate(400, 85)" filter="url(#gloveShadow)">
+    <rect width="350" height="200" rx="12" fill="#1e293b" stroke="url(#gloveGrad)" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#fbbf24">GloVe Objective</text>
+    
+    <text x="175" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e2e8f0">J = Σ_ij f(X_ij)(w_i · w̃_j + b_i + b̃_j - log X_ij)²</text>
+    
+    <g transform="translate(20, 80)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">• f(x) = weighting function</text>
+      <text x="0" y="35" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">• w_i, w̃_j = word vectors</text>
+      <text x="0" y="55" font-family="Inter, sans-serif" font-size="10" fill="#fcd34d">• b_i, b̃_j = bias terms</text>
+    </g>
+    
+    <text x="175" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">Key insight: log(X_ij) captures</text>
+    <text x="175" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94a3b8">semantic relationships</text>
+  </g>
+  
+  <!-- Ratio insight -->
+  <g transform="translate(50, 305)" filter="url(#gloveShadow)">
+    <rect width="700" height="55" rx="10" fill="#422006" stroke="#fbbf24"/>
+    <text x="350" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#fbbf24">Ratio Insight</text>
+    <text x="350" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#fef3c7">P(solid|ice)/P(solid|steam) = large | P(gas|ice)/P(gas|steam) = small | P(water|ice)/P(water|steam) ≈ 1</text>
+  </g>
+</svg>

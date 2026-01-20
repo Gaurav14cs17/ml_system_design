@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="pytorchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ee4c2c"/>
+      <stop offset="100%" style="stop-color:#de3412"/>
+    </linearGradient>
+    <linearGradient id="tfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6f00"/>
+      <stop offset="100%" style="stop-color:#ff8f00"/>
+    </linearGradient>
+    <linearGradient id="jaxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5b21b6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="onnxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="optGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">📦 Model Format Landscape</text>
+  
+  <!-- Column headers -->
+  <text x="150" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#64748b">Framework Native</text>
+  <text x="400" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#64748b">Intermediate</text>
+  <text x="650" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#64748b">Optimized</text>
+  
+  <!-- Divider lines -->
+  <line x1="280" y1="50" x2="280" y2="360" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="8,4"/>
+  <line x1="520" y1="50" x2="520" y2="360" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- PyTorch -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="80" width="200" height="70" rx="12" fill="url(#pytorchGrad)"/>
+    <text x="150" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🔥 PyTorch</text>
+    <text x="150" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fecaca">.pt / .pth</text>
+  </g>
+  
+  <!-- Arrow to ONNX -->
+  <path d="M255 115 L295 115" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- TensorFlow -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="170" width="200" height="70" rx="12" fill="url(#tfGrad)"/>
+    <text x="150" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">📊 TensorFlow</text>
+    <text x="150" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ffecb3">SavedModel</text>
+  </g>
+  
+  <!-- Arrow to ONNX -->
+  <path d="M255 205 L295 165" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- JAX -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="260" width="200" height="70" rx="12" fill="url(#jaxGrad)"/>
+    <text x="150" y="290" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">🧪 JAX</text>
+    <text x="150" y="315" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c4b5fd">.pkl</text>
+  </g>
+  
+  <!-- ONNX (central) -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="100" width="200" height="80" rx="14" fill="url(#onnxGrad)"/>
+    <text x="400" y="135" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">🔗 ONNX</text>
+    <text x="400" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#bfdbfe">.onnx</text>
+  </g>
+  
+  <!-- Arrows from ONNX to optimized -->
+  <path d="M505 115 L545 95" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M505 150 L545 190" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- TensorRT -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="60" width="200" height="65" rx="12" fill="url(#optGrad)"/>
+    <text x="650" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">⚡ TensorRT</text>
+    <text x="650" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">.plan (NVIDIA GPU)</text>
+  </g>
+  
+  <!-- OpenVINO -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="140" width="200" height="65" rx="12" fill="url(#optGrad)"/>
+    <text x="650" y="168" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🔷 OpenVINO</text>
+    <text x="650" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">.xml/.bin (Intel CPU)</text>
+  </g>
+  
+  <!-- TFLite -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="220" width="200" height="65" rx="12" fill="url(#optGrad)"/>
+    <text x="650" y="248" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📱 TFLite</text>
+    <text x="650" y="270" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">.tflite (Mobile/Edge)</text>
+  </g>
+  
+  <!-- CoreML -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="300" width="200" height="65" rx="12" fill="url(#optGrad)"/>
+    <text x="650" y="328" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🍎 CoreML</text>
+    <text x="650" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a7f3d0">.mlmodel (Apple)</text>
+  </g>
+  
+  <!-- Direct arrows -->
+  <path d="M255 295 L545 330" stroke="#64748b" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <path d="M255 205 L545 240" stroke="#64748b" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+</svg>

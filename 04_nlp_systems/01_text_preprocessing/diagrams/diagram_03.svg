@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
+  <defs>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="charGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="subwordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="tokShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Tokenization Strategies</text>
+  <text x="425" y="58" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">Vocabulary size |V| vs. sequence length |τ(s)| trade-off</text>
+  
+  <!-- Word-level -->
+  <g transform="translate(30, 90)" filter="url(#tokShadow)">
+    <rect width="250" height="280" rx="14" fill="#1e293b" stroke="url(#wordGrad)" stroke-width="2"/>
+    <rect width="250" height="45" rx="14 14 0 0" fill="url(#wordGrad)"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">📝 Word-Level</text>
+    
+    <g transform="translate(20, 60)">
+      <text x="0" y="15" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#93c5fd">"Hello world" → ["Hello", "world"]</text>
+      
+      <text x="0" y="50" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#60a5fa">Properties:</text>
+      <text x="0" y="70" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">• |V| = O(10⁵ - 10⁶) large</text>
+      <text x="0" y="88" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">• Short sequences</text>
+      <text x="0" y="106" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#93c5fd">• OOV problem severe</text>
+    </g>
+    
+    <rect x="20" y="180" width="210" height="80" rx="8" fill="#1e3a5f"/>
+    <text x="125" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#93c5fd">Trade-off</text>
+    <text x="125" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#60a5fa">Large |V| → sparse embeddings</text>
+    <text x="125" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#60a5fa">Unknown words → [UNK]</text>
+  </g>
+  
+  <!-- Character-level -->
+  <g transform="translate(300, 90)" filter="url(#tokShadow)">
+    <rect width="250" height="280" rx="14" fill="#1e293b" stroke="url(#charGrad)" stroke-width="2"/>
+    <rect width="250" height="45" rx="14 14 0 0" fill="url(#charGrad)"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">🔤 Character-Level</text>
+    
+    <g transform="translate(20, 60)">
+      <text x="0" y="15" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#c4b5fd">"Hi" → ["H", "i"]</text>
+      
+      <text x="0" y="50" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#a78bfa">Properties:</text>
+      <text x="0" y="70" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">• |V| = O(10² - 10³) small</text>
+      <text x="0" y="88" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">• Very long sequences</text>
+      <text x="0" y="106" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#c4b5fd">• No OOV by design</text>
+    </g>
+    
+    <rect x="20" y="180" width="210" height="80" rx="8" fill="#2e1065"/>
+    <text x="125" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#c4b5fd">Trade-off</text>
+    <text x="125" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#a78bfa">Long sequences → O(n²) attention</text>
+    <text x="125" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#a78bfa">Harder to learn semantics</text>
+  </g>
+  
+  <!-- Subword-level -->
+  <g transform="translate(570, 90)" filter="url(#tokShadow)">
+    <rect width="250" height="280" rx="14" fill="#1e293b" stroke="url(#subwordGrad)" stroke-width="2"/>
+    <rect width="250" height="45" rx="14 14 0 0" fill="url(#subwordGrad)"/>
+    <text x="125" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">✂️ Subword (BPE)</text>
+    
+    <g transform="translate(20, 60)">
+      <text x="0" y="15" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6ee7b7">"unbelievable" → ["un", "##bel", "##iev"]</text>
+      
+      <text x="0" y="50" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#34d399">Properties:</text>
+      <text x="0" y="70" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• |V| = O(10⁴) balanced</text>
+      <text x="0" y="88" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• Moderate sequences</text>
+      <text x="0" y="106" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6ee7b7">• Graceful OOV handling</text>
+    </g>
+    
+    <rect x="20" y="180" width="210" height="80" rx="8" fill="#064e3b"/>
+    <text x="125" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6ee7b7">Best of Both Worlds</text>
+    <text x="125" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#34d399">Common words → single token</text>
+    <text x="125" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#34d399">Rare words → subword pieces</text>
+  </g>
+</svg>

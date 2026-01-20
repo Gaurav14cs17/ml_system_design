@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="pointGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a5a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#feca57;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9f43;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="listGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1dd1a1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10ac84;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="450" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Learning to Rank Approaches</text>
+  
+  <!-- Pointwise -->
+  <rect x="40" y="70" width="260" height="350" rx="15" fill="#161b22" stroke="#ff6b6b" stroke-width="2"/>
+  <rect x="40" y="70" width="260" height="50" rx="15" fill="url(#pointGrad)"/>
+  <text x="170" y="102" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">POINTWISE</text>
+  
+  <text x="170" y="145" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Treat as regression/classification</text>
+  
+  <!-- Pointwise diagram -->
+  <rect x="80" y="170" width="60" height="30" rx="5" fill="#30363d"/>
+  <text x="110" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Query</text>
+  <rect x="160" y="170" width="60" height="30" rx="5" fill="#30363d"/>
+  <text x="190" y="190" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">Doc</text>
+  
+  <path d="M140 185 L155 185" stroke="#ff6b6b" stroke-width="2"/>
+  
+  <text x="170" y="225" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="20">↓</text>
+  
+  <rect x="120" y="240" width="100" height="35" rx="5" fill="#ff6b6b"/>
+  <text x="170" y="263" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="11">f(q, d) → score</text>
+  
+  <text x="170" y="300" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="20">↓</text>
+  
+  <text x="170" y="325" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14">0.87</text>
+  
+  <!-- Pointwise models -->
+  <text x="60" y="360" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">Models:</text>
+  <text x="60" y="378" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• Linear Regression</text>
+  <text x="60" y="396" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• Neural Networks</text>
+  
+  <!-- Pairwise -->
+  <rect x="320" y="70" width="260" height="350" rx="15" fill="#161b22" stroke="#feca57" stroke-width="2"/>
+  <rect x="320" y="70" width="260" height="50" rx="15" fill="url(#pairGrad)"/>
+  <text x="450" y="102" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">PAIRWISE</text>
+  
+  <text x="450" y="145" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Compare document pairs</text>
+  
+  <!-- Pairwise diagram -->
+  <rect x="350" y="170" width="50" height="25" rx="5" fill="#30363d"/>
+  <text x="375" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Doc A</text>
+  
+  <rect x="420" y="170" width="60" height="25" rx="5" fill="#feca57"/>
+  <text x="450" y="187" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Query</text>
+  
+  <rect x="500" y="170" width="50" height="25" rx="5" fill="#30363d"/>
+  <text x="525" y="187" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Doc B</text>
+  
+  <text x="450" y="225" text-anchor="middle" fill="#feca57" font-family="Arial, sans-serif" font-size="20">↓</text>
+  
+  <rect x="370" y="240" width="160" height="35" rx="5" fill="#feca57"/>
+  <text x="450" y="263" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">P(A > B) = σ(sₐ - sᵦ)</text>
+  
+  <text x="450" y="300" text-anchor="middle" fill="#feca57" font-family="Arial, sans-serif" font-size="20">↓</text>
+  
+  <text x="410" y="328" text-anchor="middle" fill="#1dd1a1" font-family="Arial, sans-serif" font-size="13">A ✓</text>
+  <text x="450" y="328" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13">></text>
+  <text x="490" y="328" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="13">B</text>
+  
+  <!-- Pairwise models -->
+  <text x="340" y="360" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">Models:</text>
+  <text x="340" y="378" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• RankNet</text>
+  <text x="340" y="396" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• LambdaRank</text>
+  
+  <!-- Listwise -->
+  <rect x="600" y="70" width="260" height="350" rx="15" fill="#161b22" stroke="#1dd1a1" stroke-width="2"/>
+  <rect x="600" y="70" width="260" height="50" rx="15" fill="url(#listGrad)"/>
+  <text x="730" y="102" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="bold">LISTWISE</text>
+  
+  <text x="730" y="145" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="11">Optimize entire ranking</text>
+  
+  <!-- Listwise diagram -->
+  <rect x="660" y="165" width="140" height="75" rx="5" fill="#30363d"/>
+  <rect x="670" y="175" width="120" height="15" rx="3" fill="#1dd1a1"/>
+  <text x="730" y="187" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">Doc 1</text>
+  <rect x="670" y="195" width="100" height="15" rx="3" fill="#54a0ff"/>
+  <text x="720" y="207" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Doc 2</text>
+  <rect x="670" y="215" width="80" height="15" rx="3" fill="#ff6b6b"/>
+  <text x="710" y="227" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="9">Doc 3</text>
+  
+  <text x="730" y="265" text-anchor="middle" fill="#1dd1a1" font-family="Arial, sans-serif" font-size="20">↓</text>
+  
+  <rect x="650" y="275" width="160" height="35" rx="5" fill="#1dd1a1"/>
+  <text x="730" y="298" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">Optimize NDCG directly</text>
+  
+  <text x="730" y="332" text-anchor="middle" fill="#1dd1a1" font-family="Arial, sans-serif" font-size="20">↓</text>
+  
+  <text x="730" y="355" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12">[1] > [2] > [3] > ...</text>
+  
+  <!-- Listwise models -->
+  <text x="620" y="380" fill="#8b949e" font-family="Arial, sans-serif" font-size="10">Models:</text>
+  <text x="620" y="398" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• LambdaMART ⭐</text>
+  <text x="720" y="398" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10">• ListNet</text>
+</svg>
+

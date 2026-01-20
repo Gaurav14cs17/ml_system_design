@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="nnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="mfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="clGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="tripletGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">🎓 How Embeddings Are Learned</text>
+  
+  <!-- Method 1: Neural Network Training -->
+  <g filter="url(#shadow)" transform="translate(30, 70)">
+    <rect width="380" height="160" rx="14" fill="#1e293b" stroke="url(#nnGrad)" stroke-width="3"/>
+    <rect width="380" height="40" rx="14 14 0 0" fill="url(#nnGrad)"/>
+    <text x="190" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">🧠 Neural Network Training</text>
+    
+    <!-- Mini neural network visualization -->
+    <g transform="translate(30, 60)">
+      <circle cx="20" cy="30" r="10" fill="#4ade80"/>
+      <circle cx="20" cy="60" r="10" fill="#4ade80"/>
+      <circle cx="20" cy="90" r="10" fill="#4ade80"/>
+      
+      <circle cx="80" cy="45" r="10" fill="#60a5fa"/>
+      <circle cx="80" cy="75" r="10" fill="#60a5fa"/>
+      
+      <circle cx="140" cy="60" r="10" fill="#fbbf24"/>
+      
+      <line x1="30" y1="30" x2="70" y2="45" stroke="#475569" stroke-width="1"/>
+      <line x1="30" y1="30" x2="70" y2="75" stroke="#475569" stroke-width="1"/>
+      <line x1="30" y1="60" x2="70" y2="45" stroke="#475569" stroke-width="1"/>
+      <line x1="30" y1="60" x2="70" y2="75" stroke="#475569" stroke-width="1"/>
+      <line x1="30" y1="90" x2="70" y2="45" stroke="#475569" stroke-width="1"/>
+      <line x1="30" y1="90" x2="70" y2="75" stroke="#475569" stroke-width="1"/>
+      <line x1="90" y1="45" x2="130" y2="60" stroke="#475569" stroke-width="1"/>
+      <line x1="90" y1="75" x2="130" y2="60" stroke="#475569" stroke-width="1"/>
+    </g>
+    
+    <text x="220" y="80" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Embedding matrix E ∈ ℝⱽˣᵈ</text>
+    <text x="220" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Learn via backpropagation</text>
+    <text x="220" y="120" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Optimize with SGD/Adam</text>
+    <text x="220" y="145" font-family="Courier New, monospace" font-size="10" fill="#a855f7">loss.backward(); optimizer.step()</text>
+  </g>
+  
+  <!-- Method 2: Matrix Factorization -->
+  <g filter="url(#shadow)" transform="translate(440, 70)">
+    <rect width="380" height="160" rx="14" fill="#1e293b" stroke="url(#mfGrad)" stroke-width="3"/>
+    <rect width="380" height="40" rx="14 14 0 0" fill="url(#mfGrad)"/>
+    <text x="190" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">📊 Matrix Factorization</text>
+    
+    <!-- Matrix visualization -->
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="60" height="60" rx="4" fill="#10b981" opacity="0.3" stroke="#10b981"/>
+      <text x="30" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#10b981">R</text>
+      
+      <text x="75" y="35" font-family="Segoe UI, sans-serif" font-size="16" fill="#64748b">≈</text>
+      
+      <rect x="95" y="0" width="35" height="60" rx="4" fill="#3b82f6" opacity="0.3" stroke="#3b82f6"/>
+      <text x="112" y="35" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">U</text>
+      
+      <text x="140" y="35" font-family="Segoe UI, sans-serif" font-size="14" fill="#64748b">×</text>
+      
+      <rect x="155" y="10" width="60" height="35" rx="4" fill="#f59e0b" opacity="0.3" stroke="#f59e0b"/>
+      <text x="185" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">Vᵀ</text>
+    </g>
+    
+    <text x="270" y="80" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">R: interaction matrix</text>
+    <text x="270" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">U: user embeddings</text>
+    <text x="270" y="120" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">V: item embeddings</text>
+    <text x="190" y="145" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#34d399">min ||R - UV'||² + λ||U||² + λ||V||²</text>
+  </g>
+  
+  <!-- Method 3: Contrastive Learning -->
+  <g filter="url(#shadow)" transform="translate(30, 250)">
+    <rect width="380" height="160" rx="14" fill="#1e293b" stroke="url(#clGrad)" stroke-width="3"/>
+    <rect width="380" height="40" rx="14 14 0 0" fill="url(#clGrad)"/>
+    <text x="190" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">🎯 Contrastive Learning</text>
+    
+    <!-- Contrastive visualization -->
+    <g transform="translate(30, 60)">
+      <circle cx="40" cy="40" r="14" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+      <text x="40" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#1e293b">A</text>
+      
+      <circle cx="90" cy="25" r="12" fill="#10b981"/>
+      <text x="90" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">+</text>
+      
+      <circle cx="130" cy="70" r="12" fill="#ef4444"/>
+      <text x="130" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">-</text>
+      
+      <line x1="52" y1="35" x2="78" y2="28" stroke="#10b981" stroke-width="2"/>
+      <line x1="52" y1="48" x2="118" y2="65" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+    </g>
+    
+    <text x="200" y="80" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Pull positives close</text>
+    <text x="200" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Push negatives away</text>
+    <text x="200" y="120" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">InfoNCE / NT-Xent loss</text>
+    <text x="190" y="145" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#fbbf24">L = -log(exp(sim⁺)/Σexp(simⁱ))</text>
+  </g>
+  
+  <!-- Method 4: Triplet Learning -->
+  <g filter="url(#shadow)" transform="translate(440, 250)">
+    <rect width="380" height="160" rx="14" fill="#1e293b" stroke="url(#tripletGrad)" stroke-width="3"/>
+    <rect width="380" height="40" rx="14 14 0 0" fill="url(#tripletGrad)"/>
+    <text x="190" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">📐 Triplet Learning</text>
+    
+    <!-- Triplet visualization -->
+    <g transform="translate(30, 60)">
+      <circle cx="50" cy="50" r="14" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+      <text x="50" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#1e293b">Anc</text>
+      
+      <circle cx="90" cy="25" r="12" fill="#10b981"/>
+      <text x="90" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Pos</text>
+      
+      <circle cx="140" cy="75" r="12" fill="#ef4444"/>
+      <text x="140" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#fff">Neg</text>
+      
+      <line x1="62" y1="42" x2="78" y2="30" stroke="#10b981" stroke-width="2"/>
+      <text x="65" y="30" font-family="Segoe UI, sans-serif" font-size="8" fill="#10b981">d⁺</text>
+      
+      <line x1="62" y1="58" x2="128" y2="70" stroke="#ef4444" stroke-width="2"/>
+      <text x="100" y="70" font-family="Segoe UI, sans-serif" font-size="8" fill="#ef4444">d⁻</text>
+    </g>
+    
+    <text x="200" y="80" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">(anchor, positive, negative)</text>
+    <text x="200" y="100" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Enforce: d⁺ + margin andlt; d⁻</text>
+    <text x="200" y="120" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">Hard negative mining</text>
+    <text x="190" y="145" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#f97316">L = max(0, d⁺ - d⁻ + margin)</text>
+  </g>
+  
+  <!-- Bottom -->
+  <rect x="150" y="420" width="550" height="25" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="425" y="437" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">All methods optimize embeddings to capture meaningful relationships in data</text>
+</svg>

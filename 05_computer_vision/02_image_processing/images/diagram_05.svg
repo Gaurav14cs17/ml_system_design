@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400">
+  <defs>
+    <pattern id="noiseGaussian" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#1e293b"/>
+      <rect x="0" y="0" width="2" height="2" fill="#3b82f6" opacity="0.3"/>
+      <rect x="4" y="2" width="2" height="2" fill="#60a5fa" opacity="0.5"/>
+      <rect x="2" y="4" width="2" height="2" fill="#1d4ed8" opacity="0.4"/>
+      <rect x="6" y="6" width="2" height="2" fill="#93c5fd" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="750" height="400" fill="#0f172a" rx="12"/>
+  
+  <!-- Title -->
+  <text x="375" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Types of Image Noise</text>
+  
+  <!-- Gaussian Noise -->
+  <g transform="translate(40, 70)">
+    <rect x="0" y="0" width="320" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="160" y="25" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#60a5fa">GAUSSIAN NOISE</text>
+    <text x="160" y="42" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Random intensity variations)</text>
+    
+    <!-- Noise visualization -->
+    <g transform="translate(60, 55)">
+      <rect x="0" y="0" width="200" height="70" rx="6" fill="#0f172a" stroke="#334155"/>
+      <!-- Simulated gaussian noise with varying intensity dots -->
+      <circle cx="20" cy="15" r="4" fill="#3b82f6" opacity="0.3"/>
+      <circle cx="45" cy="20" r="5" fill="#60a5fa" opacity="0.5"/>
+      <circle cx="70" cy="12" r="3" fill="#1d4ed8" opacity="0.4"/>
+      <circle cx="95" cy="25" r="6" fill="#93c5fd" opacity="0.6"/>
+      <circle cx="120" cy="18" r="4" fill="#3b82f6" opacity="0.35"/>
+      <circle cx="145" cy="22" r="5" fill="#60a5fa" opacity="0.45"/>
+      <circle cx="170" cy="15" r="3" fill="#1d4ed8" opacity="0.5"/>
+      
+      <circle cx="30" cy="40" r="5" fill="#60a5fa" opacity="0.4"/>
+      <circle cx="55" cy="35" r="4" fill="#3b82f6" opacity="0.55"/>
+      <circle cx="80" cy="45" r="6" fill="#93c5fd" opacity="0.35"/>
+      <circle cx="105" cy="38" r="3" fill="#1d4ed8" opacity="0.6"/>
+      <circle cx="130" cy="42" r="5" fill="#3b82f6" opacity="0.45"/>
+      <circle cx="155" cy="36" r="4" fill="#60a5fa" opacity="0.5"/>
+      <circle cx="180" cy="40" r="3" fill="#93c5fd" opacity="0.4"/>
+      
+      <circle cx="15" cy="58" r="4" fill="#1d4ed8" opacity="0.5"/>
+      <circle cx="40" cy="55" r="3" fill="#3b82f6" opacity="0.4"/>
+      <circle cx="65" cy="60" r="5" fill="#60a5fa" opacity="0.35"/>
+      <circle cx="90" cy="52" r="4" fill="#93c5fd" opacity="0.55"/>
+      <circle cx="115" cy="58" r="6" fill="#3b82f6" opacity="0.45"/>
+      <circle cx="140" cy="55" r="3" fill="#1d4ed8" opacity="0.5"/>
+      <circle cx="165" cy="62" r="4" fill="#60a5fa" opacity="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Salt and Pepper Noise -->
+  <g transform="translate(390, 70)">
+    <rect x="0" y="0" width="320" height="140" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <text x="160" y="25" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#e2e8f0">SALT &amp; PEPPER NOISE</text>
+    <text x="160" y="42" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Random black/white pixels)</text>
+    
+    <!-- Noise visualization -->
+    <g transform="translate(60, 55)">
+      <rect x="0" y="0" width="200" height="70" rx="6" fill="#475569" stroke="#334155"/>
+      <!-- Salt (white) and Pepper (black) dots -->
+      <rect x="15" y="10" width="8" height="8" fill="#000"/>
+      <rect x="45" y="15" width="8" height="8" fill="#fff"/>
+      <rect x="80" y="8" width="8" height="8" fill="#000"/>
+      <rect x="120" y="12" width="8" height="8" fill="#fff"/>
+      <rect x="160" y="10" width="8" height="8" fill="#000"/>
+      <rect x="180" y="18" width="8" height="8" fill="#fff"/>
+      
+      <rect x="25" y="32" width="8" height="8" fill="#fff"/>
+      <rect x="60" y="35" width="8" height="8" fill="#000"/>
+      <rect x="100" y="30" width="8" height="8" fill="#fff"/>
+      <rect x="140" y="38" width="8" height="8" fill="#000"/>
+      <rect x="170" y="32" width="8" height="8" fill="#fff"/>
+      
+      <rect x="10" y="52" width="8" height="8" fill="#000"/>
+      <rect x="50" y="55" width="8" height="8" fill="#fff"/>
+      <rect x="85" y="50" width="8" height="8" fill="#000"/>
+      <rect x="125" y="58" width="8" height="8" fill="#fff"/>
+      <rect x="155" y="52" width="8" height="8" fill="#000"/>
+      <rect x="185" y="55" width="8" height="8" fill="#fff"/>
+    </g>
+  </g>
+  
+  <!-- Speckle Noise -->
+  <g transform="translate(40, 230)">
+    <rect x="0" y="0" width="320" height="140" rx="10" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="160" y="25" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fcd34d">SPECKLE NOISE</text>
+    <text x="160" y="42" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Multiplicative noise)</text>
+    
+    <!-- Noise visualization -->
+    <g transform="translate(60, 55)">
+      <rect x="0" y="0" width="200" height="70" rx="6" fill="#78350f" stroke="#334155"/>
+      <!-- Granular speckle pattern -->
+      <rect x="5" y="5" width="15" height="12" fill="#fbbf24" opacity="0.6"/>
+      <rect x="25" y="10" width="18" height="10" fill="#92400e" opacity="0.7"/>
+      <rect x="50" y="5" width="12" height="15" fill="#fcd34d" opacity="0.5"/>
+      <rect x="70" y="8" width="20" height="12" fill="#78350f" opacity="0.8"/>
+      <rect x="95" y="3" width="15" height="14" fill="#fbbf24" opacity="0.65"/>
+      <rect x="115" y="10" width="18" height="10" fill="#92400e" opacity="0.55"/>
+      <rect x="140" y="5" width="14" height="13" fill="#fcd34d" opacity="0.7"/>
+      <rect x="160" y="8" width="16" height="11" fill="#78350f" opacity="0.6"/>
+      <rect x="180" y="5" width="12" height="12" fill="#fbbf24" opacity="0.5"/>
+      
+      <rect x="10" y="25" width="16" height="10" fill="#92400e" opacity="0.65"/>
+      <rect x="35" y="28" width="14" height="12" fill="#fcd34d" opacity="0.55"/>
+      <rect x="55" y="22" width="20" height="15" fill="#78350f" opacity="0.7"/>
+      <rect x="80" y="26" width="12" height="11" fill="#fbbf24" opacity="0.6"/>
+      <rect x="100" y="23" width="18" height="13" fill="#92400e" opacity="0.75"/>
+      <rect x="125" y="28" width="15" height="10" fill="#fcd34d" opacity="0.5"/>
+      <rect x="150" y="24" width="14" height="12" fill="#78350f" opacity="0.65"/>
+      <rect x="170" y="26" width="20" height="11" fill="#fbbf24" opacity="0.55"/>
+      
+      <rect x="5" y="45" width="18" height="12" fill="#fcd34d" opacity="0.7"/>
+      <rect x="30" y="48" width="15" height="10" fill="#78350f" opacity="0.6"/>
+      <rect x="50" y="42" width="12" height="15" fill="#fbbf24" opacity="0.55"/>
+      <rect x="70" y="46" width="20" height="12" fill="#92400e" opacity="0.65"/>
+      <rect x="95" y="44" width="14" height="13" fill="#fcd34d" opacity="0.75"/>
+      <rect x="115" y="48" width="18" height="10" fill="#78350f" opacity="0.5"/>
+      <rect x="140" y="45" width="16" height="12" fill="#fbbf24" opacity="0.7"/>
+      <rect x="165" y="47" width="12" height="11" fill="#92400e" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Poisson Noise -->
+  <g transform="translate(390, 230)">
+    <rect x="0" y="0" width="320" height="140" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="160" y="25" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#c4b5fd">POISSON NOISE</text>
+    <text x="160" y="42" text-anchor="middle" font-family="Arial" font-size="11" fill="#94a3b8">(Signal-dependent)</text>
+    
+    <!-- Noise visualization with gradient showing intensity dependence -->
+    <g transform="translate(60, 55)">
+      <defs>
+        <linearGradient id="poissonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#1e1b4b"/>
+          <stop offset="100%" style="stop-color:#7c3aed"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="200" height="70" rx="6" fill="url(#poissonGrad)" stroke="#334155"/>
+      <!-- Less noise on dark side, more on bright side -->
+      <circle cx="25" cy="20" r="2" fill="#a78bfa" opacity="0.3"/>
+      <circle cx="35" cy="40" r="2" fill="#c4b5fd" opacity="0.25"/>
+      <circle cx="45" cy="55" r="2" fill="#8b5cf6" opacity="0.35"/>
+      
+      <circle cx="75" cy="15" r="3" fill="#a78bfa" opacity="0.4"/>
+      <circle cx="85" cy="35" r="3" fill="#c4b5fd" opacity="0.45"/>
+      <circle cx="95" cy="50" r="3" fill="#8b5cf6" opacity="0.5"/>
+      
+      <circle cx="125" cy="18" r="4" fill="#a78bfa" opacity="0.55"/>
+      <circle cx="135" cy="38" r="4" fill="#c4b5fd" opacity="0.6"/>
+      <circle cx="145" cy="55" r="4" fill="#8b5cf6" opacity="0.65"/>
+      
+      <circle cx="165" cy="12" r="5" fill="#a78bfa" opacity="0.7"/>
+      <circle cx="175" cy="32" r="5" fill="#c4b5fd" opacity="0.75"/>
+      <circle cx="185" cy="52" r="5" fill="#8b5cf6" opacity="0.8"/>
+      
+      <text x="100" y="68" text-anchor="middle" font-family="Arial" font-size="9" fill="#94a3b8">Dark → Bright (more noise)</text>
+    </g>
+  </g>
+</svg>

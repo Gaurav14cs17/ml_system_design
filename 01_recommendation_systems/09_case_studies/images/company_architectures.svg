@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <linearGradient id="csBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#csBg)"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Industry Case Studies</text>
+  
+  <!-- Netflix -->
+  <g transform="translate(50, 70)">
+    <rect width="280" height="270" rx="15" fill="#e50914" opacity="0.9"/>
+    <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">NETFLIX</text>
+    
+    <rect x="20" y="50" width="240" height="200" rx="10" fill="#0f172a" opacity="0.95"/>
+    <text x="140" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">80% of views from recs</text>
+    
+    <text x="30" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">Key Components:</text>
+    <text x="35" y="118" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Personalized Video Ranker</text>
+    <text x="35" y="135" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Row Selection Algorithm</text>
+    <text x="35" y="152" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Artwork Personalization</text>
+    
+    <text x="30" y="175" fill="#666" font-family="Arial, sans-serif" font-size="10">Techniques:</text>
+    <text x="35" y="193" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Matrix Factorization (SVD++)</text>
+    <text x="35" y="210" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Deep Neural Networks</text>
+    <text x="35" y="227" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Contextual Bandits</text>
+  </g>
+  
+  <!-- YouTube -->
+  <g transform="translate(360, 70)">
+    <rect width="280" height="270" rx="15" fill="#ff0000" opacity="0.9"/>
+    <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">YOUTUBE</text>
+    
+    <rect x="20" y="50" width="240" height="200" rx="10" fill="#0f172a" opacity="0.95"/>
+    <text x="140" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">70% watch time from recs</text>
+    
+    <text x="30" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">Two-Stage System:</text>
+    <text x="35" y="118" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">1. Candidate Gen (DNN)</text>
+    <text x="35" y="135" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">2. Ranking (Wide &amp; Deep)</text>
+    
+    <text x="30" y="160" fill="#666" font-family="Arial, sans-serif" font-size="10">Key Features:</text>
+    <text x="35" y="178" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Watch history embeddings</text>
+    <text x="35" y="195" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Video age as feature</text>
+    <text x="35" y="212" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Expected watch time obj.</text>
+    <text x="35" y="229" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Multi-objective ranking</text>
+  </g>
+  
+  <!-- Amazon -->
+  <g transform="translate(670, 70)">
+    <rect width="280" height="270" rx="15" fill="#ff9900" opacity="0.9"/>
+    <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">AMAZON</text>
+    
+    <rect x="20" y="50" width="240" height="200" rx="10" fill="#0f172a" opacity="0.95"/>
+    <text x="140" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">35% revenue from recs</text>
+    
+    <text x="30" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">Recommendation Types:</text>
+    <text x="35" y="118" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• "Also bought" (Item-to-Item)</text>
+    <text x="35" y="135" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• "Frequently together"</text>
+    <text x="35" y="152" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• "Recommended for you"</text>
+    
+    <text x="30" y="175" fill="#666" font-family="Arial, sans-serif" font-size="10">Innovation (1998):</text>
+    <text x="35" y="193" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Item-to-Item CF at scale</text>
+    <text x="35" y="210" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Precomputed similarities</text>
+    <text x="35" y="227" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Real-time serving</text>
+  </g>
+  
+  <!-- Spotify -->
+  <g transform="translate(50, 370)">
+    <rect width="280" height="270" rx="15" fill="#1db954" opacity="0.9"/>
+    <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">SPOTIFY</text>
+    
+    <rect x="20" y="50" width="240" height="200" rx="10" fill="#0f172a" opacity="0.95"/>
+    <text x="140" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Discover Weekly: 40M users</text>
+    
+    <text x="30" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">Hybrid Approach:</text>
+    <text x="35" y="118" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">1. Collaborative Filtering</text>
+    <text x="35" y="135" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">2. NLP (web/blog text)</text>
+    <text x="35" y="152" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">3. Audio CNN Analysis</text>
+    
+    <text x="30" y="175" fill="#666" font-family="Arial, sans-serif" font-size="10">Audio Features:</text>
+    <text x="35" y="193" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Tempo, energy, valence</text>
+    <text x="35" y="210" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Danceability, acousticness</text>
+    <text x="35" y="227" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Solves cold start!</text>
+  </g>
+  
+  <!-- TikTok -->
+  <g transform="translate(360, 370)">
+    <rect width="280" height="270" rx="15" fill="#1e293b" opacity="0.9"/>
+    <rect width="280" height="270" rx="15" fill="url(#tiktokGrad)" opacity="0.7"/>
+    <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">TIKTOK</text>
+    
+    <defs>
+      <linearGradient id="tiktokGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#00f2ea"/>
+        <stop offset="100%" style="stop-color:#ff0050"/>
+      </linearGradient>
+    </defs>
+    
+    <rect x="20" y="50" width="240" height="200" rx="10" fill="#0f172a" opacity="0.95"/>
+    <text x="140" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">For You Page Algorithm</text>
+    
+    <text x="30" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">Unique Aspects:</text>
+    <text x="35" y="118" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Content-first, not social</text>
+    <text x="35" y="135" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Rapid feedback loop</text>
+    <text x="35" y="152" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Full-screen experience</text>
+    
+    <text x="30" y="175" fill="#666" font-family="Arial, sans-serif" font-size="10">Signals:</text>
+    <text x="35" y="193" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Watch time, rewatches</text>
+    <text x="35" y="210" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Likes, shares, comments</text>
+    <text x="35" y="227" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Video understanding (AI)</text>
+  </g>
+  
+  <!-- Pinterest -->
+  <g transform="translate(670, 370)">
+    <rect width="280" height="270" rx="15" fill="#e60023" opacity="0.9"/>
+    <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="bold">PINTEREST</text>
+    
+    <rect x="20" y="50" width="240" height="200" rx="10" fill="#0f172a" opacity="0.95"/>
+    <text x="140" y="75" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PinSage: GNN at Scale</text>
+    
+    <text x="30" y="100" fill="#666" font-family="Arial, sans-serif" font-size="10">Challenge:</text>
+    <text x="35" y="118" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• 3B+ pins (images)</text>
+    <text x="35" y="135" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Visual + semantic sim</text>
+    
+    <text x="30" y="158" fill="#666" font-family="Arial, sans-serif" font-size="10">Solution:</text>
+    <text x="35" y="176" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Graph Neural Network</text>
+    <text x="35" y="193" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Random walk sampling</text>
+    <text x="35" y="210" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• Map-Reduce training</text>
+    <text x="35" y="227" fill="#1e293b" font-family="Arial, sans-serif" font-size="10">• 40% engagement lift</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="500" y="670" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="13" opacity="0.8">📚 Key Lesson: All major systems use multi-stage hybrid approaches</text>
+</svg>
+

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <rect width="800" height="380" fill="#0f172a" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">TRANSFER LEARNING CONCEPT</text>
+  
+  <g transform="translate(50, 80)">
+    <rect width="300" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">Pretrained Model (ImageNet)</text>
+    <rect x="30" y="45" width="240" height="35" rx="4" fill="#3b82f6" opacity="0.3"/>
+    <text x="150" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">Backbone (frozen or fine-tuned)</text>
+    <rect x="30" y="90" width="240" height="35" rx="4" fill="#334155" stroke="#ef4444" stroke-width="2"/>
+    <text x="150" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5">Original Head (discard)</text>
+  </g>
+  
+  <text x="400" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#fbbf24">→</text>
+  
+  <g transform="translate(450, 80)">
+    <rect width="300" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ade80">Your Model</text>
+    <rect x="30" y="45" width="240" height="35" rx="4" fill="#22c55e" opacity="0.3"/>
+    <text x="150" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">Backbone (transferred)</text>
+    <rect x="30" y="90" width="240" height="35" rx="4" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="150" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4ade80">New Head (train from scratch)</text>
+  </g>
+  
+  <g transform="translate(150, 260)">
+    <rect width="500" height="95" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a78bfa">Why Transfer Learning Works</text>
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Early layers learn general features (edges, textures)</text>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Later layers learn task-specific features</text>
+    <text x="280" y="55" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Less data needed for new task</text>
+    <text x="280" y="75" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">• Faster convergence</text>
+  </g>
+</svg>

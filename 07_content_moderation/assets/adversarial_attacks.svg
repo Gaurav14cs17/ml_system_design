@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="advBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0a"/>
+      <stop offset="100%" style="stop-color:#2d1515"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#advBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="22" font-weight="bold">⚔️ Adversarial Attack Patterns &amp; Defenses</text>
+  
+  <!-- Attack Types Section -->
+  <g transform="translate(30, 60)">
+    <rect width="350" height="200" rx="12" fill="#1e293b" stroke="#dc2626" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🔴 Common Attack Patterns</text>
+    
+    <!-- Attack 1 -->
+    <g transform="translate(20, 45)">
+      <rect width="310" height="35" rx="6" fill="#450a0a"/>
+      <text x="15" y="15" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Homoglyph Substitution</text>
+      <text x="15" y="28" fill="#94a3b8" font-family="monospace" font-size="10">"h@te" → "hate" | "h4t3" → "hate"</text>
+    </g>
+    
+    <!-- Attack 2 -->
+    <g transform="translate(20, 85)">
+      <rect width="310" height="35" rx="6" fill="#450a0a"/>
+      <text x="15" y="15" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Character Insertion</text>
+      <text x="15" y="28" fill="#94a3b8" font-family="monospace" font-size="10">"h.a.t.e" | "h a t e" | "h-a-t-e"</text>
+    </g>
+    
+    <!-- Attack 3 -->
+    <g transform="translate(20, 125)">
+      <rect width="310" height="35" rx="6" fill="#450a0a"/>
+      <text x="15" y="15" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Zero-Width Characters</text>
+      <text x="15" y="28" fill="#94a3b8" font-family="monospace" font-size="10">"ha[U+200B]te" invisible chars</text>
+    </g>
+    
+    <!-- Attack 4 -->
+    <g transform="translate(20, 165)">
+      <rect width="310" height="30" rx="6" fill="#450a0a"/>
+      <text x="15" y="20" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Phonetic Spelling: "hayt" → "hate"</text>
+    </g>
+  </g>
+  
+  <!-- Defense Section -->
+  <g transform="translate(420, 60)">
+    <rect width="350" height="200" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+    <text x="175" y="25" text-anchor="middle" fill="#4ade80" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🟢 Defense Strategies</text>
+    
+    <!-- Defense 1 -->
+    <g transform="translate(20, 45)">
+      <rect width="310" height="35" rx="6" fill="#052e16"/>
+      <text x="15" y="15" fill="#86efac" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Text Normalization</text>
+      <text x="15" y="28" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Unicode NFKC + homoglyph mapping</text>
+    </g>
+    
+    <!-- Defense 2 -->
+    <g transform="translate(20, 85)">
+      <rect width="310" height="35" rx="6" fill="#052e16"/>
+      <text x="15" y="15" fill="#86efac" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Ensemble Detection</text>
+      <text x="15" y="28" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Run on original + normalized text</text>
+    </g>
+    
+    <!-- Defense 3 -->
+    <g transform="translate(20, 125)">
+      <rect width="310" height="35" rx="6" fill="#052e16"/>
+      <text x="15" y="15" fill="#86efac" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Adversarial Training</text>
+      <text x="15" y="28" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Train on obfuscated examples</text>
+    </g>
+    
+    <!-- Defense 4 -->
+    <g transform="translate(20, 165)">
+      <rect width="310" height="30" rx="6" fill="#052e16"/>
+      <text x="15" y="20" fill="#86efac" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Continuous Adaptation Loop</text>
+    </g>
+  </g>
+  
+  <!-- Pipeline Diagram -->
+  <g transform="translate(30, 280)">
+    <rect width="740" height="90" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <text x="370" y="20" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Multi-Layer Defense Pipeline</text>
+    
+    <!-- Steps -->
+    <g transform="translate(30, 40)">
+      <rect width="120" height="40" rx="8" fill="#312e81"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1. Normalize</text>
+    </g>
+    
+    <path d="M 155 60 L 175 60" stroke="#6366f1" stroke-width="2" marker-end="url(#advArrow)"/>
+    <defs>
+      <marker id="advArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#6366f1"/>
+      </marker>
+    </defs>
+    
+    <g transform="translate(180, 40)">
+      <rect width="120" height="40" rx="8" fill="#312e81"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2. ML Classify</text>
+    </g>
+    
+    <path d="M 305 60 L 325 60" stroke="#6366f1" stroke-width="2" marker-end="url(#advArrow)"/>
+    
+    <g transform="translate(330, 40)">
+      <rect width="120" height="40" rx="8" fill="#312e81"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">3. Max Scores</text>
+    </g>
+    
+    <path d="M 455 60 L 475 60" stroke="#6366f1" stroke-width="2" marker-end="url(#advArrow)"/>
+    
+    <g transform="translate(480, 40)">
+      <rect width="120" height="40" rx="8" fill="#312e81"/>
+      <text x="60" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">4. Flag Attack</text>
+    </g>
+    
+    <path d="M 605 60 L 625 60" stroke="#6366f1" stroke-width="2" marker-end="url(#advArrow)"/>
+    
+    <g transform="translate(630, 40)">
+      <rect width="90" height="40" rx="8" fill="#22c55e"/>
+      <text x="45" y="25" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Decide</text>
+    </g>
+  </g>
+  
+  <!-- Example -->
+  <g transform="translate(30, 390)">
+    <rect width="740" height="90" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="370" y="20" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Example: Adversarial Detection</text>
+    
+    <g transform="translate(30, 35)">
+      <text x="0" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Input:</text>
+      <text x="50" y="15" fill="#f87171" font-family="monospace" font-size="11">"I h@t3 th0se p3ople"</text>
+      
+      <text x="250" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">→ Normalized:</text>
+      <text x="340" y="15" fill="#86efac" font-family="monospace" font-size="11">"i hate those people"</text>
+      
+      <text x="520" y="15" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">→ Score:</text>
+      <text x="570" y="15" fill="#f87171" font-family="Arial, sans-serif" font-size="11" font-weight="bold">hate: 0.94</text>
+    </g>
+    
+    <g transform="translate(30, 60)">
+      <rect width="680" height="22" rx="4" fill="#450a0a"/>
+      <text x="340" y="16" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11">⚠️ Adversarial attack detected: homoglyph + leetspeak | Action: REMOVE + Flag for review</text>
+    </g>
+  </g>
+</svg>
+

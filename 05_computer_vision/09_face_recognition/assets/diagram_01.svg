@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500">
+  <defs>
+    <linearGradient id="faceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="pnetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+    <linearGradient id="rnetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="onetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="850" height="500" fill="url(#faceBg)"/>
+  
+  <!-- Title -->
+  <text x="425" y="40" text-anchor="middle" fill="#f8fafc" font-family="Arial Black, sans-serif" font-size="28" font-weight="bold">MTCNN CASCADE</text>
+  <text x="425" y="65" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">Multi-Task Cascaded Convolutional Networks for Face Detection</text>
+  
+  <!-- Stage Labels -->
+  <text x="150" y="100" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Stage 1: P-Net</text>
+  <text x="425" y="100" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Stage 2: R-Net</text>
+  <text x="700" y="100" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Stage 3: O-Net</text>
+  
+  <!-- P-Net Card -->
+  <g transform="translate(30, 115)">
+    <rect width="240" height="200" rx="15" fill="#1e293b" stroke="url(#pnetGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect width="240" height="40" rx="15" fill="url(#pnetGrad)"/>
+    <rect x="0" y="25" width="240" height="15" fill="url(#pnetGrad)"/>
+    <text x="120" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Proposal Network</text>
+    
+    <!-- Image pyramid visualization -->
+    <g transform="translate(20, 55)">
+      <rect width="80" height="60" rx="6" fill="#374151"/>
+      <rect x="20" y="5" width="60" height="45" rx="4" fill="#4b5563"/>
+      <rect x="35" y="10" width="40" height="30" rx="3" fill="#6b7280"/>
+      <rect x="45" y="15" width="25" height="18" rx="2" fill="#9ca3af"/>
+      <text x="40" y="80" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9">Image Pyramid</text>
+    </g>
+    
+    <!-- Sliding window -->
+    <g transform="translate(130, 55)">
+      <rect width="80" height="60" rx="6" fill="#374151"/>
+      <rect x="5" y="5" width="12" height="12" fill="#ef4444" opacity="0.6"/>
+      <rect x="20" y="5" width="12" height="12" fill="#ef4444" opacity="0.4"/>
+      <rect x="35" y="5" width="12" height="12" fill="#ef4444" opacity="0.4"/>
+      <rect x="5" y="20" width="12" height="12" fill="#ef4444" opacity="0.8"/>
+      <rect x="20" y="20" width="12" height="12" fill="#ef4444" opacity="0.4"/>
+      <rect x="35" y="20" width="12" height="12" fill="#ef4444" opacity="0.4"/>
+      <text x="40" y="80" text-anchor="middle" fill="#f87171" font-family="Arial, sans-serif" font-size="9">12×12 Window</text>
+    </g>
+    
+    <text x="120" y="160" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Fast Filtering</text>
+    <text x="120" y="180" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">~1000 proposals</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g transform="translate(280, 200)">
+    <path d="M 0 0 L 40 0" stroke="#f87171" stroke-width="3"/>
+    <polygon points="40,-6 55,0 40,6" fill="#fbbf24"/>
+    <text x="25" y="-10" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">NMS</text>
+  </g>
+  
+  <!-- R-Net Card -->
+  <g transform="translate(305, 115)">
+    <rect width="240" height="200" rx="15" fill="#1e293b" stroke="url(#rnetGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect width="240" height="40" rx="15" fill="url(#rnetGrad)"/>
+    <rect x="0" y="25" width="240" height="15" fill="url(#rnetGrad)"/>
+    <text x="120" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Refine Network</text>
+    
+    <!-- 24x24 patches -->
+    <g transform="translate(30, 60)">
+      <rect width="60" height="60" rx="6" fill="#374151"/>
+      <ellipse cx="30" cy="25" rx="18" ry="22" fill="#fbbf24" opacity="0.3"/>
+      <circle cx="20" cy="20" r="3" fill="#0f172a"/>
+      <circle cx="40" cy="20" r="3" fill="#0f172a"/>
+      <ellipse cx="30" cy="30" rx="3" ry="2" fill="#0f172a"/>
+      <path d="M 20 38 Q 30 45 40 38" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="30" y="80" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="9">24×24 Patch</text>
+    </g>
+    
+    <!-- Rejection visualization -->
+    <g transform="translate(110, 60)">
+      <rect width="50" height="40" rx="4" fill="#374151" stroke="#f87171" stroke-width="1"/>
+      <line x1="5" y1="5" x2="45" y2="35" stroke="#ef4444" stroke-width="2"/>
+      <line x1="45" y1="5" x2="5" y2="35" stroke="#ef4444" stroke-width="2"/>
+      <text x="25" y="55" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="8">Non-face</text>
+    </g>
+    
+    <g transform="translate(175, 60)">
+      <rect width="50" height="40" rx="4" fill="#374151" stroke="#10b981" stroke-width="1"/>
+      <text x="25" y="25" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="20">✓</text>
+      <text x="25" y="55" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="8">Face</text>
+    </g>
+    
+    <text x="120" y="160" text-anchor="middle" fill="#422006" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Reject + Refine</text>
+    <text x="120" y="180" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">~100 candidates</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g transform="translate(555, 200)">
+    <path d="M 0 0 L 40 0" stroke="#fbbf24" stroke-width="3"/>
+    <polygon points="40,-6 55,0 40,6" fill="#34d399"/>
+    <text x="25" y="-10" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">NMS</text>
+  </g>
+  
+  <!-- O-Net Card -->
+  <g transform="translate(580, 115)">
+    <rect width="240" height="200" rx="15" fill="#1e293b" stroke="url(#onetGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect width="240" height="40" rx="15" fill="url(#onetGrad)"/>
+    <rect x="0" y="25" width="240" height="15" fill="url(#onetGrad)"/>
+    <text x="120" y="30" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Output Network</text>
+    
+    <!-- Final face with landmarks -->
+    <g transform="translate(80, 55)">
+      <rect width="80" height="90" rx="8" fill="#374151"/>
+      <ellipse cx="40" cy="40" rx="28" ry="35" fill="#fcd34d" opacity="0.2" stroke="#10b981" stroke-width="2"/>
+      
+      <!-- Face landmarks -->
+      <circle cx="28" cy="30" r="4" fill="#10b981"/>
+      <circle cx="52" cy="30" r="4" fill="#10b981"/>
+      <circle cx="40" cy="45" r="3" fill="#10b981"/>
+      <circle cx="30" cy="60" r="3" fill="#10b981"/>
+      <circle cx="50" cy="60" r="3" fill="#10b981"/>
+      
+      <!-- Bounding box -->
+      <rect x="10" y="5" width="60" height="75" rx="4" fill="none" stroke="#22c55e" stroke-width="2"/>
+    </g>
+    
+    <text x="120" y="165" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Precise Output</text>
+    <text x="120" y="180" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="9">48×48 → Boxes + 5 Landmarks</text>
+    <text x="120" y="195" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">~10 faces</text>
+  </g>
+  
+  <!-- Pipeline Summary -->
+  <g transform="translate(50, 340)">
+    <rect width="750" height="80" rx="12" fill="#1e293b" stroke="#4c1d95" stroke-width="2"/>
+    <text x="375" y="25" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Pipeline Flow Summary</text>
+    
+    <!-- Flow boxes -->
+    <g transform="translate(30, 40)">
+      <rect width="120" height="30" rx="6" fill="#ef4444" opacity="0.8"/>
+      <text x="60" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">~1000 proposals</text>
+    </g>
+    
+    <path d="M 160 55 L 200 55" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="200,50 215,55 200,60" fill="#94a3b8"/>
+    
+    <g transform="translate(220, 40)">
+      <rect width="120" height="30" rx="6" fill="#f59e0b" opacity="0.8"/>
+      <text x="60" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">~100 candidates</text>
+    </g>
+    
+    <path d="M 350 55 L 390 55" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="390,50 405,55 390,60" fill="#94a3b8"/>
+    
+    <g transform="translate(410, 40)">
+      <rect width="120" height="30" rx="6" fill="#10b981" opacity="0.8"/>
+      <text x="60" y="20" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="10" font-weight="bold">~10 final faces</text>
+    </g>
+    
+    <g transform="translate(560, 40)">
+      <text x="80" y="12" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">⚡ Fast coarse-to-fine</text>
+      <text x="80" y="28" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">🎯 Progressive refinement</text>
+    </g>
+  </g>
+  
+  <!-- Outputs -->
+  <text x="425" y="455" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Final Outputs</text>
+  
+  <g transform="translate(100, 465)">
+    <rect width="200" height="30" rx="6" fill="#164e63" stroke="#06b6d4" stroke-width="1"/>
+    <text x="100" y="20" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11">📦 Bounding Boxes (x,y,w,h)</text>
+  </g>
+  
+  <g transform="translate(325, 465)">
+    <rect width="200" height="30" rx="6" fill="#4c1d95" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="100" y="20" text-anchor="middle" fill="#a78bfa" font-family="Arial, sans-serif" font-size="11">✨ Confidence Scores</text>
+  </g>
+  
+  <g transform="translate(550, 465)">
+    <rect width="200" height="30" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="100" y="20" text-anchor="middle" fill="#34d399" font-family="Arial, sans-serif" font-size="11">👁️👃👄 5 Facial Landmarks</text>
+  </g>
+</svg>

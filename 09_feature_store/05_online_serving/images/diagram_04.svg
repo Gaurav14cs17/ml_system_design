@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgLatency" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowLatency" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgLatency)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Latency Optimization Techniques</text>
+  
+  <!-- Technique 1: Batching -->
+  <g filter="url(#shadowLatency)">
+    <rect x="50" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="50" y="70" width="190" height="40" rx="12" fill="#059669"/>
+    <rect x="50" y="98" width="190" height="12" fill="#059669"/>
+    <text x="145" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">📦 Batching</text>
+    
+    <text x="70" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Group multiple requests</text>
+    
+    <rect x="70" y="150" width="150" height="80" rx="6" fill="#064e3b"/>
+    <text x="80" y="175" font-family="monospace" font-size="8" fill="#34d399">Single request: 10ms</text>
+    <text x="80" y="195" font-family="monospace" font-size="8" fill="#34d399">100 requests: 1000ms</text>
+    <text x="80" y="215" font-family="monospace" font-size="8" fill="#34d399">1 batch: 15ms ⚡</text>
+    
+    <text x="70" y="255" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="70" y="273" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Multi-entity lookups</text>
+    <text x="70" y="291" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Bulk scoring</text>
+    <text x="70" y="309" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Recommendations</text>
+  </g>
+  
+  <!-- Technique 2: Pre-computation -->
+  <g filter="url(#shadowLatency)">
+    <rect x="260" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="260" y="70" width="190" height="40" rx="12" fill="#2563eb"/>
+    <rect x="260" y="98" width="190" height="12" fill="#2563eb"/>
+    <text x="355" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">⚡ Pre-compute</text>
+    
+    <text x="280" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Cache computed values</text>
+    
+    <rect x="280" y="150" width="150" height="80" rx="6" fill="#172554"/>
+    <text x="290" y="175" font-family="monospace" font-size="8" fill="#60a5fa">On-demand: 50ms</text>
+    <text x="290" y="195" font-family="monospace" font-size="8" fill="#60a5fa">Pre-computed: 2ms ⚡</text>
+    <text x="290" y="215" font-family="monospace" font-size="8" fill="#64748b">Trade storage for speed</text>
+    
+    <text x="280" y="255" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="280" y="273" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Aggregations</text>
+    <text x="280" y="291" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Complex calculations</text>
+    <text x="280" y="309" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Time-window stats</text>
+  </g>
+  
+  <!-- Technique 3: Async Prefetch -->
+  <g filter="url(#shadowLatency)">
+    <rect x="470" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="470" y="70" width="190" height="40" rx="12" fill="#7c3aed"/>
+    <rect x="470" y="98" width="190" height="12" fill="#7c3aed"/>
+    <text x="565" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🔮 Prefetch</text>
+    
+    <text x="490" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Load before needed</text>
+    
+    <rect x="490" y="150" width="150" height="80" rx="6" fill="#2e1065"/>
+    <text x="500" y="175" font-family="monospace" font-size="8" fill="#a78bfa">User logs in →</text>
+    <text x="500" y="195" font-family="monospace" font-size="8" fill="#a78bfa">Prefetch user features</text>
+    <text x="500" y="215" font-family="monospace" font-size="8" fill="#a78bfa">Request arrives: 0ms ⚡</text>
+    
+    <text x="490" y="255" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="490" y="273" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• User sessions</text>
+    <text x="490" y="291" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Predictable access</text>
+    <text x="490" y="309" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Hot entities</text>
+  </g>
+  
+  <!-- Technique 4: Parallel Fetch -->
+  <g filter="url(#shadowLatency)">
+    <rect x="680" y="70" width="190" height="270" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="680" y="70" width="190" height="40" rx="12" fill="#d97706"/>
+    <rect x="680" y="98" width="190" height="12" fill="#d97706"/>
+    <text x="775" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#f8fafc">🔀 Parallel</text>
+    
+    <text x="700" y="135" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">Concurrent fetches</text>
+    
+    <rect x="700" y="150" width="150" height="80" rx="6" fill="#451a03"/>
+    <text x="710" y="175" font-family="monospace" font-size="8" fill="#fbbf24">Sequential: 30ms</text>
+    <text x="710" y="195" font-family="monospace" font-size="8" fill="#fbbf24">(10ms × 3 sources)</text>
+    <text x="710" y="215" font-family="monospace" font-size="8" fill="#fbbf24">Parallel: 10ms ⚡</text>
+    
+    <text x="700" y="255" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Best for:</text>
+    <text x="700" y="273" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Multiple sources</text>
+    <text x="700" y="291" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Independent features</text>
+    <text x="700" y="309" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">• Feature services</text>
+  </g>
+</svg>

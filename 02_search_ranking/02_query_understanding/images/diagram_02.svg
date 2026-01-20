@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 850">
+  <defs>
+    <linearGradient id="inputGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">🔍 Query Processing Pipeline</text>
+  
+  <!-- Input Query -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="50" width="400" height="50" rx="25" fill="url(#inputGrad)"/>
+    <text x="350" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#fff">"runing shoees nike   sale"</text>
+  </g>
+  
+  <path d="M350 105 L350 125" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,125 350,135 355,125" fill="#64748b"/>
+  
+  <!-- Step 1: Text Normalization -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="140" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="140" width="600" height="30" rx="10 10 0 0" fill="url(#stepGrad)"/>
+    <text x="80" y="161" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">1. TEXT NORMALIZATION</text>
+    <text x="75" y="190" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Lowercasing • Whitespace normalization • Unicode handling</text>
+    <text x="75" y="210" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">→ "runing shoees nike sale"</text>
+  </g>
+  
+  <path d="M350 230 L350 250" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,250 350,260 355,250" fill="#64748b"/>
+  
+  <!-- Step 2: Tokenization -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="265" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="265" width="600" height="30" rx="10 10 0 0" fill="url(#stepGrad)"/>
+    <text x="80" y="286" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">2. TOKENIZATION</text>
+    <text x="75" y="315" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Split into tokens • Handle compounds • Language detection</text>
+    <text x="75" y="335" font-family="Segoe UI, sans-serif" font-size="11" fill="#60a5fa">→ ["runing", "shoees", "nike", "sale"]</text>
+  </g>
+  
+  <path d="M350 355 L350 375" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,375 350,385 355,375" fill="#64748b"/>
+  
+  <!-- Step 3: Spell Correction -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="390" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="390" width="600" height="30" rx="10 10 0 0" fill="#8b5cf6"/>
+    <text x="80" y="411" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">3. SPELL CORRECTION</text>
+    <text x="75" y="440" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• "runing" → "running" • "shoees" → "shoes"</text>
+    <text x="75" y="460" font-family="Segoe UI, sans-serif" font-size="11" fill="#a78bfa">→ "running shoes nike sale"</text>
+  </g>
+  
+  <path d="M350 480 L350 500" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,500 350,510 355,500" fill="#64748b"/>
+  
+  <!-- Step 4: Entity Recognition -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="515" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="515" width="600" height="30" rx="10 10 0 0" fill="#f59e0b"/>
+    <text x="80" y="536" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">4. ENTITY RECOGNITION (NER)</text>
+    <text x="75" y="565" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Brand: Nike • Category: Running Shoes • Intent: Sale</text>
+    <text x="75" y="585" font-family="Segoe UI, sans-serif" font-size="11" fill="#fbbf24">→ {"brand": "nike", "category": "running_shoes", "discount": true}</text>
+  </g>
+  
+  <path d="M350 605 L350 625" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,625 350,635 355,625" fill="#64748b"/>
+  
+  <!-- Step 5: Query Expansion -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="640" width="600" height="85" rx="10" fill="#1e293b"/>
+    <rect x="50" y="640" width="600" height="30" rx="10 10 0 0" fill="#ec4899"/>
+    <text x="80" y="661" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">5. QUERY EXPANSION</text>
+    <text x="75" y="690" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">• Synonyms: running shoes → sneakers, athletic footwear</text>
+    <text x="75" y="710" font-family="Segoe UI, sans-serif" font-size="11" fill="#f472b6">→ Expanded: "running shoes sneakers nike sale discount"</text>
+  </g>
+  
+  <path d="M350 730 L350 750" stroke="#64748b" stroke-width="2"/>
+  <polygon points="345,750 350,760 355,750" fill="#64748b"/>
+  
+  <!-- Output -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="765" width="500" height="70" rx="12" fill="#1e293b"/>
+    <rect x="100" y="765" width="500" height="30" rx="12 12 0 0" fill="url(#outputGrad)"/>
+    <text x="350" y="786" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#fff">✅ STRUCTURED QUERY OBJECT</text>
+    <text x="350" y="815" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#34d399">Ready for retrieval &amp; ranking stages</text>
+  </g>
+</svg>

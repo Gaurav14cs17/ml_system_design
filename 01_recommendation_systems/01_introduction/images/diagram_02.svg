@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300">
+  <defs>
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <text x="425" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">📅 Evolution of Recommendation Systems</text>
+  
+  <!-- Timeline bar -->
+  <rect x="50" y="85" width="750" height="6" rx="3" fill="url(#timelineGrad)" filter="url(#glow)"/>
+  
+  <!-- 1992 -->
+  <g transform="translate(70, 65)">
+    <circle cx="0" cy="23" r="12" fill="#6366f1" filter="url(#glow)"/>
+    <rect x="-40" y="50" width="80" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#a5b4fc">Tapestry</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">First RecSys</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">1992</text>
+  </g>
+  
+  <!-- 1994 -->
+  <g transform="translate(180, 65)">
+    <circle cx="0" cy="23" r="12" fill="#7c3aed" filter="url(#glow)"/>
+    <rect x="-40" y="50" width="80" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">GroupLens</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Collab Filter</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">1994</text>
+  </g>
+  
+  <!-- 1997 -->
+  <g transform="translate(290, 65)">
+    <circle cx="0" cy="23" r="12" fill="#8b5cf6" filter="url(#glow)"/>
+    <rect x="-40" y="50" width="80" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">Amazon</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Item-to-Item CF</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">1997</text>
+  </g>
+  
+  <!-- 2006 -->
+  <g transform="translate(420, 65)">
+    <circle cx="0" cy="23" r="14" fill="#e50914" filter="url(#glow)"/>
+    <rect x="-45" y="50" width="90" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5">Netflix Prize</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">$1M Challenge</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2006</text>
+  </g>
+  
+  <!-- 2010 -->
+  <g transform="translate(540, 65)">
+    <circle cx="0" cy="23" r="12" fill="#10b981" filter="url(#glow)"/>
+    <rect x="-45" y="50" width="90" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">Spotify</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Matrix Factor</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2010</text>
+  </g>
+  
+  <!-- 2016 -->
+  <g transform="translate(660, 65)">
+    <circle cx="0" cy="23" r="12" fill="#f59e0b" filter="url(#glow)"/>
+    <rect x="-45" y="50" width="90" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#fcd34d">Deep Learning</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">Neural Nets</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2016</text>
+  </g>
+  
+  <!-- 2020+ -->
+  <g transform="translate(780, 65)">
+    <circle cx="0" cy="23" r="14" fill="#ec4899" filter="url(#glow)"/>
+    <rect x="-45" y="50" width="90" height="70" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="0" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#f9a8d4">Transformers</text>
+    <text x="0" y="95" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#94a3b8">LLM RecSys</text>
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#e0e7ff">2020+</text>
+  </g>
+  
+  <!-- Era labels -->
+  <rect x="50" y="210" width="250" height="30" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="175" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">📊 Rule-Based Era</text>
+  
+  <rect x="310" y="210" width="250" height="30" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="435" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">🧮 Matrix Factorization Era</text>
+  
+  <rect x="570" y="210" width="230" height="30" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="685" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#94a3b8">🧠 Deep Learning Era</text>
+</svg>

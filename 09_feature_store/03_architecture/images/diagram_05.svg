@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <linearGradient id="bgTransformArch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadowTransformArch" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowTA" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bgTransformArch)"/>
+  
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Transformation Engine Architecture</text>
+  
+  <!-- Batch Processing -->
+  <g filter="url(#shadowTransformArch)">
+    <rect x="50" y="80" width="250" height="260" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="50" y="80" width="250" height="45" rx="12" fill="#2563eb"/>
+    <rect x="50" y="113" width="250" height="12" fill="#2563eb"/>
+    <text x="175" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">📦 Batch Processing</text>
+    
+    <rect x="70" y="140" width="210" height="35" rx="6" fill="#172554"/>
+    <text x="175" y="162" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">Apache Spark</text>
+    
+    <rect x="70" y="185" width="210" height="35" rx="6" fill="#172554"/>
+    <text x="175" y="207" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">dbt</text>
+    
+    <rect x="70" y="230" width="210" height="35" rx="6" fill="#172554"/>
+    <text x="175" y="252" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa">SQL Warehouse</text>
+    
+    <rect x="70" y="285" width="210" height="40" rx="6" fill="#0f172a"/>
+    <text x="175" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd">Schedule: Hourly/Daily</text>
+    <text x="175" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Latency: Minutes-Hours</text>
+  </g>
+  
+  <!-- Stream Processing -->
+  <g filter="url(#shadowTransformArch)">
+    <rect x="325" y="80" width="250" height="260" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="325" y="80" width="250" height="45" rx="12" fill="#7c3aed"/>
+    <rect x="325" y="113" width="250" height="12" fill="#7c3aed"/>
+    <text x="450" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">⚡ Stream Processing</text>
+    
+    <rect x="345" y="140" width="210" height="35" rx="6" fill="#2e1065"/>
+    <text x="450" y="162" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">Apache Flink</text>
+    
+    <rect x="345" y="185" width="210" height="35" rx="6" fill="#2e1065"/>
+    <text x="450" y="207" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">Spark Streaming</text>
+    
+    <rect x="345" y="230" width="210" height="35" rx="6" fill="#2e1065"/>
+    <text x="450" y="252" text-anchor="middle" font-family="monospace" font-size="10" fill="#a78bfa">Kafka Streams</text>
+    
+    <rect x="345" y="285" width="210" height="40" rx="6" fill="#0f172a"/>
+    <text x="450" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd">Schedule: Continuous</text>
+    <text x="450" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Latency: Seconds</text>
+  </g>
+  
+  <!-- On-Demand -->
+  <g filter="url(#shadowTransformArch)">
+    <rect x="600" y="80" width="250" height="260" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="600" y="80" width="250" height="45" rx="12" fill="#d97706"/>
+    <rect x="600" y="113" width="250" height="12" fill="#d97706"/>
+    <text x="725" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f8fafc">🎯 On-Demand</text>
+    
+    <rect x="620" y="140" width="210" height="35" rx="6" fill="#451a03"/>
+    <text x="725" y="162" text-anchor="middle" font-family="monospace" font-size="10" fill="#fbbf24">Python Transforms</text>
+    
+    <rect x="620" y="185" width="210" height="35" rx="6" fill="#451a03"/>
+    <text x="725" y="207" text-anchor="middle" font-family="monospace" font-size="10" fill="#fbbf24">Request-time Logic</text>
+    
+    <rect x="620" y="230" width="210" height="35" rx="6" fill="#451a03"/>
+    <text x="725" y="252" text-anchor="middle" font-family="monospace" font-size="10" fill="#fbbf24">Lambda Functions</text>
+    
+    <rect x="620" y="285" width="210" height="40" rx="6" fill="#0f172a"/>
+    <text x="725" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#fcd34d">Schedule: Per-request</text>
+    <text x="725" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Latency: Milliseconds</text>
+  </g>
+</svg>
