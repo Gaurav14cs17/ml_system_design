@@ -36,7 +36,6 @@
 ### Entity Design
 
 ```python
-
 # GOOD: Clear, single-purpose entities
 user = Entity(
     name="user",
@@ -75,7 +74,6 @@ bad_entity = Entity(
 ### Feature Naming Standards
 
 ```python
-
 # NAMING CONVENTION
 # {entity}_{domain}_{aggregation}_{window}
 
@@ -104,7 +102,6 @@ BAD_NAMES = [
 ### Feature View and Service Naming
 
 ```python
-
 # Feature Views: {entity}_{source}_{frequency}
 feature_view_names = [
     "user_transactions_daily",
@@ -137,7 +134,6 @@ STANDARD_TAGS = {
 ### Online Store Optimization
 
 ```python
-
 # 1. BATCH REQUESTS
 # Bad: Multiple single requests
 for user_id in user_ids:
@@ -182,7 +178,6 @@ def get_cached_features(user_id: str):
 ### Offline Store Optimization
 
 ```python
-
 # 1. PARTITION EFFECTIVELY
 # Partition by date for time-based queries
 features.write.format("delta").partitionBy("date").save(path)
@@ -210,7 +205,6 @@ features = spark.read.parquet(path).filter(
 ### Access Control
 
 ```python
-
 # Role-based access control
 ACCESS_POLICIES = {
     "feature_views": {
@@ -297,7 +291,6 @@ class FeatureAuditLogger:
 ### Runbooks
 
 ```markdown
-
 # RUNBOOK: Stale Features Alert
 
 ## Symptoms
@@ -331,7 +324,6 @@ class FeatureAuditLogger:
 ### Disaster Recovery
 
 ```python
-
 # Feature store backup strategy
 BACKUP_STRATEGY = {
     "registry": {
@@ -369,7 +361,6 @@ def recover_from_backup(component: str, point_in_time: datetime):
 ### Unit Tests
 
 ```python
-
 # tests/test_features.py
 import pytest
 import pandas as pd
@@ -431,7 +422,6 @@ class TestOnDemandFeatures:
 ### Integration Tests
 
 ```python
-
 # tests/test_integration.py
 import pytest
 from feast import FeatureStore

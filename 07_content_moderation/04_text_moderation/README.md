@@ -41,83 +41,83 @@ Text moderation is the foundation of content moderation systems. It involves det
 
 Converts text to numerical vectors by weighting term importance:
 
-$$
+```math
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
-$$
+```
 
 Where:
-- $\text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}$ (normalized term frequency)
-- $\text{IDF}(t, D) = \log \frac{|D|}{|\{d \in D : t \in d\}|}$ (inverse document frequency)
+- \(\text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}\) (normalized term frequency)
+- \(\text{IDF}(t, D) = \log \frac{|D|}{|\{d \in D : t \in d\}|}\) (inverse document frequency)
 
 #### Word Embeddings
 
 Dense vector representations learned from large corpora:
 
-$$
+```math
 \mathbf{v}_w \in \mathbb{R}^d \quad \text{where } d \in \{100, 300, 768, ...\}
-$$
+```
 
 **Word2Vec Skip-gram objective**:
 
-$$
+```math
 \mathcal{L} = \sum_{(w, c) \in D} \log \sigma(\mathbf{v}_w \cdot \mathbf{v}_c) + \sum_{(w, c') \in D'} \log \sigma(-\mathbf{v}_w \cdot \mathbf{v}_{c'})
-$$
+```
 
 ### Attention Mechanism
 
 The self-attention operation in transformers:
 
-$$
+```math
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-$$
+```
 
 Where:
-- $Q = XW^Q$ (queries)
-- $K = XW^K$ (keys)
-- $V = XW^V$ (values)
-- $\sqrt{d_k}$ is the scaling factor
+- \(Q = XW^Q\) (queries)
+- \(K = XW^K\) (keys)
+- \(V = XW^V\) (values)
+- \(\sqrt{d_k}\) is the scaling factor
 
 **Multi-head attention**:
 
-$$
+```math
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O
-$$
+```
 
 Where each head is:
 
-$$
+```math
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
-$$
+```
 
 ### Toxicity Score Calibration
 
 Converting raw model outputs to calibrated probabilities using **Platt Scaling**:
 
-$$
+```math
 P(y=1 | f(x)) = \frac{1}{1 + \exp(Af(x) + B)}
-$$
+```
 
-Where $A$ and $B$ are parameters fit on a validation set to minimize:
+Where \(A\) and \(B\) are parameters fit on a validation set to minimize:
 
-$$
+```math
 \mathcal{L} = -\sum_{i} y_i \log(p_i) + (1-y_i) \log(1-p_i)
-$$
+```
 
 ### Threshold Optimization
 
-Finding the optimal decision threshold $\tau$ by maximizing F1:
+Finding the optimal decision threshold \(\tau\) by maximizing F1:
 
-$$
+```math
 \tau^* = \arg\max_{\tau} F_1(\tau) = \arg\max_{\tau} \frac{2 \cdot \text{Precision}(\tau) \cdot \text{Recall}(\tau)}{\text{Precision}(\tau) + \text{Recall}(\tau)}
-$$
+```
 
 Or with a cost-sensitive approach:
 
-$$
+```math
 \tau^* = \arg\min_{\tau} \left[ C_{FP} \cdot \text{FPR}(\tau) + C_{FN} \cdot \text{FNR}(\tau) \right]
-$$
+```
 
-Where $C_{FP}$ and $C_{FN}$ are the costs of false positives and negatives.
+Where \(C_{FP}\) and \(C_{FN}\) are the costs of false positives and negatives.
 
 ---
 
@@ -136,7 +136,6 @@ Where $C_{FP}$ and $C_{FN}$ are the costs of false positives and negatives.
 ### When to Use What
 
 ```python
-
 # Decision framework for model selection
 def select_approach(requirements):
     """
@@ -191,7 +190,6 @@ class TextFeatureExtractor:
         self.tfidf_char.fit(texts)
 
     def transform(self, texts):
-
         # TF-IDF features
         word_features = self.tfidf_word.transform(texts)
         char_features = self.tfidf_char.transform(texts)
@@ -251,7 +249,6 @@ class TraditionalModerationModel:
             )
 
     def train(self, texts, labels):
-
         # Fit feature extractor
         self.feature_extractor.fit(texts)
 
@@ -336,7 +333,6 @@ class TextCNN(nn.Module):
         self.fc = nn.Linear(num_filters * len(kernel_sizes), num_classes)
 
     def forward(self, x):
-
         # x: (batch_size, seq_length)
 
         # Embedding: (batch_size, seq_length, embedding_dim)
@@ -403,7 +399,6 @@ class AttentionLSTM(nn.Module):
         self.fc = nn.Linear(hidden_dim * 2, num_classes)
 
     def forward(self, x, lengths=None):
-
         # Embedding
         embedded = self.embedding(x)  # (batch, seq_len, embed_dim)
 
@@ -718,7 +713,6 @@ class AdversarialTextNormalizer:
     """
 
     def __init__(self):
-
         # Homoglyph mappings
         self.homoglyphs = {
             '@': 'a', '4': 'a', '^': 'a',
@@ -773,7 +767,6 @@ class AdversarialTextNormalizer:
 
     def _remove_zero_width(self, text: str) -> str:
         """Remove zero-width and invisible characters."""
-
         # Zero-width chars: \u200b, \u200c, \u200d, \ufeff
         return re.sub(r'[\u200b\u200c\u200d\ufeff\u00ad]', '', text)
 
@@ -787,7 +780,6 @@ class AdversarialTextNormalizer:
 
     def _remove_separators(self, text: str) -> str:
         """Remove inserted separators in words."""
-
         # Pattern: single non-alphanum between letters
         # e.g., "h.a.t.e" -> "hate"
         patterns = [
@@ -812,7 +804,6 @@ class AdversarialTextNormalizer:
 
     def _reduce_repetition(self, text: str) -> str:
         """Reduce character repetition."""
-
         # "haaaate" -> "haate" (keep max 2)
         return re.sub(r'(.)\1{2,}', r'\1\1', text)
 
@@ -915,7 +906,6 @@ class MultilingualModerator:
         results = []
 
         for text in texts:
-
             # Optionally detect language
             if detect_language:
                 from langdetect import detect
@@ -988,13 +978,11 @@ class LanguageSpecificRules:
 
     def _load_slur_dictionaries(self):
         """Load slur dictionaries for each language."""
-
         # Would load from secure, encrypted storage
         return {}
 
     def _load_cultural_context(self):
         """Load cultural context adjustments."""
-
         # Example: Some gestures/phrases have different meanings
         return {
             'ja': {'adult': 0.8},  # Japanese manga context
@@ -1015,7 +1003,6 @@ class TextModerationPipeline:
     """
 
     def __init__(self, config: Dict):
-
         # Initialize components
         self.normalizer = AdversarialTextNormalizer()
         self.feature_extractor = TextFeatureExtractor()
@@ -1032,7 +1019,6 @@ class TextModerationPipeline:
         """
         Full moderation pipeline with tiered approach.
         """
-
         # Step 1: Normalize text
         normalized = self.normalizer.normalize(text)
         clean_text = normalized['normalized']
@@ -1067,7 +1053,6 @@ class TextModerationPipeline:
 
     def _fast_check(self, text: str) -> Dict:
         """Quick keyword and simple model check."""
-
         # Keyword check
         keyword_score = self._keyword_check(text)
 
@@ -1096,7 +1081,6 @@ class TextModerationPipeline:
 
     def _keyword_check(self, text: str) -> Dict:
         """Check against keyword lists."""
-
         # Would check against maintained keyword lists
         return {'hate': 0, 'violence': 0, 'adult': 0}
 

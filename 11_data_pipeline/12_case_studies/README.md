@@ -19,7 +19,6 @@ Netflix processes **billions of events daily** to power its recommendation engin
 ### Architecture Highlights
 
 ```python
-
 # Netflix's approach to feature computation (conceptual)
 
 class NetflixFeaturePipeline:
@@ -41,7 +40,6 @@ class NetflixFeaturePipeline:
         viewing_history = self.get_viewing_history(user_id, window_days)
 
         features = {
-
             # Genre affinity (recency-weighted)
             "genre_affinity": self.compute_genre_affinity(viewing_history),
 
@@ -224,7 +222,6 @@ class UberFeaturePipeline:
         user_id = transaction['user_id']
 
         return {
-
             # Velocity features (real-time)
             "transactions_last_1h": self.count_transactions(user_id, hours=1),
             "transactions_last_24h": self.count_transactions(user_id, hours=24),
@@ -267,7 +264,6 @@ class UberFeatureStore:
             aggregation=aggregation,
             window=window,
             source=source,
-
             # Automatically available in both online and offline
             online_enabled=True,
             offline_enabled=True,
@@ -373,7 +369,6 @@ class DoorDashFeatures:
         zone = order['delivery_zone']
 
         return {
-
             # Restaurant real-time
             "restaurant_queue": self.get_queue_depth(restaurant),
             "restaurant_avg_prep": self.get_avg_prep_time(restaurant),
@@ -413,7 +408,6 @@ class DoorDashFeatures:
 All major companies have adopted feature stores:
 
 ```python
-
 # Common Feature Store Interface
 class FeatureStore:
     def register_feature(self, feature_config): ...

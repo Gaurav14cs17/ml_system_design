@@ -116,7 +116,6 @@ Answer:"""}
         top_k: int = 3
     ) -> Dict:
         """Full RAG pipeline: retrieve + generate."""
-
         # Retrieve
         relevant_docs = self.retrieve(question, top_k=top_k)
 
@@ -190,7 +189,6 @@ class LangChainRAG:
 
     def index_documents(self, documents: List):
         """Split and index documents."""
-
         # Split documents
         texts = self.text_splitter.split_documents(documents)
 
@@ -290,7 +288,6 @@ class DocumentChunker:
         max_chunk_size: int = 1000
     ) -> List[str]:
         """Chunk by semantic units (paragraphs, sections)."""
-
         # Split by double newlines (paragraphs)
         paragraphs = text.split("\n\n")
 
@@ -336,7 +333,6 @@ class DocumentChunker:
         stride: int = 2
     ) -> List[str]:
         """Chunk using sliding window of sentences."""
-
         # Simple sentence splitting
         sentences = re.split(r'[.!?]+', text)
         sentences = [s.strip() for s in sentences if s.strip()]
@@ -404,7 +400,6 @@ class MultiQueryRAG:
 
     def query(self, question: str, top_k: int = 5) -> Dict:
         """Query with multiple reformulations."""
-
         # Expand query
         queries = self.transformer.expand_query(question)
 

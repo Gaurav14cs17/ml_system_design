@@ -53,7 +53,6 @@ class InfrastructureMonitor:
 
     def collect_cpu_metrics(self) -> dict:
         """Collect CPU metrics."""
-
         # Per-core usage
         per_core = psutil.cpu_percent(percpu=True)
         for i, usage in enumerate(per_core):
@@ -368,7 +367,6 @@ class ModelServingMonitor:
 ## Alert Rules for Infrastructure
 
 ```yaml
-
 # prometheus-alerts.yaml
 groups:
   - name: ml-infrastructure

@@ -100,7 +100,6 @@ class MLCostTracker:
                                       start_date: datetime,
                                       end_date: datetime) -> float:
         """Calculate cost per prediction for a model."""
-
         # Get inference costs
         costs = self.storage.query_costs(
             start_date, end_date,
@@ -160,7 +159,6 @@ class CostAttributor:
         records = []
 
         for item in billing_data:
-
             # Parse resource tags to attribute to model/team
             model_name = item.tags.get('model_name')
             team = item.tags.get('team')
@@ -292,7 +290,6 @@ class CostOptimizer:
 
     def _check_spot_instances(self, model_name: str) -> Optional[OptimizationRecommendation]:
         """Check if spot instances can be used."""
-
         # Check if model can tolerate interruptions
         is_latency_sensitive = self.metrics.get_avg_metric(
             model_name, 'latency_p99', days=7
@@ -321,7 +318,6 @@ class CostOptimizer:
 
     def _check_idle_resources(self, model_name: str) -> Optional[OptimizationRecommendation]:
         """Check for idle resources."""
-
         # Check for low request rate periods
         hourly_qps = self.metrics.get_hourly_metric(
             model_name, 'requests_per_second', days=7
@@ -410,7 +406,6 @@ class CostBudgetManager:
 ## Cost Dashboard Metrics
 
 ```python
-
 # Grafana dashboard queries for cost monitoring
 
 COST_QUERIES = {

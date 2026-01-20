@@ -56,9 +56,9 @@ Embedding Representation:
 
 An **embedding function** is a learned mapping:
 
-$$
+```math
 f_\theta: \mathcal{X} \rightarrow \mathbb{R}^d
-$$
+```
 
 where:
 - $\mathcal{X}$ is the input space (words, images, users, products, etc.)
@@ -87,15 +87,15 @@ Embeddings compress this to manageable dimensions (typically 64-1024).
 
 One-hot encodings treat all items as equally different:
 
-$$
+```math
 d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{dog}}) = d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{physics}}) = \sqrt{2}
-$$
+```
 
 Embeddings capture meaningful relationships:
 
-$$
+```math
 d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{dog}}) \ll d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{physics}})
-$$
+```
 
 This enables machines to understand that "cat" and "dog" share semantic properties (animals, pets) that "quantum physics" does not.
 
@@ -110,7 +110,6 @@ Pre-trained embeddings encode general knowledge that transfers across tasks:
 
 With embeddings, finding similar items becomes a geometric problem:
 ```python
-
 # Find products similar to a query
 similar_products = find_nearest_neighbors(
     query_embedding,
@@ -138,9 +137,9 @@ Embeddings: Neural network learns relevant features from data
 
 An **embedding** is a learned function that maps elements from a discrete or high-dimensional space into a continuous, lower-dimensional vector space:
 
-$$
+```math
 f: \mathcal{X} \rightarrow \mathbb{R}^d
-$$
+```
 
 where $\mathcal{X}$ is the input domain and $d \ll |\mathcal{X}|$ is the embedding dimension.
 
@@ -158,17 +157,17 @@ Embeddings live in a **metric space** equipped with:
 
 **Important Relationship:** For unit-normalized vectors ($\|\mathbf{a}\| = \|\mathbf{b}\| = 1$):
 
-$$
+```math
 \cos(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{and} \quad d_{\text{euclidean}}^2 = 2(1 - \cos(\mathbf{a}, \mathbf{b}))
-$$
+```
 
 #### 2. Vector Arithmetic (Analogical Reasoning)
 
 A remarkable property of well-trained embeddings is that semantic relationships are captured as **linear directions**:
 
-$$
+```math
 \vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}
-$$
+```
 
 This can be understood as:
 - The vector $(\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}})$ encodes the concept of "royalty"
@@ -176,17 +175,17 @@ This can be understood as:
 
 More generally, for analogies $a:b :: c:d$:
 
-$$
+```math
 \vec{v}_b - \vec{v}_a + \vec{v}_c \approx \vec{v}_d
-$$
+```
 
 ### The Embedding Matrix
 
 For discrete vocabularies $V$, embeddings are stored as a **lookup table**:
 
-$$
+```math
 \mathbf{E} \in \mathbb{R}^{|V| \times d}
-$$
+```
 
 Where:
 - $|V|$ = vocabulary/catalog size (e.g., 50,000 words)
@@ -194,9 +193,9 @@ Where:
 
 **Embedding Lookup:** For item with index $i$:
 
-$$
+```math
 \text{embed}(i) = \mathbf{E}_{i,:} = \mathbf{e}_i \in \mathbb{R}^d
-$$
+```
 
 This is mathematically equivalent to multiplying by a one-hot vector: $\mathbf{e}\_i = \mathbf{E}^\top \mathbf{x}\_{\text{one-hot}}$
 
@@ -206,25 +205,25 @@ Embedding models are trained to satisfy the **similarity preservation** constrai
 
 #### Contrastive Loss (InfoNCE)
 
-$$
+```math
 \mathcal{L}_{\text{InfoNCE}} = -\mathbb{E}\left[\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(f(x), f(x_j^-))/\tau)}\right]
-$$
+```
 
 where $\tau$ is a temperature hyperparameter and $x^+$ are positive pairs.
 
 #### Triplet Loss
 
-$$
+```math
 \mathcal{L}_{\text{triplet}} = \max(0, d(f(a), f(p)) - d(f(a), f(n)) + \alpha)
-$$
+```
 
 where $(a, p, n)$ is an anchor-positive-negative triplet and $\alpha$ is the margin.
 
 #### Multiple Negatives Ranking Loss
 
-$$
+```math
 \mathcal{L}_{\text{MNRL}} = -\frac{1}{B}\sum_{i=1}^{B} \log \frac{\exp(s(q_i, d_i^+))}{\sum_{j=1}^{B} \exp(s(q_i, d_j))}
-$$
+```
 
 where $B$ is the batch size and in-batch negatives are used.
 
@@ -242,7 +241,6 @@ cosine_similarity(embed("happy"), embed("sad")) < 0.3
 ### 2. Geometric Structure
 Relationships should be preserved geometrically:
 ```python
-
 # Analogies work
 embed("paris") - embed("france") ≈ embed("tokyo") - embed("japan")
 
@@ -259,7 +257,6 @@ cluster(embed("sports words")) ≠ cluster(embed("food words"))
 Many applications benefit from unit-normalized embeddings:
 ```python
 embedding = embedding / np.linalg.norm(embedding)
-
 # Now: ||embedding|| = 1
 # Benefit: dot product = cosine similarity
 ```
@@ -267,7 +264,6 @@ embedding = embedding / np.linalg.norm(embedding)
 ### 5. Stability
 Small changes in input should cause small changes in embedding:
 ```python
-
 # Typo robustness
 embed("machine learning") ≈ embed("machin learning")
 ```
@@ -362,7 +358,6 @@ import torch.nn as nn
 class EmbeddingModel(nn.Module):
     def __init__(self, vocab_size, embed_dim):
         super().__init__()
-
         # This is the embedding matrix
         self.embeddings = nn.Embedding(vocab_size, embed_dim)
 
@@ -393,7 +388,6 @@ Learn by comparing positive and negative pairs:
 
 ```python
 def contrastive_loss(anchor, positive, negatives, temperature=0.1):
-
     # Positive pair similarity
     pos_sim = cosine_similarity(anchor, positive) / temperature
 
@@ -476,7 +470,6 @@ Real-world distributions change over time:
 ### 3. Bias and Fairness
 Embeddings can encode societal biases from training data:
 ```python
-
 # Problematic: Historical bias encoded
 embed("doctor") closer to embed("man") than embed("woman")
 ```

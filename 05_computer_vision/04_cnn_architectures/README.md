@@ -104,9 +104,9 @@ Before diving into specific architectures, let's formalize the key operations:
 
 **Forward Pass:**
 
-$$
+```math
 y_{c_{out}}^{(i,j)} = \sum_{c_{in}=1}^{C_{in}} \sum_{u=0}^{k-1} \sum_{v=0}^{k-1} W_{c_{out}, c_{in}}^{(u,v)} \cdot x_{c_{in}}^{(i \cdot s + u, j \cdot s + v)} + b_{c_{out}}
-$$
+```
 
 where:
 - $W$ = learnable kernel weights
@@ -116,10 +116,10 @@ where:
 
 **Output spatial dimensions:**
 
-$$
+```math
 H_{out} = \left\lfloor \frac{H_{in} + 2p - k}{s} \right\rfloor + 1
 W_{out} = \left\lfloor \frac{W_{in} + 2p - k}{s} \right\rfloor + 1
-$$
+```
 
 **Parameter count:** $C\_{out} \times C\_{in} \times k^2 + C\_{out}$
 
@@ -169,15 +169,15 @@ Solved the degradation problem with skip connections - enabled very deep network
 
 Instead of learning $\mathcal{H}(x)$ directly, learn the residual:
 
-$$
+```math
 \mathcal{F}(x) = \mathcal{H}(x) - x
-$$
+```
 
 The output becomes:
 
-$$
+```math
 y = \mathcal{F}(x, \{W_i\}) + x
-$$
+```
 
 **Why it works:**
 
@@ -186,9 +186,9 @@ $$
 
 **Gradient during backpropagation:**
 
-$$
+```math
 \frac{\partial \mathcal{L}}{\partial x} = \frac{\partial \mathcal{L}}{\partial y} \cdot \frac{\partial y}{\partial x} = \frac{\partial \mathcal{L}}{\partial y} \cdot \left(1 + \frac{\partial \mathcal{F}}{\partial x}\right)
-$$
+```
 
 The "1" ensures gradients can flow directly back, preventing vanishing gradients.
 
@@ -196,9 +196,9 @@ The "1" ensures gradients can flow directly back, preventing vanishing gradients
 
 Reduces computation using 1×1 convolutions:
 
-$$
+```math
 \text{1×1 conv (reduce)} \rightarrow \text{3×3 conv} \rightarrow \text{1×1 conv (expand)}
-$$
+```
 
 ---
 
@@ -232,15 +232,15 @@ Applies transformer architecture directly to images.
 
 Split image into $N$ non-overlapping patches of size $P \times P$:
 
-$$
+```math
 N = \frac{HW}{P^2}
-$$
+```
 
 Each patch is flattened and linearly projected:
 
-$$
+```math
 \mathbf{z}_0^i = \mathbf{x}_p^i \mathbf{E} + \mathbf{e}_{pos}^i
-$$
+```
 
 where:
 - $\mathbf{x}\_p^i \in \mathbb{R}^{P^2 \cdot C}$ = flattened patch
@@ -251,27 +251,27 @@ where:
 
 **Self-Attention:**
 
-$$
+```math
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-$$
+```
 
 where $Q = XW^Q$, $K = XW^K$, $V = XW^V$
 
 **Multi-Head:**
 
-$$
+```math
 \text{MultiHead}(X) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O
 \text{head}_i = \text{Attention}(XW_i^Q, XW_i^K, XW_i^V)
-$$
+```
 
 **Computational complexity:** $O(N^2 \cdot D)$ — quadratic in sequence length
 
 #### 3. Transformer Block
 
-$$
+```math
 \mathbf{z}'_\ell = \text{MSA}(\text{LN}(\mathbf{z}_{\ell-1})) + \mathbf{z}_{\ell-1}
 \mathbf{z}_\ell = \text{MLP}(\text{LN}(\mathbf{z}'_\ell)) + \mathbf{z}'_\ell
-$$
+```
 
 where:
 - MSA = Multi-head Self-Attention
@@ -282,9 +282,9 @@ where:
 
 Use [CLS] token output for classification:
 
-$$
+```math
 \mathbf{y} = \text{MLP}(\text{LN}(\mathbf{z}_L^0))
-$$
+```
 
 ### ViT Implementation
 
@@ -308,7 +308,6 @@ class PatchEmbedding(nn.Module):
         )
 
     def forward(self, x):
-
         # x: (B, C, H, W)
         x = self.proj(x)  # (B, embed_dim, H/P, W/P)
         x = x.flatten(2)  # (B, embed_dim, n_patches)

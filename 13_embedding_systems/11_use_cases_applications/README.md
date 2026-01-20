@@ -122,7 +122,6 @@ class HybridSearchEngine:
         self.faiss_index.add(embeddings.astype('float32'))
 
     def search(self, query: str, k: int = 10):
-
         # BM25 scores
         tokenized_query = query.lower().split()
         bm25_scores = self.bm25.get_scores(tokenized_query)
@@ -241,7 +240,6 @@ class ContentRecommender:
 
     def recommend_from_history(self, viewed_item_ids, k=10):
         """Recommend based on user's viewing history"""
-
         # Average embedding of viewed items
         history_emb = self.item_embeddings[viewed_item_ids].mean(axis=0)
         history_emb = history_emb / np.linalg.norm(history_emb)
@@ -280,7 +278,6 @@ class RAGSystem:
         self.vector_store.add(embeddings, documents, metadatas)
 
     def query(self, question, k=5, system_prompt=None):
-
         # 1. Retrieve relevant documents
         query_emb = self.embedder.encode([question])
         retrieved = self.vector_store.search(query_emb, k=k)
@@ -322,7 +319,6 @@ class AdvancedRAG:
         self.llm = llm
 
     def query(self, question, k_retrieve=20, k_rerank=5):
-
         # 1. Initial retrieval (bi-encoder)
         candidates = self.retrieve(question, k=k_retrieve)
 
@@ -393,7 +389,6 @@ class DuplicateDetector:
         kept_indices = [0]  # Always keep first
 
         for i in range(1, len(texts)):
-
             # Check similarity with all kept items
             kept_embs = embeddings[kept_indices]
             similarities = np.dot(kept_embs, embeddings[i])
@@ -438,7 +433,6 @@ class TopicClusterer:
         keywords = {}
 
         for cluster_id, docs in clusters.items():
-
             # Simple: most common words
             all_words = ' '.join(docs).lower().split()
             word_counts = Counter(all_words)

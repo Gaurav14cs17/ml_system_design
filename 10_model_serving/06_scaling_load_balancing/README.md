@@ -78,17 +78,17 @@ L = \lambda \times W
 \]
 
 where:
-- $L$ = Average number of requests **in the system** (queue + being processed)
-- $\lambda$ = **Arrival rate** (requests per second)
-- $W$ = Average **time in system** (total latency including queue time)
+- \( L \) = Average number of requests **in the system** (queue + being processed)
+- \( \lambda \) = **Arrival rate** (requests per second)
+- \( W \) = Average **time in system** (total latency including queue time)
 
 #### Derivation Intuition
 
-Consider a system over time period $T$:
-- Total arrivals: $A = \lambda \times T$
-- Each request spends average time $W$ in system
-- Area under "requests in system" curve: $A \times W = \lambda T W$
-- Average requests in system: $L = \frac{\lambda T W}{T} = \lambda W$
+Consider a system over time period \( T \):
+- Total arrivals: \( A = \lambda \times T \)
+- Each request spends average time \( W \) in system
+- Area under "requests in system" curve: \( A \times W = \lambda T W \)
+- Average requests in system: \( L = \frac{\lambda T W}{T} = \lambda W \)
 
 #### Capacity Planning Formula
 
@@ -99,26 +99,26 @@ From Little's Law, we can derive the **required concurrency**:
 \]
 
 **Example calculation:**
-- Target: $\lambda = 1000$ RPS
-- Latency: $W = 50$ ms = 0.05 s
-- Concurrent requests: $L = 1000 \times 0.05 = 50$
+- Target: \( \lambda = 1000 \) RPS
+- Latency: \( W = 50 \) ms = 0.05 s
+- Concurrent requests: \( L = 1000 \times 0.05 = 50 \)
 - If each server handles 10 concurrent requests: Need 5+ servers
 
 #### Extended Little's Law (with Utilization)
 
-Including **server utilization** $\rho$:
+Including **server utilization** \( \rho \):
 
 \[
 W = W_s + W_q = \frac{1}{\mu} + \frac{\rho}{\mu(1-\rho)}
 \]
 
 where:
-- $W_s$ = service time (inference time)
-- $W_q$ = queue wait time
-- $\mu$ = service rate (requests/second per server)
-- $\rho = \frac{\lambda}{\mu}$ = utilization (must be < 1 for stability)
+- \( W_s \) = service time (inference time)
+- \( W_q \) = queue wait time
+- \( \mu \) = service rate (requests/second per server)
+- \( \rho = \frac{\lambda}{\mu} \) = utilization (must be < 1 for stability)
 
-**Key insight:** As $\rho \to 1$, queue time $W_q \to \infty$. Keep utilization at 60-70% for acceptable latency.
+**Key insight:** As \( \rho \to 1 \), queue time \( W_q \to \infty \). Keep utilization at 60-70% for acceptable latency.
 
 ---
 
@@ -131,7 +131,6 @@ where:
 ### Stateless Design Principles
 
 ```python
-
 # WRONG: Stateful server
 class StatefulServer:
     def __init__(self):
@@ -140,7 +139,6 @@ class StatefulServer:
 
     def predict(self, request):
         self.request_count += 1
-
         # State won't be consistent across instances
 
 # CORRECT: Stateless server with external state
@@ -150,7 +148,6 @@ class StatelessServer:
         self.model = torch.jit.load(model_path)
 
     def predict(self, request):
-
         # Check external cache
         cached = self.redis.get(f"pred:{request.key}")
         if cached:
@@ -173,7 +170,6 @@ class StatelessServer:
 ### Predictive Autoscaling
 
 ```python
-
 # predictive_autoscaler.py
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -244,7 +240,6 @@ print(f"Recommended replicas for {future}: {recommended}")
 ### Custom Load Balancer
 
 ```python
-
 # load_balancer.py
 import random
 import time
@@ -332,7 +327,6 @@ class LoadBalancer:
 ### Horizontal Pod Autoscaler
 
 ```yaml
-
 # hpa.yaml
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
@@ -387,7 +381,6 @@ spec:
 ### KEDA for Custom Metrics
 
 ```yaml
-
 # keda-scaledobject.yaml
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
@@ -424,7 +417,6 @@ spec:
 ### Triton Dynamic Batching
 
 ```protobuf
-
 # config.pbtxt
 dynamic_batching {
   preferred_batch_size: [ 8, 16, 32, 64 ]
@@ -452,7 +444,6 @@ instance_group [
 ### Capacity Calculator
 
 ```python
-
 # capacity_calculator.py
 
 def calculate_capacity(

@@ -47,9 +47,9 @@ For binary content moderation (violation vs. safe), the confusion matrix forms t
 
 The probability that a flagged item is actually a violation:
 
-$$
+```math
 \text{Precision} = \frac{TP}{TP + FP}
-$$
+```
 
 - **High precision** → Few wrongful content removals
 - **Content moderation target**: > 95% to minimize user frustration
@@ -58,9 +58,9 @@ $$
 
 The probability of catching an actual violation:
 
-$$
+```math
 \text{Recall} = \frac{TP}{TP + FN}
-$$
+```
 
 - **High recall** → Catch most harmful content
 - **Content moderation target**: > 90% for safety-critical categories
@@ -69,17 +69,17 @@ $$
 
 Balances precision and recall into a single metric:
 
-$$
+```math
 F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2 \cdot TP}{2 \cdot TP + FP + FN}
-$$
+```
 
 **F-beta Score (Weighted Harmonic Mean)**
 
 Allows weighting recall vs. precision:
 
-$$
+```math
 F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{(\beta^2 \cdot \text{Precision}) + \text{Recall}}
-$$
+```
 
 - β > 1: Emphasize recall (prefer catching violations)
 - β < 1: Emphasize precision (prefer avoiding false positives)
@@ -89,23 +89,23 @@ $$
 
 **False Positive Rate (Type I Error)**
 
-$$
+```math
 \text{FPR} = \frac{FP}{FP + TN} = 1 - \text{Specificity}
-$$
+```
 
 **False Negative Rate (Type II Error)**
 
-$$
+```math
 \text{FNR} = \frac{FN}{FN + TP} = 1 - \text{Recall}
-$$
+```
 
 ### ROC and AUC
 
 The **Receiver Operating Characteristic (ROC) curve** plots TPR vs. FPR at various thresholds:
 
-$$
+```math
 \text{AUC-ROC} = \int_0^1 TPR(FPR^{-1}(x)) \, dx
-$$
+```
 
 - AUC = 0.5 → Random classifier
 - AUC = 1.0 → Perfect classifier
@@ -115,9 +115,9 @@ $$
 
 For imbalanced datasets (common in moderation where violations are rare):
 
-$$
+```math
 \text{AUC-PR} = \int_0^1 P(R^{-1}(x)) \, dx
-$$
+```
 
 More informative than ROC-AUC when negative class dominates.
 
@@ -127,21 +127,21 @@ For multiple violation categories:
 
 **Macro-Average**: Unweighted mean across classes
 
-$$
+```math
 \text{Precision}_{\text{macro}} = \frac{1}{K} \sum_{k=1}^{K} \text{Precision}_k
-$$
+```
 
 **Micro-Average**: Global TP, FP, FN counts
 
-$$
+```math
 \text{Precision}_{\text{micro}} = \frac{\sum_{k=1}^{K} TP_k}{\sum_{k=1}^{K} (TP_k + FP_k)}
-$$
+```
 
 **Weighted-Average**: Weighted by class support
 
-$$
+```math
 \text{Precision}_{\text{weighted}} = \frac{\sum_{k=1}^{K} n_k \cdot \text{Precision}_k}{\sum_{k=1}^{K} n_k}
-$$
+```
 
 ---
 
@@ -356,7 +356,6 @@ class RankingMetrics:
         Precision among top-k ranked items.
         Critical for human review queue prioritization.
         """
-
         # Get indices of top k scores
         top_k_indices = np.argsort(y_scores)[-k:]
 
@@ -380,7 +379,6 @@ class RankingMetrics:
         Normalized Discounted Cumulative Gain.
         Accounts for ranking position of violations.
         """
-
         # Get ranking
         ranking = np.argsort(y_scores)[::-1][:k]
 
@@ -533,55 +531,55 @@ class SLAMonitor:
 
 ### Mathematical Framework for Fairness
 
-Fairness in content moderation ensures equal treatment across protected groups. Let $A$ be a sensitive attribute (e.g., language, region, user demographics).
+Fairness in content moderation ensures equal treatment across protected groups. Let \(A\) be a sensitive attribute (e.g., language, region, user demographics).
 
 **Demographic Parity (Statistical Parity)**
 
 Predictions should be independent of the sensitive attribute:
 
-$$
+```math
 P(\hat{Y} = 1 | A = a) = P(\hat{Y} = 1 | A = b) \quad \forall a, b
-$$
+```
 
 **Equalized Odds**
 
 True positive and false positive rates should be equal across groups:
 
-$$
+```math
 P(\hat{Y} = 1 | Y = y, A = a) = P(\hat{Y} = 1 | Y = y, A = b) \quad \forall y \in \{0, 1\}
-$$
+```
 
 **Equal Opportunity**
 
 A relaxation focusing only on true positive rates:
 
-$$
+```math
 P(\hat{Y} = 1 | Y = 1, A = a) = P(\hat{Y} = 1 | Y = 1, A = b)
-$$
+```
 
 **Disparate Impact Ratio**
 
 The "80% rule" from employment law:
 
-$$
+```math
 \text{DI} = \frac{P(\hat{Y} = 1 | A = \text{minority})}{P(\hat{Y} = 1 | A = \text{majority})} \geq 0.8
-$$
+```
 
 **False Positive Rate Parity**
 
 Critical for content moderation—ensures equal wrongful removal rates:
 
-$$
+```math
 P(\hat{Y} = 1 | Y = 0, A = a) = P(\hat{Y} = 1 | Y = 0, A = b)
-$$
+```
 
 **Calibration**
 
 Predicted probabilities should reflect true probabilities across groups:
 
-$$
+```math
 P(Y = 1 | \hat{P} = p, A = a) = P(Y = 1 | \hat{P} = p, A = b) = p
-$$
+```
 
 ### Impossibility Theorem
 
@@ -719,7 +717,6 @@ class HumanReviewMetrics:
         reviews = self.db.get_reviews(time_range)
 
         return {
-
             # Volume
             'total_reviews': len(reviews),
             'reviews_per_hour': len(reviews) / (time_range.total_seconds() / 3600),
@@ -736,7 +733,6 @@ class HumanReviewMetrics:
 
     def compute_agreement_metrics(self, reviews) -> Dict:
         """Compute inter-annotator agreement."""
-
         # Filter to reviews with multiple annotators
         multi_reviewed = [r for r in reviews if len(r.decisions) > 1]
 
@@ -792,7 +788,6 @@ class BusinessImpactMetrics:
     def compute_safety_impact(self, time_range: timedelta) -> Dict:
         """Measure impact on platform safety."""
         return {
-
             # Violations caught
             'violations_removed': self.moderation.count_removals(time_range),
             'violations_per_1m_views': self._violations_per_views(time_range),
@@ -809,7 +804,6 @@ class BusinessImpactMetrics:
     def compute_user_experience_impact(self, time_range: timedelta) -> Dict:
         """Measure impact on user experience."""
         return {
-
             # False positives impact
             'appeals_filed': self.moderation.count_appeals(time_range),
             'appeals_upheld': self.moderation.count_upheld_appeals(time_range),
@@ -825,7 +819,6 @@ class BusinessImpactMetrics:
     def compute_business_metrics(self, time_range: timedelta) -> Dict:
         """Measure business outcomes."""
         return {
-
             # Engagement
             'dau_trend': self._dau_trend(time_range),
             'time_spent_trend': self._time_spent_trend(time_range),

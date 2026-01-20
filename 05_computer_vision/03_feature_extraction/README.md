@@ -101,27 +101,27 @@ Corners are good features because they're distinctive in all directions.
 
 Consider shifting a window by $(u, v)$. The sum of squared differences:
 
-$$
+```math
 E(u, v) = \sum_{(x,y) \in W} [I(x+u, y+v) - I(x, y)]^2
-$$
+```
 
 Using Taylor expansion for small shifts:
 
-$$
+```math
 E(u, v) \approx \begin{bmatrix} u & v \end{bmatrix} \mathbf{M} \begin{bmatrix} u \\ v \end{bmatrix}
-$$
+```
 
 where $\mathbf{M}$ is the **structure tensor**:
 
-$$
+```math
 \mathbf{M} = \sum_{(x,y) \in W} \begin{bmatrix} I_x^2 & I_x I_y \\ I_x I_y & I_y^2 \end{bmatrix}
-$$
+```
 
 **Harris Corner Response:**
 
-$$
+```math
 R = \det(\mathbf{M}) - k \cdot \text{trace}(\mathbf{M})^2 = \lambda_1 \lambda_2 - k(\lambda_1 + \lambda_2)^2
-$$
+```
 
 where $\lambda\_1, \lambda\_2$ are eigenvalues of $\mathbf{M}$ and $k \approx 0.04-0.06$.
 
@@ -180,23 +180,23 @@ The most robust traditional feature - invariant to scale, rotation, and partiall
 
 Build a **Gaussian scale-space**:
 
-$$
+```math
 L(x, y, \sigma) = G(x, y, \sigma) * I(x, y)
-$$
+```
 
 where $G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}$
 
 **Difference of Gaussians (DoG):**
 
-$$
+```math
 D(x, y, \sigma) = L(x, y, k\sigma) - L(x, y, \sigma)
-$$
+```
 
 DoG approximates the Laplacian of Gaussian (LoG), which is scale-normalized:
 
-$$
+```math
 \sigma^2 \nabla^2 G \approx \frac{G(x, y, k\sigma) - G(x, y, \sigma)}{k - 1}
-$$
+```
 
 #### 2. Keypoint Localization
 
@@ -204,9 +204,9 @@ Find extrema in DoG space (compare with 26 neighbors: 8 spatial + 9 above + 9 be
 
 **Sub-pixel refinement** via Taylor expansion:
 
-$$
+```math
 D(\mathbf{x}) \approx D + \frac{\partial D^T}{\partial \mathbf{x}}\mathbf{x} + \frac{1}{2}\mathbf{x}^T \frac{\partial^2 D}{\partial \mathbf{x}^2}\mathbf{x}
-$$
+```
 
 Optimal offset: $\hat{\mathbf{x}} = -\frac{\partial^2 D^{-1}}{\partial \mathbf{x}^2}\frac{\partial D}{\partial \mathbf{x}}$
 
@@ -214,10 +214,10 @@ Optimal offset: $\hat{\mathbf{x}} = -\frac{\partial^2 D^{-1}}{\partial \mathbf{x
 
 Compute gradient magnitude and orientation:
 
-$$
+```math
 m(x, y) = \sqrt{(L(x+1, y) - L(x-1, y))^2 + (L(x, y+1) - L(x, y-1))^2}
 \theta(x, y) = \arctan\left(\frac{L(x, y+1) - L(x, y-1)}{L(x+1, y) - L(x-1, y)}\right)
-$$
+```
 
 Build orientation histogram (36 bins, 10° each). Peak = dominant orientation.
 
@@ -283,7 +283,6 @@ Faster alternative to SIFT using integral images and box filters.
 ![Diagram 4](images/diagram_04.svg)
 
 ```python
-
 # SURF Example (Note: may require opencv-contrib-python)
 import cv2
 
@@ -341,7 +340,6 @@ class ORBExtractor:
         Compute similarity using Hamming distance.
         Binary descriptors use Hamming, not Euclidean distance.
         """
-
         # Hamming distance = number of different bits
         xor = np.bitwise_xor(desc1, desc2)
         hamming = np.unpackbits(xor).sum()
@@ -369,22 +367,22 @@ Dense feature descriptor, originally designed for pedestrian detection.
 
 For each pixel, compute gradient:
 
-$$
+```math
 G_x(x, y) = I(x+1, y) - I(x-1, y)
 G_y(x, y) = I(x, y+1) - I(x, y-1)
-$$
+```
 
 **Magnitude:**
 
-$$
+```math
 m(x, y) = \sqrt{G_x^2 + G_y^2}
-$$
+```
 
 **Orientation:**
 
-$$
+```math
 \theta(x, y) = \arctan\left(\frac{G_y}{G_x}\right)
-$$
+```
 
 For unsigned gradients: $\theta \in [0°, 180°)$
 
@@ -397,9 +395,9 @@ For each cell, build orientation histogram:
 - Each pixel votes with its magnitude
 - **Soft binning:** Magnitude split between adjacent bins
 
-$$
+```math
 H_k = \sum_{(x,y) \in \text{cell}} m(x,y) \cdot w_k(\theta(x,y))
-$$
+```
 
 where $w\_k$ is the interpolation weight for bin $k$.
 
@@ -411,9 +409,9 @@ Concatenate histograms and normalize:
 
 **L2-Hys Normalization:**
 
-$$
+```math
 \mathbf{v} \leftarrow \frac{\mathbf{v}}{\sqrt{\|\mathbf{v}\|_2^2 + \epsilon^2}}
-$$
+```
 
 Then clip: $v\_i \leftarrow \min(v\_i, 0.2)$
 
@@ -473,7 +471,6 @@ class HOGExtractor:
                 visualize=True,
                 feature_vector=True
             )
-
             # Enhance visualization
             hog_image = exposure.rescale_intensity(hog_image, in_range=(0, 10))
             return features, hog_image
@@ -532,7 +529,6 @@ class FeatureMatcher:
 
         # FLANN matcher
         if self.descriptor_type == 'binary':
-
             # LSH for binary descriptors
             index_params = dict(
                 algorithm=6,  # FLANN_INDEX_LSH
@@ -541,7 +537,6 @@ class FeatureMatcher:
                 multi_probe_level=1
             )
         else:
-
             # KD-Tree for float descriptors
             index_params = dict(algorithm=1, trees=5)  # FLANN_INDEX_KDTREE
 
@@ -582,7 +577,6 @@ class FeatureMatcher:
         Returns:
             keypoints1, keypoints2, good_matches
         """
-
         # Create detector
         if detector == 'orb':
             det = cv2.ORB_create(nfeatures=1000)

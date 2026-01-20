@@ -41,15 +41,15 @@
 
 The goal of feature engineering is to create features $\mathbf{x}$ that maximize the **mutual information** with the fraud label $y$:
 
-$$
+```math
 I(y; \mathbf{x}) = H(y) - H(y | \mathbf{x})
-$$
+```
 
 Where entropy is:
 
-$$
+```math
 H(y) = -\sum_{c \in \{0,1\}} P(y=c) \log P(y=c)
-$$
+```
 
 ### Statistical Anomaly Detection
 
@@ -57,17 +57,17 @@ $$
 
 For any feature $x$, the **z-score** measures deviations from expected behavior:
 
-$$
+```math
 z = \frac{x - \mu}{\sigma}
-$$
+```
 
 Where $\mu$ is the mean and $\sigma$ is the standard deviation of the reference distribution.
 
 **For user-specific features:**
 
-$$
+```math
 z_{\text{user}} = \frac{x_{\text{current}} - \mu_{\text{user}}}{\sigma_{\text{user}}}
-$$
+```
 
 A transaction with $|z| > 3$ is considered anomalous (outside 99.7% of normal behavior).
 
@@ -75,9 +75,9 @@ A transaction with $|z| > 3$ is considered anomalous (outside 99.7% of normal be
 
 For features with outliers, use **Median Absolute Deviation (MAD)**:
 
-$$
+```math
 z_{\text{MAD}} = \frac{x - \tilde{x}}{1.4826 \cdot \text{MAD}}
-$$
+```
 
 Where:
 - $\tilde{x}$ is the median
@@ -88,16 +88,16 @@ Where:
 
 Velocity features capture transaction patterns over time windows. For a time window $[t - \Delta t, t]$:
 
-$$
+```math
 \text{count}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} \mathbb{1}[\text{user}_i = u]
 \text{sum}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} v_i \cdot \mathbb{1}[\text{user}_i = u]
-$$
+```
 
 **Velocity ratio** (detecting acceleration):
 
-$$
+```math
 r_{\text{velocity}} = \frac{\text{count}_{1h}}{\text{count}_{24h} / 24 + \epsilon}
-$$
+```
 
 Values $r > 3$ suggest unusual short-term activity bursts.
 
@@ -107,9 +107,9 @@ Values $r > 3$ suggest unusual short-term activity bursts.
 
 For discrete features, compute:
 
-$$
+```math
 I(X; Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P(x, y) \log \frac{P(x, y)}{P(x)P(y)}
-$$
+```
 
 Features with high $I(X; Y)$ are most predictive of fraud.
 
@@ -117,9 +117,9 @@ Features with high $I(X; Y)$ are most predictive of fraud.
 
 The **Shannon entropy** of a categorical feature over a time window:
 
-$$
+```math
 H(X) = -\sum_{i=1}^{k} p_i \log_2 p_i
-$$
+```
 
 Where $p\_i$ is the proportion of category $i$.
 
@@ -135,9 +135,9 @@ For transaction networks, define:
 
 The PageRank score $\pi\_i$ for node $i$ satisfies:
 
-$$
+```math
 \pi_i = \frac{1 - d}{N} + d \sum_{j \in \text{in}(i)} \frac{\pi_j}{|\text{out}(j)|}
-$$
+```
 
 Where $d \approx 0.85$ is the damping factor. High PageRank for fraud nodes propagates risk through the network.
 
@@ -145,9 +145,9 @@ Where $d \approx 0.85$ is the damping factor. High PageRank for fraud nodes prop
 
 Use **Louvain modularity** to detect fraud rings:
 
-$$
+```math
 Q = \frac{1}{2m} \sum_{ij} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)
-$$
+```
 
 Where $A\_{ij}$ is the adjacency matrix, $k\_i$ is node degree, and $\delta$ tests community membership.
 
@@ -252,7 +252,6 @@ class AmountAnomalyFeatures:
         merchant_std = merchant_history.get('std_amount', 1)
 
         return {
-
             # Z-scores
             'amount_user_zscore': (amount - user_mean) / (user_std + 1e-6),
             'amount_merchant_zscore': (amount - merchant_mean) / (merchant_std + 1e-6),
@@ -933,7 +932,6 @@ class TransactionEmbeddingModel(nn.Module):
         )
 
     def forward(self, batch: dict) -> torch.Tensor:
-
         # Get entity embeddings
         user_emb = self.entity_embeddings('user', batch['user_id'])
         merchant_emb = self.entity_embeddings('merchant', batch['merchant_id'])
@@ -976,7 +974,6 @@ class TransactionSequenceEncoder(nn.Module):
         self.output_projection = nn.Linear(config['hidden_dim'], config['output_dim'])
 
     def forward(self, transaction_sequence: List[dict], attention_mask: torch.Tensor) -> torch.Tensor:
-
         # Encode each transaction
         seq_len = len(transaction_sequence)
         transaction_embeddings = torch.stack([
@@ -1075,7 +1072,6 @@ class FeatureSelector:
             return [f[0] for f in sorted_features[:k]]
 
         elif method == 'cumulative_importance':
-
             # Select features that contribute to X% of importance
             total = sum(importance_scores.values())
             cumsum = 0
@@ -1124,7 +1120,6 @@ class FeatureCorrelationAnalyzer:
 
         to_remove = set()
         for feat1, feat2, corr in correlated_pairs:
-
             # Keep the more important feature
             if importance_scores.get(feat1, 0) < importance_scores.get(feat2, 0):
                 to_remove.add(feat1)
@@ -1173,7 +1168,6 @@ class RealTimeFeatureService:
             if isinstance(result, dict):
                 all_features.update(result)
             elif isinstance(result, Exception):
-
                 # Log error and continue with partial features
                 self.log_error(result)
 
@@ -1234,7 +1228,6 @@ class OptimizedFeatureComputer:
     """Optimized feature computation for low latency"""
 
     def __init__(self):
-
         # Pre-compiled feature transformations
         self.transformers = self._compile_transformers()
 

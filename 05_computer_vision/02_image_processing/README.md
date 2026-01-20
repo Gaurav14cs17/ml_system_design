@@ -109,15 +109,15 @@ Convolution is the fundamental operation in image processing. It applies a kerne
 
 Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 
-$$
+```math
 (I * K)(i, j) = \sum_{u=-m}^{m} \sum_{v=-n}^{n} K(u, v) \cdot I(i-u, j-v)
-$$
+```
 
 > **Note:** The kernel is flipped in true convolution. In practice, most libraries use **cross-correlation** (no flip):
 
-$$
+```math
 (I \star K)(i, j) = \sum_{u=-m}^{m} \sum_{v=-n}^{n} K(u, v) \cdot I(i+u, j+v)
-$$
+```
 
 **Properties:**
 - **Linearity:** $(aI\_1 + bI\_2) * K = a(I\_1 * K) + b(I\_2 * K)$
@@ -135,33 +135,33 @@ $$
 
 **Identity Kernel:**
 
-$$
+```math
 K_{identity} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}
-$$
+```
 
 **Box Blur (Mean Filter):**
 
-$$
+```math
 K_{box} = \frac{1}{9}\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
-$$
+```
 
 **Gaussian Blur (σ = 1):**
 
-$$
+```math
 K_{gauss} = \frac{1}{16}\begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{bmatrix}
-$$
+```
 
 **Sharpen:**
 
-$$
+```math
 K_{sharp} = \begin{bmatrix} 0 & -1 & 0 \\ -1 & 5 & -1 \\ 0 & -1 & 0 \end{bmatrix}
-$$
+```
 
 **Laplacian (Edge Detection):**
 
-$$
+```math
 K_{laplacian} = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
-$$
+```
 
 ### Border Handling
 
@@ -211,9 +211,9 @@ Noise in images comes from sensors, transmission, or compression. Removing noise
 
 The 2D Gaussian function:
 
-$$
+```math
 G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} \exp\left(-\frac{x^2 + y^2}{2\sigma^2}\right)
-$$
+```
 
 **Key Properties:**
 - $\sigma$ controls the spread (blur amount)
@@ -236,9 +236,9 @@ Preserves edges while smoothing - uses both spatial AND intensity distance.
 
 **Mathematical Formulation:**
 
-$$
+```math
 BF[I](p) = \frac{1}{W_p} \sum_{q \in \Omega} G_s(\|p - q\|) \cdot G_r(|I(p) - I(q)|) \cdot I(q)
-$$
+```
 
 where:
 - $G\_s$ = spatial Gaussian (distance in pixels)
@@ -248,10 +248,10 @@ where:
 
 **Components:**
 
-$$
+```math
 G_s(\|p - q\|) = \exp\left(-\frac{\|p - q\|^2}{2\sigma_s^2}\right)
 G_r(|I(p) - I(q)|) = \exp\left(-\frac{|I(p) - I(q)|^2}{2\sigma_r^2}\right)
-$$
+```
 
 **Effect:**
 - Similar intensity pixels → full weight → smoothing
@@ -272,22 +272,18 @@ def denoise_image(image, method='bilateral'):
         Denoised image
     """
     if method == 'gaussian':
-
         # Fast but blurs edges
         return cv2.GaussianBlur(image, (5, 5), sigmaX=1.5)
 
     elif method == 'median':
-
         # Great for salt & pepper noise
         return cv2.medianBlur(image, 5)
 
     elif method == 'bilateral':
-
         # Preserves edges, good balance
         return cv2.bilateralFilter(image, d=9, sigmaColor=75, sigmaSpace=75)
 
     elif method == 'nlm':
-
         # Best quality but slowest
         if len(image.shape) == 2:
             return cv2.fastNlMeansDenoising(image, h=10)
@@ -309,23 +305,23 @@ Edges represent significant local intensity changes - boundaries between objects
 
 The gradient of an image $I$ at point $(x, y)$ is:
 
-$$
+```math
 \nabla I = \begin{bmatrix} \frac{\partial I}{\partial x} \\ \frac{\partial I}{\partial y} \end{bmatrix} = \begin{bmatrix} G_x \\ G_y \end{bmatrix}
-$$
+```
 
 **Gradient Magnitude (Edge Strength):**
 
-$$
+```math
 |\nabla I| = \sqrt{G_x^2 + G_y^2}
-$$
+```
 
 Approximation for speed: $|\nabla I| \approx |G\_x| + |G\_y|$
 
 **Gradient Direction (Edge Orientation):**
 
-$$
+```math
 \theta = \arctan\left(\frac{G_y}{G_x}\right)
-$$
+```
 
 The gradient direction is **perpendicular** to the edge.
 
@@ -337,9 +333,9 @@ The gradient direction is **perpendicular** to the edge.
 
 **Sobel Kernels:**
 
-$$
+```math
 G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix} * I \quad\quad G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix} * I
-$$
+```
 
 These kernels combine:
 1. **Smoothing** (weighted average of neighbors)
@@ -347,9 +343,9 @@ These kernels combine:
 
 **Separable Form:**
 
-$$
+```math
 G_x = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} \begin{bmatrix} -1 & 0 & 1 \end{bmatrix}
-$$
+```
 
 ```python
 import cv2
@@ -362,7 +358,6 @@ def sobel_edges(image, ksize=3):
     Returns:
         Dictionary with gradient components and magnitude
     """
-
     # Convert to grayscale if needed
     if len(image.shape) == 3:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -459,7 +454,6 @@ def canny_edges(image, low_threshold=50, high_threshold=150, blur_ksize=5):
     Returns:
         Binary edge map
     """
-
     # Convert to grayscale
     if len(image.shape) == 3:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -505,9 +499,9 @@ Morphological operations are based on shapes (structuring elements) and are usef
 
 Morphological operations use **set theory**. A binary image is treated as a set of foreground pixel coordinates:
 
-$$
+```math
 A = \{(x, y) : I(x, y) = 1\}
-$$
+```
 
 The **structuring element** $B$ defines a neighborhood shape.
 
@@ -521,41 +515,41 @@ The **structuring element** $B$ defines a neighborhood shape.
 
 **Erosion ($\ominus$):**
 
-$$
+```math
 A \ominus B = \{z : B_z \subseteq A\}
-$$
+```
 
 Shrinks white regions. A pixel is white only if **all** structuring element pixels are white.
 
 **Dilation ($\oplus$):**
 
-$$
+```math
 A \oplus B = \{z : (\hat{B})_z \cap A \neq \emptyset\}
-$$
+```
 
 Expands white regions. A pixel is white if **any** structuring element pixel touches white.
 
 **Opening ($\circ$):**
 
-$$
+```math
 A \circ B = (A \ominus B) \oplus B
-$$
+```
 
 Removes small white noise (erosion) then restores shape (dilation).
 
 **Closing ($\bullet$):**
 
-$$
+```math
 A \bullet B = (A \oplus B) \ominus B
-$$
+```
 
 Fills small holes (dilation) then restores shape (erosion).
 
 **Morphological Gradient:**
 
-$$
+```math
 \text{gradient}(A, B) = (A \oplus B) - (A \ominus B)
-$$
+```
 
 Extracts edge boundaries.
 
@@ -659,41 +653,41 @@ Given a threshold $t$, pixels are divided into two classes:
 
 **Class probabilities:**
 
-$$
+```math
 \omega_0(t) = \sum_{i=0}^{t} p(i) \quad\quad \omega_1(t) = \sum_{i=t+1}^{L-1} p(i) = 1 - \omega_0(t)
-$$
+```
 
 **Class means:**
 
-$$
+```math
 \mu_0(t) = \frac{\sum_{i=0}^{t} i \cdot p(i)}{\omega_0(t)} \quad\quad \mu_1(t) = \frac{\sum_{i=t+1}^{L-1} i \cdot p(i)}{\omega_1(t)}
-$$
+```
 
 **Within-class variance:**
 
-$$
+```math
 \sigma_w^2(t) = \omega_0(t)\sigma_0^2(t) + \omega_1(t)\sigma_1^2(t)
-$$
+```
 
 **Between-class variance:**
 
-$$
+```math
 \sigma_b^2(t) = \omega_0(t)\omega_1(t)[\mu_0(t) - \mu_1(t)]^2
-$$
+```
 
 **Otsu's Criterion:**
 
 Find threshold $t^*$ that maximizes between-class variance:
 
-$$
+```math
 t^* = \arg\max_{t} \sigma_b^2(t)
-$$
+```
 
 This is equivalent to minimizing within-class variance since:
 
-$$
+```math
 \sigma^2_{total} = \sigma_w^2 + \sigma_b^2
-$$
+```
 
 ```python
 import cv2
@@ -846,7 +840,6 @@ class GeometricTransformer:
         M = cv2.getRotationMatrix2D(center, angle, scale)
 
         if expand:
-
             # Calculate new canvas size
             cos = np.abs(M[0, 0])
             sin = np.abs(M[0, 1])
@@ -945,7 +938,6 @@ class ImageEnhancer:
             brightness: Value to add (-255 to 255)
             contrast: Multiplier (0 to 3, 1 = no change)
         """
-
         # Apply contrast and brightness
         adjusted = cv2.convertScaleAbs(image, alpha=contrast, beta=brightness)
         return adjusted
@@ -959,7 +951,6 @@ class ImageEnhancer:
         gamma > 1: Darken image
         gamma = 1: No change
         """
-
         # Build lookup table
         inv_gamma = 1.0 / gamma
         table = np.array([
@@ -1008,7 +999,6 @@ class ImageEnhancer:
         """
         Sharpen image using unsharp masking.
         """
-
         # Create blurred version
         blurred = cv2.GaussianBlur(image, (0, 0), 3)
 
@@ -1197,7 +1187,6 @@ class ImagePreprocessingPipeline:
 
 # Usage example
 if __name__ == "__main__":
-
     # Create pipeline
     config = PipelineConfig(
         target_size=(224, 224),

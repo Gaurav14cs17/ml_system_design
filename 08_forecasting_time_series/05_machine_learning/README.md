@@ -36,9 +36,9 @@ Machine Learning approaches treat time series forecasting as a supervised learni
 
 Transform time series into input-output pairs:
 
-$$
+```math
 \{Y_1, Y_2, \ldots, Y_T\} \rightarrow \{(X_t, Y_{t+h})\}_{t=p}^{T-h}
-$$
+```
 
 Where:
 - $X\_t = f(Y\_{t-1}, Y\_{t-2}, \ldots, Y\_{t-p}, Z\_t)$ — Feature vector at time $t$
@@ -58,9 +58,9 @@ Where:
 
 For tree ensemble methods (XGBoost, LightGBM):
 
-$$
+```math
 \mathcal{L}(\theta) = \sum_{i=1}^{n}l(y_i, \hat{y}_i) + \sum_{k=1}^{K}\Omega(f_k)
-$$
+```
 
 Where:
 - $l(y\_i, \hat{y}\_i)$ — Differentiable loss function
@@ -505,7 +505,6 @@ class MultiStepForecaster:
             self.base_model.fit(X, y)
 
         elif self.strategy == 'direct':
-
             # Train separate model for each horizon
             for h in range(1, self.horizon + 1):
                 y_h = y.shift(-h + 1).dropna()
@@ -541,7 +540,6 @@ class MultiStepForecaster:
     def _update_features(self, features, new_value):
         """Shift lag features and insert new prediction"""
         updated = features.copy()
-
         # Shift lags
         for i in range(len(self.feature_cols) - 1, 0, -1):
             if f'lag_{i+1}' in updated.index and f'lag_{i}' in updated.index:

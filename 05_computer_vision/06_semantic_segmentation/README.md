@@ -32,9 +32,9 @@ Semantic segmentation assigns a class label to every pixel in an image.
 
 Given an input image $I \in \mathbb{R}^{H \times W \times C}$, predict a label map:
 
-$$
+```math
 Y: \{0, ..., H-1\} \times \{0, ..., W-1\} \rightarrow \{1, ..., K\}
-$$
+```
 
 where $K$ is the number of classes.
 
@@ -44,15 +44,15 @@ The network produces logits $\mathbf{z} \in \mathbb{R}^{H \times W \times K}$
 
 **Per-Pixel Softmax:**
 
-$$
+```math
 p_{i,j,k} = \frac{\exp(z_{i,j,k})}{\sum_{c=1}^{K} \exp(z_{i,j,c})}
-$$
+```
 
 **Prediction:**
 
-$$
+```math
 \hat{y}_{i,j} = \arg\max_k p_{i,j,k}
-$$
+```
 
 ### Applications
 
@@ -229,17 +229,17 @@ class UNet(nn.Module):
 
 Standard convolution with dilation rate $r$:
 
-$$
+```math
 (f *_r g)(p) = \sum_s f(s) \cdot g(p + r \cdot s)
-$$
+```
 
 **Effective Receptive Field:**
 
 For a $k \times k$ kernel with dilation rate $r$:
 
-$$
+```math
 \text{Effective kernel size} = k + (k-1)(r-1) = r(k-1) + 1
-$$
+```
 
 | Kernel Size | Dilation | Effective Size |
 |---|---|---|
@@ -266,17 +266,17 @@ Use parallel dilated convolutions with different rates to capture multi-scale fe
 
 **Pixel-wise Cross-Entropy:**
 
-$$
+```math
 \mathcal{L}_{CE} = -\frac{1}{HW}\sum_{i=1}^{H}\sum_{j=1}^{W}\sum_{k=1}^{K} y_{i,j,k} \log(p_{i,j,k})
-$$
+```
 
 where $y\_{i,j,k}$ is the one-hot encoded ground truth.
 
 **Weighted Cross-Entropy (for class imbalance):**
 
-$$
+```math
 \mathcal{L}_{WCE} = -\frac{1}{HW}\sum_{i,j}\sum_{k} w_k \cdot y_{i,j,k} \log(p_{i,j,k})
-$$
+```
 
 where $w\_k = \frac{N}{K \cdot N\_k}$ and $N\_k$ is the number of pixels in class $k$.
 
@@ -284,16 +284,16 @@ where $w\_k = \frac{N}{K \cdot N\_k}$ and $N\_k$ is the number of pixels in clas
 
 Based on the Sørensen–Dice coefficient:
 
-$$
+```math
 \text{Dice}(P, G) = \frac{2|P \cap G|}{|P| + |G|} = \frac{2\sum_{i,j} p_{i,j} \cdot g_{i,j}}{\sum_{i,j} p_{i,j} + \sum_{i,j} g_{i,j}}
 \mathcal{L}_{Dice} = 1 - \frac{2\sum_{i,j} p_{i,j} \cdot g_{i,j} + \epsilon}{\sum_{i,j} p_{i,j} + \sum_{i,j} g_{i,j} + \epsilon}
-$$
+```
 
 **Generalized Dice Loss (multi-class):**
 
-$$
+```math
 \mathcal{L}_{GDL} = 1 - 2\frac{\sum_{k} w_k \sum_{i,j} p_{i,j,k} \cdot g_{i,j,k}}{\sum_{k} w_k \sum_{i,j} (p_{i,j,k} + g_{i,j,k})}
-$$
+```
 
 where $w\_k = \frac{1}{(\sum\_{i,j} g\_{i,j,k})^2}$ to weight smaller classes more.
 
@@ -301,9 +301,9 @@ where $w\_k = \frac{1}{(\sum\_{i,j} g\_{i,j,k})^2}$ to weight smaller classes mo
 
 Generalization of Dice that balances false positives and false negatives:
 
-$$
+```math
 \mathcal{L}_{Tversky} = 1 - \frac{TP}{TP + \alpha \cdot FP + \beta \cdot FN}
-$$
+```
 
 Setting $\alpha = \beta = 0.5$ gives Dice loss.
 

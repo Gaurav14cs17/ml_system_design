@@ -112,7 +112,6 @@ sequenceDiagram
 ### Project Setup
 
 ```python
-
 # feature_repo/feature_store.yaml
 project: ml_recommendation
 registry: gs://my-bucket/registry.db
@@ -128,7 +127,6 @@ entity_key_serialization_version: 2
 ### Entity and Feature Definitions
 
 ```python
-
 # feature_repo/features.py
 from feast import Entity, Feature, FeatureView, FileSource, ValueType
 from feast.types import Float32, Int64, String
@@ -196,7 +194,6 @@ item_features = FeatureView(
 ### Training Data Retrieval
 
 ```python
-
 # training_pipeline.py
 from feast import FeatureStore
 import pandas as pd
@@ -233,7 +230,6 @@ print(training_df.head())
 ### Online Serving
 
 ```python
-
 # serving_endpoint.py
 from feast import FeatureStore
 from fastapi import FastAPI
@@ -243,7 +239,6 @@ store = FeatureStore(repo_path="feature_repo/")
 
 @app.post("/predict")
 async def predict(user_id: int, item_id: int):
-
     # Get online features
     features = store.get_online_features(
         features=[
@@ -282,7 +277,6 @@ async def predict(user_id: int, item_id: int):
 ### Streaming Features
 
 ```python
-
 # streaming_features.py
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import window, avg, count, col
@@ -343,7 +337,6 @@ windowed_features.writeStream \
 ### Batch Feature Pipeline
 
 ```python
-
 # batch_features.py
 from datetime import datetime, timedelta
 import pandas as pd
@@ -391,7 +384,6 @@ for date in pd.date_range(start="2023-01-01", end="2024-01-01"):
 ### Feature Discovery
 
 ```python
-
 # feature_registry.py
 from feast import FeatureStore
 

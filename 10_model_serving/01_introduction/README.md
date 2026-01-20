@@ -113,7 +113,6 @@ graph TB
 ### 1. Inference vs Training
 
 ```python
-
 # Training Mode (Development)
 # - Backward pass (gradients)
 # - Batch processing
@@ -146,18 +145,18 @@ with torch.no_grad():
 
 #### Throughput Calculation
 
-**Throughput** $T$ (requests per second) for a system with $W$ workers and latency $L$:
+**Throughput** \( T \) (requests per second) for a system with \( W \) workers and latency \( L \):
 
 \[
 T = \frac{W}{L} = W \times \frac{1000\text{ms}}{L_{\text{ms}}}
 \]
 
 **Example:**
-- $W = 4$ workers
-- $L = 50$ ms per inference
-- $T = 4 \times \frac{1000}{50} = 80$ RPS per server
+- \( W = 4 \) workers
+- \( L = 50 \) ms per inference
+- \( T = 4 \times \frac{1000}{50} = 80 \) RPS per server
 
-For $N$ servers: $T_{\text{total}} = N \times T = 10 \times 80 = 800$ RPS
+For \( N \) servers: \( T_{\text{total}} = N \times T = 10 \times 80 = 800 \) RPS
 
 #### Latency Percentiles
 
@@ -174,13 +173,13 @@ P(L \leq x) = \Phi\left(\frac{\ln x - \mu}{\sigma}\right)
 
 #### Goodput vs Throughput
 
-**Goodput** $G$ accounts for failed requests:
+**Goodput** \( G \) accounts for failed requests:
 
 \[
 G = T \times (1 - \epsilon)
 \]
 
-where $\epsilon$ is the error rate.
+where \( \epsilon \) is the error rate.
 
 #### Service Level Objectives (SLOs)
 
@@ -194,7 +193,6 @@ P(L_{P99} < 100\text{ms}) \geq 0.999
 ### 4. Model Serialization
 
 ```python
-
 # Different serialization formats
 import torch
 import tensorflow as tf
@@ -422,7 +420,6 @@ sequenceDiagram
 #### 1. Model Server
 
 ```python
-
 # Core responsibilities of a model server
 class ModelServer:
     def __init__(self):
@@ -458,7 +455,6 @@ class ModelServer:
 #### 3. Feature Store
 
 ```python
-
 # Feature retrieval pattern
 from feast import FeatureStore
 
@@ -487,7 +483,6 @@ features = store.get_online_features(
 ### 2. Cold Start Problem
 
 ```python
-
 # Problem: Model loading takes 30 seconds
 # Solution: Pre-warm instances
 
@@ -520,7 +515,6 @@ class ModelServerWithWarmup:
 ### 4. Dependency Hell
 
 ```yaml
-
 # Common dependency conflicts
 # model trained with:
 torch==1.9.0
@@ -585,7 +579,6 @@ COPY model/ /app/model/
 ### Your First Model Server
 
 ```python
-
 # simple_server.py
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -607,7 +600,6 @@ class PredictionResponse(BaseModel):
 
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(request: PredictionRequest):
-
     # Convert input to tensor
     input_tensor = torch.tensor([request.features], dtype=torch.float32)
 
@@ -635,7 +627,6 @@ async def health():
 ### Docker Deployment
 
 ```dockerfile
-
 # Dockerfile
 FROM python:3.10-slim
 
@@ -663,7 +654,6 @@ CMD ["uvicorn", "simple_server:app", "--host", "0.0.0.0", "--port", "8000"]
 ### Testing Your Server
 
 ```bash
-
 # Build and run
 docker build -t my-model-server .
 docker run -p 8000:8000 my-model-server

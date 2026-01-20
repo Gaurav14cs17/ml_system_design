@@ -40,19 +40,19 @@ Unlike traditional software where bugs manifest as errors or crashes, ML systems
 
 Consider this mathematical formulation:
 
-Let $f_\theta: \mathcal{X} \rightarrow \mathcal{Y}$ be our trained model. In traditional software:
+Let \( f_\theta: \mathcal{X} \rightarrow \mathcal{Y} \) be our trained model. In traditional software:
 
-$$
+```math
 \text{Error} = \mathbf{1}[\text{exception thrown}]
-$$
+```
 
 In ML systems:
 
-$$
+```math
 \text{Error} = \mathbb{E}_{(x,y) \sim P_{prod}}[L(f_\theta(x), y)]
-$$
+```
 
-The error is a **statistical quantity** that requires monitoring the production distribution $P_{prod}$, which may differ from training.
+The error is a **statistical quantity** that requires monitoring the production distribution \( P_{prod} \), which may differ from training.
 
 ### Real-World Impact of Silent Failures
 
@@ -90,15 +90,15 @@ But they **miss critical ML-specific concerns**:
 
 Traditional monitoring checks:
 
-$$
+```math
 \text{healthy} = (\text{latency} < \tau) \land (\text{errors} < \epsilon) \land (\text{availability} > \alpha)
-$$
+```
 
 ML monitoring additionally requires:
 
-$$
+```math
 \text{healthy} = \text{traditional} \land (PSI < 0.2) \land (\text{accuracy} > \text{baseline} - \delta) \land (P_{train}(X) \approx P_{prod}(X))
-$$
+```
 
 ---
 
@@ -120,19 +120,19 @@ Before deployment, establish reference metrics from your validation set:
 
 **Key Formula:** For drift detection, store the reference distribution:
 
-$$
+```math
 \hat{P}_{ref}(x) = \frac{1}{n}\sum_{i=1}^{n}\mathbf{1}[X_i \in \text{bin}(x)]
-$$
+```
 
 ### Phase 2: Production Monitoring
 
 Monitor continuously using rolling windows:
 
-$$
+```math
 \hat{\mu}_{rolling}(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} y_i
-$$
+```
 
-Where $w$ is the window size (e.g., 1000 predictions).
+Where \( w \) is the window size (e.g., 1000 predictions).
 
 ### Phase 3: Alert and Response
 
@@ -163,11 +163,11 @@ A comprehensive ML monitoring system has five key layers:
 
 **Mathematical formulation:**
 
-For feature $X_i$, compute:
+For feature \( X_i \), compute:
 
-$$
+```math
 PSI_i = \sum_{k=1}^{bins} (A_k - E_k) \ln\left(\frac{A_k}{E_k}\right)
-$$
+```
 
 ### 2. Model Performance Monitoring
 
@@ -185,18 +185,18 @@ $$
 
 | Drift Type | Definition | Detection Method |
 |------------|------------|------------------|
-| **Covariate** | $P(X)$ changes | PSI, KS test |
-| **Concept** | $P(Y\|X)$ changes | Performance degradation |
-| **Prior** | $P(Y)$ changes | Label distribution shift |
+| **Covariate** | \( P(X) \) changes | PSI, KS test |
+| **Concept** | \( P(Y\|X) \) changes | Performance degradation |
+| **Prior** | \( P(Y) \) changes | Label distribution shift |
 | **Prediction** | Model output distribution changes | Prediction PSI |
 
 ### 4. Operational Monitoring
 
 **Latency percentiles matter:**
 
-$$
+```math
 P_k = \text{value at } k\text{-th percentile}
-$$
+```
 
 - **P50**: Median experience
 - **P95**: Most users' experience
@@ -206,9 +206,9 @@ $$
 
 **Connect ML metrics to business outcomes:**
 
-$$
+```math
 \text{Revenue Impact} = \Delta\text{Conversion} \times \text{Traffic} \times \text{AOV}
-$$
+```
 
 ---
 
@@ -272,13 +272,13 @@ Like the testing pyramid, monitoring should be layered:
 
 Use historical data to set thresholds:
 
-$$
+```math
 \text{threshold} = \mu_{baseline} + k \cdot \sigma_{baseline}
-$$
+```
 
-Where $k$ depends on desired sensitivity:
-- $k = 2$: ~5% false positive rate
-- $k = 3$: ~0.3% false positive rate
+Where \( k \) depends on desired sensitivity:
+- \( k = 2 \): ~5% false positive rate
+- \( k = 3 \): ~0.3% false positive rate
 
 ---
 
@@ -304,10 +304,10 @@ For implementation details, see the accompanying code examples in the `examples/
 
 | Concept | Formula | Purpose |
 |---------|---------|---------|
-| **PSI** | $\sum(A-E)\ln(A/E)$ | Distribution stability |
-| **Rolling Mean** | $\frac{1}{w}\sum_{i=t-w+1}^{t}y_i$ | Trend detection |
-| **Alert Threshold** | $\mu + k\sigma$ | Anomaly detection |
-| **Percentile** | $P_k = x_{(\lceil kn/100 \rceil)}$ | Latency analysis |
+| **PSI** | \( \sum(A-E)\ln(A/E) \) | Distribution stability |
+| **Rolling Mean** | \( \frac{1}{w}\sum_{i=t-w+1}^{t}y_i \) | Trend detection |
+| **Alert Threshold** | \( \mu + k\sigma \) | Anomaly detection |
+| **Percentile** | \( P_k = x_{(\lceil kn/100 \rceil)} \) | Latency analysis |
 
 ---
 

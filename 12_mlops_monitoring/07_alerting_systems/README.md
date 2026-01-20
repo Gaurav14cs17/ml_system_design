@@ -110,7 +110,6 @@ class MLAlertManager:
 
     def _handle_firing(self, rule: AlertRule, metrics: Dict) -> Optional[Alert]:
         """Handle a firing condition."""
-
         # Check cooldown
         last_fire = self.last_fired.get(rule.name)
         if last_fire:
@@ -308,7 +307,6 @@ def create_ml_alert_rules() -> List[AlertRule]:
     """Create standard ML monitoring alert rules."""
 
     return [
-
         # Model Performance Alerts
         AlertRule(
             name="model_accuracy_critical",
@@ -482,7 +480,6 @@ class AlertAggregator:
 ## Runbook Template
 
 ```markdown
-
 # Runbook: Model Accuracy Critical
 
 ## Alert Details
@@ -507,7 +504,6 @@ Model accuracy has dropped below 70%, indicating severe degradation.
 
 2. **Verify data quality**
    ```bash
-
    # Check feature freshness
    curl -s http://feature-store/api/v1/freshness | jq .
 

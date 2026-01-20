@@ -209,7 +209,6 @@ async def health():
 ### Triton Inference Server
 
 ```python
-
 # config.pbtxt for Triton
 """
 name: "embedding_model"
@@ -333,7 +332,6 @@ class BatchingEmbeddingService:
 ### Horizontal Scaling
 
 ```yaml
-
 # Kubernetes deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -363,7 +361,6 @@ spec:
             nvidia.com/gpu: "1"
         ports:
         - containerPort: 8000
-
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
@@ -493,7 +490,6 @@ async def embed(texts):
 ### Alerting Rules
 
 ```yaml
-
 # Prometheus alerting rules
 groups:
 - name: embedding-alerts
@@ -738,7 +734,6 @@ class ResilientSearchService:
         self.circuit_breaker = CircuitBreaker()
 
     async def search(self, query: str, k: int) -> List[SearchResult]:
-
         # Try primary with circuit breaker
         try:
             if self.circuit_breaker.can_execute():

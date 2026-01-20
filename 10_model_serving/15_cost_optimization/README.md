@@ -68,7 +68,6 @@ xychart-beta
 ### Cost per Prediction Calculator
 
 ```python
-
 # cost_calculator.py
 from dataclasses import dataclass
 from typing import Optional
@@ -85,7 +84,6 @@ def calculate_cost_per_million_predictions(
     num_instances: int = 1
 ) -> float:
     """Calculate cost per million predictions"""
-
     # Requests per hour
     requests_per_hour = infra.requests_per_second * 3600 * infra.utilization
 
@@ -120,7 +118,6 @@ print(f"CPU cost: ${calculate_cost_per_million_predictions(cpu_instance):.2f}/M 
 ### Monthly Cost Estimation
 
 ```python
-
 # monthly_cost_estimator.py
 
 def estimate_monthly_cost(
@@ -186,7 +183,6 @@ print(f"Cost per million: ${estimate['cost_per_million']:.3f}")
 ### Profiling for Right-Sizing
 
 ```python
-
 # rightsizing.py
 import psutil
 import torch
@@ -221,7 +217,6 @@ def profile_model_resources(
     request_count = 0
 
     while time.time() - start_time < duration_seconds:
-
         # Record resources before
         cpu_samples.append(psutil.cpu_percent())
         memory_samples.append(psutil.Process().memory_info().rss / 1024 / 1024)
@@ -257,7 +252,6 @@ def profile_model_resources(
 
 def recommend_instance(profile: ResourceProfile) -> str:
     """Recommend instance type based on profile"""
-
     # CPU-bound
     if profile.avg_gpu_percent < 20:
         if profile.avg_memory_mb < 4000:
@@ -287,7 +281,6 @@ def recommend_instance(profile: ResourceProfile) -> str:
 ### Kubernetes Spot Node Pool
 
 ```yaml
-
 # spot-nodepool.yaml
 apiVersion: karpenter.sh/v1alpha5
 kind: Provisioner
@@ -314,7 +307,6 @@ spec:
   ttlSecondsUntilExpired: 2592000  # 30 days
 
 ---
-
 # Fallback to on-demand for critical workloads
 apiVersion: karpenter.sh/v1alpha5
 kind: Provisioner
@@ -336,7 +328,6 @@ spec:
 ### Graceful Shutdown Handler
 
 ```python
-
 # spot_handler.py
 import signal
 import sys
@@ -402,7 +393,6 @@ class SpotTerminationHandler:
 ### Cost-Aware Autoscaling
 
 ```python
-
 # cost_aware_autoscaler.py
 from dataclasses import dataclass
 from typing import List
@@ -446,7 +436,6 @@ class CostAwareAutoscaler:
 
         # Latency-based adjustment
         if current_latency_ms > self.latency_slo:
-
             # Scale up if latency exceeds SLO
             latency_replicas = current_replicas * (current_latency_ms / self.latency_slo)
         else:
@@ -513,7 +502,6 @@ class ScheduledScaler:
 ### Cost-Efficiency Metrics
 
 ```python
-
 # efficiency_metrics.py
 
 def calculate_efficiency_metrics(
@@ -525,7 +513,6 @@ def calculate_efficiency_metrics(
     """Calculate efficiency metrics for comparison"""
 
     return {
-
         # Cost efficiency
         "cost_per_million_predictions": monthly_cost / (monthly_predictions / 1_000_000),
         "predictions_per_dollar": monthly_predictions / monthly_cost,
@@ -560,7 +547,6 @@ print(f"Improvement: {baseline['cost_per_million_predictions'] / optimized['cost
 ### Cost Dashboard Metrics
 
 ```python
-
 # cost_monitoring.py
 from prometheus_client import Gauge, Counter
 import time
@@ -615,7 +601,6 @@ class CostTracker:
 ### Cost Alerts
 
 ```yaml
-
 # cost_alerts.yaml
 groups:
   - name: cost_alerts

@@ -58,7 +58,6 @@ Online serving retrieves feature values in **real-time** for ML model inference.
 ### Latency Optimization Techniques
 
 ```python
-
 # 1. BATCH REQUESTS (amortize overhead)
 # Instead of:
 for user_id in user_ids:
@@ -308,10 +307,8 @@ class CachedFeatureStore:
 ### Performance Monitoring
 
 ```python
-
 # Key metrics to monitor
 METRICS = {
-
     # Latency metrics
     "feature_lookup_latency_p50": "P50 latency for feature lookups",
     "feature_lookup_latency_p99": "P99 latency for feature lookups",

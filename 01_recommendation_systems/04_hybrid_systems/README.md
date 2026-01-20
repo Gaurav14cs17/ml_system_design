@@ -106,12 +106,10 @@ class WeightedHybridRecommender:
         self.recommenders = recommenders
 
         if weights is None:
-
             # Equal weights by default
             n = len(recommenders)
             self.weights = {name: 1/n for name in recommenders}
         else:
-
             # Normalize weights
             total = sum(weights.values())
             self.weights = {k: v/total for k, v in weights.items()}
@@ -137,7 +135,6 @@ class WeightedHybridRecommender:
                 weighted_sum += weight * score
                 weight_sum += weight
             except Exception:
-
                 # Recommender couldn't predict, skip
                 continue
 
@@ -286,7 +283,6 @@ class SwitchingHybridRecommender:
 
     def fit(self, ratings_df):
         """Fit all recommenders and compute statistics."""
-
         # Count ratings
         self.user_rating_counts = ratings_df.groupby('user_id').size().to_dict()
         self.item_rating_counts = ratings_df.groupby('item_id').size().to_dict()
@@ -356,7 +352,6 @@ class GradualSwitchingHybrid:
         elif user_ratings >= self.transition_end:
             return 1.0
         else:
-
             # Linear interpolation
             progress = (user_ratings - self.transition_start) / \
                       (self.transition_end - self.transition_start)
@@ -513,7 +508,6 @@ class DeepHybridNetwork(nn.Module):
         self.prediction_mlp = nn.Sequential(*layers)
 
     def forward(self, user_ids, item_ids, content_features):
-
         # Get embeddings
         user_embed = self.user_embedding(user_ids)
         item_embed = self.item_embedding(item_ids)
@@ -564,7 +558,6 @@ class CascadeHybridRecommender:
         """
         Three-stage recommendation pipeline.
         """
-
         # Stage 1: Candidate Generation
         candidates = self.candidate_generator.get_candidates(
             user_id,
@@ -619,7 +612,6 @@ class DiversityReranker:
             best_item = None
 
             for item_id, relevance in remaining:
-
                 # Compute diversity from already selected
                 if selected:
                     max_similarity = max(
@@ -700,7 +692,6 @@ class StackingHybridRecommender:
         """
         Fit using stacking with cross-validation.
         """
-
         # Generate out-of-fold predictions for meta features
         n_samples = len(ratings_df)
         n_recommenders = len(self.base_recommenders)
@@ -892,21 +883,18 @@ class ProductionHybridRecommender:
 
         # Determine strategy based on user activity
         if user_activity == 0:
-
             # Complete cold start - use popularity + CB
             strategy = "cold_start"
             candidates = self.popularity_model.recommend(
                 n=n * 5, exclude_items=exclude_items
             )
         elif user_activity < self.min_user_interactions:
-
             # Warm start - blend CB and popularity
             strategy = "warm_start"
             candidates = self._warm_start_candidates(
                 user_id, n * 3, exclude_items
             )
         else:
-
             # Full personalization
             strategy = "personalized"
             candidates = self.candidate_generator.generate(
@@ -947,7 +935,6 @@ class ProductionHybridRecommender:
         """
         Generate candidates for users with limited history.
         """
-
         # Get CB recommendations based on limited history
         cb_recs = self.cb_model.recommend(user_id, n=n//2)
 

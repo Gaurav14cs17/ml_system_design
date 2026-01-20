@@ -40,7 +40,6 @@ In the tech industry, A/B testing became mainstream in the early 2000s:
 **The Problem**: ML models are typically evaluated using offline metrics like accuracy, AUC, or RMSE. However, these metrics often don't correlate with real business outcomes.
 
 ```python
-
 # Example: A recommendation model might have better offline metrics
 # but perform worse in production
 
@@ -107,7 +106,6 @@ class MLExperimentationCycle:
 
     def run_cycle(self):
         while True:
-
             # Step 1: Hypothesis Generation
             hypothesis = self.generate_hypothesis()
 
@@ -155,7 +153,6 @@ Best for:
 - Pricing experiments
 
 ```python
-
 # A/B Test Example: Comparing two ranking models
 experiment_config = {
     'type': 'ab_test',
@@ -175,7 +172,6 @@ Best for:
 - When regret minimization matters
 
 ```python
-
 # MAB Example: Dynamic content optimization
 mab_config = {
     'type': 'epsilon_greedy',
@@ -193,7 +189,6 @@ Best for:
 - Sensitive detection of preferences
 
 ```python
-
 # Interleaving Example: Search ranking comparison
 interleaving_config = {
     'type': 'team_draft_interleaving',
@@ -273,7 +268,6 @@ def analyze_ab_test(control_data, treatment_data, alpha=0.05):
     """
     Comprehensive A/B test analysis
     """
-
     # 1. Sanity Checks
     assert len(control_data) > 100, "Insufficient control sample"
     assert len(treatment_data) > 100, "Insufficient treatment sample"
@@ -385,7 +379,6 @@ def analyze_ab_test(control_data, treatment_data, alpha=0.05):
 ### Challenge 1: Delayed Feedback
 
 ```python
-
 # Problem: Many ML metrics have delayed outcomes
 feedback_delays = {
     'click': 'immediate',
@@ -410,7 +403,6 @@ proxy_metric_mapping = {
 ### Challenge 3: Multiple Hypothesis Testing
 
 ```python
-
 # Problem: Running many experiments increases false positive rate
 
 def bonferroni_correction(p_values, alpha=0.05):

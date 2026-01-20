@@ -108,7 +108,6 @@ class PositionBiasHandler:
     """
 
     def __init__(self):
-
         # Estimated click propensity by position
         self.position_propensity = {
             1: 1.0, 2: 0.65, 3: 0.45, 4: 0.35, 5: 0.28,
@@ -145,7 +144,6 @@ class PositionBiasHandler:
         import random
 
         if random.random() < exploration_rate:
-
             # Randomly shuffle some results
             top_k = min(10, len(results))
             shuffled_indices = random.sample(range(top_k), top_k)
@@ -277,7 +275,6 @@ class HumanLabelCollection:
 
         aggregated = []
         for pair_id, labels in raw_labels.items():
-
             # Calculate agreement
             label_counts = Counter(labels)
             most_common_label, count = label_counts.most_common(1)[0]
@@ -614,7 +611,6 @@ class OfflineEvaluator:
         results = {metric: [] for metric in self.metrics}
 
         for query_data in test_data:
-
             # Get predictions
             features = query_data['features']
             true_labels = query_data['labels']
@@ -634,7 +630,6 @@ class OfflineEvaluator:
 
     def _ndcg(self, y_true, y_pred, k):
         """Calculate NDCG@k"""
-
         # Get ranking
         ranking = np.argsort(y_pred)[::-1][:k]
 

@@ -26,9 +26,9 @@ Common models: **M/M/1** (Markovian arrivals, exponential service, single server
 
 The fundamental relationship in queueing systems:
 
-$$
+```math
 L = \lambda \cdot W
-$$
+```
 
 where:
 - $L$ = average number of items in system
@@ -43,21 +43,21 @@ For arrival rate $\lambda$ and service rate $\mu$:
 
 **Utilization:**
 
-$$
+```math
 \rho = \frac{\lambda}{\mu}
-$$
+```
 
 **Average time in system:**
 
-$$
+```math
 W = \frac{1}{\mu - \lambda} = \frac{1}{\mu(1-\rho)}
-$$
+```
 
 **Average queue length:**
 
-$$
+```math
 L_q = \frac{\rho^2}{1-\rho}
-$$
+```
 
 **Key insight:** As $\rho \to 1$, latency $\to \infty$. Keep utilization below 70-80% for stable systems.
 
@@ -67,23 +67,23 @@ $$
 
 **Tumbling Window** (non-overlapping):
 
-$$
+```math
 W_k = [k \cdot w, (k+1) \cdot w), \quad k \in \mathbb{Z}
-$$
+```
 
 **Sliding Window** (overlapping):
 
-$$
+```math
 W_k = [k \cdot s, k \cdot s + w), \quad k \in \mathbb{Z}
-$$
+```
 
 where $w$ = window size, $s$ = slide interval.
 
 **Session Window** (activity-based):
 
-$$
+```math
 W_{session} = \{e_1, ..., e_n\} : \forall i, t_{i+1} - t_i < g
-$$
+```
 
 where $g$ = gap duration.
 
@@ -91,9 +91,9 @@ where $g$ = gap duration.
 
 A **watermark** $W(t\_p)$ at processing time $t\_p$ is a heuristic bound:
 
-$$
+```math
 W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\}
-$$
+```
 
 **Completeness guarantee:** For window $[a, b)$, we can close it when $W(t\_p) \geq b$.
 
@@ -103,15 +103,15 @@ $$
 
 **Idempotent processing** ensures:
 
-$$
+```math
 f(f(x)) = f(x)
-$$
+```
 
 **Transactional boundaries** with offset commits:
 
-$$
+```math
 \text{commit}(\text{offset}_i) \Rightarrow \text{processed}(e_1, ..., e_i)
-$$
+```
 
 Recovery: Resume from $\text{offset}\_{last\_committed}$.
 
@@ -123,17 +123,17 @@ For batch size $B$ and per-item processing cost $c$:
 
 **Throughput:**
 
-$$
+```math
 \Theta = \frac{B}{c_{setup} + B \cdot c_{item}}
-$$
+```
 
 As $B \to \infty$: $\Theta \to \frac{1}{c\_{item}}$ (asymptotic maximum)
 
 **Latency:**
 
-$$
+```math
 L = c_{setup} + B \cdot c_{item} + \frac{B-1}{2\lambda}
-$$
+```
 
 The last term accounts for waiting time to fill the batch.
 
@@ -143,9 +143,9 @@ The last term accounts for waiting time to fill the batch.
 
 Spark Streaming uses micro-batches with interval $\Delta$:
 
-$$
+```math
 \text{latency} \geq \Delta + \text{processing\_time}
-$$
+```
 
 Minimum achievable latency bounded by batch interval.
 
@@ -157,17 +157,17 @@ Minimum achievable latency bounded by batch interval.
 
 For exponential decay:
 
-$$
+```math
 I(t) = I_0 \cdot e^{-\lambda t}
-$$
+```
 
 where $\lambda$ = decay rate, $t$ = data age.
 
 **Optimal update frequency:** Balance information gain against processing cost:
 
-$$
+```math
 \max_f \left[ I(1/f) - C(f) \right]
-$$
+```
 
 where $f$ = update frequency, $C(f)$ = cost function.
 
@@ -175,9 +175,9 @@ where $f$ = update frequency, $C(f)$ = cost function.
 
 For event types with probabilities $p\_1, ..., p\_n$:
 
-$$
+```math
 H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
-$$
+```
 
 **Implications:**
 - High entropy → events are unpredictable → need real-time processing
@@ -201,15 +201,15 @@ For update propagation time $T$ and update rate $\lambda$:
 
 **Staleness probability:**
 
-$$
+```math
 P(\text{stale}) = 1 - e^{-\lambda T}
-$$
+```
 
 **Expected staleness duration:**
 
-$$
+```math
 E[\text{staleness}] = T/2
-$$
+```
 
 ---
 
@@ -254,7 +254,6 @@ class BatchFeaturePipeline:
 
         # Compute aggregated features
         user_features = transactions.groupBy("user_id").agg(
-
             # Recency
             F.datediff(F.lit(date), F.max("transaction_date")).alias("days_since_last_transaction"),
 
@@ -532,7 +531,6 @@ async def compute_sliding_aggregates(events):
     """Compute features over sliding windows"""
 
     async for event in events.group_by(UserEvent.user_id):
-
         # Use Faust's windowing for sliding aggregates
         window = user_features_table[event.user_id]
 
@@ -695,7 +693,6 @@ class KappaReprocessor:
         while True:
             msg = consumer.poll(1.0)
             if msg is None:
-
                 # Caught up to end
                 break
             processor_func(msg.value(), version=new_version)

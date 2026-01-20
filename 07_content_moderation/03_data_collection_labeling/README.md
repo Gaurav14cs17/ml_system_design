@@ -37,7 +37,6 @@ Content moderation ML faces unique data challenges:
 ### 1. Platform Data (Primary)
 
 ```python
-
 # Sampling strategies for platform data
 class ContentSampler:
     def __init__(self, config):
@@ -47,7 +46,6 @@ class ContentSampler:
 
     def sample(self, content_stream):
         for content in content_stream:
-
             # Always include reported content
             if content.was_reported:
                 yield ('reported', content)
@@ -73,7 +71,6 @@ class ContentSampler:
 ### 2. Synthetic Data Generation
 
 ```python
-
 # Generating synthetic adversarial examples
 import random
 
@@ -253,7 +250,6 @@ example_label = ContentLabel(
 ### Context Guidelines
 
 ```markdown
-
 ## When Context Matters
 
 ### Example 1: "I'm going to kill you"
@@ -292,7 +288,6 @@ class AnnotationDecisionFramework:
         """
         Step-by-step evaluation process.
         """
-
         # Step 1: Literal interpretation
         literal_check = self.check_literal_violation(content)
 
@@ -308,7 +303,6 @@ class AnnotationDecisionFramework:
 
     def check_literal_violation(self, content):
         """Check if content literally violates policy."""
-
         # Keywords, explicit content, etc.
         pass
 
@@ -342,7 +336,6 @@ class AnnotationDecisionFramework:
 ### Annotation Platform Interface
 
 ```python
-
 # Example annotation interface data model
 from datetime import datetime
 from typing import Dict, List
@@ -614,7 +607,6 @@ class BalancedDataLoader:
 
     def _hybrid_sample(self, X, y, target_ratios):
         """Combine over and undersampling."""
-
         # Default: minority at 50%, majority at 100%
         if target_ratios is None:
             target_ratios = {0: 1.0, 1: 0.5}  # Adjust as needed
@@ -811,7 +803,6 @@ class AnnotatorWellbeingManager:
 
     def schedule_wellness_break(self, annotator_id: str):
         """Check if annotator needs a wellness break."""
-
         # Implement break logic after heavy exposure
         pass
 ```

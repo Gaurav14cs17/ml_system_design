@@ -182,7 +182,6 @@ class DepthEstimator:
 
     def visualize_depth(self, depth, colormap='plasma'):
         """Convert depth to colored visualization."""
-
         # Normalize
         depth_normalized = (depth - depth.min()) / (depth.max() - depth.min())
 
@@ -262,7 +261,6 @@ class StereoMatcher:
         Returns:
             Depth map in meters
         """
-
         # Avoid division by zero
         disparity[disparity <= 0] = 0.1
 
@@ -289,7 +287,6 @@ class PointCloudProcessor:
     @staticmethod
     def from_depth(depth, rgb, intrinsics):
         """Create point cloud from depth image."""
-
         # Create Open3D depth and color images
         depth_o3d = o3d.geometry.Image(depth.astype(np.float32))
         rgb_o3d = o3d.geometry.Image(rgb.astype(np.uint8))
@@ -311,7 +308,6 @@ class PointCloudProcessor:
     @staticmethod
     def preprocess(pcd, voxel_size=0.02):
         """Preprocess point cloud."""
-
         # Downsample
         pcd_down = pcd.voxel_down_sample(voxel_size)
 
@@ -346,7 +342,6 @@ class PointCloudProcessor:
     @staticmethod
     def register_icp(source, target, threshold=0.02):
         """Register two point clouds using ICP."""
-
         # Initial guess (identity)
         trans_init = np.eye(4)
 

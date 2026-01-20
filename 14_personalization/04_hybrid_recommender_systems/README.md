@@ -79,7 +79,6 @@ class WeightedHybridRecommender:
         all_scores = {}
 
         for name, recommender in self.recommenders.items():
-
             # Get recommendations from each system
             recs = recommender.recommend(user_id, n_items * 3, context)
 
@@ -155,7 +154,6 @@ class AdaptiveWeightedHybrid:
 
         feedback: Dict mapping recommender name to reward signal
         """
-
         # Softmax update with multiplicative weights
         for name in self.recommenders:
             reward = feedback.get(name, 0)
@@ -259,17 +257,14 @@ class ColdStartSwitchingHybrid:
         n_interactions = len(user_history)
 
         if n_interactions == 0:
-
             # Pure cold start - use popularity
             return self.popularity.recommend(n_items), 'popularity'
 
         elif n_interactions < self.cold_threshold:
-
             # Light user - use content-based
             return self.content.recommend(user_id, n_items), 'content'
 
         elif n_interactions < self.warm_threshold:
-
             # Warming up - blend CF and content
             cf_recs = self.cf.recommend(user_id, n_items)
             content_recs = self.content.recommend(user_id, n_items)
@@ -281,7 +276,6 @@ class ColdStartSwitchingHybrid:
             return blended, 'blended'
 
         else:
-
             # Mature user - use CF
             return self.cf.recommend(user_id, n_items), 'collaborative'
 
@@ -367,7 +361,6 @@ class FeatureCombinationHybrid(nn.Module):
         """
         Predict using combined features
         """
-
         # CF embeddings
         user_emb = self.user_embedding(user_ids)
         item_cf_emb = self.item_embedding(item_ids)
@@ -425,7 +418,6 @@ class DeepHybridRecommender(nn.Module):
         """
         Forward pass with attention-based fusion
         """
-
         # Get base embeddings
         user_emb = self.user_embedding(user_ids)
         item_emb = self.item_embedding(item_ids)
@@ -480,7 +472,6 @@ class CascadeHybridRecommender:
         """
         Multi-stage recommendation pipeline
         """
-
         # Stage 1: Candidate Generation
         candidates = self._generate_candidates(user_id, n_items * 10, context)
 
@@ -557,7 +548,6 @@ class DiversityReranker:
             best_idx = 0
 
             for i, (item_id, relevance) in enumerate(remaining):
-
                 # Compute max similarity to already selected items
                 max_sim = max(
                     self._similarity(item_id, sel_item)
@@ -605,13 +595,11 @@ class MetaLevelHybrid:
         """
         Train meta-model on base recommender outputs
         """
-
         # Get base predictions for training data
         meta_features = []
         labels = []
 
         for user_id, item_id, rating in training_data:
-
             # Base recommender features
             base_score = self.base.predict(user_id, item_id)
             base_embedding = self.base.get_user_embedding(user_id)
@@ -651,7 +639,6 @@ class StackingHybridRecommender:
         2. Generate predictions on validation data
         3. Train meta-learner on base predictions
         """
-
         # Train base recommenders
         for name, recommender in self.base_recommenders.items():
             recommender.train(train_data)
@@ -754,7 +741,6 @@ class WideAndDeepHybrid(nn.Module):
         """
         Combined forward pass
         """
-
         # Wide output
         wide_out = self.wide(wide_features)
 
@@ -824,7 +810,6 @@ class DeepFM(nn.Module):
         """
         x: (batch_size, n_fields) - field indices
         """
-
         # Get embeddings for each field
         emb_list = []
         for i, embedding in enumerate(self.embeddings):
@@ -927,7 +912,6 @@ class ProductionHybridRecommender:
                     all_candidates[item_id]['scores'].append(score)
 
             except Exception as e:
-
                 # Log error but continue with other generators
                 logger.error(f"Generator {name} failed: {e}")
 
@@ -953,7 +937,6 @@ class ProductionHybridRecommender:
         # Combine with candidate generation scores
         ranked = []
         for item_id, score in zip(item_ids, scores):
-
             # Boost items from multiple sources
             source_boost = len(candidates[item_id]['sources']) * 0.1
             final_score = score + source_boost
@@ -966,7 +949,6 @@ class ProductionHybridRecommender:
         """
         Apply business rules and diversity
         """
-
         # Filter items
         filtered = self._apply_business_rules(ranked, context)
 

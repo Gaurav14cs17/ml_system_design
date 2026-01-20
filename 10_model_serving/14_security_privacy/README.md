@@ -37,7 +37,6 @@ ML serving systems face unique security challenges: protecting valuable model IP
 ### Model Encryption
 
 ```python
-
 # model_encryption.py
 import torch
 from cryptography.fernet import Fernet
@@ -53,7 +52,6 @@ class EncryptedModelLoader:
 
     def encrypt_model(self, model: torch.nn.Module, output_path: str):
         """Encrypt and save model"""
-
         # Serialize model
         buffer = io.BytesIO()
         torch.save(model.state_dict(), buffer)
@@ -98,7 +96,6 @@ model = loader.load_model(MyModel, "model.encrypted")
 ### Model Signing
 
 ```python
-
 # model_signing.py
 import hashlib
 import json
@@ -109,7 +106,6 @@ from datetime import datetime
 class ModelSigner:
     def __init__(self, private_key=None, public_key=None):
         if private_key is None:
-
             # Generate new key pair
             self.private_key = rsa.generate_private_key(
                 public_exponent=65537,
@@ -122,7 +118,6 @@ class ModelSigner:
 
     def sign_model(self, model_path: str) -> dict:
         """Create signed manifest for model"""
-
         # Compute model hash
         with open(model_path, 'rb') as f:
             model_hash = hashlib.sha256(f.read()).hexdigest()
@@ -151,7 +146,6 @@ class ModelSigner:
 
     def verify_model(self, model_path: str, manifest: dict) -> bool:
         """Verify model integrity"""
-
         # Check model hash
         with open(model_path, 'rb') as f:
             current_hash = hashlib.sha256(f.read()).hexdigest()
@@ -186,7 +180,6 @@ class ModelSigner:
 ### Rate Limiting & Abuse Prevention
 
 ```python
-
 # rate_limiting.py
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -248,7 +241,6 @@ async def rate_limit_middleware(request: Request, call_next):
 ### Input Validation
 
 ```python
-
 # input_validation.py
 import numpy as np
 from pydantic import BaseModel, validator
@@ -259,7 +251,6 @@ class PredictionInput(BaseModel):
 
     @validator('features')
     def validate_features(cls, v):
-
         # Check length
         if len(v) != EXPECTED_FEATURE_COUNT:
             raise ValueError(f"Expected {EXPECTED_FEATURE_COUNT} features")
@@ -282,7 +273,6 @@ class AdversarialDetector:
 
     def detect_adversarial(self, input_tensor) -> bool:
         """Detect potential adversarial examples"""
-
         # Method 1: Input perturbation sensitivity
         perturbed = input_tensor + torch.randn_like(input_tensor) * 0.01
 
@@ -303,7 +293,6 @@ class AdversarialDetector:
 ### Data Anonymization
 
 ```python
-
 # anonymization.py
 import hashlib
 import random
@@ -335,15 +324,12 @@ class DataAnonymizer:
     def generalize(self, field: str, value: Any) -> Any:
         """Generalize sensitive values"""
         if field == "age":
-
             # Age buckets
             return f"{(value // 10) * 10}-{(value // 10) * 10 + 9}"
         elif field == "zipcode":
-
             # Keep first 3 digits
             return str(value)[:3] + "XX"
         elif field == "income":
-
             # Income ranges
             ranges = [0, 30000, 60000, 100000, 150000, float('inf')]
             for i in range(len(ranges) - 1):
@@ -356,7 +342,6 @@ class DataAnonymizer:
 ### K-Anonymity
 
 ```python
-
 # k_anonymity.py
 import pandas as pd
 from typing import List
@@ -375,7 +360,6 @@ def enforce_k_anonymity(
     result = df.copy()
 
     while not check_k_anonymity(result, quasi_identifiers, k):
-
         # Find smallest group
         groups = result.groupby(quasi_identifiers).size()
         smallest_group = groups.idxmin()
@@ -401,7 +385,6 @@ def enforce_k_anonymity(
 ### DP-SGD Training
 
 ```python
-
 # dp_training.py
 import torch
 from opacus import PrivacyEngine
@@ -449,7 +432,6 @@ def train_with_differential_privacy(
 ### Private Inference
 
 ```python
-
 # private_inference.py
 import numpy as np
 
@@ -463,7 +445,6 @@ class PrivatePredictor:
 
     def predict(self, input_data) -> np.ndarray:
         """Make private prediction with Laplace noise"""
-
         # Get raw prediction
         raw_prediction = self.model.predict(input_data)
 
@@ -504,7 +485,6 @@ class PrivatePredictor:
 ### Audit Logging
 
 ```python
-
 # audit_logging.py
 import json
 import logging

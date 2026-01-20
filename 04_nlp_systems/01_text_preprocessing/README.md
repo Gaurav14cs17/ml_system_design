@@ -37,39 +37,39 @@ A text document can be formalized as:
 
 The vocabulary $\mathcal{V}$ is a finite set of all possible tokens:
 
-$$
+```math
 \mathcal{V} = \{w_1, w_2, \ldots, w_{|\mathcal{V}|}\}
-$$
+```
 
 ### 2. Term Frequency (TF)
 
 **Raw term frequency** counts token occurrences:
 
-$$
+```math
 \text{tf}(t, d) = f_{t,d}
-$$
+```
 
 where $f\_{t,d}$ is the count of term $t$ in document $d$.
 
 **Normalized term frequency** prevents bias toward longer documents:
 
-$$
+```math
 \text{tf}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}} = \frac{f_{t,d}}{|d|}
-$$
+```
 
 **Log-normalized TF** dampens the effect of high-frequency terms:
 
-$$
+```math
 \text{tf}(t, d) = 1 + \log(f_{t,d}) \quad \text{if } f_{t,d} > 0, \text{ else } 0
-$$
+```
 
 ### 3. Inverse Document Frequency (IDF)
 
 IDF measures how informative a term is across the corpus:
 
-$$
+```math
 \text{idf}(t, D) = \log\frac{N}{|\{d \in D : t \in d\}|} = \log\frac{N}{n_t}
-$$
+```
 
 where:
 - $N$ = total number of documents
@@ -77,17 +77,17 @@ where:
 
 **Smoothed IDF** prevents division by zero and reduces impact of very rare terms:
 
-$$
+```math
 \text{idf}(t, D) = \log\frac{N + 1}{n_t + 1} + 1
-$$
+```
 
 ### 4. TF-IDF Score
 
 The **TF-IDF** weighting combines both measures:
 
-$$
+```math
 \text{tf-idf}(t, d, D) = \text{tf}(t, d) \times \text{idf}(t, D)
-$$
+```
 
 This score is:
 - **High** when $t$ appears frequently in $d$ but rarely in the corpus
@@ -98,9 +98,9 @@ This score is:
 
 A document becomes a vector in $\mathbb{R}^{|\mathcal{V}|}$:
 
-$$
+```math
 \vec{d} = [\text{tf-idf}(t_1, d, D), \text{tf-idf}(t_2, d, D), \ldots, \text{tf-idf}(t_{|\mathcal{V}|}, d, D)]
-$$
+```
 
 ---
 
@@ -118,9 +118,9 @@ A production preprocessing pipeline handles text transformation in stages:
 
 Cleaning removes **noise** that doesn't contribute to the signal. From an information theory standpoint, we aim to maximize:
 
-$$
+```math
 I(X_{\text{clean}}; Y) \geq I(X_{\text{raw}}; Y)
-$$
+```
 
 where $X$ is the text representation and $Y$ is the target variable.
 
@@ -158,7 +158,7 @@ class TextCleaner:
         # Compile regex patterns for O(1) lookup
         self.url_pattern = re.compile(
             r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|'
-            r'[!*\$\$,]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            r'[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
         )
         self.email_pattern = re.compile(
             r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
@@ -205,9 +205,9 @@ class TextCleaner:
 
 Lowercasing maps tokens to equivalence classes:
 
-$$
+```math
 \phi_{\text{lower}}: \mathcal{V} \rightarrow \mathcal{V}'
-$$
+```
 
 where $|\mathcal{V}'| < |\mathcal{V}|$ (vocabulary reduction)
 
@@ -288,9 +288,9 @@ Tokenization partitions text into atomic units. This is the **most critical** pr
 
 A tokenizer is a function:
 
-$$
+```math
 \tau: \Sigma^* \rightarrow \mathcal{V}^*
-$$
+```
 
 mapping character sequences to token sequences.
 
@@ -317,17 +317,17 @@ mapping character sequences to token sequences.
 
 **Why BPE works**: Balances vocabulary size vs. sequence length:
 
-$$
+```math
 \text{minimize} \quad |\mathcal{V}| + \alpha \cdot \mathbb{E}[|\tau(s)|]
-$$
+```
 
 ### WordPiece (BERT)
 
 Similar to BPE but maximizes likelihood:
 
-$$
+```math
 \text{score}(a, b) = \frac{\text{freq}(ab)}{\text{freq}(a) \cdot \text{freq}(b)}
-$$
+```
 
 Merges pairs that maximize mutual information.
 
@@ -384,12 +384,10 @@ tokenizer = TokenizerWrapper('bert-base-uncased')
 
 # Rare word gets split into subwords
 print(tokenizer.tokenize("unbelievably"))
-
 # ['un', '##bel', '##ie', '##va', '##bly']
 
 # Common words stay intact
 print(tokenizer.tokenize("the cat sat"))
-
 # ['the', 'cat', 'sat']
 ```
 
@@ -401,9 +399,9 @@ print(tokenizer.tokenize("the cat sat"))
 
 Neural networks require fixed-dimension inputs. For sequences:
 
-$$
+```math
 \mathbf{X} \in \mathbb{R}^{B \times L \times d}
-$$
+```
 
 where $B$ = batch size, $L$ = sequence length, $d$ = embedding dimension.
 
@@ -421,9 +419,9 @@ where $B$ = batch size, $L$ = sequence length, $d$ = embedding dimension.
 
 This mask is used in attention computation:
 
-$$
+```math
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right)V
-$$
+```
 
 where $M\_{ij} = -\infty$ if position $j$ is padded.
 
@@ -431,9 +429,9 @@ where $M\_{ij} = -\infty$ if position $j$ is padded.
 
 For long sequences exceeding max length $L$:
 
-$$
+```math
 \tau_{\text{trunc}}(s) = s[0:L]
-$$
+```
 
 More sophisticated: truncate from middle to preserve start/end context.
 
@@ -453,9 +451,9 @@ Modern transformers use special tokens with specific semantics:
 
 **CLS token aggregation**:
 
-$$
+```math
 \mathbf{h}_{\text{cls}} = \text{Transformer}(\mathbf{X})[0]
-$$
+```
 
 This single vector represents the entire sequence for classification.
 

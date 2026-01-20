@@ -91,7 +91,6 @@ class FraudScoringService:
         start_time = time.perf_counter()
 
         try:
-
             # Parallel feature retrieval and enrichment
             features = await self.feature_service.get_features(request)
 
@@ -117,7 +116,6 @@ class FraudScoringService:
             )
 
         except Exception as e:
-
             # Fallback to safe default on error
             return self._fallback_response(request, str(e))
 
@@ -172,7 +170,6 @@ class FeatureRetrievalService:
                 timeout=0.030  # 30ms timeout
             )
         except asyncio.TimeoutError:
-
             # Return partial results on timeout
             return await self._handle_timeout(tasks)
 
@@ -242,7 +239,6 @@ class TieredFeatureCache:
     """Multi-tier caching for features"""
 
     def __init__(self):
-
         # L1: Local in-memory cache (fastest, smallest)
         self.l1_cache = LRUCache(maxsize=10000)
         self.l1_ttl = 60  # 1 minute
@@ -438,7 +434,6 @@ class MultiModelServingService:
                 total_weight += self.weights[name]
 
         if total_weight == 0:
-
             # All models failed, use fallback
             return 0.5  # Neutral score
 
@@ -553,7 +548,6 @@ class BatchingInferenceServer:
 
             # Collect requests for batch
             try:
-
                 # Wait for first request
                 features, future = await asyncio.wait_for(
                     self.request_queue.get(),
@@ -599,7 +593,6 @@ class BatchingInferenceServer:
 ### Horizontal Scaling Architecture
 
 ```yaml
-
 # Kubernetes deployment for fraud scoring service
 apiVersion: apps/v1
 kind: Deployment
@@ -644,7 +637,6 @@ spec:
             port: 8080
           initialDelaySeconds: 15
           periodSeconds: 10
-
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
@@ -921,7 +913,6 @@ class CircuitBreaker:
             return True
 
         if self.state == 'OPEN':
-
             # Check if recovery timeout has passed
             if time.time() - self.last_failure_time > self.recovery_timeout:
                 self.state = 'HALF_OPEN'
@@ -1027,7 +1018,6 @@ class InstrumentedScoringService:
 ### Latency Tracking Dashboard
 
 ```yaml
-
 # Grafana dashboard configuration
 dashboard:
   title: "Fraud Detection - Real-Time Inference"
@@ -1078,7 +1068,6 @@ class Ultra10msScoringService:
     """Optimized for <10ms P99 latency"""
 
     def __init__(self):
-
         # Pre-loaded models in memory
         self.xgb_model = self._load_quantized_xgb()
         self.mlp_model = self._load_onnx_model()
@@ -1094,7 +1083,6 @@ class Ultra10msScoringService:
         self.transformer = NumbaOptimizedTransformer()
 
     async def score(self, request: TransactionRequest) -> float:
-
         # Use asyncio.gather for parallel operations
         user_features, merchant_features, velocity = await asyncio.gather(
             self._get_user_features_fast(request.user_id),
@@ -1117,7 +1105,6 @@ class Ultra10msScoringService:
         return 0.6 * xgb_score + 0.4 * mlp_score
 
     async def _get_user_features_fast(self, user_id: str) -> np.ndarray:
-
         # Try local cache first
         cached = self.user_cache.get(user_id)
         if cached is not None:
@@ -1133,12 +1120,10 @@ class Ultra10msScoringService:
         return features
 
     async def _predict_xgb(self, features: np.ndarray) -> float:
-
         # Direct prediction, no overhead
         return float(self.xgb_model.predict(features)[0])
 
     async def _predict_mlp(self, features: np.ndarray) -> float:
-
         # ONNX runtime prediction
         return float(self.mlp_model.run(
             None,

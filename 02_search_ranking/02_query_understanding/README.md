@@ -89,7 +89,6 @@ class QueryIntentClassifier(nn.Module):
         self.classifier = nn.Linear(768, num_intents)
 
     def forward(self, input_ids, attention_mask):
-
         # Get BERT embeddings
         outputs = self.bert(
             input_ids=input_ids,
@@ -228,15 +227,12 @@ expander = QueryExpander()
 query = "cheap laptop"
 expansions = {
     "synonyms": expander.expand_synonyms(query),
-
     # ["inexpensive", "budget", "affordable", "notebook", "computer"]
 
     "semantic": expander.expand_embeddings(query),
-
     # ["budget laptop", "affordable notebook", "low cost computer"]
 
     "behavioral": expander.expand_behavioral(query),
-
     # ["best budget laptops 2024", "laptops under 500"]
 }
 ```
@@ -352,7 +348,6 @@ class SpellCorrector:
 # Example usage
 corrector = SpellCorrector()
 result = corrector.correct("runnign shoees nikee")
-
 # {
 #   "original": "runnign shoees nikee",
 #   "corrected": "running shoes nike",
@@ -381,7 +376,6 @@ class NeuralSpellCorrector(nn.Module):
         self.output_layer = nn.Linear(hidden_dim, vocab_size)
 
     def forward(self, src, tgt):
-
         # Encode
         src_embed = self.embedding(src)
         encoder_outputs, (h, c) = self.encoder(src_embed)
@@ -391,7 +385,6 @@ class NeuralSpellCorrector(nn.Module):
         decoder_outputs = []
 
         for t in range(tgt.size(1)):
-
             # Attention over encoder outputs
             attn_output, _ = self.attention(
                 tgt_embed[:, t:t+1, :],
@@ -418,7 +411,6 @@ class NeuralSpellCorrector(nn.Module):
 
 ```python
 entity_types = {
-
     # Product Entities
     "BRAND": ["Nike", "Apple", "Samsung", "Toyota"],
     "PRODUCT_NAME": ["iPhone 15", "Air Jordan 1", "Model S"],
@@ -476,7 +468,6 @@ class SearchNER:
         """
         Extract entities from query
         """
-
         # Tokenize
         inputs = self.tokenizer(
             query,
@@ -509,7 +500,6 @@ class SearchNER:
             label = self.label_map[pred.item()]
 
             if label.startswith("B-"):
-
                 # Save previous entity
                 if current_entity:
                     entity_type = current_type.lower()
@@ -523,13 +513,11 @@ class SearchNER:
                 current_entity = text[start:end]
 
             elif label.startswith("I-") and current_type:
-
                 # Continue entity
                 start, end = offset
                 current_entity += " " + text[start:end]
 
             else:
-
                 # Save and reset
                 if current_entity:
                     entity_type = current_type.lower()
@@ -544,7 +532,6 @@ class SearchNER:
 # Example usage
 ner = SearchNER("./models/search_ner")
 entities = ner.extract_entities("red nike air max size 10 under $150")
-
 # {
 #   "color": ["red"],
 #   "brand": ["nike"],
@@ -760,7 +747,6 @@ class QueryUnderstandingService:
         """
         Text normalization
         """
-
         # Lowercase
         query = query.lower()
 
@@ -826,7 +812,6 @@ def disambiguate(query: str, user_context: dict) -> str:
     Disambiguate using user context
     """
     if query.lower() == "apple":
-
         # Check user's recent searches
         recent_searches = user_context.get("recent_searches", [])
 
@@ -869,17 +854,14 @@ class MultilingualQueryUnderstanding:
             "es": SpanishTranslator(),
             "fr": FrenchTranslator(),
             "de": GermanTranslator(),
-
             # ... more languages
         }
 
     def understand(self, query: str) -> dict:
-
         # Detect language
         language = self.language_detector.detect(query)
 
         if language != "en":
-
             # Translate to English for processing
             translated = self.translators[language].to_english(query)
 

@@ -106,7 +106,6 @@ Flask is a lightweight WSGI web framework. While not ML-specific, its simplicity
 ### Basic Implementation
 
 ```python
-
 # flask_server.py
 from flask import Flask, request, jsonify
 import torch
@@ -138,7 +137,6 @@ def postprocess(output):
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
-
         # Get input data
         data = request.get_json()
 
@@ -163,7 +161,6 @@ def health():
     return jsonify({"status": "healthy"})
 
 if __name__ == "__main__":
-
     # Don't use in production - use gunicorn instead
     app.run(host="0.0.0.0", port=5000)
 ```
@@ -171,7 +168,6 @@ if __name__ == "__main__":
 ### Production Deployment with Gunicorn
 
 ```python
-
 # gunicorn_config.py
 import multiprocessing
 
@@ -196,7 +192,6 @@ max_requests_jitter = 50
 ```
 
 ```bash
-
 # Run with gunicorn
 gunicorn -c gunicorn_config.py flask_server:app
 ```
@@ -224,7 +219,6 @@ FastAPI is a modern, high-performance framework built on Starlette and Pydantic.
 ### Complete FastAPI Server
 
 ```python
-
 # fastapi_server.py
 from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -282,7 +276,6 @@ model_state = ModelState()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Handle startup and shutdown events"""
-
     # Startup
     logger.info("Loading model...")
     model_state.model = torch.jit.load("model.pt")
@@ -334,7 +327,6 @@ async def predict(
     start_time = time.perf_counter()
 
     try:
-
         # Preprocess
         input_tensor = torch.tensor([request.features], dtype=torch.float32)
 
@@ -369,7 +361,6 @@ async def predict_batch(
     start_time = time.perf_counter()
 
     try:
-
         # Preprocess batch
         input_tensor = torch.tensor(request.instances, dtype=torch.float32)
 
@@ -412,7 +403,6 @@ async def health():
 @app.get("/metrics")
 async def metrics():
     """Prometheus-compatible metrics endpoint"""
-
     # In production, use prometheus_client library
     return {
         "requests_total": 0,  # Track with middleware
@@ -426,7 +416,6 @@ async def metrics():
 ### Async Batching for Higher Throughput
 
 ```python
-
 # async_batcher.py
 import asyncio
 from typing import List, Any
@@ -492,7 +481,6 @@ class AsyncBatcher:
         futures = [item[1] for item in batch_items]
 
         try:
-
             # Run batch inference
             import torch
             input_tensor = torch.tensor(features_batch, dtype=torch.float32)
@@ -511,7 +499,6 @@ class AsyncBatcher:
                 })
 
         except Exception as e:
-
             # Propagate error to all futures
             for future in futures:
                 if not future.done():
@@ -545,7 +532,6 @@ TensorFlow Serving is Google's production-grade serving system designed specific
 ### Preparing Models for TF Serving
 
 ```python
-
 # save_model_for_serving.py
 import tensorflow as tf
 
@@ -558,7 +544,6 @@ model = tf.keras.Sequential([
 ])
 
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
-
 # model.fit(X_train, y_train, epochs=10)
 
 # Save in TF Serving format
@@ -582,7 +567,6 @@ print(f"Model saved to: {export_path}")
 ### Running TensorFlow Serving
 
 ```bash
-
 # Docker deployment
 docker run -p 8501:8501 \
   -v "/path/to/models:/models" \
@@ -602,7 +586,6 @@ docker run -p 8501:8501 \
 ### Batching Configuration
 
 ```protobuf
-
 # batching.config
 max_batch_size { value: 32 }
 batch_timeout_micros { value: 10000 }
@@ -614,7 +597,6 @@ pad_variable_length_inputs: true
 ### Client Code
 
 ```python
-
 # tf_serving_client.py
 import requests
 import json
@@ -638,7 +620,6 @@ def predict_rest(data, model_name="my_model", version=None):
 X = np.random.randn(5, 10).astype(np.float32)
 result = predict_rest(X)
 print(result)
-
 # {'predictions': [[0.1, 0.2, ...], [...], ...]}
 
 # gRPC API (higher performance)
@@ -664,7 +645,6 @@ def predict_grpc(data, model_name="my_model"):
 ### Model Versioning with TF Serving
 
 ```python
-
 # Model versioning configuration
 # model.config
 
@@ -709,7 +689,6 @@ TorchServe is PyTorch's production serving solution, developed by AWS and Facebo
 ### Creating a Model Archive (.mar)
 
 ```python
-
 # handler.py - Custom inference handler
 import torch
 import json
@@ -746,7 +725,6 @@ class MyModelHandler(BaseHandler):
         """Transform raw input into tensor"""
         preprocessed = []
         for row in data:
-
             # Handle different input formats
             if isinstance(row, dict):
                 features = row.get("data") or row.get("body")
@@ -786,7 +764,6 @@ class MyModelHandler(BaseHandler):
 ### Packaging the Model
 
 ```bash
-
 # Install torch-model-archiver
 pip install torch-model-archiver
 
@@ -805,7 +782,6 @@ torch-model-archiver \
 ### TorchServe Configuration
 
 ```properties
-
 # config.properties
 inference_address=http://0.0.0.0:8080
 management_address=http://0.0.0.0:8081
@@ -829,7 +805,6 @@ max_batch_delay=100
 ### Running TorchServe
 
 ```bash
-
 # Start server
 torchserve --start \
     --model-store model_store \
@@ -846,7 +821,6 @@ docker run -p 8080:8080 -p 8081:8081 -p 8082:8082 \
 ### Management API
 
 ```bash
-
 # List models
 curl http://localhost:8081/models
 
@@ -881,7 +855,6 @@ Triton Inference Server is NVIDIA's high-performance serving solution supporting
 ### Model Configuration
 
 ```protobuf
-
 # config.pbtxt for PyTorch model
 name: "text_classification"
 platform: "pytorch_libtorch"
@@ -925,14 +898,12 @@ version_policy: { latest { num_versions: 2 }}
 ### TensorRT Optimization
 
 ```protobuf
-
 # config.pbtxt for TensorRT model
 name: "optimized_model"
 platform: "tensorrt_plan"
 max_batch_size: 128
 
 optimization {
-
   # GPU execution accelerators
   execution_accelerators {
     gpu_execution_accelerator : [
@@ -955,7 +926,6 @@ optimization {
 ### Python Backend for Custom Logic
 
 ```python
-
 # model.py - Custom Python backend
 import triton_python_backend_utils as pb_utils
 import numpy as np
@@ -979,7 +949,6 @@ class TritonPythonModel:
         responses = []
 
         for request in requests:
-
             # Get input
             input_tensor = pb_utils.get_input_tensor_by_name(
                 request, "INPUT"
@@ -1005,7 +974,6 @@ class TritonPythonModel:
 
     def preprocess(self, data):
         """Your custom preprocessing logic"""
-
         # Example: normalize input
         return (data - data.mean()) / data.std()
 
@@ -1017,7 +985,6 @@ class TritonPythonModel:
 ### Running Triton
 
 ```bash
-
 # Docker with GPU
 docker run --gpus all -p 8000:8000 -p 8001:8001 -p 8002:8002 \
     -v $(pwd)/model_repository:/models \
@@ -1033,7 +1000,6 @@ docker run --gpus all -p 8000:8000 -p 8001:8001 -p 8002:8002 \
 ### Triton Client
 
 ```python
-
 # triton_client.py
 import tritonclient.http as httpclient
 import numpy as np
@@ -1084,7 +1050,6 @@ Seldon Core is a Kubernetes-native platform for deploying ML models at scale. It
 ### SeldonDeployment Manifest
 
 ```yaml
-
 # seldon_deployment.yaml
 apiVersion: machinelearning.seldon.io/v1
 kind: SeldonDeployment
@@ -1120,7 +1085,6 @@ spec:
 ### Custom Python Model
 
 ```python
-
 # MyModel.py
 class MyModel:
     """
@@ -1153,7 +1117,6 @@ class MyModel:
 
     def send_feedback(self, features, feature_names, reward, truth, routing):
         """Handle feedback for online learning"""
-
         # Log feedback for analysis
         print(f"Received feedback: reward={reward}, truth={truth}")
 
@@ -1165,7 +1128,6 @@ class MyModel:
 ### A/B Testing with Seldon
 
 ```yaml
-
 # ab_test_deployment.yaml
 apiVersion: machinelearning.seldon.io/v1
 kind: SeldonDeployment
@@ -1208,7 +1170,6 @@ BentoML is a framework-agnostic platform for building production-ready ML servic
 ### Saving Models
 
 ```python
-
 # save_model.py
 import bentoml
 import torch
@@ -1246,7 +1207,6 @@ print(bentoml.models.list())
 ### Building a Service
 
 ```python
-
 # service.py
 import bentoml
 from bentoml.io import JSON, NumpyNdarray
@@ -1274,7 +1234,6 @@ class PredictionOutput(BaseModel):
 @svc.api(input=JSON(pydantic_model=TextInput), output=JSON())
 async def classify_text(input_data: TextInput) -> dict:
     """Classify text using PyTorch model"""
-
     # Preprocessing would go here
     features = preprocess_text(input_data.text)
 
@@ -1305,7 +1264,6 @@ async def batch_predict(inputs: List[dict]) -> List[dict]:
 
 def preprocess_text(text: str) -> np.ndarray:
     """Convert text to features"""
-
     # Tokenization, embedding, etc.
     return np.random.randn(1, 512).astype(np.float32)
 ```
@@ -1313,7 +1271,6 @@ def preprocess_text(text: str) -> np.ndarray:
 ### Build and Deploy
 
 ```yaml
-
 # bentofile.yaml
 service: "service:svc"
 description: "Multi-model ML service"
@@ -1342,7 +1299,6 @@ docker:
 ```
 
 ```bash
-
 # Build bento
 bentoml build
 
@@ -1413,7 +1369,6 @@ async def health():
 
 @app.get("/ready")
 async def ready():
-
     # Check model is loaded
     if model is None:
         raise HTTPException(503, "Model not loaded")
@@ -1423,7 +1378,6 @@ async def ready():
 ### 2. Use Async for I/O Operations
 
 ```python
-
 # Good: Non-blocking
 async def get_features(user_id: str):
     async with aiohttp.ClientSession() as session:
@@ -1454,7 +1408,6 @@ import sys
 
 def graceful_shutdown(signum, frame):
     logger.info("Received shutdown signal")
-
     # Finish processing current requests
     # Close connections
     # Save state if needed

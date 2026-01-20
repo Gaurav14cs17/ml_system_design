@@ -65,10 +65,8 @@ class MetricsCollector:
 ### Operational Metrics
 
 ```python
-
 # Essential metrics to track
 OPERATIONAL_METRICS = {
-
     # Latency
     'p50_latency_ms': 'histogram_quantile(0.5, rate(moderation_latency_seconds_bucket[5m])) * 1000',
     'p99_latency_ms': 'histogram_quantile(0.99, rate(moderation_latency_seconds_bucket[5m])) * 1000',
@@ -86,7 +84,6 @@ OPERATIONAL_METRICS = {
 }
 
 MODEL_METRICS = {
-
     # Prediction distribution
     'removal_rate': 'sum(rate(moderation_requests_total{decision="remove"}[1h])) / sum(rate(moderation_requests_total[1h]))',
 
@@ -176,12 +173,10 @@ class ModelMonitor:
 ### Prometheus AlertManager Rules
 
 ```yaml
-
 # alerting_rules.yaml
 groups:
   - name: moderation_alerts
     rules:
-
       # Latency alerts
       - alert: HighLatency
         expr: histogram_quantile(0.99, rate(moderation_latency_seconds_bucket[5m])) > 0.5
@@ -242,7 +237,6 @@ groups:
 
   - name: safety_alerts
     rules:
-
       # Critical content waiting
       - alert: CSAMContentWaiting
         expr: review_queue_depth{category="csam"} > 0
@@ -405,7 +399,6 @@ class AlertManager:
 ### Runbook Template
 
 ```markdown
-
 # Incident Runbook: High Moderation Latency
 
 ## Symptoms

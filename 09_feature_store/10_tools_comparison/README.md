@@ -47,7 +47,6 @@
 ### Feast Architecture
 
 ```python
-
 # Feast project structure
 """
 feature_repo/
@@ -107,7 +106,6 @@ user_features = FeatureView(
 ### Tecton Example
 
 ```python
-
 # Tecton feature definition
 from tecton import Entity, BatchSource, StreamSource
 from tecton import batch_feature_view, stream_feature_view
@@ -325,9 +323,9 @@ user_entity.read(entity_ids=["user_123"])
 | **Cost** | Low | $$
 $ |
 
-$$
-|
-$$
+```math
+ | 
+```
 
 |
 $$ |

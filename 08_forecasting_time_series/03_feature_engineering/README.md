@@ -208,21 +208,21 @@ def add_holiday_features(df, country='US'):
 
 Lag features are rooted in the **autoregressive (AR)** assumption that future values depend on past values:
 
-$$
+```math
 Y_t = f(Y_{t-1}, Y_{t-2}, \ldots, Y_{t-p}) + \varepsilon_t
-$$
+```
 
 The **Autocorrelation Function (ACF)** helps identify which lags are most informative:
 
-$$
+```math
 \rho_k = \frac{\text{Cov}(Y_t, Y_{t-k})}{\text{Var}(Y_t)} = \frac{\gamma_k}{\gamma_0}
-$$
+```
 
 The **Partial Autocorrelation Function (PACF)** measures direct correlation at lag $k$, controlling for intermediate lags:
 
-$$
+```math
 \phi_{kk} = \text{Corr}(Y_t, Y_{t-k} | Y_{t-1}, \ldots, Y_{t-k+1})
-$$
+```
 
 | Pattern | ACF Behavior | PACF Behavior | Model Suggestion |
 |---------|--------------|---------------|------------------|
@@ -267,7 +267,6 @@ def create_difference_features(df, target_col, periods):
     df = df.copy()
 
     for period in periods:
-
         # Absolute difference
         df[f'{target_col}_diff_{period}'] = df[target_col].diff(period)
 
@@ -438,9 +437,9 @@ def create_expanding_features(df, target_col, min_periods=30):
 
 Any periodic function can be decomposed into a sum of sinusoids using **Fourier series**:
 
-$$
+```math
 f(t) = \frac{a_0}{2} + \sum_{k=1}^{K} \left[ a_k \cos\left(\frac{2\pi kt}{m}\right) + b_k \sin\left(\frac{2\pi kt}{m}\right) \right]
-$$
+```
 
 For time series with period $m$, we use Fourier terms as features:
 
@@ -579,7 +578,6 @@ def create_trend_features(df, target_col, windows=[7, 14, 28]):
     df = df.copy()
 
     for window in windows:
-
         # Simple moving average trend
         sma = df[target_col].rolling(window=window).mean()
         df[f'{target_col}_above_sma_{window}'] = (df[target_col] > sma).astype(int)
@@ -731,7 +729,6 @@ class TimeSeriesFeatureEngineer:
 
     def fit(self, df):
         """Fit on training data to store parameters"""
-
         # Store scaling parameters, etc.
         return self
 

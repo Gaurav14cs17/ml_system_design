@@ -67,7 +67,6 @@ vectors = np.random.randn(1_000_000, 768).astype('float32')
 query = np.random.randn(768).astype('float32')
 
 start = time.time()
-
 # Brute force: compute all similarities
 similarities = vectors @ query
 top_k = np.argsort(-similarities)[:10]
@@ -349,7 +348,6 @@ index = faiss.read_index("my_index.faiss")
 Best for: High recall, in-memory workloads
 
 ```python
-
 # FAISS HNSW
 index = faiss.IndexHNSWFlat(dimension, M=32)  # M = connections per node
 index.hnsw.efConstruction = 200  # Build quality
@@ -366,7 +364,6 @@ index.hnsw.efSearch = 100  # Search quality
 Best for: Large datasets, moderate recall
 
 ```python
-
 # FAISS IVF
 nlist = 1000  # Number of clusters
 index = faiss.IndexIVFFlat(quantizer, dimension, nlist)
@@ -382,7 +379,6 @@ index.nprobe = 50  # Clusters to search (higher = better recall)
 Best for: Memory-constrained, large scale
 
 ```python
-
 # FAISS IVF+PQ
 m = 8  # Number of subvectors
 nlist = 1000
@@ -510,7 +506,6 @@ for r in results:
 ### 1. Index Management
 
 ```python
-
 # Periodic reindexing for optimal performance
 def reindex_collection(client, collection_name):
     collection = client.get_collection(collection_name)
@@ -537,7 +532,6 @@ def reindex_collection(client, collection_name):
 ### 2. Monitoring
 
 ```python
-
 # Key metrics to track
 metrics = {
     "query_latency_p99": "< 100ms",

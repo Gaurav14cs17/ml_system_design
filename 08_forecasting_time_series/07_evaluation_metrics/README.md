@@ -146,9 +146,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 #### Mean Absolute Error (MAE)
 
-$$
+```math
 \text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
-$$
+```
 
 **Properties:**
 - Same units as the target variable
@@ -157,10 +157,10 @@ $$
 
 #### Mean Squared Error (MSE) and Root Mean Squared Error (RMSE)
 
-$$
+```math
 \text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
 \text{RMSE} = \sqrt{\text{MSE}} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
-$$
+```
 
 **Properties:**
 - MSE minimized by the **mean** of the predictive distribution
@@ -169,9 +169,9 @@ $$
 
 #### Mean Absolute Percentage Error (MAPE)
 
-$$
+```math
 \text{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right|
-$$
+```
 
 **Properties:**
 - Scale-independent (percentage)
@@ -180,9 +180,9 @@ $$
 
 #### Symmetric MAPE (SMAPE)
 
-$$
+```math
 \text{SMAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\frac{2|y_i - \hat{y}_i|}{|y_i| + |\hat{y}_i|}
-$$
+```
 
 **Properties:**
 - Bounded: $0\% \leq \text{SMAPE} \leq 200\%$
@@ -191,9 +191,9 @@ $$
 
 #### Mean Absolute Scaled Error (MASE)
 
-$$
+```math
 \text{MASE} = \frac{\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|}{\frac{1}{T-m}\sum_{t=m+1}^{T}|y_t - y_{t-m}|}
-$$
+```
 
 **Properties:**
 - Scale-free: can compare across different series
@@ -256,7 +256,6 @@ class ForecastMetrics:
         Pros: Scale-independent, easy to interpret
         Cons: Undefined for zero values, asymmetric
         """
-
         # Avoid division by zero
         actual = np.where(actual == 0, epsilon, actual)
         return np.mean(np.abs((actual - predicted) / actual)) * 100
@@ -284,7 +283,6 @@ class ForecastMetrics:
         Pros: Scale-independent, interpretable (< 1 is better than naive)
         Cons: Requires training data
         """
-
         # Naive forecast error (seasonal naive)
         naive_errors = np.abs(
             training_actual[seasonality:] - training_actual[:-seasonality]
@@ -379,7 +377,6 @@ class ProbabilisticMetrics:
 
         Approximated using samples from predictive distribution
         """
-
         # Sort samples
         sorted_samples = np.sort(forecast_samples, axis=1)
         n_samples = sorted_samples.shape[1]
@@ -499,7 +496,6 @@ class RelativeMetrics:
         GMRAE - Geometric mean of relative absolute errors
         """
         rae = np.abs(actual - predicted) / np.abs(actual - baseline_pred)
-
         # Handle zeros
         rae = rae[~np.isinf(rae) & ~np.isnan(rae)]
         return np.exp(np.mean(np.log(rae)))
@@ -578,7 +574,6 @@ class BusinessMetrics:
         """
         Calculate inventory cost based on forecast errors
         """
-
         # Order based on forecast
         order_quantity = forecast
 

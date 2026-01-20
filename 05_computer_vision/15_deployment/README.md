@@ -375,7 +375,6 @@ async def health():
 ### Triton Inference Server
 
 ```python
-
 # config.pbtxt for Triton
 """
 name: "vision_model"
@@ -423,7 +422,6 @@ class TritonClient:
 
     def predict(self, images):
         """Send batch for inference."""
-
         # Prepare input
         inputs = [httpclient.InferInput("input", images.shape, "FP32")]
         inputs[0].set_data_from_numpy(images.astype(np.float32))
@@ -472,7 +470,6 @@ class TFLiteInference:
 
     def predict(self, image):
         """Run inference."""
-
         # Set input
         self.interpreter.set_tensor(
             self.input_details[0]['index'],

@@ -39,7 +39,6 @@ Caching reduces latency and compute costs by storing and reusing frequently acce
 ### Implementation
 
 ```python
-
 # response_cache.py
 import redis
 import hashlib
@@ -56,7 +55,6 @@ def cache_response(ttl_seconds: int = 300):
     def decorator(func):
         @wraps(func)
         async def wrapper(*args, **kwargs):
-
             # Generate cache key from request
             request = kwargs.get("request")
             cache_key = generate_cache_key(request)
@@ -78,7 +76,6 @@ def cache_response(ttl_seconds: int = 300):
 
 def generate_cache_key(request: dict) -> str:
     """Generate deterministic cache key from request"""
-
     # Normalize and hash request
     normalized = json.dumps(request, sort_keys=True)
     return f"pred:{hashlib.md5(normalized.encode()).hexdigest()}"
@@ -86,7 +83,6 @@ def generate_cache_key(request: dict) -> str:
 @app.post("/predict")
 @cache_response(ttl_seconds=300)
 async def predict(request: PredictionRequest):
-
     # This only runs on cache miss
     result = model.predict(request.features)
     return {"prediction": result}
@@ -95,7 +91,6 @@ async def predict(request: PredictionRequest):
 ### Semantic Caching
 
 ```python
-
 # semantic_cache.py
 import numpy as np
 from redis import Redis
@@ -145,7 +140,6 @@ class SemanticCache:
 ### Feature Store with Caching
 
 ```python
-
 # feature_cache.py
 import redis
 from typing import Dict, List, Optional
@@ -218,7 +212,6 @@ class CachedFeatureService:
         self.store = feature_store
 
     async def get_features(self, entity_id: str, features: List[str]) -> Dict:
-
         # Try cache
         cached = self.cache.get_features(entity_id, features)
         if cached:
@@ -240,7 +233,6 @@ class CachedFeatureService:
 ### Vector Embedding Cache
 
 ```python
-
 # embedding_cache.py
 import numpy as np
 import redis
@@ -317,12 +309,10 @@ class CachedEmbeddingService:
         self.model = embedding_model
 
     async def get_embeddings(self, item_ids: List[str]) -> Dict[str, np.ndarray]:
-
         # Check cache
         cached, missing = self.cache.get_batch(item_ids)
 
         if missing:
-
             # Compute missing embeddings
             computed = await self.model.encode_batch(missing)
 
@@ -345,7 +335,6 @@ class CachedEmbeddingService:
 ### Event-Based Invalidation
 
 ```python
-
 # cache_invalidation.py
 import redis
 from typing import List
@@ -418,7 +407,6 @@ class VersionedCache:
 ### Redis Cluster Setup
 
 ```python
-
 # distributed_cache.py
 from redis.cluster import RedisCluster
 from typing import List, Dict
@@ -479,7 +467,6 @@ cache = DistributedMLCache(nodes)
 ### Metrics to Track
 
 ```python
-
 # cache_metrics.py
 from prometheus_client import Counter, Histogram, Gauge
 

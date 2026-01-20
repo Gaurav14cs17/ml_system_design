@@ -141,7 +141,6 @@ async def moderate_batch(requests: List[ModerationRequest]):
 ### TorchServe Configuration
 
 ```python
-
 # model_handler.py
 import torch
 from ts.torch_handler.base_handler import BaseHandler
@@ -257,7 +256,6 @@ class DynamicBatcher:
 
     async def _process_batch(self):
         """Process accumulated batch."""
-
         # Wait for batch to fill or timeout
         try:
             await asyncio.wait_for(
@@ -347,7 +345,6 @@ class BatchModerationPipeline:
 
     def _process_batch(self, batch):
         """Process a batch of content."""
-
         # Extract texts/images
         contents = [item['content'] for item in batch]
 
@@ -405,7 +402,6 @@ class ModelRegistry:
     ) -> str:
         """Register a new model version."""
         with mlflow.start_run():
-
             # Log metrics
             mlflow.log_metrics(metrics)
 
@@ -445,7 +441,6 @@ class ModelRegistry:
 
     def rollback(self, model_name: str, to_version: str):
         """Rollback to a previous version."""
-
         # Archive current production
         current = self.client.get_latest_versions(model_name, stages=["Production"])
         if current:
@@ -491,7 +486,6 @@ class ABTestingRouter:
 
     def route(self, content_id: str) -> ModelVariant:
         """Deterministically route content to a variant."""
-
         # Hash content_id for consistent routing
         hash_val = int(hashlib.md5(content_id.encode()).hexdigest(), 16)
         bucket = (hash_val % 1000) / 1000  # 0-1
@@ -623,7 +617,6 @@ class ModerationCache:
     def _add_to_local(self, key: str, value: Dict):
         """Add to local cache with LRU eviction."""
         if len(self.local_cache) >= self.local_cache_size:
-
             # Remove oldest entry
             oldest = next(iter(self.local_cache))
             del self.local_cache[oldest]
@@ -705,7 +698,6 @@ class OptimizedInference:
     """
 
     def __init__(self, model_path: str):
-
         # Session options for optimization
         sess_options = ort.SessionOptions()
         sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL

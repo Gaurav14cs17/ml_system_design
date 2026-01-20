@@ -86,7 +86,6 @@ class NeuralCF(nn.Module):
                 nn.init.xavier_uniform_(m.weight)
 
     def forward(self, user_ids, item_ids):
-
         # GMF path
         gmf_user = self.gmf_user_embed(user_ids)
         gmf_item = self.gmf_item_embed(item_ids)
@@ -135,7 +134,6 @@ class GRU4Rec(nn.Module):
         self.output = nn.Linear(hidden_dim, n_items)
 
     def forward(self, session_items, lengths):
-
         # Embed items
         x = self.embedding(session_items)  # (batch, seq_len, embed_dim)
 
@@ -336,7 +334,6 @@ class LightGCN(nn.Module):
         nn.init.normal_(self.item_embedding.weight, std=0.1)
 
     def forward(self, edge_index, edge_weight):
-
         # Stack user and item embeddings
         x = torch.cat([
             self.user_embedding.weight,

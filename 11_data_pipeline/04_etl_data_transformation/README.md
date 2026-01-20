@@ -430,7 +430,6 @@ class SparkTransformer:
         """Compute rolling aggregations for time series features"""
 
         for days in windows:
-
             # Define window: last N days
             window = Window.partitionBy(partition_col) \
                           .orderBy(F.col(order_col).cast("long")) \
@@ -588,7 +587,6 @@ class MedallionPipeline:
         """
         Silver: Clean, deduplicate, validate, standardize.
         """
-
         # Read from bronze
         bronze_df = spark.read.format("delta").load(f"{self.bronze_path}/{table_name}")
 
@@ -623,7 +621,6 @@ class MedallionPipeline:
         """
         Gold: Business-level aggregations and feature tables.
         """
-
         # Register silver tables as temp views
         silver_df = spark.read.format("delta").load(f"{self.silver_path}/{table_name}")
         silver_df.createOrReplaceTempView(table_name)
@@ -702,7 +699,6 @@ class IncrementalTransformer:
         4. Merge into target
         5. Update watermark
         """
-
         # 1. Get watermark
         last_watermark = self.get_watermark(pipeline_name)
 

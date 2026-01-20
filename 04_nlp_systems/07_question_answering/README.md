@@ -76,7 +76,6 @@ class QASystem:
         n_best: int = 5
     ) -> List[Dict]:
         """Get top-n answers for a question."""
-
         # Tokenize
         encoding = self.tokenizer(
             question,
@@ -241,7 +240,6 @@ class OpenDomainQA:
             show_progress_bar=True,
             convert_to_numpy=True
         )
-
         # Normalize for cosine similarity
         self.doc_embeddings = self.doc_embeddings / np.linalg.norm(
             self.doc_embeddings, axis=1, keepdims=True
@@ -271,7 +269,6 @@ class OpenDomainQA:
         top_k_answers: int = 3
     ) -> List[Dict]:
         """Full pipeline: retrieve, then read."""
-
         # Retrieve relevant documents
         retrieved = self.retrieve(question, top_k=top_k_docs)
 

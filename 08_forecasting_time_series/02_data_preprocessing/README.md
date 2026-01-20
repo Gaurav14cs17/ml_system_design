@@ -34,31 +34,31 @@ A non-stationary series $\{Y\_t\}$ can be transformed to achieve stationarity:
 
 #### Differencing
 
-$$
+```math
 \nabla Y_t = Y_t - Y_{t-1} = (1-B)Y_t
-$$
+```
 
 For seasonal differencing with period $m$:
 
-$$
+```math
 \nabla_m Y_t = Y_t - Y_{t-m} = (1-B^m)Y_t
-$$
+```
 
 #### Log Transformation
 
 For series with multiplicative seasonality or variance proportional to level:
 
-$$
+```math
 Z_t = \log(Y_t)
-$$
+```
 
 #### Box-Cox Transformation
 
 A family of power transformations parametrized by $\lambda$:
 
-$$
+```math
 Y_t^{(\lambda)} = \begin{cases} \frac{Y_t^\lambda - 1}{\lambda} & \text{if } \lambda \neq 0 \\ \log(Y_t) & \text{if } \lambda = 0 \end{cases}
-$$
+```
 
 ### Normalization Methods
 
@@ -72,15 +72,15 @@ $$
 
 #### Linear Interpolation
 
-$$
+```math
 \hat{Y}_t = Y_{t-k} + \frac{t - (t-k)}{(t+j) - (t-k)}(Y_{t+j} - Y_{t-k})
-$$
+```
 
 #### Seasonal Decomposition Imputation
 
-$$
+```math
 \hat{Y}_t = \hat{T}_t + \hat{S}_t
-$$
+```
 
 Where $\hat{T}\_t$ and $\hat{S}\_t$ are estimated from non-missing values.
 
@@ -240,13 +240,11 @@ def load_from_api(base_url, params, date_field='timestamp'):
 ### Datetime Index Best Practices
 
 ```python
-
 # Creating proper datetime index
 def create_datetime_index(df, date_column, freq='D'):
     """
     Create and validate datetime index
     """
-
     # Parse dates
     df[date_column] = pd.to_datetime(df[date_column])
 
@@ -259,7 +257,6 @@ def create_datetime_index(df, date_column, freq='D'):
     # Check for duplicates
     if df.index.duplicated().any():
         print(f"Warning: {df.index.duplicated().sum()} duplicate timestamps found")
-
         # Aggregate duplicates (example: mean)
         df = df.groupby(df.index).mean()
 
@@ -313,7 +310,6 @@ class TimeSeriesQualityChecker:
 
     def check_temporal_integrity(self):
         """Check temporal consistency"""
-
         # Check if index is sorted
         is_sorted = self.df.index.is_monotonic_increasing
 
@@ -504,12 +500,10 @@ class TimeSeriesImputer:
         for col in df_filled.columns:
             for i in range(len(df_filled)):
                 if pd.isnull(df_filled.iloc[i][col]):
-
                     # Look back one period
                     if i >= period and pd.notna(df_filled.iloc[i - period][col]):
                         df_filled.iloc[i, df_filled.columns.get_loc(col)] = \
                             df_filled.iloc[i - period][col]
-
                     # Look forward one period
                     elif i + period < len(df_filled) and pd.notna(df_filled.iloc[i + period][col]):
                         df_filled.iloc[i, df_filled.columns.get_loc(col)] = \
@@ -524,7 +518,6 @@ class TimeSeriesImputer:
         df_filled = self.df.copy()
 
         for col in df_filled.columns:
-
             # Calculate rolling mean
             rolling_mean = df_filled[col].rolling(
                 window=window,
@@ -772,7 +765,6 @@ class TimeSeriesResampler:
         """
         Increase frequency (e.g., daily to hourly)
         """
-
         # Resample to higher frequency
         upsampled = self.df.resample(target_freq).asfreq()
 
@@ -807,7 +799,6 @@ class TimeSeriesResampler:
         """
         Align to regular calendar intervals
         """
-
         # Create complete date range
         full_range = pd.date_range(
             start=self.df.index.min(),
@@ -867,12 +858,10 @@ def align_multiple_series(series_list, freq='D', method='outer'):
         method: 'outer' (union), 'inner' (intersection), or datetime range
     """
     if method == 'outer':
-
         # Get union of all date ranges
         min_date = min(s.index.min() for s in series_list)
         max_date = max(s.index.max() for s in series_list)
     elif method == 'inner':
-
         # Get intersection of all date ranges
         min_date = max(s.index.min() for s in series_list)
         max_date = min(s.index.max() for s in series_list)
@@ -1004,7 +993,6 @@ def apply_transformations(series, method='log'):
     Apply variance-stabilizing transformations
     """
     if method == 'log':
-
         # Handle zeros and negatives
         if (series <= 0).any():
             min_val = series[series > 0].min()
@@ -1012,12 +1000,10 @@ def apply_transformations(series, method='log'):
         return np.log(series)
 
     elif method == 'log1p':
-
         # log(1 + x), handles zeros
         return np.log1p(series)
 
     elif method == 'boxcox':
-
         # Box-Cox transformation (requires positive values)
         if (series <= 0).any():
             series = series - series.min() + 1
@@ -1308,7 +1294,6 @@ test_scaled = scaler.transform(test_processed)
 ### Pipeline Configuration
 
 ```yaml
-
 # preprocessing_config.yaml
 preprocessing:
   datetime:

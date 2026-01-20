@@ -117,7 +117,6 @@ class LambdaPersonalizationSystem:
                 merged[item_id]['boost'] = adjustment['boost']
                 merged[item_id]['source'] = 'merged'
             else:
-
                 # New item from speed layer
                 merged[item_id] = {
                     'base_score': adjustment.get('score', 0.5),
@@ -183,7 +182,6 @@ class RealTimeFeatureStore:
         session = self.redis.hgetall(session_key)
 
         if not session or float(session.get(b'last_activity', 0)) < timestamp - 1800:
-
             # New session (30 min timeout)
             session = {
                 'start_time': timestamp,
@@ -214,7 +212,6 @@ class RealTimeFeatureStore:
         """
         Maintain real-time interaction counters
         """
-
         # User-level counts
         user_counts_key = f"counts:{user_id}"
         self.redis.hincrby(user_counts_key, f"{event_type}_count", 1)
@@ -366,7 +363,6 @@ class SessionFeatureAggregator:
         """
         Capture sequential patterns
         """
-
         # Transition patterns
         types = [e['type'] for e in events]
 
@@ -424,7 +420,6 @@ class GRU4Rec(nn.Module):
         """
         session_items: (batch, seq_len) - item IDs in session
         """
-
         # Get embeddings
         x = self.item_embedding(session_items)
         x = self.dropout(x)
@@ -729,11 +724,9 @@ class BanditRecommender:
 
         for _ in range(min(n_items, len(remaining))):
             if np.random.random() < self.epsilon:
-
                 # Explore: random selection
                 idx = np.random.randint(len(remaining))
             else:
-
                 # Exploit: select highest UCB score
                 ucb_scores = []
                 for item in remaining:
@@ -788,7 +781,6 @@ class ThompsonSamplingRecommender:
         """
         Sample from posterior and recommend top items
         """
-
         # Sample CTR from Beta posterior for each candidate
         samples = {}
         for item in candidate_items:
@@ -881,7 +873,6 @@ class StreamingPersonalizationPipeline:
         """
         Generate new recommendations and publish to channel
         """
-
         # Get real-time features
         features = self.feature_store.get_real_time_features(user_id)
 
@@ -933,7 +924,6 @@ class LowLatencyModelServer:
         """
         Low-latency prediction with caching
         """
-
         # Check cache for user embedding
         user_embedding = self.embedding_cache.get(f"user:{user_id}")
 
@@ -994,7 +984,6 @@ class LowLatencyModelServer:
         """
         Process multiple recommendation requests in batch
         """
-
         # Batch for efficiency
         all_user_features = []
         all_candidate_items = []

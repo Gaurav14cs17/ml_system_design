@@ -148,7 +148,6 @@ def compute_sif_embeddings(sentences, word_embeddings, word_frequencies, a=1e-3)
     embeddings = []
 
     for sentence in sentences:
-
         # Step 1: Weighted average
         vectors = []
         weights = []
@@ -214,7 +213,6 @@ from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 documents = [
     TaggedDocument(words=["machine", "learning", "is", "great"], tags=["doc_0"]),
     TaggedDocument(words=["deep", "learning", "transforms", "ai"], tags=["doc_1"]),
-
     # ... more documents
 ]
 
@@ -272,7 +270,6 @@ class LSTMEncoder(nn.Module):
         self.hidden_dim = hidden_dim
 
     def forward(self, input_ids, lengths):
-
         # Embed tokens
         embeds = self.embedding(input_ids)  # [batch, seq_len, embed_dim]
 
@@ -306,18 +303,15 @@ class LSTMEncoderWithPooling(nn.Module):
         outputs, (hidden, _) = self.lstm(embeds)
 
         if self.pooling == 'last':
-
             # Use last hidden state
             return torch.cat([hidden[-2], hidden[-1]], dim=1)
 
         elif self.pooling == 'mean':
-
             # Mean of all outputs (masked)
             mask = mask.unsqueeze(-1).float()
             return (outputs * mask).sum(dim=1) / mask.sum(dim=1)
 
         elif self.pooling == 'max':
-
             # Max pooling (masked)
             outputs = outputs.masked_fill(~mask.unsqueeze(-1), float('-inf'))
             return outputs.max(dim=1)[0]
@@ -353,19 +347,16 @@ def get_bert_embedding(text, pooling='cls'):
     # outputs.pooler_output: [batch, hidden_dim] (CLS with extra layer)
 
     if pooling == 'cls':
-
         # Use [CLS] token embedding
         return outputs.last_hidden_state[:, 0, :]
 
     elif pooling == 'mean':
-
         # Mean of all tokens (excluding padding)
         attention_mask = inputs['attention_mask'].unsqueeze(-1)
         embeddings = outputs.last_hidden_state * attention_mask
         return embeddings.sum(dim=1) / attention_mask.sum(dim=1)
 
     elif pooling == 'max':
-
         # Max pooling
         return outputs.last_hidden_state.max(dim=1)[0]
 
@@ -379,13 +370,11 @@ print(embedding.shape)  # [1, 768]
 BERT's [CLS] token was trained for **Next Sentence Prediction**, not semantic similarity:
 
 ```python
-
 # This may give poor results!
 sim = cosine_similarity(
     get_bert_embedding("I love this movie", pooling='cls'),
     get_bert_embedding("This film is amazing", pooling='cls')
 )
-
 # Often lower than expected!
 ```
 
@@ -400,14 +389,12 @@ sim = cosine_similarity(
 BERT can compare sentences, but requires both sentences as input:
 
 ```python
-
 # Cross-encoder (BERT for sentence pair classification)
 inputs = tokenizer(
     "I love this movie",
     "This film is amazing",
     return_tensors='pt'
 )
-
 # Input: [CLS] sent1 [SEP] sent2 [SEP]
 ```
 
@@ -443,7 +430,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 similarities = cosine_similarity(embeddings)
 
 print(similarities)
-
 # [[1.0, 0.85, 0.12],
 #  [0.85, 1.0, 0.10],
 #  [0.12, 0.10, 1.0]]
@@ -456,7 +442,6 @@ SBERT is trained with various objectives:
 #### 1. Natural Language Inference (NLI)
 
 ```python
-
 # Classification objective: entailment, neutral, contradiction
 class SBERTClassifier(nn.Module):
     def __init__(self, encoder, hidden_dim):
@@ -533,7 +518,6 @@ def unsupervised_simcse_loss(model, sentences, temperature=0.05):
     """
     Pass same sentence through model twice with different dropout masks
     """
-
     # First pass
     embed1 = model(sentences)  # [batch, dim]
 
@@ -584,7 +568,6 @@ def supervised_simcse_loss(model, anchors, positives, negatives, temperature=0.0
 E5 uses a unified training approach:
 
 ```python
-
 # E5 prompt templates
 query_template = "query: {}"
 passage_template = "passage: {}"
@@ -653,7 +636,6 @@ tokenizer = AutoTokenizer.from_pretrained('nlpaueb/legal-bert-base-uncased')
 ### Medical Text: BioBERT & PubMedBERT
 
 ```python
-
 # BioBERT
 model = AutoModel.from_pretrained('dmis-lab/biobert-base-cased-v1.2')
 
@@ -865,7 +847,6 @@ def train_contrastive(model, dataloader, epochs=3, lr=2e-5, temperature=0.05):
         total_loss = 0
 
         for batch in tqdm(dataloader):
-
             # Encode both sentences
             embed1 = model(batch['input_ids1'], batch['attention_mask1'])
             embed2 = model(batch['input_ids2'], batch['attention_mask2'])

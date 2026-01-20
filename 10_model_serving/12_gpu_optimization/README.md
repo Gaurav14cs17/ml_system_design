@@ -28,20 +28,20 @@ GPU optimization is critical for high-throughput ML serving. A well-optimized GP
 
 ### Roofline Model
 
-The **roofline model** provides a visual framework for understanding performance limits. Performance $P$ (in FLOPS) is bounded by:
+The **roofline model** provides a visual framework for understanding performance limits. Performance \( P \) (in FLOPS) is bounded by:
 
 \[
 P \leq \min\left(\text{Peak FLOPS}, \, I \times \text{Memory Bandwidth}\right)
 \]
 
-where $I$ is the **arithmetic intensity** (FLOPS per byte of data moved):
+where \( I \) is the **arithmetic intensity** (FLOPS per byte of data moved):
 
 \[
 I = \frac{\text{Total FLOPS}}{\text{Total Bytes Transferred}}
 \]
 
-**Compute-bound** operations (high $I$): Matrix multiplication, convolutions
-**Memory-bound** operations (low $I$): Element-wise ops, batch norm
+**Compute-bound** operations (high \( I \)): Matrix multiplication, convolutions
+**Memory-bound** operations (low \( I \)): Element-wise ops, batch norm
 
 ### GPU Utilization Formula
 
@@ -52,20 +52,20 @@ I = \frac{\text{Total FLOPS}}{\text{Total Bytes Transferred}}
 \]
 
 where:
-- $\eta_{\text{occupancy}}$ = fraction of SMs actively executing
-- $\eta_{\text{memory}}$ = memory bandwidth utilization  
-- $\eta_{\text{compute}}$ = ALU utilization
+- \( \eta_{\text{occupancy}} \) = fraction of SMs actively executing
+- \( \eta_{\text{memory}} \) = memory bandwidth utilization  
+- \( \eta_{\text{compute}} \) = ALU utilization
 
 ### Latency vs Throughput
 
-For batch size $B$ and single-sample latency $l$:
+For batch size \( B \) and single-sample latency \( l \):
 
 **Throughput:**
 \[
 \text{Throughput} = \frac{B}{L(B)}
 \]
 
-where $L(B)$ is the batch latency. Due to parallelism:
+where \( L(B) \) is the batch latency. Due to parallelism:
 
 \[
 L(B) \approx l + c \cdot \log(B) \quad \text{(not } B \times l \text{)}
@@ -73,13 +73,13 @@ L(B) \approx l + c \cdot \log(B) \quad \text{(not } B \times l \text{)}
 
 ### Amdahl's Law for GPU Acceleration
 
-If fraction $p$ of computation is parallelizable and GPU provides speedup $s$:
+If fraction \( p \) of computation is parallelizable and GPU provides speedup \( s \):
 
 \[
 \text{Speedup} = \frac{1}{(1-p) + \frac{p}{s}}
 \]
 
-Even with $s \to \infty$, speedup is bounded by $\frac{1}{1-p}$.
+Even with \( s \to \infty \), speedup is bounded by \( \frac{1}{1-p} \).
 
 ```mermaid
 flowchart LR
@@ -153,7 +153,6 @@ xychart-beta
 ### CUDA Streams for Concurrency
 
 ```python
-
 # cuda_streams.py
 import torch
 import torch.cuda as cuda
@@ -171,7 +170,6 @@ class StreamedInference:
         self.current_stream = (self.current_stream + 1) % len(self.streams)
 
         with cuda.stream(stream):
-
             # Copy to GPU
             input_gpu = input_batch.cuda(non_blocking=True)
 
@@ -210,7 +208,6 @@ results = model.predict_batch_parallel(batches)
 ### Memory Pinning
 
 ```python
-
 # memory_optimization.py
 import torch
 
@@ -221,7 +218,6 @@ def create_pinned_buffer(shape, dtype=torch.float32):
 
 class OptimizedDataLoader:
     def __init__(self, batch_size: int, feature_dim: int):
-
         # Pre-allocate pinned buffers
         self.input_buffer = create_pinned_buffer((batch_size, feature_dim))
         self.gpu_buffer = torch.empty(
@@ -232,7 +228,6 @@ class OptimizedDataLoader:
 
     def load_batch(self, data):
         """Load batch with pinned memory"""
-
         # Copy to pinned buffer
         self.input_buffer.copy_(torch.tensor(data))
 
@@ -249,7 +244,6 @@ class OptimizedDataLoader:
 ### Dynamic Batching Implementation
 
 ```python
-
 # dynamic_batching.py
 import asyncio
 import torch
@@ -323,7 +317,6 @@ class DynamicBatcher:
             requests = [self.queue.popleft() for _ in range(min(batch_size, len(self.queue)))]
 
         try:
-
             # Stack inputs into batch
             batch_input = torch.stack([r.data for r in requests]).cuda()
 
@@ -351,7 +344,6 @@ class DynamicBatcher:
 ### Padding for Variable-Length Inputs
 
 ```python
-
 # batch_padding.py
 import torch
 from typing import List, Tuple
@@ -408,7 +400,6 @@ def bucket_by_length(
 ### Data Parallel Inference
 
 ```python
-
 # multi_gpu_inference.py
 import torch
 import torch.nn as nn
@@ -485,7 +476,6 @@ result = server.predict_parallel(large_batch)
 ### Memory Pool Management
 
 ```python
-
 # memory_pool.py
 import torch
 from typing import Tuple
@@ -541,7 +531,6 @@ with torch.cuda.amp.autocast():  # Mixed precision
 ### NVIDIA MIG (Multi-Instance GPU)
 
 ```bash
-
 # Enable MIG mode on A100
 sudo nvidia-smi -i 0 -mig 1
 
@@ -559,7 +548,6 @@ docker run --gpus '"device=0:1"' my-ml-server:v2  # Second partition
 ### CUDA MPS (Multi-Process Service)
 
 ```bash
-
 # Start MPS control daemon
 export CUDA_MPS_PIPE_DIRECTORY=/tmp/nvidia-mps
 export CUDA_MPS_LOG_DIRECTORY=/tmp/nvidia-log
@@ -581,7 +569,6 @@ CUDA_VISIBLE_DEVICES=0 python server3.py &
 ### PyTorch Profiler
 
 ```python
-
 # profiling.py
 import torch
 from torch.profiler import profile, record_function, ProfilerActivity

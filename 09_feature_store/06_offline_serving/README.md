@@ -179,14 +179,12 @@ class TrainingDataGenerator:
         end_date: datetime
     ) -> pd.DataFrame:
         """Load labels from data warehouse."""
-
         # Execute query against data warehouse
         # Must include entity columns and event_timestamp
         pass
 
     def _validate_training_data(self, df: pd.DataFrame):
         """Validate training data quality."""
-
         # Check for nulls
         null_pct = df.isnull().sum() / len(df) * 100
         high_null_cols = null_pct[null_pct > 10]
@@ -233,7 +231,6 @@ training_df = generator.generate_training_data(
 ### Delta Lake Configuration
 
 ```python
-
 # Delta Lake offline store configuration
 from feast import FeatureStore
 from feast.infra.offline_stores.contrib.spark_offline_store.spark import (
@@ -272,7 +269,6 @@ historical_features = spark.read.format("delta").option(
 ### Partition Pruning
 
 ```python
-
 # Effective partitioning strategy
 """
 PARTITION STRATEGY:
@@ -300,7 +296,6 @@ features = spark.read.parquet("s3://feature-store/user_features/").filter(
 ### Predicate Pushdown
 
 ```python
-
 # Let storage layer filter data
 # Good: Filter pushed to Parquet
 df = spark.read.parquet(path).filter(F.col("user_id") == "user_123")
@@ -317,7 +312,6 @@ df = df[df["user_id"] == "user_123"]  # Full data loaded first!
 ### Parquet Optimization
 
 ```python
-
 # Optimal Parquet settings for feature data
 def write_features_parquet(df, path):
     df.write.format("parquet").option(

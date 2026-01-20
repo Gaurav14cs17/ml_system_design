@@ -37,7 +37,6 @@
 ### Configuration
 
 ```yaml
-
 # feature_repo/feature_store.yaml
 project: fraud_detection
 registry: data/registry.db
@@ -56,7 +55,6 @@ entity_key_serialization_version: 2
 ### Requirements
 
 ```text
-
 # requirements.txt
 feast==0.36.0
 pandas>=1.5.0
@@ -70,7 +68,6 @@ great-expectations>=0.15.0
 ### Initialize Project
 
 ```bash
-
 # Create project directory
 mkdir fraud_detection_project
 cd fraud_detection_project
@@ -102,7 +99,6 @@ feast init
 ### Entities
 
 ```python
-
 # feature_repo/entities.py
 from feast import Entity
 
@@ -124,7 +120,6 @@ merchant = Entity(
 ### Data Sources
 
 ```python
-
 # feature_repo/data_sources.py
 from feast import FileSource
 from datetime import timedelta
@@ -158,7 +153,6 @@ merchant_features_source = FileSource(
 ### Feature Views
 
 ```python
-
 # feature_repo/feature_views.py
 from feast import FeatureView, Field
 from feast.types import Float64, Int64, String, Bool
@@ -219,7 +213,6 @@ merchant_features = FeatureView(
 ### On-Demand Features
 
 ```python
-
 # feature_repo/on_demand_features.py
 from feast import on_demand_feature_view, Field
 from feast.types import Float64, Int64
@@ -278,7 +271,6 @@ def transaction_context_features(inputs: pd.DataFrame) -> pd.DataFrame:
 ### Feature Services
 
 ```python
-
 # feature_repo/feature_services.py
 from feast import FeatureService
 
@@ -323,7 +315,6 @@ fraud_detection_v2 = FeatureService(
 ### Feature Computation
 
 ```python
-
 # pipelines/feature_pipeline.py
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
@@ -348,7 +339,6 @@ class FeaturePipeline:
 
         # Compute aggregates
         user_features = transactions.groupBy("user_id").agg(
-
             # Lifetime aggregates
             F.count("*").alias("total_transactions"),
             F.avg("amount").alias("avg_transaction_amount"),
@@ -397,7 +387,6 @@ class FeaturePipeline:
         )
 
         velocity_features = transactions_recent.groupBy("user_id").agg(
-
             # 1 hour window
             F.sum(F.when(
                 F.col("transaction_timestamp") >= cutoff_1h, 1
@@ -447,7 +436,6 @@ if __name__ == "__main__":
 ### Apply and Materialize
 
 ```bash
-
 # Apply feature definitions
 cd feature_repo
 feast apply
@@ -463,7 +451,6 @@ feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
 ### Feature Server
 
 ```python
-
 # pipelines/inference_pipeline.py
 from feast import FeatureStore
 from datetime import datetime
@@ -571,7 +558,6 @@ async def predict_fraud(request: TransactionRequest):
 ### Generate Training Data
 
 ```python
-
 # pipelines/training_pipeline.py
 from feast import FeatureStore
 import pandas as pd

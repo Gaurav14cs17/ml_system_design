@@ -77,7 +77,6 @@ graph LR
 | **Multivariate** | Multiple variables measured over time | Weather data (temp, humidity, pressure) |
 
 ```python
-
 # Example: Univariate Time Series
 import pandas as pd
 import numpy as np
@@ -346,9 +345,9 @@ Understanding time series decomposition is fundamental to building effective for
 
 For a seasonal component with period $m$, we can express it as:
 
-$$
+```math
 S_t = \sum_{k=1}^{K} \left[ a_k \cos\left(\frac{2\pi kt}{m}\right) + b_k \sin\left(\frac{2\pi kt}{m}\right) \right]
-$$
+```
 
 Where $K \leq \lfloor m/2 \rfloor$ harmonics capture different frequency components of the seasonality.
 
@@ -465,25 +464,25 @@ A time series is **stationary** if its statistical properties remain constant ov
 
 A stochastic process $\{Y\_t\}$ is **weakly stationary** (or covariance stationary) if:
 
-$$
+```math
 \mathbb{E}[Y_t] = \mu \quad \forall t \quad \text{(constant mean)}
 \text{Var}(Y_t) = \sigma^2 < \infty \quad \forall t \quad \text{(constant finite variance)}
 \text{Cov}(Y_t, Y_{t+h}) = \gamma(h) \quad \forall t \quad \text{(covariance depends only on lag } h\text{)}
-$$
+```
 
 ### The Autocovariance Function
 
 For a stationary process, the **autocovariance function** is:
 
-$$
+```math
 \gamma(h) = \text{Cov}(Y_t, Y_{t+h}) = \mathbb{E}[(Y_t - \mu)(Y_{t+h} - \mu)]
-$$
+```
 
 And the **autocorrelation function (ACF)** is:
 
-$$
+```math
 \rho(h) = \frac{\gamma(h)}{\gamma(0)} = \frac{\text{Cov}(Y_t, Y_{t+h})}{\text{Var}(Y_t)}
-$$
+```
 
 **Properties:**
 - $\rho(0) = 1$
@@ -508,7 +507,6 @@ def check_stationarity(series):
     """
     Perform ADF and KPSS tests for stationarity
     """
-
     # Augmented Dickey-Fuller Test
     adf_result = adfuller(series.dropna())
     print(f"ADF Statistic: {adf_result[0]:.4f}")
@@ -694,7 +692,6 @@ def handle_missing_data(series, method='linear'):
     elif method == 'bfill':
         return series.bfill()
     elif method == 'seasonal':
-
         # Use seasonal decomposition for imputation
         from statsmodels.tsa.seasonal import seasonal_decompose
         decomp = seasonal_decompose(series, period=12, extrapolate_trend='freq')
@@ -730,7 +727,6 @@ Building production-ready time series forecasting systems requires careful consi
 
 #### 4. Monitoring & Maintenance
 ```python
-
 # Example: Forecast monitoring metrics
 class ForecastMonitor:
     def __init__(self, threshold_mape=15):
@@ -751,7 +747,6 @@ class ForecastMonitor:
         return mape
 
     def trigger_alert(self, mape):
-
         # Send alert to monitoring system
         print(f"⚠️ ALERT: MAPE {mape:.2f}% exceeds threshold {self.threshold}%")
 ```

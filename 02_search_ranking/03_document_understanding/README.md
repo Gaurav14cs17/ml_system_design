@@ -50,7 +50,6 @@ class HTMLExtractor:
     """
 
     def __init__(self):
-
         # Tags to completely remove
         self.remove_tags = ['script', 'style', 'nav', 'footer', 'header', 'aside']
 
@@ -169,10 +168,8 @@ class HTMLExtractor:
 
     def _clean_text(self, text: str) -> str:
         """Clean extracted text"""
-
         # Remove extra whitespace
         text = ' '.join(text.split())
-
         # Remove special characters
         text = re.sub(r'[^\w\s.,!?-]', '', text)
         return text.strip()
@@ -204,7 +201,6 @@ class PDFExtractor:
         all_images = []
 
         for page_num, page in enumerate(doc):
-
             # Extract text
             text = page.get_text()
 
@@ -238,7 +234,6 @@ class PDFExtractor:
         """
         OCR a page that has no extractable text
         """
-
         # Render page to image
         pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))  # 2x zoom for better OCR
         img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
@@ -313,7 +308,6 @@ class ProductProcessor:
         """
         Process raw product data into searchable format
         """
-
         # Basic cleaning
         title = self._clean_text(raw_product.get('title', ''))
         description = self._clean_text(raw_product.get('description', ''))
@@ -433,7 +427,6 @@ class BM25Vectorizer:
 
         # Calculate IDF
         for token, df in doc_frequencies.items():
-
             # IDF with smoothing
             self.idf[token] = np.log(
                 (self.doc_count - df + 0.5) / (df + 0.5) + 1
@@ -499,7 +492,6 @@ class DocumentEmbedder:
         """
         Generate embedding for a single document
         """
-
         # Tokenize
         inputs = self.tokenizer(
             text,
@@ -595,7 +587,6 @@ class LongDocumentEmbedder:
         elif strategy == "max":
             return np.max(chunk_embeddings, axis=0)
         elif strategy == "weighted":
-
             # Weight earlier chunks more heavily
             weights = np.array([1 / (i + 1) for i in range(len(chunks))])
             weights = weights / weights.sum()
@@ -729,7 +720,6 @@ class InvertedIndex:
     """
 
     def __init__(self):
-
         # term -> list of postings
         self.index: Dict[str, List[Posting]] = defaultdict(list)
 
@@ -750,7 +740,6 @@ class InvertedIndex:
             doc_id: Unique document identifier
             fields: Dictionary of field_name -> text content
         """
-
         # Track document
         total_terms = 0
         term_positions = defaultdict(lambda: defaultdict(list))
@@ -830,7 +819,6 @@ class InvertedIndex:
         """Simple tokenization"""
         text = text.lower()
         tokens = re.findall(r'\b\w+\b', text)
-
         # Could add stemming, stopword removal here
         return tokens
 
@@ -858,7 +846,6 @@ class InvertedIndex:
         b: float = 0.75
     ) -> float:
         """Calculate BM25 score"""
-
         # Basic BM25
         numerator = tf * (k1 + 1)
         denominator = tf + k1 * (1 - b + b * (doc_length / self.avg_doc_length))
@@ -888,11 +875,9 @@ class CompressedPostingList:
         Add a posting with compression
         """
         if self.doc_count == 0:
-
             # First doc_id stored as-is
             delta = doc_id
         else:
-
             # Subsequent doc_ids stored as deltas
             delta = doc_id - self.last_doc_id
 
@@ -981,12 +966,10 @@ class VectorIndex:
         self.doc_ids = doc_ids
 
         if self.index_type == "Flat":
-
             # Exact search (for small datasets)
             self.index = faiss.IndexFlatIP(self.dimension)  # Inner product
 
         elif self.index_type == "IVF":
-
             # Inverted file index (fast approximate search)
             quantizer = faiss.IndexFlatIP(self.dimension)
             self.index = faiss.IndexIVFFlat(
@@ -995,17 +978,14 @@ class VectorIndex:
                 nlist,
                 faiss.METRIC_INNER_PRODUCT
             )
-
             # Train on vectors
             self.index.train(vectors.astype('float32'))
 
         elif self.index_type == "HNSW":
-
             # Hierarchical Navigable Small World
             self.index = faiss.IndexHNSWFlat(self.dimension, 32)  # 32 connections
 
         elif self.index_type == "PQ":
-
             # Product Quantization (compressed)
             self.index = faiss.IndexPQ(
                 self.dimension,
@@ -1118,7 +1098,6 @@ class RealTimeIndexer:
 
     def _start_workers(self):
         """Start background processing threads"""
-
         # Document processor
         self.processor_thread = threading.Thread(target=self._process_updates)
         self.processor_thread.daemon = True
@@ -1193,7 +1172,6 @@ class RealTimeIndexer:
         Search both base and buffer indices
         """
         with self.lock:
-
             # Search both indices
             base_results = self.base_index.search(query, top_k * 2)
             buffer_results = self.buffer_index.search(query, top_k * 2)
@@ -1258,11 +1236,9 @@ class DistributedIndex:
         """
         Search all shards and merge results
         """
-
         # Query all shards in parallel
         futures = []
         for shard_id, replicas in self.shards.items():
-
             # Pick one replica (round-robin for load balancing)
             replica = self._pick_replica(replicas)
             future = executor.submit(replica.search, query, top_k)

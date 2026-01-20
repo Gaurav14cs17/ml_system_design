@@ -55,7 +55,6 @@
 ### Training Insights
 
 ```python
-
 # YouTube's key training decisions:
 
 # 1. Weighted logistic regression objective
@@ -83,7 +82,6 @@ negatives = [v for v in impressed_videos if not clicked(v)]
 ### Item-to-Item Algorithm
 
 ```python
-
 # Amazon's Original Algorithm (simplified)
 
 class AmazonItemToItem:
@@ -95,7 +93,6 @@ class AmazonItemToItem:
         For each pair of items, compute similarity based on
         co-purchase patterns.
         """
-
         # Count co-purchases
         cooccurrence = defaultdict(lambda: defaultdict(int))
         item_counts = defaultdict(int)
@@ -139,7 +136,6 @@ class AmazonItemToItem:
 ### Audio Feature Extraction
 
 ```python
-
 # Spotify's audio analysis approach (simplified)
 
 class AudioFeatureExtractor:
@@ -147,7 +143,6 @@ class AudioFeatureExtractor:
 
     def __init__(self):
         self.model = nn.Sequential(
-
             # Mel spectrogram input
             nn.Conv2d(1, 64, kernel_size=3, padding=1),
             nn.ReLU(),
@@ -166,7 +161,6 @@ class AudioFeatureExtractor:
         )
 
     def extract_features(self, audio_path):
-
         # Load audio and compute mel spectrogram
         y, sr = librosa.load(audio_path)
         mel = librosa.feature.melspectrogram(y=y, sr=sr)

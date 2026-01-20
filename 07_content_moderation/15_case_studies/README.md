@@ -33,7 +33,6 @@ class SocialMediaModerationPipeline:
     """
 
     def __init__(self):
-
         # Tier 1: Hash matching (known bad content)
         self.hash_matcher = PhotoDNAHashMatcher()
 
@@ -195,19 +194,16 @@ class LiveStreamModerator:
     async def _take_action(self, stream_id: str, action: dict):
         """Take moderation action on stream."""
         if action['severity'] == 'critical':
-
             # Immediate cut
             await self._cut_stream(stream_id)
             await self._notify_streamer(stream_id, 'Stream terminated')
             await self._log_incident(stream_id, action)
 
         elif action['severity'] == 'high':
-
             # Alert human monitor
             await self._alert_monitor(stream_id, action)
 
         elif action['severity'] == 'medium':
-
             # Warning to streamer
             await self._warn_streamer(stream_id)
 
@@ -296,7 +292,6 @@ class ProductModerationPipeline:
 
     def _check_brand(self, listing: dict) -> dict:
         """Check for potential counterfeit."""
-
         # Detect brand mentions
         brands = self.brand_detector.detect(listing['title'])
 
@@ -310,7 +305,6 @@ class ProductModerationPipeline:
             )
 
             if not is_authorized:
-
                 # Price check for counterfeit signal
                 is_suspiciously_cheap = self.price_anomaly_detector.check(
                     listing['price'],
@@ -356,7 +350,6 @@ class GamingModerationSystem:
     """
 
     def __init__(self):
-
         # Text moderation
         self.text_classifier = GamingTextClassifier()  # Trained on gaming slang
 
@@ -464,7 +457,6 @@ class PrivateMessagingModeration:
     """
 
     def __init__(self):
-
         # Client-side detection (on device)
         self.on_device_classifier = OnDeviceClassifier()
 
@@ -505,7 +497,6 @@ class PrivateMessagingModeration:
                 })
 
         if violations:
-
             # Send only violation metadata (not content)
             self._report_to_server({
                 'user_id': message['sender_id'],

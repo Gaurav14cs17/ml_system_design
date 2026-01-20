@@ -113,7 +113,6 @@ class AuditTrailManager:
         previous_hash = "genesis"
 
         for event in events:
-
             # Verify previous hash link
             if event.previous_hash != previous_hash:
                 issues.append({
@@ -260,7 +259,6 @@ class ModelCard:
     def to_markdown(self) -> str:
         """Generate markdown documentation."""
         return f"""
-
 # Model Card: {self.model_name}
 
 ## Model Details

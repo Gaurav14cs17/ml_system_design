@@ -25,7 +25,6 @@ Real-world forecasting projects face unique challenges. This section explores pr
 ### Solution Architecture
 
 ```python
-
 # Hierarchical forecasting approach
 
 class RetailDemandForecaster:
@@ -91,7 +90,6 @@ class RetailDemandForecaster:
         """
         Train hierarchical models
         """
-
         # Aggregate to different levels
         aggregations = {
             'global': train_data.groupby('date')['sales'].sum(),
@@ -108,7 +106,6 @@ class RetailDemandForecaster:
         """
         Generate reconciled forecasts
         """
-
         # Base forecasts at each level
         base_forecasts = {}
         for level in self.models:
@@ -131,7 +128,6 @@ class IntermittentDemandForecaster:
         self.occurrence_model = LightGBMClassifier()
 
     def fit(self, X, y):
-
         # Model 1: Probability of non-zero demand
         y_binary = (y > 0).astype(int)
         self.occurrence_model.fit(X, y_binary)
@@ -224,12 +220,10 @@ class EnergyLoadForecaster:
 
         # Fourier terms for multiple seasonalities
         t = np.arange(len(df))
-
         # Daily
         for k in range(1, 4):
             features[f'daily_sin_{k}'] = np.sin(2 * np.pi * k * t / 24)
             features[f'daily_cos_{k}'] = np.cos(2 * np.pi * k * t / 24)
-
         # Weekly
         for k in range(1, 3):
             features[f'weekly_sin_{k}'] = np.sin(2 * np.pi * k * t / 168)
@@ -359,7 +353,6 @@ class VolatilityForecaster:
         """
         Generate volatility forecast
         """
-
         # GARCH forecast
         garch_forecast = self.garch_result.forecast(horizon=horizon)
         garch_vol = np.sqrt(garch_forecast.variance.values[-1]) / 100
@@ -391,7 +384,6 @@ class TrafficForecaster:
         """
         Create features capturing spatial dependencies
         """
-
         # Neighbor average (using adjacency)
         neighbor_avg = np.matmul(self.adj, traffic_data) / (
             self.adj.sum(axis=1, keepdims=True) + 1e-8
@@ -445,7 +437,6 @@ class TrafficForecaster:
                 self.fc = nn.Linear(hidden * num_nodes, out_horizon * num_nodes)
 
             def forward(self, x):
-
                 # x: (batch, nodes, timesteps, features)
                 batch, nodes, time, feat = x.shape
 

@@ -239,7 +239,6 @@ class AdversarialDetector:
 
     def _detect_spacing_attacks(self, text: str) -> Dict:
         """Detect intentional spacing to break words."""
-
         # Pattern: single characters separated by spaces or dots
         patterns = [
             r'\b(\w)\s+(\w)\s+(\w)\s+(\w)\b',  # h a t e
@@ -283,7 +282,6 @@ class AdversarialDetector:
 
     def _normalize_text(self, text: str) -> str:
         """Normalize adversarial text to standard form."""
-
         # Unicode normalization
         text = unicodedata.normalize('NFKC', text)
 
@@ -415,7 +413,6 @@ class AdaptiveDefense:
         """Learn from cases where adversarial content was missed."""
         for appeal in successful_appeals:
             if appeal['was_violation'] and appeal['was_initially_allowed']:
-
                 # This content evaded detection
                 self._analyze_evasion(appeal['content'])
 
@@ -428,7 +425,6 @@ class AdaptiveDefense:
 
         if patterns['attack_types']:
             for attack_type in patterns['attack_types']:
-
                 # Track this pattern
                 if attack_type not in self.attack_patterns:
                     self.attack_patterns[attack_type] = []
@@ -447,7 +443,6 @@ class AdaptiveDefense:
 
         for item in clean_data:
             if item['label'] == 'violation':
-
                 # Generate multiple adversarial versions
                 variants = self._generate_variants(item['text'])
 

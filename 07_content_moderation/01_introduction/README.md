@@ -121,7 +121,6 @@ The industry standard combining:
 ### The Mathematics of Scale
 
 ```python
-
 # Example: Content moderation economics
 
 daily_posts = 500_000_000  # 500M posts per day
@@ -134,14 +133,12 @@ total_hours_needed = total_seconds_needed / 3600
 moderators_needed = total_hours_needed / working_hours_per_day
 
 print(f"Moderators needed: {moderators_needed:,.0f}")
-
 # Output: Moderators needed: 520,833
 
 # With 99% ML automation:
 human_review_posts = daily_posts * 0.01  # 1% needs human review
 moderators_with_ml = (human_review_posts * avg_review_time_seconds / 3600) / working_hours_per_day
 print(f"Moderators with ML: {moderators_with_ml:,.0f}")
-
 # Output: Moderators with ML: 5,208
 ```
 
@@ -330,7 +327,6 @@ To follow along with the technical content, you should have:
 ### Setting Up Your Environment
 
 ```bash
-
 # Create virtual environment
 python -m venv content_moderation_env
 source content_moderation_env/bin/activate

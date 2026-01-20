@@ -290,7 +290,6 @@ def process_cdc_event(event: dict) -> dict:
     operation = event.get("op")  # c=create, u=update, d=delete
 
     if operation == "d":
-
         # Handle delete
         return {
             "action": "delete",
@@ -457,7 +456,6 @@ def ingest_with_validation(df, feature_name: str):
     results = validator.validate(df, f"{feature_name}_expectations")
 
     if not results["success"]:
-
         # Log failures
         for failure in results["failed_expectations"]:
             logger.warning(f"Quality check failed: {failure}")

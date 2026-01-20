@@ -112,7 +112,6 @@ user_purchase_count = FeatureDefinition(
 An **entity** is a semantic object that features describe. Entities provide the keys for organizing and retrieving features.
 
 ```python
-
 # Common entities in ML systems
 
 entities = {
@@ -344,7 +343,6 @@ from feast.types import (
 
 # Type mapping to storage
 TYPE_MAPPING = {
-
     # Feast Type    → Python    → Parquet    → Redis       → DynamoDB
     "Int64":        ("int",      "INT64",     "int",        "N"),
     "Float64":      ("float",    "DOUBLE",    "float",      "N"),
@@ -448,7 +446,6 @@ def compute_user_features(raw_data: pd.DataFrame) -> pa.typing.DataFrame[UserFea
 ### Versioning in Practice
 
 ```python
-
 # Feature definition with version tracking
 from datetime import datetime
 
@@ -497,7 +494,6 @@ from datetime import timedelta
 user_features = FeatureView(
     name="user_features",
     ttl=timedelta(days=7),  # Features older than 7 days are stale
-
     # ...
 )
 
@@ -528,7 +524,6 @@ user_features = FeatureView(
 ### Feature Freshness
 
 ```python
-
 # Freshness monitoring
 class FeatureFreshness:
     """Monitor feature freshness."""
@@ -573,14 +568,14 @@ When creating training data, we need feature values **as they were at the time o
 Point-in-time joins ensure temporal consistency in training data construction. Formally:
 
 Given:
-- Entity events $E = \{(e_i, t_i, y_i)\}$ where $e_i$ is entity ID, $t_i$ is event timestamp, $y_i$ is label
-- Feature table $F = \{(e_j, \tau_j, f_j)\}$ where $\tau_j$ is feature computation timestamp
+- Entity events \( E = \{(e_i, t_i, y_i)\} \) where \( e_i \) is entity ID, \( t_i \) is event timestamp, \( y_i \) is label
+- Feature table \( F = \{(e_j, \tau_j, f_j)\} \) where \( \tau_j \) is feature computation timestamp
 
 The point-in-time join produces:
 
-$$
+```math
 \text{Training}(e_i, t_i) = \arg\max_{\tau_j \leq t_i} F(e_j = e_i, \tau_j)
-$$
+```
 
 This ensures we only use features computed **before** the event time, preventing **data leakage**.
 
@@ -588,8 +583,8 @@ This ensures we only use features computed **before** the event time, preventing
 
 | Approach | Formula | Risk |
 |----------|---------|------|
-| **Wrong**: Latest features | $f(e_i) = F(e_i, \tau_{max})$ | Future information leaks into training |
-| **Correct**: Point-in-time | $f(e_i, t_i) = F(e_i, \tau_{max} \leq t_i)$ | Only past information used |
+| **Wrong**: Latest features | \( f(e_i) = F(e_i, \tau_{max}) \) | Future information leaks into training |
+| **Correct**: Point-in-time | \( f(e_i, t_i) = F(e_i, \tau_{max} \leq t_i) \) | Only past information used |
 
 ![Diagram 11](images/diagram_11.svg)
 
@@ -628,7 +623,6 @@ def point_in_time_join(
         ]
 
         if len(valid_features) == 0:
-
             # No feature available at this time
             feature_row = None
         else:

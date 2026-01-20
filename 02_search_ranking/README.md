@@ -121,7 +121,6 @@ Search and Ranking systems power the core functionality of modern tech productsâ
 ### Technical Setup
 
 ```bash
-
 # Create environment
 python -m venv search_ranking_env
 source search_ranking_env/bin/activate
@@ -137,7 +136,6 @@ pip install -r requirements.txt
 ### Installation
 
 ```bash
-
 # Clone the repository
 git clone https://github.com/your-repo/search-ranking-guide.git
 cd search-ranking-guide

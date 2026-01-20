@@ -165,7 +165,6 @@ class TextFeatureExtractor:
 
     def _load_slur_patterns(self):
         """Load regex patterns for known slurs (simplified)."""
-
         # In production, load from secure, encrypted storage
         return []
 ```

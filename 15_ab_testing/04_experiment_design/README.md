@@ -27,7 +27,6 @@ class ExperimentDesign:
 
     def __init__(self):
         self.design = {
-
             # Core elements
             'hypothesis': None,
             'population': {},
@@ -319,7 +318,6 @@ class TrafficRampUp:
 ### Specialized Experiment Types
 
 ```python
-
 # 1. INTERLEAVING (for ranking systems)
 class InterleavingExperiment:
     """
@@ -336,17 +334,14 @@ class InterleavingExperiment:
         a_idx, b_idx = 0, 0
 
         for i in range(k):
-
             # Alternate who picks first
             if len(a_team) <= len(b_team):
-
                 # A picks
                 while ranker_a_results[a_idx] in interleaved:
                     a_idx += 1
                 interleaved.append(ranker_a_results[a_idx])
                 a_team.append(ranker_a_results[a_idx])
             else:
-
                 # B picks
                 while ranker_b_results[b_idx] in interleaved:
                     b_idx += 1
@@ -413,7 +408,6 @@ class GuardrailConfig:
     """
 
     COMMON_GUARDRAILS = {
-
         # Business metrics
         'revenue_per_user': {
             'threshold_type': 'relative_decrease',
@@ -550,7 +544,6 @@ class AutomaticStopping:
 
 ```python
 EXPERIMENT_SPEC_TEMPLATE = """
-
 # Experiment Specification
 
 ## Metadata

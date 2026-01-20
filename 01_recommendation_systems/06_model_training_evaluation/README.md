@@ -82,7 +82,6 @@ class ListwiseTrainer:
 ### Rating Prediction Losses
 
 ```python
-
 # MSE - Mean Squared Error
 def mse_loss(predictions, targets):
     return ((predictions - targets) ** 2).mean()
@@ -104,7 +103,6 @@ def huber_loss(predictions, targets, delta=1.0):
 ### Ranking Losses
 
 ```python
-
 # BPR Loss
 def bpr_loss(pos_scores, neg_scores):
     return -torch.log(torch.sigmoid(pos_scores - neg_scores)).mean()
@@ -335,7 +333,6 @@ def leave_one_out_split(interactions_df):
 import optuna
 
 def objective(trial):
-
     # Define hyperparameters to tune
     params = {
         'embedding_dim': trial.suggest_categorical('embedding_dim', [32, 64, 128]),
@@ -390,7 +387,6 @@ SOLUTION: Always use train data only for features
 ### Negative Sampling Bias
 
 ```python
-
 # BAD: Uniform random sampling
 def bad_negative_sampling(user_id, positive_items, all_items, n=5):
     negatives = random.sample(list(all_items - positive_items), n)
@@ -408,7 +404,6 @@ def better_negative_sampling(user_id, positive_items, item_popularity, n=5):
 ### Popularity Bias in Evaluation
 
 ```python
-
 # Standard metrics favor popular items
 # Consider stratified evaluation:
 
@@ -416,7 +411,6 @@ def stratified_evaluation(model, test_data, item_popularity):
     """
     Evaluate separately on popular vs long-tail items.
     """
-
     # Split items by popularity
     popularity_sorted = sorted(item_popularity.items(), key=lambda x: x[1], reverse=True)
 

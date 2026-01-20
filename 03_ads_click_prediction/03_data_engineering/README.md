@@ -57,12 +57,12 @@
 
 **Click label** (binary):
 
-$$
+```math
 y = \begin{cases}
 1 & \text{if user clicked within attribution window} \\
 0 & \text{otherwise}
 \end{cases}
-$$
+```
 
 **Attribution window**: Typically 30 minutes from impression.
 
@@ -84,15 +84,15 @@ $$
 
 **Streaming aggregation** (sliding window):
 
-$$
+```math
 \text{UserCTR}_{24h}(t) = \frac{\sum_{i: t-24h < t_i \leq t} \mathbb{1}[\text{click}_i]}{\sum_{i: t-24h < t_i \leq t} \mathbb{1}[\text{impression}_i]}
-$$
+```
 
 **Exponential decay** for recency:
 
-$$
+```math
 \text{Feature}(t) = \sum_{i} w_i \cdot e^{-\lambda(t - t_i)}
-$$
+```
 
 where $\lambda$ is the decay rate (e.g., $\lambda = \frac{\ln 2}{24h}$ for 24-hour half-life).
 
@@ -106,12 +106,12 @@ where $\lambda$ is the decay rate (e.g., $\lambda = \frac{\ln 2}{24h}$ for 24-ho
 
 #### Attribution Window
 
-$$
+```math
 \text{Label}(\text{impression}) = \begin{cases}
 1 & \exists \text{ click with } 0 < t_{\text{click}} - t_{\text{impression}} \leq W \\
 0 & \text{after waiting period } T > W
 \end{cases}
-$$
+```
 
 Typical values: $W = 30$ minutes, $T = 2$ hours.
 
@@ -119,12 +119,12 @@ Typical values: $W = 30$ minutes, $T = 2$ hours.
 
 **Label confidence** increases over time:
 
-$$
+```math
 \text{Confidence}(t) = \begin{cases}
 1.0 & \text{if clicked (positive)} \\
 1 - e^{-\lambda t} & \text{if not clicked (negative)}
 \end{cases}
-$$
+```
 
 After 24 hours, confidence ≈ 99.9% for negatives.
 
@@ -134,21 +134,21 @@ After 24 hours, confidence ≈ 99.9% for negatives.
 
 Users click more on higher positions regardless of relevance:
 
-$$
+```math
 P(\text{click} \mid \text{pos}, \text{ad}) = P(\text{examine} \mid \text{pos}) \times P(\text{click} \mid \text{examine}, \text{ad})
-$$
+```
 
 **Inverse Propensity Weighting (IPW)**:
 
-$$
+```math
 w_i = \frac{1}{P(\text{examine} \mid \text{pos}_i)}
-$$
+```
 
 **Position propensity estimation**:
 
-$$
+```math
 \hat{P}(\text{examine} \mid \text{pos}) = \frac{\text{CTR}_{\text{pos}}}{\text{CTR}_{\text{pos}=1}}
-$$
+```
 
 ---
 
@@ -167,15 +167,15 @@ $$
 
 **KL Divergence** for distribution drift:
 
-$$
+```math
 D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}
-$$
+```
 
 **Population Stability Index (PSI)**:
 
-$$
+```math
 \text{PSI} = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)
-$$
+```
 
 where $A\_i$ = actual proportion in bin $i$, $E\_i$ = expected proportion.
 
@@ -233,29 +233,29 @@ s3://data-lake/impressions/
 
 **Impression-Click Join**:
 
-$$
+```math
 \text{TrainingData} = \text{Impressions} \underset{\text{impression\_id}}{\bowtie_{\text{left}}} \text{Clicks}
-$$
+```
 
 ### Negative Sampling
 
 Due to extreme imbalance (~1% positives), downsample negatives:
 
-$$
+```math
 \text{Sample Rate} = \frac{\text{Target Positive Rate} \times (1 - \text{Original Positive Rate})}{\text{Original Positive Rate} \times (1 - \text{Target Positive Rate})}
-$$
+```
 
 **Example**: To go from 1% to 10% positive rate:
 
-$$
+```math
 \text{Sample Rate} = \frac{0.10 \times 0.99}{0.01 \times 0.90} \approx 0.11 \text{ (keep 11\% of negatives)}
-$$
+```
 
 **Important**: Apply inverse weight during training to correct for sampling:
 
-$$
+```math
 w_{\text{negative}} = \frac{1}{\text{Sample Rate}}
-$$
+```
 
 ---
 

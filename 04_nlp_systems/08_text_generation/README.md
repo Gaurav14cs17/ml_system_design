@@ -281,7 +281,6 @@ class ControlledGenerator:
         max_length: int = 100
     ) -> str:
         """Generate text that includes specific keywords."""
-
         # Simple approach: add keywords to prompt
         keyword_prompt = f"{prompt} (Include: {', '.join(keywords)})"
         return self.generator.generate(keyword_prompt, max_length)[0]
@@ -294,7 +293,6 @@ class ControlledGenerator:
         required_words: List[str] = None
     ) -> str:
         """Generate with word constraints."""
-
         # This is a simplified version; production would use
         # constrained beam search or PPLM
         result = self.generator.generate(prompt, max_length)[0]

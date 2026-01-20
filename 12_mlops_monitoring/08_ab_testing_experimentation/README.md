@@ -48,48 +48,48 @@
 
 In A/B testing, we compare a **control** (existing model) against a **treatment** (new model):
 
-$$
+```math
 H_0: \mu_T = \mu_C \quad \text{(no difference)}
 H_1: \mu_T \neq \mu_C \quad \text{(there is a difference)}
-$$
+```
 
-Where $\mu_T$ and $\mu_C$ are the true mean outcomes for treatment and control.
+Where \( \mu_T \) and \( \mu_C \) are the true mean outcomes for treatment and control.
 
 ### Key Statistical Concepts
 
 #### Type I Error (False Positive)
 
-Rejecting $H_0$ when it's actually true:
+Rejecting \( H_0 \) when it's actually true:
 
-$$
+```math
 \alpha = P(\text{reject } H_0 | H_0 \text{ is true})
-$$
+```
 
-Typically set to $\alpha = 0.05$ (5% significance level).
+Typically set to \( \alpha = 0.05 \) (5% significance level).
 
 #### Type II Error (False Negative)
 
-Failing to reject $H_0$ when $H_1$ is true:
+Failing to reject \( H_0 \) when \( H_1 \) is true:
 
-$$
+```math
 \beta = P(\text{fail to reject } H_0 | H_1 \text{ is true})
-$$
+```
 
 #### Statistical Power
 
 The probability of correctly detecting a true effect:
 
-$$
+```math
 \text{Power} = 1 - \beta = P(\text{reject } H_0 | H_1 \text{ is true})
-$$
+```
 
 Typically target **80% power** (β = 0.20).
 
 ### Decision Matrix
 
-|                    | $H_0$ True | $H_1$ True |
+|                    | \( H_0 \) True | \( H_1 \) True |
 |--------------------|----------------|----------------|
-| **Reject $H_0$** | Type I Error (α) | Correct (1-β) |
+| **Reject \( H_0 \)** | Type I Error (α) | Correct (1-β) |
 | **Fail to Reject** | Correct (1-α) | Type II Error (β) |
 
 ---
@@ -100,28 +100,28 @@ Typically target **80% power** (β = 0.20).
 
 For comparing means of two independent samples:
 
-$$
+```math
 t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}}
-$$
+```
 
 Where:
-- $\bar{X}_T, \bar{X}_C$ = sample means
-- $s_T^2, s_C^2$ = sample variances
-- $n_T, n_C$ = sample sizes
+- \( \bar{X}_T, \bar{X}_C \) = sample means
+- \( s_T^2, s_C^2 \) = sample variances
+- \( n_T, n_C \) = sample sizes
 
 ### Welch's Approximation for Degrees of Freedom
 
-$$
+```math
 df = \frac{\left(\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}\right)^2}{\frac{(s_T^2/n_T)^2}{n_T-1} + \frac{(s_C^2/n_C)^2}{n_C-1}}
-$$
+```
 
 ### Confidence Interval for Difference
 
-The $(1-\alpha)$ confidence interval for $\mu_T - \mu_C$:
+The \( (1-\alpha) \) confidence interval for \( \mu_T - \mu_C \):
 
-$$
+```math
 (\bar{X}_T - \bar{X}_C) \pm t_{\alpha/2, df} \cdot \sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}
-$$
+```
 
 ---
 
@@ -131,53 +131,53 @@ $$
 
 Required sample size per group for a two-sided test:
 
-$$
+```math
 n = 2 \cdot \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot \sigma^2
-$$
+```
 
 Where:
-- $z_{\alpha/2}$ = z-score for significance level (1.96 for α=0.05)
-- $z_{\beta}$ = z-score for power (0.84 for 80% power)
-- $\delta$ = minimum detectable effect (MDE)
-- $\sigma^2$ = variance of the metric
+- \( z_{\alpha/2} \) = z-score for significance level (1.96 for α=0.05)
+- \( z_{\beta} \) = z-score for power (0.84 for 80% power)
+- \( \delta \) = minimum detectable effect (MDE)
+- \( \sigma^2 \) = variance of the metric
 
 ### Effect Size (Cohen's d)
 
 Standardized measure of effect magnitude:
 
-$$
+```math
 d = \frac{\mu_T - \mu_C}{\sigma_{pooled}}
-$$
+```
 
-Where $\sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 2}}$
+Where \( \sigma_{pooled} = \sqrt{\frac{(n_T-1)s_T^2 + (n_C-1)s_C^2}{n_T + n_C - 2}} \)
 
 | Effect Size | Interpretation |
 |-------------|----------------|
-| $d = 0.2$ | Small |
-| $d = 0.5$ | Medium |
-| $d = 0.8$ | Large |
+| \( d = 0.2 \) | Small |
+| \( d = 0.5 \) | Medium |
+| \( d = 0.8 \) | Large |
 
 ### Sample Size Formula (Simplified)
 
 For equal groups with 80% power and α = 0.05:
 
-$$
+```math
 n \approx \frac{16}{\delta^2}
-$$
+```
 
-Where $\delta$ is the effect size in standard deviation units.
+Where \( \delta \) is the effect size in standard deviation units.
 
 ### Practical Example
 
 **Scenario:** Detect a 2% improvement in conversion rate (baseline: 5%, target: 5.1%)
 
-- Baseline conversion: $p_C = 0.05$
-- Expected effect: $p_T - p_C = 0.001$
-- Variance: $\sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475$
+- Baseline conversion: \( p_C = 0.05 \)
+- Expected effect: \( p_T - p_C = 0.001 \)
+- Variance: \( \sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475 \)
 
-$$
+```math
 n = 2 \cdot \frac{(1.96 + 0.84)^2 \cdot 0.0475}{0.001^2} \approx 746,000 \text{ per group}
-$$
+```
 
 ---
 
@@ -201,11 +201,11 @@ Repeatedly checking results inflates Type I error:
 
 #### O'Brien-Fleming Spending Function
 
-$$
+```math
 \alpha^*(t) = 2 - 2\Phi\left(\frac{z_{\alpha/2}}{\sqrt{t}}\right)
-$$
+```
 
-Where $t$ is the information fraction (proportion of max sample size).
+Where \( t \) is the information fraction (proportion of max sample size).
 
 | Information Fraction | Boundary z-score | Cumulative α |
 |---------------------|------------------|--------------|
@@ -218,19 +218,19 @@ Where $t$ is the information fraction (proportion of max sample size).
 
 Uses constant boundaries:
 
-$$
+```math
 \alpha^*(t) = \alpha \cdot \ln(1 + (e-1) \cdot t)
-$$
+```
 
 ### When to Stop Early
 
 Stop the experiment if:
 
-$$
+```math
 |Z_k| > c_k \quad \text{at interim analysis } k
-$$
+```
 
-Where $c_k$ is the critical value from the spending function.
+Where \( c_k \) is the critical value from the spending function.
 
 ---
 
@@ -244,17 +244,17 @@ Where $c_k$ is the critical value from the spending function.
 
 Users must see consistent variants. Use hashing:
 
-$$
+```math
 \text{bucket} = \text{hash}(\text{user\_id} + \text{experiment\_id}) \mod 100
-$$
+```
 
 ### Minimum Detectable Effect (MDE)
 
 The smallest effect your experiment can reliably detect:
 
-$$
+```math
 MDE = (z_{\alpha/2} + z_{\beta}) \cdot \sqrt{\frac{2\sigma^2}{n}}
-$$
+```
 
 ### Experiment Duration
 
@@ -271,17 +271,17 @@ When running multiple tests (e.g., many metrics), control the **Family-Wise Erro
 
 ### Bonferroni Correction
 
-$$
+```math
 \alpha_{adjusted} = \frac{\alpha}{m}
-$$
+```
 
-Where $m$ is the number of tests. Conservative but simple.
+Where \( m \) is the number of tests. Conservative but simple.
 
 ### Benjamini-Hochberg (FDR Control)
 
-1. Order p-values: $p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)}$
-2. Find largest $k$ where $p_{(k)} \leq \frac{k}{m} \cdot \alpha$
-3. Reject all $H_{(1)}, ..., H_{(k)}$
+1. Order p-values: \( p_{(1)} \leq p_{(2)} \leq ... \leq p_{(m)} \)
+2. Find largest \( k \) where \( p_{(k)} \leq \frac{k}{m} \cdot \alpha \)
+3. Reject all \( H_{(1)}, ..., H_{(k)} \)
 
 Less conservative, controls **False Discovery Rate**.
 
@@ -293,25 +293,25 @@ Less conservative, controls **False Discovery Rate**.
 
 Instead of p-values, compute the **probability that treatment is better**:
 
-$$
+```math
 P(\mu_T > \mu_C | \text{data})
-$$
+```
 
 ### Beta-Binomial Model (for conversions)
 
-Prior: $\theta \sim \text{Beta}(\alpha_0, \beta_0)$
+Prior: \( \theta \sim \text{Beta}(\alpha_0, \beta_0) \)
 
-Posterior after observing $k$ successes in $n$ trials:
+Posterior after observing \( k \) successes in \( n \) trials:
 
-$$
+```math
 \theta | k, n \sim \text{Beta}(\alpha_0 + k, \beta_0 + n - k)
-$$
+```
 
 Probability treatment beats control:
 
-$$
+```math
 P(\theta_T > \theta_C) = \int_0^1 P(\theta_T > \theta_C | \theta_C) \cdot f(\theta_C) d\theta_C
-$$
+```
 
 ---
 
@@ -343,7 +343,6 @@ def analyze_experiment(control: np.ndarray, treatment: np.ndarray,
     
     Returns effect size, confidence interval, and significance.
     """
-
     # Basic statistics
     n_c, n_t = len(control), len(treatment)
     mean_c, mean_t = control.mean(), treatment.mean()
@@ -422,11 +421,11 @@ def analyze_experiment(control: np.ndarray, treatment: np.ndarray,
 
 | Concept | Formula |
 |---------|---------|
-| **t-statistic** | $t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{s_T^2/n_T + s_C^2/n_C}}$ |
-| **Sample size** | $n = 2(z_{\alpha/2} + z_\beta)^2 \sigma^2 / \delta^2$ |
-| **Cohen's d** | $d = (\mu_T - \mu_C) / \sigma_{pooled}$ |
-| **Confidence interval** | $\bar{X}_T - \bar{X}_C \pm t_{\alpha/2} \cdot SE$ |
-| **Power** | $1 - \beta = P(\text{reject } H_0 | H_1 \text{ true})$ |
+| **t-statistic** | \( t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{s_T^2/n_T + s_C^2/n_C}} \) |
+| **Sample size** | \( n = 2(z_{\alpha/2} + z_\beta)^2 \sigma^2 / \delta^2 \) |
+| **Cohen's d** | \( d = (\mu_T - \mu_C) / \sigma_{pooled} \) |
+| **Confidence interval** | \( \bar{X}_T - \bar{X}_C \pm t_{\alpha/2} \cdot SE \) |
+| **Power** | \( 1 - \beta = P(\text{reject } H_0 | H_1 \text{ true}) \) |
 
 ---
 

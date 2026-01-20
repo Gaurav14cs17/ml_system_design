@@ -326,7 +326,6 @@ class ItemContentFeatures:
         # Tags
         if 'tags' in item_data:
             features['tag_count'] = len(item_data['tags'])
-
             # Multi-hot encoding would be done separately
 
         # Brand/creator
@@ -738,12 +737,10 @@ class FeatureTransformer:
         Bin continuous values
         """
         if strategy == 'quantile':
-
             # Equal-sized bins
             percentiles = np.linspace(0, 100, n_bins + 1)
             bins = np.percentile(values, percentiles)
         elif strategy == 'uniform':
-
             # Equal-width bins
             bins = np.linspace(values.min(), values.max(), n_bins + 1)
 
@@ -868,7 +865,6 @@ class RedisFeatureStore(FeatureStore):
         key = f"{self.prefix}:{entity_id}"
 
         if feature_names:
-
             # Get specific features
             values = self.redis.hmget(key, feature_names)
             features = {
@@ -876,7 +872,6 @@ class RedisFeatureStore(FeatureStore):
                 for name, val in zip(feature_names, values)
             }
         else:
-
             # Get all features
             raw_features = self.redis.hgetall(key)
             features = {
@@ -942,7 +937,6 @@ class HybridFeatureStore:
         """
         Get features from appropriate store based on feature type
         """
-
         # Classify features
         batch_features = [f for f in feature_names if self._is_batch_feature(f)]
         realtime_features = [f for f in feature_names if not self._is_batch_feature(f)]
@@ -1014,7 +1008,6 @@ class FeaturePipeline:
 
         # Compute real-time features
         for name, spec in self.realtime_features.items():
-
             # Check dependencies
             deps = {d: features.get(d) for d in spec['dependencies']}
             features[name] = spec['compute'](entity_id, context, deps)

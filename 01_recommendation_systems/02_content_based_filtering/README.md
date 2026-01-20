@@ -80,7 +80,6 @@ score(u, i) = similarity(User_Profile(u), Item_Vector(i))
 ### 1. Structured Features (Metadata)
 
 ```python
-
 # Example: Movie metadata features
 movie_features = {
     "Inception": {
@@ -145,7 +144,6 @@ For visual items (products, fashion, art):
 ### 4. Audio Features (for Music)
 
 ```python
-
 # Spotify-style audio features
 audio_features = {
     "song_id": "track_123",
@@ -478,7 +476,6 @@ class ContentBasedRecommender:
 
 # Example Usage
 if __name__ == "__main__":
-
     # Sample movie data
     movies = pd.DataFrame({
         'item_id': ['m1', 'm2', 'm3', 'm4', 'm5'],
@@ -552,7 +549,6 @@ class HybridContentRecommender:
         self.num_weight = num_weight
 
     def build_hybrid_features(self, items_df):
-
         # Text features (TF-IDF)
         text_features = self.build_text_features(items_df['description'])
 
@@ -671,7 +667,6 @@ Netflix uses content-based features to personalize thumbnails:
 ### 1. Feature Engineering
 
 ```python
-
 # DO: Combine multiple feature sources
 features = combine([
     text_features,       # TF-IDF of descriptions
@@ -687,7 +682,6 @@ features = combine([
 ### 2. Profile Updates
 
 ```python
-
 # DO: Use time decay for evolving preferences
 profile = α * recent_profile + (1-α) * historical_profile
 
@@ -701,7 +695,6 @@ if rating < 3:
 ### 3. Evaluation
 
 ```python
-
 # DO: Use multiple metrics
 metrics = {
     'precision@10': calculate_precision(recs, ground_truth, k=10),

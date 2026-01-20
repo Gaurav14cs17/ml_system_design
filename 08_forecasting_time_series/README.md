@@ -25,16 +25,16 @@ Time series forecasting is grounded in rigorous mathematical theory. A time seri
 
 A time series is **weakly stationary** if:
 
-$$
+```math
 \mu_t = \mu \quad \forall t \quad \text{(constant mean)}
 \gamma(t, t+h) = \gamma(h) \quad \forall t \quad \text{(covariance depends only on lag } h\text{)}
-$$
+```
 
 ### Decomposition Model
 
-$$
+```math
 Y_t = T_t + S_t + C_t + \varepsilon_t
-$$
+```
 
 Where:
 - $T\_t$ — **Trend**: Long-term progression
@@ -341,7 +341,6 @@ flowchart TD
 ### Installation
 
 ```bash
-
 # Core dependencies
 pip install pandas numpy scipy matplotlib seaborn
 

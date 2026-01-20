@@ -152,7 +152,6 @@ class CBOW(nn.Module):
         self.linear = nn.Linear(embed_dim, vocab_size)
 
     def forward(self, context_words):
-
         # context_words: [batch, context_size]
         embeds = self.embeddings(context_words)  # [batch, context_size, embed_dim]
         avg_embed = embeds.mean(dim=1)  # [batch, embed_dim]
@@ -186,9 +185,9 @@ Matrix E     h ∈ ℝᵈ       scores      for each context position
 
 Computing softmax over entire vocabulary is computationally prohibitive:
 
-$$
+```math
 P(w_o | w_i) = \frac{\exp(\mathbf{v}_{w_o}^\top \mathbf{v}_{w_i})}{\sum_{j=1}^{|V|} \exp(\mathbf{v}_{w_j}^\top \mathbf{v}_{w_i})}
-$$
+```
 
 The denominator requires summing over **all words** in vocabulary $|V|$ (often 100,000+).
 
@@ -196,9 +195,9 @@ The denominator requires summing over **all words** in vocabulary $|V|$ (often 1
 
 Replace the softmax with a **binary classification task**:
 
-$$
+```math
 \mathcal{L}_{\text{NEG}} = \log \sigma(\mathbf{v}_{w_o}^\top \mathbf{v}_{w_i}) + \sum_{k=1}^{K} \mathbb{E}_{w_k \sim P_n(w)} \left[ \log \sigma(-\mathbf{v}_{w_k}^\top \mathbf{v}_{w_i}) \right]
-$$
+```
 
 where:
 - $\sigma(x) = 1/(1 + e^{-x})$ is the sigmoid function
@@ -210,7 +209,6 @@ def negative_sampling_loss(target_embed, context_embed, negative_embeds):
     """
     Maximize: log σ(v_context · v_target) + Σ log σ(-v_neg · v_target)
     """
-
     # Positive pair
     pos_score = torch.sigmoid(torch.dot(target_embed, context_embed))
     pos_loss = -torch.log(pos_score)
@@ -282,7 +280,6 @@ def build_cooccurrence_matrix(corpus, window_size=10, vocab_size=10000):
                 if i != j:
                     word_j = sentence[j]
                     distance = abs(i - j)
-
                     # Weight by inverse distance
                     weight = 1.0 / distance
                     cooc[word_i][word_j] += weight
@@ -294,9 +291,9 @@ def build_cooccurrence_matrix(corpus, window_size=10, vocab_size=10000):
 
 GloVe minimizes a **weighted least-squares regression** on the co-occurrence matrix:
 
-$$
+```math
 \mathcal{J} = \sum_{i,j=1}^{|V|} f(X_{ij}) \left( \mathbf{w}_i^\top \tilde{\mathbf{w}}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2
-$$
+```
 
 where:
 - $X\_{ij}$ is the co-occurrence count of words $i$ and $j$
@@ -306,9 +303,9 @@ where:
 
 **Weighting Function:**
 
-$$
+```math
 f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{otherwise} \end{cases}
-$$
+```
 
 where typically $x\_{\max} = 100$ and $\alpha = 0.75$.
 
@@ -353,7 +350,6 @@ class GloVe(nn.Module):
             nn.init.zeros_(bias.weight)
 
     def forward(self, word_i, word_j, cooc_value):
-
         # Get embeddings
         w_i = self.w_embeddings(word_i)
         c_j = self.c_embeddings(word_j)
@@ -426,7 +422,6 @@ def get_subwords(word, min_n=3, max_n=6):
 
 # Example
 get_subwords("where")
-
 # Output: ['<wh', 'whe', 'her', 'ere', 're>', '<whe', 'wher', 'here', 'ere>',
 #          '<wher', 'where', 'here>', '<where', 'where>']
 ```
@@ -457,7 +452,6 @@ def get_word_vector(word, subword_embeddings, word_embedding=None):
 
 #### 1. Out-of-Vocabulary (OOV) Handling
 ```python
-
 # Word2Vec/GloVe: Unknown word → No embedding
 embed("unfriendliness")  # ??? (if not in vocabulary)
 
@@ -467,7 +461,6 @@ embed("unfriendliness") = embed("<un") + embed("unf") + ... + embed("ess>")
 
 #### 2. Morphological Awareness
 ```python
-
 # Similar words share subwords
 embed("running") ≈ embed("runner")  # Share "run", "unn"
 embed("unhappy") ≈ embed("unhelpful")  # Share "<un", "unh"
@@ -494,7 +487,6 @@ class FastText(nn.Module):
         return word_embed + subword_embed
 
     def forward(self, center_word, center_subwords, context_words):
-
         # Get center word representation
         center_embed = self.get_word_vector(center_word, center_subwords)
 
@@ -561,7 +553,6 @@ def prepare_corpus(texts, min_count=5):
     """
     Prepare corpus for word embedding training
     """
-
     # Tokenize
     all_words = []
     for text in texts:
@@ -616,7 +607,6 @@ def train_word2vec(model, pairs, vocab_size, epochs=5,
         random.shuffle(pairs)
 
         for center, context in pairs:
-
             # Sample negatives
             negatives = sample_negatives(neg_dist, neg_samples, exclude=context)
 
@@ -636,7 +626,6 @@ def train_word2vec(model, pairs, vocab_size, epochs=5,
 ### Using Pre-trained Models
 
 ```python
-
 # Gensim - Easy loading of pre-trained embeddings
 import gensim.downloader as api
 
@@ -701,7 +690,6 @@ def evaluate_analogies(embeddings, analogy_dataset):
 
     for a, b, c, d in analogy_dataset:
         if all(w in embeddings for w in [a, b, c, d]):
-
             # Compute: d ≈ b - a + c
             predicted_vec = embeddings[b] - embeddings[a] + embeddings[c]
 
@@ -731,7 +719,6 @@ syntactic_analogies = [
 Test embeddings on downstream tasks:
 
 ```python
-
 # Sentiment Analysis
 def evaluate_sentiment(embeddings, sentiment_dataset):
     X = [average_embedding(text, embeddings) for text, label in sentiment_dataset]
@@ -818,7 +805,6 @@ class SkipGramNegativeSampling(nn.Module):
         nn.init.xavier_uniform_(self.context_embeddings.weight)
 
     def forward(self, center, context, negatives):
-
         # Get embeddings
         center_embed = self.center_embeddings(center)  # [batch, dim]
         context_embed = self.context_embeddings(context)  # [batch, dim]
@@ -842,7 +828,6 @@ def train_word2vec_full(texts, embed_dim=100, window_size=5,
     """
     Full Word2Vec training pipeline
     """
-
     # Prepare data
     corpus, vocab = prepare_corpus(texts)
     dataset = Word2VecDataset(corpus, vocab, window_size, neg_samples)
@@ -917,7 +902,6 @@ Static embeddings give one vector per word, but words have multiple meanings:
 Map words from different languages to the same space:
 
 ```python
-
 # Align English and French embeddings
 # "dog" (en) ≈ "chien" (fr) in shared space
 ```
@@ -931,7 +915,6 @@ Methods:
 Inject knowledge graph information into embeddings:
 
 ```python
-
 # Original: embedding("dog")
 # Knowledge graph: dog IS-A mammal, dog HAS fur
 # Retrofitted: embedding("dog") pushed closer to mammal, fur
@@ -942,12 +925,10 @@ Inject knowledge graph information into embeddings:
 Remove unwanted biases from embeddings:
 
 ```python
-
 # Problem: embed("programmer") closer to embed("man") than embed("woman")
 # Solution: Project out gender direction from profession words
 
 def debias_embeddings(embeddings, gender_pairs):
-
     # Identify gender direction
     gender_direction = compute_gender_direction(embeddings, gender_pairs)
 

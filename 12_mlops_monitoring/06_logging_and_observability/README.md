@@ -395,7 +395,6 @@ class ObservableMLService:
 
         with self.tracer.trace_prediction(ctx.request_id, self.model_name):
             try:
-
                 # Validate features
                 self._validate_features(ctx, features)
 
