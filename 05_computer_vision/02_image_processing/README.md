@@ -327,6 +327,7 @@ The gradient of an image $I$ at point $(x, y)$ is:
 **Gradient Magnitude (Edge Strength):**
 
 ```math
+
 |\nabla I| = \sqrt{G_x^2 + G_y^2}
 
 ```

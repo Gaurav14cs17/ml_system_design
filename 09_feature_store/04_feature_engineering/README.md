@@ -150,8 +150,10 @@ percentile_aggs = {
 """
 Raw Data:
 +---------+------------+--------+--------+
+
 | user_id | merchant_id| amount |  date  |
 +---------+------------+--------+--------+
+
 |  u1     |    m1      |  100   | Jan 1  |
 |  u1     |    m1      |   50   | Jan 2  |
 |  u1     |    m2      |   75   | Jan 3  |
@@ -160,16 +162,20 @@ Raw Data:
 
 Level 1: User Features (aggregate by user)
 +---------+---------------+----------------+
+
 | user_id | total_spent   | merchant_count |
 +---------+---------------+----------------+
+
 |  u1     |    225        |      2         |
 |  u2     |    200        |      1         |
 +---------+---------------+----------------+
 
 Level 2: User-Merchant Features (aggregate by pair)
 +---------+------------+---------------+----------+
+
 | user_id | merchant_id| total_spent   | txn_count|
 +---------+------------+---------------+----------+
+
 |  u1     |    m1      |    150        |    2     |
 |  u1     |    m2      |     75        |    1     |
 |  u2     |    m1      |    200        |    1     |
@@ -177,8 +183,10 @@ Level 2: User-Merchant Features (aggregate by pair)
 
 Level 3: Merchant Features (aggregate by merchant)
 +------------+---------------+----------------+
+
 | merchant_id| total_revenue | unique_users   |
 +------------+---------------+----------------+
+
 |    m1      |    350        |      2         |
 |    m2      |     75        |      1         |
 +------------+---------------+----------------+

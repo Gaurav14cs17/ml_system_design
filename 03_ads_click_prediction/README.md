@@ -356,38 +356,47 @@ For auction bidding:
 03_ads_click_prediction/
 +-- README.md                          # This file
 +-- images/                            # Global images (hero, overview diagrams)
+
 |
 +-- 01_problem_definition/             # Module 1: Business context & success metrics
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 02_system_requirements/            # Module 2: Requirements, SLAs, APIs
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 03_data_engineering/               # Module 3: Data pipelines, ETL, storage
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 04_feature_engineering/            # Module 4: Feature taxonomy & feature store
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 05_model_architecture/             # Module 5: Deep learning models & training
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 06_serving_infrastructure/         # Module 6: Real-time serving & caching
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 07_ab_testing/                     # Module 7: Experimentation framework
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 08_monitoring/                     # Module 8: Metrics, alerting, observability
 |   +-- README.md
 |   +-- images/
+
 |
 +-- 09_scaling_optimization/           # Module 9: Performance & cost optimization
     +-- README.md

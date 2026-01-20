@@ -243,6 +243,7 @@ The industry-standard pattern for large-scale retrieval:
 
 ```
 +-----------------+     +-----------------+
+
 |   User Tower    |     |   Item Tower    |
 |                 |     |                 |
 |  User Features  |     |  Item Features  |

@@ -49,6 +49,7 @@ Search and Ranking systems power the core functionality of modern tech productsâ
 
 ```
 +-----------------------------------------------------------------------------+
+
 |                          SEARCH & RANKING MASTERY PATH                       |
 +-----------------------------------------------------------------------------+
 |                                                                              |
@@ -256,39 +257,48 @@ for idx, score in results:
 +-- README.md                          # This file
 +-- requirements.txt                   # Python dependencies
 +-- images/                            # Global images
+
 |   +-- hero_banner.svg
 +-- assets/                            # Additional assets
 |
 +-- 01_problem_definition/             # Module 1: Problem Definition
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 02_query_understanding/            # Module 2: Query Understanding
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 03_document_understanding/         # Module 3: Document Understanding
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 04_feature_engineering/            # Module 4: Feature Engineering
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 05_ranking_models/                 # Module 5: Ranking Models
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 06_training_pipeline/              # Module 6: Training Pipeline
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 07_serving_infrastructure/         # Module 7: Serving Infrastructure
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 08_evaluation_metrics/             # Module 8: Evaluation Metrics
 |   +-- README.md
+
 |   +-- images/
 |
 +-- 09_advanced_topics/                # Module 9: Advanced Topics

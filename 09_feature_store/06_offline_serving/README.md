@@ -278,8 +278,10 @@ historical_features = spark.read.format("delta").option(
 PARTITION STRATEGY:
 s3://feature-store/user_features/
 +-- date=2024-01-01/
+
 |   +-- hour=00/
 |   |   +-- part-00000.parquet
+
 |   +-- hour=01/
 |   +-- ...
 +-- date=2024-01-02/

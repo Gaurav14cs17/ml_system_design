@@ -322,6 +322,7 @@ Reference Data (Training)
          |
          ▼
 +---------------------+
+
 | Production Data     |--▶ Compare Distributions
 | (Rolling Window)    |
 +---------------------+

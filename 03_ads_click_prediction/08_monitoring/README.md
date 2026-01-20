@@ -119,6 +119,7 @@ Monitor shift in predicted CTR:
 **Alert if**:
 
 ```math
+
 |\bar{p}_{\text{pred}}(t) - \bar{p}_{\text{pred}}(t-1)| > \epsilon
 
 ```
@@ -273,12 +274,15 @@ During experiments, monitor:
 
 ```
 +---------------------------------------------------------+
+
 |  Traffic Overview    |    Error Rate     |   Latency   |
 |  ████████████████    |    0.02%          |   p99: 8ms  |
 +---------------------------------------------------------+
+
 |  Prediction Distribution           |  Calibration Ratio |
 |  ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁                  |       0.98         |
 +---------------------------------------------------------+
+
 |  Feature Health                    |  Model Freshness   |
 |  Missing: 0.1%                     |  Updated: 2h ago   |
 +---------------------------------------------------------+

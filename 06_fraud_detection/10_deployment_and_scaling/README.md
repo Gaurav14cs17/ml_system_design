@@ -783,6 +783,7 @@ Multi-Region Fraud Detection:
 Region: US-East
 +-- Load Balancer (ALB)
 +-- Kubernetes Cluster
+
 |   +-- Scoring Service (20 pods)
 |   +-- Model Server (10 pods)
 +-- Redis Cluster (primary)
@@ -793,6 +794,7 @@ Region: US-West
 +-- Load Balancer (ALB)
 +-- Kubernetes Cluster
 |   +-- Scoring Service (15 pods)
+
 |   +-- Model Server (8 pods)
 +-- Redis Cluster (replica)
 +-- Feature Store (replica)

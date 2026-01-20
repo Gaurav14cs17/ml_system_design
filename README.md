@@ -229,12 +229,15 @@ This repository is your **comprehensive guide** to designing, building, and depl
 
 ```
 ml_system_design/
+
 |
 +-- 📂 XX_topic_name/
 |   +-- 📄 README.md              # Topic overview & navigation
 |   +-- 📂 01_subtopic/
+
 |   |   +-- 📄 README.md          # In-depth content
 |   |   +-- 📂 images/            # Architecture diagrams (SVG)
+
 |   +-- 📂 ...
 |
 +-- 📂 images/                    # Shared assets

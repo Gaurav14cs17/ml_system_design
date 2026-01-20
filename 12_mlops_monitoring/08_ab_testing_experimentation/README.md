@@ -240,6 +240,7 @@ Uses constant boundaries:
 Stop the experiment if:
 
 ```math
+
 |Z_k| > c_k \quad \text{at interim analysis } k
 
 ```
