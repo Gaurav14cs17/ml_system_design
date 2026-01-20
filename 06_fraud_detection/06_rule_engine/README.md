@@ -1354,9 +1354,13 @@ Continue to [Chapter 7: Model Training & Evaluation →](../07_model_training_an
 ## Code Examples
 
 See the `code/` directory for:
+
 - `rules/` - Rule definitions and implementations
+
 - `engine/` - Rule engine core
+
 - `admin/` - Rule management API
+
 - `testing/` - Rule testing utilities
 
 ---

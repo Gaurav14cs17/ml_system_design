@@ -37,13 +37,19 @@
 ### Prediction API Contract
 
 **Input**:
+
 - User ID (hashed)
+
 - Ad ID
+
 - Context (device, time, placement)
 
 **Output**:
+
 - `pCTR`: Predicted click probability
+
 - `model_version`: Model used
+
 - `latency_us`: Processing time
 
 ---
@@ -338,7 +344,9 @@ If burn rate > 1, SLO will be violated.
 ## Next Steps
 
 Continue to the next modules:
+
 - [03_data_engineering](../03_data_engineering/README.md) — Design data pipelines
+
 - [04_feature_engineering](../04_feature_engineering/README.md) — Define feature taxonomy
 
 ---

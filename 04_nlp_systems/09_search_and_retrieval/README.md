@@ -465,7 +465,9 @@ class TwoStageRetriever:
 ## 🔗 Related Topics
 
 - [Embeddings](../02_embeddings/) - Vector representations
+
 - [RAG Systems](../11_rag_systems/) - Retrieval + Generation
+
 - [Question Answering](../07_question_answering/) - Using retrieval for QA
 
 ---

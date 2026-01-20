@@ -38,9 +38,13 @@
 While word embeddings capture the meaning of individual words, many NLP applications require understanding at the sentence or document level:
 
 - **Semantic Search**: Find documents similar to a query
+
 - **Text Classification**: Categorize documents by topic/sentiment
+
 - **Duplicate Detection**: Identify similar or duplicate content
+
 - **Clustering**: Group related documents together
+
 - **Question Answering**: Match questions to relevant passages
 
 ### The Core Challenge
@@ -64,9 +68,13 @@ Sentence B: "The man bit the dog"
 ```
 
 Same words, completely different meanings! Simple averaging loses:
+
 - **Word order**: Subject-verb-object relationships
+
 - **Negation**: "I love this" vs "I don't love this"
+
 - **Emphasis**: "He definitely won" vs "He won"
+
 - **Context**: "I went to the bank" (river or financial?)
 
 ### Desiderata for Good Sentence Embeddings
@@ -183,7 +191,9 @@ def compute_sif_embeddings(sentences, word_embeddings, word_frequencies, a=1e-3)
 ```
 
 **Why it works**:
+
 - Frequent words (the, is, a) add noise → down-weight them
+
 - Common discourse component (present in all sentences) → remove it
 
 ---
@@ -248,7 +258,9 @@ similar = model.dv.most_similar("doc_0", topn=5)
 ### Limitations of Doc2Vec
 
 - Requires training a new document vector for unseen documents
+
 - Inference can be slow and unstable
+
 - Doesn't leverage pre-trained language models
 
 ---
@@ -961,12 +973,19 @@ results = evaluation.run(model)
 ```
 
 MTEB covers:
+
 - **Classification**: Sentiment, topic, intent
+
 - **Clustering**: Document grouping
+
 - **Pair Classification**: Paraphrase, NLI
+
 - **Reranking**: Query-document relevance
+
 - **Retrieval**: Dense passage retrieval
+
 - **STS**: Semantic similarity
+
 - **Summarization**: Summary evaluation
 
 ### Custom Evaluation

@@ -11,9 +11,13 @@
 ## 🎯 What You'll Learn
 
 - Offline serving architecture
+
 - Point-in-time correctness
+
 - Training data generation
+
 - Batch retrieval patterns
+
 - Data formats and optimization
 
 ---
@@ -358,7 +362,9 @@ def write_features_parquet(df, path):
 ### Key Takeaways
 
 - Offline serving is about **correctness**, not speed
+
 - Point-in-time joins are **essential** for valid training data
+
 - Choose storage based on **scale and query patterns**
 - **Optimize partitioning** for your access patterns
 

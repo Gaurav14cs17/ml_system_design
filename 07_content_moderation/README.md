@@ -7,10 +7,15 @@
 ![System Overview](./assets/system_overview.svg)
 
 Content moderation is one of the most challenging ML system design problems, requiring a blend of:
+
 - **Machine Learning**: Multi-modal classification, NLP, computer vision
+
 - **System Design**: Low-latency, high-throughput distributed systems
+
 - **Product Design**: User experience, transparency, appeals
+
 - **Policy**: Defining and enforcing community standards
+
 - **Ethics**: Balancing safety with free expression
 
 This guide covers the complete lifecycle of building production-grade content moderation systems.
@@ -92,22 +97,35 @@ This guide covers the complete lifecycle of building production-grade content mo
 ## Key Metrics to Track
 
 ### ML Metrics
+
 - **Precision**: % of flagged content that is actually violation
+
 - **Recall**: % of violations that are caught
+
 - **F1 Score**: Harmonic mean of precision and recall
+
 - **AUC-ROC**: Model discrimination ability
+
 - **Latency**: P50, P95, P99 inference time
 
 ### Operational Metrics
+
 - **Throughput**: Requests per second
+
 - **Queue Depth**: Items waiting for review
+
 - **Error Rate**: Failed moderation requests
+
 - **Human Review Rate**: % needing human decision
 
 ### Business Metrics
+
 - **Violation Rate**: % of content that violates policies
+
 - **Appeal Rate**: % of decisions appealed
+
 - **Overturn Rate**: % of appeals successful
+
 - **User Reports**: Reports per 1M content views
 
 ---
@@ -210,14 +228,23 @@ print(moderate("Hello world!"))
 ### Key Points to Cover
 
 - [ ] Requirements gathering (functional + non-functional)
+
 - [ ] High-level architecture diagram
+
 - [ ] Data pipeline and labeling strategy
+
 - [ ] ML model selection and training
+
 - [ ] Serving infrastructure (latency, throughput)
+
 - [ ] Human review integration
+
 - [ ] Monitoring and alerting
+
 - [ ] Edge cases and adversarial handling
+
 - [ ] Scalability and cost optimization
+
 - [ ] Compliance and ethics
 
 ---
@@ -225,9 +252,13 @@ print(moderate("Hello world!"))
 ## Contributing
 
 This is a living document. Contributions welcome for:
+
 - New case studies
+
 - Code examples
+
 - Updated regulations
+
 - Industry best practices
 
 ---
@@ -235,17 +266,25 @@ This is a living document. Contributions welcome for:
 ## References
 
 ### Papers
+
 - "Challenges in Content Moderation" - Meta AI Research
+
 - "The Moderators" - UCLA Research
+
 - "Fairness in Machine Learning" - Google Research
 
 ### Books
+
 - "Custodians of the Internet" - Tarleton Gillespie
+
 - "Content Moderation at Scale" - Harvard Berkman Klein Center
 
 ### Regulations
+
 - EU Digital Services Act (DSA)
+
 - German NetzDG
+
 - US Section 230
 - UK Online Safety Bill
 

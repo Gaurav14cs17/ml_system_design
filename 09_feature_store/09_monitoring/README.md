@@ -11,9 +11,13 @@
 ## 🎯 What You'll Learn
 
 - Feature monitoring strategies
+
 - Data drift detection
+
 - Quality metrics
+
 - Alerting and dashboards
+
 - Debugging feature issues
 
 ---
@@ -220,8 +224,11 @@ D = \sup_x |F_{ref}(x) - F_{cur}(x)|
 ```
 
 Where:
+
 - \( F_{ref}(x) \) = CDF of reference distribution
+
 - \( F_{cur}(x) \) = CDF of current distribution
+
 - \( \sup \) = supremum (maximum) over all x
 
 **Interpretation**: Reject null hypothesis (no drift) if p-value < α (typically 0.05)
@@ -236,8 +243,11 @@ PSI = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)
 ```
 
 Where:
+
 - \( A_i \) = Actual percentage in bin i (current data)
+
 - \( E_i \) = Expected percentage in bin i (reference data)
+
 - \( n \) = Number of bins
 
 **PSI Interpretation**:

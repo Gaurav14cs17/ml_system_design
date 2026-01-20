@@ -7,15 +7,25 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Mathematical Framework](#mathematical-framework)
+
 - [Supervised Learning Formulation](#supervised-learning-formulation)
+
 - [Tree-Based Models](#tree-based-models)
+
 - [Gradient Boosting Methods](#gradient-boosting-methods)
+
 - [Linear Models](#linear-models)
+
 - [Ensemble Methods](#ensemble-methods)
+
 - [Multi-Step Forecasting Strategies](#multi-step-forecasting-strategies)
+
 - [Hyperparameter Tuning](#hyperparameter-tuning)
+
 - [Production Pipeline](#production-pipeline)
 
 ---
@@ -42,9 +52,13 @@ Transform time series into input-output pairs:
 ```
 
 Where:
+
 - $X\_t = f(Y\_{t-1}, Y\_{t-2}, \ldots, Y\_{t-p}, Z\_t)$ — Feature vector at time $t$
+
 - $Y\_{t+h}$ — Target value $h$ steps ahead
+
 - $p$ — Lookback window size
+
 - $Z\_t$ — Exogenous features (calendar, external data)
 
 ### Loss Functions
@@ -65,9 +79,13 @@ For tree ensemble methods (XGBoost, LightGBM):
 ```
 
 Where:
+
 - $l(y\_i, \hat{y}\_i)$ — Differentiable loss function
+
 - $\Omega(f\_k) = \gamma T + \frac{1}{2}\lambda\|w\|^2$ — Regularization (tree complexity)
+
 - $T$ — Number of leaves in tree $k$
+
 - $w$ — Leaf weights
 
 ---
@@ -713,14 +731,19 @@ print(f"Test RMSE: {metrics['rmse']:.4f}")
 ## Summary
 
 ML approaches for time series:
+
 - Transform temporal data to supervised format
+
 - Leverage feature engineering for patterns
+
 - Use gradient boosting for state-of-the-art results
+
 - Apply proper time series cross-validation
 
 ### Next Steps
 
 - [06_deep_learning](../06_deep_learning/) - Neural network methods
+
 - [07_evaluation_metrics](../07_evaluation_metrics/) - Comprehensive evaluation
 
 ---

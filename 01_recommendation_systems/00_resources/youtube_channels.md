@@ -60,9 +60,13 @@
 📺 https://www.youtube.com/playlist?list=PLLssT5z_DsK9JDLcT8T62VtzwyW-LNepV
 
 Topics:
+
 - Lecture 9: Recommendation Systems
+
 - Lecture 10: Dimensionality Reduction (SVD)
+
 - Lecture 11: Clustering
+
 - Lecture 14: Mining Social Networks
 
 ```
@@ -74,9 +78,13 @@ Topics:
 📺 Available on Coursera
 
 Topics:
+
 - Content-Based Filtering
+
 - Collaborative Filtering
+
 - Deep Learning for RecSys
+
 - Evaluation Metrics
 
 ```
@@ -88,9 +96,13 @@ Topics:
 📺 https://www.youtube.com/@acmrecsys
 
 Topics:
+
 - Industry talks from Netflix, Spotify, Amazon
+
 - Research paper presentations
+
 - Tutorial sessions
+
 - Best paper awards
 
 ```
@@ -104,8 +116,11 @@ Topics:
 📺 https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
 
 Topics:
+
 - Building neural networks from scratch
+
 - Backpropagation
+
 - Language models (relevant for sequence RecSys)
 
 ```
@@ -117,8 +132,11 @@ Topics:
 📺 Available on Coursera
 
 Topics:
+
 - Neural Networks basics
+
 - Sequence Models (for session-based recs)
+
 - Attention mechanisms
 
 ```
@@ -132,9 +150,13 @@ Topics:
 📺 https://madewithml.com/
 
 Topics:
+
 - ML system design
+
 - Feature stores
+
 - Model serving
+
 - Monitoring
 
 ```
@@ -272,8 +294,11 @@ Day 11-14: Design your own system
 ### Webinar Series
 
 - **Databricks ML Sessions** - MLOps, Spark ML
+
 - **AWS ML Webinars** - Amazon Personalize
+
 - **Google Cloud AI** - Vertex AI, Recommendations AI
+
 - **Weights & Biases Webinars** - MLOps best practices
 
 ---

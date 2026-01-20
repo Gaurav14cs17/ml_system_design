@@ -7,14 +7,23 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Mathematical Foundations](#mathematical-foundations)
+
 - [Moving Average Methods](#moving-average-methods)
+
 - [Exponential Smoothing](#exponential-smoothing)
+
 - [ARIMA Models](#arima-models)
+
 - [SARIMA Models](#sarima-models)
+
 - [Prophet](#prophet)
+
 - [Model Selection and Diagnostics](#model-selection-and-diagnostics)
+
 - [Practical Implementation](#practical-implementation)
 
 ---
@@ -430,9 +439,13 @@ B^m Y_t = Y_{t-m}
 ```
 
 Where:
+
 - $\phi\_p(B) = 1 - \phi\_1 B - \cdots - \phi\_p B^p$ — Non-seasonal AR polynomial
+
 - $\theta\_q(B) = 1 + \theta\_1 B + \cdots + \theta\_q B^q$ — Non-seasonal MA polynomial
+
 - $\Phi\_P(B^m) = 1 - \Phi\_1 B^m - \cdots - \Phi\_P B^{Pm}$ — Seasonal AR polynomial
+
 - $\Theta\_Q(B^m) = 1 + \Theta\_1 B^m + \cdots + \Theta\_Q B^{Qm}$ — Seasonal MA polynomial
 
 ### Example: SARIMA(1,1,1)(1,1,1)₁₂
@@ -821,9 +834,13 @@ predictions = forecaster.predict(horizon=30)
 ## Summary
 
 Statistical methods provide:
+
 - **Interpretability**: Clear model components
+
 - **Efficiency**: Fast training and inference
+
 - **Uncertainty**: Built-in confidence intervals
+
 - **Strong baselines**: Often hard to beat
 
 ### Method Selection Guide
@@ -840,6 +857,7 @@ Statistical methods provide:
 ### Next Steps
 
 - [05_machine_learning](../05_machine_learning/) - Tree-based and ML approaches
+
 - [06_deep_learning](../06_deep_learning/) - Neural network methods
 
 ---

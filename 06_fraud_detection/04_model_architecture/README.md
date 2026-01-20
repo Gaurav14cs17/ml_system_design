@@ -76,8 +76,11 @@ Focal loss down-weights easy examples, focusing training on hard negatives:
 ```
 
 Where:
+
 - $p\_t = \hat{y}\_i$ if $y\_i = 1$, else $1 - \hat{y}\_i$
+
 - $\gamma \geq 0$ is the focusing parameter (typically $\gamma = 2$)
+
 - $\alpha\_t$ is the class-balancing weight
 
 **Intuition**: When $\gamma > 0$, well-classified examples ($p\_t \rightarrow 1$) contribute negligibly to the loss.
@@ -1435,9 +1438,13 @@ Continue to [Chapter 5: Real-Time Inference →](../05_real_time_inference/)
 ## Code Examples
 
 See the `code/` directory for:
+
 - `models/` - All model implementations
+
 - `training/` - Training utilities and pipelines
+
 - `optimization/` - Model optimization scripts
+
 - `ensemble/` - Ensemble configuration examples
 
 ---

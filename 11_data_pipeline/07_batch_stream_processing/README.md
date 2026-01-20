@@ -17,7 +17,9 @@ Data processing systems can be modeled using queueing theory, which provides ins
 #### Kendall Notation: A/S/c
 
 - **A**: Arrival process distribution
+
 - **S**: Service time distribution  
+
 - **c**: Number of servers (workers)
 
 Common models: **M/M/1** (Markovian arrivals, exponential service, single server)
@@ -32,8 +34,11 @@ L = \lambda \cdot W
 ```
 
 where:
+
 - $L$ = average number of items in system
+
 - $\lambda$ = arrival rate (items/second)
+
 - $W$ = average time in system (seconds)
 
 **For pipeline design:** If you want $W < W\_{max}$, then system capacity must exceed $L/W\_{max}$.
@@ -197,6 +202,7 @@ H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
 
 **Implications:**
 - High entropy → events are unpredictable → need real-time processing
+
 - Low entropy → events are predictable → batch processing may suffice
 
 ### Consistency Models
@@ -204,8 +210,11 @@ H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
 #### CAP Theorem Trade-offs
 
 In distributed systems, choose 2 of 3:
+
 - **Consistency**: All nodes see same data
+
 - **Availability**: System responds to requests
+
 - **Partition tolerance**: System works despite network failures
 
 **Batch systems:** Typically choose CP (consistent when running)

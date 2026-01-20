@@ -5,12 +5,19 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Real-time (Online) Inference](#real-time-online-inference)
+
 - [Batch Inference](#batch-inference)
+
 - [Streaming Inference](#streaming-inference)
+
 - [Dynamic Batching](#dynamic-batching)
+
 - [Model Ensembles](#model-ensembles)
+
 - [Pattern Selection Guide](#pattern-selection-guide)
 
 ---

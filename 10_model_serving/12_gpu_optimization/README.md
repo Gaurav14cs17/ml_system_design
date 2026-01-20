@@ -5,15 +5,25 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Performance Fundamentals](#performance-fundamentals)
+
 - [GPU Architecture Basics](#gpu-architecture-basics)
+
 - [CUDA Optimization](#cuda-optimization)
+
 - [Batching Strategies](#batching-strategies)
+
 - [Multi-GPU Serving](#multi-gpu-serving)
+
 - [Memory Optimization](#memory-optimization)
+
 - [GPU Sharing (MIG/MPS)](#gpu-sharing-migmps)
+
 - [Profiling and Benchmarking](#profiling-and-benchmarking)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -52,8 +62,11 @@ I = \frac{\text{Total FLOPS}}{\text{Total Bytes Transferred}}
 \]
 
 where:
+
 - \( \eta_{\text{occupancy}} \) = fraction of SMs actively executing
+
 - \( \eta_{\text{memory}} \) = memory bandwidth utilization  
+
 - \( \eta_{\text{compute}} \) = ALU utilization
 
 ### Latency vs Throughput
@@ -656,12 +669,19 @@ def benchmark_throughput(model, batch_size: int, num_batches: int = 100):
 ### GPU Optimization Checklist
 
 - ✅ Use dynamic batching (10x throughput)
+
 - ✅ Enable mixed precision (FP16)
+
 - ✅ Pre-allocate memory buffers
+
 - ✅ Use CUDA streams for concurrency
+
 - ✅ Pin CPU memory for transfers
+
 - ✅ Profile before optimizing
+
 - ✅ Monitor GPU utilization
+
 - ✅ Consider MIG for multi-tenancy
 
 ### Common Pitfalls

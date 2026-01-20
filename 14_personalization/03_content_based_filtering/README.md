@@ -32,7 +32,9 @@ Content-based filtering recommends items similar to those a user previously like
 **Formal Definition:**
 
 Given:
+
 - Item feature vector: \(\mathbf{x}_i \in \mathbb{R}^d\)
+
 - User preference profile: \(\mathbf{u} \in \mathbb{R}^d\)
 
 The relevance score is:
@@ -203,7 +205,9 @@ Subtracting disliked item features from liked ones.
 
 **Properties:**
 - Range: \([-1, 1]\) (or \([0, 1]\) for non-negative features)
+
 - Scale-invariant: Only direction matters
+
 - Most common in practice
 
 ### Euclidean Distance
@@ -215,6 +219,7 @@ Subtracting disliked item features from liked ones.
 
 **Properties:**
 - Magnitude-sensitive
+
 - Bounded \((0, 1]\)
 
 ### Pearson Correlation
@@ -226,6 +231,7 @@ Subtracting disliked item features from liked ones.
 
 **Properties:**
 - Mean-centered: Adjusts for feature biases
+
 - Range: \([-1, 1]\)
 
 ### Jaccard Similarity (Binary Features)
@@ -272,8 +278,11 @@ Learn embeddings where similar items are close:
 ```
 
 Where:
+
 - \(i^+\): Positive (similar) item
+
 - \(\mathcal{N}\): Negative samples
+
 - \(\tau\): Temperature
 
 ### Cross-Modal Learning
@@ -350,13 +359,18 @@ Recommendations reinforce existing preferences → narrowing exposure.
 
 **Use Content-Based:**
 - New items with no interactions (cold start)
+
 - Privacy-sensitive (no cross-user data)
+
 - Explainability is critical
+
 - Rich item metadata available
 
 **Use Collaborative:**
 - Sufficient interaction history
+
 - Want serendipitous recommendations
+
 - Items lack good features
 
 ### Q2: How do you handle the filter bubble problem?

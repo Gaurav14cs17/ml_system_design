@@ -125,8 +125,11 @@ Given an image $I$ and a kernel $K$ of size $(2m+1) \times (2n+1)$:
 
 **Properties:**
 - **Linearity:** $(aI\_1 + bI\_2) * K = a(I\_1 * K) + b(I\_2 * K)$
+
 - **Commutativity:** $I * K = K * I$
+
 - **Associativity:** $(I * K\_1) * K\_2 = I * (K\_1 * K\_2)$
+
 - **Separability:** If $K = K\_x \cdot K\_y^T$, then $I * K = (I * K\_x) * K\_y^T$ (much faster!)
 
 ### How Convolution Works
@@ -228,13 +231,17 @@ G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} \exp\left(-\frac{x^2 + y^2}{2\sigma^2}\
 
 **Key Properties:**
 - $\sigma$ controls the spread (blur amount)
+
 - Kernel size typically: $k = \lceil 6\sigma \rceil$ (captures 99.7% of distribution)
+
 - **Separable:** $G(x, y) = G(x) \cdot G(y)$, enabling efficient 1D convolutions
 
 **Computational Advantage of Separability:**
 
 For a $k \times k$ kernel:
+
 - Direct 2D: $O(k^2)$ operations per pixel
+
 - Separable: $O(2k)$ operations per pixel
 
 For $k=7$: 49 vs 14 operations (3.5× faster!)
@@ -253,9 +260,13 @@ BF[I](p) = \frac{1}{W_p} \sum_{q \in \Omega} G_s(\|p - q\|) \cdot G_r(|I(p) - I(
 ```
 
 where:
+
 - $G\_s$ = spatial Gaussian (distance in pixels)
+
 - $G\_r$ = range Gaussian (difference in intensity)
+
 - $W\_p$ = normalization factor
+
 - $\Omega$ = neighborhood window
 
 **Components:**
@@ -268,6 +279,7 @@ G_r(|I(p) - I(q)|) = \exp\left(-\frac{|I(p) - I(q)|^2}{2\sigma_r^2}\right)
 
 **Effect:**
 - Similar intensity pixels → full weight → smoothing
+
 - Different intensity (edges) → low weight → preservation
 
 ```python
@@ -679,7 +691,9 @@ Automatically finds optimal threshold by minimizing intra-class variance.
 **Mathematical Derivation:**
 
 Given a threshold $t$, pixels are divided into two classes:
+
 - $C\_0$: pixels with intensity $\leq t$ (background)
+
 - $C\_1$: pixels with intensity $> t$ (foreground)
 
 **Class probabilities:**
@@ -1265,6 +1279,7 @@ if __name__ == "__main__":
 ## 🔗 Next Steps
 
 - [Feature Extraction →](../03_feature_extraction/) - SIFT, SURF, ORB, HOG
+
 - [CNN Architectures →](../04_cnn_architectures/) - Deep learning approaches
 
 ---

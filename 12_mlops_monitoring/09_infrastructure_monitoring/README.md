@@ -11,8 +11,11 @@
 ## 🎯 Learning Objectives
 
 - Monitor compute, memory, and GPU resources for ML workloads
+
 - Set up Kubernetes monitoring for ML services
+
 - Track model serving infrastructure health
+
 - Optimize resource utilization
 
 ---

@@ -283,6 +283,7 @@ class DocumentAnalyzer:
 ## 🔗 Next Steps
 
 - [3D Vision →](../14_3d_vision/) - Depth and 3D understanding
+
 - [Deployment →](../15_deployment/) - Serving OCR systems
 
 ---

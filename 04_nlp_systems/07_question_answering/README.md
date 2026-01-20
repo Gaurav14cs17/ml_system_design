@@ -410,7 +410,9 @@ def compute_f1(prediction: str, ground_truth: str) -> float:
 ## 🔗 Related Topics
 
 - [Language Models](../03_language_models/) - BERT/T5 for QA
+
 - [Search & Retrieval](../09_search_and_retrieval/) - Document retrieval
+
 - [RAG Systems](../11_rag_systems/) - Retrieval-augmented generation
 
 ---

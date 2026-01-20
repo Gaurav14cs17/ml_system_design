@@ -716,7 +716,9 @@ async def health():
 ## 🔗 Related Topics
 
 - [Text Preprocessing](../01_text_preprocessing/) - Clean text before classification
+
 - [Embeddings](../02_embeddings/) - Feature extraction
+
 - [Language Models](../03_language_models/) - BERT fundamentals
 
 ---

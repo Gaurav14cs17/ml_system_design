@@ -353,6 +353,7 @@ class RankingPipeline:
 # Example Prometheus alerting rules
 alert_rules = """
 groups:
+
 - name: recommendation-alerts
   rules:
   - alert: HighLatency
@@ -419,18 +420,27 @@ Building production recommendation systems requires careful attention to archite
 | [FAISS: Billion-Scale Similarity](https://www.youtube.com/watch?v=sKyvsdEv6rk) | Meta AI | 35 min |
 
 ### System Design Channels
+
 - **[System Design Interview](https://www.youtube.com/@SystemDesignInterview)** - ML systems
+
 - **[ByteByteGo](https://www.youtube.com/@ByteByteGo)** - Scalable architectures
+
 - **[Gaurav Sen](https://www.youtube.com/@gaborsen)** - HLD concepts
+
 - **[Hussein Nasser](https://www.youtube.com/@haborsen)** - Backend deep dives
 
 ### MLOps & Production
+
 - **[MLOps Community](https://www.youtube.com/@MLOps)** - Production ML
+
 - **[Weights & Biases](https://www.youtube.com/@WeightsBiases)** - Experiment tracking
+
 - **[Databricks](https://www.youtube.com/@Databricks)** - Spark, MLflow
 
 ### Cloud Platforms
+
 - **[AWS re:Invent](https://www.youtube.com/@AWSEventsChannel)** - Amazon Personalize talks
+
 - **[Google Cloud Tech](https://www.youtube.com/@googlecloudtech)** - Vertex AI, Recommendations AI
 
 ---

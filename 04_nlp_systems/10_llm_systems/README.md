@@ -472,7 +472,9 @@ Summary:"""
 ## 🔗 Related Topics
 
 - [Language Models](../03_language_models/) - Model architecture
+
 - [RAG Systems](../11_rag_systems/) - LLMs with retrieval
+
 - [Conversational AI](../12_conversational_ai/) - Chatbot systems
 
 ---

@@ -11,9 +11,13 @@
 ## 🎯 Learning Objectives
 
 - Understand ML governance requirements
+
 - Implement audit trails for ML systems
+
 - Create model cards and documentation
+
 - Monitor for bias and fairness
+
 - Meet regulatory compliance requirements
 
 ---
@@ -287,12 +291,15 @@ class ModelCard:
 ## Training Data
 
 - **Description**: {self.training_data_description}
+
 - **Size**: {self.training_data_size:,} samples
+
 - **Training Date**: {self.training_date.strftime('%Y-%m-%d')}
 
 ## Performance
 
 ### Primary Metric
+
 - **{self.primary_metric}**: {self.primary_metric_value:.4f}
 
 ### Performance by Segment
@@ -321,19 +328,25 @@ class ModelCard:
 {self._format_features()}
 
 ### Performance
+
 - **Model Size**: {self.model_size_mb} MB
+
 - **P50 Latency**: {self.inference_latency_p50_ms} ms
+
 - **P99 Latency**: {self.inference_latency_p99_ms} ms
 
 ## Deployment
 
 - **Environment**: {self.deployment_environment}
+
 - **Infrastructure**: {self.serving_infrastructure}
+
 - **Scaling**: {self.scaling_policy}
 
 ## Monitoring & Maintenance
 
 - **Dashboard**: {self.monitoring_dashboard_url}
+
 - **Retraining Schedule**: {self.retraining_schedule}
 
 ### Alert Rules

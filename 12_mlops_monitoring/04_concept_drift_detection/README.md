@@ -11,8 +11,11 @@
 ## 🎯 Learning Objectives
 
 - Understand the difference between data drift and concept drift
+
 - Learn methods to detect concept drift
+
 - Implement concept drift detectors
+
 - Understand when to retrain vs adapt models
 
 ---

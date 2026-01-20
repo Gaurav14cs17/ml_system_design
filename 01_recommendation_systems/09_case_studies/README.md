@@ -40,8 +40,11 @@
 ### Metrics Focus
 
 - **Take Rate**: % of users who play after viewing
+
 - **Completion Rate**: % of content watched
+
 - **Quality Plays**: Filtering out accidental plays
+
 - **Retention**: Long-term user engagement
 
 ---
@@ -251,20 +254,31 @@ Real-world recommendation systems share common patterns but are tailored to spec
 | [Twitter's Recommendation Algorithm](https://www.youtube.com/watch?v=dZHVe4FVBSU) | Twitter Engineering | 25 min |
 
 ### Engineering Blog Videos
+
 - **[Netflix Tech Blog](https://www.youtube.com/@NetflixEngineering)** - Engineering talks
+
 - **[Spotify Engineering](https://www.youtube.com/@SpotifyEngineering)** - Music ML
+
 - **[Meta AI](https://www.youtube.com/@MetaAI)** - Facebook/Instagram recommendations
+
 - **[Google AI](https://www.youtube.com/@GoogleAI)** - YouTube, Search recommendations
 
 ### Conference Recordings
+
 - **[ACM RecSys Conference](https://www.youtube.com/@acmrecsys)** - Annual conference talks
+
 - **[KDD Conference](https://www.youtube.com/@acmsigkdd)** - Industry day presentations
+
 - **[NeurIPS](https://www.youtube.com/@NeurIPS)** - Research presentations
+
 - **[ICML](https://www.youtube.com/@ICABORL)** - ML research talks
 
 ### Podcasts (Video)
+
 - **[Lex Fridman Podcast](https://www.youtube.com/@lexfridman)** - AI researcher interviews
+
 - **[Machine Learning Street Talk](https://www.youtube.com/@MLST)** - Research discussions
+
 - **[Practical AI](https://www.youtube.com/@practicalai)** - Applied ML interviews
 
 ---

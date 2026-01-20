@@ -60,7 +60,9 @@ Smoothed CTR using **Bayesian averaging**:
 ```
 
 where:
+
 - $\alpha$ = smoothing factor (typically 100-1000)
+
 - $\text{prior}$ = global average CTR
 
 **Example**: User with 5 clicks, 100 impressions, prior=0.02, α=100:
@@ -111,7 +113,9 @@ where $\Delta t$ = hours since last activity, $\lambda = \frac{\ln 2}{\text{half
 ```
 
 where:
+
 - $\mathbf{e}\_i$ = embedding of interacted item
+
 - $w\_i = r\_i \cdot c\_i$ = weight (recency × click indicator)
 
 ---
@@ -376,7 +380,9 @@ Avoid **data leakage**: Never use future information.
 ## Next Steps
 
 Continue to the next modules:
+
 - [05_model_architecture](../05_model_architecture/README.md) — Build prediction models
+
 - [06_serving_infrastructure](../06_serving_infrastructure/README.md) — Deploy to production
 
 ---

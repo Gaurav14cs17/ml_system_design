@@ -126,8 +126,10 @@ Given interaction matrix \(\mathbf{R} \in \mathbb{R}^{m \times n}\):
 ```
 
 Where:
+
 - \(\mathbf{U} \in \mathbb{R}^{m \times k}\): Left singular vectors → **User embeddings**
 - \(\boldsymbol{\Sigma} \in \mathbb{R}^{k \times k}\): Singular values (importance weights)
+
 - \(\mathbf{V} \in \mathbb{R}^{n \times k}\): Right singular vectors → **Item embeddings**
 
 **User embedding extraction:**
@@ -203,8 +205,11 @@ Given sequence \(\mathbf{H} = [\mathbf{h}_1, \mathbf{h}_2, \ldots, \mathbf{h}_T]
 ```
 
 Where:
+
 - \(\mathbf{Q} = \mathbf{H}\mathbf{W}_Q\) (queries)
+
 - \(\mathbf{K} = \mathbf{H}\mathbf{W}_K\) (keys)
+
 - \(\mathbf{V} = \mathbf{H}\mathbf{W}_V\) (values)
 
 **Positional Encoding** captures temporal order:
@@ -264,7 +269,9 @@ The industry-standard pattern for large-scale retrieval:
 
 **Key Properties:**
 - **Decoupled inference**: Item embeddings pre-computed offline
+
 - **Scalable retrieval**: ANN search over item embeddings
+
 - **Late fusion**: Interaction only at similarity computation
 
 **Temperature-Scaled Softmax:**
@@ -380,8 +387,11 @@ For users with \(|\mathcal{H}_u| < \tau\) interactions:
 
 **Answer Framework:**
 - Start with \(d = 128\) as baseline
+
 - Consider: vocabulary size, model capacity, inference constraints
+
 - Validate: Does increasing \(d\) improve validation metrics?
+
 - Practical: Power of 2 for SIMD efficiency
 
 ### Q2: Dot product vs cosine similarity - when to use which?
@@ -407,7 +417,9 @@ For users with \(|\mathcal{H}_u| < \tau\) interactions:
 
 **Multi-Interest:**
 - Better for diverse preferences (e.g., listens to both jazz and metal)
+
 - Higher memory cost (\(K \times d\) per user)
+
 - Requires target-aware attention for retrieval
 
 ---

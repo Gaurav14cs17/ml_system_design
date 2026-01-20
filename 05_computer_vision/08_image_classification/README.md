@@ -420,6 +420,7 @@ class ProductionClassifier:
 ## 🔗 Next Steps
 
 - [Face Recognition →](../09_face_recognition/) - Specialized classification
+
 - [Deployment →](../15_deployment/) - Production optimization
 
 ---

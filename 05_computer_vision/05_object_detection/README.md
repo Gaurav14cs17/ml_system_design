@@ -31,8 +31,11 @@ Object detection = Classification + Localization for multiple objects.
 **Detection as Regression + Classification:**
 
 Given an image $I$, predict for each object $i$:
+
 - **Bounding box:** $\mathbf{b}\_i = (x, y, w, h)$ or $(x\_1, y\_1, x\_2, y\_2)$
+
 - **Class probabilities:** $\mathbf{p}\_i = (p\_1, ..., p\_C)$
+
 - **Confidence:** $c\_i$ (objectness score)
 
 **Multi-Task Loss:**
@@ -75,8 +78,11 @@ where $\text{smooth}\_{L1}(x) = \begin{cases} 0.5x^2 & \text{if } |x| < 1 \\ |x|
 ```
 
 where:
+
 - $\rho$ = Euclidean distance between centers
+
 - $c$ = diagonal of smallest enclosing box
+
 - $v$ = aspect ratio consistency term
 
 ### Detection Paradigms
@@ -230,7 +236,9 @@ Addresses class imbalance with Focal Loss.
 **The Class Imbalance Problem:**
 
 In one-stage detectors, most anchors are negative (background). This imbalance:
+
 - Dominates the loss
+
 - Easy negatives contribute no useful learning signal
 
 **Cross-Entropy Loss:**
@@ -255,7 +263,9 @@ For binary case with $p\_t = \begin{cases} p & \text{if } y = 1 \\ 1-p & \text{o
 ```
 
 where:
+
 - $\gamma$ = focusing parameter (typically 2)
+
 - $\alpha\_t$ = class balancing weight
 
 **Effect of $(1 - p\_t)^\gamma$:**
@@ -455,8 +465,11 @@ Given boxes $(x\_1^A, y\_1^A, x\_2^A, y\_2^A)$ and $(x\_1^B, y\_1^B, x\_2^B, y\_
 
 **IoU Properties:**
 - $\text{IoU} \in [0, 1]$
+
 - $\text{IoU} = 1$ → perfect overlap
+
 - $\text{IoU} = 0$ → no overlap
+
 - Common threshold: IoU ≥ 0.5 for "correct" detection
 
 **Generalized IoU (GIoU):**
@@ -481,8 +494,11 @@ where $C$ is the smallest enclosing box. GIoU $\in [-1, 1]$ and handles non-over
 ```
 
 where:
+
 - TP = True Positives (IoU ≥ threshold with GT)
+
 - FP = False Positives (no matching GT or IoU < threshold)
+
 - FN = False Negatives (unmatched ground truth)
 
 **Average Precision (AP):**
@@ -586,6 +602,7 @@ def nms(boxes, scores, iou_threshold=0.5):
 ## 🔗 Next Steps
 
 - [Semantic Segmentation →](../06_semantic_segmentation/) - Pixel-level classification
+
 - [Instance Segmentation →](../07_instance_segmentation/) - Detection + Segmentation
 
 ---

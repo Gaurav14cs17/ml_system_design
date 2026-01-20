@@ -34,8 +34,11 @@
 ### The Core Intuition
 
 Imagine you have a library with millions of books. Instead of organizing them alphabetically (which tells you nothing about content), embeddings organize them in a multi-dimensional space where:
+
 - Mystery novels cluster together
+
 - Romance novels form their own cluster
+
 - A mystery-romance hybrid sits between both clusters
 
 ![Diagram 2](images/diagram_02.svg)
@@ -63,9 +66,13 @@ f_\theta: \mathcal{X} \rightarrow \mathbb{R}^d
 ```
 
 where:
+
 - $\mathcal{X}$ is the input space (words, images, users, products, etc.)
+
 - $\mathbb{R}^d$ is a $d$-dimensional real-valued vector space
+
 - $\theta$ are the learned parameters
+
 - The function preserves **semantic similarity**: $\text{sim}(x\_i, x\_j) \approx \text{sim}(f(x\_i), f(x\_j))$
 
 ---
@@ -79,8 +86,11 @@ where:
 ![Diagram 4](images/diagram_04.svg)
 
 Raw data representations are often extremely high-dimensional:
+
 - A vocabulary of 100,000 words → 100,000-dimensional one-hot vectors
+
 - An image of 224×224 pixels → 150,528-dimensional vector
+
 - A user's behavior history → potentially millions of features
 
 Embeddings compress this to manageable dimensions (typically 64-1024).
@@ -106,8 +116,11 @@ This enables machines to understand that "cat" and "dog" share semantic properti
 ### 3. Transfer Learning
 
 Pre-trained embeddings encode general knowledge that transfers across tasks:
+
 - Word embeddings trained on Wikipedia help with sentiment analysis
+
 - Image embeddings from ImageNet help with medical imaging
+
 - This saves enormous computational resources
 
 ### 4. Enabling Similarity Search
@@ -180,7 +193,9 @@ A remarkable property of well-trained embeddings is that semantic relationships 
 ```
 
 This can be understood as:
+
 - The vector $(\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}})$ encodes the concept of "royalty"
+
 - Adding this to $\vec{v}\_{\text{woman}}$ yields the female equivalent
 
 More generally, for analogies $a:b :: c:d$:
@@ -200,7 +215,9 @@ For discrete vocabularies $V$, embeddings are stored as a **lookup table**:
 ```
 
 Where:
+
 - $|V|$ = vocabulary/catalog size (e.g., 50,000 words)
+
 - $d$ = embedding dimension (e.g., 768)
 
 **Embedding Lookup:** For item with index $i$:
@@ -269,8 +286,11 @@ cluster(embed("sports words")) ≠ cluster(embed("food words"))
 ```
 
 ### 3. Appropriate Dimensionality
+
 - Too few dimensions → information loss
+
 - Too many dimensions → overfitting, computational cost
+
 - Sweet spot: usually 64-512 for most applications
 
 ### 4. Normalization
@@ -313,19 +333,27 @@ embed("machine learning") ≈ embed("machin learning")
 
 #### 1. Self-Supervised Embeddings
 Learned from unlabeled data using pretext tasks:
+
 - **Masked prediction**: Predict missing parts (BERT, MAE)
+
 - **Contrastive learning**: Distinguish similar vs. dissimilar (SimCLR, MoCo)
+
 - **Next token prediction**: Predict what comes next (GPT, Word2Vec)
 
 #### 2. Supervised Embeddings
 Learned with labeled data:
+
 - Classification objectives
+
 - Metric learning with explicit labels
+
 - Multi-task learning
 
 #### 3. Hybrid Embeddings
 Combine multiple approaches:
+
 - Pre-train self-supervised, fine-tune supervised
+
 - Multi-modal learning (CLIP: images + text)
 
 ---
@@ -363,8 +391,11 @@ Lower Dimensions:
 ### Empirical Rule
 
 Start with **dimension ≈ 4 × log₂(vocabulary_size)** and tune based on:
+
 - Downstream task performance
+
 - Latency requirements
+
 - Storage constraints
 
 ---
@@ -403,8 +434,11 @@ Decompose a sparse interaction matrix into dense factors:
 R ≈ U × V^T
 
 Where:
+
 - R = user-item interaction matrix (sparse)
+
 - U = user embeddings
+
 - V = item embeddings
 
 ```
@@ -447,8 +481,11 @@ def triplet_loss(anchor, positive, negative, margin=0.2):
 
 ### 1. Search and Information Retrieval
 ![Diagram 9](images/diagram_09.svg)
+
 - Semantic search (meaning, not just keywords)
+
 - Similar image search
+
 - Code search
 
 ### 2. Recommendation Systems
@@ -458,19 +495,29 @@ User Embedding × Item Embedding = Relevance Score
 
 ```
 - Netflix: movie recommendations
+
 - Spotify: music discovery
+
 - Amazon: product suggestions
 
 ### 3. Natural Language Processing
+
 - Sentiment analysis
+
 - Named entity recognition
+
 - Machine translation
+
 - Question answering
 
 ### 4. Computer Vision
+
 - Face recognition
+
 - Object detection
+
 - Image classification
+
 - Visual similarity
 
 ### 5. Anomaly Detection
@@ -482,8 +529,11 @@ if distance(new_item_embedding, normal_cluster) > threshold:
 ```
 
 ### 6. Clustering and Organization
+
 - Topic modeling
+
 - Customer segmentation
+
 - Content organization
 
 ---
@@ -494,10 +544,12 @@ if distance(new_item_embedding, normal_cluster) > threshold:
 
 ### 1. Cold Start Problem
 New items/users have no interaction history for training:
+
 - **Solutions**: Use content-based features, hybrid approaches
 
 ### 2. Embedding Drift
 Real-world distributions change over time:
+
 - **Solutions**: Regular retraining, online learning, monitoring
 
 ### 3. Bias and Fairness
@@ -512,14 +564,17 @@ embed("doctor") closer to embed("man") than embed("woman")
 
 ### 4. Interpretability
 Embeddings are dense and not human-interpretable:
+
 - **Solutions**: Probing tasks, visualization (t-SNE, UMAP)
 
 ### 5. Computational Cost
 Training and storing embeddings at scale is expensive:
+
 - **Solutions**: Dimensionality reduction, quantization, efficient indexing
 
 ### 6. Domain Mismatch
 Pre-trained embeddings may not transfer well:
+
 - **Solutions**: Domain adaptation, fine-tuning
 
 ---
@@ -543,10 +598,15 @@ Pre-trained embeddings may not transfer well:
 ### What's Next?
 
 In the following sections, we'll deep-dive into:
+
 - **Word Embeddings**: Word2Vec, GloVe, FastText
+
 - **Sentence/Document Embeddings**: Transformers, Sentence-BERT
+
 - **Image Embeddings**: CNN-based, Vision Transformers
+
 - **Vector Databases**: Storing and searching billions of embeddings
+
 - **Production Systems**: Building real-world embedding pipelines
 
 ---

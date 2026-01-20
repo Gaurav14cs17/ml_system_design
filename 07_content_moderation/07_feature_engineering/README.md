@@ -1,12 +1,19 @@
 # Feature Engineering for Content Moderation
 
 ## Table of Contents
+
 - [Feature Categories](#feature-categories)
+
 - [Text Features](#text-features)
+
 - [User & Behavioral Features](#user-behavioral-features)
+
 - [Contextual Features](#contextual-features)
+
 - [Graph Features](#graph-features)
+
 - [Feature Stores](#feature-stores)
+
 - [Feature Selection](#feature-selection)
 
 ---

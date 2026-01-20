@@ -3,11 +3,17 @@
 ![Human Review System](../assets/human_review.svg)
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Review Queue Design](#review-queue-design)
+
 - [Reviewer Interface](#reviewer-interface)
+
 - [Quality Assurance](#quality-assurance)
+
 - [Feedback Loops](#feedback-loops)
+
 - [Moderator Well-being](#moderator-well-being)
 
 ---

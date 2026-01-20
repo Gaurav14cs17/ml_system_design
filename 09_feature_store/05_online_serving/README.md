@@ -11,9 +11,13 @@
 ## 🎯 What You'll Learn
 
 - Online serving architecture patterns
+
 - Low-latency design principles
+
 - Caching strategies
+
 - Scaling for high throughput
+
 - Online store technologies
 
 ---

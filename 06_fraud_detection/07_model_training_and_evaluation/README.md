@@ -47,8 +47,11 @@ Training seeks to minimize the **empirical risk** over the training set:
 ```
 
 Where:
+
 - $\mathcal{L}$ is the loss function
+
 - $R(\theta)$ is the regularization term
+
 - $\lambda$ controls regularization strength
 
 ### Generalization Theory
@@ -187,6 +190,7 @@ Where $A, B$ are learned on a held-out calibration set.
 For data ordered by time $t\_1 < t\_2 < \cdots < t\_N$:
 
 - **Fold 1**: Train on $[t\_1, t\_k]$, validate on $[t\_k + \text{gap}, t\_{k+m}]$
+
 - **Fold 2**: Train on $[t\_1, t\_{k+m}]$, validate on $[t\_{k+m+\text{gap}}, t\_{k+2m}]$
 
 The **gap** prevents label leakage from delayed fraud labels (typically 30-90 days).
@@ -1421,9 +1425,13 @@ Continue to [Chapter 8: Feature Store →](../08_feature_store/)
 ## Code Examples
 
 See the `code/` directory for:
+
 - `training/` - Training pipeline implementation
+
 - `evaluation/` - Metrics and visualization
+
 - `experiments/` - A/B testing framework
+
 - `continuous/` - Continuous training utilities
 
 ---

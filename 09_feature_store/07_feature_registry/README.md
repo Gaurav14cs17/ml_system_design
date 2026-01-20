@@ -7,9 +7,13 @@
 ## 🎯 What You'll Learn
 
 - What is a feature registry
+
 - Metadata management
+
 - Feature discovery and search
+
 - Lineage tracking
+
 - Governance and access control
 
 ---

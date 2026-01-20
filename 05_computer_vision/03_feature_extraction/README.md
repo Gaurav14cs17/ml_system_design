@@ -133,7 +133,9 @@ where $\lambda\_1, \lambda\_2$ are eigenvalues of $\mathbf{M}$ and $k \approx 0.
 
 **Classification:**
 - **Flat region:** $\lambda\_1 \approx \lambda\_2 \approx 0$ → $R \approx 0$
+
 - **Edge:** $\lambda\_1 \gg \lambda\_2$ or $\lambda\_2 \gg \lambda\_1$ → $R < 0$
+
 - **Corner:** $\lambda\_1 \approx \lambda\_2 \gg 0$ → $R > 0$ (large positive)
 
 ```python
@@ -236,8 +238,11 @@ Build orientation histogram (36 bins, 10° each). Peak = dominant orientation.
 #### 4. Descriptor Generation
 
 - 16×16 window around keypoint
+
 - Divided into 4×4 sub-regions
+
 - 8-bin orientation histogram per sub-region
+
 - **Result:** 4×4×8 = **128-dimensional** descriptor
 
 Normalization: $\mathbf{d} \leftarrow \mathbf{d} / \|\mathbf{d}\|\_2$
@@ -409,8 +414,11 @@ For unsigned gradients: $\theta \in [0°, 180°)$
 Divide image into **cells** (typically 8×8 pixels).
 
 For each cell, build orientation histogram:
+
 - Typically 9 bins (20° each for unsigned gradients)
+
 - Each pixel votes with its magnitude
+
 - **Soft binning:** Magnitude split between adjacent bins
 
 ```math
@@ -440,8 +448,11 @@ Then renormalize.
 #### 4. Feature Vector
 
 For a 64×128 detection window:
+
 - 7×15 blocks (overlapping)
+
 - 4 cells per block
+
 - 9 bins per cell
 
 **Total:** 7 × 15 × 4 × 9 = **3,780 dimensions**
@@ -691,6 +702,7 @@ def choose_feature_detector(requirements):
 ## 🔗 Next Steps
 
 - [CNN Architectures →](../04_cnn_architectures/) - Deep learning features
+
 - [Object Detection →](../05_object_detection/) - Detection pipelines
 
 ---

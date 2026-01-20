@@ -456,16 +456,23 @@ Deep learning enables recommendation systems to capture complex patterns and sca
 | [Attention Is All You Need](https://www.youtube.com/watch?v=XSSTuhyAmnI) | Yannic Kilcher | 40 min |
 
 ### Deep Learning Foundations
+
 - **[Andrej Karpathy: Neural Networks Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)** - Build from scratch
+
 - **[3Blue1Brown: Neural Networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)** - Visual intuition
 
 ### Research Paper Discussions
+
 - **[Yannic Kilcher](https://www.youtube.com/@YannicKilcher)** - Deep learning papers explained
+
 - **[Two Minute Papers](https://www.youtube.com/@TwoMinutePapers)** - Quick research summaries
+
 - **[Papers with Code](https://www.youtube.com/@paperswithcode)** - Implementation walkthroughs
 
 ### Implementation Tutorials
+
 - **[PyTorch Tutorials](https://www.youtube.com/@PyTorch)** - Official channel
+
 - **[Hugging Face](https://www.youtube.com/@HuggingFace)** - Transformers library
 
 ---

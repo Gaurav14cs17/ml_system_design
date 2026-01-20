@@ -11,10 +11,15 @@
 ## 🎯 What You'll Learn
 
 - Fundamental concepts: Features, Entities, and Feature Groups
+
 - Feature Views and Feature Services
+
 - Data types, schemas, and validation
+
 - Versioning strategies
+
 - Time-to-live (TTL) and freshness
+
 - Point-in-time joins in depth
 
 ---
@@ -245,10 +250,15 @@ user_transaction_features = FeatureView(
 ### What is a Feature View?
 
 A **Feature View** is a logical grouping of features that are served together. It defines:
+
 - Which features to include
+
 - The entity (join key)
+
 - The data source
+
 - Transformation logic (optional)
+
 - TTL and freshness requirements
 
 ```python
@@ -582,7 +592,9 @@ When creating training data, we need feature values **as they were at the time o
 Point-in-time joins ensure temporal consistency in training data construction. Formally:
 
 Given:
+
 - Entity events \( E = \{(e_i, t_i, y_i)\} \) where \( e_i \) is entity ID, \( t_i \) is event timestamp, \( y_i \) is label
+
 - Feature table \( F = \{(e_j, \tau_j, f_j)\} \) where \( \tau_j \) is feature computation timestamp
 
 The point-in-time join produces:

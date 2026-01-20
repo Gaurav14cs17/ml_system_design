@@ -1063,9 +1063,13 @@ Feature Naming Convention:
 {entity}_{window}_{aggregation}_{metric}
 
 Examples:
+
 - user_7d_sum_purchases
+
 - item_30d_avg_rating
+
 - session_current_count_views
+
 - pair_historical_max_interaction_count
 
 Entity: user, item, session, pair (user-item)
@@ -1157,20 +1161,31 @@ registry.register(
 ### Q1: Design features for a YouTube-like video recommendation system
 
 **User Features**:
+
 - Watch history embeddings (weighted by recency)
+
 - Category preferences (watch time distribution)
+
 - Engagement patterns (avg watch %, like/dislike ratio)
+
 - Active hours, device preferences
 
 **Video Features**:
+
 - Content embeddings (title, description, transcript)
+
 - Visual embeddings (thumbnail, video frames)
+
 - Quality metrics (watch completion rate, engagement)
+
 - Freshness, trending score
 
 **Context Features**:
+
 - Time of day, day of week
+
 - Device type, connection quality
+
 - Current session state
 
 ### Q2: How do you handle missing features?
@@ -1185,13 +1200,19 @@ registry.register(
 ### Q3: How do you detect and handle feature drift?
 
 **Detection**:
+
 - Monitor feature distributions over time
+
 - Statistical tests (KS test, chi-squared)
+
 - Track model performance vs feature drift
 
 **Handling**:
+
 - Retrain models regularly
+
 - Use time-windowed features
+
 - Weight recent data more heavily
 
 ---

@@ -8,7 +8,9 @@
 
 **Characteristics:**
 - Transform happens **before** loading to destination
+
 - Requires separate staging/processing infrastructure
+
 - Good for: complex transformations, data cleansing before load
 
 ### Modern ELT (Extract, Load, Transform)
@@ -17,7 +19,9 @@
 
 **Characteristics:**
 - Load raw data first, transform in-place
+
 - Leverages powerful warehouse compute (Snowflake, BigQuery, Databricks)
+
 - Good for: modern cloud warehouses, flexible transformations
 
 ### Comparison

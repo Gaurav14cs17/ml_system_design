@@ -5,14 +5,23 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Model Versioning Strategies](#model-versioning-strategies)
+
 - [Model Registry](#model-registry)
+
 - [Deployment Strategies](#deployment-strategies)
+
 - [A/B Testing Framework](#ab-testing-framework)
+
 - [Canary Deployments](#canary-deployments)
+
 - [Shadow Deployments](#canary-deployments)
+
 - [Rollback Strategies](#rollback-strategies)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -621,25 +630,37 @@ async def health_check_loop(model_version: str, check_interval: int = 60):
 ### Versioning Checklist
 
 - ✅ Use semantic versioning (MAJOR.MINOR.PATCH)
+
 - ✅ Store all metadata with model artifacts
+
 - ✅ Track training data versions
+
 - ✅ Log all hyperparameters
+
 - ✅ Record dependency versions
 
 ### A/B Testing Checklist
 
 - ✅ Calculate sample size before starting
+
 - ✅ Use consistent user bucketing
+
 - ✅ Run for sufficient duration
+
 - ✅ Monitor guardrail metrics
+
 - ✅ Document experiment results
 
 ### Deployment Checklist
 
 - ✅ Start with shadow deployment
+
 - ✅ Use gradual canary rollout
+
 - ✅ Set up automated rollback
+
 - ✅ Monitor business metrics
+
 - ✅ Have runbook for incidents
 
 ---

@@ -1,12 +1,19 @@
 # Model Serving & Inference for Content Moderation
 
 ## Table of Contents
+
 - [Serving Architecture](#serving-architecture)
+
 - [Low-Latency Inference](#low-latency-inference)
+
 - [Batch Processing](#batch-processing)
+
 - [Model Versioning](#model-versioning)
+
 - [A/B Testing](#ab-testing)
+
 - [Caching Strategies](#caching-strategies)
+
 - [GPU Optimization](#gpu-optimization)
 
 ---

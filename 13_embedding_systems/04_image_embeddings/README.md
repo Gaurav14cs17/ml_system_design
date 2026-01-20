@@ -34,9 +34,13 @@
 ## Introduction
 
 Image embeddings transform visual data into dense vector representations, enabling:
+
 - **Visual Search**: Find similar images
+
 - **Classification**: Categorize images
+
 - **Clustering**: Group related visuals
+
 - **Cross-Modal Search**: Text-to-image, image-to-text
 
 ### The Evolution

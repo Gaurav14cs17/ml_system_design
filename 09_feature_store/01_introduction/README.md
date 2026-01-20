@@ -11,10 +11,15 @@
 ## 🎯 What You'll Learn
 
 - What is a feature store and why it exists
+
 - The problems that feature stores solve
+
 - History and evolution of feature stores
+
 - Key benefits and trade-offs
+
 - When to use (and not use) a feature store
+
 - Real-world use cases from industry
 
 ---
@@ -294,8 +299,11 @@ available_features = fs.search_features(
 **Scale**: Thousands of ML models, millions of predictions per second
 
 **Features**:
+
 - Real-time trip features (ETA, surge pricing)
+
 - Driver/rider historical features
+
 - Geographic features
 
 **Architecture**: Custom-built feature store integrated with ML platform
@@ -305,8 +313,11 @@ available_features = fs.search_features(
 **Scale**: Hundreds of ML models for search, pricing, trust
 
 **Features**:
+
 - Listing quality scores
+
 - User preference features
+
 - Search ranking features
 
 **Key Innovation**: Backfill system for point-in-time correctness
@@ -316,8 +327,11 @@ available_features = fs.search_features(
 **Scale**: Real-time features for delivery time prediction
 
 **Features**:
+
 - Restaurant preparation time
+
 - Dasher location features
+
 - Order complexity features
 
 **Latency**: <10ms for real-time serving
@@ -327,8 +341,11 @@ available_features = fs.search_features(
 **Scale**: Personalization for 500M+ users
 
 **Features**:
+
 - Listening history aggregations
+
 - Content embeddings
+
 - User taste profiles
 
 **Innovation**: Streaming feature computation
@@ -338,8 +355,11 @@ available_features = fs.search_features(
 **Scale**: Fraud detection at payment processing scale
 
 **Features**:
+
 - Transaction velocity features
+
 - Merchant risk features
+
 - Card behavior patterns
 
 **Requirement**: Ultra-low latency (<5ms)
@@ -384,19 +404,29 @@ available_features = fs.search_features(
 ### Misconception 1: "A Feature Store is Just a Database"
 
 **Reality**: A Feature Store is a **specialized system** with:
+
 - Dual storage (online + offline)
+
 - Point-in-time joins
+
 - Feature registry
+
 - Training-serving consistency
+
 - ML-specific operations
 
 ### Misconception 2: "We Can Build It with Redis + S3"
 
 **Reality**: The storage is the easy part. The hard parts are:
+
 - Point-in-time correctness
+
 - Feature versioning
+
 - Metadata management
+
 - Materialization pipelines
+
 - SDK and API design
 
 ### Misconception 3: "Feature Stores Are Only for Big Companies"
@@ -406,7 +436,9 @@ available_features = fs.search_features(
 ### Misconception 4: "Feature Stores Replace Data Warehouses"
 
 **Reality**: Feature Stores **complement** data warehouses:
+
 - Data Warehouse: Source of truth, analytics
+
 - Feature Store: ML-optimized layer on top
 
 ### Misconception 5: "All Features Need to Go Through the Feature Store"
@@ -432,9 +464,13 @@ available_features = fs.search_features(
 ### What's Next?
 
 In the next chapter, we'll dive deep into **Core Concepts**:
+
 - Features, Entities, and Feature Groups
+
 - Feature Views and Feature Services
+
 - Data types and schemas
+
 - Versioning strategies
 
 ---

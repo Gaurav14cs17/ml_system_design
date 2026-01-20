@@ -1,12 +1,19 @@
 # Legal & Ethical Considerations in Content Moderation
 
 ## Table of Contents
+
 - [Regulatory Landscape](#regulatory-landscape)
+
 - [Platform Liability](#platform-liability)
+
 - [Free Speech Considerations](#free-speech-considerations)
+
 - [Transparency Requirements](#transparency-requirements)
+
 - [Bias and Fairness](#bias-and-fairness)
+
 - [User Rights](#user-rights)
+
 - [Implementation Guidelines](#implementation-guidelines)
 
 ---

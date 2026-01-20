@@ -80,8 +80,11 @@ Unlike content-based filtering, CF doesn't require item features—it relies pur
 sim(u, v) = Σᵢ(rᵤᵢ - r̄ᵤ)(rᵥᵢ - r̄ᵥ) / √[Σᵢ(rᵤᵢ - r̄ᵤ)² × Σᵢ(rᵥᵢ - r̄ᵥ)²]
 
 Where:
+
 - rᵤᵢ = rating of user u on item i
+
 - r̄ᵤ = mean rating of user u
+
 - i ∈ items rated by both u and v
 
 ```
@@ -92,7 +95,9 @@ Where:
 pred(u, i) = r̄ᵤ + [Σᵥ sim(u,v) × (rᵥᵢ - r̄ᵥ)] / [Σᵥ |sim(u,v)|]
 
 Where:
+
 - v ∈ neighbors of u who rated item i
+
 - sim(u,v) = similarity between users u and v
 
 ```
@@ -433,8 +438,11 @@ Decompose the sparse user-item matrix into low-rank latent factor matrices.
 R = U × Σ × V^T
 
 Where:
+
 - U: Left singular vectors (user factors)
+
 - Σ: Diagonal matrix of singular values
+
 - V: Right singular vectors (item factors)
 
 For recommendations: keep top-k singular values
@@ -753,14 +761,19 @@ Collaborative Filtering is the workhorse of recommendation systems. From simple 
 | [Netflix Prize & Matrix Factorization](https://www.youtube.com/watch?v=ZspR5PZemcs) | Jure Leskovec | 45 min |
 
 ### Academic Lectures
+
 - **Stanford CS246** - Lecture 9: Recommendation Systems
+
 - **Stanford CS246** - Lecture 10: Dimensionality Reduction (SVD)
 
 ### Implementation Tutorials
+
 - **[Surprise Library Tutorial](https://www.youtube.com/watch?v=9gBC9R-msAk)** - Python CF implementation
+
 - **[Implicit Library Tutorial](https://www.youtube.com/watch?v=Mn1AqQf9cRs)** - ALS for implicit feedback
 
 ### Papers Explained
+
 - **[Matrix Factorization Techniques](https://www.youtube.com/watch?v=ZspR5PZemcs)** - Netflix Prize paper
 
 ---

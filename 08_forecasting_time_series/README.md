@@ -39,9 +39,13 @@ Y_t = T_t + S_t + C_t + \varepsilon_t
 ```
 
 Where:
+
 - $T\_t$ — **Trend**: Long-term progression
+
 - $S\_t$ — **Seasonal**: Repeating patterns with fixed period $m$
+
 - $C\_t$ — **Cyclical**: Fluctuations without fixed period
+
 - $\varepsilon\_t$ — **Residual**: Random noise, $\varepsilon\_t \sim \mathcal{N}(0, \sigma^2)$
 
 ---
@@ -449,18 +453,27 @@ print(f"MAPE: {mape:.2f}%")
 ## 📖 Additional Resources
 
 ### Books
+
 - *Forecasting: Principles and Practice* - Hyndman & Athanasopoulos
+
 - *Time Series Analysis* - Hamilton
+
 - *Deep Learning for Time Series* - Brownlee
 
 ### Papers
+
 - "N-BEATS: Neural basis expansion analysis for interpretable time series forecasting"
+
 - "Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting"
+
 - "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting"
 
 ### Online Courses
+
 - Coursera: Sequences, Time Series and Prediction
+
 - Fast.ai: Practical Deep Learning
+
 - Kaggle Learn: Time Series
 
 ---
@@ -468,9 +481,13 @@ print(f"MAPE: {mape:.2f}%")
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to:
+
 - Report issues
+
 - Suggest improvements
+
 - Add new case studies
+
 - Fix typos and errors
 
 ---

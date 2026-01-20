@@ -724,9 +724,13 @@ report = evaluator.generate_report(results, 'evaluation_report.json')
 ### Evaluation Checklist
 
 - [ ] Intrinsic: Word similarity, analogies
+
 - [ ] Retrieval: Recall@K, MRR on domain data
+
 - [ ] Transfer: Classification accuracy
+
 - [ ] Similarity: STS correlation
+
 - [ ] System: Latency, throughput, memory
 
 ### Common Pitfalls

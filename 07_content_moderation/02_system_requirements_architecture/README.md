@@ -1,13 +1,21 @@
 # System Requirements & Architecture for Content Moderation
 
 ## Table of Contents
+
 - [Functional Requirements](#functional-requirements)
+
 - [Non-Functional Requirements](#non-functional-requirements)
+
 - [High-Level Architecture](#high-level-architecture)
+
 - [Component Deep Dive](#component-deep-dive)
+
 - [Data Flow Patterns](#data-flow-patterns)
+
 - [Technology Stack](#technology-stack)
+
 - [Deployment Strategies](#deployment-strategies)
+
 - [Cost Considerations](#cost-considerations)
 
 ---
@@ -853,9 +861,13 @@ A robust content moderation architecture requires:
 6. **Comprehensive monitoring** and feedback loops
 
 The architecture should be designed for:
+
 - **Low latency** (real-time decisions where needed)
+
 - **High throughput** (billions of items per day)
+
 - **Cost efficiency** (tiered processing, caching)
+
 - **Flexibility** (new policies, models, content types)
 
 ---

@@ -144,8 +144,11 @@ I: \{0, 1, ..., H-1\} \times \{0, 1, ..., W-1\} \rightarrow \mathcal{V}
 ```
 
 where:
+
 - $H$ = image height (rows)
+
 - $W$ = image width (columns)
+
 - $\mathcal{V}$ = value space (intensity or color)
 
 **For grayscale images** (8-bit):
@@ -281,8 +284,11 @@ An RGB color is a 3-tuple $(R, G, B)$ where each component $\in [0, 255]$ for 8-
 ```
 
 The RGB cube occupies a 3D space where:
+
 - $(0, 0, 0)$ = Black
+
 - $(255, 255, 255)$ = White
+
 - $(255, 0, 0)$ = Pure Red
 
 **Grayscale Conversion (Luminance):**
@@ -296,12 +302,16 @@ This weighted average reflects human eye sensitivity (most sensitive to green, l
 
 **Pros:**
 - Native format for displays
+
 - Simple and intuitive
+
 - Hardware accelerated
 
 **Cons:**
 - Mixes luminance and chrominance
+
 - Not perceptually uniform
+
 - Difficult for color-based segmentation
 
 ### HSV/HSB (Hue, Saturation, Value/Brightness)
@@ -349,13 +359,18 @@ H = \begin{cases}
 
 **Interpretation:**
 - **H** (0°-360°): Color type (red=0°, green=120°, blue=240°)
+
 - **S** (0-1): Color purity (0=gray, 1=vivid)
+
 - **V** (0-1): Brightness (0=black, 1=brightest)
 
 **Use Cases:**
 - Color-based object detection
+
 - Skin tone detection
+
 - Traffic light recognition
+
 - Color filtering
 
 ```python
@@ -437,12 +452,16 @@ f(t) = \begin{cases} t^{1/3} & \text{if } t > \left(\frac{6}{29}\right)^3 \\ \fr
 
 **Advantages:**
 - Perceptually uniform (equal numerical changes = equal perceived changes)
+
 - Separates luminance from color
+
 - Better for color difference calculations
 
 **Use Cases:**
 - Color correction and matching
+
 - Image quality assessment
+
 - Color-based clustering
 
 ### YCbCr (Luminance, Chrominance)
@@ -453,7 +472,9 @@ Used in video compression and broadcasting.
 
 **Use Cases:**
 - JPEG compression
+
 - Video streaming (H.264, HEVC)
+
 - Face detection (skin tone)
 
 ### Color Space Conversion Summary
@@ -582,8 +603,11 @@ cv2.imwrite('output.png', image, [cv2.IMWRITE_PNG_COMPRESSION, 9])
 **Image vs Cartesian Coordinates:**
 
 In image processing, we use matrix indexing where:
+
 - Origin $(0, 0)$ is at the **top-left** corner
+
 - $x$-axis points **right** (columns)
+
 - $y$-axis points **down** (rows)
 
 This differs from standard Cartesian coordinates where $y$ points up.
@@ -654,6 +678,7 @@ When $s\_x = s\_y$, this is **uniform scaling** (preserves aspect ratio).
 ```
 
 - Preserves: parallel lines, ratios of distances along lines
+
 - Includes: translation, rotation, scaling, shearing
 
 **Perspective (Projective) Transformation (8 DOF):**
@@ -1233,6 +1258,7 @@ if __name__ == "__main__":
 ## 🔗 Next Steps
 
 - [Image Processing →](../02_image_processing/) - Learn filtering and transformations
+
 - [Feature Extraction →](../03_feature_extraction/) - Traditional CV features
 
 ---

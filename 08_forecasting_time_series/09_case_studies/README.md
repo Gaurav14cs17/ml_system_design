@@ -1,11 +1,17 @@
 # Real-World Case Studies
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Case Study 1: Retail Demand Forecasting](#case-study-1-retail-demand-forecasting)
+
 - [Case Study 2: Energy Load Forecasting](#case-study-2-energy-load-forecasting)
+
 - [Case Study 3: Financial Time Series](#case-study-3-financial-time-series)
+
 - [Case Study 4: Traffic Prediction](#case-study-4-traffic-prediction)
+
 - [Lessons Learned](#lessons-learned)
 
 ---
@@ -471,6 +477,7 @@ class TrafficForecaster:
 ### Next Steps
 
 - [10_advanced_topics](../10_advanced_topics/) - Advanced techniques
+
 - Return to [README](../README.md) for full navigation
 
 ---

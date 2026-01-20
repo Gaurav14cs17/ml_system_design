@@ -11,8 +11,11 @@
 ## 🎯 What You'll Learn
 
 - Complete Feast implementation
+
 - Building features for fraud detection
+
 - End-to-end ML pipeline with feature store
+
 - Production deployment patterns
 
 ---

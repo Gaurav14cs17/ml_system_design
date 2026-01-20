@@ -74,8 +74,11 @@ Mathematically, if users \(u\) and \(v\) have similar rating patterns:
 ```
 
 Where:
+
 - \(\bar{r}_u\): Mean rating of user \(u\)
+
 - \(\mathcal{N}_k(u)\): \(k\) most similar users to \(u\) who rated item \(i\)
+
 - \(\text{sim}(u, v)\): Similarity between users \(u\) and \(v\)
 
 **Similarity Metrics:**
@@ -151,8 +154,11 @@ Approximate \(\mathbf{R}\) as the product of two low-rank matrices:
 ```
 
 Where:
+
 - \(\mathbf{P} \in \mathbb{R}^{m \times k}\): User latent factor matrix
+
 - \(\mathbf{Q} \in \mathbb{R}^{n \times k}\): Item latent factor matrix
+
 - \(k \ll \min(m, n)\): Latent dimension (rank)
 
 **Prediction:**
@@ -183,8 +189,11 @@ Real ratings have systematic biases:
 ```
 
 Where:
+
 - \(\mu\): Global average rating
+
 - \(b_u\): User bias (some users rate higher)
+
 - \(b_i\): Item bias (some items are better)
 
 **Extended Objective:**
@@ -243,8 +252,11 @@ Where \(\mathbf{y}_j\) captures implicit feedback from item \(j\).
 ### The Challenge
 
 Implicit feedback (clicks, views, purchases) differs from explicit ratings:
+
 - **No negative signal**: Missing = unknown, not disliked
+
 - **Confidence varies**: More interactions → higher confidence
+
 - **Abundance**: Much more data available
 
 ### Weighted Matrix Factorization
@@ -290,6 +302,7 @@ Where \(\sigma(x) = \frac{1}{1 + e^{-x}}\) is the sigmoid function.
 
 **Sampling Strategy:**
 - \(i\): Item user interacted with (positive)
+
 - \(j\): Item user didn't interact with (negative, sampled)
 
 ---
@@ -351,12 +364,16 @@ Train on sampled negative examples instead of all \(m \times n\) pairs.
 
 **User-Based:**
 - Fewer users than items
+
 - User preferences relatively stable
+
 - Need "users like you" explanations
 
 **Item-Based:**
 - Fewer items than users (typical for e-commerce)
+
 - Item similarities more stable over time
+
 - Need "because you liked X" explanations
 
 ### Q2: How does matrix factorization handle sparsity?

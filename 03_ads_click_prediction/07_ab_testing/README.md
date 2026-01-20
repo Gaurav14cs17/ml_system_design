@@ -60,9 +60,13 @@ n = \frac{2(z_{\alpha/2} + z_\beta)^2 \cdot p(1-p)}{(p \cdot \delta)^2}
 ```
 
 where:
+
 - $p$ = baseline conversion rate (CTR)
+
 - $\delta$ = minimum detectable effect (relative)
+
 - $z\_{\alpha/2}$ = z-score for significance level (1.96 for α=0.05)
+
 - $z\_\beta$ = z-score for power (0.84 for 80% power)
 
 **Example**: Detect 2% relative lift in 2% CTR:
@@ -161,10 +165,15 @@ CI_{\text{lift}} = \frac{CI_{\text{diff}}}{\hat{p}_A}
 | CTR | 2.00% | 2.10% |
 
 **Calculations**:
+
 - $\hat{p}\_A = 0.020$, $\hat{p}\_B = 0.021$
+
 - $\hat{p} = 0.0205$
+
 - $SE = \sqrt{0.0205 \times 0.9795 \times (\frac{1}{1M} + \frac{1}{1M})} = 0.000202$
+
 - $z = \frac{0.021 - 0.020}{0.000202} = 4.95$
+
 - $p < 0.0001$ ✓ Significant
 
 **Lift**: $\frac{0.001}{0.020} = 5\%$ relative improvement
@@ -255,7 +264,9 @@ Reduce variance using pre-experiment data:
 ```
 
 where:
+
 - $X$ = pre-experiment metric (covariate)
+
 - $\theta = \frac{\text{Cov}(Y, X)}{\text{Var}(X)}$
 
 **Variance reduction**:
@@ -305,7 +316,9 @@ P(\mu_B > \mu_A \mid \text{data}) = \int_0^\infty \int_0^x p(\mu_A \mid \text{da
 ```
 
 Use when:
+
 - Many variants to test
+
 - Willing to sacrifice statistical purity for faster learning
 
 ---
@@ -339,7 +352,9 @@ Use when:
 ## Next Steps
 
 Continue to the next modules:
+
 - [08_monitoring](../08_monitoring/README.md) — Monitor experiments and production
+
 - [09_scaling_optimization](../09_scaling_optimization/README.md) — Scale the platform
 
 ---

@@ -1023,12 +1023,17 @@ Hybrid systems represent the state-of-the-art in recommendation systems. By inte
 | [Ensemble Methods in ML](https://www.youtube.com/watch?v=Un9zObFjBH0) | StatQuest | 10 min |
 
 ### Industry Talks
+
 - **[Netflix: Artwork Personalization](https://www.youtube.com/watch?v=gS_XhYj87bE)** - Netflix TechBlog
+
 - **[Spotify: Discover Weekly](https://www.youtube.com/watch?v=6bCNO4-4pqQ)** - Spotify Engineering
+
 - **[YouTube: Recommendations at Scale](https://www.youtube.com/watch?v=BfNNxKL7Bok)** - Google AI
 
 ### Conference Talks
+
 - **RecSys Conference** - Annual hybrid systems presentations
+
 - **KDD Industry Day** - Production hybrid systems
 
 ---

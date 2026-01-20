@@ -7,15 +7,25 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Mathematical Foundations](#mathematical-foundations)
+
 - [Data Collection and Ingestion](#data-collection-and-ingestion)
+
 - [Data Quality Assessment](#data-quality-assessment)
+
 - [Handling Missing Values](#handling-missing-values)
+
 - [Outlier Detection and Treatment](#outlier-detection-and-treatment)
+
 - [Resampling and Alignment](#resampling-and-alignment)
+
 - [Normalization and Scaling](#normalization-and-scaling)
+
 - [Data Splitting Strategies](#data-splitting-strategies)
+
 - [Building a Preprocessing Pipeline](#building-a-preprocessing-pipeline)
 
 ---
@@ -1372,6 +1382,7 @@ Time series preprocessing requires special attention to:
 ### Next Steps
 
 - [03_feature_engineering](../03_feature_engineering/) - Create powerful temporal features
+
 - [04_statistical_methods](../04_statistical_methods/) - Apply ARIMA and classical methods
 
 ---

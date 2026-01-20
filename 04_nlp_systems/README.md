@@ -74,9 +74,13 @@ The **scaled dot-product attention** is the core of Transformer models:
 ```
 
 Where:
+
 - $Q$ = Query matrix of shape $(n, d\_k)$
+
 - $K$ = Key matrix of shape $(m, d\_k)$  
+
 - $V$ = Value matrix of shape $(m, d\_v)$
+
 - $d\_k$ = dimensionality of keys (scaling factor)
 
 ### Information Theory
@@ -176,23 +180,35 @@ Every production NLP system follows a similar high-level architecture:
 Before diving into specific NLP topics, ensure familiarity with these concepts:
 
 ### Linear Algebra
+
 - **Vectors and matrices**: Representations of text and transformations
+
 - **Matrix multiplication**: $C\_{ij} = \sum\_k A\_{ik} B\_{kj}$
+
 - **Eigendecomposition**: Used in dimensionality reduction (SVD, PCA)
 
 ### Calculus
+
 - **Gradients**: $\nabla\_\theta \mathcal{L}$ for optimization
+
 - **Chain rule**: Essential for backpropagation
+
 - **Softmax derivative**: $\frac{\partial \text{softmax}\_i}{\partial z\_j} = \text{softmax}\_i (\delta\_{ij} - \text{softmax}\_j)$
 
 ### Probability Theory
+
 - **Bayes' theorem**: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
+
 - **Maximum likelihood estimation**: $\hat{\theta} = \arg\max\_\theta P(D|\theta)$
+
 - **Conditional independence**: Markov assumptions in sequence models
 
 ### Information Theory
+
 - **Entropy**: $H(X) = -\sum\_x P(x) \log P(x)$
+
 - **Mutual information**: $I(X;Y) = H(X) - H(X|Y)$
+
 - **Cross-entropy**: Loss function for classification
 
 ---
@@ -200,26 +216,41 @@ Before diving into specific NLP topics, ensure familiarity with these concepts:
 ## 🔧 Tools & Frameworks
 
 ### Model Development
+
 - **Hugging Face Transformers** - Pre-trained models and fine-tuning
+
 - **spaCy** - Industrial-strength NLP
+
 - **PyTorch / TensorFlow** - Deep learning frameworks
+
 - **OpenAI API / Anthropic API** - Hosted LLM access
 
 ### Data Processing
+
 - **Apache Spark** - Distributed text processing
+
 - **Dask** - Parallel computing for large datasets
+
 - **Ray** - Distributed computing and hyperparameter tuning
 
 ### Model Serving
+
 - **vLLM** - High-throughput LLM serving
+
 - **Triton Inference Server** - Multi-model serving
+
 - **BentoML** - ML model serving framework
+
 - **FastAPI** - High-performance API framework
 
 ### Vector Databases
+
 - **Pinecone** - Managed vector database
+
 - **Milvus** - Open-source vector database
+
 - **Weaviate** - Vector search engine
+
 - **Qdrant** - Vector similarity search
 
 ---
@@ -272,9 +303,13 @@ cat README.md
 Before diving in, ensure familiarity with:
 
 - **Python** - Primary language for NLP
+
 - **Linear Algebra** - Vectors, matrices, transformations
+
 - **Probability & Statistics** - Distributions, sampling, estimation
+
 - **Machine Learning Basics** - Classification, regression, evaluation
+
 - **Deep Learning Fundamentals** - Neural networks, backpropagation
 
 ---

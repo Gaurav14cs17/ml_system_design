@@ -9,8 +9,11 @@
 Unlike traditional software where bugs cause immediate failures, data quality issues in ML silently degrade model performance, leading to:
 
 - **Incorrect predictions** affecting user experience
+
 - **Biased models** causing fairness issues
+
 - **Revenue loss** from poor recommendations
+
 - **Compliance violations** in regulated industries
 
 ![Diagram 1](images/diagram_01.svg)
@@ -69,8 +72,11 @@ For constraint set $\Phi = \{\phi\_1, \phi\_2, ..., \phi\_m\}$:
 ```
 
 Common constraints:
+
 - **Domain**: $\phi\_{domain}(d) = d.age \in [0, 150]$
+
 - **Referential**: $\phi\_{ref}(d) = d.user\_id \in \text{Users}$
+
 - **Functional dependency**: $d\_1.zip = d\_2.zip \Rightarrow d\_1.city = d\_2.city$
 
 #### Timeliness/Freshness

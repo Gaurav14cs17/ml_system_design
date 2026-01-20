@@ -51,7 +51,9 @@ PSI = \sum_{i=1}^{n} (P_i^{actual} - P_i^{expected}) \cdot \ln\left(\frac{P_i^{a
 ```
 
 Where:
+
 - \( P_i^{actual} \) = proportion of observations in bin \( i \) for current data
+
 - \( P_i^{expected} \) = proportion of observations in bin \( i \) for reference data
 
 | PSI Value | Interpretation |
@@ -133,7 +135,9 @@ D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}
 Monitoring response time requires understanding percentiles:
 
 - **P50 (Median)**: 50% of requests are faster than this
+
 - **P95**: 95% of requests are faster — captures most user experience
+
 - **P99**: 99% of requests are faster — captures tail latency
 
 ```math
@@ -152,10 +156,12 @@ Where \( x_{(i)} \) is the \( i \)-th order statistic.
 When comparing distributions, we formulate:
 
 - **Null Hypothesis** \( H_0 \): No drift (distributions are identical)
+
 - **Alternative** \( H_1 \): Drift detected (distributions differ)
 
 **Decision Rules:**
 - If \( p < \alpha \): Reject \( H_0 \) (drift detected)
+
 - If \( p \geq \alpha \): Fail to reject \( H_0 \) (no significant drift)
 
 ### Power Analysis
@@ -168,9 +174,13 @@ n = \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot 2\sigma^2
 ```
 
 Where:
+
 - \( z_{\alpha/2} \) = critical value for significance level
+
 - \( z_{\beta} \) = critical value for power \( (1-\beta) \)
+
 - \( \delta \) = minimum detectable effect size
+
 - \( \sigma^2 \) = variance estimate
 
 ---
@@ -202,9 +212,13 @@ Where:
 ## 📖 References & Resources
 
 - [Google's ML Engineering Best Practices](https://developers.google.com/machine-learning/guides/rules-of-ml)
+
 - [MLOps Community](https://mlops.community/)
+
 - [Evidently AI Documentation](https://docs.evidentlyai.com/)
+
 - [Great Expectations](https://greatexpectations.io/)
+
 - [Prometheus & Grafana](https://prometheus.io/docs/visualization/grafana/)
 
 ---
@@ -214,8 +228,11 @@ Where:
 This guide assumes familiarity with:
 
 - **Probability Theory**: Random variables, distributions, expectation
+
 - **Statistical Inference**: Hypothesis testing, confidence intervals
+
 - **Information Theory**: Entropy, divergence measures
+
 - **Linear Algebra**: For understanding model internals
 
 ---
@@ -223,10 +240,15 @@ This guide assumes familiarity with:
 ## 🤝 Contributing
 
 Each chapter contains:
+
 - 📝 Detailed theoretical explanations with mathematical foundations
+
 - 📊 Visual diagrams illustrating key concepts
+
 - 💻 Practical code examples (kept minimal, focused on concepts)
+
 - 🎯 Best practices and anti-patterns
+
 - 📈 Real-world case studies
 
 ---

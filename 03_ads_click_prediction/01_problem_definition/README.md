@@ -56,8 +56,11 @@ Platform revenue is directly tied to CTR prediction quality:
 ```
 
 **Business Impact**: A 1% improvement in CTR prediction accuracy can translate to:
+
 - **$100M+ annual revenue increase** for large platforms
+
 - **10-20% improvement** in advertiser ROI
+
 - **Better user experience** through more relevant ads
 
 ---
@@ -67,8 +70,11 @@ Platform revenue is directly tied to CTR prediction quality:
 ### Formal Definition
 
 Given:
+
 - User $u \in \mathcal{U}$ with features $\mathbf{x}\_u$
+
 - Ad $a \in \mathcal{A}$ with features $\mathbf{x}\_a$
+
 - Context $c \in \mathcal{C}$ with features $\mathbf{x}\_c$
 
 **Objective**: Learn a function $f: \mathcal{U} \times \mathcal{A} \times \mathcal{C} \rightarrow [0, 1]$
@@ -90,8 +96,11 @@ Minimize the **Binary Cross-Entropy Loss**:
 ```
 
 where:
+
 - $y\_i \in \{0, 1\}$ is the true label (clicked or not)
+
 - $\hat{y}\_i \in [0, 1]$ is the predicted probability
+
 - $N$ is the number of training samples
 
 ### Key Challenges
@@ -241,7 +250,9 @@ Expected difference between predicted and actual probabilities:
 ## Next Steps
 
 Continue to the next modules:
+
 - [02_system_requirements](../02_system_requirements/README.md) — Define technical specifications
+
 - [03_data_engineering](../03_data_engineering/README.md) — Design data pipelines
 
 ---

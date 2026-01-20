@@ -212,8 +212,11 @@ Down-weight easy examples:
 ```
 
 where:
+
 - $p\_t = \hat{y}$ if $y=1$, else $1-\hat{y}$
+
 - $\gamma$ = focusing parameter (typically 2)
+
 - $\alpha\_t$ = class balancing weight
 
 ### Calibration-Aware Loss
@@ -296,8 +299,11 @@ If pCTR is miscalibrated, bids are wrong → revenue loss.
 ```
 
 where:
+
 - $B$ = number of bins
+
 - $\text{acc}(b)$ = accuracy in bin $b$
+
 - $\text{conf}(b)$ = average confidence in bin $b$
 
 ### Platt Scaling
@@ -397,7 +403,9 @@ $T$ = temperature (higher = softer distributions)
 ## Next Steps
 
 Continue to the next modules:
+
 - [06_serving_infrastructure](../06_serving_infrastructure/README.md) — Deploy models
+
 - [07_ab_testing](../07_ab_testing/README.md) — Evaluate models
 
 ---

@@ -11,9 +11,13 @@
 ## 🎯 Learning Objectives
 
 - Understand key model performance metrics for different ML tasks
+
 - Learn to track accuracy, precision, recall, F1, AUC-ROC in production
+
 - Monitor prediction latency and throughput
+
 - Detect model degradation before business impact
+
 - Set up performance dashboards
 
 ---
@@ -33,8 +37,11 @@
 ## Why Model Performance Monitoring?
 
 Models degrade over time due to:
+
 - **Data drift**: Input distribution changes
+
 - **Concept drift**: Relationship between features and target changes
+
 - **Feedback loops**: Model predictions influence future training data
 
 ![Diagram 1](images/diagram_01.svg)

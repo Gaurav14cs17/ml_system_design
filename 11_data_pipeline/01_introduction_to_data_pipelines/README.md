@@ -20,8 +20,11 @@ A data pipeline can be formally defined as a **directed acyclic graph (DAG)** of
 ```
 
 where:
+
 - $V = \{v\_1, v\_2, ..., v\_n\}$ is the set of **data nodes** (datasets)
+
 - $E \subseteq V \times V$ is the set of **directed edges** representing data flow
+
 - $T = \{t\_1, t\_2, ..., t\_m\}$ is the set of **transformation functions**
 
 Each transformation $t\_i: D\_{in} \rightarrow D\_{out}$ maps input data to output data.
@@ -111,9 +114,13 @@ where $L$ = items in system, $\lambda$ = arrival rate, $W$ = wait time.
 Consider this statistic: **80-90% of time in ML projects is spent on data-related tasks**. This includes:
 
 - Collecting data from various sources
+
 - Cleaning and preprocessing
+
 - Feature engineering
+
 - Ensuring data quality
+
 - Managing data versions
 
 ### The Cost of Bad Data
@@ -155,9 +162,13 @@ class MLDataPipeline:
 ML pipelines typically ingest from multiple sources:
 
 - **Structured Data**: Databases (PostgreSQL, MySQL), Data Warehouses (Snowflake, BigQuery)
+
 - **Semi-Structured**: JSON/XML APIs, Log files, NoSQL (MongoDB, Cassandra)
+
 - **Unstructured**: Images, Videos, Audio, Text documents
+
 - **Streaming**: Kafka, Kinesis, Pub/Sub, Event buses
+
 - **Third-Party**: External APIs, Partner data feeds
 
 ### 2. Ingestion Layer
@@ -231,6 +242,7 @@ Before diving into implementations, let's understand the theoretical models:
 #### Bounded vs Unbounded Data
 
 - **Bounded Data** $D\_B$: Finite dataset with known cardinality $|D\_B| < \infty$
+
 - **Unbounded Data** $D\_U$: Infinite stream where $|D\_U| \rightarrow \infty$ over time
 
 This distinction fundamentally shapes processing strategies.
@@ -271,7 +283,9 @@ W(t_p) = \max(t_e) - \text{allowed\_lateness}
 
 **Characteristics:**
 - Process data in scheduled intervals (hourly, daily, weekly)
+
 - Handle large volumes efficiently
+
 - Higher latency but simpler to implement
 
 **Mathematical Model:**
@@ -293,15 +307,20 @@ R = f(D_{batch})
 
 **Use Cases:**
 - Training data preparation
+
 - Historical analytics
+
 - Periodic reporting
+
 - Model retraining
 
 ### Streaming Pipelines
 
 **Characteristics:**
 - Process data in real-time or near-real-time
+
 - Handle continuous data flows
+
 - Lower latency, higher complexity
 
 **Mathematical Model:**
@@ -343,8 +362,11 @@ W_{session} = \{d_1, ..., d_n\} \text{ where } t_e(d_{i+1}) - t_e(d_i) < g
 
 **Use Cases:**
 - Real-time recommendations
+
 - Fraud detection
+
 - Live personalization
+
 - IoT sensor processing
 
 ### Hybrid (Lambda/Kappa) Architecture
@@ -380,7 +402,9 @@ For pipeline operations, this extends to:
 
 **Why It Matters:**
 In distributed systems with retries, an operation may execute multiple times. Without idempotency:
+
 - **With retries**: Data can be duplicated or corrupted
+
 - **With idempotency**: Safe to retry without side effects
 
 **Achieving Idempotency:**
@@ -534,35 +558,57 @@ def serving_preprocessing_correct(value, saved_stats):
 ![Data Pipeline Maturity Levels](./images/maturity_levels.svg)
 
 ### Level 1: Ad-hoc Scripts
+
 - Manual execution
+
 - No monitoring
+
 - No version control
+
 - ❌ Not production-ready
 
 ### Level 2: Scheduled Jobs
+
 - Basic scheduling (cron)
+
 - Simple error notifications
+
 - Source control
+
 - ⚠️ Minimal production use
 
 ### Level 3: Orchestrated Pipelines
+
 - DAG-based orchestration
+
 - Retry logic
+
 - Basic monitoring
+
 - ✅ Production-ready for batch
 
 ### Level 4: Production ML Pipelines
+
 - Full observability
+
 - Data versioning
+
 - Feature stores
+
 - CI/CD integration
+
 - ✅ Enterprise ML-ready
 
 ### Level 5: Intelligent Pipelines
+
 - Self-healing capabilities
+
 - Auto-scaling
+
 - ML-powered optimization
+
 - Drift detection
+
 - 🚀 Advanced ML platform
 
 ## 🎓 Key Takeaways
@@ -580,7 +626,9 @@ def serving_preprocessing_correct(value, saved_stats):
 ## 📚 Further Reading
 
 - [Designing Data-Intensive Applications](https://dataintensive.net/) by Martin Kleppmann
+
 - [The Data Engineering Cookbook](https://github.com/andkret/Cookbook)
+
 - [Fundamentals of Data Engineering](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/)
 
 ---

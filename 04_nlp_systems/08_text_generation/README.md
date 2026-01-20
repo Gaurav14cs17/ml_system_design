@@ -415,7 +415,9 @@ print(f"ROUGE-L: {rouge['rougeL']:.4f}")
 ## 🔗 Related Topics
 
 - [Language Models](../03_language_models/) - Foundation models
+
 - [LLM Systems](../10_llm_systems/) - Large-scale generation
+
 - [RAG Systems](../11_rag_systems/) - Grounded generation
 
 ---

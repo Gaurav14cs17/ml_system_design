@@ -5,14 +5,23 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Scaling Fundamentals](#scaling-fundamentals)
+
 - [Horizontal Scaling](#horizontal-scaling)
+
 - [Autoscaling Strategies](#autoscaling-strategies)
+
 - [Load Balancing Algorithms](#load-balancing-algorithms)
+
 - [Kubernetes Scaling](#kubernetes-scaling)
+
 - [GPU Scaling](#gpu-scaling)
+
 - [Capacity Planning](#capacity-planning)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -80,16 +89,23 @@ L = \lambda \times W
 \]
 
 where:
+
 - \( L \) = Average number of requests **in the system** (queue + being processed)
+
 - \( \lambda \) = **Arrival rate** (requests per second)
+
 - \( W \) = Average **time in system** (total latency including queue time)
 
 #### Derivation Intuition
 
 Consider a system over time period \( T \):
+
 - Total arrivals: \( A = \lambda \times T \)
+
 - Each request spends average time \( W \) in system
+
 - Area under "requests in system" curve: \( A \times W = \lambda T W \)
+
 - Average requests in system: \( L = \frac{\lambda T W}{T} = \lambda W \)
 
 #### Capacity Planning Formula
@@ -102,8 +118,11 @@ From Little's Law, we can derive the **required concurrency**:
 
 **Example calculation:**
 - Target: \( \lambda = 1000 \) RPS
+
 - Latency: \( W = 50 \) ms = 0.05 s
+
 - Concurrent requests: \( L = 1000 \times 0.05 = 50 \)
+
 - If each server handles 10 concurrent requests: Need 5+ servers
 
 #### Extended Little's Law (with Utilization)
@@ -115,9 +134,13 @@ W = W_s + W_q = \frac{1}{\mu} + \frac{\rho}{\mu(1-\rho)}
 \]
 
 where:
+
 - \( W_s \) = service time (inference time)
+
 - \( W_q \) = queue wait time
+
 - \( \mu \) = service rate (requests/second per server)
+
 - \( \rho = \frac{\lambda}{\mu} \) = utilization (must be < 1 for stability)
 
 **Key insight:** As \( \rho \to 1 \), queue time \( W_q \to \infty \). Keep utilization at 60-70% for acceptable latency.
@@ -510,11 +533,17 @@ print(f"Monthly cost: ${capacity['monthly_cost_usd']:.2f}")
 ### Scaling Checklist
 
 - ✅ Design stateless services
+
 - ✅ Use external state stores (Redis, DynamoDB)
+
 - ✅ Implement health checks
+
 - ✅ Set resource limits and requests
+
 - ✅ Configure autoscaling with appropriate thresholds
+
 - ✅ Use predictive scaling for known patterns
+
 - ✅ Implement graceful shutdown
 
 ### Anti-Patterns to Avoid

@@ -77,8 +77,11 @@ one_hot = {
 ```
 
 **Problems**:
+
 - High dimensionality (|V| dimensions)
+
 - No semantic similarity
+
 - Curse of dimensionality
 
 ### 2. Distributional Semantics (2000s)
@@ -108,9 +111,13 @@ Count how often words appear together in a context window
 **Breakthrough**: Learn embeddings through neural network training
 
 - Word2Vec (2013)
+
 - GloVe (2014)
+
 - FastText (2016)
+
 - ELMo (2018)
+
 - BERT (2018) - Contextual embeddings
 
 ---
@@ -215,8 +222,11 @@ Replace the softmax with a **binary classification task**:
 ```
 
 where:
+
 - $\sigma(x) = 1/(1 + e^{-x})$ is the sigmoid function
+
 - $K$ is the number of negative samples (typically 5-15)
+
 - $P\_n(w) \propto f(w)^{3/4}$ is the noise distribution (unigram raised to 3/4 power)
 
 ```python
@@ -261,12 +271,16 @@ The learned embeddings exhibit remarkable linear structure:
 
 **Geometric Interpretation:**
 - The vector $(\vec{v}\_{\text{king}} - \vec{v}\_{\text{man}})$ captures the "royalty" direction
+
 - This direction is consistent across gender pairs
+
 - Similar patterns exist for country-capital, verb tenses, comparatives, etc.
 
 **Clustering Properties:**
 - Countries cluster in geographic/cultural regions
+
 - Verbs cluster by tense (past, present, future)
+
 - Adjectives cluster by sentiment and intensity
 
 ---
@@ -314,9 +328,13 @@ GloVe minimizes a **weighted least-squares regression** on the co-occurrence mat
 ```
 
 where:
+
 - $X\_{ij}$ is the co-occurrence count of words $i$ and $j$
+
 - $\mathbf{w}\_i, \tilde{\mathbf{w}}\_j \in \mathbb{R}^d$ are word vectors (separate for target and context)
+
 - $b\_i, \tilde{b}\_j \in \mathbb{R}$ are bias terms
+
 - $f(x)$ is a weighting function to prevent frequent words from dominating
 
 **Weighting Function:**
@@ -497,8 +515,11 @@ embed("unhappy") ≈ embed("unhelpful")  # Share "<un", "unh"
 ```
 
 #### 3. Better for Morphologically Rich Languages
+
 - German: "Kraftfahrzeug-Haftpflichtversicherung" (car liability insurance)
+
 - Turkish: "Çekoslovakyalılaştıramadıklarımızdanmışsınız"
+
 - Finnish, Hungarian, Arabic, etc.
 
 ### FastText Architecture
@@ -551,23 +572,35 @@ class FastText(nn.Module):
 ### When to Use What
 
 **Word2Vec (Skip-gram)**:
+
 - Quick prototyping
+
 - Large training corpus
+
 - Focus on rare words
 
 **Word2Vec (CBOW)**:
+
 - Faster training needed
+
 - Focus on frequent words
+
 - Smaller corpus
 
 **GloVe**:
+
 - Benchmark comparisons
+
 - Need best analogy performance
+
 - Have pre-computed co-occurrence
 
 **FastText**:
+
 - Morphologically rich languages
+
 - OOV words expected
+
 - Noisy/misspelled text
 
 ---
@@ -948,7 +981,9 @@ Map words from different languages to the same space:
 ```
 
 Methods:
+
 - Supervised alignment (parallel dictionaries)
+
 - Unsupervised alignment (adversarial training)
 
 ### 3. Retrofitting

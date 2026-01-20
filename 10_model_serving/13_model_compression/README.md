@@ -5,13 +5,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Mathematical Foundations](#mathematical-foundations)
+
 - [Quantization](#quantization)
+
 - [Pruning](#pruning)
+
 - [Knowledge Distillation](#knowledge-distillation)
+
 - [Low-Rank Factorization](#low-rank-factorization)
+
 - [Compression Pipeline](#compression-pipeline)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -43,8 +51,11 @@ R(D) = \min_{p(\hat{W}|W): \mathbb{E}[d(W,\hat{W})] \leq D} I(W; \hat{W})
 \]
 
 where:
+
 - \( R(D) \) is the minimum bits needed to achieve distortion \( D \)
+
 - \( I(W; \hat{W}) \) is the mutual information
+
 - \( d(W, \hat{W}) \) is a distortion measure (e.g., MSE)
 
 ### Compression Ratio
@@ -56,9 +67,13 @@ The **compression ratio** \( \rho \) is defined as:
 \]
 
 where:
+
 - \( n \) = number of parameters
+
 - \( b_{\text{orig}} \) = bits per parameter (32 for FP32)
+
 - \( n_{\text{eff}} \) = effective non-zero parameters
+
 - \( b_{\text{new}} \) = bits after quantization
 
 ```mermaid
@@ -121,9 +136,13 @@ q = \text{clamp}\left(\left\lfloor \frac{x}{S} \right\rceil + Z, \, q_{\min}, \,
 \]
 
 where:
+
 - \( S \) is the **scale factor** (step size)
+
 - \( Z \) is the **zero-point** (integer offset)
+
 - \( \lfloor \cdot \rceil \) denotes rounding to nearest integer
+
 - \( q_{\min}, q_{\max} \) are the quantization bounds (e.g., -128, 127 for INT8)
 
 The **dequantization** (reconstruction) is:
@@ -352,9 +371,13 @@ s_t = s_f + (s_i - s_f)\left(1 - \frac{t - t_0}{n\Delta t}\right)^3
 \]
 
 where:
+
 - \( s_t \) = sparsity at step \( t \)
+
 - \( s_i, s_f \) = initial and final sparsity
+
 - \( t_0 \) = pruning start step
+
 - \( n, \Delta t \) = pruning frequency parameters
 
 ### Pruning Types
@@ -461,7 +484,9 @@ where \( z_i \) are the logits (pre-softmax activations).
 
 **Temperature effects:**
 - \( T = 1 \): Standard softmax (sharp distribution)
+
 - \( T > 1 \): Softer distribution, reveals "dark knowledge"
+
 - \( T \to \infty \): Approaches uniform distribution
 
 The soft probabilities encode relationships between classes (e.g., "3" is more similar to "8" than to "7").
@@ -485,8 +510,11 @@ The total loss combines hard and soft targets:
 \]
 
 where:
+
 - \( p^{(T)} \) = teacher's soft probabilities
+
 - \( p^{(S)} \) = student's soft probabilities
+
 - The \( T^2 \) factor compensates for the gradient magnitude reduction at high temperatures
 
 #### Why Does Distillation Work?
@@ -616,9 +644,13 @@ W = U \Sigma V^T = \sum_{i=1}^{r} \sigma_i u_i v_i^T
 \]
 
 where:
+
 - \( U \in \mathbb{R}^{m \times m} \) = left singular vectors (orthonormal)
+
 - \( \Sigma \in \mathbb{R}^{m \times n} \) = diagonal matrix of singular values \( \sigma_1 \geq \sigma_2 \geq \cdots \geq 0 \)
+
 - \( V \in \mathbb{R}^{n \times n} \) = right singular vectors (orthonormal)
+
 - \( r = \text{rank}(W) \)
 
 #### Truncated SVD Approximation
@@ -817,10 +849,15 @@ def get_model_size_mb(model: nn.Module) -> float:
 ### Compression Checklist
 
 - ✅ Baseline accuracy before compression
+
 - ✅ Start with quantization (easiest, best ROI)
+
 - ✅ Add pruning if more compression needed
+
 - ✅ Use distillation for aggressive compression
+
 - ✅ Validate accuracy after each step
+
 - ✅ Profile inference speed improvement
 
 ---

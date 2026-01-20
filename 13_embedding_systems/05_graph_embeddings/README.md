@@ -34,10 +34,15 @@
 ## Introduction
 
 Graphs are everywhere:
+
 - **Social Networks**: Users connected by friendships
+
 - **Recommendation Systems**: Users, items, interactions
+
 - **Molecular Structures**: Atoms and bonds
+
 - **Knowledge Bases**: Entities and relationships
+
 - **Citation Networks**: Papers citing other papers
 
 Graph embeddings learn vector representations for nodes, edges, or entire graphs.
@@ -380,7 +385,9 @@ class GATLayer(nn.Module):
 ## Knowledge Graph Embeddings
 
 Knowledge graphs: (head, relation, tail) triples
+
 - (Einstein, born_in, Germany)
+
 - (Germany, capital, Berlin)
 
 ### TransE
@@ -611,9 +618,13 @@ def link_prediction_loss(pos_edge_index, node_embeddings):
 ### Choosing the Right Approach
 
 - **Small graphs + transductive**: Node2Vec
+
 - **Large graphs + inductive**: GraphSAGE
+
 - **Need attention**: GAT
+
 - **Knowledge graphs**: TransE, RotatE
+
 - **Heterogeneous**: Metapath2Vec, HGT
 
 ---

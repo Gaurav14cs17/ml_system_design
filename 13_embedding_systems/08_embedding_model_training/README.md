@@ -757,10 +757,15 @@ trainer.save("./my_embedding_model")
 ### Training Checklist
 
 - [ ] Prepare positive pairs (NLI, paraphrases, click data)
+
 - [ ] Implement hard negative mining
+
 - [ ] Use large batch sizes (in-batch negatives)
+
 - [ ] Normalize embeddings
+
 - [ ] Tune temperature (0.01-0.1 typical)
+
 - [ ] Evaluate on held-out retrieval/similarity tasks
 
 ---

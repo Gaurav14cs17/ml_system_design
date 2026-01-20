@@ -486,7 +486,9 @@ trainer.train(examples, epochs=30)
 ## 🔗 Related Topics
 
 - [Text Preprocessing](../01_text_preprocessing/) - Prepare text for NER
+
 - [Language Models](../03_language_models/) - BERT for NER
+
 - [Search & Retrieval](../09_search_and_retrieval/) - Entity-based search
 
 ---

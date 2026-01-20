@@ -418,10 +418,15 @@ index = faiss.IndexIVFPQ(quantizer, dimension, nlist, m, 8)
 ### When to Use What
 
 - **Prototype/Local**: ChromaDB
+
 - **Production (managed)**: Pinecone
+
 - **Production (self-hosted)**: Qdrant or Milvus
+
 - **Existing PostgreSQL**: pgvector
+
 - **Maximum control**: FAISS
+
 - **GraphQL/Semantic**: Weaviate
 
 ---
@@ -560,8 +565,11 @@ metrics = {
 ### 3. Scaling Strategies
 
 - **Sharding**: Split data across multiple indices
+
 - **Replication**: Multiple copies for read scaling
+
 - **Tiered storage**: Hot/cold data separation
+
 - **Caching**: Cache frequent queries
 
 ---

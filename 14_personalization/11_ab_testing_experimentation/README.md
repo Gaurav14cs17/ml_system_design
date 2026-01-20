@@ -979,15 +979,23 @@ experiment_config = {
 ### Q1: How do you decide between A/B testing and bandits?
 
 **A/B Testing**:
+
 - Need clean causal inference
+
 - Have time for full experiment
+
 - Testing significant changes
+
 - Want to measure long-term effects
 
 **Bandits**:
+
 - Minimizing regret is priority
+
 - Testing many variants
+
 - Short-lived changes (promotions)
+
 - Personalized treatment selection
 
 ### Q2: How do you handle network effects in experiments?

@@ -118,8 +118,11 @@ where $\mathbf{e}\_i$ is a one-hot vector.
 ```
 
 **Properties**:
+
 - Sparse: Most entries are zero
+
 - High dimensional: $\mathbb{R}^{|\mathcal{V}|}$ where $|\mathcal{V}| \sim 10^4 - 10^6$
+
 - No semantic smoothing: Similar words have orthogonal vectors
 
 ```python
@@ -175,7 +178,9 @@ P(w_O | w_I) = \frac{\exp(\vec{v}'_{w_O} \cdot \vec{v}_{w_I})}{\sum_{w=1}^{|\mat
 ```
 
 where:
+
 - $\vec{v}\_w$ = input (center) embedding of word $w$
+
 - $\vec{v}'\_w$ = output (context) embedding of word $w$
 
 **Loss function** (negative log-likelihood):
@@ -208,7 +213,9 @@ Computing the full softmax is expensive: $O(|\mathcal{V}|)$ per update.
 ```
 
 where:
+
 - $\sigma(x) = \frac{1}{1 + e^{-x}}$ (sigmoid function)
+
 - $P\_n(w) \propto f(w)^{3/4}$ (noise distribution, smoothed frequency)
 
 ### Implementation
@@ -424,7 +431,9 @@ Static embeddings assign **one vector per word**. Contextual embeddings produce 
 ![Diagram 6](diagrams/diagram_06.svg)
 
 "Bank" in different contexts:
+
 - "I deposited money at the bank" → financial institution
+
 - "I sat by the river bank" → geographical feature
 
 Contextual embeddings: $E(w, \text{context}) \rightarrow \mathbb{R}^d$
@@ -656,7 +665,9 @@ class SentenceEmbedding:
 ## 🔗 Related Topics
 
 - [Text Preprocessing](../01_text_preprocessing/) - Preparing text before embedding
+
 - [Language Models](../03_language_models/) - Models that power contextual embeddings
+
 - [Search & Retrieval](../09_search_and_retrieval/) - Using embeddings for search
 
 ---

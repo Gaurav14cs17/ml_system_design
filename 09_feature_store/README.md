@@ -52,31 +52,49 @@ Without a feature store, teams often create different code paths for training an
 </p>
 
 ### 1. Feature Registry (Catalog)
+
 - Metadata storage
+
 - Feature discovery
+
 - Version control
+
 - Lineage tracking
 
 ### 2. Offline Store
+
 - Historical feature values
+
 - Training data generation
+
 - Point-in-time correctness
+
 - Typically: Data Lake, Data Warehouse
 
 ### 3. Online Store
+
 - Latest feature values
+
 - Low-latency serving (<10ms)
+
 - High throughput
+
 - Typically: Redis, DynamoDB, Cassandra
 
 ### 4. Feature Engineering Pipeline
+
 - Transformation logic
+
 - Batch and streaming processing
+
 - Materialization jobs
 
 ### 5. Feature Serving API
+
 - Consistent retrieval interface
+
 - Batch and real-time modes
+
 - SDK integrations
 
 ---
@@ -147,18 +165,29 @@ Without a feature store, teams often create different code paths for training an
 ## 📈 When to Use a Feature Store
 
 ### ✅ Good Fit
+
 - Multiple ML models sharing features
+
 - Need for real-time inference
+
 - Large data science teams
+
 - Feature reuse is important
+
 - Training-serving consistency required
+
 - Complex feature engineering pipelines
 
 ### ❌ May Be Overkill
+
 - Single model, single team
+
 - Batch-only predictions
+
 - Simple features (raw columns)
+
 - Early-stage ML projects
+
 - Limited engineering resources
 
 ---
@@ -184,8 +213,11 @@ Without a feature store, teams often create different code paths for training an
 ## 📖 References
 
 - [Feast Documentation](https://docs.feast.dev/)
+
 - [Tecton Platform](https://www.tecton.ai/)
+
 - [Feature Store for ML (O'Reilly)](https://www.oreilly.com/library/view/feature-stores-for/9781098143732/)
+
 - [MLOps Community](https://mlops.community/)
 
 ---

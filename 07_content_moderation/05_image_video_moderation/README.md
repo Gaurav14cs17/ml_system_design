@@ -3,13 +3,21 @@
 ![Image Moderation Pipeline](../assets/image_moderation.svg)
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Image Classification Models](#image-classification-models)
+
 - [Object Detection for Moderation](#object-detection-for-moderation)
+
 - [Video Analysis Techniques](#video-analysis-techniques)
+
 - [Hash-Based Matching](#hash-based-matching)
+
 - [OCR and Text in Images](#ocr-and-text-in-images)
+
 - [Multimodal Approaches](#multimodal-approaches)
+
 - [Implementation Examples](#implementation-examples)
 
 ---
@@ -945,10 +953,15 @@ class VisionLanguageModerator:
         return """You are an expert content moderator. Analyze images for policy violations.
 
 Categories:
+
 - VIOLENCE: Graphic violence, gore, weapons
+
 - ADULT: Nudity, sexual content
+
 - HATE: Hate symbols, discriminatory imagery
+
 - DANGEROUS: Self-harm, dangerous activities
+
 - SAFE: No violations
 
 For each image, provide:
@@ -1105,9 +1118,13 @@ Visual content moderation requires:
 6. **Multimodal understanding**: Image + text context matters
 
 Key challenges:
+
 - Scale (billions of images/videos)
+
 - Context (same image, different meaning)
+
 - Adversarial attacks (modified images)
+
 - New content types (AR filters, AI-generated)
 
 ---

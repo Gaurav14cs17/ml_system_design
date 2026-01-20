@@ -48,7 +48,9 @@ For **new items**: No \((\cdot, i)\) pairs in \(\mathcal{O}\)
 ### Business Impact
 
 - **Netflix:** ~40% of views are recent releases (cold items)
+
 - **E-commerce:** 25%+ daily users are new or returning after long absence
+
 - **Consequence:** Poor first impression → user churn
 
 ---
@@ -165,8 +167,11 @@ Weighted average of k-nearest neighbors by content similarity.
 ### 3. Expert Curation
 
 Manual placement by domain experts:
+
 - Assign initial categories/tags
+
 - Place in curated collections
+
 - Seed with editorial ratings
 
 ### 4. Exploration Boost
@@ -197,6 +202,7 @@ Where:
 
 **Trade-off:**
 - **Exploitation:** Recommend items with highest expected reward
+
 - **Exploration:** Try uncertain items to learn more
 
 ### Epsilon-Greedy
@@ -216,13 +222,18 @@ a_t = \arg\max_i \left(\hat{\mu}_i + c \sqrt{\frac{\ln t}{n_i}}\right)
 ```
 
 Where:
+
 - \(\hat{\mu}_i\): Estimated mean reward for item \(i\)
+
 - \(n_i\): Number of times item \(i\) was shown
+
 - \(c\): Exploration constant
 
 **Properties:**
 - Explores uncertain items (high variance bonus)
+
 - Bonus decreases as item gets more impressions
+
 - Theoretical regret bounds
 
 ### Thompson Sampling
@@ -242,7 +253,9 @@ For binary rewards (click/no-click):
 
 **Advantages:**
 - Principled uncertainty quantification
+
 - Often better empirical performance
+
 - Natural handling of context
 
 ### Contextual Bandits
@@ -298,6 +311,7 @@ Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text
 
 **Meta-testing (new user):**
 - Few interactions → one/few gradient steps
+
 - Quick adaptation from good initialization
 
 ### DropoutNet
@@ -370,13 +384,18 @@ Simulate cold start during training:
 
 **Use meta-learning when:**
 - Users have diverse preferences (no universal cold start solution)
+
 - A few interactions are available (1-5)
+
 - Model can be quickly adapted per-user
+
 - Sufficient meta-training users exist
 
 **Avoid when:**
 - Zero-shot required (true cold start)
+
 - Computational constraints (meta-learning is expensive)
+
 - User preferences are homogeneous
 
 ### Q4: How do you evaluate cold start solutions?
@@ -389,7 +408,9 @@ Simulate cold start during training:
 
 **A/B Testing:**
 - Stratify by user tenure
+
 - Compare cold start strategies
+
 - Monitor long-term effects (not just first session)
 
 ---

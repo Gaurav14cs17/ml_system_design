@@ -455,18 +455,27 @@ class FeatureStore:
 ## 📚 Additional Resources
 
 ### Papers
+
 - [Michelangelo: Uber's ML Platform](https://eng.uber.com/michelangelo/)
+
 - [Netflix Recommendations](https://netflixtechblog.com/netflix-recommendations-beyond-the-5-stars-part-1-55838468f429)
+
 - [Spotify's Audio Features](https://engineering.atspotify.com/)
 
 ### Open Source Implementations
+
 - [Feast Feature Store](https://feast.dev/)
+
 - [Tecton](https://www.tecton.ai/)
+
 - [Featureform](https://www.featureform.com/)
 
 ### Books
+
 - "Designing Machine Learning Systems" by Chip Huyen
+
 - "Machine Learning Engineering" by Andriy Burkov
+
 - "Building Machine Learning Pipelines" by Hannes Hapke & Catherine Nelson
 
 ---

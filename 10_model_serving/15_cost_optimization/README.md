@@ -5,13 +5,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Cost Breakdown](#cost-breakdown)
+
 - [Right-Sizing](#right-sizing)
+
 - [Spot/Preemptible Instances](#spotpreemptible-instances)
+
 - [Autoscaling Strategies](#autoscaling-strategies)
+
 - [Model Optimization for Cost](#model-optimization-for-cost)
+
 - [Cost Monitoring](#cost-monitoring)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -655,12 +663,19 @@ groups:
 ### Cost Optimization Checklist
 
 - ✅ Right-size instances based on profiling
+
 - ✅ Use spot instances for non-critical workloads
+
 - ✅ Implement effective autoscaling
+
 - ✅ Optimize models (quantization, pruning)
+
 - ✅ Enable dynamic batching
+
 - ✅ Monitor cost per prediction
+
 - ✅ Use reserved instances for baseline
+
 - ✅ Clean up unused resources
 
 ### Quick Wins

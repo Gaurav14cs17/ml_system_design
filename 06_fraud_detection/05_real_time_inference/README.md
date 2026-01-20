@@ -1170,9 +1170,13 @@ Continue to [Chapter 6: Rule Engine →](../06_rule_engine/)
 ## Code Examples
 
 See the `code/` directory for:
+
 - `serving/` - Model serving implementations
+
 - `caching/` - Caching strategies
+
 - `optimization/` - Latency optimization utilities
+
 - `monitoring/` - Metrics and dashboards
 
 ---

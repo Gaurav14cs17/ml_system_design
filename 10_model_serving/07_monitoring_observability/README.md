@@ -5,14 +5,23 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [The Three Pillars](#the-three-pillars)
+
 - [ML-Specific Metrics](#ml-specific-metrics)
+
 - [Prometheus & Grafana](#prometheus-grafana)
+
 - [Distributed Tracing](#distributed-tracing)
+
 - [Model Drift Detection](#model-drift-detection)
+
 - [Alerting Strategies](#alerting-strategies)
+
 - [Dashboards](#dashboards)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -553,11 +562,17 @@ class PredictionDriftMonitor:
 ### Monitoring Checklist
 
 - ✅ Track all four metric types (counter, gauge, histogram, summary)
+
 - ✅ Instrument preprocessing, inference, and postprocessing separately
+
 - ✅ Monitor model-specific metrics (confidence, predictions)
+
 - ✅ Set up drift detection for features and predictions
+
 - ✅ Create dashboards for different audiences
+
 - ✅ Configure alerts with appropriate severity levels
+
 - ✅ Implement distributed tracing for debugging
 
 ### Key Metrics Summary

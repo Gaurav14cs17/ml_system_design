@@ -27,15 +27,20 @@ This repository is your **comprehensive guide** to designing, building, and depl
 <td width="50%">
 
 ### 🎯 Perfect For
+
 - **ML Engineers** preparing for system design interviews
+
 - **Data Scientists** transitioning to production ML
+
 - **Software Engineers** building ML-powered features
+
 - **Tech Leads** designing scalable ML architectures
 
 </td>
 <td width="50%">
 
 ### ✨ Key Features
+
 - 🔬 **Real-world case studies**
 - 💡 **Best practices & anti-patterns**
 - 🛠️ **Production-ready patterns**
@@ -262,8 +267,11 @@ ml_system_design/
 Contributions are welcome! Here's how you can help:
 
 - 🐛 **Report Issues** — Found an error or outdated info?
+
 - 💡 **Suggest Topics** — What's missing?
+
 - 📝 **Improve Content** — PRs for corrections and additions
+
 - 🎨 **Add Diagrams** — Visual learners appreciate it!
 
 ---

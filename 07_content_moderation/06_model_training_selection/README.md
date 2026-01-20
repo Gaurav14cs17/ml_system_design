@@ -3,12 +3,19 @@
 ![Model Comparison](../assets/ml_models_comparison.svg)
 
 ## Table of Contents
+
 - [Model Selection Strategy](#model-selection-strategy)
+
 - [Training Pipelines](#training-pipelines)
+
 - [Loss Functions](#loss-functions)
+
 - [Optimization Techniques](#optimization-techniques)
+
 - [Model Compression](#model-compression)
+
 - [Hyperparameter Tuning](#hyperparameter-tuning)
+
 - [Experiment Tracking](#experiment-tracking)
 
 ---
@@ -263,8 +270,11 @@ class ModerationTrainingPipeline:
 ### Mathematical Background
 
 In content moderation, selecting the right loss function is critical due to:
+
 - **Class imbalance**: Violations are typically rare (1-5% of content)
+
 - **Multi-label classification**: Content can violate multiple policies
+
 - **Severity gradients**: Not all violations are equally harmful
 
 ### Binary Cross-Entropy Loss
@@ -277,7 +287,9 @@ The standard loss for binary classification:
 ```
 
 Where:
+
 - \(y_i \in \{0, 1\}\) is the true label
+
 - \(\hat{y}_i \in [0, 1]\) is the predicted probability
 
 ### Focal Loss
@@ -290,8 +302,11 @@ Addresses class imbalance by down-weighting easy examples:
 ```
 
 Where:
+
 - \(p_t = \hat{y}\) if \(y = 1\), else \(1 - \hat{y}\)
+
 - \(\gamma\) is the focusing parameter (typically 2)
+
 - \(\alpha_t\) is the class weight
 
 **Effect**: When a sample is misclassified and \(p_t\) is small, the loss is unaffected. But when \(p_t \to 1\), the factor \((1 - p_t)^\gamma\) goes to zero, reducing the loss for well-classified examples.

@@ -11,9 +11,13 @@
 ## 🎯 Learning Objectives
 
 - Understand observability pillars: logs, metrics, and traces
+
 - Design effective logging strategies for ML systems
+
 - Implement structured logging for predictions
+
 - Build distributed tracing for ML pipelines
+
 - Create actionable dashboards
 
 ---

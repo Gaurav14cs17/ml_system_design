@@ -1,13 +1,21 @@
 # ☁️ Serverless Model Serving
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Serverless Platforms](#serverless-platforms)
+
 - [AWS Lambda](#aws-lambda)
+
 - [Google Cloud Functions](#google-cloud-functions)
+
 - [Cold Start Optimization](#cold-start-optimization)
+
 - [Container-Based Serverless](#container-based-serverless)
+
 - [Cost Analysis](#cost-analysis)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -437,12 +445,19 @@ if __name__ == '__main__':
 ### Serverless ML Checklist
 
 - ✅ Keep model size small (<250MB)
+
 - ✅ Use ONNX Runtime for fastest inference
+
 - ✅ Load model outside handler
+
 - ✅ Warm up model with dummy inference
+
 - ✅ Use Provisioned Concurrency for production
+
 - ✅ Implement keep-warm for sporadic traffic
+
 - ✅ Monitor cold start rates
+
 - ✅ Set appropriate memory (more = faster)
 
 ### When NOT to Use Serverless

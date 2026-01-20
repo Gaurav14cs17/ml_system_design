@@ -41,9 +41,13 @@
 ### Real-World Analogy
 
 Think of a recommendation system as a highly knowledgeable friend who:
+
 - Knows your preferences deeply
+
 - Has knowledge about millions of products/content
+
 - Can predict what you'll like before you even know it exists
+
 - Learns and adapts from your behavior
 
 ---
@@ -110,8 +114,11 @@ Think of a recommendation system as a highly knowledgeable friend who:
 The foundation of any recommendation system:
 
 - **User Data:** Demographics, preferences, history
+
 - **Item Data:** Attributes, categories, metadata
+
 - **Interaction Data:** Clicks, views, purchases, ratings
+
 - **Contextual Data:** Time, location, device, session
 
 ### 2. Model Layer
@@ -119,7 +126,9 @@ The foundation of any recommendation system:
 The intelligence of the system:
 
 - **Candidate Generation:** Reduce millions to thousands
+
 - **Ranking:** Score and order candidates
+
 - **Re-ranking:** Apply business rules and diversity
 
 ### 3. Serving Layer
@@ -127,7 +136,9 @@ The intelligence of the system:
 Delivering recommendations at scale:
 
 - **Low Latency:** < 100ms response time
+
 - **High Throughput:** Millions of requests/second
+
 - **Reliability:** 99.99% uptime
 
 ---
@@ -160,7 +171,9 @@ Delivering recommendations at scale:
 ### 2. Scalability
 
 - **Netflix:** 230M+ subscribers × 15K+ titles
+
 - **Amazon:** 300M+ users × 350M+ products
+
 - **YouTube:** 2B+ users × 800M+ videos
 
 **Solution Architecture:**
@@ -200,21 +213,29 @@ Typical sparsity: 99%+ empty cells
 ### Streaming (Netflix, Spotify, YouTube)
 
 - Personalized content discovery
+
 - "Continue Watching" features
+
 - Playlist generation
+
 - Thumbnail personalization
 
 ### Social Media (TikTok, Instagram, Twitter)
 
 - Feed ranking
+
 - Friend suggestions
+
 - Content recommendations
+
 - Ad targeting
 
 ### News & Content (Google News, Medium)
 
 - Article recommendations
+
 - Topic clustering
+
 - Personalized newsletters
 
 ---
@@ -238,9 +259,13 @@ Typical sparsity: 99%+ empty cells
 ### Online Metrics
 
 - **Click-Through Rate (CTR):** Clicks / Impressions
+
 - **Conversion Rate:** Purchases / Clicks
+
 - **Session Duration:** Time spent on platform
+
 - **User Retention:** Return rate over time
+
 - **Revenue per User:** Direct business impact
 
 ### A/B Testing Framework
@@ -259,18 +284,25 @@ Typical sparsity: 99%+ empty cells
 
 **Books:**
 - "Recommender Systems Handbook" - Ricci et al.
+
 - "Practical Recommender Systems" - Kim Falk
+
 - "Deep Learning for Recommender Systems" - Zhang et al.
 
 **Courses:**
 - Stanford CS246: Mining Massive Data Sets
+
 - Coursera: Recommender Systems Specialization
+
 - Fast.ai: Practical Deep Learning
 
 **Papers:**
 - Amazon's Item-to-Item Collaborative Filtering
+
 - Matrix Factorization for Recommender Systems
+
 - Deep Neural Networks for YouTube Recommendations
+
 - Wide & Deep Learning for Recommender Systems
 
 ---
@@ -302,13 +334,19 @@ Recommendation systems are at the heart of modern digital experiences. They solv
 | [The Algorithm That Changed Netflix](https://www.youtube.com/watch?v=g6pBV3x5XMk) | Half as Interesting | 10 min |
 
 ### Recommended Channels
+
 - **[Stanford Online](https://www.youtube.com/@stanfordonline)** - CS246 Mining Massive Datasets
+
 - **[StatQuest](https://www.youtube.com/@statquest)** - ML fundamentals explained simply
+
 - **[3Blue1Brown](https://www.youtube.com/@3blue1brown)** - Linear algebra visualizations
 
 ### Full Courses
+
 - **Stanford CS246** - Mining Massive Data Sets (Lecture 9-10 for RecSys)
+
 - **Coursera RecSys Specialization** - University of Minnesota
+
 - **Google ML Crash Course** - Recommendation Systems module
 
 ---

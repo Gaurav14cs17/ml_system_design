@@ -858,7 +858,9 @@ class ColBERT(nn.Module):
 ## Next Steps
 
 Continue to:
+
 - [06_training_pipeline](../06_training_pipeline/README.md) - Training infrastructure
+
 - [07_serving_infrastructure](../07_serving_infrastructure/README.md) - Production serving
 
 ---

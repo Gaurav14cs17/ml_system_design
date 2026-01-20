@@ -11,8 +11,11 @@
 ## 🎯 What You'll Learn
 
 - Overview of major feature store platforms
+
 - Open source vs managed solutions
+
 - Comparison across key dimensions
+
 - Decision framework for selection
 
 ---

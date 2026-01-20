@@ -26,9 +26,13 @@
 ## Case Study 1: E-Commerce Payment Fraud
 
 ### Company Profile
+
 - **Industry**: Online Retail Marketplace
+
 - **Scale**: 50M+ transactions/month
+
 - **Fraud Rate**: 0.5% before, 0.15% after implementation
+
 - **Avg Transaction**: $85
 
 ### Challenge
@@ -116,9 +120,13 @@ class EcommerceF raudScorer:
 ## Case Study 2: Account Takeover Prevention
 
 ### Company Profile
+
 - **Industry**: Financial Services
+
 - **Scale**: 10M active accounts
+
 - **ATO Attempts**: 500K/month
+
 - **Prevention Rate**: 99.2%
 
 ### Challenge
@@ -286,8 +294,11 @@ Key Metrics:
 ## Case Study 3: Real-Time Card Fraud at Scale
 
 ### Company Profile
+
 - **Industry**: Payment Processor
+
 - **Scale**: 100M+ transactions/day
+
 - **Latency Requirement**: <50ms P99
 - **Fraud Prevented**: $2B/year
 
@@ -446,9 +457,13 @@ class HighScaleFeatureStore:
 ## Case Study 4: Insurance Fraud Detection
 
 ### Company Profile
+
 - **Industry**: Insurance (Auto/Property)
+
 - **Scale**: 2M claims/year
+
 - **Fraud Rate**: 10% (industry average)
+
 - **Detection Goal**: Identify for investigation
 
 ### Unique Challenges
@@ -837,9 +852,13 @@ Key takeaways from real-world implementations:
 ## Conclusion
 
 Fraud detection is a continuous battle requiring:
+
 - Strong technical foundations
+
 - Domain expertise
+
 - Operational excellence
+
 - Continuous adaptation
 
 The systems described in this guide provide a framework, but each organization must adapt to their unique context, scale, and fraud landscape.
@@ -849,8 +868,11 @@ The systems described in this guide provide a framework, but each organization m
 ## Additional Resources
 
 - [Association of Certified Fraud Examiners](https://www.acfe.com/)
+
 - [IEEE Fraud Detection Research](https://ieeexplore.ieee.org/)
+
 - [Kaggle Fraud Detection Competitions](https://www.kaggle.com/competitions)
+
 - [MLOps Community](https://mlops.community/)
 
 ---

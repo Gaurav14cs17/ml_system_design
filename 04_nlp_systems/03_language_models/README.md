@@ -37,8 +37,11 @@ The core task: **estimate conditional probabilities** $P(w\_i | w\_{1:i-1})$.
 ![Diagram 1](diagrams/diagram_01.svg)
 
 Language models enable:
+
 - **Text generation**: Sample from $P(w\_{n+1} | w\_1, \ldots, w\_n)$
+
 - **Scoring**: Compute $P(\text{sentence})$ for ranking
+
 - **Representation learning**: Extract features from hidden states
 
 ---
@@ -73,7 +76,9 @@ Equivalently using cross-entropy:
 ```
 
 **Interpretation**: Average branching factor - lower is better.
+
 - PPL = 10 means the model is as uncertain as choosing uniformly from 10 words
+
 - State-of-the-art LLMs achieve PPL < 10 on standard benchmarks
 
 ### Cross-Entropy Loss
@@ -263,8 +268,11 @@ For input sequence $\mathbf{x}\_1, \mathbf{x}\_2, \ldots, \mathbf{x}\_T$:
 ```
 
 **Parameters**:
+
 - $\mathbf{W}\_{hh} \in \mathbb{R}^{h \times h}$: hidden-to-hidden weights
+
 - $\mathbf{W}\_{xh} \in \mathbb{R}^{h \times d}$: input-to-hidden weights  
+
 - $\mathbf{W}\_{hy} \in \mathbb{R}^{|\mathcal{V}| \times h}$: hidden-to-output weights
 
 ![Diagram 4](diagrams/diagram_04.svg)
@@ -387,8 +395,11 @@ Multiple attention heads capture different relationship types:
 where $\text{head}\_i = \text{Attention}(\mathbf{Q}\mathbf{W}\_Q^i, \mathbf{K}\mathbf{W}\_K^i, \mathbf{V}\mathbf{W}\_V^i)$
 
 **Parameters**: 
+
 - $\mathbf{W}\_Q^i, \mathbf{W}\_K^i \in \mathbb{R}^{d \times d\_k}$
+
 - $\mathbf{W}\_V^i \in \mathbb{R}^{d \times d\_v}$
+
 - $\mathbf{W}\_O \in \mathbb{R}^{hd\_v \times d}$
 
 ![Diagram 7](diagrams/diagram_07.svg)
@@ -407,6 +418,7 @@ PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d}}\right)
 
 **Why sinusoids?**
 - $PE\_{pos+k}$ can be expressed as a linear function of $PE\_{pos}$
+
 - Enables the model to learn relative positions
 
 ### Transformer Block
@@ -524,8 +536,11 @@ Randomly mask 15% of tokens, predict original tokens:
 for masked positions $i$.
 
 **Masking strategy**:
+
 - 80%: Replace with [MASK]
+
 - 10%: Replace with random token
+
 - 10%: Keep original
 
 This prevents the model from only learning about [MASK] tokens.
@@ -654,7 +669,9 @@ where $n$ = sequence length, $d$ = model dimension.
 ## 🔗 Related Topics
 
 - [Embeddings](../02_embeddings/) - Vector representations from language models
+
 - [Text Classification](../04_text_classification/) - Using LMs for classification
+
 - [LLM Systems](../10_llm_systems/) - Large-scale language model deployment
 
 ---

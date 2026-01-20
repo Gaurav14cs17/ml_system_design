@@ -132,11 +132,17 @@ where $k$ = hash functions, $n$ = elements, $m$ = bits.
 ### After completing this guide, you'll be able to:
 
 - ✅ Design end-to-end ML data pipelines
+
 - ✅ Implement batch and streaming processing
+
 - ✅ Build and operate feature stores
+
 - ✅ Ensure data quality and freshness
+
 - ✅ Scale pipelines to handle billions of records
+
 - ✅ Monitor and debug production pipelines
+
 - ✅ Apply patterns from industry leaders
 
 ---
@@ -187,6 +193,7 @@ Start with Chapter 1 (Introduction) and progress sequentially. Each chapter buil
 
 ### 💼 For Practitioners
 Jump to specific topics based on your needs:
+
 - Building pipelines? → Chapters 2-4
 - Feature engineering? → Chapter 5
 - Scaling issues? → Chapter 11
@@ -269,18 +276,27 @@ cat 01_introduction_to_data_pipelines/README.md
 ## 📚 Additional Resources
 
 ### Books
+
 - "Designing Data-Intensive Applications" by Martin Kleppmann
+
 - "Designing Machine Learning Systems" by Chip Huyen
+
 - "Fundamentals of Data Engineering" by Joe Reis & Matt Housley
 
 ### Papers & Blogs
+
 - [Netflix Tech Blog](https://netflixtechblog.com/)
+
 - [Uber Engineering](https://eng.uber.com/)
+
 - [Spotify Engineering](https://engineering.atspotify.com/)
 
 ### Communities
+
 - [Data Engineering Subreddit](https://reddit.com/r/dataengineering)
+
 - [MLOps Community](https://mlops.community/)
+
 - [dbt Community](https://www.getdbt.com/community/)
 
 ---

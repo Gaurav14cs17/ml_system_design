@@ -114,7 +114,9 @@ s(u, i) = \mathbf{e}_u^\top \mathbf{e}_i
 
 **Advantages:**
 - Item embeddings pre-computed offline
+
 - ANN index for sub-linear retrieval
+
 - Decoupled training and serving
 
 ### DeepFM: Feature Interactions
@@ -262,8 +264,11 @@ Simplified GCN without feature transformation and non-linearity:
 ### Why Remove Non-linearity?
 
 Empirical finding: For bipartite graphs in recommendations:
+
 - Activation functions hurt performance
+
 - Linear propagation + layer combination works best
+
 - Simpler models generalize better
 
 ### PinSage (Web-Scale GNN)
@@ -321,9 +326,13 @@ Where:
 ### Why Multi-Task?
 
 Multiple objectives in recommendations:
+
 - Click prediction
+
 - Conversion prediction  
+
 - Watch time regression
+
 - User satisfaction
 
 ### Shared-Bottom Architecture
@@ -406,8 +415,11 @@ Learns task weights automatically.
 ### Mixed Precision Training
 
 Use FP16 for forward/backward, FP32 for updates:
+
 - 2x memory reduction
+
 - Faster computation
+
 - Minimal accuracy loss
 
 ### Embedding Compression
@@ -478,13 +490,18 @@ Multiple hash functions with smaller tables.
 
 **Use GNNs when:**
 - Rich graph structure (social, knowledge)
+
 - Multi-hop relationships matter
+
 - Cold-start needs neighbor propagation
+
 - Heterogeneous interactions
 
 **Avoid GNNs when:**
 - Simple user-item matrix
+
 - Latency constraints (GNN inference slow)
+
 - Graph is too sparse
 
 ---

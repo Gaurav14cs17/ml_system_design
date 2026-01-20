@@ -45,9 +45,13 @@ P(\text{fraud} | \mathbf{x}) = \frac{P(\mathbf{x} | \text{fraud}) \cdot P(\text{
 ```
 
 Where:
+
 - $P(\text{fraud} | \mathbf{x})$ is the **posterior probability** of fraud given transaction features $\mathbf{x}$
+
 - $P(\mathbf{x} | \text{fraud})$ is the **likelihood** of observing features $\mathbf{x}$ given fraud
+
 - $P(\text{fraud})$ is the **prior probability** of fraud (typically 0.1-1%)
+
 - $P(\mathbf{x})$ is the **evidence** (normalizing constant)
 
 ### Decision Theory and Cost-Sensitive Classification
@@ -117,15 +121,23 @@ Good features maximize this mutual information, reducing uncertainty about wheth
 ### Why ML for Fraud Detection?
 
 Traditional rule-based systems struggle with:
+
 - **Evolving fraud patterns**: Fraudsters constantly adapt their techniques
+
 - **Scale**: Millions of transactions per second need real-time analysis
+
 - **Complexity**: Modern fraud involves sophisticated multi-step attacks
+
 - **False positives**: Static rules generate too many false alarms
 
 Machine learning addresses these challenges by:
+
 - Learning complex patterns from historical data
+
 - Adapting to new fraud patterns automatically
+
 - Processing high-dimensional feature spaces
+
 - Balancing precision and recall dynamically
 
 ---
@@ -174,8 +186,11 @@ transaction_fraud_types = {
 Application fraud occurs during onboarding or credit applications:
 
 - **Identity Theft**: Using stolen personal information
+
 - **Income Falsification**: Inflating income on applications
+
 - **Document Fraud**: Submitting forged documents
+
 - **Bust-out Fraud**: Building credit then defaulting intentionally
 
 ### 5. Insurance Fraud
@@ -241,14 +256,20 @@ def check_fraud_rules(transaction):
 
 **Pros:**
 - Easy to understand and explain
+
 - Quick to implement for known patterns
+
 - No training data required
+
 - Full control over logic
 
 **Cons:**
 - Doesn't adapt to new fraud patterns
+
 - High false positive rates
+
 - Difficult to maintain at scale
+
 - Can't capture complex interactions
 
 ### Machine Learning Approach
@@ -286,14 +307,20 @@ class FraudDetectionModel:
 
 **Pros:**
 - Learns complex patterns automatically
+
 - Adapts to new fraud patterns with retraining
+
 - Lower false positive rates
+
 - Handles high-dimensional data
 
 **Cons:**
 - Requires quality training data
+
 - Less interpretable (black box)
+
 - Needs monitoring for drift
+
 - Higher initial investment
 
 ### Hybrid Approach (Best Practice)
@@ -402,8 +429,11 @@ fraud_evolution = {
 Regulatory and business requirements for explainability:
 
 - **GDPR Right to Explanation**: Customers can request explanation for decisions
+
 - **Fair Lending Laws**: Must explain credit decisions
+
 - **Internal Audit**: Need to justify model decisions
+
 - **Analyst Productivity**: Clear signals help investigation
 
 ---
@@ -515,8 +545,11 @@ Continue to [Chapter 2: Data Collection & Preprocessing →](../02_data_collecti
 ## Resources
 
 - [ACFE Report to the Nations](https://www.acfe.com/report-to-the-nations/2024/)
+
 - [Nilson Report on Payment Fraud](https://nilsonreport.com/)
+
 - [FICO Fraud Detection Research](https://www.fico.com/en/solutions/fraud-detection)
+
 - [IEEE Fraud Detection Papers](https://ieeexplore.ieee.org/)
 
 ---

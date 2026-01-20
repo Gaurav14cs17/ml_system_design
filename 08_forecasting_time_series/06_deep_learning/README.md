@@ -7,13 +7,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Data Preparation for Neural Networks](#data-preparation-for-neural-networks)
+
 - [Recurrent Neural Networks (RNN/LSTM/GRU)](#recurrent-neural-networks)
+
 - [Convolutional Neural Networks (CNN)](#convolutional-neural-networks)
+
 - [Transformer Models](#transformer-models)
+
 - [Hybrid Architectures](#hybrid-architectures)
+
 - [Training Best Practices](#training-best-practices)
+
 - [State-of-the-Art Models](#state-of-the-art-models)
 
 ---
@@ -276,8 +284,11 @@ At each time step $t$, given input $x\_t$ and previous hidden state $h\_{t-1}$:
 | **Hidden State** | $h\_t = o\_t \odot \tanh(C\_t)$ | Outputs filtered cell state |
 
 Where:
+
 - $\sigma(\cdot)$ is the sigmoid function: $\sigma(x) = \frac{1}{1 + e^{-x}}$
+
 - $\odot$ denotes element-wise (Hadamard) product
+
 - $[\cdot, \cdot]$ denotes concatenation
 
 <p align="center">
@@ -653,9 +664,13 @@ The **Scaled Dot-Product Attention** is the core of Transformers:
 ```
 
 Where:
+
 - $Q \in \mathbb{R}^{n \times d\_k}$ — Query matrix
+
 - $K \in \mathbb{R}^{m \times d\_k}$ — Key matrix
+
 - $V \in \mathbb{R}^{m \times d\_v}$ — Value matrix
+
 - $d\_k$ — Key dimension (scaling factor prevents vanishing gradients)
 
 ### Multi-Head Attention
@@ -1104,9 +1119,13 @@ tft = TemporalFusionTransformer.from_dataset(training)
 ## Summary
 
 Deep learning for time series:
+
 - **LSTM/GRU**: Good for sequential patterns
+
 - **TCN**: Efficient, parallelizable
+
 - **Transformers**: Long-range dependencies
+
 - **Hybrids**: Combine strengths
 
 ### Model Selection
@@ -1121,6 +1140,7 @@ Deep learning for time series:
 ### Next Steps
 
 - [07_evaluation_metrics](../07_evaluation_metrics/) - Model evaluation
+
 - [08_deployment](../08_deployment/) - Production deployment
 
 ---

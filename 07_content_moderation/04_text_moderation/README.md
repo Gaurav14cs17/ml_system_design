@@ -3,13 +3,21 @@
 ![Text Moderation Pipeline](../assets/text_moderation.svg)
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Text Classification Approaches](#text-classification-approaches)
+
 - [Traditional ML Methods](#traditional-ml-methods)
+
 - [Deep Learning Methods](#deep-learning-methods)
+
 - [Large Language Models](#large-language-models)
+
 - [Handling Adversarial Text](#handling-adversarial-text)
+
 - [Multilingual Moderation](#multilingual-moderation)
+
 - [Implementation Examples](#implementation-examples)
 
 ---
@@ -47,7 +55,9 @@ Converts text to numerical vectors by weighting term importance:
 ```
 
 Where:
+
 - \(\text{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}\) (normalized term frequency)
+
 - \(\text{IDF}(t, D) = \log \frac{|D|}{|\{d \in D : t \in d\}|}\) (inverse document frequency)
 
 #### Word Embeddings
@@ -76,9 +86,13 @@ The self-attention operation in transformers:
 ```
 
 Where:
+
 - \(Q = XW^Q\) (queries)
+
 - \(K = XW^K\) (keys)
+
 - \(V = XW^V\) (values)
+
 - \(\sqrt{d_k}\) is the scaling factor
 
 **Multi-head attention**:
@@ -642,17 +656,24 @@ class ModerationPromptTemplates:
 4. Is there incitement to violence or discrimination?
 
 Also consider context:
+
 - Is this reclaimed language used within a community?
+
 - Is this quoting or discussing hate speech (vs. promoting it)?
+
 - Could this be satire or irony?
 
 Text: "{text}"
 
 Respond with:
+
 - is_hate_speech: true/false
+
 - confidence: 0-1
 - targeted_group: which group if any
+
 - hate_type: slur/dehumanization/incitement/stereotyping/none
+
 - reasoning: brief explanation
 """
 
@@ -666,16 +687,23 @@ Categories:
 5. SAFE: No self-harm content
 
 Important: We want to support people in crisis, not silence them. Focus on:
+
 - Is this a cry for help that needs support resources?
+
 - Is this promoting or glorifying self-harm?
+
 - Is this recovery/awareness content?
 
 Text: "{text}"
 
 Respond with:
+
 - category: one of the above
+
 - urgency: none/low/high/immediate
+
 - should_show_resources: true/false
+
 - reasoning: brief explanation
 """
 
@@ -692,10 +720,15 @@ Claim: "{text}"
 Known facts (if relevant): {known_facts}
 
 Respond with:
+
 - is_factual_claim: true/false
+
 - likely_false: true/false/uncertain
+
 - harm_potential: none/low/medium/high
+
 - fact_check_needed: true/false
+
 - reasoning: brief explanation
 """
 

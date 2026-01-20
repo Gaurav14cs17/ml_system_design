@@ -11,8 +11,11 @@
 ## 🎯 Learning Objectives
 
 - Understand what feature stores are and why they need monitoring
+
 - Learn to monitor feature freshness, quality, and consistency
+
 - Implement feature validation pipelines
+
 - Track feature lineage and dependencies
 
 ---

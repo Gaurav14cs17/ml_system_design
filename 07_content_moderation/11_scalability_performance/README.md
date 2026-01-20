@@ -3,12 +3,19 @@
 ![Scaling Architecture](../assets/scaling_architecture.svg)
 
 ## Table of Contents
+
 - [Scale Challenges](#scale-challenges)
+
 - [Horizontal Scaling](#horizontal-scaling)
+
 - [Caching Strategies](#caching-strategies)
+
 - [Database Optimization](#database-optimization)
+
 - [Async Processing](#async-processing)
+
 - [Performance Optimization](#performance-optimization)
+
 - [Cost Optimization](#cost-optimization)
 
 ---

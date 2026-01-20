@@ -345,6 +345,7 @@ if __name__ == "__main__":
 ## 🔗 Next Steps
 
 - [Image Classification →](../08_image_classification/) - Transfer learning
+
 - [Video Analysis →](../11_video_analysis/) - Tracking instances
 
 ---

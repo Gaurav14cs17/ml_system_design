@@ -99,7 +99,9 @@ latency_requirements = {
 ```
 
 **Why latency matters**:
+
 - Every 100ms delay = 1% decrease in conversions (Amazon study)
+
 - Users expect results in < 200ms
 
 ### Throughput Requirements
@@ -329,7 +331,9 @@ solution_approach:
 ## Next Steps
 
 Continue to the next sections:
+
 - [02_query_understanding](../02_query_understanding/README.md) - Understanding user intent
+
 - [03_document_understanding](../03_document_understanding/README.md) - Processing documents for ranking
 
 ---

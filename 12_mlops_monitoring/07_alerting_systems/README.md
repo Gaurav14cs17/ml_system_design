@@ -11,9 +11,13 @@
 ## 🎯 Learning Objectives
 
 - Design effective alerting strategies for ML systems
+
 - Implement multi-level alerting with proper severity
+
 - Reduce alert fatigue while maintaining coverage
+
 - Create runbooks for common ML issues
+
 - Set up on-call rotations for ML teams
 
 ---
@@ -487,16 +491,22 @@ class AlertAggregator:
 # Runbook: Model Accuracy Critical
 
 ## Alert Details
+
 - **Alert Name**: model_accuracy_critical
+
 - **Severity**: Critical (P1)
+
 - **Response Time**: 15 minutes
 
 ## Description
 Model accuracy has dropped below 70%, indicating severe degradation.
 
 ## Impact
+
 - Customer-facing predictions are unreliable
+
 - Potential revenue loss
+
 - User experience degradation
 
 ## Investigation Steps
@@ -538,12 +548,17 @@ Model accuracy has dropped below 70%, indicating severe degradation.
 3. Plan retraining if needed
 
 ## Escalation
+
 - 15 min: Page ML on-call
+
 - 30 min: Escalate to ML lead
+
 - 1 hour: Incident commander
 
 ## Related Dashboards
+
 - [Model Performance](http://grafana/d/model-perf)
+
 - [Data Quality](http://grafana/d/data-quality)
 
 ```

@@ -7,9 +7,13 @@
 ## 🎯 What You'll Learn
 
 - Feature engineering patterns and best practices
+
 - Batch vs streaming feature computation
+
 - Aggregation patterns and time windows
+
 - Feature transformation pipelines
+
 - Testing and validation
 
 ---

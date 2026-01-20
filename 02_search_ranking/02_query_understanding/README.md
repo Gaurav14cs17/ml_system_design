@@ -844,13 +844,19 @@ def disambiguate(query: str, user_context: dict) -> str:
 80% of queries are "long-tail" (seen rarely or never before)
 
 Examples:
+
 - "blue nike air max 90 size 10.5 wide mens"
+
 - "laptop for machine learning under 2000 with 32gb ram"
+
 - "birthday gift for 8 year old boy who likes dinosaurs"
 
 Solution: Compositional understanding
+
 - Break into components
+
 - Understand each component
+
 - Combine understanding
 
 ```
@@ -912,7 +918,9 @@ class MultilingualQueryUnderstanding:
 ## Next Steps
 
 Continue to the next sections:
+
 - [03_document_understanding](../03_document_understanding/README.md) - Processing and understanding documents
+
 - [04_feature_engineering](../04_feature_engineering/README.md) - Building features for ranking
 
 ---

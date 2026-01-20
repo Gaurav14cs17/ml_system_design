@@ -71,8 +71,11 @@ def exact_search(query, database, k=10):
 ### Approximate Search
 
 Trade perfect accuracy for speed:
+
 - **Recall@k**: What fraction of true top-k are returned?
+
 - **Latency**: Query time
+
 - **Memory**: Index size
 
 ```
@@ -267,8 +270,11 @@ See detailed section below.
 ### How HNSW Works
 
 HNSW builds a multi-layer graph:
+
 - **Layer 0**: Contains all points, densely connected
+
 - **Higher layers**: Progressively fewer points, long-range connections
+
 - **Search**: Start at top layer, greedily descend
 
 ![Diagram 4](images/diagram_04.svg)
@@ -625,9 +631,13 @@ index.save("my_index.faiss")
 ### Selection Guide
 
 - **< 100K vectors**: Flat index (exact)
+
 - **100K - 10M**: HNSW (best quality)
+
 - **10M - 1B**: IVF + HNSW or IVF + PQ
+
 - **Memory constrained**: PQ or IVF+PQ
+
 - **GPU available**: Flat or IVF (FAISS GPU)
 
 ### Key Tuning Parameters

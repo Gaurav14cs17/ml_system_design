@@ -500,6 +500,7 @@ async def embed(texts):
 ```yaml
 # Prometheus alerting rules
 groups:
+
 - name: embedding-alerts
   rules:
   - alert: HighEmbeddingLatency
@@ -830,13 +831,21 @@ volumes:
 ### Deployment Checklist
 
 - [ ] Model optimization (quantization, ONNX)
+
 - [ ] Batching for throughput
+
 - [ ] Caching layer
+
 - [ ] Horizontal scaling (K8s HPA)
+
 - [ ] Index sharding for large scale
+
 - [ ] Monitoring and alerting
+
 - [ ] Circuit breakers
+
 - [ ] Graceful degradation
+
 - [ ] Cost monitoring
 
 ### Performance Targets

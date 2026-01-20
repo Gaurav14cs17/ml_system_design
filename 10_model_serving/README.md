@@ -446,10 +446,15 @@ graph TB
 ## 🤝 Contributing
 
 Each topic follows a consistent structure:
+
 - ✅ Conceptual overview with Mermaid diagrams
+
 - ✅ Real-world use cases
+
 - ✅ Code examples with comments
+
 - ✅ Best practices and anti-patterns
+
 - ✅ Further reading and resources
 
 ---

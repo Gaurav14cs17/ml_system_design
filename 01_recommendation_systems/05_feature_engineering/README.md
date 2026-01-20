@@ -639,12 +639,17 @@ Feature engineering is crucial for recommendation systems. The right features ca
 | [Target Encoding Explained](https://www.youtube.com/watch?v=589nCGeWG1w) | Kaggle | 10 min |
 
 ### Deep Dives
+
 - **[Feast Feature Store](https://www.youtube.com/watch?v=_omIgYLiJZg)** - Open source feature store
+
 - **[Sentence Embeddings](https://www.youtube.com/watch?v=OATCgQtNX2o)** - James Briggs
+
 - **[Time-Series Features](https://www.youtube.com/watch?v=vV12dGe_Fho)** - Rob Mulla
 
 ### Kaggle Tutorials
+
 - **Kaggle Learn** - Feature engineering courses
+
 - **Kaggle Competition Walkthroughs** - Real-world feature engineering
 
 ---

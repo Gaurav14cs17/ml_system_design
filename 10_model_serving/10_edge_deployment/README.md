@@ -5,13 +5,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Edge vs Cloud Trade-offs](#edge-vs-cloud-trade-offs)
+
 - [Model Optimization for Edge](#model-optimization-for-edge)
+
 - [Mobile Deployment](#mobile-deployment)
+
 - [Browser-Based Inference](#browser-based-inference)
+
 - [IoT and Embedded Systems](#iot-and-embedded-systems)
+
 - [Federated Learning](#federated-learning)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -488,11 +496,17 @@ for round_num in range(10):
 ### Edge Deployment Checklist
 
 - ✅ Profile model on target device
+
 - ✅ Optimize model size (quantization, pruning)
+
 - ✅ Test accuracy after optimization
+
 - ✅ Implement graceful fallbacks
+
 - ✅ Handle model updates securely
+
 - ✅ Monitor on-device performance
+
 - ✅ Battery/power consumption testing
 
 ### Model Size Guidelines

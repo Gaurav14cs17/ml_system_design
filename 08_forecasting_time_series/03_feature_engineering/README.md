@@ -7,15 +7,25 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Temporal Features](#temporal-features)
+
 - [Lag Features](#lag-features)
+
 - [Rolling Window Features](#rolling-window-features)
+
 - [Expanding Window Features](#expanding-window-features)
+
 - [Seasonal Features](#seasonal-features)
+
 - [Trend Features](#trend-features)
+
 - [External Features](#external-features)
+
 - [Feature Selection](#feature-selection)
+
 - [Production Considerations](#production-considerations)
 
 ---
@@ -810,6 +820,7 @@ Effective time series feature engineering:
 ### Next Steps
 
 - [04_statistical_methods](../04_statistical_methods/) - Classical forecasting methods
+
 - [05_machine_learning](../05_machine_learning/) - ML-based approaches
 
 ---

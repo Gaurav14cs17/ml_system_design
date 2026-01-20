@@ -288,7 +288,9 @@ w_{\text{negative}} = \frac{1}{\text{Sample Rate}}
 ## Next Steps
 
 Continue to the next modules:
+
 - [04_feature_engineering](../04_feature_engineering/README.md) — Design features
+
 - [05_model_architecture](../05_model_architecture/README.md) — Build models
 
 ---

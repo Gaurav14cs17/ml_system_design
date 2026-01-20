@@ -1,13 +1,21 @@
 # Data Collection & Labeling for Content Moderation
 
 ## Table of Contents
+
 - [Data Strategy Overview](#data-strategy-overview)
+
 - [Data Sources](#data-sources)
+
 - [Labeling Taxonomy](#labeling-taxonomy)
+
 - [Annotation Guidelines](#annotation-guidelines)
+
 - [Labeling Workflows](#labeling-workflows)
+
 - [Quality Assurance](#quality-assurance)
+
 - [Handling Imbalanced Data](#handling-imbalanced-data)
+
 - [Data Privacy & Ethics](#data-privacy-ethics)
 
 ---
@@ -64,9 +72,13 @@ class ContentSampler:
 
 **Sources:**
 - Random samples (distribution matching)
+
 - User-reported content (high violation rate)
+
 - Model-flagged uncertain cases
+
 - Appeal queue content
+
 - Previously actioned content
 
 ### 2. Synthetic Data Generation
@@ -257,18 +269,27 @@ example_label = ContentLabel(
 ## When Context Matters
 
 ### Example 1: "I'm going to kill you"
+
 - In gaming context (during gameplay) → NOT a violation
+
 - Directed at specific user with history → Violation (threat)
+
 - In a movie quote context → NOT a violation
 
 ### Example 2: Swastika symbol
+
 - In historical/educational content → NOT a violation
+
 - Used as hate symbol with context → Violation
+
 - In Hindu/Buddhist religious context → NOT a violation
 
 ### Example 3: Graphic injury image
+
 - In medical education context → Allow with warning
+
 - Posted to shock/disturb → Violation (gore)
+
 - News reporting on accident → Allow with warning
 
 ```

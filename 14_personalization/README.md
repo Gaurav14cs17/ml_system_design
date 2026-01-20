@@ -86,9 +86,13 @@ The classic approach decomposes the interaction matrix into latent factors:
 ```
 
 Where:
+
 - \(\mathbf{R} \in \mathbb{R}^{m \times n}\): User-item interaction matrix
+
 - \(\mathbf{P} \in \mathbb{R}^{m \times k}\): User latent factors
+
 - \(\mathbf{Q} \in \mathbb{R}^{n \times k}\): Item latent factors
+
 - \(k\): Embedding dimension (typically 32-256)
 
 **Optimization Objective:**
@@ -135,8 +139,11 @@ Where \(\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj}\) represents the preference 
 ```
 
 Where:
+
 - \(f_\theta\): User encoder network
+
 - \(g_\phi\): Item encoder network
+
 - \(\text{sim}\): Dot product or cosine similarity
 
 **Attention Mechanism (Transformers):**
@@ -202,8 +209,11 @@ For large-scale retrieval, exact nearest neighbor search is infeasible. ANN algo
 ```
 
 Common approaches:
+
 - **HNSW** (Hierarchical Navigable Small World): \(O(\log n)\) search
+
 - **IVF** (Inverted File Index): Cluster-based partitioning
+
 - **PQ** (Product Quantization): Compressed representations
 
 ---
@@ -262,8 +272,11 @@ Common approaches:
 ### Industry Blogs
 
 - **Netflix Tech Blog** — Large-scale recommendation architecture
+
 - **Spotify Engineering** — Music personalization at scale
+
 - **Pinterest Engineering** — Visual recommendations with PinSage
+
 - **YouTube/Google** — Deep learning for video recommendations
 
 ---

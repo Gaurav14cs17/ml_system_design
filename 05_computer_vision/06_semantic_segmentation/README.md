@@ -540,6 +540,7 @@ class SegmentationTrainer:
 ## 🔗 Next Steps
 
 - [Instance Segmentation →](../07_instance_segmentation/) - Mask R-CNN, SOLO
+
 - [Deployment →](../15_deployment/) - Optimizing for production
 
 ---

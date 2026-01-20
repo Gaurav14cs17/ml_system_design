@@ -679,7 +679,9 @@ Netflix uses content-based features to personalize thumbnails:
 ### 3. Amazon Product Recommendations
 
 - Extract features: category, brand, price range, specifications
+
 - Combine with product descriptions and reviews
+
 - Match against user's browsing and purchase history
 
 ---
@@ -764,10 +766,13 @@ Content-Based Filtering is a powerful technique that leverages item features to 
 | [Sentence Transformers for Semantic Search](https://www.youtube.com/watch?v=OATCgQtNX2o) | James Briggs | 20 min |
 
 ### Deep Dive Tutorials
+
 - **[Sentdex](https://www.youtube.com/@sentdex)** - Python NLP tutorials
+
 - **[Krish Naik](https://www.youtube.com/@krishnaik06)** - NLP & feature extraction
 
 ### Papers with Video Explanations
+
 - **Item-Based CF** - Original Amazon paper explained on Yannic Kilcher
 
 ---

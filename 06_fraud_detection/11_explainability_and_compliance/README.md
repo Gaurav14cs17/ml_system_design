@@ -773,52 +773,77 @@ class FairnessAnalyzer:
 # Model Card: Fraud Detection Model v1.2.0
 
 ## Model Details
+
 - Model Name: fraud_detection_xgboost
+
 - Version: 1.2.0
 - Type: XGBoost Classifier
+
 - Training Date: 2024-01-15
 - Owner: ML Platform Team
+
 - Contact: ml-platform@example.com
 
 ## Intended Use
+
 - Primary Use: Real-time transaction fraud detection
+
 - Users: Payment processing systems
+
 - Out of Scope: Account takeover detection, chargeback prediction
 
 ## Training Data
+
 - Source: Historical transactions (2023-01-01 to 2024-01-01)
+
 - Size: 100M transactions
+
 - Fraud Rate: 0.3%
+
 - Preprocessing: SMOTE oversampling, feature normalization
+
 - Sensitive Attributes Removed: race, gender, zip_code
 
 ## Evaluation Data
+
 - Holdout Period: 2024-01-01 to 2024-01-15
 - Size: 5M transactions
 
 ## Performance Metrics
+
 - PR-AUC: 0.52
 - ROC-AUC: 0.95
 - Precision @ 1% FPR: 0.45
 - Recall @ 95% Precision: 0.32
 
 ## Fairness Metrics
+
 - Demographic Parity: Within 10% across age groups
+
 - Equal Opportunity: Within 5% across income brackets
 
 ## Limitations
+
 - May underperform on new merchant types
+
 - Requires minimum 5 transaction history for optimal performance
+
 - Not validated for transactions > $50,000
 
 ## Ethical Considerations
+
 - Model does not use protected attributes
+
 - Regular bias audits performed quarterly
+
 - Adverse action explanations provided for all declines
 
 ## Monitoring
+
 - Score distribution monitored hourly
+
 - Feature drift monitored daily
+
 - Full retraining monthly
 
 ```

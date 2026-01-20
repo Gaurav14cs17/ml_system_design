@@ -7,13 +7,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Point Forecast Metrics](#point-forecast-metrics)
+
 - [Probabilistic Forecast Metrics](#probabilistic-forecast-metrics)
+
 - [Scale-Independent Metrics](#scale-independent-metrics)
+
 - [Business-Oriented Metrics](#business-oriented-metrics)
+
 - [Visualization Techniques](#visualization-techniques)
+
 - [Backtesting Strategies](#backtesting-strategies)
+
 - [Common Pitfalls](#common-pitfalls)
 
 ---
@@ -154,7 +162,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 **Properties:**
 - Same units as the target variable
+
 - Robust to outliers (compared to MSE)
+
 - Minimized by the **median** of the predictive distribution
 
 #### Mean Squared Error (MSE) and Root Mean Squared Error (RMSE)
@@ -167,7 +177,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 **Properties:**
 - MSE minimized by the **mean** of the predictive distribution
+
 - Penalizes large errors quadratically
+
 - RMSE has same units as target; MSE has squared units
 
 #### Mean Absolute Percentage Error (MAPE)
@@ -179,7 +191,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 **Properties:**
 - Scale-independent (percentage)
+
 - ⚠️ Undefined when $y\_i = 0$
+
 - ⚠️ Asymmetric: penalizes under-forecasts more than over-forecasts
 
 #### Symmetric MAPE (SMAPE)
@@ -191,7 +205,9 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 **Properties:**
 - Bounded: $0\% \leq \text{SMAPE} \leq 200\%$
+
 - More symmetric than MAPE
+
 - Still problematic when both $y\_i$ and $\hat{y}\_i$ are near zero
 
 #### Mean Absolute Scaled Error (MASE)
@@ -203,8 +219,11 @@ Let $y\_1, y\_2, \ldots, y\_n$ be the actual values and $\hat{y}\_1, \hat{y}\_2,
 
 **Properties:**
 - Scale-free: can compare across different series
+
 - $\text{MASE} < 1$: better than naive seasonal forecast
+
 - $\text{MASE} > 1$: worse than naive seasonal forecast
+
 - Denominator uses in-sample seasonal naive MAE
 
 ### Core Metrics Implementation
@@ -885,6 +904,7 @@ Effective evaluation requires:
 ### Next Steps
 
 - [08_deployment](../08_deployment/) - Production deployment
+
 - [09_case_studies](../09_case_studies/) - Real-world examples
 
 ---

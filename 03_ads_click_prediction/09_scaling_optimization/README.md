@@ -44,7 +44,9 @@ S = \frac{1}{(1-p) + \frac{p}{n}}
 ```
 
 where:
+
 - $p$ = parallelizable fraction
+
 - $n$ = number of processors
 
 **Example**: 90% parallelizable with 10 machines:
@@ -62,7 +64,9 @@ C(N) = \frac{N}{1 + \alpha(N-1) + \beta N(N-1)}
 ```
 
 where:
+
 - $\alpha$ = contention parameter
+
 - $\beta$ = coherency parameter
 
 ---
@@ -187,8 +191,11 @@ B^* = \sqrt{\frac{T_{\text{setup}}}{T_{\text{marginal}}}}
 ```
 
 **Optimization strategies**:
+
 - Increase batch size
+
 - Use tensor cores (FP16)
+
 - Overlap compute and memory
 
 ### Sharding
@@ -256,8 +263,11 @@ Minimizes rebalancing when adding/removing nodes.
 ```
 
 **Risk**: Interruption, mitigate with:
+
 - Mixed instance types
+
 - Graceful shutdown handling
+
 - Checkpointing
 
 ### Reserved Capacity

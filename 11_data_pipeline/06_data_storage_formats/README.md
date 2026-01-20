@@ -5,9 +5,13 @@
 ## 🎯 Overview
 
 Choosing the right storage solution and data format is crucial for ML systems. The wrong choice can lead to:
+
 - Slow training times
+
 - High storage costs
+
 - Data access bottlenecks
+
 - Scalability limitations
 
 ![Diagram 1](images/diagram_01.svg)
@@ -35,8 +39,11 @@ Choosing the right storage solution and data format is crucial for ML systems. T
 
 **Why Parquet for ML:**
 - **Column Pruning**: Read only needed columns (critical for wide tables)
+
 - **Predicate Pushdown**: Filter at file level using statistics
+
 - **Compression**: Typically 10x smaller than CSV
+
 - **Type Safety**: Schema embedded in file
 
 ```python

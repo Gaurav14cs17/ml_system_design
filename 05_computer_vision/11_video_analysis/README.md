@@ -348,6 +348,7 @@ class VideoClassifier:
 ## 🔗 Next Steps
 
 - [Generative Models →](../12_generative_models/) - Video generation
+
 - [Deployment →](../15_deployment/) - Real-time video processing
 
 ---

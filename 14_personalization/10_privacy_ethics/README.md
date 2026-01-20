@@ -1098,24 +1098,37 @@ class GDPRCompliance:
 ### Q2: How do you detect and mitigate bias in recommendations?
 
 **Detection**:
+
 - Demographic parity analysis
+
 - Popularity distribution analysis
+
 - Filter bubble detection
+
 - A/B testing across user segments
 
 **Mitigation**:
+
 - Inverse propensity scoring
+
 - Fairness constraints in optimization
+
 - Diversity injection
+
 - Calibration to user preferences
 
 ### Q3: What are the ethical implications of recommendation systems?
 
 **Key Considerations**:
+
 - **Autonomy**: Are we manipulating user choices?
+
 - **Transparency**: Can users understand why they see certain recommendations?
+
 - **Fairness**: Equal treatment across user groups
+
 - **Societal impact**: Filter bubbles, radicalization
+
 - **Data rights**: User control over their data
 
 ---

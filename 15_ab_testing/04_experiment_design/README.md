@@ -554,9 +554,13 @@ EXPERIMENT_SPEC_TEMPLATE = """
 # Experiment Specification
 
 ## Metadata
+
 - **Experiment ID**: {experiment_id}
+
 - **Owner**: {owner}
+
 - **Created**: {created_date}
+
 - **Status**: {status}
 
 ## Summary
@@ -567,14 +571,19 @@ EXPERIMENT_SPEC_TEMPLATE = """
 {hypothesis}
 
 ### Expected Impact
+
 - Primary metric: {primary_metric} expected to change by {expected_change}
+
 - Business impact: {business_impact}
 
 ## Design
 
 ### Population
+
 - **Eligible users**: {eligible_users}
+
 - **Exclusions**: {exclusions}
+
 - **Estimated daily traffic**: {daily_traffic}
 
 ### Variants
@@ -594,25 +603,38 @@ EXPERIMENT_SPEC_TEMPLATE = """
 {guardrail_metrics}
 
 ## Timeline
+
 - **Start date**: {start_date}
+
 - **Minimum duration**: {min_duration}
+
 - **Expected end date**: {end_date}
+
 - **Ramp schedule**: {ramp_schedule}
 
 ## Analysis Plan
+
 - **Statistical test**: {statistical_test}
+
 - **Significance level (α)**: {alpha}
+
 - **Power (1-β)**: {power}
+
 - **Minimum detectable effect**: {mde}
+
 - **Correction for multiple comparisons**: {correction_method}
 
 ## Risks and Mitigations
 {risks}
 
 ## Approvals
+
 - [ ] Data Science Review
+
 - [ ] Engineering Review
+
 - [ ] Product Review
+
 - [ ] Privacy Review (if applicable)
 
 ## Results

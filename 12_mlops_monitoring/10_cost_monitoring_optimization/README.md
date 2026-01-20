@@ -11,8 +11,11 @@
 ## 🎯 Learning Objectives
 
 - Track and attribute ML infrastructure costs
+
 - Optimize compute costs for training and inference
+
 - Implement cost-aware model selection
+
 - Build cost dashboards and alerts
 
 ---

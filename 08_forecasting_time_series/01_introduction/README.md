@@ -7,13 +7,21 @@
 </p>
 
 ## Table of Contents
+
 - [What is Time Series Data?](#what-is-time-series-data)
+
 - [Why Time Series Forecasting Matters](#why-time-series-forecasting-matters)
+
 - [Types of Time Series Problems](#types-of-time-series-problems)
+
 - [Components of Time Series](#components-of-time-series)
+
 - [Stationarity and Its Importance](#stationarity-and-its-importance)
+
 - [Common Applications](#common-applications)
+
 - [Challenges in Time Series Forecasting](#challenges-in-time-series-forecasting)
+
 - [The ML System Design Perspective](#the-ml-system-design-perspective)
 
 ---
@@ -495,7 +503,9 @@ And the **autocorrelation function (ACF)** is:
 
 **Properties:**
 - $\rho(0) = 1$
+
 - $|\rho(h)| \leq 1$
+
 - $\rho(h) = \rho(-h)$ (symmetry)
 
 ### Types of Stationarity
@@ -641,23 +651,35 @@ mindmap
 ### Detailed Use Cases
 
 #### 1. Financial Markets
+
 - **Stock Price Prediction**: Forecasting future prices for trading strategies
+
 - **Volatility Forecasting**: Predicting market volatility for risk management
+
 - **Fraud Detection**: Identifying anomalous transaction patterns
 
 #### 2. Retail & E-commerce
+
 - **Demand Forecasting**: Predicting product demand for inventory optimization
+
 - **Sales Prediction**: Forecasting revenue for budgeting and planning
+
 - **Customer Behavior**: Predicting customer lifetime value trends
 
 #### 3. Energy & Utilities
+
 - **Load Forecasting**: Predicting electricity demand for grid management
+
 - **Renewable Energy**: Forecasting solar/wind generation
+
 - **Price Forecasting**: Predicting energy market prices
 
 #### 4. Healthcare
+
 - **Patient Volume**: Predicting hospital admissions
+
 - **Disease Outbreaks**: Forecasting epidemic spread
+
 - **Resource Planning**: Predicting equipment and staff needs
 
 ---
@@ -725,16 +747,22 @@ Building production-ready time series forecasting systems requires careful consi
 ### Key Design Considerations
 
 #### 1. Data Pipeline Design
+
 - **Real-time vs Batch**: Choose based on latency requirements
+
 - **Data Validation**: Ensure data quality and consistency
+
 - **Feature Store**: Centralize feature computation and serving
 
 #### 2. Model Selection Strategy
 ![Diagram 5](images/diagram_05.svg)
 
 #### 3. Serving Infrastructure
+
 - **Batch Predictions**: Pre-compute forecasts on schedule
+
 - **Online Predictions**: Real-time inference for dynamic needs
+
 - **Caching Strategy**: Cache forecasts with appropriate TTL
 
 #### 4. Monitoring & Maintenance
@@ -780,8 +808,11 @@ Time series forecasting is a critical capability in ML systems, requiring unders
 ### Next Steps
 
 Continue your learning journey:
+
 - [02_data_preprocessing](../02_data_preprocessing/) - Learn to prepare time series data
+
 - [03_feature_engineering](../03_feature_engineering/) - Create powerful temporal features
+
 - [04_statistical_methods](../04_statistical_methods/) - Master ARIMA and classical methods
 
 ---

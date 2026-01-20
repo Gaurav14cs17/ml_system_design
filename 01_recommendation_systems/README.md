@@ -19,78 +19,135 @@ This course provides an in-depth exploration of recommendation systems, from fou
 ## 📖 Module Summaries
 
 ### [1. Introduction to Recommendation Systems](./01_introduction/README.md)
+
 - What are recommendation systems and why they matter
+
 - Historical evolution from Tapestry to modern transformers
+
 - Core components and system architecture overview
+
 - Types of recommendation approaches
+
 - Key challenges (cold start, scalability, filter bubbles)
+
 - Industry applications and metrics
 
 ### [2. Content-Based Filtering](./02_content_based_filtering/README.md)
+
 - Feature extraction from text, images, and metadata
+
 - TF-IDF, word embeddings, and deep features
+
 - Similarity metrics (cosine, Jaccard, Euclidean)
+
 - Building and updating user profiles
+
 - Complete Python implementation
+
 - Pros, cons, and mitigation strategies
 
 ### [3. Collaborative Filtering](./03_collaborative_filtering/README.md)
+
 - User-based vs item-based approaches
+
 - Similarity computation methods
+
 - Matrix factorization (SVD, ALS)
+
 - Memory-based vs model-based methods
+
 - Handling sparsity and scalability
+
 - Production implementations
 
 ### [4. Hybrid Recommendation Systems](./04_hybrid_systems/README.md)
+
 - Why combine multiple approaches
+
 - Hybridization strategies (weighted, switching, cascade, meta)
+
 - Netflix, YouTube, Spotify architectures
+
 - Implementation patterns
+
 - Handling cold start with hybrids
 
 ### [5. Feature Engineering](./05_feature_engineering/README.md)
+
 - User features (demographics, behavioral, preferences)
+
 - Item features (content, popularity, quality signals)
+
 - Interaction features (history, session, context)
+
 - Feature encoding techniques
+
 - Embeddings and representation learning
+
 - Feature selection and importance
 
 ### [6. Model Training & Evaluation](./06_model_training_evaluation/README.md)
+
 - Training strategies (pointwise, pairwise, listwise)
+
 - Loss functions for rating and ranking
+
 - Offline metrics (Precision, Recall, NDCG, MRR)
+
 - Beyond-accuracy metrics (coverage, diversity, novelty)
+
 - Online evaluation and A/B testing
+
 - Cross-validation strategies for RecSys
+
 - Hyperparameter tuning
 
 ### [7. Deep Learning for Recommendations](./07_deep_learning/README.md)
+
 - Neural Collaborative Filtering (NCF)
+
 - Sequence models (GRU4Rec, SASRec)
+
 - Attention mechanisms and transformers
+
 - Two-tower architecture for retrieval
+
 - Graph neural networks (LightGCN, PinSage)
+
 - BERT4Rec and transformer-based models
 
 ### [8. System Architecture & Deployment](./08_system_architecture/README.md)
+
 - Production architecture patterns
+
 - Data pipelines (batch + streaming)
+
 - Feature stores and model serving
+
 - Candidate generation at scale (FAISS, ANN)
+
 - Multi-stage ranking pipelines
+
 - Caching strategies
+
 - Monitoring and observability
+
 - Scaling considerations
 
 ### [9. Real-World Case Studies](./09_case_studies/README.md)
+
 - Netflix: Personalized video ranking and artwork
+
 - YouTube: Two-stage deep learning system
+
 - Amazon: Item-to-item collaborative filtering
+
 - Spotify: Discover Weekly hybrid approach
+
 - TikTok: Content-first For You Page
+
 - Pinterest: PinSage graph neural networks
+
 - Key lessons and common patterns
 
 ---
@@ -148,27 +205,43 @@ By completing this course, you will be able to:
 | **Research** | ACM RecSys, Weights & Biases, DeepMind |
 
 ### 📖 Books
+
 - "Recommender Systems Handbook" - Ricci et al.
+
 - "Practical Recommender Systems" - Kim Falk
+
 - "Deep Learning for Recommender Systems" - Zhang et al.
 
 ### 📄 Top Papers
+
 - [Matrix Factorization Techniques for Recommender Systems](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)
+
 - [Deep Neural Networks for YouTube Recommendations](https://research.google/pubs/pub45530/)
+
 - [Wide & Deep Learning for Recommender Systems](https://arxiv.org/abs/1606.07792)
+
 - [BERT4Rec: Sequential Recommendation with BERT](https://arxiv.org/abs/1904.06690)
+
 - [LightGCN: Simplifying and Powering GCN for Recommendation](https://arxiv.org/abs/2002.02126)
 
 ### 🎓 Online Courses
+
 - Stanford CS246: Mining Massive Data Sets
+
 - Coursera: Recommender Systems Specialization
+
 - Fast.ai: Practical Deep Learning for Coders
+
 - Google ML Crash Course: Recommendation Systems
 
 ### 🛠️ Open-Source Libraries
+
 - [Surprise](https://surpriselib.com/) - Simple Python library
+
 - [LensKit](https://lenskit.org/) - Research toolkit
+
 - [RecBole](https://recbole.io/) - Unified framework
+
 - [Microsoft Recommenders](https://github.com/microsoft/recommenders)
 
 ---
@@ -186,8 +259,11 @@ By completing this course, you will be able to:
 ## 📝 Notes
 
 - Each module is self-contained but builds on previous concepts
+
 - Code examples are in Python with PyTorch
+
 - **96 SVG diagrams** for visual understanding
+
 - Real-world examples from FAANG companies included
 
 ## 🖼️ Visual Content
@@ -212,8 +288,11 @@ Each module includes professional SVG diagrams:
 ## 🤝 Contributing
 
 Found an error or want to add content? Feel free to:
+
 - Open an issue
+
 - Submit a pull request
+
 - Share feedback
 
 ---

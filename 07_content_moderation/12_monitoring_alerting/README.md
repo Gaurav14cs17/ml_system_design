@@ -1,11 +1,17 @@
 # Monitoring & Alerting for Content Moderation
 
 ## Table of Contents
+
 - [Monitoring Strategy](#monitoring-strategy)
+
 - [Key Metrics](#key-metrics)
+
 - [Alerting Rules](#alerting-rules)
+
 - [Dashboards](#dashboards)
+
 - [Incident Response](#incident-response)
+
 - [Model Monitoring](#model-monitoring)
 
 ---
@@ -408,12 +414,17 @@ class AlertManager:
 # Incident Runbook: High Moderation Latency
 
 ## Symptoms
+
 - P99 latency > 500ms
+
 - Alert: HighLatency or CriticalLatency triggered
 
 ## Impact
+
 - Delayed content publishing
+
 - Poor user experience
+
 - Potential content queue buildup
 
 ## Diagnosis Steps
@@ -459,7 +470,9 @@ class AlertManager:
    ```
 
 ## Escalation
+
 - After 15 min unresolved: Page ML team lead
+
 - After 30 min unresolved: Page VP Engineering
 
 ```

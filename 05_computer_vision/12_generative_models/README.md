@@ -302,6 +302,7 @@ images = generator.generate(
 ## 🔗 Next Steps
 
 - [OCR →](../13_ocr/) - Text in images
+
 - [Deployment →](../15_deployment/) - Serving generative models
 
 ---

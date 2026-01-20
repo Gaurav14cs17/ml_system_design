@@ -670,6 +670,7 @@ class OfflineEvaluator:
 ## Next Steps
 
 - [07_serving_infrastructure](../07_serving_infrastructure/README.md) - Serving at scale
+
 - [08_evaluation_metrics](../08_evaluation_metrics/README.md) - Comprehensive evaluation
 
 ---

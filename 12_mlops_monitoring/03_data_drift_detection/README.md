@@ -11,9 +11,13 @@
 ## 🎯 Learning Objectives
 
 - Understand what data drift is and why it matters
+
 - Master statistical methods for drift detection
+
 - Learn the mathematical foundations behind drift metrics
+
 - Implement drift detection for numerical and categorical features
+
 - Set up automated drift monitoring pipelines
 
 ---
@@ -51,7 +55,9 @@
 ### The Drift Detection Problem
 
 Given two samples:
+
 - **Reference sample**: \( X_{ref} = \{x_1, x_2, ..., x_n\} \) from training distribution
+
 - **Current sample**: \( X_{curr} = \{y_1, y_2, ..., y_m\} \) from production
 
 We want to test whether both samples come from the same distribution:
@@ -75,8 +81,11 @@ D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\fr
 
 **Properties:**
 - Non-negative: \( D_{KL}(P \| Q) \geq 0 \)
+
 - Zero iff \( P = Q \)
+
 - **Not symmetric**: \( D_{KL}(P \| Q) \neq D_{KL}(Q \| P) \)
+
 - Unbounded: Can be infinite if \( Q(i) = 0 \) where \( P(i) > 0 \)
 
 #### Jensen-Shannon Divergence
@@ -92,7 +101,9 @@ Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution.
 
 **Properties:**
 - Symmetric: \( JS(P \| Q) = JS(Q \| P) \)
+
 - Bounded: \( 0 \leq JS(P \| Q) \leq \log(2) \) (or 1 if using log base 2)
+
 - \( \sqrt{JS(P \| Q)} \) is a proper metric
 
 ---
@@ -109,8 +120,11 @@ PSI = \sum_{i=1}^{k} (A_i - E_i) \cdot \ln\left(\frac{A_i}{E_i}\right)
 ```
 
 Where:
+
 - \( k \) = number of bins
+
 - \( A_i \) = actual (current) proportion in bin \( i \)
+
 - \( E_i \) = expected (reference) proportion in bin \( i \)
 
 #### Derivation
@@ -156,6 +170,7 @@ D_n = \sup_x |F_n(x) - G_m(x)|
 ```
 
 Where:
+
 - \( F_n(x) = \frac{1}{n}\sum_{i=1}^{n}\mathbf{1}_{X_i \leq x} \) is the ECDF of sample 1
 - \( G_m(x) = \frac{1}{m}\sum_{j=1}^{m}\mathbf{1}_{Y_j \leq x} \) is the ECDF of sample 2
 
@@ -198,7 +213,9 @@ W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx
 
 **Advantages:**
 - Provides intuitive measure of "distance" between distributions
+
 - Works even when distributions have non-overlapping support
+
 - Preserves geometry of the underlying space
 
 ### 4. Chi-Square Test (for Categorical Data)
@@ -211,7 +228,9 @@ For categorical features, use the chi-square test:
 ```
 
 Where:
+
 - \( O_i \) = observed frequency in category \( i \)
+
 - \( E_i \) = expected frequency in category \( i \)
 
 Under \( H_0 \), \( \chi^2 \sim \chi^2_{k-1} \) with \( k-1 \) degrees of freedom.

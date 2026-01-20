@@ -7,9 +7,13 @@
 ## 🎯 What You'll Learn
 
 - Production-ready feature store patterns
+
 - Security and compliance
+
 - Performance optimization
+
 - Operational excellence
+
 - Common pitfalls to avoid
 
 ---
@@ -301,7 +305,9 @@ class FeatureAuditLogger:
 # RUNBOOK: Stale Features Alert
 
 ## Symptoms
+
 - Alert: "Feature view X is stale"
+
 - Features not updated for >2x expected interval
 
 ## Diagnosis Steps
@@ -324,7 +330,9 @@ class FeatureAuditLogger:
    - Optimize job
 
 ## Escalation
+
 - P1: Page on-call after 15 min
+
 - P2: Slack #feature-store-alerts
 
 ```
@@ -567,8 +575,11 @@ DEPLOYMENT
 ## 📚 Further Resources
 
 - [Feast Documentation](https://docs.feast.dev/)
+
 - [Feature Stores for ML Book](https://www.oreilly.com/library/view/feature-stores-for/9781098143732/)
+
 - [MLOps Community](https://mlops.community/)
+
 - [Made With ML](https://madewithml.com/)
 
 ---

@@ -198,8 +198,11 @@ where Error Budget Rate = $(1 - \text{SLO Target}) / \text{Period}$
 | 10x | Critical, exhaust in days |
 
 **Alert thresholds**:
+
 - 14.4x burn rate for 1 hour → Page
+
 - 6x burn rate for 6 hours → Page
+
 - 1x burn rate for 3 days → Ticket
 
 ---
@@ -246,8 +249,11 @@ Common metrics: KS statistic, Jensen-Shannon divergence.
 ### A/B Test Monitoring
 
 During experiments, monitor:
+
 - Sample ratio mismatch (SRM)
+
 - Pre-experiment period balance
+
 - Novelty effects
 
 ```math
@@ -369,6 +375,7 @@ Maintain > 30% headroom for traffic spikes.
 ## Next Steps
 
 Continue to the next module:
+
 - [09_scaling_optimization](../09_scaling_optimization/README.md) — Scale and optimize
 
 ---

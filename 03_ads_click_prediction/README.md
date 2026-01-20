@@ -19,13 +19,21 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
+
 - [System Architecture](#-system-architecture)
+
 - [Mathematical Foundations](#-mathematical-foundations)
+
 - [Learning Path](#-learning-path)
+
 - [Module Structure](#-module-structure)
+
 - [Key Design Decisions](#-key-design-decisions)
+
 - [Key Metrics](#-key-metrics)
+
 - [Resources](#-resources)
+
 - [Interview Preparation](#-interview-preparation)
 
 ---
@@ -41,8 +49,11 @@ Ads Click Prediction (CTR) systems power the core revenue engine of digital adve
 ### Who This Is For
 
 - 👨‍💻 **ML Engineers** building production CTR systems
+
 - 🎓 **Interview Candidates** preparing for FAANG system design
+
 - 🔬 **Data Scientists** transitioning to production ML
+
 - 💼 **Tech Leads** designing ad tech infrastructure
 
 ---
@@ -93,8 +104,11 @@ The primary training objective:
 ```
 
 where:
+
 - $y\_i \in \{0, 1\}$ is the true label (click/no-click)
+
 - $\hat{y}\_i \in [0, 1]$ is the predicted probability
+
 - $N$ is the batch size
 
 #### Weighted Cross-Entropy (for class imbalance)
@@ -182,7 +196,9 @@ Efficient computation in $O(kd)$:
 ```
 
 where:
+
 - Wide: $\mathbf{w}\_{wide}^T [\mathbf{x}, \phi(\mathbf{x})]$ — memorization
+
 - Deep: $a^{(L)} = \text{DNN}(\mathbf{x}\_{dense})$ — generalization
 
 #### Deep & Cross Network (DCN)
@@ -433,13 +449,21 @@ For auction bidding:
 ## 📈 Progress Tracking
 
 - [ ] Module 01: Problem Definition
+
 - [ ] Module 02: System Requirements
+
 - [ ] Module 03: Data Engineering
+
 - [ ] Module 04: Feature Engineering
+
 - [ ] Module 05: Model Architecture
+
 - [ ] Module 06: Serving Infrastructure
+
 - [ ] Module 07: A/B Testing
+
 - [ ] Module 08: Monitoring
+
 - [ ] Module 09: Scaling & Optimization
 
 ---

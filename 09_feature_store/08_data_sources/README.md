@@ -7,9 +7,13 @@
 ## 🎯 What You'll Learn
 
 - Types of data sources
+
 - Ingestion patterns (batch and streaming)
+
 - Data connectors
+
 - Change Data Capture (CDC)
+
 - Data quality at ingestion
 
 ---

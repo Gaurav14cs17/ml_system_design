@@ -85,8 +85,11 @@ z_{\text{MAD}} = \frac{x - \tilde{x}}{1.4826 \cdot \text{MAD}}
 ```
 
 Where:
+
 - $\tilde{x}$ is the median
+
 - $\text{MAD} = \text{median}(|x\_i - \tilde{x}|)$
+
 - $1.4826$ is a scaling factor for normal distributions
 
 ### Velocity Features: Sliding Window Aggregations
@@ -137,7 +140,9 @@ Where $p\_i$ is the proportion of category $i$.
 ### Graph-Based Features
 
 For transaction networks, define:
+
 - **Nodes**: Users, merchants, devices, cards
+
 - **Edges**: Transactions or shared attributes
 
 #### PageRank for Risk Propagation
@@ -1397,9 +1402,13 @@ Continue to [Chapter 4: Model Architecture →](../04_model_architecture/)
 ## Code Examples
 
 See the `code/` directory for:
+
 - `feature_extractors.py` - Complete feature extraction classes
+
 - `velocity_features.py` - Time-windowed aggregation utilities
+
 - `graph_features.py` - Network feature computation
+
 - `feature_store_integration.py` - Feature store examples
 
 ---

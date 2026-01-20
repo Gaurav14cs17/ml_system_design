@@ -5,13 +5,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Native Framework Formats](#native-framework-formats)
+
 - [ONNX: The Universal Format](#onnx-the-universal-format)
+
 - [TensorRT: NVIDIA Optimization](#tensorrt-nvidia-optimization)
+
 - [OpenVINO: Intel Optimization](#openvino-intel-optimization)
+
 - [Model Conversion Pipeline](#model-conversion-pipeline)
+
 - [Optimization Techniques](#optimization-techniques)
+
 - [Best Practices](#best-practices)
 
 ---

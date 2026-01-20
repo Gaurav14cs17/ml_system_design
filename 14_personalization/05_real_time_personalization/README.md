@@ -1025,27 +1025,38 @@ class LowLatencyModelServer:
 ### Case Study 1: TikTok's Real-Time Feed
 
 **Key Features**:
+
 - Updates recommendations after **every scroll**
 - Dwell time measured to milliseconds
+
 - Model updates in real-time based on engagement
 
 **Architecture**:
+
 - Edge inference for initial candidates
+
 - Centralized ranking with real-time features
+
 - Continuous A/B testing
 
 ### Case Study 2: Amazon's Real-Time Recommendations
 
 **"Customers who viewed this also viewed"**:
+
 - Updated within seconds of viewing
+
 - Session-based signals heavily weighted
+
 - Cart composition triggers complementary items
 
 ### Case Study 3: Netflix's Row Optimization
 
 **Real-time row selection**:
+
 - Different rows shown based on session behavior
+
 - Thumbnail selection personalized per user
+
 - Time-of-day and device context
 
 ---

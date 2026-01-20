@@ -296,6 +296,7 @@ class MultiPersonPose:
 ## 🔗 Next Steps
 
 - [Video Analysis →](../11_video_analysis/) - Temporal pose analysis
+
 - [Deployment →](../15_deployment/) - Real-time optimization
 
 ---

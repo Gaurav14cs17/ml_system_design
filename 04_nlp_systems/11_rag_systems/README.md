@@ -516,7 +516,9 @@ recall = evaluator.retrieval_recall_at_k(retrieved, relevant, k=5)
 ## 🔗 Related Topics
 
 - [Search & Retrieval](../09_search_and_retrieval/) - Retrieval fundamentals
+
 - [LLM Systems](../10_llm_systems/) - LLM serving
+
 - [Embeddings](../02_embeddings/) - Vector representations
 
 ---

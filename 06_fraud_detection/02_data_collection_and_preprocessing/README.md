@@ -898,9 +898,13 @@ Continue to [Chapter 3: Feature Engineering →](../03_feature_engineering/)
 ## Code Examples
 
 See the `code/` directory for:
+
 - `data_pipeline.py` - Complete data pipeline implementation
+
 - `validators.py` - Data quality validators
+
 - `preprocessors.py` - Preprocessing utilities
+
 - `privacy.py` - Privacy and anonymization tools
 
 ---

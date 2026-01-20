@@ -1,14 +1,23 @@
 # 💾 Caching Strategies
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Cache Types](#cache-types)
+
 - [Response Caching](#response-caching)
+
 - [Feature Caching](#feature-caching)
+
 - [Embedding Caching](#embedding-caching)
+
 - [Cache Invalidation](#cache-invalidation)
+
 - [Distributed Caching](#distributed-caching)
+
 - [Cache Performance](#cache-performance)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -521,11 +530,17 @@ CACHE_SIZE = Gauge(
 ### Caching Checklist
 
 - ✅ Cache at multiple levels (response, feature, embedding)
+
 - ✅ Use appropriate TTLs for each cache type
+
 - ✅ Implement cache warming on deployment
+
 - ✅ Monitor hit rates and latencies
+
 - ✅ Handle cache failures gracefully
+
 - ✅ Use consistent hashing for distribution
+
 - ✅ Implement proper invalidation strategy
 
 ### What NOT to Cache

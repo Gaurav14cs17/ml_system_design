@@ -71,7 +71,9 @@ For each user, hold out the last interaction for testing.
 
 **Properties:**
 - Linear penalty for errors
+
 - More robust to outliers than RMSE
+
 - Range: \([0, r_{\max} - r_{\min}]\)
 
 ### Root Mean Squared Error (RMSE)
@@ -83,7 +85,9 @@ For each user, hold out the last interaction for testing.
 
 **Properties:**
 - Quadratic penalty → large errors matter more
+
 - Same scale as ratings
+
 - Netflix Prize metric (RMSE < 0.8563 goal)
 
 ### Normalized RMSE
@@ -207,8 +211,11 @@ Where \(rel_i^*\) is the \(i\)-th highest relevance score.
 
 **Properties:**
 - Range: \([0, 1]\), higher is better
+
 - Position-aware: earlier positions weighted more
+
 - Handles graded relevance (not just binary)
+
 - Logarithmic discount: position 1 is ~2x more valuable than position 3
 
 **Example Calculation:**
@@ -312,12 +319,16 @@ Where \(p(c)\) is user's historical genre distribution and \(q(c)\) is recommend
 
 **Explicit:**
 - Thumbs up/down ratios
+
 - Star ratings
+
 - Survey responses
 
 **Implicit:**
 - Completion rate (videos, articles)
+
 - Time-to-first-interaction
+
 - Bounce rate
 
 ---
@@ -338,9 +349,13 @@ n = 2 \cdot \left(\frac{z_{1-\alpha/2} + z_{1-\beta}}{\text{MDE} / \sigma}\right
 ```
 
 Where:
+
 - \(\alpha\): Significance level (typically 0.05)
+
 - \(\beta\): Type II error rate (1 - power, typically 0.2)
+
 - MDE: Minimum Detectable Effect
+
 - \(\sigma\): Standard deviation
 
 ### Two-Sample t-Test
@@ -401,8 +416,11 @@ For complex metrics without closed-form variance:
 ### Accuracy vs Diversity
 
 Optimizing pure accuracy leads to:
+
 - Recommending only popular items
+
 - Filter bubbles
+
 - Poor long-tail coverage
 
 **Solution:** Multi-objective optimization:
@@ -451,12 +469,16 @@ Optimizing pure accuracy leads to:
 
 **NDCG:**
 - Handles graded relevance (ratings 1-5)
+
 - Better for explicit feedback systems
+
 - Most common in academic papers
 
 **MAP:**
 - Binary relevance only
+
 - Emphasizes all relevant items equally
+
 - Common in information retrieval
 
 ### Q2: Your offline NDCG improved 10% but online CTR stayed flat. Why?
@@ -490,17 +512,23 @@ Optimizing pure accuracy leads to:
 
 **Short-term:**
 - Skip rate (lower is better)
+
 - Completion rate
+
 - Playlist add rate
 
 **Medium-term:**
 - Daily active users
+
 - Session duration
+
 - Artist discovery rate
 
 **Long-term:**
 - Subscription retention
+
 - User lifetime value
+
 - Artist/genre diversity over time
 
 ---

@@ -366,7 +366,9 @@ def evaluate_translation(hypotheses: List[str], references: List[str]):
 ## 🔗 Related Topics
 
 - [Language Models](../03_language_models/) - Transformer architecture
+
 - [Text Generation](../08_text_generation/) - Generation techniques
+
 - [LLM Systems](../10_llm_systems/) - LLMs for translation
 
 ---

@@ -7,10 +7,15 @@
 ## 🎯 Learning Objectives
 
 By the end of this chapter, you will understand:
+
 - What MLOps monitoring is and why it's critical
+
 - The differences between traditional software monitoring and ML monitoring
+
 - Key components of an ML monitoring system
+
 - The monitoring lifecycle in production ML systems
+
 - Common failure modes in ML systems
 
 ---
@@ -72,16 +77,23 @@ The error is a **statistical quantity** that requires monitoring the production 
 Traditional application performance monitoring (APM) tools like DataDog, New Relic, or Dynatrace are designed for conventional software. They excel at:
 
 - ✅ CPU/Memory utilization
+
 - ✅ Request latency and throughput
+
 - ✅ Error rates and exceptions
+
 - ✅ Service availability
 
 But they **miss critical ML-specific concerns**:
 
 - ❌ Data distribution changes
+
 - ❌ Model performance degradation
+
 - ❌ Feature engineering failures
+
 - ❌ Prediction quality metrics
+
 - ❌ Business metric correlation
 
 ### The ML Monitoring Gap
@@ -163,8 +175,11 @@ A comprehensive ML monitoring system has five key layers:
 
 **What to monitor:**
 - Input feature distributions (per feature PSI)
+
 - Schema violations (type changes, missing fields)
+
 - Data freshness (staleness metrics)
+
 - Missing value rates
 
 **Mathematical formulation:**
@@ -207,7 +222,9 @@ P_k = \text{value at } k\text{-th percentile}
 ```
 
 - **P50**: Median experience
+
 - **P95**: Most users' experience
+
 - **P99**: Tail latency (often 10x P50)
 
 ### 5. Business Monitoring
@@ -287,7 +304,9 @@ Use historical data to set thresholds:
 ```
 
 Where \( k \) depends on desired sensitivity:
+
 - \( k = 2 \): ~5% false positive rate
+
 - \( k = 3 \): ~0.3% false positive rate
 
 ---
@@ -324,7 +343,9 @@ For implementation details, see the accompanying code examples in the `examples/
 ## 📚 Further Reading
 
 - [Google's ML Test Score](https://research.google/pubs/pub46555/) - A rubric for ML production readiness
+
 - [Hidden Technical Debt in ML Systems](https://papers.nips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf) - Classic paper on ML system complexity
+
 - [Monitoring Machine Learning Models in Production](https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/) - Practical guide
 
 ---

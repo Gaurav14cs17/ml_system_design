@@ -5,13 +5,21 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Threat Model](#threat-model)
+
 - [Model Protection](#model-protection)
+
 - [Secure Inference](#secure-inference)
+
 - [Data Privacy](#data-privacy)
+
 - [Differential Privacy](#differential-privacy)
+
 - [Compliance](#compliance)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -556,20 +564,31 @@ class MLAuditLogger:
 ### Security Checklist
 
 - ✅ Encrypt models at rest and in transit
+
 - ✅ Sign and verify model artifacts
+
 - ✅ Implement rate limiting
+
 - ✅ Validate all inputs
+
 - ✅ Use secure communication (TLS)
+
 - ✅ Audit log all access
+
 - ✅ Regular security assessments
 
 ### Privacy Checklist
 
 - ✅ Minimize data collection
+
 - ✅ Anonymize training data
+
 - ✅ Consider differential privacy
+
 - ✅ Implement data retention policies
+
 - ✅ Support right to be forgotten
+
 - ✅ Document data flows
 
 ---

@@ -1,11 +1,17 @@
 # Case Studies in Content Moderation
 
 ## Table of Contents
+
 - [Case Study 1: Social Media Platform](#case-study-1-social-media-platform)
+
 - [Case Study 2: Video Streaming Platform](#case-study-2-video-streaming-platform)
+
 - [Case Study 3: E-commerce Marketplace](#case-study-3-e-commerce-marketplace)
+
 - [Case Study 4: Gaming Platform](#case-study-4-gaming-platform)
+
 - [Case Study 5: Messaging App](#case-study-5-messaging-app)
+
 - [Lessons Learned](#lessons-learned)
 
 ---
@@ -16,8 +22,11 @@
 
 **Background:**
 - 500M+ posts per day across 50+ languages
+
 - Mix of text, images, and video
+
 - Real-time posting requirements (<200ms latency)
+
 - Complex policy with 20+ violation categories
 
 **Architecture:**
@@ -109,8 +118,11 @@ class SocialMediaModerationPipeline:
 
 **Background:**
 - 10,000+ concurrent live streams
+
 - Violations must be caught within 30 seconds
+
 - Categories: nudity, violence, self-harm, hate symbols
+
 - Creator monetization at stake
 
 **Architecture:**
@@ -224,8 +236,11 @@ class LiveStreamModerator:
 
 **Background:**
 - 5M new listings per day
+
 - Prohibited items: weapons, drugs, counterfeit
+
 - Product images + descriptions
+
 - Multi-language (15 primary markets)
 
 **Solution:**
@@ -340,8 +355,11 @@ class ProductModerationPipeline:
 
 **Background:**
 - 50M concurrent players
+
 - Voice chat: 10M active voice channels
+
 - Text chat: 500K messages per minute
+
 - Zero tolerance for harassment and cheating
 
 **Solution:**
@@ -447,8 +465,11 @@ class GamingModerationSystem:
 
 **Background:**
 - End-to-end encryption prevents server-side inspection
+
 - Still need to prevent abuse (spam, CSAM, scams)
+
 - Balance privacy with safety
+
 - Regulatory pressure
 
 **Solution:**

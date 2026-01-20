@@ -31,8 +31,11 @@ Text preprocessing bridges the gap between **human language** and **mathematical
 ### 1. Text as a Mathematical Object
 
 A text document can be formalized as:
+
 - A **sequence** of tokens: $D = (t\_1, t\_2, \ldots, t\_n)$ where $t\_i \in \mathcal{V}$ (vocabulary)
+
 - A **set** of tokens (bag-of-words): $D = \{t\_1, t\_2, \ldots, t\_k\}$ ignoring order
+
 - A **function** mapping positions to tokens: $D: \{1,\ldots,n\} \rightarrow \mathcal{V}$
 
 The vocabulary $\mathcal{V}$ is a finite set of all possible tokens:
@@ -77,7 +80,9 @@ IDF measures how informative a term is across the corpus:
 ```
 
 where:
+
 - $N$ = total number of documents
+
 - $n\_t$ = number of documents containing term $t$
 
 **Smoothed IDF** prevents division by zero and reduces impact of very rare terms:
@@ -97,8 +102,11 @@ The **TF-IDF** weighting combines both measures:
 ```
 
 This score is:
+
 - **High** when $t$ appears frequently in $d$ but rarely in the corpus
+
 - **Low** when $t$ is common across many documents (like "the", "is")
+
 - **Zero** when $t$ doesn't appear in $d$
 
 ### Document Vector Representation
@@ -236,7 +244,9 @@ Unicode defines four normalization forms:
 | **NFKD** | Compatibility Decomposition only | Maximum decomposition |
 
 **Example**: The character "é" can be represented as:
+
 - Single code point: U+00E9 (é)
+
 - Combining sequence: U+0065 U+0301 (e + combining acute accent)
 
 NFC ensures consistent representation.
@@ -522,7 +532,9 @@ where $n$ = text length, $p$ = pattern length, $|\mathcal{V}|$ = vocabulary size
 ## 🔗 Related Topics
 
 - [Embeddings](../02_embeddings/) - What happens after tokenization
+
 - [Language Models](../03_language_models/) - How models consume tokens
+
 - [Text Classification](../04_text_classification/) - Applying preprocessing
 
 ---

@@ -23,11 +23,17 @@ Embeddings are the backbone of modern ML systems. This comprehensive guide cover
 ### What You'll Learn
 
 - 🎯 **Core Concepts**: What embeddings are and why they matter
+
 - 🔤 **Text Embeddings**: Words, sentences, and documents
+
 - 🖼️ **Visual Embeddings**: Images and multi-modal representations
+
 - 🕸️ **Graph Embeddings**: Networks and knowledge graphs
+
 - 🗄️ **Storage & Search**: Vector databases and ANN algorithms
+
 - 🏭 **Production**: Training, evaluation, and deployment at scale
+
 - 🚀 **Applications**: Real-world use cases and implementations
 
 ---
@@ -100,20 +106,30 @@ Embeddings are the backbone of modern ML systems. This comprehensive guide cover
 ## 🛠️ Technologies Covered
 
 ### Embedding Models
+
 - **Text**: Word2Vec, GloVe, FastText, BERT, Sentence-BERT, E5, BGE
+
 - **Vision**: ResNet, ViT, CLIP, DINOv2
 - **Graphs**: Node2Vec, GraphSAGE, GAT, TransE
+
 - **Multi-Modal**: CLIP, CLAP, ImageBind
 
 ### Vector Databases
+
 - **Managed**: Pinecone
+
 - **Self-Hosted**: Milvus, Qdrant, Weaviate, ChromaDB
+
 - **Libraries**: FAISS, Annoy, ScaNN
 
 ### ML Frameworks
+
 - PyTorch, TensorFlow
+
 - Hugging Face Transformers
+
 - Sentence-Transformers
+
 - PyTorch Geometric
 
 ---
@@ -142,8 +158,11 @@ f: \mathcal{X} \rightarrow \mathbb{R}^d
 ```
 
 where:
+
 - $\mathcal{X}$ is the input space (words, images, graphs, etc.)
+
 - $\mathbb{R}^d$ is the $d$-dimensional real-valued embedding space
+
 - The function $f$ preserves semantic relationships
 
 ### The Embedding Hypothesis
@@ -242,8 +261,11 @@ This enables efficient batch similarity computation via matrix multiplication.
 ## 📚 Prerequisites
 
 - Python 3.8+
+
 - Basic understanding of neural networks
+
 - Familiarity with PyTorch or TensorFlow
+
 - (Optional) GPU for training models
 
 ### Recommended Libraries
@@ -276,14 +298,21 @@ pip install numpy pandas scikit-learn
 ## 🔗 Additional Resources
 
 ### Papers
+
 - [Efficient Estimation of Word Representations](https://arxiv.org/abs/1301.3781) (Word2Vec)
+
 - [Sentence-BERT](https://arxiv.org/abs/1908.10084)
+
 - [CLIP](https://arxiv.org/abs/2103.00020)
+
 - [Approximate Nearest Neighbor Search](https://arxiv.org/abs/1603.09320)
 
 ### Tools & Libraries
+
 - [Sentence-Transformers](https://www.sbert.net/)
+
 - [FAISS](https://github.com/facebookresearch/faiss)
+
 - [MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)
 
 ---

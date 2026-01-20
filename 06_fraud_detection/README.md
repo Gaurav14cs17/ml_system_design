@@ -67,7 +67,9 @@ Where $C\_{FN}$ is the cost of missing fraud and $C\_{FP}$ is the cost of blocki
 With fraud rates $\eta \approx 0.1\% - 1\%$, standard metrics fail:
 
 - ❌ **Accuracy**: A model predicting "no fraud" achieves $99\%+$ accuracy
+
 - ✅ **PR-AUC**: Focuses on minority class performance
+
 - ✅ **Precision@Recall**: Business-relevant operating points
 
 ---
@@ -92,10 +94,15 @@ With fraud rates $\eta \approx 0.1\% - 1\%$, standard metrics fail:
 ## 🛠️ Technology Stack
 
 - **Data Processing**: Apache Kafka, Apache Flink, Apache Spark
+
 - **Feature Store**: Feast, Tecton, or custom Redis-based solution
+
 - **ML Framework**: PyTorch, TensorFlow, XGBoost, LightGBM
+
 - **Model Serving**: Triton Inference Server, TensorFlow Serving, Seldon
+
 - **Monitoring**: Prometheus, Grafana, custom ML monitoring
+
 - **Infrastructure**: Kubernetes, Docker, AWS/GCP/Azure
 
 ---
@@ -103,9 +110,13 @@ With fraud rates $\eta \approx 0.1\% - 1\%$, standard metrics fail:
 ## 📖 How to Use This Guide
 
 Each subdirectory contains:
+
 - `README.md` - Comprehensive blog-style explanation
+
 - `code/` - Implementation examples
+
 - `diagrams/` - Architecture and flow diagrams
+
 - `resources/` - Additional reading materials
 
 Start with the [Introduction](./01_introduction/) and progress through each topic sequentially for the best learning experience.

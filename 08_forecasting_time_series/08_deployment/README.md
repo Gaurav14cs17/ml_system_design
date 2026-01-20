@@ -1,13 +1,21 @@
 # Model Deployment and Production Systems
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [System Architecture](#system-architecture)
+
 - [Model Serving Patterns](#model-serving-patterns)
+
 - [Data Pipeline Design](#data-pipeline-design)
+
 - [Monitoring and Alerting](#monitoring-and-alerting)
+
 - [Model Retraining](#model-retraining)
+
 - [Scalability Considerations](#scalability-considerations)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -733,6 +741,7 @@ Production forecasting systems require:
 ### Next Steps
 
 - [09_case_studies](../09_case_studies/) - Real-world examples
+
 - [10_advanced_topics](../10_advanced_topics/) - Advanced techniques
 
 ---

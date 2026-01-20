@@ -1392,7 +1392,9 @@ class FeatureSelector:
 ## Next Steps
 
 Continue to the next sections:
+
 - [05_ranking_models](../05_ranking_models/README.md) - ML models for ranking
+
 - [06_training_pipeline](../06_training_pipeline/README.md) - Training infrastructure
 
 ---

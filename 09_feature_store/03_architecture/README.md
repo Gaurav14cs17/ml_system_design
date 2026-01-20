@@ -11,9 +11,13 @@
 ## 🎯 What You'll Learn
 
 - High-level architecture patterns
+
 - Component deep-dives
+
 - Data flow and synchronization
+
 - Scalability considerations
+
 - Reference architectures
 
 ---

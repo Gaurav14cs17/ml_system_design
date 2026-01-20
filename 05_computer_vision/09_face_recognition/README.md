@@ -458,6 +458,7 @@ class FaceRecognitionSystem:
 ## 🔗 Next Steps
 
 - [Pose Estimation →](../10_pose_estimation/) - Human body analysis
+
 - [Deployment →](../15_deployment/) - Privacy considerations
 
 ---

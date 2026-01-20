@@ -38,8 +38,11 @@ n ∝ variance      (More variable metrics need more samples)
 n ∝ (z_α + z_β)²  (Higher confidence/power need more samples)
 
 Example Impact:
+
 - Halving MDE → 4x sample size needed
+
 - Doubling variance → 2x sample size needed
+
 - 90% power vs 80% → ~30% more samples
 """
 

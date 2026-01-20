@@ -11,9 +11,13 @@
 ## 🎯 Learning Objectives
 
 - Understand the statistical foundations of A/B testing
+
 - Design experiments with proper sample size and power
+
 - Calculate statistical significance correctly
+
 - Avoid common pitfalls in ML experimentation
+
 - Implement sequential testing for early stopping
 
 ---
@@ -36,8 +40,11 @@
 **Offline metrics don't guarantee online success.** A model with better validation accuracy might perform worse in production due to:
 
 - Distribution differences between training and production
+
 - Latency constraints affecting user experience
+
 - Interaction effects with other system components
+
 - User behavior changes in response to model outputs
 
 ---
@@ -110,8 +117,11 @@ t = \frac{\bar{X}_T - \bar{X}_C}{\sqrt{\frac{s_T^2}{n_T} + \frac{s_C^2}{n_C}}}
 ```
 
 Where:
+
 - \( \bar{X}_T, \bar{X}_C \) = sample means
+
 - \( s_T^2, s_C^2 \) = sample variances
+
 - \( n_T, n_C \) = sample sizes
 
 ### Welch's Approximation for Degrees of Freedom
@@ -144,9 +154,13 @@ n = 2 \cdot \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot \sigma^
 ```
 
 Where:
+
 - \( z_{\alpha/2} \) = z-score for significance level (1.96 for α=0.05)
+
 - \( z_{\beta} \) = z-score for power (0.84 for 80% power)
+
 - \( \delta \) = minimum detectable effect (MDE)
+
 - \( \sigma^2 \) = variance of the metric
 
 ### Effect Size (Cohen's d)
@@ -182,7 +196,9 @@ Where \( \delta \) is the effect size in standard deviation units.
 **Scenario:** Detect a 2% improvement in conversion rate (baseline: 5%, target: 5.1%)
 
 - Baseline conversion: \( p_C = 0.05 \)
+
 - Expected effect: \( p_T - p_C = 0.001 \)
+
 - Variance: \( \sigma^2 = p(1-p) = 0.05 \times 0.95 = 0.0475 \)
 
 ```math
@@ -276,8 +292,11 @@ MDE = (z_{\alpha/2} + z_{\beta}) \cdot \sqrt{\frac{2\sigma^2}{n}}
 ### Experiment Duration
 
 Account for:
+
 - **Day-of-week effects**: Run at least 1-2 full weeks
+
 - **Novelty effects**: New features may show initial bump
+
 - **Seasonality**: Consider business cycles
 
 ---

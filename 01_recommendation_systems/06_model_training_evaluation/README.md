@@ -471,12 +471,17 @@ Proper training and evaluation are essential for building effective recommendati
 | [Hyperparameter Tuning with Optuna](https://www.youtube.com/watch?v=m5YSKPMjkrk) | sentdex | 20 min |
 
 ### Training Deep Dives
+
 - **[Loss Functions Explained](https://www.youtube.com/watch?v=Skc8nqJirJg)** - StatQuest
+
 - **[BPR Loss for Ranking](https://www.youtube.com/watch?v=ZkBQ6YA9E40)** - Papers with Code
+
 - **[Learning to Rank](https://www.youtube.com/watch?v=F3TBF8_5Ui4)** - Stanford CS276
 
 ### MLOps & Evaluation
+
 - **[ML Experiment Tracking](https://www.youtube.com/watch?v=TLTU5q9EbVE)** - Weights & Biases
+
 - **[Online vs Offline Metrics](https://www.youtube.com/watch?v=nqj-IyEPEVY)** - MLOps Community
 
 ---

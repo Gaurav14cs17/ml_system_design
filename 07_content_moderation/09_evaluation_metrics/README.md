@@ -3,12 +3,19 @@
 ![Metrics Dashboard](../assets/metrics_dashboard.svg)
 
 ## Table of Contents
+
 - [Key Metrics Overview](#key-metrics-overview)
+
 - [Classification Metrics](#classification-metrics)
+
 - [Ranking Metrics](#ranking-metrics)
+
 - [Operational Metrics](#operational-metrics)
+
 - [Fairness Metrics](#fairness-metrics)
+
 - [Human Review Metrics](#human-review-metrics)
+
 - [Business Impact Metrics](#business-impact-metrics)
 
 ---
@@ -53,6 +60,7 @@ The probability that a flagged item is actually a violation:
 ```
 
 - **High precision** → Few wrongful content removals
+
 - **Content moderation target**: > 95% to minimize user frustration
 
 **Recall (Sensitivity / True Positive Rate)**
@@ -65,6 +73,7 @@ The probability of catching an actual violation:
 ```
 
 - **High recall** → Catch most harmful content
+
 - **Content moderation target**: > 90% for safety-critical categories
 
 **F1 Score (Harmonic Mean)**
@@ -86,7 +95,9 @@ F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{(\beta
 ```
 
 - β > 1: Emphasize recall (prefer catching violations)
+
 - β < 1: Emphasize precision (prefer avoiding false positives)
+
 - β = 2 is common for content moderation: catching harm is more important
 
 ### Error Rates
@@ -115,7 +126,9 @@ The **Receiver Operating Characteristic (ROC) curve** plots TPR vs. FPR at vario
 ```
 
 - AUC = 0.5 → Random classifier
+
 - AUC = 1.0 → Perfect classifier
+
 - AUC > 0.9 → Excellent discrimination
 
 ### Precision-Recall AUC

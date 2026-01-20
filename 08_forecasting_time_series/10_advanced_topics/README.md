@@ -1,13 +1,21 @@
 # Advanced Topics in Time Series Forecasting
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Probabilistic Forecasting](#probabilistic-forecasting)
+
 - [Hierarchical Forecasting](#hierarchical-forecasting)
+
 - [Transfer Learning](#transfer-learning)
+
 - [Online Learning](#online-learning)
+
 - [Conformal Prediction](#conformal-prediction)
+
 - [Causal Forecasting](#causal-forecasting)
+
 - [AutoML for Time Series](#automl-for-time-series)
 
 ---
@@ -641,11 +649,17 @@ model.fit(df)
 ## Summary
 
 Advanced techniques enable:
+
 - **Probabilistic forecasting**: Quantify uncertainty
+
 - **Hierarchical forecasting**: Coherent multi-level predictions
+
 - **Transfer learning**: Leverage related domains
+
 - **Online learning**: Adapt to changing patterns
+
 - **Conformal prediction**: Guaranteed coverage
+
 - **Causal forecasting**: Understand interventions
 
 ### Recommended Reading

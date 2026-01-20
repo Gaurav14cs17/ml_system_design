@@ -5,17 +5,29 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Framework Categories](#framework-categories)
+
 - [Flask: The Classic Choice](#flask-the-classic-choice)
+
 - [FastAPI: Modern Python Serving](#fastapi-modern-python-serving)
+
 - [TensorFlow Serving](#tensorflow-serving)
+
 - [TorchServe](#torchserve)
+
 - [NVIDIA Triton Inference Server](#nvidia-triton-inference-server)
+
 - [Seldon Core](#seldon-core)
+
 - [BentoML](#bentoml)
+
 - [Framework Comparison](#framework-comparison)
+
 - [Choosing the Right Framework](#choosing-the-right-framework)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -79,23 +91,35 @@ flowchart TB
 ## Framework Categories
 
 ### 1. Web Frameworks (Flask, FastAPI)
+
 - **Pros**: Familiar, flexible, easy to customize
+
 - **Cons**: Manual optimization required, no built-in ML features
+
 - **Best for**: Simple models, rapid prototyping, custom preprocessing
 
 ### 2. ML-Native Frameworks (TF Serving, TorchServe)
+
 - **Pros**: Optimized for specific frameworks, built-in batching
+
 - **Cons**: Framework lock-in, less flexibility
+
 - **Best for**: Production TensorFlow/PyTorch models
 
 ### 3. Multi-Framework Servers (Triton, BentoML)
+
 - **Pros**: Support multiple frameworks, GPU optimization
+
 - **Cons**: Steeper learning curve
+
 - **Best for**: Multi-model deployments, GPU workloads
 
 ### 4. Kubernetes-Native (Seldon, KServe)
+
 - **Pros**: Cloud-native, auto-scaling, canary deployments
+
 - **Cons**: Requires Kubernetes expertise
+
 - **Best for**: Enterprise ML platforms, complex pipelines
 
 ---

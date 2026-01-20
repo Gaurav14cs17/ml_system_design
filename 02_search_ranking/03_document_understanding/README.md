@@ -1285,7 +1285,9 @@ class DistributedIndex:
 ## Next Steps
 
 Continue to the next sections:
+
 - [04_feature_engineering](../04_feature_engineering/README.md) - Building features for ranking
+
 - [05_ranking_models](../05_ranking_models/README.md) - ML models for ranking
 
 ---

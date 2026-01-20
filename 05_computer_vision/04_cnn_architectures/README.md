@@ -112,9 +112,13 @@ y_{c_{out}}^{(i,j)} = \sum_{c_{in}=1}^{C_{in}} \sum_{u=0}^{k-1} \sum_{v=0}^{k-1}
 ```
 
 where:
+
 - $W$ = learnable kernel weights
+
 - $k$ = kernel size
+
 - $s$ = stride
+
 - $b$ = bias
 
 **Output spatial dimensions:**
@@ -253,8 +257,11 @@ Each patch is flattened and linearly projected:
 ```
 
 where:
+
 - $\mathbf{x}\_p^i \in \mathbb{R}^{P^2 \cdot C}$ = flattened patch
+
 - $\mathbf{E} \in \mathbb{R}^{(P^2 \cdot C) \times D}$ = projection matrix
+
 - $\mathbf{e}\_{pos}^i \in \mathbb{R}^D$ = positional embedding
 
 #### 2. Multi-Head Self-Attention
@@ -287,8 +294,11 @@ where $Q = XW^Q$, $K = XW^K$, $V = XW^V$
 ```
 
 where:
+
 - MSA = Multi-head Self-Attention
+
 - LN = Layer Normalization
+
 - MLP = 2-layer feedforward network with GELU
 
 #### 4. Classification Head
@@ -502,6 +512,7 @@ quadrantChart
 ## 🔗 Next Steps
 
 - [Object Detection →](../05_object_detection/) - Detection architectures
+
 - [Image Classification →](../08_image_classification/) - Training strategies
 
 ---

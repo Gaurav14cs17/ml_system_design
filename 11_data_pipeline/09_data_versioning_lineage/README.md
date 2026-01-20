@@ -7,9 +7,13 @@
 In ML systems, **data versioning** and **lineage tracking** are essential for:
 
 - **Reproducibility**: Recreate any model with exact training data
+
 - **Debugging**: Trace issues back to data problems
+
 - **Compliance**: Audit trail for regulated industries
+
 - **Collaboration**: Share and compare experiments
+
 - **Rollback**: Revert to previous data states
 
 ![Diagram 1](images/diagram_01.svg)

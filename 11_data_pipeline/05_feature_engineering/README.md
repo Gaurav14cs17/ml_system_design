@@ -180,6 +180,7 @@ where $\alpha = \frac{2}{w+1}$.
 
 **Rolling Statistics:**
 - Variance: $\sigma\_t^{2(w)} = \frac{1}{w}\sum\_{i=0}^{w-1}(x\_{t-i} - \bar{x}\_t^{(w)})^2$
+
 - Min/Max: $\min\_{i \in [t-w, t]} x\_i$, $\max\_{i \in [t-w, t]} x\_i$
 
 ### Interaction Features

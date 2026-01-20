@@ -19,11 +19,17 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
+
 - [Learning Path](#-learning-path)
+
 - [Module Structure](#-module-structure)
+
 - [Prerequisites](#-prerequisites)
+
 - [Quick Start](#-quick-start)
+
 - [Resources](#-resources)
+
 - [Contributing](#-contributing)
 
 ---
@@ -39,8 +45,11 @@ Search and Ranking systems power the core functionality of modern tech products�
 ### Who This Is For
 
 - 👨‍💻 **ML Engineers** building production ranking systems
+
 - 🎓 **Interview Candidates** preparing for FAANG system design
+
 - 🔬 **Researchers** understanding state-of-the-art approaches
+
 - 💼 **Tech Leads** designing scalable search infrastructure
 
 ---
@@ -110,14 +119,19 @@ Search and Ranking systems power the core functionality of modern tech products�
 ### Required Knowledge
 
 - **Python**: Intermediate level (3.8+)
+
 - **Machine Learning**: Supervised learning, gradient descent, regularization
+
 - **Mathematics**: Linear algebra, probability, calculus
+
 - **Data Structures**: Arrays, hash maps, trees
 
 ### Recommended Experience
 
 - Deep learning fundamentals (neural networks, backpropagation)
+
 - SQL and data processing
+
 - Basic distributed systems concepts
 
 ### Technical Setup
@@ -330,13 +344,21 @@ for idx, score in results:
 Use this checklist to track your progress:
 
 - [ ] Module 01: Problem Definition
+
 - [ ] Module 02: Query Understanding
+
 - [ ] Module 03: Document Understanding
+
 - [ ] Module 04: Feature Engineering
+
 - [ ] Module 05: Ranking Models
+
 - [ ] Module 06: Training Pipeline
+
 - [ ] Module 07: Serving Infrastructure
+
 - [ ] Module 08: Evaluation Metrics
+
 - [ ] Module 09: Advanced Topics
 
 ---

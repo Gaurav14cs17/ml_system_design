@@ -9,15 +9,25 @@
 </p>
 
 ## Table of Contents
+
 - [What is Model Serving?](#what-is-model-serving)
+
 - [Why Model Serving Matters](#why-model-serving-matters)
+
 - [The ML Deployment Gap](#the-ml-deployment-gap)
+
 - [Core Concepts](#core-concepts)
+
 - [Serving Paradigms](#serving-paradigms)
+
 - [Architecture Components](#architecture-components)
+
 - [Challenges in Production](#challenges-in-production)
+
 - [Success Metrics](#success-metrics)
+
 - [Industry Use Cases](#industry-use-cases)
+
 - [Getting Started](#getting-started)
 
 ---
@@ -79,8 +89,11 @@ graph TB
 ### Key Statistics
 
 - **87%** of ML models never make it to production (Gartner)
+
 - Models that do deploy often take **3-6 months** from training to production
+
 - Poor serving infrastructure causes **40%** of ML project failures
+
 - Well-designed serving systems can reduce inference costs by **10x**
 
 ### Impact Areas
@@ -156,7 +169,9 @@ T = \frac{W}{L} = W \times \frac{1000\text{ms}}{L_{\text{ms}}}
 
 **Example:**
 - \( W = 4 \) workers
+
 - \( L = 50 \) ms per inference
+
 - \( T = 4 \times \frac{1000}{50} = 80 \) RPS per server
 
 For \( N \) servers: \( T_{\text{total}} = N \times T = 10 \times 80 = 800 \) RPS
@@ -164,8 +179,11 @@ For \( N \) servers: \( T_{\text{total}} = N \times T = 10 \times 80 = 800 \) RP
 #### Latency Percentiles
 
 Latency is typically measured at percentiles:
+
 - **P50** (median): 50% of requests faster
+
 - **P95**: 95% of requests faster  
+
 - **P99**: 99% of requests faster (SLO target)
 
 For a log-normal latency distribution:
@@ -267,14 +285,20 @@ sequenceDiagram
 
 **Use Cases:**
 - ✅ Fraud detection at transaction time
+
 - ✅ Real-time recommendations
+
 - ✅ Chatbots and conversational AI
+
 - ✅ Image/video analysis
 
 **Characteristics:**
 - Low latency (P99 < 100ms)
+
 - Single or small batch inference
+
 - Synchronous request-response
+
 - High availability requirements
 
 ### 2. Batch Serving (Offline)
@@ -295,14 +319,20 @@ flowchart LR
 
 **Use Cases:**
 - ✅ Nightly recommendation generation
+
 - ✅ Bulk scoring of customer segments
+
 - ✅ Pre-computing embeddings
+
 - ✅ Report generation
 
 **Characteristics:**
 - High throughput priority
+
 - Large batch sizes (1000s of samples)
+
 - Scheduled execution (cron jobs)
+
 - Cost-efficient (spot instances)
 
 ### 3. Streaming Serving (Near Real-time)
@@ -322,14 +352,20 @@ flowchart LR
 
 **Use Cases:**
 - ✅ IoT sensor anomaly detection
+
 - ✅ Real-time content moderation
+
 - ✅ Clickstream analysis
+
 - ✅ Network intrusion detection
 
 **Characteristics:**
 - Continuous processing
+
 - Event-driven architecture
+
 - Windowed aggregations
+
 - Exactly-once semantics
 
 ### Paradigm Comparison

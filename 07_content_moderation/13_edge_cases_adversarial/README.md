@@ -3,10 +3,15 @@
 ![Adversarial Attacks](../assets/adversarial_attacks.svg)
 
 ## Table of Contents
+
 - [Types of Edge Cases](#types-of-edge-cases)
+
 - [Adversarial Attack Patterns](#adversarial-attack-patterns)
+
 - [Defense Strategies](#defense-strategies)
+
 - [Context-Dependent Decisions](#context-dependent-decisions)
+
 - [Handling Ambiguity](#handling-ambiguity)
 
 ---

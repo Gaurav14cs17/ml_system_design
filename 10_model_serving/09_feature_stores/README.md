@@ -5,12 +5,19 @@
 </p>
 
 ## Table of Contents
+
 - [Overview](#overview)
+
 - [Why Feature Stores](#why-feature-stores)
+
 - [Online vs Offline Stores](#online-vs-offline-stores)
+
 - [Feast Implementation](#feast-implementation)
+
 - [Feature Engineering Pipelines](#feature-engineering-pipelines)
+
 - [Feature Registry](#feature-registry)
+
 - [Best Practices](#best-practices)
 
 ---
@@ -429,11 +436,17 @@ stats = offline_store.get_statistics(
 ### Feature Store Checklist
 
 - ✅ Define clear entity keys
+
 - ✅ Set appropriate TTLs
+
 - ✅ Use point-in-time joins for training
+
 - ✅ Monitor feature freshness
+
 - ✅ Version feature definitions
+
 - ✅ Document feature semantics
+
 - ✅ Test feature pipelines
 
 ### Common Pitfalls

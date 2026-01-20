@@ -239,17 +239,23 @@ class FullLoadIngestion:
 
 **Pros:**
 - ✅ Simple to implement
+
 - ✅ Guarantees data consistency
+
 - ✅ No tracking of changes needed
 
 **Cons:**
 - ❌ Expensive for large datasets
+
 - ❌ High network/storage costs
+
 - ❌ Longer processing times
 
 **Use Cases:**
 - Small reference tables (countries, categories)
+
 - Initial data loads
+
 - When source doesn't support incremental extraction
 
 ---
@@ -372,8 +378,11 @@ class CDCIngestion:
 
 **Popular CDC Tools:**
 - **Debezium** - Open source, Kafka-based
+
 - **AWS DMS** - Managed migration service
+
 - **Fivetran** - SaaS ELT with CDC
+
 - **Airbyte** - Open source data integration
 
 ---

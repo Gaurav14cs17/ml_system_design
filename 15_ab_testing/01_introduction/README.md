@@ -26,9 +26,13 @@ A/B testing, also known as **split testing** or **controlled experimentation**, 
 A/B testing has roots in **randomized controlled trials (RCTs)** dating back to the 18th century. James Lind's 1747 scurvy experiment is often cited as the first controlled clinical trial. The methodology was formalized in the 20th century by statisticians like Ronald Fisher.
 
 In the tech industry, A/B testing became mainstream in the early 2000s:
+
 - **2000**: Google ran its first A/B test on the number of search results per page
+
 - **2007**: Amazon reported that every 100ms of latency cost them 1% in sales (discovered via A/B testing)
+
 - **2008**: Obama's presidential campaign used A/B testing extensively
+
 - **2012**: Facebook was running over 1,000 concurrent experiments
 
 ---
@@ -149,9 +153,13 @@ class MLExperimentationCycle:
 
 #### A/B Testing
 Best for:
+
 - Feature launches
+
 - Model comparisons
+
 - UI/UX changes
+
 - Pricing experiments
 
 ```python
@@ -170,8 +178,11 @@ experiment_config = {
 
 #### Multi-Armed Bandits
 Best for:
+
 - Personalization at scale
+
 - Continuous optimization
+
 - When regret minimization matters
 
 ```python
@@ -188,8 +199,11 @@ mab_config = {
 
 #### Interleaving
 Best for:
+
 - Ranking/search systems
+
 - Quick directional insights
+
 - Sensitive detection of preferences
 
 ```python
@@ -446,8 +460,11 @@ def bonferroni_correction(p_values, alpha=0.05):
 A/B testing is the gold standard for making data-driven decisions in ML systems. It provides:
 
 - **Causal evidence** for the impact of changes
+
 - **Risk mitigation** through controlled exposure
+
 - **Quantifiable results** for business decisions
+
 - **Learning opportunities** even from failed experiments
 
 In the following chapters, we'll dive deeper into each aspect of A/B testing, from statistical foundations to practical implementation.
