@@ -223,10 +223,7 @@ Let \( P_{ref}(X) \) be the reference (training) distribution and \( P_{cur}(X) 
 
 The KS test measures the maximum difference between two cumulative distribution functions:
 
-```math
-D = \sup_x |F_{ref}(x) - F_{cur}(x)|
-
-```
+$$D = \sup_x |F_{ref}(x) - F_{cur}(x)|$$
 
 Where:
 
@@ -242,10 +239,7 @@ Where:
 
 PSI quantifies the shift between two distributions by comparing bin populations:
 
-```math
-PSI = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)
-
-```
+$$PSI = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)$$
 
 Where:
 
@@ -267,10 +261,7 @@ Where:
 
 An alternative symmetric measure based on KL divergence:
 
-```math
-JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
-
-```
+$$JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)$$
 
 Where \( M = \frac{1}{2}(P + Q) \) and \( D_{KL} \) is the Kullback-Leibler divergence.
 

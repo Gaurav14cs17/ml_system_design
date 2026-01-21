@@ -52,10 +52,7 @@
 
 **Percentiles** (more informative than average):
 
-```math
-p_{k} = \text{value at } k\text{-th percentile}
-
-```
+$$p_{k} = \text{value at } k\text{-th percentile}$$
 
 | Percentile | Target | SLO |
 |------------|--------|-----|
@@ -66,27 +63,18 @@ p_{k} = \text{value at } k\text{-th percentile}
 
 #### Throughput
 
-```math
-\text{QPS} = \frac{\text{Total Requests}}{\text{Time Window}}
-\text{RPS}_{\text{success}} = \frac{\text{2xx Responses}}{\text{Time Window}}
-
-```
+$$\text{QPS} = \frac{\text{Total Requests}}{\text{Time Window}}
+\text{RPS}_{\text{success}} = \frac{\text{2xx Responses}}{\text{Time Window}}$$
 
 #### Error Rate
 
-```math
-\text{Error Rate} = \frac{\text{5xx} + \text{Timeouts}}{\text{Total Requests}}
-
-```
+$$\text{Error Rate} = \frac{\text{5xx} + \text{Timeouts}}{\text{Total Requests}}$$
 
 Target: < 0.01%
 
 #### Availability
 
-```math
-\text{Availability} = \frac{\text{Uptime}}{\text{Total Time}} = \frac{\text{Success Requests}}{\text{Total Requests}}
-
-```
+$$\text{Availability} = \frac{\text{Uptime}}{\text{Total Time}} = \frac{\text{Success Requests}}{\text{Total Requests}}$$
 
 | Target | Monthly Downtime |
 |--------|------------------|
@@ -96,11 +84,8 @@ Target: < 0.01%
 
 ### Resource Metrics
 
-```math
-\text{CPU Utilization} = \frac{\text{CPU Time Used}}{\text{CPU Time Available}}
-\text{Memory Utilization} = \frac{\text{Memory Used}}{\text{Memory Total}}
-
-```
+$$\text{CPU Utilization} = \frac{\text{CPU Time Used}}{\text{CPU Time Available}}
+\text{Memory Utilization} = \frac{\text{Memory Used}}{\text{Memory Total}}$$
 
 | Resource | Warning | Critical |
 |----------|---------|----------|
@@ -116,45 +101,29 @@ Target: < 0.01%
 
 Monitor shift in predicted CTR:
 
-```math
-\bar{p}_{\text{pred}} = \frac{1}{N} \sum_{i=1}^{N} \hat{y}_i
-
-```
+$$\bar{p}_{\text{pred}} = \frac{1}{N} \sum_{i=1}^{N} \hat{y}_i$$
 
 **Alert if**:
 
-```math
-
-|\bar{p}_{\text{pred}}(t) - \bar{p}_{\text{pred}}(t-1)| > \epsilon
-
-```
+$$|\bar{p}_{\text{pred}}(t) - \bar{p}_{\text{pred}}(t-1)| > \epsilon$$
 
 Typical $\epsilon = 0.001$ (10% relative change for 1% CTR).
 
 ### Calibration Drift
 
-```math
-\text{Calibration Ratio} = \frac{\bar{p}_{\text{pred}}}{\bar{p}_{\text{actual}}}
-
-```
+$$\text{Calibration Ratio} = \frac{\bar{p}_{\text{pred}}}{\bar{p}_{\text{actual}}}$$
 
 Target: 0.95 - 1.05 (within 5%)
 
 ### Feature Missing Rate
 
-```math
-\text{Missing Rate}(f) = \frac{\text{Count}(f = \text{null})}{\text{Total Requests}}
-
-```
+$$\text{Missing Rate}(f) = \frac{\text{Count}(f = \text{null})}{\text{Total Requests}}$$
 
 Alert threshold: > 1% for critical features.
 
 ### Model Staleness
 
-```math
-\text{Staleness} = t_{\text{now}} - t_{\text{model_trained}}
-
-```
+$$\text{Staleness} = t_{\text{now}} - t_{\text{model_trained}}$$
 
 Alert if staleness > 24 hours.
 
@@ -189,10 +158,7 @@ Alert if staleness > 24 hours.
 
 For SLO-based alerting:
 
-```math
-\text{Burn Rate} = \frac{\text{Error Rate}}{\text{Error Budget Rate}}
-
-```
+$$\text{Burn Rate} = \frac{\text{Error Rate}}{\text{Error Budget Rate}}$$
 
 where Error Budget Rate = $(1 - \text{SLO Target}) / \text{Period}$
 
@@ -220,10 +186,7 @@ where Error Budget Rate = $(1 - \text{SLO Target}) / \text{Period}$
 
 **Population Stability Index (PSI)**:
 
-```math
-\text{PSI} = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)
-
-```
+$$\text{PSI} = \sum_{i=1}^{n} (A_i - E_i) \times \ln\left(\frac{A_i}{E_i}\right)$$
 
 | PSI | Interpretation | Action |
 |-----|----------------|--------|
@@ -233,10 +196,7 @@ where Error Budget Rate = $(1 - \text{SLO Target}) / \text{Period}$
 
 #### KL Divergence
 
-```math
-D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}
-
-```
+$$D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}$$
 
 Monitor feature and prediction distributions.
 
@@ -244,10 +204,7 @@ Monitor feature and prediction distributions.
 
 **Window comparison**:
 
-```math
-\text{Drift Score} = d(\text{Distribution}_{\text{recent}}, \text{Distribution}_{\text{baseline}})
-
-```
+$$\text{Drift Score} = d(\text{Distribution}_{\text{recent}}, \text{Distribution}_{\text{baseline}})$$
 
 Common metrics: KS statistic, Jensen-Shannon divergence.
 
@@ -261,10 +218,7 @@ During experiments, monitor:
 
 - Novelty effects
 
-```math
-\text{SRM} = \chi^2\left(\frac{n_A}{n_B}, \frac{\text{expected}_A}{\text{expected}_B}\right)
-
-```
+$$\text{SRM} = \chi^2\left(\frac{n_A}{n_B}, \frac{\text{expected}_A}{\text{expected}_B}\right)$$
 
 ---
 
@@ -325,10 +279,7 @@ During experiments, monitor:
 
 ### Severity Classification
 
-```math
-\text{Severity} = f(\text{User Impact}, \text{Business Impact}, \text{Duration})
-
-```
+$$\text{Severity} = f(\text{User Impact}, \text{Business Impact}, \text{Duration})$$
 
 | Severity | User Impact | Business Impact |
 |----------|-------------|-----------------|
@@ -363,10 +314,7 @@ During experiments, monitor:
 
 ### Capacity Planning
 
-```math
-\text{Headroom} = 1 - \frac{\text{Current Load}}{\text{Max Capacity}}
-
-```
+$$\text{Headroom} = 1 - \frac{\text{Current Load}}{\text{Max Capacity}}$$
 
 Maintain > 30% headroom for traffic spikes.
 

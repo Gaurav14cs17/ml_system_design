@@ -40,10 +40,7 @@ Given a sparse user-item rating matrix \(\mathbf{R} \in \mathbb{R}^{m \times n}\
 
 In practice, \(>99\%\) of \(\mathbf{R}\) is unobserved:
 
-```math
-\text{Sparsity} = 1 - \frac{|\{(u,i) : r_{ui} \neq 0\}|}{m \times n}
-
-```
+$$\text{Sparsity} = 1 - \frac{|\{(u,i) : r_{ui} \neq 0\}|}{m \times n}$$
 
 Netflix: ~99.5% sparse | Amazon: ~99.9% sparse
 
@@ -53,10 +50,7 @@ Netflix: ~99.5% sparse | Amazon: ~99.9% sparse
 
 Mathematically, if users \(u\) and \(v\) have similar rating patterns:
 
-```math
-\text{sim}(u, v) > \theta \implies \hat{r}_{ui} \approx r_{vi}
-
-```
+$$\text{sim}(u, v) > \theta \implies \hat{r}_{ui} \approx r_{vi}$$
 
 ### Two Paradigms
 
@@ -75,10 +69,7 @@ Mathematically, if users \(u\) and \(v\) have similar rating patterns:
 
 **Prediction Formula:**
 
-```math
-\hat{r}_{ui} = \bar{r}_u + \frac{\sum_{v \in \mathcal{N}_k(u)} \text{sim}(u, v) \cdot (r_{vi} - \bar{r}_v)}{\sum_{v \in \mathcal{N}_k(u)} |\text{sim}(u, v)|}
-
-```
+$$\hat{r}_{ui} = \bar{r}_u + \frac{\sum_{v \in \mathcal{N}_k(u)} \text{sim}(u, v) \cdot (r_{vi} - \bar{r}_v)}{\sum_{v \in \mathcal{N}_k(u)} |\text{sim}(u, v)|}$$
 
 Where:
 
@@ -92,17 +83,11 @@ Where:
 
 *Pearson Correlation (adjusts for rating bias):*
 
-```math
-\text{sim}(u, v) = \frac{\sum_{i \in \mathcal{I}_{uv}} (r_{ui} - \bar{r}_u)(r_{vi} - \bar{r}_v)}{\sqrt{\sum_{i \in \mathcal{I}_{uv}} (r_{ui} - \bar{r}_u)^2} \cdot \sqrt{\sum_{i \in \mathcal{I}_{uv}} (r_{vi} - \bar{r}_v)^2}}
-
-```
+$$\text{sim}(u, v) = \frac{\sum_{i \in \mathcal{I}_{uv}} (r_{ui} - \bar{r}_u)(r_{vi} - \bar{r}_v)}{\sqrt{\sum_{i \in \mathcal{I}_{uv}} (r_{ui} - \bar{r}_u)^2} \cdot \sqrt{\sum_{i \in \mathcal{I}_{uv}} (r_{vi} - \bar{r}_v)^2}}$$
 
 *Cosine Similarity:*
 
-```math
-\text{sim}(u, v) = \frac{\mathbf{r}_u \cdot \mathbf{r}_v}{\|\mathbf{r}_u\| \|\mathbf{r}_v\|}
-
-```
+$$\text{sim}(u, v) = \frac{\mathbf{r}_u \cdot \mathbf{r}_v}{\|\mathbf{r}_u\| \|\mathbf{r}_v\|}$$
 
 ### Item-Based Collaborative Filtering
 
@@ -110,17 +95,11 @@ Where:
 
 **Prediction Formula:**
 
-```math
-\hat{r}_{ui} = \frac{\sum_{j \in \mathcal{N}_k(i)} \text{sim}(i, j) \cdot r_{uj}}{\sum_{j \in \mathcal{N}_k(i)} |\text{sim}(i, j)|}
-
-```
+$$\hat{r}_{ui} = \frac{\sum_{j \in \mathcal{N}_k(i)} \text{sim}(i, j) \cdot r_{uj}}{\sum_{j \in \mathcal{N}_k(i)} |\text{sim}(i, j)|}$$
 
 **Adjusted Cosine Similarity** (for item-item):
 
-```math
-\text{sim}(i, j) = \frac{\sum_{u \in \mathcal{U}_{ij}} (r_{ui} - \bar{r}_u)(r_{uj} - \bar{r}_u)}{\sqrt{\sum_{u \in \mathcal{U}_{ij}} (r_{ui} - \bar{r}_u)^2} \cdot \sqrt{\sum_{u \in \mathcal{U}_{ij}} (r_{uj} - \bar{r}_u)^2}}
-
-```
+$$\text{sim}(i, j) = \frac{\sum_{u \in \mathcal{U}_{ij}} (r_{ui} - \bar{r}_u)(r_{uj} - \bar{r}_u)}{\sqrt{\sum_{u \in \mathcal{U}_{ij}} (r_{ui} - \bar{r}_u)^2} \cdot \sqrt{\sum_{u \in \mathcal{U}_{ij}} (r_{uj} - \bar{r}_u)^2}}$$
 
 ### User-Based vs Item-Based
 
@@ -158,10 +137,7 @@ Model-based solution: Learn a **compressed representation** that generalizes bey
 
 Approximate \(\mathbf{R}\) as the product of two low-rank matrices:
 
-```math
-\mathbf{R} \approx \mathbf{P} \mathbf{Q}^\top
-
-```
+$$\mathbf{R} \approx \mathbf{P} \mathbf{Q}^\top$$
 
 Where:
 
@@ -173,19 +149,13 @@ Where:
 
 **Prediction:**
 
-```math
-\hat{r}_{ui} = \mathbf{p}_u^\top \mathbf{q}_i = \sum_{f=1}^{k} p_{uf} \cdot q_{if}
-
-```
+$$\hat{r}_{ui} = \mathbf{p}_u^\top \mathbf{q}_i = \sum_{f=1}^{k} p_{uf} \cdot q_{if}$$
 
 ### Optimization Objective
 
 **Regularized Least Squares:**
 
-```math
-\min_{\mathbf{P}, \mathbf{Q}} \sum_{(u,i) \in \mathcal{O}} \left(r_{ui} - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda \left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2\right)
-
-```
+$$\min_{\mathbf{P}, \mathbf{Q}} \sum_{(u,i) \in \mathcal{O}} \left(r_{ui} - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda \left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2\right)$$
 
 Where \(\mathcal{O}\) is the set of observed ratings.
 
@@ -193,10 +163,7 @@ Where \(\mathcal{O}\) is the set of observed ratings.
 
 Real ratings have systematic biases:
 
-```math
-\hat{r}_{ui} = \mu + b_u + b_i + \mathbf{p}_u^\top \mathbf{q}_i
-
-```
+$$\hat{r}_{ui} = \mu + b_u + b_i + \mathbf{p}_u^\top \mathbf{q}_i$$
 
 Where:
 
@@ -208,10 +175,7 @@ Where:
 
 **Extended Objective:**
 
-```math
-\min_{\mathbf{P}, \mathbf{Q}, \mathbf{b}} \sum_{(u,i) \in \mathcal{O}} \left(r_{ui} - \mu - b_u - b_i - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda \left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2 + \|\mathbf{b}_u\|^2 + \|\mathbf{b}_i\|^2\right)
-
-```
+$$\min_{\mathbf{P}, \mathbf{Q}, \mathbf{b}} \sum_{(u,i) \in \mathcal{O}} \left(r_{ui} - \mu - b_u - b_i - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda \left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2 + \|\mathbf{b}_u\|^2 + \|\mathbf{b}_i\|^2\right)$$
 
 ### Optimization Algorithms
 
@@ -219,23 +183,17 @@ Where:
 
 For each observed \((u, i, r_{ui})\):
 
-```math
-e_{ui} = r_{ui} - \hat{r}_{ui}
+$$e_{ui} = r_{ui} - \hat{r}_{ui}
 \mathbf{p}_u \leftarrow \mathbf{p}_u + \eta (e_{ui} \cdot \mathbf{q}_i - \lambda \mathbf{p}_u)
 \mathbf{q}_i \leftarrow \mathbf{q}_i + \eta (e_{ui} \cdot \mathbf{p}_u - \lambda \mathbf{q}_i)
 b_u \leftarrow b_u + \eta (e_{ui} - \lambda b_u)
-b_i \leftarrow b_i + \eta (e_{ui} - \lambda b_i)
-
-```
+b_i \leftarrow b_i + \eta (e_{ui} - \lambda b_i)$$
 
 **Alternating Least Squares (ALS):**
 
 Fix \(\mathbf{Q}\), solve for \(\mathbf{P}\) (closed-form):
 
-```math
-\mathbf{p}_u = \left(\mathbf{Q}_{\mathcal{I}_u}^\top \mathbf{Q}_{\mathcal{I}_u} + \lambda \mathbf{I}\right)^{-1} \mathbf{Q}_{\mathcal{I}_u}^\top \mathbf{r}_u
-
-```
+$$\mathbf{p}_u = \left(\mathbf{Q}_{\mathcal{I}_u}^\top \mathbf{Q}_{\mathcal{I}_u} + \lambda \mathbf{I}\right)^{-1} \mathbf{Q}_{\mathcal{I}_u}^\top \mathbf{r}_u$$
 
 Then fix \(\mathbf{P}\), solve for \(\mathbf{Q}\). Repeat until convergence.
 
@@ -248,10 +206,7 @@ Then fix \(\mathbf{P}\), solve for \(\mathbf{Q}\). Repeat until convergence.
 
 Enhance user representation with items they've interacted with:
 
-```math
-\hat{r}_{ui} = \mu + b_u + b_i + \mathbf{q}_i^\top \left(\mathbf{p}_u + \frac{1}{\sqrt{|\mathcal{N}(u)|}} \sum_{j \in \mathcal{N}(u)} \mathbf{y}_j\right)
-
-```
+$$\hat{r}_{ui} = \mu + b_u + b_i + \mathbf{q}_i^\top \left(\mathbf{p}_u + \frac{1}{\sqrt{|\mathcal{N}(u)|}} \sum_{j \in \mathcal{N}(u)} \mathbf{y}_j\right)$$
 
 Where \(\mathbf{y}_j\) captures implicit feedback from item \(j\).
 
@@ -275,20 +230,14 @@ Implicit feedback (clicks, views, purchases) differs from explicit ratings:
 
 **Preference and Confidence:**
 
-```math
-p_{ui} = \begin{cases} 1 & \text{if } r_{ui} > 0 \\ 0 & \text{otherwise} \end{cases}
-c_{ui} = 1 + \alpha \cdot r_{ui}
-
-```
+$$p_{ui} = \begin{cases} 1 & \text{if } r_{ui} > 0 \\ 0 & \text{otherwise} \end{cases}
+c_{ui} = 1 + \alpha \cdot r_{ui}$$
 
 Where \(\alpha\) controls confidence scaling.
 
 **Objective:**
 
-```math
-\min_{\mathbf{P}, \mathbf{Q}} \sum_{u,i} c_{ui} \left(p_{ui} - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda \left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2\right)
-
-```
+$$\min_{\mathbf{P}, \mathbf{Q}} \sum_{u,i} c_{ui} \left(p_{ui} - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda \left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2\right)$$
 
 ### Bayesian Personalized Ranking (BPR)
 
@@ -296,17 +245,11 @@ Where \(\alpha\) controls confidence scaling.
 
 For triplet \((u, i, j)\) where user \(u\) prefers \(i\) over \(j\):
 
-```math
-\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj} = \mathbf{p}_u^\top (\mathbf{q}_i - \mathbf{q}_j)
-
-```
+$$\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj} = \mathbf{p}_u^\top (\mathbf{q}_i - \mathbf{q}_j)$$
 
 **BPR Objective:**
 
-```math
-\text{BPR-OPT} = \sum_{(u,i,j) \in D_S} \ln \sigma(\hat{x}_{uij}) - \lambda_\Theta \|\Theta\|^2
-
-```
+$$\text{BPR-OPT} = \sum_{(u,i,j) \in D_S} \ln \sigma(\hat{x}_{uij}) - \lambda_\Theta \|\Theta\|^2$$
 
 Where \(\sigma(x) = \frac{1}{1 + e^{-x}}\) is the sigmoid function.
 
@@ -338,10 +281,7 @@ ALS is **embarrassingly parallel**:
 
 2. **Fix P, update Q**: Each \(\mathbf{q}_i\) independent
 
-```math
-\mathbf{p}_u = \left(\mathbf{Q}^\top \mathbf{C}_u \mathbf{Q} + \lambda \mathbf{I}\right)^{-1} \mathbf{Q}^\top \mathbf{C}_u \mathbf{p}_u
-
-```
+$$\mathbf{p}_u = \left(\mathbf{Q}^\top \mathbf{C}_u \mathbf{Q} + \lambda \mathbf{I}\right)^{-1} \mathbf{Q}^\top \mathbf{C}_u \mathbf{p}_u$$
 
 Where \(\mathbf{C}_u = \text{diag}(c_{u1}, \ldots, c_{un})\).
 

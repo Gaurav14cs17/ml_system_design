@@ -70,10 +70,7 @@ Embedding Representation:
 
 An **embedding function** is a learned mapping:
 
-```math
-f_\theta: \mathcal{X} \rightarrow \mathbb{R}^d
-
-```
+$$f_\theta: \mathcal{X} \rightarrow \mathbb{R}^d$$
 
 where:
 
@@ -109,17 +106,11 @@ Embeddings compress this to manageable dimensions (typically 64-1024).
 
 One-hot encodings treat all items as equally different:
 
-```math
-d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{dog}}) = d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{physics}}) = \sqrt{2}
-
-```
+$$d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{dog}}) = d(\mathbf{x}_{\text{cat}}, \mathbf{x}_{\text{physics}}) = \sqrt{2}$$
 
 Embeddings capture meaningful relationships:
 
-```math
-d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{dog}}) \ll d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{physics}})
-
-```
+$$d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{dog}}) \ll d(\mathbf{e}_{\text{cat}}, \mathbf{e}_{\text{physics}})$$
 
 This enables machines to understand that "cat" and "dog" share semantic properties (animals, pets) that "quantum physics" does not.
 
@@ -167,10 +158,7 @@ Embeddings: Neural network learns relevant features from data
 
 An **embedding** is a learned function that maps elements from a discrete or high-dimensional space into a continuous, lower-dimensional vector space:
 
-```math
-f: \mathcal{X} \rightarrow \mathbb{R}^d
-
-```
+$$f: \mathcal{X} \rightarrow \mathbb{R}^d$$
 
 where $\mathcal{X}$ is the input domain and $d \ll |\mathcal{X}|$ is the embedding dimension.
 
@@ -188,19 +176,13 @@ Embeddings live in a **metric space** equipped with:
 
 **Important Relationship:** For unit-normalized vectors ($\|\mathbf{a}\| = \|\mathbf{b}\| = 1$):
 
-```math
-\cos(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{and} \quad d_{\text{euclidean}}^2 = 2(1 - \cos(\mathbf{a}, \mathbf{b}))
-
-```
+$$\cos(\mathbf{a}, \mathbf{b}) = \mathbf{a} \cdot \mathbf{b} \quad \text{and} \quad d_{\text{euclidean}}^2 = 2(1 - \cos(\mathbf{a}, \mathbf{b}))$$
 
 #### 2. Vector Arithmetic (Analogical Reasoning)
 
 A remarkable property of well-trained embeddings is that semantic relationships are captured as **linear directions**:
 
-```math
-\vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}
-
-```
+$$\vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}$$
 
 This can be understood as:
 
@@ -210,19 +192,13 @@ This can be understood as:
 
 More generally, for analogies $a:b :: c:d$:
 
-```math
-\vec{v}_b - \vec{v}_a + \vec{v}_c \approx \vec{v}_d
-
-```
+$$\vec{v}_b - \vec{v}_a + \vec{v}_c \approx \vec{v}_d$$
 
 ### The Embedding Matrix
 
 For discrete vocabularies $V$, embeddings are stored as a **lookup table**:
 
-```math
-\mathbf{E} \in \mathbb{R}^{|V| \times d}
-
-```
+$$\mathbf{E} \in \mathbb{R}^{|V| \times d}$$
 
 Where:
 
@@ -232,10 +208,7 @@ Where:
 
 **Embedding Lookup:** For item with index $i$:
 
-```math
-\text{embed}(i) = \mathbf{E}_{i,:} = \mathbf{e}_i \in \mathbb{R}^d
-
-```
+$$\text{embed}(i) = \mathbf{E}_{i,:} = \mathbf{e}_i \in \mathbb{R}^d$$
 
 This is mathematically equivalent to multiplying by a one-hot vector: $\mathbf{e}_i = \mathbf{E}^\top \mathbf{x}_{\text{one-hot}}$
 
@@ -245,28 +218,19 @@ Embedding models are trained to satisfy the **similarity preservation** constrai
 
 #### Contrastive Loss (InfoNCE)
 
-```math
-\mathcal{L}_{\text{InfoNCE}} = -\mathbb{E}\left[\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(f(x), f(x_j^-))/\tau)}\right]
-
-```
+$$\mathcal{L}_{\text{InfoNCE}} = -\mathbb{E}\left[\log \frac{\exp(\text{sim}(f(x), f(x^+))/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(f(x), f(x_j^-))/\tau)}\right]$$
 
 where $\tau$ is a temperature hyperparameter and $x^+$ are positive pairs.
 
 #### Triplet Loss
 
-```math
-\mathcal{L}_{\text{triplet}} = \max(0, d(f(a), f(p)) - d(f(a), f(n)) + \alpha)
-
-```
+$$\mathcal{L}_{\text{triplet}} = \max(0, d(f(a), f(p)) - d(f(a), f(n)) + \alpha)$$
 
 where $(a, p, n)$ is an anchor-positive-negative triplet and $\alpha$ is the margin.
 
 #### Multiple Negatives Ranking Loss
 
-```math
-\mathcal{L}_{\text{MNRL}} = -\frac{1}{B}\sum_{i=1}^{B} \log \frac{\exp(s(q_i, d_i^+))}{\sum_{j=1}^{B} \exp(s(q_i, d_j))}
-
-```
+$$\mathcal{L}_{\text{MNRL}} = -\frac{1}{B}\sum_{i=1}^{B} \log \frac{\exp(s(q_i, d_i^+))}{\sum_{j=1}^{B} \exp(s(q_i, d_j))}$$
 
 where $B$ is the batch size and in-batch negatives are used.
 

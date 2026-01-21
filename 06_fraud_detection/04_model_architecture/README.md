@@ -51,28 +51,19 @@
 
 For fraud detection, we learn a function $f: \mathcal{X} \rightarrow [0, 1]$ that estimates:
 
-```math
-\hat{y} = f(\mathbf{x}; \theta) \approx P(y = 1 | \mathbf{x})
-
-```
+$$\hat{y} = f(\mathbf{x}; \theta) \approx P(y = 1 | \mathbf{x})$$
 
 ### Loss Functions for Imbalanced Classification
 
 #### Binary Cross-Entropy (Baseline)
 
-```math
-\mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
-
-```
+$$\mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]$$
 
 **Problem**: Treats all samples equally, causing the model to optimize for the majority class.
 
 #### Weighted Cross-Entropy
 
-```math
-\mathcal{L}_{\text{WCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]
-
-```
+$$\mathcal{L}_{\text{WCE}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]$$
 
 Where $w_+ = \frac{N}{2 \cdot N_+}$ and $w_- = \frac{N}{2 \cdot N_-}$ balance the classes.
 
@@ -80,10 +71,7 @@ Where $w_+ = \frac{N}{2 \cdot N_+}$ and $w_- = \frac{N}{2 \cdot N_-}$ balance th
 
 Focal loss down-weights easy examples, focusing training on hard negatives:
 
-```math
-\mathcal{L}_{\text{focal}} = -\frac{1}{N} \sum_{i=1}^{N} \alpha_t (1 - p_t)^\gamma \log(p_t)
-
-```
+$$\mathcal{L}_{\text{focal}} = -\frac{1}{N} \sum_{i=1}^{N} \alpha_t (1 - p_t)^\gamma \log(p_t)$$
 
 Where:
 
@@ -99,10 +87,7 @@ Where:
 
 For fraud detection where $C_{FN} \gg C_{FP}$:
 
-```math
-\mathcal{L}_{\text{asym}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ \lambda \cdot y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
-
-```
+$$\mathcal{L}_{\text{asym}} = -\frac{1}{N} \sum_{i=1}^{N} \left[ \lambda \cdot y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]$$
 
 Where $\lambda = \frac{C_{FN}}{C_{FP}} \approx 10-100$ penalizes missed fraud heavily.
 
@@ -112,37 +97,25 @@ Where $\lambda = \frac{C_{FN}}{C_{FP}} \approx 10-100$ penalizes missed fraud he
 
 XGBoost minimizes:
 
-```math
-\mathcal{L}^{(t)} = \sum_{i=1}^{N} l(y_i, \hat{y}_i^{(t-1)} + f_t(\mathbf{x}_i)) + \Omega(f_t)
-
-```
+$$\mathcal{L}^{(t)} = \sum_{i=1}^{N} l(y_i, \hat{y}_i^{(t-1)} + f_t(\mathbf{x}_i)) + \Omega(f_t)$$
 
 Where $\Omega(f) = \gamma T + \frac{1}{2}\lambda \sum_{j=1}^{T} w_j^2$ is the regularization term (T = number of leaves, $w_j$ = leaf weights).
 
 Using second-order Taylor expansion:
 
-```math
-\mathcal{L}^{(t)} \approx \sum_{i=1}^{N} \left[ g_i f_t(\mathbf{x}_i) + \frac{1}{2} h_i f_t^2(\mathbf{x}_i) \right] + \Omega(f_t)
-
-```
+$$\mathcal{L}^{(t)} \approx \sum_{i=1}^{N} \left[ g_i f_t(\mathbf{x}_i) + \frac{1}{2} h_i f_t^2(\mathbf{x}_i) \right] + \Omega(f_t)$$
 
 Where $g_i = \partial_{\hat{y}} l(y_i, \hat{y}^{(t-1)})$ and $h_i = \partial^2_{\hat{y}} l(y_i, \hat{y}^{(t-1)})$.
 
 For weighted binary cross-entropy with `scale_pos_weight`:
 
-```math
-g_i = \hat{y}_i - y_i \cdot w_+, \quad h_i = \hat{y}_i(1 - \hat{y}_i)
-
-```
+$$g_i = \hat{y}_i - y_i \cdot w_+, \quad h_i = \hat{y}_i(1 - \hat{y}_i)$$
 
 ### Deep Learning: Neural Network Formulation
 
 #### Feedforward Network
 
-```math
-\hat{y} = \sigma\left( \mathbf{W}^{(L)} \cdot \text{ReLU}\left( \mathbf{W}^{(L-1)} \cdots \text{ReLU}\left( \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \right) \cdots \right) + \mathbf{b}^{(L)} \right)
-
-```
+$$\hat{y} = \sigma\left( \mathbf{W}^{(L)} \cdot \text{ReLU}\left( \mathbf{W}^{(L-1)} \cdots \text{ReLU}\left( \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \right) \cdots \right) + \mathbf{b}^{(L)} \right)$$
 
 With dropout regularization: $\tilde{\mathbf{h}} = \mathbf{h} \odot \mathbf{m}$ where $m_i \sim \text{Bernoulli}(1-p)$.
 
@@ -150,10 +123,7 @@ With dropout regularization: $\tilde{\mathbf{h}} = \mathbf{h} \odot \mathbf{m}$ 
 
 For categorical features (user, merchant, MCC), learn low-dimensional representations:
 
-```math
-\mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity_id}] \in \mathbb{R}^d
-
-```
+$$\mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity_id}] \in \mathbb{R}^d$$
 
 Where $\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}$ is the learned embedding matrix.
 
@@ -161,24 +131,18 @@ Where $\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}$ is the learned embedd
 
 #### LSTM Cell Equations
 
-```math
-\begin{align}
+$$\begin{align}
 \mathbf{f}_t &= \sigma(\mathbf{W}_f \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_f) & \text{(forget gate)} \\
 \mathbf{i}_t &= \sigma(\mathbf{W}_i \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_i) & \text{(input gate)} \\
 \tilde{\mathbf{c}}_t &= \tanh(\mathbf{W}_c \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_c) & \text{(candidate)} \\
 \mathbf{c}_t &= \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t & \text{(cell state)} \\
 \mathbf{o}_t &= \sigma(\mathbf{W}_o \cdot [\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o) & \text{(output gate)} \\
 \mathbf{h}_t &= \mathbf{o}_t \odot \tanh(\mathbf{c}_t) & \text{(hidden state)}
-\end{align}
-
-```
+\end{align}$$
 
 #### Transformer Self-Attention
 
-```math
-\text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d_k}} \right) V
-
-```
+$$\text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d_k}} \right) V$$
 
 For transaction sequences, this captures dependencies between any pair of transactions regardless of temporal distance.
 
@@ -188,10 +152,7 @@ For transaction sequences, this captures dependencies between any pair of transa
 
 For node $v$ with neighbors $\mathcal{N}(v)$:
 
-```math
-\mathbf{h}_v^{(k+1)} = \phi\left( \mathbf{h}_v^{(k)}, \bigoplus_{u \in \mathcal{N}(v)} \psi(\mathbf{h}_u^{(k)}, \mathbf{h}_v^{(k)}, \mathbf{e}_{uv}) \right)
-
-```
+$$\mathbf{h}_v^{(k+1)} = \phi\left( \mathbf{h}_v^{(k)}, \bigoplus_{u \in \mathcal{N}(v)} \psi(\mathbf{h}_u^{(k)}, \mathbf{h}_v^{(k)}, \mathbf{e}_{uv}) \right)$$
 
 Where $\bigoplus$ is a permutation-invariant aggregation (sum, mean, max).
 
@@ -199,10 +160,7 @@ Where $\bigoplus$ is a permutation-invariant aggregation (sum, mean, max).
 
 Attention coefficients between nodes:
 
-```math
-\alpha_{ij} = \frac{\exp\left( \text{LeakyReLU}(\mathbf{a}^T [\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_j]) \right)}{\sum_{k \in \mathcal{N}(i)} \exp\left( \text{LeakyReLU}(\mathbf{a}^T [\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_k]) \right)}
-
-```
+$$\alpha_{ij} = \frac{\exp\left( \text{LeakyReLU}(\mathbf{a}^T [\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_j]) \right)}{\sum_{k \in \mathcal{N}(i)} \exp\left( \text{LeakyReLU}(\mathbf{a}^T [\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_k]) \right)}$$
 
 Updated node embedding: $\mathbf{h}_i' = \sigma\left( \sum_{j \in \mathcal{N}(i)} \alpha_{ij} \mathbf{W} \mathbf{h}_j \right)$
 
@@ -210,26 +168,17 @@ Updated node embedding: $\mathbf{h}_i' = \sigma\left( \sum_{j \in \mathcal{N}(i)
 
 #### Reconstruction Error
 
-```math
-\mathcal{L}_{\text{AE}} = \| \mathbf{x} - \text{Dec}(\text{Enc}(\mathbf{x})) \|_2^2
-
-```
+$$\mathcal{L}_{\text{AE}} = \| \mathbf{x} - \text{Dec}(\text{Enc}(\mathbf{x})) \|_2^2$$
 
 Transactions with high reconstruction error are anomalous.
 
 #### Variational Autoencoder (VAE)
 
-```math
-\mathcal{L}_{\text{VAE}} = \mathbb{E}_{q_\phi(\mathbf{z}|\mathbf{x})}[\log p_\theta(\mathbf{x}|\mathbf{z})] - D_{KL}(q_\phi(\mathbf{z}|\mathbf{x}) \| p(\mathbf{z}))
-
-```
+$$\mathcal{L}_{\text{VAE}} = \mathbb{E}_{q_\phi(\mathbf{z}|\mathbf{x})}[\log p_\theta(\mathbf{x}|\mathbf{z})] - D_{KL}(q_\phi(\mathbf{z}|\mathbf{x}) \| p(\mathbf{z}))$$
 
 The KL divergence term regularizes the latent space:
 
-```math
-D_{KL} = -\frac{1}{2} \sum_{j=1}^{J} \left( 1 + \log(\sigma_j^2) - \mu_j^2 - \sigma_j^2 \right)
-
-```
+$$D_{KL} = -\frac{1}{2} \sum_{j=1}^{J} \left( 1 + \log(\sigma_j^2) - \mu_j^2 - \sigma_j^2 \right)$$
 
 ### Ensemble Theory
 
@@ -237,17 +186,11 @@ For $M$ models with predictions $\hat{y}_1, \ldots, \hat{y}_M$:
 
 **Weighted Average:**
 
-```math
-\hat{y}_{\text{ens}} = \sum_{m=1}^{M} w_m \hat{y}_m, \quad \sum_{m=1}^{M} w_m = 1
-
-```
+$$\hat{y}_{\text{ens}} = \sum_{m=1}^{M} w_m \hat{y}_m, \quad \sum_{m=1}^{M} w_m = 1$$
 
 **Optimal Weights** (minimize ensemble variance):
 
-```math
-w_m^* \propto \frac{1}{\sigma_m^2 (1 - \rho_m)}
-
-```
+$$w_m^* \propto \frac{1}{\sigma_m^2 (1 - \rho_m)}$$
 
 Where $\sigma_m^2$ is model variance and $\rho_m$ is correlation with other models. Diverse, accurate models get higher weight.
 

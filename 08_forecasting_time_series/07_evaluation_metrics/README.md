@@ -155,10 +155,7 @@ Let $y_1, y_2, \ldots, y_n$ be the actual values and $\hat{y}_1, \hat{y}_2, \ldo
 
 #### Mean Absolute Error (MAE)
 
-```math
-\text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
-
-```
+$$\text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$$
 
 **Properties:**
 
@@ -170,11 +167,8 @@ Let $y_1, y_2, \ldots, y_n$ be the actual values and $\hat{y}_1, \hat{y}_2, \ldo
 
 #### Mean Squared Error (MSE) and Root Mean Squared Error (RMSE)
 
-```math
-\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
-\text{RMSE} = \sqrt{\text{MSE}} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
-
-```
+$$\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
+\text{RMSE} = \sqrt{\text{MSE}} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}$$
 
 **Properties:**
 
@@ -186,10 +180,7 @@ Let $y_1, y_2, \ldots, y_n$ be the actual values and $\hat{y}_1, \hat{y}_2, \ldo
 
 #### Mean Absolute Percentage Error (MAPE)
 
-```math
-\text{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right|
-
-```
+$$\text{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right|$$
 
 **Properties:**
 
@@ -201,10 +192,7 @@ Let $y_1, y_2, \ldots, y_n$ be the actual values and $\hat{y}_1, \hat{y}_2, \ldo
 
 #### Symmetric MAPE (SMAPE)
 
-```math
-\text{SMAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\frac{2|y_i - \hat{y}_i|}{|y_i| + |\hat{y}_i|}
-
-```
+$$\text{SMAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\frac{2|y_i - \hat{y}_i|}{|y_i| + |\hat{y}_i|}$$
 
 **Properties:**
 
@@ -216,10 +204,7 @@ Let $y_1, y_2, \ldots, y_n$ be the actual values and $\hat{y}_1, \hat{y}_2, \ldo
 
 #### Mean Absolute Scaled Error (MASE)
 
-```math
-\text{MASE} = \frac{\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|}{\frac{1}{T-m}\sum_{t=m+1}^{T}|y_t - y_{t-m}|}
-
-```
+$$\text{MASE} = \frac{\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|}{\frac{1}{T-m}\sum_{t=m+1}^{T}|y_t - y_{t-m}|}$$
 
 **Properties:**
 

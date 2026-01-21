@@ -28,10 +28,7 @@ Common models: **M/M/1** (Markovian arrivals, exponential service, single server
 
 The fundamental relationship in queueing systems:
 
-```math
-L = \lambda \cdot W
-
-```
+$$L = \lambda \cdot W$$
 
 where:
 
@@ -49,24 +46,15 @@ For arrival rate $\lambda$ and service rate $\mu$:
 
 **Utilization:**
 
-```math
-\rho = \frac{\lambda}{\mu}
-
-```
+$$\rho = \frac{\lambda}{\mu}$$
 
 **Average time in system:**
 
-```math
-W = \frac{1}{\mu - \lambda} = \frac{1}{\mu(1-\rho)}
-
-```
+$$W = \frac{1}{\mu - \lambda} = \frac{1}{\mu(1-\rho)}$$
 
 **Average queue length:**
 
-```math
-L_q = \frac{\rho^2}{1-\rho}
-
-```
+$$L_q = \frac{\rho^2}{1-\rho}$$
 
 **Key insight:** As $\rho \to 1$, latency $\to \infty$. Keep utilization below 70-80% for stable systems.
 
@@ -76,26 +64,17 @@ L_q = \frac{\rho^2}{1-\rho}
 
 **Tumbling Window** (non-overlapping):
 
-```math
-W_k = [k \cdot w, (k+1) \cdot w), \quad k \in \mathbb{Z}
-
-```
+$$W_k = [k \cdot w, (k+1) \cdot w), \quad k \in \mathbb{Z}$$
 
 **Sliding Window** (overlapping):
 
-```math
-W_k = [k \cdot s, k \cdot s + w), \quad k \in \mathbb{Z}
-
-```
+$$W_k = [k \cdot s, k \cdot s + w), \quad k \in \mathbb{Z}$$
 
 where $w$ = window size, $s$ = slide interval.
 
 **Session Window** (activity-based):
 
-```math
-W_{session} = \{e_1, ..., e_n\} : \forall i, t_{i+1} - t_i < g
-
-```
+$$W_{session} = \{e_1, ..., e_n\} : \forall i, t_{i+1} - t_i < g$$
 
 where $g$ = gap duration.
 
@@ -103,10 +82,7 @@ where $g$ = gap duration.
 
 A **watermark** $W(t_p)$ at processing time $t_p$ is a heuristic bound:
 
-```math
-W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\}
-
-```
+$$W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\}$$
 
 **Completeness guarantee:** For window $[a, b)$, we can close it when $W(t_p) \geq b$.
 
@@ -116,17 +92,11 @@ W(t_p) = \max\{t_e : \text{all events with } t_e' \leq t_e \text{ have arrived}\
 
 **Idempotent processing** ensures:
 
-```math
-f(f(x)) = f(x)
-
-```
+$$f(f(x)) = f(x)$$
 
 **Transactional boundaries** with offset commits:
 
-```math
-\text{commit}(\text{offset}_i) \Rightarrow \text{processed}(e_1, ..., e_i)
-
-```
+$$\text{commit}(\text{offset}_i) \Rightarrow \text{processed}(e_1, ..., e_i)$$
 
 Recovery: Resume from $\text{offset}_{last_committed}$.
 
@@ -138,19 +108,13 @@ For batch size $B$ and per-item processing cost $c$:
 
 **Throughput:**
 
-```math
-\Theta = \frac{B}{c_{setup} + B \cdot c_{item}}
-
-```
+$$\Theta = \frac{B}{c_{setup} + B \cdot c_{item}}$$
 
 As $B \to \infty$: $\Theta \to \frac{1}{c_{item}}$ (asymptotic maximum)
 
 **Latency:**
 
-```math
-L = c_{setup} + B \cdot c_{item} + \frac{B-1}{2\lambda}
-
-```
+$$L = c_{setup} + B \cdot c_{item} + \frac{B-1}{2\lambda}$$
 
 The last term accounts for waiting time to fill the batch.
 
@@ -160,10 +124,7 @@ The last term accounts for waiting time to fill the batch.
 
 Spark Streaming uses micro-batches with interval $\Delta$:
 
-```math
-\text{latency} \geq \Delta + \text{processing_time}
-
-```
+$$\text{latency} \geq \Delta + \text{processing_time}$$
 
 Minimum achievable latency bounded by batch interval.
 
@@ -175,19 +136,13 @@ Minimum achievable latency bounded by batch interval.
 
 For exponential decay:
 
-```math
-I(t) = I_0 \cdot e^{-\lambda t}
-
-```
+$$I(t) = I_0 \cdot e^{-\lambda t}$$
 
 where $\lambda$ = decay rate, $t$ = data age.
 
 **Optimal update frequency:** Balance information gain against processing cost:
 
-```math
-\max_f \left[ I(1/f) - C(f) \right]
-
-```
+$$\max_f \left[ I(1/f) - C(f) \right]$$
 
 where $f$ = update frequency, $C(f)$ = cost function.
 
@@ -195,10 +150,7 @@ where $f$ = update frequency, $C(f)$ = cost function.
 
 For event types with probabilities $p_1, ..., p_n$:
 
-```math
-H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
-
-```
+$$H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i$$
 
 **Implications:**
 
@@ -227,17 +179,11 @@ For update propagation time $T$ and update rate $\lambda$:
 
 **Staleness probability:**
 
-```math
-P(\text{stale}) = 1 - e^{-\lambda T}
-
-```
+$$P(\text{stale}) = 1 - e^{-\lambda T}$$
 
 **Expected staleness duration:**
 
-```math
-E[\text{staleness}] = T/2
-
-```
+$$E[\text{staleness}] = T/2$$
 
 ---
 

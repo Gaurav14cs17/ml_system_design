@@ -20,10 +20,7 @@ At its heart, a recommendation system solves the **matrix completion problem**: 
 
 For user \(u\) and item \(i\), we seek to estimate:
 
-```math
-\hat{r}_{ui} = f(u, i; \Theta)
-
-```
+$$\hat{r}_{ui} = f(u, i; \Theta)$$
 
 Where \(f\) is our model parameterized by \(\Theta\). The goal is to learn \(\Theta\) such that \(\hat{r}_{ui}\) accurately predicts user preferences.
 
@@ -80,10 +77,7 @@ Where \(f\) is our model parameterized by \(\Theta\). The goal is to learn \(\Th
 
 The classic approach decomposes the interaction matrix into latent factors:
 
-```math
-\mathbf{R} \approx \mathbf{P}\mathbf{Q}^\top
-
-```
+$$\mathbf{R} \approx \mathbf{P}\mathbf{Q}^\top$$
 
 Where:
 
@@ -97,35 +91,23 @@ Where:
 
 **Optimization Objective:**
 
-```math
-\min_{\mathbf{P}, \mathbf{Q}} \sum_{(u,i) \in \mathcal{O}} \left(r_{ui} - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda\left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2\right)
-
-```
+$$\min_{\mathbf{P}, \mathbf{Q}} \sum_{(u,i) \in \mathcal{O}} \left(r_{ui} - \mathbf{p}_u^\top \mathbf{q}_i\right)^2 + \lambda\left(\|\mathbf{P}\|_F^2 + \|\mathbf{Q}\|_F^2\right)$$
 
 ### 2. Similarity Metrics
 
 **Cosine Similarity** — measures angular distance:
 
-```math
-\text{sim}(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|} = \frac{\sum_i u_i v_i}{\sqrt{\sum_i u_i^2} \sqrt{\sum_i v_i^2}}
-
-```
+$$\text{sim}(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|} = \frac{\sum_i u_i v_i}{\sqrt{\sum_i u_i^2} \sqrt{\sum_i v_i^2}}$$
 
 **Pearson Correlation** — adjusts for rating bias:
 
-```math
-\text{corr}(\mathbf{u}, \mathbf{v}) = \frac{\sum_i (u_i - \bar{u})(v_i - \bar{v})}{\sqrt{\sum_i (u_i - \bar{u})^2} \sqrt{\sum_i (v_i - \bar{v})^2}}
-
-```
+$$\text{corr}(\mathbf{u}, \mathbf{v}) = \frac{\sum_i (u_i - \bar{u})(v_i - \bar{v})}{\sqrt{\sum_i (u_i - \bar{u})^2} \sqrt{\sum_i (v_i - \bar{v})^2}}$$
 
 ### 3. Probabilistic Framework (BPR)
 
 Bayesian Personalized Ranking optimizes pairwise preferences:
 
-```math
-\text{BPR-OPT} = \sum_{(u,i,j) \in D_S} \ln \sigma(\hat{x}_{uij}) - \lambda_\Theta \|\Theta\|^2
-
-```
+$$\text{BPR-OPT} = \sum_{(u,i,j) \in D_S} \ln \sigma(\hat{x}_{uij}) - \lambda_\Theta \|\Theta\|^2$$
 
 Where \(\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj}\) represents the preference of item \(i\) over item \(j\) for user \(u\).
 
@@ -133,10 +115,7 @@ Where \(\hat{x}_{uij} = \hat{r}_{ui} - \hat{r}_{uj}\) represents the preference 
 
 **Two-Tower Architecture:**
 
-```math
-\hat{r}_{ui} = \text{sim}(f_\theta(\mathbf{x}_u), g_\phi(\mathbf{y}_i))
-
-```
+$$\hat{r}_{ui} = \text{sim}(f_\theta(\mathbf{x}_u), g_\phi(\mathbf{y}_i))$$
 
 Where:
 
@@ -148,10 +127,7 @@ Where:
 
 **Attention Mechanism (Transformers):**
 
-```math
-\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{d_k}}\right)\mathbf{V}
-
-```
+$$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{d_k}}\right)\mathbf{V}$$
 
 ---
 
@@ -161,27 +137,18 @@ Where:
 
 **NDCG@K (Normalized Discounted Cumulative Gain):**
 
-```math
-\text{DCG@K} = \sum_{i=1}^{K} \frac{2^{rel_i} - 1}{\log_2(i + 1)}
-\text{NDCG@K} = \frac{\text{DCG@K}}{\text{IDCG@K}}
-
-```
+$$\text{DCG@K} = \sum_{i=1}^{K} \frac{2^{rel_i} - 1}{\log_2(i + 1)}
+\text{NDCG@K} = \frac{\text{DCG@K}}{\text{IDCG@K}}$$
 
 **Mean Average Precision:**
 
-```math
-\text{MAP} = \frac{1}{|U|} \sum_{u \in U} \text{AP}(u) = \frac{1}{|U|} \sum_{u \in U} \frac{1}{|R_u|} \sum_{k=1}^{n} P(k) \cdot \text{rel}(k)
-
-```
+$$\text{MAP} = \frac{1}{|U|} \sum_{u \in U} \text{AP}(u) = \frac{1}{|U|} \sum_{u \in U} \frac{1}{|R_u|} \sum_{k=1}^{n} P(k) \cdot \text{rel}(k)$$
 
 ### Prediction Accuracy
 
 **RMSE (Root Mean Squared Error):**
 
-```math
-\text{RMSE} = \sqrt{\frac{1}{|\mathcal{T}|} \sum_{(u,i) \in \mathcal{T}} (r_{ui} - \hat{r}_{ui})^2}
-
-```
+$$\text{RMSE} = \sqrt{\frac{1}{|\mathcal{T}|} \sum_{(u,i) \in \mathcal{T}} (r_{ui} - \hat{r}_{ui})^2}$$
 
 ---
 
@@ -203,10 +170,7 @@ Modern recommendation systems follow a **candidate generation → ranking → re
 
 For large-scale retrieval, exact nearest neighbor search is infeasible. ANN algorithms trade accuracy for speed:
 
-```math
-\text{Recall@k} = \frac{|\text{ANN}(q, k) \cap \text{Exact}(q, k)|}{k}
-
-```
+$$\text{Recall@k} = \frac{|\text{ANN}(q, k) \cap \text{Exact}(q, k)|}{k}$$
 
 Common approaches:
 

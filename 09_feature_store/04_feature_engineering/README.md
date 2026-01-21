@@ -216,20 +216,14 @@ Time windows are fundamental to feature engineering. Given a time series of even
 #### Tumbling Windows
 Non-overlapping, fixed-size windows:
 
-```math
-W_i = [t_0 + i \cdot \Delta, t_0 + (i+1) \cdot \Delta)
-
-```
+$$W_i = [t_0 + i \cdot \Delta, t_0 + (i+1) \cdot \Delta)$$
 
 Where \( \Delta \) is the window size.
 
 #### Sliding Windows
 Overlapping windows with configurable slide interval:
 
-```math
-W_i = [t_0 + i \cdot \delta, t_0 + i \cdot \delta + \Delta)
-
-```
+$$W_i = [t_0 + i \cdot \delta, t_0 + i \cdot \delta + \Delta)$$
 
 Where \( \delta \) is the slide interval and \( \Delta \) is window size.
 

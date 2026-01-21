@@ -46,10 +46,7 @@ Machine Learning approaches treat time series forecasting as a supervised learni
 
 Transform time series into input-output pairs:
 
-```math
-\{Y_1, Y_2, \ldots, Y_T\} \rightarrow \{(X_t, Y_{t+h})\}_{t=p}^{T-h}
-
-```
+$$\{Y_1, Y_2, \ldots, Y_T\} \rightarrow \{(X_t, Y_{t+h})\}_{t=p}^{T-h}$$
 
 Where:
 
@@ -73,10 +70,7 @@ Where:
 
 For tree ensemble methods (XGBoost, LightGBM):
 
-```math
-\mathcal{L}(\theta) = \sum_{i=1}^{n}l(y_i, \hat{y}_i) + \sum_{k=1}^{K}\Omega(f_k)
-
-```
+$$\mathcal{L}(\theta) = \sum_{i=1}^{n}l(y_i, \hat{y}_i) + \sum_{k=1}^{K}\Omega(f_k)$$
 
 Where:
 

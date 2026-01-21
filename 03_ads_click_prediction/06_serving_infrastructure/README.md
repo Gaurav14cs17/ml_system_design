@@ -63,17 +63,11 @@ Collect requests and process together:
 
 **Throughput gain**:
 
-```math
-\text{Throughput} = \frac{\text{Batch Size}}{\text{Latency}_{\text{batch}}}
-
-```
+$$\text{Throughput} = \frac{\text{Batch Size}}{\text{Latency}_{\text{batch}}}$$
 
 **Optimal batch size**:
 
-```math
-B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per_sample}}}
-
-```
+$$B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per_sample}}}$$
 
 | Batch Size | Latency (ms) | Throughput (QPS/GPU) |
 |------------|--------------|----------------------|
@@ -86,11 +80,8 @@ B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per_sample}}}
 
 Wait time vs batch efficiency:
 
-```math
-\text{Total Latency} = T_{\text{wait}} + T_{\text{inference}}(B)
-T_{\text{wait}} = \min(T_{\text{timeout}}, T_{\text{batch_full}})
-
-```
+$$\text{Total Latency} = T_{\text{wait}} + T_{\text{inference}}(B)
+T_{\text{wait}} = \min(T_{\text{timeout}}, T_{\text{batch_full}})$$
 
 Typical timeout: 1-5ms
 
@@ -100,10 +91,7 @@ Typical timeout: 1-5ms
 
 ### Feature Lookup Latency
 
-```math
-T_{\text{total}} = \max(T_{\text{user}}, T_{\text{ad}}, T_{\text{context}})
-
-```
+$$T_{\text{total}} = \max(T_{\text{user}}, T_{\text{ad}}, T_{\text{context}})$$
 
 **Parallel fetching** reduces latency from sum to max.
 
@@ -117,10 +105,7 @@ T_{\text{total}} = \max(T_{\text{user}}, T_{\text{ad}}, T_{\text{context}})
 
 ### Cache Hit Rate Impact
 
-```math
-T_{\text{avg}} = p_{\text{hit}} \cdot T_{\text{cache}} + (1 - p_{\text{hit}}) \cdot T_{\text{origin}}
-
-```
+$$T_{\text{avg}} = p_{\text{hit}} \cdot T_{\text{cache}} + (1 - p_{\text{hit}}) \cdot T_{\text{origin}}$$
 
 | Hit Rate | Avg Latency | Notes |
 |----------|-------------|-------|
@@ -140,10 +125,7 @@ Assuming $T_{\text{cache}} = 1\text{ms}$, $T_{\text{origin}} = 10\text{ms}$.
 
 ### Cache Key Design
 
-```math
-\text{key} = \text{hash}(\text{entity_type}, \text{entity_id}, \text{feature_version})
-
-```
+$$\text{key} = \text{hash}(\text{entity_type}, \text{entity_id}, \text{feature_version})$$
 
 ### TTL Strategy
 
@@ -159,26 +141,17 @@ Assuming $T_{\text{cache}} = 1\text{ms}$, $T_{\text{origin}} = 10\text{ms}$.
 
 **Write-through**: Update cache on write
 
-```math
-\text{Write}(DB) \rightarrow \text{Write}(Cache)
-
-```
+$$\text{Write}(DB) \rightarrow \text{Write}(Cache)$$
 
 **Write-behind**: Async cache update
 
-```math
-\text{Write}(Cache) \rightarrow \text{Async Write}(DB)
-
-```
+$$\text{Write}(Cache) \rightarrow \text{Async Write}(DB)$$
 
 ### Cache Warming
 
 Pre-populate cache before traffic:
 
-```math
-\text{Warm Set} = \text{Top-K Users} \cup \text{Active Ads} \cup \text{Common Contexts}
-
-```
+$$\text{Warm Set} = \text{Top-K Users} \cup \text{Active Ads} \cup \text{Common Contexts}$$
 
 ---
 
@@ -195,10 +168,7 @@ Pre-populate cache before traffic:
 
 ### Weighted Load Balancing
 
-```math
-P(\text{server}_i) = \frac{w_i}{\sum_j w_j}
-
-```
+$$P(\text{server}_i) = \frac{w_i}{\sum_j w_j}$$
 
 where $w_i$ = server capacity weight.
 
@@ -206,17 +176,11 @@ where $w_i$ = server capacity weight.
 
 **Success rate threshold**:
 
-```math
-\text{Healthy} = \frac{\text{Successful Checks}}{\text{Total Checks}} > 0.8
-
-```
+$$\text{Healthy} = \frac{\text{Successful Checks}}{\text{Total Checks}} > 0.8$$
 
 **Latency threshold**:
 
-```math
-\text{Healthy} = T_{p99} < T_{\text{threshold}}
-
-```
+$$\text{Healthy} = T_{p99} < T_{\text{threshold}}$$
 
 ---
 
@@ -234,10 +198,7 @@ When components fail, fall back to simpler predictions:
 
 ### Fallback Prediction
 
-```math
-\hat{y}_{\text{fallback}} = \lambda \cdot \text{CTR}_{\text{segment}} + (1-\lambda) \cdot \text{CTR}_{\text{global}}
-
-```
+$$\hat{y}_{\text{fallback}} = \lambda \cdot \text{CTR}_{\text{segment}} + (1-\lambda) \cdot \text{CTR}_{\text{global}}$$
 
 where segment = device type, category, etc.
 
@@ -253,10 +214,7 @@ State machine to prevent cascade failures:
 
 **Error rate threshold**:
 
-```math
-\text{Open Circuit if } \frac{\text{Failures}}{\text{Requests}} > \epsilon \text{ in window } T
-
-```
+$$\text{Open Circuit if } \frac{\text{Failures}}{\text{Requests}} > \epsilon \text{ in window } T$$
 
 Typical: $\epsilon = 0.5$, $T = 10s$
 
@@ -264,17 +222,11 @@ Typical: $\epsilon = 0.5$, $T = 10s$
 
 **Exponential backoff**:
 
-```math
-T_{\text{wait}} = \min(T_{\max}, T_{\text{base}} \cdot 2^{\text{attempt}})
-
-```
+$$T_{\text{wait}} = \min(T_{\max}, T_{\text{base}} \cdot 2^{\text{attempt}})$$
 
 **With jitter**:
 
-```math
-T_{\text{wait}} = T_{\text{base}} \cdot 2^{\text{attempt}} + \text{rand}(0, T_{\text{jitter}})
-
-```
+$$T_{\text{wait}} = T_{\text{base}} \cdot 2^{\text{attempt}} + \text{rand}(0, T_{\text{jitter}})$$
 
 Prevents thundering herd.
 
@@ -286,10 +238,7 @@ Prevents thundering herd.
 
 Gradually shift traffic to new version:
 
-```math
-\text{Traffic}_{\text{new}}(t) = \min(100\%, p_0 + r \cdot t)
-
-```
+$$\text{Traffic}_{\text{new}}(t) = \min(100\%, p_0 + r \cdot t)$$
 
 | Phase | Traffic % | Duration |
 |-------|-----------|----------|
@@ -303,10 +252,7 @@ Gradually shift traffic to new version:
 
 Automatic rollback if:
 
-```math
-\text{Metric}_{\text{canary}} < \text{Metric}_{\text{baseline}} - \delta
-
-```
+$$\text{Metric}_{\text{canary}} < \text{Metric}_{\text{baseline}} - \delta$$
 
 | Metric | Threshold (δ) |
 |--------|---------------|
@@ -320,19 +266,13 @@ Automatic rollback if:
 
 ### Key SLIs
 
-```math
-\text{Availability} = \frac{\text{Successful Requests}}{\text{Total Requests}}
+$$\text{Availability} = \frac{\text{Successful Requests}}{\text{Total Requests}}
 \text{Latency}_{p99} = \text{percentile}_{99}(\text{response times})
-\text{Throughput} = \frac{\text{Requests}}{\text{Time}}
-
-```
+\text{Throughput} = \frac{\text{Requests}}{\text{Time}}$$
 
 ### Capacity Planning
 
-```math
-\text{Servers Needed} = \frac{\text{Peak QPS}}{\text{QPS per Server} \times \text{Utilization Target}}
-
-```
+$$\text{Servers Needed} = \frac{\text{Peak QPS}}{\text{QPS per Server} \times \text{Utilization Target}}$$
 
 ---
 

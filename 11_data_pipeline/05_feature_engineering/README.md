@@ -16,10 +16,7 @@
 
 Feature engineering aims to find transformations $\phi: \mathcal{X} \rightarrow \mathcal{F}$ that maximize the **mutual information** between features and target:
 
-```math
-I(\phi(X); Y) = \sum_{f,y} p(f,y) \log \frac{p(f,y)}{p(f)p(y)}
-
-```
+$$I(\phi(X); Y) = \sum_{f,y} p(f,y) \log \frac{p(f,y)}{p(f)p(y)}$$
 
 subject to constraints on feature dimensionality and computational cost.
 
@@ -29,28 +26,19 @@ subject to constraints on feature dimensionality and computational cost.
 
 **Standardization (Z-score normalization):**
 
-```math
-z = \frac{x - \mu}{\sigma}
-
-```
+$$z = \frac{x - \mu}{\sigma}$$
 
 Maps data to have mean $\mu_z = 0$ and variance $\sigma_z^2 = 1$.
 
 **Min-Max Scaling:**
 
-```math
-x' = \frac{x - x_{min}}{x_{max} - x_{min}}
-
-```
+$$x' = \frac{x - x_{min}}{x_{max} - x_{min}}$$
 
 Maps data to range $[0, 1]$.
 
 **Robust Scaling (using median and IQR):**
 
-```math
-x' = \frac{x - \text{median}(x)}{\text{IQR}(x)}
-
-```
+$$x' = \frac{x - \text{median}(x)}{\text{IQR}(x)}$$
 
 More robust to outliers than standardization.
 
@@ -58,19 +46,13 @@ More robust to outliers than standardization.
 
 **Log Transform:**
 
-```math
-x' = \log(x + 1)
-
-```
+$$x' = \log(x + 1)$$
 
 Useful for right-skewed distributions. Transforms multiplicative relationships to additive.
 
 **Box-Cox Transform:**
 
-```math
-x' = \begin{cases} \frac{x^\lambda - 1}{\lambda} & \lambda \neq 0 \\ \log(x) & \lambda = 0 \end{cases}
-
-```
+$$x' = \begin{cases} \frac{x^\lambda - 1}{\lambda} & \lambda \neq 0 \\ \log(x) & \lambda = 0 \end{cases}$$
 
 The optimal $\lambda$ maximizes the likelihood of normality.
 
@@ -83,17 +65,11 @@ Extends Box-Cox to negative values.
 
 **Information Gain:**
 
-```math
-IG(Y|X) = H(Y) - H(Y|X) = I(X; Y)
-
-```
+$$IG(Y|X) = H(Y) - H(Y|X) = I(X; Y)$$
 
 **Gain Ratio (normalized):**
 
-```math
-GR(Y|X) = \frac{IG(Y|X)}{H(X)}
-
-```
+$$GR(Y|X) = \frac{IG(Y|X)}{H(X)}$$
 
 Corrects for features with many unique values.
 
@@ -101,10 +77,7 @@ Corrects for features with many unique values.
 
 For feature set $S$, the **Maximum Relevance Minimum Redundancy (mRMR)** criterion:
 
-```math
-\max_{f \notin S} \left[ I(f; Y) - \frac{1}{|S|} \sum_{g \in S} I(f; g) \right]
-
-```
+$$\max_{f \notin S} \left[ I(f; Y) - \frac{1}{|S|} \sum_{g \in S} I(f; g) \right]$$
 
 Balances relevance to target with redundancy among features.
 
@@ -116,17 +89,11 @@ For category $c$ with target $Y$:
 
 **Naive estimate:**
 
-```math
-\hat{E}[Y|c] = \frac{\sum_{i: x_i = c} y_i}{n_c}
-
-```
+$$\hat{E}[Y|c] = \frac{\sum_{i: x_i = c} y_i}{n_c}$$
 
 **Smoothed estimate (regularized):**
 
-```math
-\tilde{E}[Y|c] = \frac{n_c \cdot \hat{E}[Y|c] + m \cdot \bar{Y}}{n_c + m}
-
-```
+$$\tilde{E}[Y|c] = \frac{n_c \cdot \hat{E}[Y|c] + m \cdot \bar{Y}}{n_c + m}$$
 
 where $m$ is a smoothing parameter and $\bar{Y}$ is the global mean.
 
@@ -136,10 +103,7 @@ This is equivalent to a **Bayesian shrinkage estimator** with a prior centered a
 
 Maps categorical variable $c \in \{c_1, ..., c_k\}$ to $\mathbb{R}^{k-1}$ (or $\mathbb{R}^k$):
 
-```math
-\phi(c) = [\mathbb{1}_{c=c_1}, \mathbb{1}_{c=c_2}, ..., \mathbb{1}_{c=c_{k-1}}]
-
-```
+$$\phi(c) = [\mathbb{1}_{c=c_1}, \mathbb{1}_{c=c_2}, ..., \mathbb{1}_{c=c_{k-1}}]$$
 
 **Dimensionality:** $k-1$ features (with reference category) or $k$ features (full encoding).
 
@@ -149,10 +113,7 @@ Maps categorical variable $c \in \{c_1, ..., c_k\}$ to $\mathbb{R}^{k-1}$ (or $\
 
 For periodic features (hour, day of week, month):
 
-```math
-x_{sin} = \sin\left(\frac{2\pi \cdot t}{T}\right), \quad x_{cos} = \cos\left(\frac{2\pi \cdot t}{T}\right)
-
-```
+$$x_{sin} = \sin\left(\frac{2\pi \cdot t}{T}\right), \quad x_{cos} = \cos\left(\frac{2\pi \cdot t}{T}\right)$$
 
 where $T$ is the period (e.g., 24 for hours, 7 for days).
 
@@ -164,17 +125,11 @@ For a time series $\{(t_i, x_i)\}$ and window size $w$:
 
 **Rolling Mean:**
 
-```math
-\bar{x}_t^{(w)} = \frac{1}{w}\sum_{i=0}^{w-1} x_{t-i}
-
-```
+$$\bar{x}_t^{(w)} = \frac{1}{w}\sum_{i=0}^{w-1} x_{t-i}$$
 
 **Exponential Moving Average:**
 
-```math
-\text{EMA}_t = \alpha \cdot x_t + (1-\alpha) \cdot \text{EMA}_{t-1}
-
-```
+$$\text{EMA}_t = \alpha \cdot x_t + (1-\alpha) \cdot \text{EMA}_{t-1}$$
 
 where $\alpha = \frac{2}{w+1}$.
 
@@ -189,24 +144,15 @@ where $\alpha = \frac{2}{w+1}$.
 **Polynomial Features:**
 For features $x_1, x_2$, degree 2:
 
-```math
-\phi(x_1, x_2) = [x_1, x_2, x_1^2, x_2^2, x_1 \cdot x_2]
-
-```
+$$\phi(x_1, x_2) = [x_1, x_2, x_1^2, x_2^2, x_1 \cdot x_2]$$
 
 The number of features for degree $d$ with $n$ original features:
 
-```math
-\binom{n + d}{d} = \frac{(n+d)!}{d! \cdot n!}
-
-```
+$$\binom{n + d}{d} = \frac{(n+d)!}{d! \cdot n!}$$
 
 **Cross-product (interaction):**
 
-```math
-x_{interaction} = x_1 \times x_2
-
-```
+$$x_{interaction} = x_1 \times x_2$$
 
 Captures synergistic effects not present in individual features.
 
@@ -215,10 +161,7 @@ Captures synergistic effects not present in individual features.
 **Curse of Dimensionality:**
 As dimensions increase, data becomes sparse. Volume of a unit hypercube that contains $p$% of data:
 
-```math
-\text{side length} = p^{1/d}
-
-```
+$$\text{side length} = p^{1/d}$$
 
 For $p = 10\%$ and $d = 10$: side = 0.79 (most of the space is empty).
 

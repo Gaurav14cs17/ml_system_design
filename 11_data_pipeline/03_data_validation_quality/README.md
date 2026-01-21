@@ -30,35 +30,23 @@ Data quality can be rigorously measured using mathematical definitions:
 
 **Definition:** The ratio of present (non-null) values to total expected values.
 
-```math
-C(D, A) = \frac{|\{d \in D : d.A \neq \text{NULL}\}|}{|D|}
-
-```
+$$C(D, A) = \frac{|\{d \in D : d.A \neq \text{NULL}\}|}{|D|}$$
 
 For multiple attributes $A_1, ..., A_k$ with weights $w_i$:
 
-```math
-C_{weighted}(D) = \sum_{i=1}^{k} w_i \cdot C(D, A_i), \quad \sum w_i = 1
-
-```
+$$C_{weighted}(D) = \sum_{i=1}^{k} w_i \cdot C(D, A_i), \quad \sum w_i = 1$$
 
 #### Accuracy
 
 **Definition:** The proportion of data points that correctly represent reality.
 
-```math
-\text{Acc}(D, D^*) = \frac{|\{d \in D : d = d^*\}|}{|D|}
-
-```
+$$\text{Acc}(D, D^*) = \frac{|\{d \in D : d = d^*\}|}{|D|}$$
 
 where $D^*$ is the ground truth dataset.
 
 When ground truth is unavailable, use **proxy accuracy** via cross-validation:
 
-```math
-\hat{\text{Acc}} = 1 - \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
-
-```
+$$\hat{\text{Acc}} = 1 - \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$$
 
 #### Consistency
 
@@ -66,10 +54,7 @@ When ground truth is unavailable, use **proxy accuracy** via cross-validation:
 
 For constraint set $\Phi = \{\phi_1, \phi_2, ..., \phi_m\}$:
 
-```math
-\text{Cons}(D) = \frac{|\{d \in D : \forall \phi_i \in \Phi, \phi_i(d) = \text{true}\}|}{|D|}
-
-```
+$$\text{Cons}(D) = \frac{|\{d \in D : \forall \phi_i \in \Phi, \phi_i(d) = \text{true}\}|}{|D|}$$
 
 Common constraints:
 
@@ -85,17 +70,11 @@ Common constraints:
 
 **Age-based freshness:**
 
-```math
-F(D) = 1 - \frac{\max(\text{now} - t_{latest}, 0)}{T_{max}}
-
-```
+$$F(D) = 1 - \frac{\max(\text{now} - t_{latest}, 0)}{T_{max}}$$
 
 **Exponential decay model:**
 
-```math
-F(D) = e^{-\lambda \cdot \Delta t}
-
-```
+$$F(D) = e^{-\lambda \cdot \Delta t}$$
 
 where $\lambda = \frac{\ln(2)}{\text{half_life}}$ is the decay constant.
 
@@ -105,10 +84,7 @@ where $\lambda = \frac{\ln(2)}{\text{half_life}}$ is the decay constant.
 
 Measures the maximum distance between two cumulative distribution functions:
 
-```math
-D_{KS} = \sup_x |F_{reference}(x) - F_{new}(x)|
-
-```
+$$D_{KS} = \sup_x |F_{reference}(x) - F_{new}(x)|$$
 
 **Null hypothesis** $H_0$: Both samples come from the same distribution.
 
@@ -118,10 +94,7 @@ D_{KS} = \sup_x |F_{reference}(x) - F_{new}(x)|
 
 For category distributions:
 
-```math
-\chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}
-
-```
+$$\chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}$$
 
 where $O_i$ = observed count, $E_i$ = expected count.
 
@@ -131,10 +104,7 @@ where $O_i$ = observed count, $E_i$ = expected count.
 
 Measures shift between reference and current distributions:
 
-```math
-\text{PSI} = \sum_{i=1}^{k} (p_i^{new} - p_i^{ref}) \cdot \ln\left(\frac{p_i^{new}}{p_i^{ref}}\right)
-
-```
+$$\text{PSI} = \sum_{i=1}^{k} (p_i^{new} - p_i^{ref}) \cdot \ln\left(\frac{p_i^{new}}{p_i^{ref}}\right)$$
 
 | PSI Value | Interpretation |
 |-----------|----------------|
@@ -148,10 +118,7 @@ Measures shift between reference and current distributions:
 
 For normally distributed data:
 
-```math
-z_i = \frac{x_i - \mu}{\sigma}
-
-```
+$$z_i = \frac{x_i - \mu}{\sigma}$$
 
 **Outlier threshold:** $|z_i| > 3$ (captures 99.7% of normal data)
 
@@ -159,10 +126,7 @@ z_i = \frac{x_i - \mu}{\sigma}
 
 Robust to non-normal distributions:
 
-```math
-\text{IQR} = Q_3 - Q_1
-
-```
+$$\text{IQR} = Q_3 - Q_1$$
 
 **Lower bound:** $Q_1 - 1.5 \times \text{IQR}$
 **Upper bound:** $Q_3 + 1.5 \times \text{IQR}$
@@ -171,10 +135,7 @@ Robust to non-normal distributions:
 
 For detecting outliers in multivariate data:
 
-```math
-D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu})}
-
-```
+$$D_M(\mathbf{x}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu})}$$
 
 where $\boldsymbol{\mu}$ is the mean vector and $\Sigma$ is the covariance matrix.
 
@@ -184,10 +145,7 @@ Under normality, $D_M^2$ follows a $\chi^2_p$ distribution (p = dimensions).
 
 #### Entropy (Data Diversity)
 
-```math
-H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
-
-```
+$$H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)$$
 
 Low entropy → highly concentrated distribution
 High entropy → uniform distribution
@@ -196,10 +154,7 @@ High entropy → uniform distribution
 
 Between features $X$ and $Y$:
 
-```math
-I(X; Y) = \sum_{x,y} p(x,y) \log_2 \frac{p(x,y)}{p(x)p(y)}
-
-```
+$$I(X; Y) = \sum_{x,y} p(x,y) \log_2 \frac{p(x,y)}{p(x)p(y)}$$
 
 High $I(X; Y)$ between features may indicate redundancy.
 

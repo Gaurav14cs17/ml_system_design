@@ -44,28 +44,19 @@ Statistical methods provide interpretable, well-understood approaches to time se
 
 The **backshift operator** $B$ (or lag operator $L$) is fundamental to time series notation:
 
-```math
-B Y_t = Y_{t-1}
-B^k Y_t = Y_{t-k}
-
-```
+$$B Y_t = Y_{t-1}
+B^k Y_t = Y_{t-k}$$
 
 The **difference operator** $\nabla$ is defined as:
 
-```math
-\nabla Y_t = Y_t - Y_{t-1} = (1 - B)Y_t
-\nabla^d Y_t = (1 - B)^d Y_t
-
-```
+$$\nabla Y_t = Y_t - Y_{t-1} = (1 - B)Y_t
+\nabla^d Y_t = (1 - B)^d Y_t$$
 
 ### White Noise Process
 
 A **white noise** process $\{\varepsilon_t\}$ satisfies:
 
-```math
-\mathbb{E}[\varepsilon_t] = 0, \quad \text{Var}(\varepsilon_t) = \sigma^2, \quad \text{Cov}(\varepsilon_t, \varepsilon_s) = 0 \text{ for } t \neq s
-
-```
+$$\mathbb{E}[\varepsilon_t] = 0, \quad \text{Var}(\varepsilon_t) = \sigma^2, \quad \text{Cov}(\varepsilon_t, \varepsilon_s) = 0 \text{ for } t \neq s$$
 
 Often denoted as $\varepsilon_t \sim \text{WN}(0, \sigma^2)$ or $\varepsilon_t \overset{iid}{\sim} \mathcal{N}(0, \sigma^2)$ for Gaussian white noise.
 
@@ -73,10 +64,7 @@ Often denoted as $\varepsilon_t \sim \text{WN}(0, \sigma^2)$ or $\varepsilon_t \
 
 Any stationary process $\{Y_t\}$ can be represented as:
 
-```math
-Y_t = \mu + \sum_{j=0}^{\infty} \psi_j \varepsilon_{t-j} = \mu + \psi(B)\varepsilon_t
-
-```
+$$Y_t = \mu + \sum_{j=0}^{\infty} \psi_j \varepsilon_{t-j} = \mu + \psi(B)\varepsilon_t$$
 
 where $\psi(B) = \sum_{j=0}^{\infty} \psi_j B^j$ and $\sum_{j=0}^{\infty} \psi_j^2 < \infty$.
 
@@ -256,17 +244,11 @@ forecast, model = holt_winters_forecast(
 
 An **AR(p)** process models the current value as a linear combination of past values:
 
-```math
-Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \cdots + \phi_p Y_{t-p} + \varepsilon_t
-
-```
+$$Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \cdots + \phi_p Y_{t-p} + \varepsilon_t$$
 
 Using the backshift operator:
 
-```math
-\phi(B)Y_t = c + \varepsilon_t \quad \text{where} \quad \phi(B) = 1 - \phi_1 B - \phi_2 B^2 - \cdots - \phi_p B^p
-
-```
+$$\phi(B)Y_t = c + \varepsilon_t \quad \text{where} \quad \phi(B) = 1 - \phi_1 B - \phi_2 B^2 - \cdots - \phi_p B^p$$
 
 **Stationarity condition:** All roots of $\phi(z) = 0$ lie outside the unit circle.
 
@@ -274,17 +256,11 @@ Using the backshift operator:
 
 An **MA(q)** process models the current value as a linear combination of past errors:
 
-```math
-Y_t = \mu + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \cdots + \theta_q \varepsilon_{t-q}
-
-```
+$$Y_t = \mu + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \cdots + \theta_q \varepsilon_{t-q}$$
 
 Using the backshift operator:
 
-```math
-Y_t = \mu + \theta(B)\varepsilon_t \quad \text{where} \quad \theta(B) = 1 + \theta_1 B + \theta_2 B^2 + \cdots + \theta_q B^q
-
-```
+$$Y_t = \mu + \theta(B)\varepsilon_t \quad \text{where} \quad \theta(B) = 1 + \theta_1 B + \theta_2 B^2 + \cdots + \theta_q B^q$$
 
 **Invertibility condition:** All roots of $\theta(z) = 0$ lie outside the unit circle.
 
@@ -292,24 +268,15 @@ Y_t = \mu + \theta(B)\varepsilon_t \quad \text{where} \quad \theta(B) = 1 + \the
 
 Differencing removes non-stationarity:
 
-```math
-\nabla^d Y_t = (1-B)^d Y_t
-
-```
+$$\nabla^d Y_t = (1-B)^d Y_t$$
 
 ### Complete ARIMA(p,d,q) Model
 
-```math
-\phi(B)(1-B)^d Y_t = c + \theta(B)\varepsilon_t
-
-```
+$$\phi(B)(1-B)^d Y_t = c + \theta(B)\varepsilon_t$$
 
 Or equivalently, if $W_t = \nabla^d Y_t$:
 
-```math
-\phi(B)W_t = c + \theta(B)\varepsilon_t
-
-```
+$$\phi(B)W_t = c + \theta(B)\varepsilon_t$$
 
 <p align="center">
 <svg width="700" height="100" xmlns="http://www.w3.org/2000/svg">
@@ -426,17 +393,11 @@ forecast, conf_int, model = auto_arima_forecast(
 
 #### Seasonal Backshift Operator
 
-```math
-B^m Y_t = Y_{t-m}
-
-```
+$$B^m Y_t = Y_{t-m}$$
 
 #### Complete SARIMA Model
 
-```math
-\Phi_P(B^m) \phi_p(B) (1-B)^d (1-B^m)^D Y_t = c + \Theta_Q(B^m) \theta_q(B) \varepsilon_t
-
-```
+$$\Phi_P(B^m) \phi_p(B) (1-B)^d (1-B^m)^D Y_t = c + \Theta_Q(B^m) \theta_q(B) \varepsilon_t$$
 
 Where:
 
@@ -452,10 +413,7 @@ Where:
 
 For monthly data with yearly seasonality:
 
-```math
-(1 - \Phi_1 B^{12})(1 - \phi_1 B)(1-B)(1-B^{12}) Y_t = (1 + \Theta_1 B^{12})(1 + \theta_1 B) \varepsilon_t
-
-```
+$$(1 - \Phi_1 B^{12})(1 - \phi_1 B)(1-B)(1-B^{12}) Y_t = (1 + \Theta_1 B^{12})(1 + \theta_1 B) \varepsilon_t$$
 
 | Parameter | Interpretation |
 |-----------|----------------|

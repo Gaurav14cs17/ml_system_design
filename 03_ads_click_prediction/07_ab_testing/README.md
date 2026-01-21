@@ -43,10 +43,7 @@
 
 **Hash-based assignment** for consistency:
 
-```math
-\text{bucket} = \text{hash}(\text{user_id}, \text{experiment_id}) \mod 1000
-
-```
+$$\text{bucket} = \text{hash}(\text{user_id}, \text{experiment_id}) \mod 1000$$
 
 User always sees same variant.
 
@@ -58,10 +55,7 @@ User always sees same variant.
 
 For detecting relative lift $\delta$ in proportion metric:
 
-```math
-n = \frac{2(z_{\alpha/2} + z_\beta)^2 \cdot p(1-p)}{(p \cdot \delta)^2}
-
-```
+$$n = \frac{2(z_{\alpha/2} + z_\beta)^2 \cdot p(1-p)}{(p \cdot \delta)^2}$$
 
 where:
 
@@ -75,10 +69,7 @@ where:
 
 **Example**: Detect 2% relative lift in 2% CTR:
 
-```math
-n = \frac{2(1.96 + 0.84)^2 \cdot 0.02 \cdot 0.98}{(0.02 \cdot 0.02)^2} = \frac{2 \cdot 7.84 \cdot 0.0196}{0.00000016} \approx 1.9M
-
-```
+$$n = \frac{2(1.96 + 0.84)^2 \cdot 0.02 \cdot 0.98}{(0.02 \cdot 0.02)^2} = \frac{2 \cdot 7.84 \cdot 0.0196}{0.00000016} \approx 1.9M$$
 
 ### Sample Size Table
 
@@ -93,17 +84,11 @@ n = \frac{2(1.96 + 0.84)^2 \cdot 0.02 \cdot 0.98}{(0.02 \cdot 0.02)^2} = \frac{2
 
 ### Experiment Duration
 
-```math
-\text{Duration} = \frac{\text{Sample Size per Arm} \times 2}{\text{Daily Traffic} \times \text{Allocation \%}}
-
-```
+$$\text{Duration} = \frac{\text{Sample Size per Arm} \times 2}{\text{Daily Traffic} \times \text{Allocation \%}}$$
 
 **Example**: 2M samples needed, 10M daily traffic, 10% allocation:
 
-```math
-\text{Duration} = \frac{2M \times 2}{10M \times 0.1} = \frac{4M}{1M} = 4 \text{ days}
-
-```
+$$\text{Duration} = \frac{2M \times 2}{10M \times 0.1} = \frac{4M}{1M} = 4 \text{ days}$$
 
 **Minimum**: Run for at least 1-2 weeks to capture weekly patterns.
 
@@ -119,44 +104,29 @@ n = \frac{2(1.96 + 0.84)^2 \cdot 0.02 \cdot 0.98}{(0.02 \cdot 0.02)^2} = \frac{2
 
 ### Two-Proportion Z-Test (for CTR)
 
-```math
-z = \frac{\hat{p}_B - \hat{p}_A}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_A} + \frac{1}{n_B})}}
-
-```
+$$z = \frac{\hat{p}_B - \hat{p}_A}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_A} + \frac{1}{n_B})}}$$
 
 where $\hat{p} = \frac{x_A + x_B}{n_A + n_B}$ is the pooled proportion.
 
 **P-value** (two-sided):
 
-```math
-p = 2 \cdot (1 - \Phi(|z|))
-
-```
+$$p = 2 \cdot (1 - \Phi(|z|))$$
 
 ### Confidence Interval
 
 For difference $\hat{p}_B - \hat{p}_A$:
 
-```math
-CI = (\hat{p}_B - \hat{p}_A) \pm z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}_A(1-\hat{p}_A)}{n_A} + \frac{\hat{p}_B(1-\hat{p}_B)}{n_B}}
-
-```
+$$CI = (\hat{p}_B - \hat{p}_A) \pm z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}_A(1-\hat{p}_A)}{n_A} + \frac{\hat{p}_B(1-\hat{p}_B)}{n_B}}$$
 
 **Interpretation**: If CI excludes 0, difference is significant.
 
 ### Relative Lift
 
-```math
-\text{Lift} = \frac{\hat{p}_B - \hat{p}_A}{\hat{p}_A} \times 100\%
-
-```
+$$\text{Lift} = \frac{\hat{p}_B - \hat{p}_A}{\hat{p}_A} \times 100\%$$
 
 **Confidence interval for lift**:
 
-```math
-CI_{\text{lift}} = \frac{CI_{\text{diff}}}{\hat{p}_A}
-
-```
+$$CI_{\text{lift}} = \frac{CI_{\text{diff}}}{\hat{p}_A}$$
 
 ---
 
@@ -200,10 +170,7 @@ CI_{\text{lift}} = \frac{CI_{\text{diff}}}{\hat{p}_A}
 
 Check that guardrails are not violated:
 
-```math
-\text{Pass} = \text{Metric}_{\text{treatment}} \geq \text{Metric}_{\text{control}} - \epsilon
-
-```
+$$\text{Pass} = \text{Metric}_{\text{treatment}} \geq \text{Metric}_{\text{control}} - \epsilon$$
 
 | Guardrail | Threshold (ε) |
 |-----------|---------------|
@@ -221,10 +188,7 @@ Checking results repeatedly inflates false positive rate.
 
 **Multiple testing correction** (Bonferroni):
 
-```math
-\alpha_{\text{adjusted}} = \frac{\alpha}{n_{\text{tests}}}
-
-```
+$$\alpha_{\text{adjusted}} = \frac{\alpha}{n_{\text{tests}}}$$
 
 **Sequential testing**: Use spending functions.
 
@@ -262,10 +226,7 @@ Users in treatment affect control users.
 
 Reduce variance using pre-experiment data:
 
-```math
-\hat{Y}_{\text{adj}} = \hat{Y} - \theta(\bar{X} - \mathbb{E}[X])
-
-```
+$$\hat{Y}_{\text{adj}} = \hat{Y} - \theta(\bar{X} - \mathbb{E}[X])$$
 
 where:
 
@@ -275,10 +236,7 @@ where:
 
 **Variance reduction**:
 
-```math
-\text{Var}(\hat{Y}_{\text{adj}}) = \text{Var}(\hat{Y})(1 - \rho^2)
-
-```
+$$\text{Var}(\hat{Y}_{\text{adj}}) = \text{Var}(\hat{Y})(1 - \rho^2)$$
 
 Can reduce required sample size by 50% if $\rho = 0.7$.
 
@@ -286,10 +244,7 @@ Can reduce required sample size by 50% if $\rho = 0.7$.
 
 Ensure balance across important segments:
 
-```math
-\hat{\tau} = \sum_{s} w_s \cdot \hat{\tau}_s
-
-```
+$$\hat{\tau} = \sum_{s} w_s \cdot \hat{\tau}_s$$
 
 where $w_s = \frac{n_s}{n}$ is stratum weight.
 
@@ -297,27 +252,18 @@ where $w_s = \frac{n_s}{n}$ is stratum weight.
 
 **Posterior probability** of B being better:
 
-```math
-P(\mu_B > \mu_A \mid \text{data}) = \int_0^\infty \int_0^x p(\mu_A \mid \text{data}) \cdot p(\mu_B \mid \text{data}) \, d\mu_A \, d\mu_B
-
-```
+$$P(\mu_B > \mu_A \mid \text{data}) = \int_0^\infty \int_0^x p(\mu_A \mid \text{data}) \cdot p(\mu_B \mid \text{data}) \, d\mu_A \, d\mu_B$$
 
 **Expected loss** for choosing B:
 
-```math
-\mathbb{E}[\text{Loss}_B] = \int \max(0, \mu_A - \mu_B) \cdot p(\mu_A, \mu_B \mid \text{data}) \, d\mu_A \, d\mu_B
-
-```
+$$\mathbb{E}[\text{Loss}_B] = \int \max(0, \mu_A - \mu_B) \cdot p(\mu_A, \mu_B \mid \text{data}) \, d\mu_A \, d\mu_B$$
 
 ### Multi-Armed Bandits
 
 **Thompson Sampling**: Balance exploration and exploitation.
 
-```math
-\text{Sample } \theta_i \sim \text{Beta}(\alpha_i, \beta_i)
-\text{Choose } \arg\max_i \theta_i
-
-```
+$$\text{Sample } \theta_i \sim \text{Beta}(\alpha_i, \beta_i)
+\text{Choose } \arg\max_i \theta_i$$
 
 Use when:
 

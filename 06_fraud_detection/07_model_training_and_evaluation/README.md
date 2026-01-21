@@ -51,10 +51,7 @@
 
 Training seeks to minimize the **empirical risk** over the training set:
 
-```math
-\hat{\theta} = \arg\min_\theta \frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(y_i, f(\mathbf{x}_i; \theta)) + \lambda \cdot R(\theta)
-
-```
+$$\hat{\theta} = \arg\min_\theta \frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(y_i, f(\mathbf{x}_i; \theta)) + \lambda \cdot R(\theta)$$
 
 Where:
 
@@ -68,10 +65,7 @@ Where:
 
 The **generalization error** is bounded by:
 
-```math
-\mathbb{E}[\mathcal{L}_{\text{test}}] \leq \mathcal{L}_{\text{train}} + O\left(\sqrt{\frac{\text{VC}(f)}{N}}\right)
-
-```
+$$\mathbb{E}[\mathcal{L}_{\text{test}}] \leq \mathcal{L}_{\text{train}} + O\left(\sqrt{\frac{\text{VC}(f)}{N}}\right)$$
 
 Where $\text{VC}(f)$ is the VC dimension (model complexity). More training data reduces the gap.
 
@@ -81,26 +75,17 @@ Where $\text{VC}(f)$ is the VC dimension (model complexity). More training data 
 
 In production, the fraud rate may differ from training:
 
-```math
-P_{\text{prod}}(\text{fraud}) \neq P_{\text{train}}(\text{fraud})
-
-```
+$$P_{\text{prod}}(\text{fraud}) \neq P_{\text{train}}(\text{fraud})$$
 
 To correct predictions:
 
-```math
-\hat{y}_{\text{corrected}} = \frac{\hat{y} \cdot \pi_{\text{prod}} / \pi_{\text{train}}}{\hat{y} \cdot \pi_{\text{prod}} / \pi_{\text{train}} + (1 - \hat{y}) \cdot (1 - \pi_{\text{prod}}) / (1 - \pi_{\text{train}})}
-
-```
+$$\hat{y}_{\text{corrected}} = \frac{\hat{y} \cdot \pi_{\text{prod}} / \pi_{\text{train}}}{\hat{y} \cdot \pi_{\text{prod}} / \pi_{\text{train}} + (1 - \hat{y}) \cdot (1 - \pi_{\text{prod}}) / (1 - \pi_{\text{train}})}$$
 
 #### SMOTE: Synthetic Minority Oversampling
 
 For each minority sample $\mathbf{x}_i$, find $k$ nearest neighbors and create synthetic samples:
 
-```math
-\mathbf{x}_{\text{new}} = \mathbf{x}_i + \lambda \cdot (\mathbf{x}_{nn} - \mathbf{x}_i)
-
-```
+$$\mathbf{x}_{\text{new}} = \mathbf{x}_i + \lambda \cdot (\mathbf{x}_{nn} - \mathbf{x}_i)$$
 
 Where $\lambda \sim \text{Uniform}(0, 1)$ and $\mathbf{x}_{nn}$ is a random neighbor.
 
@@ -110,27 +95,18 @@ Where $\lambda \sim \text{Uniform}(0, 1)$ and $\mathbf{x}_{nn}$ is a random neig
 
 At each threshold $\tau$, compute:
 
-```math
-\text{Precision}(\tau) = \frac{\sum_i \mathbb{1}[\hat{y}_i \geq \tau] \cdot \mathbb{1}[y_i = 1]}{\sum_i \mathbb{1}[\hat{y}_i \geq \tau]}
-\text{Recall}(\tau) = \frac{\sum_i \mathbb{1}[\hat{y}_i \geq \tau] \cdot \mathbb{1}[y_i = 1]}{\sum_i \mathbb{1}[y_i = 1]}
-
-```
+$$\text{Precision}(\tau) = \frac{\sum_i \mathbb{1}[\hat{y}_i \geq \tau] \cdot \mathbb{1}[y_i = 1]}{\sum_i \mathbb{1}[\hat{y}_i \geq \tau]}
+\text{Recall}(\tau) = \frac{\sum_i \mathbb{1}[\hat{y}_i \geq \tau] \cdot \mathbb{1}[y_i = 1]}{\sum_i \mathbb{1}[y_i = 1]}$$
 
 #### Area Under PR Curve (AUPRC)
 
 Using the trapezoidal rule:
 
-```math
-\text{AUPRC} \approx \sum_{k=1}^{K-1} \frac{(P_k + P_{k+1})}{2} \cdot (R_k - R_{k+1})
-
-```
+$$\text{AUPRC} \approx \sum_{k=1}^{K-1} \frac{(P_k + P_{k+1})}{2} \cdot (R_k - R_{k+1})$$
 
 #### Average Precision (AP)
 
-```math
-\text{AP} = \sum_k (R_k - R_{k-1}) \cdot P_k
-
-```
+$$\text{AP} = \sum_k (R_k - R_{k-1}) \cdot P_k$$
 
 This is the precision-weighted average over recall levels.
 
@@ -140,45 +116,30 @@ This is the precision-weighted average over recall levels.
 
 The threshold maximizing $F_\beta$ score:
 
-```math
-\tau^* = \arg\max_\tau \frac{(1 + \beta^2) \cdot P(\tau) \cdot R(\tau)}{\beta^2 \cdot P(\tau) + R(\tau)}
-
-```
+$$\tau^* = \arg\max_\tau \frac{(1 + \beta^2) \cdot P(\tau) \cdot R(\tau)}{\beta^2 \cdot P(\tau) + R(\tau)}$$
 
 #### Cost-Optimal Threshold
 
 Given costs $C_{FP}$ (false positive) and $C_{FN}$ (false negative):
 
-```math
-\tau^* = \arg\min_\tau \left[ C_{FP} \cdot FP(\tau) + C_{FN} \cdot FN(\tau) \right]
-
-```
+$$\tau^* = \arg\min_\tau \left[ C_{FP} \cdot FP(\tau) + C_{FN} \cdot FN(\tau) \right]$$
 
 Equivalently, set $\tau^* = \frac{C_{FP}}{C_{FP} + C_{FN}}$ when the model is well-calibrated.
 
 #### Youden's J Statistic
 
-```math
-J = \text{Sensitivity} + \text{Specificity} - 1 = TPR - FPR
-\tau^* = \arg\max_\tau \left[ TPR(\tau) - FPR(\tau) \right]
-
-```
+$$J = \text{Sensitivity} + \text{Specificity} - 1 = TPR - FPR
+\tau^* = \arg\max_\tau \left[ TPR(\tau) - FPR(\tau) \right]$$
 
 ### Calibration Theory
 
 A model is **calibrated** if:
 
-```math
-P(y = 1 | \hat{y} = p) = p \quad \forall p \in [0, 1]
-
-```
+$$P(y = 1 | \hat{y} = p) = p \quad \forall p \in [0, 1]$$
 
 #### Expected Calibration Error (ECE)
 
-```math
-\text{ECE} = \sum_{b=1}^{B} \frac{|B_b|}{N} \cdot |\text{acc}(B_b) - \text{conf}(B_b)|
-
-```
+$$\text{ECE} = \sum_{b=1}^{B} \frac{|B_b|}{N} \cdot |\text{acc}(B_b) - \text{conf}(B_b)|$$
 
 Where predictions are binned into $B$ buckets, $\text{acc}$ is accuracy, and $\text{conf}$ is average confidence.
 
@@ -186,10 +147,7 @@ Where predictions are binned into $B$ buckets, $\text{acc}$ is accuracy, and $\t
 
 Post-hoc calibration using logistic regression:
 
-```math
-\hat{y}_{\text{calibrated}} = \sigma(A \cdot \hat{y}_{\text{raw}} + B)
-
-```
+$$\hat{y}_{\text{calibrated}} = \sigma(A \cdot \hat{y}_{\text{raw}} + B)$$
 
 Where $A, B$ are learned on a held-out calibration set.
 
@@ -209,10 +167,7 @@ The **gap** prevents label leakage from delayed fraud labels (typically 30-90 da
 
 To preserve temporal ordering within folds:
 
-```math
-\text{CV}_{\text{blocked}} = \frac{1}{K} \sum_{k=1}^{K} \mathcal{L}(\theta_{-k}; D_k)
-
-```
+$$\text{CV}_{\text{blocked}} = \frac{1}{K} \sum_{k=1}^{K} \mathcal{L}(\theta_{-k}; D_k)$$
 
 Where $D_k$ is a contiguous time block, and $\theta_{-k}$ is trained on all other blocks.
 
@@ -222,17 +177,11 @@ Where $D_k$ is a contiguous time block, and $\theta_{-k}$ is trained on all othe
 
 Model the objective $f(\mathbf{h})$ with a Gaussian Process:
 
-```math
-f(\mathbf{h}) \sim \mathcal{GP}(m(\mathbf{h}), k(\mathbf{h}, \mathbf{h}'))
-
-```
+$$f(\mathbf{h}) \sim \mathcal{GP}(m(\mathbf{h}), k(\mathbf{h}, \mathbf{h}'))$$
 
 Acquisition function (Expected Improvement):
 
-```math
-\text{EI}(\mathbf{h}) = \mathbb{E}[\max(f(\mathbf{h}) - f(\mathbf{h}^+), 0)]
-
-```
+$$\text{EI}(\mathbf{h}) = \mathbb{E}[\max(f(\mathbf{h}) - f(\mathbf{h}^+), 0)]$$
 
 Where $\mathbf{h}^+$ is the current best. Next point: $\mathbf{h}_{\text{next}} = \arg\max_\mathbf{h} \text{EI}(\mathbf{h})$.
 
@@ -242,10 +191,7 @@ Where $\mathbf{h}^+$ is the current best. Next point: $\mathbf{h}_{\text{next}} 
 
 Given two models' predictions on the same test set:
 
-```math
-\chi^2 = \frac{(b - c)^2}{b + c}
-
-```
+$$\chi^2 = \frac{(b - c)^2}{b + c}$$
 
 Where $b$ = samples correctly classified by model 1 only, $c$ = by model 2 only.
 
@@ -255,10 +201,7 @@ Reject $H_0$ (models are equivalent) if $\chi^2 > 3.84$ (at $\alpha = 0.05$).
 
 For metric $M$, compute bootstrap distribution:
 
-```math
-M^{(b)} = M(\mathcal{D}^{(b)}), \quad b = 1, \ldots, B
-
-```
+$$M^{(b)} = M(\mathcal{D}^{(b)}), \quad b = 1, \ldots, B$$
 
 Where $\mathcal{D}^{(b)}$ is a bootstrap resample. The 95% CI is $[M_{2.5\%}, M_{97.5\%}]$.
 

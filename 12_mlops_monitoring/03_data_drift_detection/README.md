@@ -67,11 +67,8 @@ Given two samples:
 
 We want to test whether both samples come from the same distribution:
 
-```math
-H_0: P_{ref}(X) = P_{curr}(X)
-H_1: P_{ref}(X) \neq P_{curr}(X)
-
-```
+$$H_0: P_{ref}(X) = P_{curr}(X)
+H_1: P_{ref}(X) \neq P_{curr}(X)$$
 
 ### Information-Theoretic Measures
 
@@ -79,10 +76,7 @@ H_1: P_{ref}(X) \neq P_{curr}(X)
 
 The **KL divergence** measures how one probability distribution diverges from another:
 
-```math
-D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\frac{P(X)}{Q(X)}\right]
-
-```
+$$D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\frac{P(X)}{Q(X)}\right]$$
 
 **Properties:**
 
@@ -98,10 +92,7 @@ D_{KL}(P \| Q) = \sum_{i} P(i) \log\frac{P(i)}{Q(i)} = \mathbb{E}_P\left[\log\fr
 
 The **JS divergence** is a symmetric, bounded version:
 
-```math
-JS(P \| Q) = \frac{1}{2}D_{KL}(P \| M) + \frac{1}{2}D_{KL}(Q \| M)
-
-```
+$$JS(P \| Q) = \frac{1}{2}D_{KL}(P \| M) + \frac{1}{2}D_{KL}(Q \| M)$$
 
 Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution.
 
@@ -121,10 +112,7 @@ Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution.
 
 The **PSI** is the most widely used metric in production ML systems:
 
-```math
-PSI = \sum_{i=1}^{k} (A_i - E_i) \cdot \ln\left(\frac{A_i}{E_i}\right)
-
-```
+$$PSI = \sum_{i=1}^{k} (A_i - E_i) \cdot \ln\left(\frac{A_i}{E_i}\right)$$
 
 Where:
 
@@ -138,25 +126,16 @@ Where:
 
 PSI is essentially a symmetric version of KL divergence:
 
-```math
-PSI = D_{KL}(A \| E) + D_{KL}(E \| A)
-
-```
+$$PSI = D_{KL}(A \| E) + D_{KL}(E \| A)$$
 
 This can be verified by expanding:
 
-```math
-D_{KL}(A \| E) = \sum_i A_i \log\frac{A_i}{E_i}
-D_{KL}(E \| A) = \sum_i E_i \log\frac{E_i}{A_i} = -\sum_i E_i \log\frac{A_i}{E_i}
-
-```
+$$D_{KL}(A \| E) = \sum_i A_i \log\frac{A_i}{E_i}
+D_{KL}(E \| A) = \sum_i E_i \log\frac{E_i}{A_i} = -\sum_i E_i \log\frac{A_i}{E_i}$$
 
 Adding these:
 
-```math
-D_{KL}(A \| E) + D_{KL}(E \| A) = \sum_i (A_i - E_i) \log\frac{A_i}{E_i} = PSI
-
-```
+$$D_{KL}(A \| E) + D_{KL}(E \| A) = \sum_i (A_i - E_i) \log\frac{A_i}{E_i} = PSI$$
 
 #### Interpretation Guidelines
 
@@ -171,10 +150,7 @@ D_{KL}(A \| E) + D_{KL}(E \| A) = \sum_i (A_i - E_i) \log\frac{A_i}{E_i} = PSI
 
 The **KS test** compares the empirical cumulative distribution functions (ECDFs):
 
-```math
-D_n = \sup_x |F_n(x) - G_m(x)|
-
-```
+$$D_n = \sup_x |F_n(x) - G_m(x)|$$
 
 Where:
 
@@ -185,10 +161,7 @@ Where:
 
 Under \( H_0 \), the test statistic converges:
 
-```math
-\sqrt{\frac{nm}{n+m}} D_n \xrightarrow{d} K
-
-```
+$$\sqrt{\frac{nm}{n+m}} D_n \xrightarrow{d} K$$
 
 Where \( K \) follows the **Kolmogorov distribution**.
 
@@ -206,17 +179,11 @@ Reject \( H_0 \) if \( D_n > c_\alpha \cdot \sqrt{\frac{n+m}{nm}} \)
 
 The **Wasserstein distance** measures the minimum "work" to transform one distribution into another:
 
-```math
-W_p(P, Q) = \left(\inf_{\gamma \in \Gamma(P,Q)} \int |x - y|^p d\gamma(x,y)\right)^{1/p}
-
-```
+$$W_p(P, Q) = \left(\inf_{\gamma \in \Gamma(P,Q)} \int |x - y|^p d\gamma(x,y)\right)^{1/p}$$
 
 For 1D distributions with CDFs \( F \) and \( G \):
 
-```math
-W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx
-
-```
+$$W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx$$
 
 **Advantages:**
 
@@ -230,10 +197,7 @@ W_1(P, Q) = \int_{-\infty}^{\infty} |F(x) - G(x)| dx
 
 For categorical features, use the chi-square test:
 
-```math
-\chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}
-
-```
+$$\chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}$$
 
 Where:
 
@@ -263,10 +227,7 @@ Under \( H_0 \), \( \chi^2 \sim \chi^2_{k-1} \) with \( k-1 \) degrees of freedo
 
 The power of drift detection depends on sample size. For PSI with \( k \) bins:
 
-```math
-n_{min} \approx \frac{k \cdot z_{\alpha/2}^2}{4 \cdot \epsilon^2}
-
-```
+$$n_{min} \approx \frac{k \cdot z_{\alpha/2}^2}{4 \cdot \epsilon^2}$$
 
 Where \( \epsilon \) is the minimum detectable proportional change per bin.
 
@@ -376,10 +337,7 @@ When monitoring many features, apply **multiple testing correction**:
 
 **Bonferroni Correction:**
 
-```math
-\alpha_{adjusted} = \frac{\alpha}{m}
-
-```
+$$\alpha_{adjusted} = \frac{\alpha}{m}$$
 
 Where \( m \) is the number of features tested.
 

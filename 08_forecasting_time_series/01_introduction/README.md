@@ -357,10 +357,7 @@ Understanding time series decomposition is fundamental to building effective for
 
 For a seasonal component with period $m$, we can express it as:
 
-```math
-S_t = \sum_{k=1}^{K} \left[ a_k \cos\left(\frac{2\pi kt}{m}\right) + b_k \sin\left(\frac{2\pi kt}{m}\right) \right]
-
-```
+$$S_t = \sum_{k=1}^{K} \left[ a_k \cos\left(\frac{2\pi kt}{m}\right) + b_k \sin\left(\frac{2\pi kt}{m}\right) \right]$$
 
 Where $K \leq \lfloor m/2 \rfloor$ harmonics capture different frequency components of the seasonality.
 
@@ -478,28 +475,19 @@ A time series is **stationary** if its statistical properties remain constant ov
 
 A stochastic process $\{Y_t\}$ is **weakly stationary** (or covariance stationary) if:
 
-```math
-\mathbb{E}[Y_t] = \mu \quad \forall t \quad \text{(constant mean)}
+$$\mathbb{E}[Y_t] = \mu \quad \forall t \quad \text{(constant mean)}
 \text{Var}(Y_t) = \sigma^2 < \infty \quad \forall t \quad \text{(constant finite variance)}
-\text{Cov}(Y_t, Y_{t+h}) = \gamma(h) \quad \forall t \quad \text{(covariance depends only on lag } h\text{)}
-
-```
+\text{Cov}(Y_t, Y_{t+h}) = \gamma(h) \quad \forall t \quad \text{(covariance depends only on lag } h\text{)}$$
 
 ### The Autocovariance Function
 
 For a stationary process, the **autocovariance function** is:
 
-```math
-\gamma(h) = \text{Cov}(Y_t, Y_{t+h}) = \mathbb{E}[(Y_t - \mu)(Y_{t+h} - \mu)]
-
-```
+$$\gamma(h) = \text{Cov}(Y_t, Y_{t+h}) = \mathbb{E}[(Y_t - \mu)(Y_{t+h} - \mu)]$$
 
 And the **autocorrelation function (ACF)** is:
 
-```math
-\rho(h) = \frac{\gamma(h)}{\gamma(0)} = \frac{\text{Cov}(Y_t, Y_{t+h})}{\text{Var}(Y_t)}
-
-```
+$$\rho(h) = \frac{\gamma(h)}{\gamma(0)} = \frac{\text{Cov}(Y_t, Y_{t+h})}{\text{Var}(Y_t)}$$
 
 **Properties:**
 

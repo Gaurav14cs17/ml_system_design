@@ -74,19 +74,13 @@ Ads Click Prediction (CTR) systems power the core revenue engine of digital adve
 
 The fundamental metric we predict:
 
-```math
-\text{CTR} = \frac{\text{Number of Clicks}}{\text{Number of Impressions}} = P(\text{click} \mid \text{user}, \text{ad}, \text{context})
-
-```
+$$\text{CTR} = \frac{\text{Number of Clicks}}{\text{Number of Impressions}} = P(\text{click} \mid \text{user}, \text{ad}, \text{context})$$
 
 ### Model Prediction
 
 Given user $u$, ad $a$, and context $c$, we predict:
 
-```math
-\hat{y} = \sigma(f(u, a, c; \theta)) = \frac{1}{1 + e^{-f(u, a, c; \theta)}}
-
-```
+$$\hat{y} = \sigma(f(u, a, c; \theta)) = \frac{1}{1 + e^{-f(u, a, c; \theta)}}$$
 
 where $\sigma$ is the sigmoid function and $\theta$ are model parameters.
 
@@ -98,10 +92,7 @@ where $\sigma$ is the sigmoid function and $\theta$ are model parameters.
 
 The primary training objective:
 
-```math
-\mathcal{L}_{BCE} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
-
-```
+$$\mathcal{L}_{BCE} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]$$
 
 where:
 
@@ -113,10 +104,7 @@ where:
 
 #### Weighted Cross-Entropy (for class imbalance)
 
-```math
-\mathcal{L}_{WCE} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]
-
-```
+$$\mathcal{L}_{WCE} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_+ \cdot y_i \log(\hat{y}_i) + w_- \cdot (1 - y_i) \log(1 - \hat{y}_i) \right]$$
 
 Typical weights: $w_+ = 10 \text{ to } 100$, $w_- = 1$ (since CTR ~ 1-5%)
 
@@ -128,19 +116,13 @@ Typical weights: $w_+ = 10 \text{ to } 100$, $w_- = 1$ (since CTR ~ 1-5%)
 
 Measures ranking quality:
 
-```math
-\text{AUC} = P(\hat{y}_{\text{positive}} > \hat{y}_{\text{negative}})
-
-```
+$$\text{AUC} = P(\hat{y}_{\text{positive}} > \hat{y}_{\text{negative}})$$
 
 #### Normalized Cross-Entropy (NCE)
 
 Also called **Relative Information Gain** or **Normalized Entropy**:
 
-```math
-\text{NCE} = \frac{-\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]}{-\left[ p \log(p) + (1-p) \log(1-p) \right]}
-
-```
+$$\text{NCE} = \frac{-\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]}{-\left[ p \log(p) + (1-p) \log(1-p) \right]}$$
 
 where $p = \frac{1}{N} \sum_{i=1}^{N} y_i$ is the average CTR.
 
@@ -148,10 +130,7 @@ where $p = \frac{1}{N} \sum_{i=1}^{N} y_i$ is the average CTR.
 
 #### Calibration Error
 
-```math
-\text{ECE} = \sum_{b=1}^{B} \frac{n_b}{N} \left| \text{accuracy}(b) - \text{confidence}(b) \right|
-
-```
+$$\text{ECE} = \sum_{b=1}^{B} \frac{n_b}{N} \left| \text{accuracy}(b) - \text{confidence}(b) \right|$$
 
 where $B$ is number of bins, $n_b$ is samples in bin $b$.
 
@@ -161,28 +140,19 @@ where $B$ is number of bins, $n_b$ is samples in bin $b$.
 
 #### Cross Features (Polynomial)
 
-```math
-\phi_{\text{cross}}(x) = \sum_{i=1}^{d} \sum_{j=i}^{d} w_{ij} \cdot x_i \cdot x_j
-
-```
+$$\phi_{\text{cross}}(x) = \sum_{i=1}^{d} \sum_{j=i}^{d} w_{ij} \cdot x_i \cdot x_j$$
 
 #### Factorization Machines (FM)
 
 Efficient pairwise interactions:
 
-```math
-\hat{y}_{FM} = w_0 + \sum_{i=1}^{d} w_i x_i + \sum_{i=1}^{d} \sum_{j=i+1}^{d} \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j
-
-```
+$$\hat{y}_{FM} = w_0 + \sum_{i=1}^{d} w_i x_i + \sum_{i=1}^{d} \sum_{j=i+1}^{d} \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j$$
 
 where $\mathbf{v}_i \in \mathbb{R}^k$ are latent vectors.
 
 Efficient computation in $O(kd)$:
 
-```math
-\sum_{i=1}^{d} \sum_{j=i+1}^{d} \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j = \frac{1}{2} \sum_{f=1}^{k} \left[ \left( \sum_{i=1}^{d} v_{i,f} x_i \right)^2 - \sum_{i=1}^{d} v_{i,f}^2 x_i^2 \right]
-
-```
+$$\sum_{i=1}^{d} \sum_{j=i+1}^{d} \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j = \frac{1}{2} \sum_{f=1}^{k} \left[ \left( \sum_{i=1}^{d} v_{i,f} x_i \right)^2 - \sum_{i=1}^{d} v_{i,f}^2 x_i^2 \right]$$
 
 ---
 
@@ -190,10 +160,7 @@ Efficient computation in $O(kd)$:
 
 #### Wide & Deep
 
-```math
-\hat{y} = \sigma\left( \mathbf{w}_{wide}^T [\mathbf{x}, \phi(\mathbf{x})] + \mathbf{w}_{deep}^T \cdot a^{(L)} + b \right)
-
-```
+$$\hat{y} = \sigma\left( \mathbf{w}_{wide}^T [\mathbf{x}, \phi(\mathbf{x})] + \mathbf{w}_{deep}^T \cdot a^{(L)} + b \right)$$
 
 where:
 
@@ -205,10 +172,7 @@ where:
 
 Cross layer $l$:
 
-```math
-\mathbf{x}_{l+1} = \mathbf{x}_0 \mathbf{x}_l^T \mathbf{w}_l + \mathbf{b}_l + \mathbf{x}_l
-
-```
+$$\mathbf{x}_{l+1} = \mathbf{x}_0 \mathbf{x}_l^T \mathbf{w}_l + \mathbf{b}_l + \mathbf{x}_l$$
 
 Explicit feature crossing of degree $l+1$ at layer $l$.
 
@@ -218,17 +182,11 @@ Explicit feature crossing of degree $l+1$ at layer $l$.
 
 Observed CTR is biased by position:
 
-```math
-P(\text{click} \mid \text{pos}, \text{ad}) = P(\text{examine} \mid \text{pos}) \cdot P(\text{click} \mid \text{examine}, \text{ad})
-
-```
+$$P(\text{click} \mid \text{pos}, \text{ad}) = P(\text{examine} \mid \text{pos}) \cdot P(\text{click} \mid \text{examine}, \text{ad})$$
 
 **Position-aware model**:
 
-```math
-\hat{y} = \sigma(f_{\text{ad}}(\mathbf{x}_{\text{ad}}) + g_{\text{pos}}(\text{position}))
-
-```
+$$\hat{y} = \sigma(f_{\text{ad}}(\mathbf{x}_{\text{ad}}) + g_{\text{pos}}(\text{position}))$$
 
 At inference, use position = 1 or average position.
 
@@ -238,10 +196,7 @@ At inference, use position = 1 or average position.
 
 Post-hoc calibration:
 
-```math
-\hat{y}_{\text{calibrated}} = \frac{1}{1 + e^{-(a \cdot \hat{y} + b)}}
-
-```
+$$\hat{y}_{\text{calibrated}} = \frac{1}{1 + e^{-(a \cdot \hat{y} + b)}}$$
 
 where $a, b$ are learned on validation data.
 
@@ -251,11 +206,8 @@ where $a, b$ are learned on validation data.
 
 For auction bidding:
 
-```math
-\text{Expected Revenue} = \sum_{i} \text{CTR}_i \times \text{Bid}_i
-\text{eCPM} = \text{CTR} \times \text{CPC} \times 1000
-
-```
+$$\text{Expected Revenue} = \sum_{i} \text{CTR}_i \times \text{Bid}_i
+\text{eCPM} = \text{CTR} \times \text{CPC} \times 1000$$
 
 ---
 

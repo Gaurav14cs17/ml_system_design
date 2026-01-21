@@ -36,10 +36,7 @@
 
 Collaborative filtering requires historical interactions:
 
-```math
-\hat{r}_{ui} = f(\{(u', i', r_{u'i'}) : (u', i') \in \mathcal{O}\})
-
-```
+$$\hat{r}_{ui} = f(\{(u', i', r_{u'i'}) : (u', i') \in \mathcal{O}\})$$
 
 For **new users**: No \((u, \cdot)\) pairs in \(\mathcal{O}\)  
 For **new items**: No \((\cdot, i)\) pairs in \(\mathcal{O}\)
@@ -89,10 +86,7 @@ In matrix factorization \(\mathbf{R} \approx \mathbf{PQ}^\top\):
 
 Map user demographics to embedding space:
 
-```math
-\mathbf{p}_u^{(0)} = f_\theta(\mathbf{x}_u^{\text{demo}})
-
-```
+$$\mathbf{p}_u^{(0)} = f_\theta(\mathbf{x}_u^{\text{demo}})$$
 
 Where \(\mathbf{x}_u^{\text{demo}}\) includes age, gender, location, etc.
 
@@ -102,10 +96,7 @@ Where \(\mathbf{x}_u^{\text{demo}}\) includes age, gender, location, etc.
 
 For users with no signal, recommend popular items:
 
-```math
-\text{score}(i) = \frac{|\mathcal{U}_i|}{\text{time_since_release}^\alpha}
-
-```
+$$\text{score}(i) = \frac{|\mathcal{U}_i|}{\text{time_since_release}^\alpha}$$
 
 Weighted by recency (fresh popular items).
 
@@ -113,10 +104,7 @@ Weighted by recency (fresh popular items).
 
 Explicitly ask preferences during signup:
 
-```math
-\mathbf{p}_u = \sum_{i \in \text{liked}} \mathbf{q}_i - \sum_{j \in \text{disliked}} \mathbf{q}_j
-
-```
+$$\mathbf{p}_u = \sum_{i \in \text{liked}} \mathbf{q}_i - \sum_{j \in \text{disliked}} \mathbf{q}_j$$
 
 Initialize user embedding from stated preferences.
 
@@ -124,17 +112,11 @@ Initialize user embedding from stated preferences.
 
 Gradually transition from cold to warm recommendations:
 
-```math
-\hat{r}_{ui} = \alpha(n) \cdot \hat{r}_{ui}^{\text{CF}} + (1 - \alpha(n)) \cdot \hat{r}_{ui}^{\text{cold}}
-
-```
+$$\hat{r}_{ui} = \alpha(n) \cdot \hat{r}_{ui}^{\text{CF}} + (1 - \alpha(n)) \cdot \hat{r}_{ui}^{\text{cold}}$$
 
 Where:
 
-```math
-\alpha(n) = \min\left(1, \frac{|\mathcal{H}_u|}{\tau}\right)
-
-```
+$$\alpha(n) = \min\left(1, \frac{|\mathcal{H}_u|}{\tau}\right)$$
 
 \(\tau\) is the warm-up threshold (e.g., 10 interactions).
 
@@ -146,17 +128,11 @@ Where:
 
 Map item features to collaborative embedding space:
 
-```math
-\mathbf{q}_i^{(0)} = g_\phi(\mathbf{x}_i^{\text{content}})
-
-```
+$$\mathbf{q}_i^{(0)} = g_\phi(\mathbf{x}_i^{\text{content}})$$
 
 **Training objective:**
 
-```math
-\min_\phi \sum_{i : |\mathcal{U}_i| > k} \|\mathbf{q}_i - g_\phi(\mathbf{x}_i^{\text{content}})\|_2^2
-
-```
+$$\min_\phi \sum_{i : |\mathcal{U}_i| > k} \|\mathbf{q}_i - g_\phi(\mathbf{x}_i^{\text{content}})\|_2^2$$
 
 Learn to predict learned embeddings from features.
 
@@ -164,10 +140,7 @@ Learn to predict learned embeddings from features.
 
 Find similar items by content, borrow their embeddings:
 
-```math
-\mathbf{q}_i^{(0)} = \frac{\sum_{j \in \mathcal{N}_k(i)} \text{sim}_{\text{content}}(i, j) \cdot \mathbf{q}_j}{\sum_{j \in \mathcal{N}_k(i)} \text{sim}_{\text{content}}(i, j)}
-
-```
+$$\mathbf{q}_i^{(0)} = \frac{\sum_{j \in \mathcal{N}_k(i)} \text{sim}_{\text{content}}(i, j) \cdot \mathbf{q}_j}{\sum_{j \in \mathcal{N}_k(i)} \text{sim}_{\text{content}}(i, j)}$$
 
 Weighted average of k-nearest neighbors by content similarity.
 
@@ -185,17 +158,11 @@ Manual placement by domain experts:
 
 Give new items extra exposure:
 
-```math
-\text{score}(i) = \hat{r}_{ui} + \beta \cdot \text{novelty}(i)
-
-```
+$$\text{score}(i) = \hat{r}_{ui} + \beta \cdot \text{novelty}(i)$$
 
 Where:
 
-```math
-\text{novelty}(i) = \log\left(1 + \frac{T_{\text{now}} - T_{\text{release}}}{\text{impressions}(i) + 1}\right)
-
-```
+$$\text{novelty}(i) = \log\left(1 + \frac{T_{\text{now}} - T_{\text{release}}}{\text{impressions}(i) + 1}\right)$$
 
 ---
 
@@ -215,19 +182,13 @@ Where:
 
 ### Epsilon-Greedy
 
-```math
-a_t = \begin{cases} \arg\max_i \hat{\mu}_i & \text{with probability } 1-\epsilon \\ \text{random } i & \text{with probability } \epsilon \end{cases}
-
-```
+$$a_t = \begin{cases} \arg\max_i \hat{\mu}_i & \text{with probability } 1-\epsilon \\ \text{random } i & \text{with probability } \epsilon \end{cases}$$
 
 Simple but doesn't adapt exploration rate.
 
 ### Upper Confidence Bound (UCB)
 
-```math
-a_t = \arg\max_i \left(\hat{\mu}_i + c \sqrt{\frac{\ln t}{n_i}}\right)
-
-```
+$$a_t = \arg\max_i \left(\hat{\mu}_i + c \sqrt{\frac{\ln t}{n_i}}\right)$$
 
 Where:
 
@@ -257,10 +218,7 @@ Maintain posterior over reward parameters:
 
 For binary rewards (click/no-click):
 
-```math
-\theta_i \sim \text{Beta}(\alpha_i + \text{clicks}_i, \beta_i + \text{no_clicks}_i)
-
-```
+$$\theta_i \sim \text{Beta}(\alpha_i + \text{clicks}_i, \beta_i + \text{no_clicks}_i)$$
 
 **Advantages:**
 
@@ -274,17 +232,11 @@ For binary rewards (click/no-click):
 
 Reward depends on context (user features):
 
-```math
-r = f(\mathbf{x}_u, a) + \epsilon
-
-```
+$$r = f(\mathbf{x}_u, a) + \epsilon$$
 
 **LinUCB:**
 
-```math
-a_t = \arg\max_i \left(\mathbf{x}_u^\top \hat{\boldsymbol{\theta}}_i + \alpha \sqrt{\mathbf{x}_u^\top \mathbf{A}_i^{-1} \mathbf{x}_u}\right)
-
-```
+$$a_t = \arg\max_i \left(\mathbf{x}_u^\top \hat{\boldsymbol{\theta}}_i + \alpha \sqrt{\mathbf{x}_u^\top \mathbf{A}_i^{-1} \mathbf{x}_u}\right)$$
 
 Where \(\mathbf{A}_i\) is the covariance of features for item \(i\).
 
@@ -296,10 +248,7 @@ Where \(\mathbf{A}_i\) is the covariance of features for item \(i\).
 
 Learn to learn from few examples:
 
-```math
-\phi^* = \arg\min_\phi \mathbb{E}_{\mathcal{T} \sim p(\mathcal{T})} \left[\mathcal{L}(\mathcal{D}_{\mathcal{T}}^{\text{test}}; f_{\theta_\mathcal{T}^*})\right]
-
-```
+$$\phi^* = \arg\min_\phi \mathbb{E}_{\mathcal{T} \sim p(\mathcal{T})} \left[\mathcal{L}(\mathcal{D}_{\mathcal{T}}^{\text{test}}; f_{\theta_\mathcal{T}^*})\right]$$
 
 Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text{train}})\)
 
@@ -311,10 +260,7 @@ Where \(\theta_\mathcal{T}^* = \text{Adapt}(\phi, \mathcal{D}_\mathcal{T}^{\text
 
 2. Inner loop: Adapt to support set
 
-```math
-\theta_u' = \theta - \alpha \nabla_\theta \mathcal{L}_{\text{support}}(\theta)
-
-```math
+$$\theta_u' = \theta - \alpha \nabla_\theta \mathcal{L}_{\text{support}}(\theta)$$math
 
 3. Outer loop: Update on query set
 
@@ -342,10 +288,7 @@ Simulate cold start during training:
 
 **Training objective:**
 
-```math
-\mathcal{L} = \mathbb{E}_{m \sim \text{Bernoulli}(p)} \left[\mathcal{L}_{\text{rec}}(\mathbf{m} \odot \mathbf{h}_u)\right]
-
-```
+$$\mathcal{L} = \mathbb{E}_{m \sim \text{Bernoulli}(p)} \left[\mathcal{L}_{\text{rec}}(\mathbf{m} \odot \mathbf{h}_u)\right]$$
 
 ---
 

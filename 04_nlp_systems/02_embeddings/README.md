@@ -18,10 +18,7 @@
 
 Embeddings are **learned mappings** from discrete symbols to continuous vector spaces:
 
-```math
-E: \mathcal{V} \rightarrow \mathbb{R}^d
-
-```
+$$E: \mathcal{V} \rightarrow \mathbb{R}^d$$
 
 where $\mathcal{V}$ is the vocabulary and $d$ is the embedding dimension.
 
@@ -33,10 +30,7 @@ The fundamental insight: **semantic relationships** can be captured as **geometr
 
 The celebrated property of word embeddings:
 
-```math
-\vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}
-
-```
+$$\vec{v}_{\text{king}} - \vec{v}_{\text{man}} + \vec{v}_{\text{woman}} \approx \vec{v}_{\text{queen}}$$
 
 This works because embeddings encode **relational structure** through vector arithmetic.
 
@@ -50,24 +44,15 @@ An embedding space $\mathbb{R}^d$ supports:
 
 **Distance metrics** for similarity:
 
-```math
-d_{\text{euclidean}}(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\|_2 = \sqrt{\sum_{i=1}^{d}(u_i - v_i)^2}
-
-```
+$$d_{\text{euclidean}}(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\|_2 = \sqrt{\sum_{i=1}^{d}(u_i - v_i)^2}$$
 
 **Cosine similarity** (direction-based):
 
-```math
-\cos(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|} = \frac{\sum_{i=1}^{d} u_i v_i}{\sqrt{\sum_{i=1}^{d} u_i^2} \sqrt{\sum_{i=1}^{d} v_i^2}}
-
-```
+$$\cos(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|} = \frac{\sum_{i=1}^{d} u_i v_i}{\sqrt{\sum_{i=1}^{d} u_i^2} \sqrt{\sum_{i=1}^{d} v_i^2}}$$
 
 **Cosine distance**:
 
-```math
-d_{\text{cosine}}(\mathbf{u}, \mathbf{v}) = 1 - \cos(\mathbf{u}, \mathbf{v})
-
-```
+$$d_{\text{cosine}}(\mathbf{u}, \mathbf{v}) = 1 - \cos(\mathbf{u}, \mathbf{v})$$
 
 ### 2. The Distributional Hypothesis
 
@@ -75,10 +60,7 @@ d_{\text{cosine}}(\mathbf{u}, \mathbf{v}) = 1 - \cos(\mathbf{u}, \mathbf{v})
 
 Mathematically: Words with similar **context distributions** should have similar **vector representations**.
 
-```math
-P(c|w) \approx P(c|w') \implies \vec{w} \approx \vec{w'}
-
-```
+$$P(c|w) \approx P(c|w') \implies \vec{w} \approx \vec{w'}$$
 
 where $c$ represents context words.
 
@@ -86,17 +68,11 @@ where $c$ represents context words.
 
 For vocabulary $\mathcal{V}$ with $|\mathcal{V}|$ words and embedding dimension $d$:
 
-```math
-\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}
-
-```
+$$\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}$$
 
 Word $w_i$ retrieves its embedding via one-hot indexing:
 
-```math
-\vec{w}_i = \mathbf{E}^T \mathbf{e}_i
-
-```
+$$\vec{w}_i = \mathbf{E}^T \mathbf{e}_i$$
 
 where $\mathbf{e}_i$ is a one-hot vector.
 
@@ -112,10 +88,7 @@ where $\mathbf{e}_i$ is a one-hot vector.
 
 ### Term Frequency-Inverse Document Frequency
 
-```math
-\text{tf-idf}(t, d, D) = \text{tf}(t, d) \times \text{idf}(t, D)
-
-```
+$$\text{tf-idf}(t, d, D) = \text{tf}(t, d) \times \text{idf}(t, D)$$
 
 **Properties**:
 
@@ -172,10 +145,7 @@ Word2Vec learns embeddings by predicting context from words (or vice versa).
 
 **Probability model** using softmax:
 
-```math
-P(w_O | w_I) = \frac{\exp(\vec{v}'_{w_O} \cdot \vec{v}_{w_I})}{\sum_{w=1}^{|\mathcal{V}|} \exp(\vec{v}'_w \cdot \vec{v}_{w_I})}
-
-```
+$$P(w_O | w_I) = \frac{\exp(\vec{v}'_{w_O} \cdot \vec{v}_{w_I})}{\sum_{w=1}^{|\mathcal{V}|} \exp(\vec{v}'_w \cdot \vec{v}_{w_I})}$$
 
 where:
 
@@ -185,19 +155,13 @@ where:
 
 **Loss function** (negative log-likelihood):
 
-```math
-\mathcal{L} = -\frac{1}{T} \sum_{t=1}^{T} \sum_{\substack{-c \leq j \leq c \\ j \neq 0}} \log P(w_{t+j} | w_t)
-
-```
+$$\mathcal{L} = -\frac{1}{T} \sum_{t=1}^{T} \sum_{\substack{-c \leq j \leq c \\ j \neq 0}} \log P(w_{t+j} | w_t)$$
 
 ### CBOW (Continuous Bag of Words)
 
 **Objective**: Predict center word from context words.
 
-```math
-P(w_t | w_{t-c}, \ldots, w_{t+c}) = \frac{\exp(\vec{v}_{w_t} \cdot \bar{\mathbf{h}})}{\sum_{w=1}^{|\mathcal{V}|} \exp(\vec{v}_w \cdot \bar{\mathbf{h}})}
-
-```
+$$P(w_t | w_{t-c}, \ldots, w_{t+c}) = \frac{\exp(\vec{v}_{w_t} \cdot \bar{\mathbf{h}})}{\sum_{w=1}^{|\mathcal{V}|} \exp(\vec{v}_w \cdot \bar{\mathbf{h}})}$$
 
 where $\bar{\mathbf{h}} = \frac{1}{2c} \sum_{j \neq 0} \vec{v}_{w_{t+j}}$ is the average context embedding.
 
@@ -207,10 +171,7 @@ Computing the full softmax is expensive: $O(|\mathcal{V}|)$ per update.
 
 **Negative sampling** approximates by sampling $k$ negative examples:
 
-```math
-\mathcal{L}_{\text{NEG}} = \log \sigma(\vec{v}'_{w_O} \cdot \vec{v}_{w_I}) + \sum_{i=1}^{k} \mathbb{E}_{w_i \sim P_n(w)} [\log \sigma(-\vec{v}'_{w_i} \cdot \vec{v}_{w_I})]
-
-```
+$$\mathcal{L}_{\text{NEG}} = \log \sigma(\vec{v}'_{w_O} \cdot \vec{v}_{w_I}) + \sum_{i=1}^{k} \mathbb{E}_{w_i \sim P_n(w)} [\log \sigma(-\vec{v}'_{w_i} \cdot \vec{v}_{w_I})]$$
 
 where:
 
@@ -311,33 +272,21 @@ GloVe learns embeddings by factorizing the **co-occurrence matrix**.
 
 ### Co-occurrence Matrix
 
-```math
-X_{ij} = \text{count of word } j \text{ appearing in context of word } i
-
-```
+$$X_{ij} = \text{count of word } j \text{ appearing in context of word } i$$
 
 ### GloVe Objective
 
-```math
-\mathcal{J} = \sum_{i,j=1}^{|\mathcal{V}|} f(X_{ij}) \left( \vec{w}_i^T \tilde{\vec{w}}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2
-
-```
+$$\mathcal{J} = \sum_{i,j=1}^{|\mathcal{V}|} f(X_{ij}) \left( \vec{w}_i^T \tilde{\vec{w}}_j + b_i + \tilde{b}_j - \log X_{ij} \right)^2$$
 
 where $f(x)$ is a weighting function:
 
-```math
-f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{otherwise} \end{cases}
-
-```
+$$f(x) = \begin{cases} (x/x_{\max})^\alpha & \text{if } x < x_{\max} \\ 1 & \text{otherwise} \end{cases}$$
 
 with typically $\alpha = 0.75$ and $x_{\max} = 100$.
 
 **Key insight**: The ratio of co-occurrence probabilities encodes meaning:
 
-```math
-\frac{P(k|ice)}{P(k|steam)} = \begin{cases} \text{large} & k = \text{solid} \\ \text{small} & k = \text{gas} \\ \approx 1 & k = \text{water, fashion} \end{cases}
-
-```
+$$\frac{P(k|ice)}{P(k|steam)} = \begin{cases} \text{large} & k = \text{solid} \\ \text{small} & k = \text{gas} \\ \approx 1 & k = \text{water, fashion} \end{cases}$$
 
 ![Diagram 4](diagrams/diagram_04.svg)
 
@@ -395,26 +344,17 @@ FastText extends Word2Vec by representing words as **bags of character n-grams**
 
 For word $w$, let $\mathcal{G}_w$ be its character n-grams (typically $n \in [3,6]$):
 
-```math
-\vec{w} = \sum_{g \in \mathcal{G}_w} \vec{z}_g
-
-```
+$$\vec{w} = \sum_{g \in \mathcal{G}_w} \vec{z}_g$$
 
 **Example**: "where" with $n=3$:
 
-```math
-\mathcal{G}_{\text{where}} = \{\text{<wh}, \text{whe}, \text{her}, \text{ere}, \text{re>}\}
-
-```
+$$\mathcal{G}_{\text{where}} = \{\text{<wh}, \text{whe}, \text{her}, \text{ere}, \text{re>}\}$$
 
 ### Advantage: OOV Handling
 
 For unknown word $w'$, compute from known subwords:
 
-```math
-\vec{w'} = \sum_{g \in \mathcal{G}_{w'} \cap \mathcal{G}_{\text{known}}} \vec{z}_g
-
-```
+$$\vec{w'} = \sum_{g \in \mathcal{G}_{w'} \cap \mathcal{G}_{\text{known}}} \vec{z}_g$$
 
 This enables embeddings for **misspellings**, **morphological variants**, and **rare words**.
 
@@ -442,10 +382,7 @@ Contextual embeddings: $E(w, \text{context}) \rightarrow \mathbb{R}^d$
 
 BERT produces token embeddings as:
 
-```math
-\mathbf{H} = \text{Transformer}(\mathbf{X}) \in \mathbb{R}^{L \times d}
-
-```
+$$\mathbf{H} = \text{Transformer}(\mathbf{X}) \in \mathbb{R}^{L \times d}$$
 
 where $L$ is sequence length and $d = 768$ (base) or $1024$ (large).
 
@@ -455,17 +392,11 @@ where $L$ is sequence length and $d = 768$ (base) or $1024$ (large).
 
 2. **Mean pooling**: 
 
-```math
-\mathbf{h}_{\text{sentence}} = \frac{1}{L}\sum_{i=1}^{L} \mathbf{h}_i
-
-```
+$$\mathbf{h}_{\text{sentence}} = \frac{1}{L}\sum_{i=1}^{L} \mathbf{h}_i$$
 
 3. **Mean pooling with attention mask**:
 
-```math
-\mathbf{h}_{\text{sentence}} = \frac{\sum_{i=1}^{L} m_i \mathbf{h}_i}{\sum_{i=1}^{L} m_i}
-
-```
+$$\mathbf{h}_{\text{sentence}} = \frac{\sum_{i=1}^{L} m_i \mathbf{h}_i}{\sum_{i=1}^{L} m_i}$$
 
 ```python
 import torch
@@ -548,28 +479,19 @@ Sentence-BERT fine-tunes BERT for efficient sentence embeddings.
 
 Two sentences processed through shared BERT:
 
-```math
-\mathbf{u} = \text{pool}(\text{BERT}(s_1)), \quad \mathbf{v} = \text{pool}(\text{BERT}(s_2))
-
-```
+$$\mathbf{u} = \text{pool}(\text{BERT}(s_1)), \quad \mathbf{v} = \text{pool}(\text{BERT}(s_2))$$
 
 ### Training Objectives
 
 **Contrastive loss** (for similarity/dissimilarity pairs):
 
-```math
-\mathcal{L} = \frac{1}{2}(1-y) \cdot d^2 + \frac{1}{2}y \cdot \max(0, m - d)^2
-
-```
+$$\mathcal{L} = \frac{1}{2}(1-y) \cdot d^2 + \frac{1}{2}y \cdot \max(0, m - d)^2$$
 
 where $d = \|\mathbf{u} - \mathbf{v}\|$, $y \in \{0,1\}$, $m$ is margin.
 
 **Multiple Negatives Ranking Loss** (efficient batch training):
 
-```math
-\mathcal{L} = -\log \frac{\exp(\text{sim}(a_i, p_i)/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(a_i, p_j)/\tau)}
-
-```
+$$\mathcal{L} = -\log \frac{\exp(\text{sim}(a_i, p_i)/\tau)}{\sum_{j=1}^{N} \exp(\text{sim}(a_i, p_j)/\tau)}$$
 
 where $(a_i, p_i)$ are anchor-positive pairs and temperature $\tau$ controls sharpness.
 

@@ -45,10 +45,7 @@ When monitoring ML systems, we're fundamentally comparing probability distributi
 
 The **Population Stability Index** quantifies how much a distribution has shifted:
 
-```math
-PSI = \sum_{i=1}^{n} (P_i^{actual} - P_i^{expected}) \cdot \ln\left(\frac{P_i^{actual}}{P_i^{expected}}\right)
-
-```
+$$PSI = \sum_{i=1}^{n} (P_i^{actual} - P_i^{expected}) \cdot \ln\left(\frac{P_i^{actual}}{P_i^{expected}}\right)$$
 
 Where:
 
@@ -66,10 +63,7 @@ Where:
 
 The **KS test** measures the maximum distance between two cumulative distribution functions:
 
-```math
-D_{KS} = \sup_x |F_{train}(x) - F_{prod}(x)|
-
-```
+$$D_{KS} = \sup_x |F_{train}(x) - F_{prod}(x)|$$
 
 The null hypothesis \( H_0 \): Both samples come from the same distribution. Reject if \( p < \alpha \) (typically 0.05).
 
@@ -77,17 +71,11 @@ The null hypothesis \( H_0 \): Both samples come from the same distribution. Rej
 
 Unlike KL divergence, **JS divergence** is symmetric and bounded:
 
-```math
-JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)
-
-```
+$$JS(P \| Q) = \frac{1}{2} D_{KL}(P \| M) + \frac{1}{2} D_{KL}(Q \| M)$$
 
 Where \( M = \frac{1}{2}(P + Q) \) is the mixture distribution and \( D_{KL} \) is the Kullback-Leibler divergence:
 
-```math
-D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}
-
-```
+$$D_{KL}(P \| Q) = \sum_i P(i) \log\frac{P(i)}{Q(i)}$$
 
 ---
 
@@ -145,10 +133,7 @@ Monitoring response time requires understanding percentiles:
 
 - **P99**: 99% of requests are faster — captures tail latency
 
-```math
-P_k = x_{(\lceil k \cdot n / 100 \rceil)}
-
-```
+$$P_k = x_{(\lceil k \cdot n / 100 \rceil)}$$
 
 Where \( x_{(i)} \) is the \( i \)-th order statistic.
 
@@ -174,10 +159,7 @@ When comparing distributions, we formulate:
 
 Before monitoring, compute required sample size for detecting drift:
 
-```math
-n = \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot 2\sigma^2
-
-```
+$$n = \left(\frac{z_{\alpha/2} + z_{\beta}}{\delta}\right)^2 \cdot 2\sigma^2$$
 
 Where:
 

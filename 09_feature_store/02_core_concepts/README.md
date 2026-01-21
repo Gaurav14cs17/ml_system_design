@@ -607,10 +607,7 @@ Given:
 
 The point-in-time join produces:
 
-```math
-\text{Training}(e_i, t_i) = \arg\max_{\tau_j \leq t_i} F(e_j = e_i, \tau_j)
-
-```
+$$\text{Training}(e_i, t_i) = \arg\max_{\tau_j \leq t_i} F(e_j = e_i, \tau_j)$$
 
 This ensures we only use features computed **before** the event time, preventing **data leakage**.
 

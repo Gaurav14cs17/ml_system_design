@@ -33,22 +33,16 @@
 
 At its core, fraud detection is a **cost-sensitive binary classification** problem. Given a transaction with features $\mathbf{x}$, we estimate:
 
-```math
-P(\text{fraud} | \mathbf{x}) = f(\mathbf{x}; \theta)
-
-```
+$$P(\text{fraud} | \mathbf{x}) = f(\mathbf{x}; \theta)$$
 
 ### Bayesian Decision Theory
 
 The optimal decision minimizes **expected cost**:
 
-```math
-\text{Decision} = \begin{cases}
+$$\text{Decision} = \begin{cases}
 \text{BLOCK} & \text{if } P(\text{fraud}|\mathbf{x}) \cdot C_{FN} > (1 - P(\text{fraud}|\mathbf{x})) \cdot C_{FP} \\
 \text{APPROVE} & \text{otherwise}
-\end{cases}
-
-```
+\end{cases}$$
 
 Where $C_{FN}$ is the cost of missing fraud and $C_{FP}$ is the cost of blocking legitimate transactions.
 

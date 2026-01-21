@@ -43,35 +43,23 @@ Words and documents are represented as vectors in high-dimensional spaces. The f
 
 **Cosine Similarity** measures the angle between two vectors:
 
-```math
-\text{cos}(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \|\mathbf{b}\|} = \frac{\sum_{i=1}^{n} a_i b_i}{\sqrt{\sum_{i=1}^{n} a_i^2} \sqrt{\sum_{i=1}^{n} b_i^2}}
-
-```
+$$\text{cos}(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \|\mathbf{b}\|} = \frac{\sum_{i=1}^{n} a_i b_i}{\sqrt{\sum_{i=1}^{n} a_i^2} \sqrt{\sum_{i=1}^{n} b_i^2}}$$
 
 ### Probability and Language Models
 
 Language models estimate the probability of text sequences. The **chain rule of probability** decomposes joint distributions:
 
-```math
-P(w_1, w_2, \ldots, w_n) = \prod_{i=1}^{n} P(w_i | w_1, w_2, \ldots, w_{i-1})
-
-```
+$$P(w_1, w_2, \ldots, w_n) = \prod_{i=1}^{n} P(w_i | w_1, w_2, \ldots, w_{i-1})$$
 
 **Perplexity** measures how well a model predicts a sample:
 
-```math
-\text{PPL}(W) = P(w_1, w_2, \ldots, w_n)^{-1/n} = \exp\left(-\frac{1}{n}\sum_{i=1}^{n} \log P(w_i | w_{1:i-1})\right)
-
-```
+$$\text{PPL}(W) = P(w_1, w_2, \ldots, w_n)^{-1/n} = \exp\left(-\frac{1}{n}\sum_{i=1}^{n} \log P(w_i | w_{1:i-1})\right)$$
 
 ### Attention Mechanism
 
 The **scaled dot-product attention** is the core of Transformer models:
 
-```math
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-
-```
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 Where:
 
@@ -87,17 +75,11 @@ Where:
 
 **Cross-Entropy Loss** for classification:
 
-```math
-\mathcal{L}_{CE} = -\sum_{c=1}^{C} y_c \log(\hat{y}_c)
-
-```
+$$\mathcal{L}_{CE} = -\sum_{c=1}^{C} y_c \log(\hat{y}_c)$$
 
 **KL Divergence** measures distribution difference:
 
-```math
-D_{KL}(P \| Q) = \sum_{x} P(x) \log\frac{P(x)}{Q(x)}
-
-```
+$$D_{KL}(P \| Q) = \sum_{x} P(x) \log\frac{P(x)}{Q(x)}$$
 
 ---
 

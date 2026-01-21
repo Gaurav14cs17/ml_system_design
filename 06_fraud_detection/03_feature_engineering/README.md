@@ -51,17 +51,11 @@
 
 The goal of feature engineering is to create features $\mathbf{x}$ that maximize the **mutual information** with the fraud label $y$:
 
-```math
-I(y; \mathbf{x}) = H(y) - H(y | \mathbf{x})
-
-```
+$$I(y; \mathbf{x}) = H(y) - H(y | \mathbf{x})$$
 
 Where entropy is:
 
-```math
-H(y) = -\sum_{c \in \{0,1\}} P(y=c) \log P(y=c)
-
-```
+$$H(y) = -\sum_{c \in \{0,1\}} P(y=c) \log P(y=c)$$
 
 ### Statistical Anomaly Detection
 
@@ -69,19 +63,13 @@ H(y) = -\sum_{c \in \{0,1\}} P(y=c) \log P(y=c)
 
 For any feature $x$, the **z-score** measures deviations from expected behavior:
 
-```math
-z = \frac{x - \mu}{\sigma}
-
-```
+$$z = \frac{x - \mu}{\sigma}$$
 
 Where $\mu$ is the mean and $\sigma$ is the standard deviation of the reference distribution.
 
 **For user-specific features:**
 
-```math
-z_{\text{user}} = \frac{x_{\text{current}} - \mu_{\text{user}}}{\sigma_{\text{user}}}
-
-```
+$$z_{\text{user}} = \frac{x_{\text{current}} - \mu_{\text{user}}}{\sigma_{\text{user}}}$$
 
 A transaction with $|z| > 3$ is considered anomalous (outside 99.7% of normal behavior).
 
@@ -89,10 +77,7 @@ A transaction with $|z| > 3$ is considered anomalous (outside 99.7% of normal be
 
 For features with outliers, use **Median Absolute Deviation (MAD)**:
 
-```math
-z_{\text{MAD}} = \frac{x - \tilde{x}}{1.4826 \cdot \text{MAD}}
-
-```
+$$z_{\text{MAD}} = \frac{x - \tilde{x}}{1.4826 \cdot \text{MAD}}$$
 
 Where:
 
@@ -106,18 +91,12 @@ Where:
 
 Velocity features capture transaction patterns over time windows. For a time window $[t - \Delta t, t]$:
 
-```math
-\text{count}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} \mathbb{1}[\text{user}_i = u]
-\text{sum}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} v_i \cdot \mathbb{1}[\text{user}_i = u]
-
-```
+$$\text{count}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} \mathbb{1}[\text{user}_i = u]
+\text{sum}_{\Delta t}(u) = \sum_{i: t_i \in [t-\Delta t, t]} v_i \cdot \mathbb{1}[\text{user}_i = u]$$
 
 **Velocity ratio** (detecting acceleration):
 
-```math
-r_{\text{velocity}} = \frac{\text{count}_{1h}}{\text{count}_{24h} / 24 + \epsilon}
-
-```
+$$r_{\text{velocity}} = \frac{\text{count}_{1h}}{\text{count}_{24h} / 24 + \epsilon}$$
 
 Values $r > 3$ suggest unusual short-term activity bursts.
 
@@ -127,10 +106,7 @@ Values $r > 3$ suggest unusual short-term activity bursts.
 
 For discrete features, compute:
 
-```math
-I(X; Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P(x, y) \log \frac{P(x, y)}{P(x)P(y)}
-
-```
+$$I(X; Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P(x, y) \log \frac{P(x, y)}{P(x)P(y)}$$
 
 Features with high $I(X; Y)$ are most predictive of fraud.
 
@@ -138,10 +114,7 @@ Features with high $I(X; Y)$ are most predictive of fraud.
 
 The **Shannon entropy** of a categorical feature over a time window:
 
-```math
-H(X) = -\sum_{i=1}^{k} p_i \log_2 p_i
-
-```
+$$H(X) = -\sum_{i=1}^{k} p_i \log_2 p_i$$
 
 Where $p_i$ is the proportion of category $i$.
 
@@ -159,10 +132,7 @@ For transaction networks, define:
 
 The PageRank score $\pi_i$ for node $i$ satisfies:
 
-```math
-\pi_i = \frac{1 - d}{N} + d \sum_{j \in \text{in}(i)} \frac{\pi_j}{|\text{out}(j)|}
-
-```
+$$\pi_i = \frac{1 - d}{N} + d \sum_{j \in \text{in}(i)} \frac{\pi_j}{|\text{out}(j)|}$$
 
 Where $d \approx 0.85$ is the damping factor. High PageRank for fraud nodes propagates risk through the network.
 
@@ -170,10 +140,7 @@ Where $d \approx 0.85$ is the damping factor. High PageRank for fraud nodes prop
 
 Use **Louvain modularity** to detect fraud rings:
 
-```math
-Q = \frac{1}{2m} \sum_{ij} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)
-
-```
+$$Q = \frac{1}{2m} \sum_{ij} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)$$
 
 Where $A_{ij}$ is the adjacency matrix, $k_i$ is node degree, and $\delta$ tests community membership.
 
