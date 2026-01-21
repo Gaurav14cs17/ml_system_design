@@ -218,7 +218,7 @@ s3://data-lake/impressions/
 
 **Impression-Click Join**:
 
-$$\text{TrainingData} = \text{Impressions} \underset{\text{impression_id}}{\bowtie_{\text{left}}} \text{Clicks}$$
+$$\text{TrainingData} = \text{Impressions} \underset{\text{impression\_id}}{\bowtie_{\text{left}}} \text{Clicks}$$
 
 ### Negative Sampling
 

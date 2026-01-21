@@ -238,7 +238,7 @@ $$\Delta t = t_p - t_e$$
 
 Event time processing requires **watermarks** — markers indicating "all events up to time $W$ have arrived":
 
-$$W(t_p) = \max(t_e) - \text{allowed_lateness}$$
+$$W(t_p) = \max(t_e) - \text{allowed\_lateness}$$
 
 ### Batch Pipelines
 

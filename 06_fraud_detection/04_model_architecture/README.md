@@ -123,7 +123,7 @@ With dropout regularization: $\tilde{\mathbf{h}} = \mathbf{h} \odot \mathbf{m}$ 
 
 For categorical features (user, merchant, MCC), learn low-dimensional representations:
 
-$$\mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity_id}] \in \mathbb{R}^d$$
+$$\mathbf{e}_{\text{entity}} = \mathbf{E}[\text{entity\_id}] \in \mathbb{R}^d$$
 
 Where $\mathbf{E} \in \mathbb{R}^{|\mathcal{V}| \times d}$ is the learned embedding matrix.
 

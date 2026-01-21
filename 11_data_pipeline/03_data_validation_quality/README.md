@@ -76,7 +76,7 @@ $$F(D) = 1 - \frac{\max(\text{now} - t_{latest}, 0)}{T_{max}}$$
 
 $$F(D) = e^{-\lambda \cdot \Delta t}$$
 
-where $\lambda = \frac{\ln(2)}{\text{half_life}}$ is the decay constant.
+where $\lambda = \frac{\ln(2)}{\text{half\_life}}$ is the decay constant.
 
 ### Statistical Distribution Tests
 

@@ -263,7 +263,7 @@ where $g$ is monotonic increasing, fit on validation set.
 
 Reduce precision from FP32 to INT8:
 
-$$x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero_point}$$
+$$x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero\_point}$$
 
 **Benefits**: 4x smaller model, 2-3x faster inference
 

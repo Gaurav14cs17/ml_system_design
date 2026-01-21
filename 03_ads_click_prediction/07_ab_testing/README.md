@@ -43,7 +43,7 @@
 
 **Hash-based assignment** for consistency:
 
-$$\text{bucket} = \text{hash}(\text{user_id}, \text{experiment_id}) \mod 1000$$
+$$\text{bucket} = \text{hash}(\text{user\_id}, \text{experiment\_id}) \mod 1000$$
 
 User always sees same variant.
 

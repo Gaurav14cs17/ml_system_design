@@ -123,7 +123,7 @@ Alert threshold: > 1% for critical features.
 
 ### Model Staleness
 
-$$\text{Staleness} = t_{\text{now}} - t_{\text{model_trained}}$$
+$$\text{Staleness} = t_{\text{now}} - t_{\text{model\_trained}}$$
 
 Alert if staleness > 24 hours.
 

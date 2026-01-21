@@ -236,7 +236,7 @@ $$\text{Break-even Utilization} = \frac{\text{Reserved Cost}}{\text{On-Demand Co
 
 **INT8 quantization**:
 
-$$x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero_point}$$
+$$x_{\text{int8}} = \text{round}\left(\frac{x}{\text{scale}}\right) + \text{zero\_point}$$
 
 | Precision | Model Size | Latency | Accuracy Loss |
 |-----------|------------|---------|---------------|

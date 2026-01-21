@@ -67,7 +67,7 @@ $$\text{Throughput} = \frac{\text{Batch Size}}{\text{Latency}_{\text{batch}}}$$
 
 **Optimal batch size**:
 
-$$B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per_sample}}}$$
+$$B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per\_sample}}}$$
 
 | Batch Size | Latency (ms) | Throughput (QPS/GPU) |
 |------------|--------------|----------------------|
@@ -81,7 +81,7 @@ $$B^* = \arg\max_B \frac{B}{T_{\text{setup}} + B \cdot T_{\text{per_sample}}}$$
 Wait time vs batch efficiency:
 
 $$\text{Total Latency} = T_{\text{wait}} + T_{\text{inference}}(B)
-T_{\text{wait}} = \min(T_{\text{timeout}}, T_{\text{batch_full}})$$
+T_{\text{wait}} = \min(T_{\text{timeout}}, T_{\text{batch\_full}})$$
 
 Typical timeout: 1-5ms
 
@@ -125,7 +125,7 @@ Assuming $T_{\text{cache}} = 1\text{ms}$, $T_{\text{origin}} = 10\text{ms}$.
 
 ### Cache Key Design
 
-$$\text{key} = \text{hash}(\text{entity_type}, \text{entity_id}, \text{feature_version})$$
+$$\text{key} = \text{hash}(\text{entity\_type}, \text{entity\_id}, \text{feature\_version})$$
 
 ### TTL Strategy
 

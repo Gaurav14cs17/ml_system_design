@@ -88,7 +88,7 @@ where $op_i \in \{\text{INSERT}, \text{UPDATE}, \text{DELETE}\}$.
 
 Each change event contains:
 
-$$\Delta = (\text{op}, \text{before}, \text{after}, \text{timestamp}, \text{transaction_id})$$
+$$\Delta = (\text{op}, \text{before}, \text{after}, \text{timestamp}, \text{transaction\_id})$$
 
 **Before-image:** State before change (for UPDATE, DELETE)
 **After-image:** State after change (for INSERT, UPDATE)

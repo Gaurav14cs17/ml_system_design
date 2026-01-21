@@ -740,7 +740,7 @@ Standard histogram equalization is global. CLAHE applies equalization locally:
 
 4. Bilinearly interpolate at tile boundaries
 
-$$\text{clip}(h(k)) = \min(h(k), \text{clip_limit})$$
+$$\text{clip}(h(k)) = \min(h(k), \text{clip\_limit})$$
 
 ```python
 import cv2

@@ -206,7 +206,7 @@ where successful = (status < 500) AND (latency < timeout)
 
 **Latency SLI**:
 
-$$\text{Latency}_{p99} = \text{percentile}_{99}(\text{request_duration})$$
+$$\text{Latency}_{p99} = \text{percentile}_{99}(\text{request\_duration})$$
 
 ### Error Budget
 

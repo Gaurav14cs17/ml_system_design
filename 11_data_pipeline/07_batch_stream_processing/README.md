@@ -124,7 +124,7 @@ The last term accounts for waiting time to fill the batch.
 
 Spark Streaming uses micro-batches with interval $\Delta$:
 
-$$\text{latency} \geq \Delta + \text{processing_time}$$
+$$\text{latency} \geq \Delta + \text{processing\_time}$$
 
 Minimum achievable latency bounded by batch interval.
 
